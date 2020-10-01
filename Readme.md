@@ -51,10 +51,6 @@ Install Composer Modules for Pattern Lab
 composer install
 ```
 
-### Maintaining NDS
-
-All changes to the global NDS system (components, global CSS, JS, etc.) occur within the ./global-assets directory. This directory is responsible for housing the entirety NDS in its release form.
-
 ## Running the Project
 
 To view the site in a locally-hosted sandbox, run 'gulp.' This will open a localhost url with the project running.
@@ -64,6 +60,10 @@ gulp
 ```
 
 Navigate to the site pages using the Pages dropdown at the top.
+
+### Maintaining NDS
+
+All changes to the global NDS system (components, global CSS, JS, etc.) occur within the ./global-assets directory. This directory is responsible for housing the entirety NDS in its release form. The NDS global assets for the documentation site live in the ./niaid-design-system/source/_patterns/00-nds/ directory. This directory gets automatically update from the components in the ./global-assets directory. If changes need to occur to official NDS components, make those changes in the ./global-assets directory. If changes to the documentation site-specific components are needed, make the changes in ./niaid-design-system/source/_patterns/ (with the exception of 00-nds/).
 
 ## Creating a Production Build
 
