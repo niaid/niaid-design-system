@@ -17,8 +17,8 @@ Current Sites Running on NDS:
 ## Repo Organization
 
 * global-assets: The source directory for NDS and its components. The directory is also a Pattern Lab instance.
+* nds-documentation-site: The source directroy for the files used for the NDS documentation website.
 * nds-drupal-theme-master: The official Drupal Theme source files that runs on NDS.
-* niaid-design-system: The source directroy for the files used for the NDS documentation website.
 
 ## Getting Started
 
@@ -33,10 +33,10 @@ You will need the following installed on your local machine:
 
 ### Installing
 
-To maintain the documentation site, move into the ./niaid-design-system directory.
+To maintain the documentation site, move into the ./nds-documentation-site directory.
 
 ```
-cd niaid-design-system/
+cd nds-documentation-site/
 ```
 
 Install Node Modules
@@ -53,7 +53,7 @@ composer install
 
 ## Running the Project
 
-To view the site in a locally-hosted sandbox, run 'gulp' from within ./niaid-design-system. This will open a localhost url with the project running.
+To view the site in a locally-hosted sandbox, run 'gulp' from within ./nds-documentation-site. This will open a localhost url with the project running.
 
 ```
 gulp
@@ -65,13 +65,13 @@ Navigate to the site pages using the Pages dropdown at the top.
 
 All of the official, supported components, stylesheets, and scripts live in the ./global-assets directory. When the official components or other assets need updating, the changes occur within this directory.
 
-The global components, stylesheets, and scripts from ./global-assets get pulled into ./niaid-design-system (the documentation site) and ./nds-drupal-theme-master via Gulp. Both the documentation site and the Drupal Theme get updated with these assets when gulp is run from within the ./niaid-design-system directory, so the global assets do not need to be manually updated. The global assets that are pulled into each directory live in gitignored folders, thus, changes to these files must occur in the ./global-assets folder.
+The global components, stylesheets, and scripts from ./global-assets get pulled into ./nds-documentation-site (the documentation site) and ./nds-drupal-theme-master via Gulp. Both the documentation site and the Drupal Theme get updated with these assets when gulp is run from within the ./nds-documentation-site directory, so the global assets do not need to be manually updated. The global assets that are pulled into each directory live in gitignored folders, thus, changes to these files must occur in the ./global-assets folder.
 
-Changes to the documentation site or the Drupal Theme specific files may occur, and should happen in the approriate directory. 
+Changes to the documentation site or the Drupal Theme specific files may occur and should happen in the approriate directory. 
 
 ## Creating a Production Build
 
-The public_html directory within ./niaid-design-system is where the final upload-ready files will be generated. To create a production build, run the following in the ./niaid-design-system directory:
+The public_html directory within ./nds-documentation-site is where the final upload-ready files will be generated. To create a production build, run the following in the ./nds-documentation-site directory:
 
 ```
 gulp buildProd

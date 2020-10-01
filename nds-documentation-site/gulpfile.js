@@ -223,6 +223,7 @@ function moveAssets() {
 // Move Assets to Dist for Zip
 
 function cleanDist() {
+    del('../nds-drupal-theme/patternlab/**/*', {force:true});
     return del('../global-assets/dist/**', {force:true});
 }
 
@@ -284,7 +285,11 @@ function zipDist() {
         .pipe(zip('roboto.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
     
-    console.log("Zipping Dist");
+    console.log("Move Pattern Lab to Drupal Theme");
+    gulp.src('../global-assets/dist/**/*', {dot: true})
+        .pipe(gulp.dest('../nds-drupal-theme/patternlab/'));
+
+    console.log("Zipping Pattern Lab Dist");
     return gulp.src('../global-assets/dist/**', {dot: true})
         .pipe(tap(function(file, t) {
             console.log(file.path);
