@@ -5,12 +5,19 @@ The NIAID Design System was developed within the Office of Communications and Go
 This repository houses the source code for:
 * The NIAID Design System: The code that NDS components use to function including CSS, JS, Twig, as well as third-party library assets (CSS, JS)
 * The NDS Documentation Site: The public website used for documenting NDS design principles, development setup, and public access point for downloading NDS assets.
+* The NDS Drupal Theme: The official Drupal Theme source files that runs on NDS.
 * Theme Builder: A tool used to show how the various design configuration options of NDS look on sample pages, hosted on the NDS Documentation Site.
+
+Current Sites Running on NDS:
+* NIAID Digital Policy Website
+* Coronavirus Prevention Network (CoVPN)
+* ECM @ NIH
+* NDS Documentation Site
 
 ## Repo Organization
 
-* generated-theme: DEPRECATED - NDS Drupal Theme
 * global-assets: The source directory for NDS and its components. The directory is also a Pattern Lab instance.
+* nds-drupal-theme-master: The official Drupal Theme source files that runs on NDS.
 * niaid-design-system: The source directroy for the files used for the NDS documentation website.
 
 ## Getting Started
@@ -79,6 +86,8 @@ make deploy
 * [Pattern Lab](https://patternlab.io/) - Atomic Design System
 * [Bootstrap](https://getbootstrap.com/) - Grid System Framework
 
-## Authors
+## Developers
 
-* **Jacob Caccamo**
+* **Jacob Caccamo** - Creator, Front-End Developer
+* Roshana Devkota - Drupal Developer
+* Souley Coulibaly - DevOps SME
