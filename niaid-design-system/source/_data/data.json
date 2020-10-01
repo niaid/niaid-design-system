@@ -1,0 +1,37 @@
+{
+    "prodBuild": "false",
+    "cssPath": "../../css/",
+    "jsPath": "../../js/",
+    "imagePath": "../../images/",
+    "assetsPath": "../../assets/",
+    "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans",
+    "jsIncludes": {
+        "jquery": true,
+        "select2": true,
+        "materialize": true,
+        "bootstrap": true,
+        "matchMedia": true,
+        "dataTables": true,
+        "dateTimePicker": true
+    },
+    "colors": {
+        "theme_1": {
+            "primary": "#157B8D",
+            "secondary": "#497951",
+            "tertiary": "#262626",
+            "accent": "#E08A63"
+        },
+        "theme_2": {
+            "primary": "#586FAB",
+            "secondary": "#247BA0",
+            "tertiary": "#244D56",
+            "accent": "#FAB952"
+        },
+        "theme_3": {
+            "primary": "#123B56",
+            "secondary": "#69166E",
+            "tertiary": "#423E63",
+            "accent": "#E08A63"
+        }
+    }
+}

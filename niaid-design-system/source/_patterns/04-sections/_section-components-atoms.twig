@@ -1,0 +1,66 @@
+{% embed "@nds/02-molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-components-atoms"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h1>Components</h1>
+        <p>Find code snippets for NIAID Design System Components.</p>
+        <h2>Atoms</h2>
+        <h3>Buttons</h3>
+        {# Buttons - Primary, Secondary, Tertiary, Disabled #}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-primary.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-secondary.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-tertiary.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-disabled.twig" %}
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        {% endembed %}
+        {# Button External #}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/buttons/button-external/demo/button-external.twig" %}
+            {% endblock %}
+        {% endembed %}
+        {# Button Document #}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-word.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-excel.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-powerpoint.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-pdf.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-image.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-video.twig" %}
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

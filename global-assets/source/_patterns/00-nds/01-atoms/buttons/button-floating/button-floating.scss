@@ -1,0 +1,34 @@
+.button--floating {
+    @extend .button-nds;
+    @extend .button--primary;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    height: 4rem;
+    width: 3.95rem;
+    z-index: 999;
+    padding: 0;
+    overflow: hidden;
+    transition: .3s ease-in-out !important;
+    &__icon {
+        float: left;
+        width: 3.85rem;
+        font-size: 1.5rem;
+    }
+    &__text {
+        position: absolute;
+        display: block;
+        overflow: hidden;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 3rem;
+        width: 0;
+    }
+    &:hover,
+    &:focus {
+        width: 16.5rem;
+        .button--floating__text {
+            width: 13rem;
+        }
+    }
+}

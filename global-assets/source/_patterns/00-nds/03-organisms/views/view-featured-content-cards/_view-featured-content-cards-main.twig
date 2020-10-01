@@ -1,0 +1,5 @@
+{% set view_featured_content_cards_classes = view_featured_content_cards_classes|default() %}
+
+<div class="view-nds view--featured-content-cards {{ view_featured_content_cards_classes }}">
+    {% block view_featured_content_cards_content %}{% endblock %}
+</div>

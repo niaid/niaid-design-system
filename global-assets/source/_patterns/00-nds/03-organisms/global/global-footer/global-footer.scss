@@ -1,0 +1,181 @@
+.global--footer {
+    @include md-8dp;
+    background: $page-background;
+    min-height: 50px;
+    position: relative;
+    padding: 0;
+    @include media-breakpoint-up(md) {
+        padding: 0 4rem;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 0;
+    }
+    @include media-breakpoint-up(xl) {
+        padding: 0 4rem;
+    }
+    &__prefooter {
+        padding: 0;
+        @include media-breakpoint-up(md) {
+            padding: 1rem 0;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 0;
+        }
+        @include media-breakpoint-up(xl) {
+            padding: 1rem 0;
+        }
+        &__list {
+            max-width: 950px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            display: block;
+            @include media-breakpoint-up(md) {
+                display: flex;
+                justify-content: space-between;
+            }
+            @include media-breakpoint-up(lg) {
+                display: block;
+            }
+            @include media-breakpoint-up(xl) {
+                display: flex;
+                justify-content: space-between;
+            }
+            li {
+                text-align: center;
+                text-transform: uppercase;
+                padding: 1rem;
+                display: block;
+                border-bottom: 0.0625rem solid #D8D8D8;
+                &.spacer {
+                    display: none;
+                }
+                &:last-child {
+                    border-bottom: 0;
+                }
+                @include media-breakpoint-up(md) {
+                    display: flex;
+                    border-bottom: 0;
+                    padding: .5rem 0;
+                    &.spacer {
+                        display: flex;
+                        border-right: 0.0625rem solid #D8D8D8;
+                    }
+                    &:first-child {
+                        padding-left: 1rem;
+                    }
+                    &:last-child {
+                        padding-right: 1rem;
+                    }
+                }
+                @include media-breakpoint-up(lg) {
+                    padding: 1rem 0;
+                    display: block;
+                    border-bottom: 0.0625rem solid #D8D8D8;
+                    &.spacer {
+                        display: none;
+                    }
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                    &:last-child {
+                        padding-right: 0;
+                        border-bottom: 0;
+                    }
+                }
+                @include media-breakpoint-up(xl) {
+                    display: flex;
+                    border-bottom: 0;
+                    padding: .5rem 0;
+                    &.spacer {
+                        display: flex;
+                        border-right: 0.0625rem solid #D8D8D8;
+                    }
+                    &:first-child {
+                        padding-left: 1rem;
+                    }
+                    &:last-child {
+                        padding-right: 1rem;
+                    }
+                }
+                a {
+                    border-bottom: 0.0625rem solid transparent;
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    &__content {
+        margin: 0;
+        padding: 2rem;
+        .row {
+            margin: 0;
+        }
+        @include media-breakpoint-up(xl) {
+            padding: 2rem 0;
+        }
+        &__logo {
+            padding-left: 0;
+            padding-bottom: 2rem;
+            .image--logo {
+                img {
+                    height: 3.5rem;
+                }
+            }
+        }
+        &__info {
+            padding: 0;
+            &__section {
+                padding: 0 0 2rem 0;
+                @include media-breakpoint-up(md) {
+                    padding: 0;
+                }
+                h4 {
+                    margin-top: 0;
+                }
+                ul {
+                    list-style: none;
+                    padding-left: 0;
+                    li {
+                        margin-bottom: .5rem;
+                    }
+                }
+                .link--carot {
+                    &:after {
+                        content: " \f054";
+                        font-family: "Font Awesome 5 Pro";
+                        font-weight: 300;
+                        font-size: 0.8rem;
+                        padding-left: .25rem;
+                        border-bottom: 3px solid white;
+                    }
+                }
+            }
+        }
+    }
+    &__tagline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .8rem;
+        &:before, &:after {
+            content: "";
+            height: 0.0625rem;
+            width: 3rem;
+            background: $type-body;
+        }
+        &:before {
+            margin-right: 1rem;
+        }
+        &:after {
+            margin-left: 1rem;
+        }
+        .icon--default {
+            margin-right: .5rem;
+        }
+    }
+}

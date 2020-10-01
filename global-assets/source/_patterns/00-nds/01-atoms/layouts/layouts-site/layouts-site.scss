@@ -1,0 +1,20 @@
+/* Styling for the Builder Page */
+
+#builder {
+    &__main-layout {
+        .layouts--main-layout__first {
+            margin: 0;
+            padding-left: 0;
+        }
+        .layouts--main-layout__second {
+            padding: 2.5rem;
+            @include media-breakpoint-up(lg) {
+                padding: 5rem;
+            }
+        }
+    }
+    .layouts--body-card {
+        min-height: 60rem;
+        padding: 0;
+    }
+}

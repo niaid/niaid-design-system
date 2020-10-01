@@ -1,0 +1,78 @@
+{% set component_style_controls = component_style_controls|default() %}
+
+<div class="component-nds component--style-controls {{ component_style_controls }}">
+    <div class="component--style-controls__control">
+        {% embed "@nds/01-atoms/input/input-select/_input-select-main.twig" with
+            {
+                "input_select_id": "text-heading",
+                "input_select_label": "Headings Font",
+                "input_select_selected_at_all_times": "true"
+            }
+        %}
+            {% block input_select_input %}
+                <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+                <option value="martel">Martel</option>
+                <option value="merriweather">Merriweather</option>
+            {% endblock %}
+        {% endembed %}
+    </div>
+    <div class="component--style-controls__control">
+        {% embed "@nds/01-atoms/input/input-select/_input-select-main.twig" with
+            {
+                "input_select_id": "text-body",
+                "input_select_label": "Body Font",
+                "input_select_selected_at_all_times": "true"
+            }
+        %}
+            {% block input_select_input %}
+                <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+            {% endblock %}
+        {% endembed %}
+    </div>
+    <div class="component--style-controls__control">
+        {% embed "@nds/01-atoms/input/input-select/_input-select-main.twig" with
+            {
+                "input_select_id": "color-select",
+                "input_select_label": "Theme",
+                "input_select_selected_at_all_times": "true"
+            }
+        %}
+            {% block input_select_input %}
+                <option value="theme-1">Theme 1</option>
+                <option value="theme-2">Theme 2</option>
+                <option value="theme-3">Theme 3</option>
+            {% endblock %}
+        {% endembed %}
+    </div>
+    <div class="component--style-controls__control">
+        {% embed "@nds/01-atoms/input/input-select/_input-select-main.twig" with
+            {
+                "input_select_id": "shadows",
+                "input_select_label": "Shadows",
+                "input_select_selected_at_all_times": "true"
+            }
+        %}
+            {% block input_select_input %}
+                <option value="flat">Flat</option>
+                <option value="shadows">Material</option>
+            {% endblock %}
+        {% endembed %}
+    </div>
+    <div class="component--style-controls__control">
+        {% embed "@nds/01-atoms/input/input-select/_input-select-main.twig" with
+            {
+                "input_select_id": "corners",
+                "input_select_label": "Corner Style",
+                "input_select_selected_at_all_times": "true"
+            }
+        %}
+            {% block input_select_input %}
+                <option value="straight">Sharp</option>
+                <option selected="selected" value="semirounded">Semi-Rounded</option>
+                <option value="rounded">Fully-Rounded</option>
+            {% endblock %}
+        {% endembed %}
+    </div>
+</div>

@@ -1,0 +1,205 @@
+.style--corners--semirounded, .style--corners--rounded {
+    .global--footer {
+        &__prefooter {
+            position: relative;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                height: 4px;
+                width: 4px;
+                border-radius: 100%;
+                top: -4px;
+            }
+            &:before {
+                left: -2px;
+            }
+            &:after {
+                right: -2px;
+            }
+        }
+    }
+}
+
+.style--corners--semirounded {
+    $corner-radius: .3125rem;
+    /* Atoms */
+    .button-nds,
+    button {
+        border-radius: $corner-radius;
+    }
+    .image--embedded {
+        &__image {
+            border-radius: $corner-radius;
+        }
+    }
+    .input-nds {
+        border-radius: $corner-radius;
+    }
+    table {
+        border-radius: $corner-radius;
+        thead {
+            border-radius: $corner-radius $corner-radius 0 0;
+        }
+        thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+            border-radius: $corner-radius 0 0 0;
+        }
+        thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+            border-radius: 0 0 0 $corner-radius;
+        }
+    }
+    .text--badge {
+        border-radius: $corner-radius;
+    }
+    /* Molecules */
+    .block-nds {
+        border-radius: $corner-radius;
+        &.block--hero {
+            border-radius: 0;
+        }
+        &.block--featured-content {
+            .block--featured-content__image {
+                border-top-left-radius: $corner-radius;
+                border-top-right-radius: $corner-radius;
+            }
+        }
+        &.block--wtph {
+            border-radius: 0;
+        }
+        &.block--mission-statement {
+            .block--mission-statement__header {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+    .form-nds {
+        .form-text {
+            border-top-left-radius: $corner-radius;
+            border-bottom-left-radius: $corner-radius;
+        }
+        .form-submit {
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: $corner-radius !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: $corner-radius !important;
+        }
+    }
+    .navigation--local {
+        @include media-breakpoint-up('lg') {
+            border-bottom-left-radius: $corner-radius;
+            border-bottom-right-radius: $corner-radius;
+        }
+    }
+    .navigation--primary {
+        button {
+            &:hover,
+            &:focus,
+            &:active {
+                border-radius: 0;
+            }
+        }
+    }
+    &.style--shadows {
+        .block-nds {
+            &.block--wtph {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+}
+
+.style--corners--rounded {
+    $corner-radius: 1rem;
+    /* Atoms */
+    .button-nds,
+    button {
+        border-radius: 350px;
+        &.button--floating {
+            border-radius: 350px;
+        }
+    }
+    .image--embedded {
+        &__image {
+            border-radius: $corner-radius;
+        }
+    }
+    .input-nds {
+        border-radius: 100rem;
+    }
+    table {
+        border-radius: $corner-radius;
+        thead {
+            border-radius: $corner-radius $corner-radius 0 0;
+        }
+        thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+            border-radius: $corner-radius 0 0 0;
+        }
+        thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+            border-radius: 0 0 0 $corner-radius;
+        }
+    }
+    .text--badge {
+        border-radius: $corner-radius;
+    }
+    /* Molecules */
+    .block-nds {
+        border-radius: $corner-radius;
+        &.block--hero {
+            border-radius: 0;
+        }
+        &.block--featured-content {
+            .block--featured-content__image {
+                border-top-left-radius: $corner-radius;
+                border-top-right-radius: $corner-radius;
+            }
+        }
+        &.block--wtph {
+            border-radius: 0;
+        }
+        &.block--mission-statement {
+            .block--mission-statement__header {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+    .form-nds {
+        .form-text {
+            border-top-left-radius: 100rem;
+            border-bottom-left-radius: 100rem;
+        }
+        .form-submit {
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: 100rem !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 100rem !important;
+        }
+        &.form--search {
+            .input--text {
+                border-top-left-radius: 100rem !important;
+                border-bottom-left-radius: 100rem !important;
+            }
+        }
+    }
+    .navigation--primary {
+        button {
+            &:hover,
+            &:focus,
+            &:active {
+                border-radius: 0;
+            }
+        }
+    }
+    .navigation--local {
+        @include media-breakpoint-up('lg') {
+            border-bottom-left-radius: $corner-radius;
+            border-bottom-right-radius: $corner-radius;
+        }
+    }
+    &.style--shadows {
+        .block-nds {
+            &.block--wtph {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{% set component_snippet_classes = component_snippet_classes|default() %}
+{% set component_snippet_code = block('component_snippet_code') %}
+
+<div class="component-nds component--snippet {{ component_snippet_classes }}">
+    <div class="component--snippet__block">
+        <div class="component--snippet__block__code">
+            <div class="component--snippet__block__code__rendered">
+                {{ component_snippet_code|raw }}
+            </div>
+            <div class="component--snippet__block__code__snippet">
+                <pre>
+                    {{ component_snippet_code|raw }}
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="component--snippet__button">
+        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+            {
+                "button_icon_icon": "clipboard-list",
+                "button_icon_text": "Copy to Clipboard"
+            }
+        %}
+    </div>
+</div>

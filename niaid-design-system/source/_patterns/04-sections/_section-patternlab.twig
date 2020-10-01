@@ -1,0 +1,84 @@
+{% embed "@nds/02-molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-patternlab"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h3>Pattern Lab (Twig Version)</h3>
+        <p>NDS implements the Atomic Design philosphy using a framework called <a href="https://patternlab.io/">Pattern Lab.</a> Pattern Lab houses the components that NDS provides to users and organizes them into Atomic folders. The framework utilizes templating languages to create component structures, which gives developers the ability to include smaller components into larger components. These components are then compiled into web-ready HTML code.</p>
+        <h4>Twig</h4>
+        <p>Twig is a templating language which is responsible for defining the HTML structures for patterns. Unlike pure HTML, however, Twig allows users to create variables, render markup with loops, and include patterns inside others. Pattern Lab relies on templating languages to implement Atomic Design through this inclusion. Pattern Lab supports a variety of templating languages, but due to Drupal integration support, NDS uses the Twig-based version.</p>
+        {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
+            {% block block_content %}
+                <h4>View Pattern Lab's Documentation</h4>
+                <p>Get more information about Pattern Lab setup, usage, and features.</p>
+                {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
+                    {
+                        "button_external_text": "Visit Pattern Lab's Website",
+                        "button_external_href": "https://patternlab.io/"
+                    }
+                %}
+            {% endblock %}
+        {% endembed %}
+        <h4>Organization</h4>
+        <p>When working with NDS, it is important to understand the organization of a NDS Pattern Lab instance. The following sections describe the purpose of certain directories found within an NDS Pattern lab instance.</p>
+        <h5>Source Directory</h5>
+        <p>The ./source folder houses all NDS components as well as global CSS, JS, images, and fonts. Broadly, most development will happen within this folder.</p>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_src": 'source-folder.png',
+                "component_media_alt": 'Refer to the caption for explanation',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": "The ./source folder and its contents.",
+                "component_media_lightbox": "yes"
+            }
+        %}
+        <p>Within the ./source folder, there are several important files and directories:</p>
+        <ul>
+            <li>_patterns/ Directory</li>
+            <li>css/ Directory</li>
+            <li>js/ Directory</li>
+            <li>images/ Directory</li>
+        </ul>
+        <h6>_patterns Directory</h6>
+        <p>Within the _patterns/ directory, components are grouped in folders by Atomic level (i.e. 01-atoms, 02-molecules, etc.). Each Atomic level is fruther broken up into atomic sub-categories. For example, the 01-atoms folder contains pattern categories like buttons, icons, and images. Within these sub-categories, indvidual pattern directories can be found. Pattern directories contain the necessary assets for the pattern to function. The contents of a pattern folder may include:</p>
+        <ul>
+            <li>A main twig file, denoted _[atomic-sub-category]-[pattern-name]-main.twig (i.e. _button-default-main.twig)</li>
+            <li>A SCSS file that has pattern-specific styling: (i.e. button-default.scss)</li>
+            <li>A JS file that adds pattern-specific functionality (i.e. button-default.js)</li>
+            <li>A demo directory that contains a twig file. This file contains a sample of how to reference or include the pattern in other places/patterns.</li>
+        </ul>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_classes": 'image--patternlab__structure',
+                "component_media_src": 'pattern-structure.png',
+                "component_media_alt": 'Refer to the caption for explanation',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": "The structure of a button pattern.",
+                "component_media_lightbox": "yes"
+            }
+        %}
+        <p>In addition to the traditional Atomic level directories, where project-specific patterns are organized, NDS supplies its own out-of-the-box components in a 00-nds/ folder. Inside 00-nds/, patterns are organized into the usual 01-atoms, 02-molecules, etc. to mirror the conventional structure. <strong>Do not make changes to patterns in the 00-nds/ directory,</strong> since this directory may be updated as NDS evolves and changes will be removed. If you want to modify a NDS component for project-specific implementations, simply copy the pattern folder from inside 00-nds/ and add it to the proper Atomic subdirectory under the _patterns folder.
+        <h6>css/ Directory</h6>
+        <p>The css/ directory houses the styling rules for the global aspects of NDS's visual appearance, as well as holds the main "style.scss" which orchestrates how the Sass rules compile into CSS. The global/ directory houses the NDS SASS variables and mixins, as well as general styling rules such as heading and body font properties. The libraries/ directory houses third-party library CSS files. Similarly to the 00-nds/ directory, <strong>do not make changes in the global/ and libraries/ folders</strong>, as they are subject to continual updates.</p>
+        <p>For customizations of global styling rules, utilize the overrides/ directory. This folder directly mirrors the global/ folder, and NDS has been designed to give priority to rules in overrides/. For instance, if a site needed to specify its own set of breakpoints for use in responsive design, those modifications can be placed in the overrides/ folder.</p>
+        <h6>js/ Directory</h6>
+        <p>The js/ directory houses Javascript files that NDS needs. These files include third-party library scripts, such as Bootstrap and Materialize. The js/ directory also includes "script.js", a file that is a compiled version of all the pattern-specific scripts. Custom patterns with custom JS are compiled into script.js.</p>
+        <h6>images/ Directory</h6>
+        <p>The images/ directory holds some generic placeholder images, as well as global images, such as document icons. Place any project-specifc images needed into this folder.</p>
+        <h5>Public Directory</h5>
+        <p>When Pattern Lab compiles, a locally-hosted style guide is opened in a browser. This style guide comes from the ./public folder, wherein all patterns are converted to web-ready HTML.</p>
+        <p>When building a static website, the production HTML should be copied from within the ./public/patterns/ directory. The gulpfile.js file that ships with NDS has sample code to pull your final pages into a production-ready folder.</p>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_src": 'build-paths.png',
+                "component_media_alt": 'Refer to the caption for explanation',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": "The gulpfile.js file provides an example of how to pull your final pages into a production-ready folder.",
+                "component_media_lightbox": "yes"
+            }
+        %}
+        <h5>Core &amp; Config Directories</h5>
+        <p>The core/ and config/ directories are out-of-the-box directories that Pattern Lab needs to run properly. Generally, users of NDS do not need to edit the files found in these directories. However, the default Pattern Lab settings can be modified in the config/config.yml file. For more information, <a href="https://patternlab.io/docs/editing-the-configuration-options/">visit the Pattern Lab documentation page on configuration options.</a></p>
+    {% endblock %}
+{% endembed %}

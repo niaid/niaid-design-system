@@ -1,0 +1,17 @@
+{
+    "prodBuild": "false",
+    "cssPath": "../../css/",
+    "jsPath": "../../js/",
+    "imagePath": "../../images/",
+    "assetsPath": "../../assets/",
+    "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans",
+    "jsIncludes": {
+        "jquery": true,
+        "select2": true,
+        "materialize": true,
+        "bootstrap": true,
+        "matchMedia": true,
+        "dataTables": true,
+        "dateTimePicker": true
+    }
+}

@@ -1,0 +1,108 @@
+{% set builder_mockup_classes = builder_mockup_classes|default() %}
+
+<div class="builder-pl builder--mockup {{ builder_mockup_classes }}">
+    {% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+        {
+            "layouts_site_id": "builder--mockup"
+        }
+    %}
+        {% block header %}
+            {% include "@nds/03-organisms/global/global-header/_global-header-main.twig" %}
+        {% endblock %}
+        {% block global_navigation %}
+            {% include "@nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig" with
+                {
+                    "navigation_primary_id": "exampleNavigation"
+                }
+            %}
+        {% endblock %}
+        {% block hero %}
+            {% embed "@nds/02-molecules/blocks/block-hero/_block-hero-main.twig" with
+                {
+                    "block_hero_blur": "parallax-blur progressive-reverse-blur",
+                    "block_hero_width": "col-xl-9"
+                }
+            %}
+                {% block block_hero_breadcrumbs %}
+                    {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/_navigation-breadcrumbs-main.twig" with
+                        {
+                            "navigation_breadcrumbs_data": [
+                                {
+                                    "text":"Level 1",
+                                    "href":""
+                                },
+                                {
+                                    "text":"Level 2",
+                                    "href":"#"
+                                },
+                                {
+                                    "text":"Level 3",
+                                    "href":"#"
+                                }
+                            ]
+                        }
+                    %}
+                {% endblock %}
+                {% block block_hero_image %}
+                    <img src="{{ imagePath }}michael-longmire-L9EV3OogLh0-unsplash.jpg" alt=""/>
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+        {% block main %}
+            {% embed "@nds/01-atoms/layouts/layouts-main-layout/_layouts-main-layout-main.twig" with
+                {
+                    "layouts_main_layout_right": 9
+                }
+            %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
+                    {% block body_card_content %}
+                        {% include "@nds/02-molecules/blocks/block-share/demo/block-share.twig"%}
+                        {% include "@organisms/content/content-sample/_content-sample-main.twig" %}
+                        {% include "@nds/02-molecules/blocks/block-wtph/_block-wtph-main.twig" %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+            {% endembed %}
+        {% endblock %}
+    {% endembed %}
+    {% block footer %}
+        {% embed "@nds/03-organisms/global/global-footer/_global-footer-main.twig" %}
+            {% block footer_content %}
+                {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
+                    {% block block_content %}
+                        <h4>Footer Column 1</h4>
+                        <h5><a href="#">5601 Fishers Lane</a></h5>
+                        <p>5601 Fishers Lane, Rockville, MD 20852</p>
+                        <h5><a href="#">NIH Main Campus</a></h5>
+                        <p>9000 Rockville Pike, Bethesda, MD 20892</p>
+                        <h5><a href="#">Rocky Mountain Laboratories (RML)</a></h5>
+                        <p>903 S 4th St, Hamilton, MT 59840</p>
+                    {% endblock %}
+                {% endembed %}
+                {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
+                    {% block block_content %}
+                        <h4>Footer Column 2</h4>
+                        <h5><a href="#">5601 Fishers Lane</a></h5>
+                        <p>5601 Fishers Lane, Rockville, MD 20852</p>
+                        <h5><a href="#">NIH Main Campus</a></h5>
+                        <p>9000 Rockville Pike, Bethesda, MD 20892</p>
+                        <h5><a href="#">Rocky Mountain Laboratories (RML)</a></h5>
+                        <p>903 S 4th St, Hamilton, MT 59840</p>
+                    {% endblock %}
+                {% endembed %}
+                {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
+                    {% block block_content %}
+                        <h4>Footer Column 3</h4>
+                        <h5><a href="#">5601 Fishers Lane</a></h5>
+                        <p>5601 Fishers Lane, Rockville, MD 20852</p>
+                        <h5><a href="#">NIH Main Campus</a></h5>
+                        <p>9000 Rockville Pike, Bethesda, MD 20892</p>
+                        <h5><a href="#">Rocky Mountain Laboratories (RML)</a></h5>
+                        <p>903 S 4th St, Hamilton, MT 59840</p>
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+</div>

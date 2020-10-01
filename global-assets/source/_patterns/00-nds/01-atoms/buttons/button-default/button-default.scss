@@ -1,0 +1,72 @@
+.button--primary,
+button {
+    background: $color-theme-1-1-1;
+    border: 0.0625rem solid $color-theme-1-1-1;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background: $color-theme-1-1-2;
+        border: 0.0625rem solid $color-theme-1-1-2;
+    }
+    &:not([href]):not([tabindex]) {
+        color: $white;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $white;
+            background-color: $color-theme-1-1-2;
+            border-color: $color-theme-1-1-2;
+        }
+    }
+    & + .ext-link-icon {
+        display: none;
+    }
+}
+
+.button--secondary {
+    border: 0.0625rem solid $color-theme-1-1-1;
+    color: $color-theme-1-1-1;
+    &:hover,
+    &:focus {
+        background: $color-theme-1-1-1;
+        color: $white;
+    }
+    &:visited {
+        color: $color-theme-1-1-1;
+    }
+    &:not([href]):not([tabindex]) {
+        color: $color-theme-1-1-1;
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-theme-1-1-1;
+            color: $white;
+            border-color: $color-theme-1-1-1;
+        }
+    }
+}
+
+.button--tertiary {
+    background: $color-theme-1-2-1;
+    border: 0.0625rem solid $color-theme-1-2-1;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background: $color-theme-1-2-2;
+        border: 0.0625rem solid $color-theme-1-2-2;
+    }
+    &:not([href]):not([tabindex]) {
+        color: $white;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $white;
+            background-color: $color-theme-1-2-2;
+            border-color: $color-theme-1-2-2;
+        }
+    }
+}

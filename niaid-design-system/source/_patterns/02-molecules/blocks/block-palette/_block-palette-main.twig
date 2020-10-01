@@ -1,0 +1,14 @@
+{% set block_palette_classes = block_palette_classes|default() %}
+{% set block_palette_color_1 = block_palette_color_1|default() %}
+{% set block_palette_color_2 = block_palette_color_2|default() %}
+{% set block_palette_color_3 = block_palette_color_3|default() %}
+{% set block_palette_color_4 = block_palette_color_4|default() %}
+{% set block_palette_color_5 = block_palette_color_5|default() %}
+
+<div class="block-nds block--palette {{ block_palette_classes }}">
+    {% if block_palette_color_1 is not empty %}<div class="block--palette__color" style="background: {{ block_palette_color_1 }}"></div>{% endif %}
+    {% if block_palette_color_2 is not empty %}<div class="block--palette__color" style="background: {{ block_palette_color_2 }}"></div>{% endif %}
+    {% if block_palette_color_3 is not empty %}<div class="block--palette__color" style="background: {{ block_palette_color_3 }}"></div>{% endif %}
+    {% if block_palette_color_4 is not empty %}<div class="block--palette__color" style="background: {{ block_palette_color_4 }}"></div>{% endif %}
+    {% if block_palette_color_5 is not empty %}<div class="block--palette__color" style="background: {{ block_palette_color_5 }}"></div>{% endif %}
+</div>

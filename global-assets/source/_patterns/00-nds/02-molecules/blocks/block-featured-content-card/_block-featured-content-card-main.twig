@@ -1,0 +1,23 @@
+{% set block_featured_content_card_classes = block_featured_content_card_classes|default() %}
+{% set block_featured_content_card_src = block_featured_content_card_src|default() %}
+{% set block_featured_content_card_alt = block_featured_content_card_alt|default() %}
+{% set block_featured_content_card_description = block_featured_content_card_description|default() %}
+
+<div class="block-nds block--featured-content {{ block_featured_content_card_classes }}">
+    <div class="block--featured-content__image">
+        {% block featured_content_card_image %}
+            {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
+                {
+                    "image_default_src": block_featured_content_card_src,
+                    "image_default_alt": block_featured_content_card_alt
+                }
+            %}
+        {% endblock %}
+    </div>
+    <div class="block--featured-content__text">
+        {% block featured_content_card_content %}
+            <span class="block--featured-content__text__featured">Featured</span>
+            <p class="block--featured-content__text__description">{{ block_featured_content_card_description }}</p>
+        {% endblock %}
+    </div>
+</div>

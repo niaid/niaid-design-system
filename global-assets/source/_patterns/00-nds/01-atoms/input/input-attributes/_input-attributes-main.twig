@@ -1,0 +1,17 @@
+{% set input_attributes_id = input_attributes_id|default() %} {# ID for the individual radio, check, or other inputm#}
+{% set input_attributes_name = input_attributes_name|default() %} {# The name of the form group (radios and checks) #}
+{% set input_attributes_placeholder = input_attributes_placeholder|default() %} {# Placeholder for text fields #}
+{% set input_attributes_type = input_attributes_type|default() %} {# radio, check, text, etc. #}
+{% set input_attributes_value = input_attributes_value|default() %} {# The explicit value of the radio or check #}
+{% set input_attributes_hint = input_attributes_hint|default() %} {# Will populate the 'title' attribute, used for explaining input in more detail #}
+{% set input_attributes_range = input_attributes_range|default() %}
+{% set input_attributes_tabindex = input_attributes_tabindex|default() %}
+{% set input_attributes_disabled = input_attributes_disabled|default() %}
+{% set input_attributes_readonly = input_attributes_readonly|default() %}
+{% set input_attributes_required = input_attributes_required|default() %}
+
+{% if input_attributes_range == 'UNDEF' %}
+    aria-describedby="hint_{{ input_attributes_id }}" id="{{ input_attributes_id }}" 
+{% endif %}
+
+type="{{ input_attributes_type }}"{% if input_attributes_id is not empty %} id="{{ input_attributes_id }}"{% endif %}{% if input_attributes_name is not empty %} name="{{ input_attributes_name }}"{% endif %}{% if input_attributes_value is not empty %} value="{{ input_attributes_value }}"{% endif %}{% if input_attributes_placeholder is not empty %} placeholder="{{ input_attributes_placeholder }}"{% endif %}{% if input_attributes_tabindex is not empty %} tabindex="{{ input_attributes_tabindex }}"{% endif %}{% if input_attributes_hint is not empty %} title="{{ input_attributes_hint }}"{% endif %}{% if input_attributes_disabled == "yes" %} disabled{% endif %}{% if input_attributes_readonly == "yes" %} readonly{% endif %}{% if input_attributes_required == "yes" %} required{% endif %}

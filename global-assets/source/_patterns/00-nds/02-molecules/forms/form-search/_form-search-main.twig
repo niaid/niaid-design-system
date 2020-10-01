@@ -1,0 +1,17 @@
+{% set form_search_classes = form_search_classes|default() %}
+
+<div class="form-nds form--search {{ form_search_classes }}">
+    {% block form_search_content %}
+        <form id="sample-search" class="form--search__form">
+            {% include "@nds/01-atoms/input/input-text/_input-text-main.twig" with
+                {
+                    "input_text_id": "search-sample-field",
+                    "input_text_name": "search-sample-field",
+                    "input_text_placeholder": "Searching for something...",
+                    "input_text_icon": "search"
+                }
+            %}
+            <input class="form-submit" type="submit" value="Search">
+        </form>
+    {% endblock %}
+</div>

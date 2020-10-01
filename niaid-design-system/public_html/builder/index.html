@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Theme Builder - NIAID Design System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../css/libraries/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="../css/libraries/select2.min.css" />
+
+    <link rel="icon" href="../assets/global/favicon.ico" type="image/x-icon"/>
+
+          <link rel="stylesheet" href="../css/style.css" media="all" />
+              <link rel="stylesheet" href="../css/builder.css" media="all" />
+    
+    
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+        <!-- End Pattern Lab -->
+    
+  </head>
+  <body class="style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans">
+<div class="block-nds block--alert severity--4">
+            <p>This NDS site is a work in progress. The content, design, and development are subject to change.</p>
+    </div>
+<div class="page" id="builder">
+            
+<div class="global-pl global--header ">
+    
+<button id="global-mobile-menu" class="button-nds button--icon global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-bars "></i>
+    </button>    
+<a href="/" class="component-nds component--branding ">
+    
+<img class="image-nds image--default component--branding__logo--desktop" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"
+                        />    
+<img class="image-nds image--default component--branding__logo--mobile" src="../assets/global/NIAID_Logo_Mobile.png" alt="NIAID Logo"
+                        />    <div class="component--branding__vertical-bar"></div>
+    
+<div class="component-nds component--product-identity ">
+    <div class="component--product-identity__top">NIAID</div>
+    <div class="component--product-identity__bottom">Design System</div>
+</div></a>    <div>
+        <span class="global--header__version">v1.0</span>
+        
+<a href="../../assets/nds.zip" class="button-nds button--icon " download>
+    
+
+<i class="icon-nds icon--default fal fa-download "></i>
+            <span class="button--icon__text">Download NDS</span>
+    </a>    </div>
+</div>                
+<nav id="main-navigation" class="navigation-nds navigation--primary ">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Getting Started
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/getting-started/index.html">Overview</a>
+                    <a class="dropdown-item" href="/getting-started/index.html##section-static-website">Building a Static Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html##section-drupal-website">Building a Drupal Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html#section-resources">Resources</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Design
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design/index.html">Overview</a>
+                    <a class="dropdown-item" href="/design/index.html#section-typography">Typography</a>
+                    <a class="dropdown-item" href="/design/index.html#section-icons">Icons</a>
+                    <a class="dropdown-item" href="/design/index.html#section-colors">Colors</a>
+                    <a class="dropdown-item" href="/design/index.html#section-forms">Forms &amp; Input</a>
+                    <a class="dropdown-item" href="/design/index.html#section-layout">Layout &amp; Spacing</a>
+                    <a class="dropdown-item" href="/design/index.html#section-shadows">Shadows</a>
+                    <a class="dropdown-item" href="/design/index.html#section-corners">Corners</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Development
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/development/index.html">Overview</a>
+                    <a class="dropdown-item" href="/development/index.html#section-atomic-design">Atomic Design</a>
+                    <a class="dropdown-item" href="/development/index.html#section-libraries">Libraries</a>
+                    <a class="dropdown-item" href="/development/index.html#section-technologies">Technologies &amp; Frameworks</a>
+                    <a class="dropdown-item" href="/development/index.html#section-themes">Themes</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a href="/components/index.html">Components</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="active" href="/builder/index.html">Theme Builder</a>
+            </div>
+        </div>
+    </nav>        
+<div id="main-navigation-mobile" class="navigation-nds navigation--drawer ">
+    <div class="navigation--drawer__top">
+        <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
+        
+<button class="button-nds button--icon navigation--drawer__top__button-close" >
+    
+
+<i class="icon-nds icon--default fal fa-arrow-to-left "></i>
+    </button>    </div>
+            <div class="navigation--drawer__inner">
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="/">Home</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 1</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 2</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
+    </div>
+<div class="navigation--drawer--overlay" tabindex="0"></div>            <div class="main" role="main">
+                
+
+
+        
+<div class="layouts-nds layouts--main-layout " id="builder__main-layout">
+            <div class="layouts--main-layout__column layouts--main-layout__first col-xl-3 col-lg-4">
+                            
+<div class="builder-pl builder--side-drawer ">
+    
+<div class="builder-pl builder--controls-accordion ">
+    <button class="builder--controls-accordion__button" type="button" data-toggle="collapse" data-target="#prodID" aria-expanded="true" aria-controls="prodID">
+        <h2 class="builder--controls-accordion__button__title">Product Identity</h2>
+        <div class="builder--controls-accordion__button__arrow">
+            <div class="builder--controls-accordion__button__arrow__icon"></div>
+        </div>
+    </button>
+    <div class="builder--controls-accordion__content collapse show" id="prodID">
+                    
+<div class="form-nds form--product-identity ">
+    <div class="form--product-identity__labels">
+        <label class="form--product-identity__labels__label form--product-identity__labels__label--top" for="product-id__text--top">Top</label>
+        <label class="form--product-identity__labels__label form--product-identity__labels__label--bottom" for="product-id__text--bottom">Bottom</label>
+    </div>
+    <div class="form--product-identity__inputs">
+        <div>
+                        <input id="form--product-identity__inputs__top" class="form--product-identity__inputs__top" type="text" name="form--product-identity__inputs__top">
+        </div>
+        <div>
+                        <input id="form--product-identity__inputs__bottom" class="form--product-identity__inputs__bottom" type="text" name="form--product-identity__inputs__bottom">
+        </div>
+    </div>
+</div>            </div>
+</div>    
+<div class="builder-pl builder--controls-accordion ">
+    <button class="builder--controls-accordion__button" type="button" data-toggle="collapse" data-target="#fonts" aria-expanded="true" aria-controls="fonts">
+        <h2 class="builder--controls-accordion__button__title">Fonts</h2>
+        <div class="builder--controls-accordion__button__arrow">
+            <div class="builder--controls-accordion__button__arrow__icon"></div>
+        </div>
+    </button>
+    <div class="builder--controls-accordion__content collapse show" id="fonts">
+                    <h3>Headings</h3>
+            <form class="form-nds form--controls form--controls--headings" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="roboto" type="radio" name="headings" value="roboto" checked>
+                        <label tabindex="0" for="roboto">
+                            <span>Roboto</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="public-sans" type="radio" name="headings" value="public-sans">
+                        <label tabindex="0" for="public-sans">
+                            <span>Public Sans</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="merriweather" type="radio" name="headings" value="merriweather">
+                        <label tabindex="0" for="merriweather">
+                            <span>Merriweather</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="martel" type="radio" name="headings" value="martel">
+                        <label tabindex="0" for="martel">
+                            <span>Martel</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            <h3>Body</h3>
+            <form class="form-nds form--controls form--controls--body" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="roboto-body" type="radio" name="body" value="roboto" checked>
+                        <label tabindex="0" for="roboto-body">
+                            <span>Roboto</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="public-sans-body" type="radio" name="body" value="public-sans">
+                        <label tabindex="0" for="public-sans-body">
+                            <span>Public Sans</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            </div>
+</div>    
+<div class="builder-pl builder--controls-accordion ">
+    <button class="builder--controls-accordion__button" type="button" data-toggle="collapse" data-target="#color" aria-expanded="true" aria-controls="color">
+        <h2 class="builder--controls-accordion__button__title">Colors</h2>
+        <div class="builder--controls-accordion__button__arrow">
+            <div class="builder--controls-accordion__button__arrow__icon"></div>
+        </div>
+    </button>
+    <div class="builder--controls-accordion__content collapse show" id="color">
+                    <form class="form-nds form--controls form--controls--colors" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="theme-1" type="radio" name="colors" value="theme-1" checked>
+                        <label tabindex="0" for="theme-1">
+                            
+<div class="block-nds block--palette theme-1">
+    <div class="block--palette__color" style="background: #157B8D"></div>    <div class="block--palette__color" style="background: #497951"></div>    <div class="block--palette__color" style="background: #262626"></div>    <div class="block--palette__color" style="background: #20558A"></div>    </div>                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="theme-2" type="radio" name="colors" value="theme-2">
+                        <label tabindex="0" for="theme-2">
+                            
+<div class="block-nds block--palette theme-2">
+    <div class="block--palette__color" style="background: #124559"></div>    <div class="block--palette__color" style="background: #247BA0"></div>    <div class="block--palette__color" style="background: #1A2A5B"></div>    <div class="block--palette__color" style="background: #20558A"></div>    </div>                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="theme-3" type="radio" name="colors" value="theme-3">
+                        <label tabindex="0" for="theme-3">
+                            
+<div class="block-nds block--palette theme-3">
+    <div class="block--palette__color" style="background: #0C0910"></div>    <div class="block--palette__color" style="background: #CE4B02"></div>    <div class="block--palette__color" style="background: #5178A7"></div>    <div class="block--palette__color" style="background: #20558A"></div>    </div>                        </label>
+                    </li>
+                </ul>
+            </form>
+            </div>
+</div>    
+<div class="builder-pl builder--controls-accordion ">
+    <button class="builder--controls-accordion__button" type="button" data-toggle="collapse" data-target="#shadow" aria-expanded="true" aria-controls="shadow">
+        <h2 class="builder--controls-accordion__button__title">Shadows</h2>
+        <div class="builder--controls-accordion__button__arrow">
+            <div class="builder--controls-accordion__button__arrow__icon"></div>
+        </div>
+    </button>
+    <div class="builder--controls-accordion__content collapse show" id="shadow">
+                    <form class="form-nds form--controls form--controls--shadows" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="no_shadows" type="radio" name="shadow" value="no_shadows" checked>
+                        <label tabindex="0" for="no_shadows">
+                            <span>Flat</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="shadows" type="radio" name="shadow" value="shadows">
+                        <label tabindex="0" for="shadows">
+                            <span>Shadows</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            </div>
+</div>    
+<div class="builder-pl builder--controls-accordion ">
+    <button class="builder--controls-accordion__button" type="button" data-toggle="collapse" data-target="#corners" aria-expanded="true" aria-controls="corners">
+        <h2 class="builder--controls-accordion__button__title">Corners</h2>
+        <div class="builder--controls-accordion__button__arrow">
+            <div class="builder--controls-accordion__button__arrow__icon"></div>
+        </div>
+    </button>
+    <div class="builder--controls-accordion__content collapse show" id="corners">
+                    <form class="form-nds form--controls form--controls--corners" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="straight_corners" type="radio" name="corners" value="straight">
+                        <label tabindex="0" for="straight_corners">
+                            <span>Sharp</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="semi_rounded_corners" type="radio" name="corners" value="semirounded" checked>
+                        <label tabindex="0" for="semi_rounded_corners">
+                            <span>Semi-Rounded</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="rounded_corners" type="radio" name="corners" value="rounded">
+                        <label tabindex="0" for="rounded_corners">
+                            <span>Fully Rounded</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            </div>
+</div>    
+<div class="builder-pl builder--controls-accordion ">
+    <button class="builder--controls-accordion__button" type="button" data-toggle="collapse" data-target="#hero" aria-expanded="true" aria-controls="hero">
+        <h2 class="builder--controls-accordion__button__title">Hero</h2>
+        <div class="builder--controls-accordion__button__arrow">
+            <div class="builder--controls-accordion__button__arrow__icon"></div>
+        </div>
+    </button>
+    <div class="builder--controls-accordion__content collapse show" id="hero">
+                    <form class="form-nds form--controls form--controls--hero" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="hero-yes" type="radio" name="hero" value="yes">
+                        <label tabindex="0" for="hero-yes">
+                            <span>Yes</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="hero-no" type="radio" name="hero" value="no" checked>
+                        <label tabindex="0" for="hero-no">
+                            <span>No</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            </div>
+</div>    <button class="button-nds waves-effect waves-light button--primary button--generate-link mt-3" role="button">Copy Link to Clipboard</button>
+    <div class="builder--side-drawer__copied">Copied!</div>
+    <div class="builder--side-drawer__link"></div>
+</div>            
+        </div>
+                <div class="layouts--main-layout__column layouts--main-layout__second col-xl-9 col-lg-8">
+                            
+<div class="layouts-nds layouts--tabs ">
+    <button id="tab--mockup" class="layouts--tabs__tab active-tab" aria-label="View Mockup">Mockup</button>
+    <button id="tab--style-tile" class="layouts--tabs__tab" aria-label="View Style Tile">Style Tile</button>
+    <div id="layouts--tabs__mockup" class="layouts--tabs__window">
+                                
+<div class="layouts-nds layouts--body-card ">
+                                    
+<div class="builder-pl builder--mockup ">
+    
+<div class="page" id="builder--mockup">
+                
+<div class="global-nds global--header ">
+            
+<button id="global-mobile-menu" class="button-nds button--icon global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-bars "></i>
+    </button>        
+<a href="/" class="component-nds component--branding ">
+    
+<img class="image-nds image--default component--branding__logo--desktop" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"
+                        />    
+<img class="image-nds image--default component--branding__logo--mobile" src="../assets/global/NIAID_Logo_Mobile.png" alt="NIAID Logo"
+                        />    <div class="component--branding__vertical-bar"></div>
+    
+<div class="component-nds component--product-identity ">
+    <div class="component--product-identity__top"></div>
+    <div class="component--product-identity__bottom"></div>
+</div></a>        
+<div class="form-nds form--search ">
+            <form id="sample-search" class="form--search__form">
+            
+<div class="input--text--icon"><input id="search-sample-field" class="input-nds input--text "
+          
+
+type="text" id="search-sample-field" name="search-sample-field" placeholder="Searching for something...">
+    
+
+<i class="icon-nds icon--default fal fa-search "></i>
+</div>            <input class="form-submit" type="submit" value="Search">
+        </form>
+    </div>        
+<button id="global-header-search--open" class="button-nds button--icon global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-search "></i>
+    </button>    </div>                        
+<nav id="exampleNavigation" class="navigation-nds navigation--primary ">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/section-1/index.html">Section 1</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Section 2
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design">Item A</a>
+                    <a class="dropdown-item" href="/design#section-typography">Item B</a>
+                    <a class="dropdown-item" href="/design#section-icons">Item C</a>
+                    <a class="dropdown-item" href="/design#section-colors">Item D</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Section 3
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design">Item A</a>
+                    <a class="dropdown-item" href="/design#section-typography">Item B</a>
+                    <a class="dropdown-item" href="/design#section-icons">Item C</a>
+                    <a class="dropdown-item" href="/design#section-colors">Item D</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/section-4/index.html">Section 4</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/section-5/index.html">Section 5</a>
+            </div>
+        </div>
+    </nav>                        
+
+<div id="block--hero" class="block-nds block--hero ">
+    <div class="block--hero__content">
+        <div class="parallax-container ">
+            <div class="parallax parallax-blur progressive-reverse-blur">
+                                                        <img src="../assets/michael-longmire-L9EV3OogLh0-unsplash.jpg" alt=""/>
+                
+                            </div>
+            <div class="block--hero__content__breadcrumbs row">
+                <div class="col-xl-12">
+                                        
+
+<div class="navigation-nds navigation--breadcrumbs ">
+    <p>
+                    <a href="">Level 1</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fal fa-chevron-right "></i>
+                &ensp;
+                                <a href="">Level 2</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fal fa-chevron-right "></i>
+                &ensp;
+                                <a href="">Level 3</a>                        </p>
+</div>
+                                </div>
+            </div>
+        </div>
+    </div>
+</div>            <div class="main" role="main">
+                    
+
+
+        
+<div class="layouts-nds layouts--main-layout " id="builder__main-layout">
+                <div class="layouts--main-layout__column layouts--main-layout__second col-xl-9 col-lg-8">
+                            
+<div class="layouts-nds layouts--body-card ">
+                            
+<div class="block-nds block--share ">
+            <div class="block--share__wrapper">
+            
+<a href="#"  class="button-nds button--share button--share--facebook" aria-label="Share on Facebook" >
+    
+
+<i class="icon-nds icon--default fab fa-facebook-f "></i>
+</a>        </div>
+            <div class="block--share__wrapper">
+            
+<a href="#"  class="button-nds button--share button--share--twitter" aria-label="Share on Twitter" >
+    
+
+<i class="icon-nds icon--default fab fa-twitter "></i>
+</a>        </div>
+            <div class="block--share__wrapper">
+            
+<a href="#"  class="button-nds button--share button--share--linkedin" aria-label="Share on Linkedin" >
+    
+
+<i class="icon-nds icon--default fab fa-linkedin-in "></i>
+</a>        </div>
+    </div>                        
+<div id="block--header" class="block-nds block--header ">
+    
+
+<div class="navigation-nds navigation--breadcrumbs ">
+    <p>
+                    <a href="">Level 1</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fal fa-chevron-right "></i>
+                &ensp;
+                                <a href="">Level 2</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fal fa-chevron-right "></i>
+                &ensp;
+                                <a href="">Level 3</a>                        </p>
+</div>
+    <h1 class="block--header__title">Penatibus Elementum Integer Volutpat Condimentum</h1>
+    
+<div class="block-nds block--share ">
+            <div class="block--share__wrapper">
+            
+<a href="#"  class="button-nds button--share button--share--facebook-f" >
+    
+
+<i class="icon-nds icon--default fab fa- "></i>
+</a>        </div>
+            <div class="block--share__wrapper">
+            
+<a href="#"  class="button-nds button--share button--share--twitter" >
+    
+
+<i class="icon-nds icon--default fab fa- "></i>
+</a>        </div>
+            <div class="block--share__wrapper">
+            
+<a href="#"  class="button-nds button--share button--share--linkedin-in" >
+    
+
+<i class="icon-nds icon--default fab fa- "></i>
+</a>        </div>
+    </div></div>
+<p>Nunc cubilia vehicula facilisi hac volutpat sodales faucibus egestas gravida enim sociis ad quam quisque morbi id molestie gravida ullamcorper. Class mattis nisi eu per ridiculus nec a porta porta luctus felis fusce habitant platea sollicitudin Curae; aptent viverra nulla maecenas rutrum cras.</p>
+
+
+<div class="image-nds image--embedded ">
+    <img class="image--embedded__image" src="../assets/featured.jpg" alt="featured image, clinician">
+    
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">A clinician wearing a mask.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">Unsplash</span>
+        </div>
+    </div></div>
+<p>Eget non iaculis. Facilisi fusce curabitur. Quisque, ante laoreet ac. Mattis dictum Ligula, class dui pharetra at ligula. Molestie. Tincidunt scelerisque volutpat pellentesque tempus at nullam curabitur ligula venenatis ac. Sed nonummy cum tincidunt laoreet nullam dolor neque sollicitudin libero metus ridiculus, risus Elit felis enim laoreet mauris. Lectus interdum ac. Nec laoreet bibendum platea.</p>
+
+<p>Phasellus arcu quis class sociis lorem litora mollis Orci libero id. Aptent magna sociis augue sapien lacus at potenti dolor eleifend iaculis, ornare duis id at mattis dignissim nisl mauris, justo ullamcorper pharetra gravida libero consequat mattis fames quis class eleifend pellentesque. Ad, rutrum conubia torquent pulvinar curabitur cubilia lectus iaculis adipiscing interdum molestie aptent molestie vel maecenas amet mauris ornare. At parturient diam ridiculus parturient lacinia gravida rhoncus nisi nam interdum nam etiam, vivamus viverra aliquet Imperdiet arcu dui pede ullamcorper auctor feugiat facilisi non, facilisi vivamus lorem massa auctor velit aliquet ante turpis netus aenean. Senectus ullamcorper. Sem nec euismod. Magna nunc magnis, elementum curabitur tincidunt. Cubilia sociosqu cum lacus nulla suscipit consequat vestibulum iaculis facilisi netus sem lectus varius quis phasellus ultrices tempus cubilia pretium dictumst orci suscipit. Montes mus urna aptent congue interdum tempor tempus parturient nam consectetuer dapibus vivamus hac iaculis scelerisque facilisi quam fusce sociosqu hendrerit, ligula aliquam tempus. Nam nunc vestibulum. Vehicula curae; vitae eu auctor class erat neque bibendum a senectus suscipit dictumst, pede litora aliquam diam etiam auctor tempus dui suspendisse pede. Metus taciti ullamcorper augue mollis porttitor libero amet mi nisl conubia. A vel litora. Odio curabitur egestas ultricies potenti rutrum cum, accumsan duis vulputate eget leo tincidunt tempor quis sociis habitant nullam.</p>
+
+
+<div class="block-nds block--default ">
+            <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
+    </div>
+<h2>Fusce Magna Et Sociosqu Mauris Lacus Tortor Arcu</h2>
+<p>Curae; lobortis magna laoreet varius aenean aenean conubia odio turpis mauris natoque ultricies condimentum. Sociosqu augue vulputate ac cubilia convallis sagittis vel etiam consectetuer, elit dignissim hac justo augue habitasse ut parturient gravida. Sed ligula accumsan cursus elit senectus cum ipsum sapien hendrerit nulla risus. Proin odio netus venenatis enim montes. Auctor lorem phasellus curabitur conubia. Penatibus ad velit bibendum diam ac pellentesque quam tempor condimentum. Justo massa nunc lacinia nisl turpis rutrum feugiat accumsan leo turpis egestas potenti augue lorem praesent neque parturient sapien habitasse Ornare ut dignissim dapibus arcu lobortis mollis leo nostra scelerisque nibh condimentum suscipit hac.</p>
+<p>Odio velit turpis nam cras dictumst potenti convallis tempus quis pharetra quisque fames imperdiet lacus consectetuer fames aptent Egestas ridiculus duis molestie. Phasellus, bibendum placerat Metus. Quisque ut, integer facilisi commodo pede, vulputate, ante. Quisque nostra lobortis vel nibh tortor aenean pharetra purus vel. Orci integer magnis. Pede leo pulvinar erat pulvinar. Scelerisque senectus mauris non tempus ultrices volutpat urna ultricies duis dapibus fusce sem tortor taciti. Suscipit nonummy donec neque hymenaeos adipiscing natoque aliquam mus quisque nam, elementum mus libero quam praesent cras vestibulum magnis. Mattis porttitor tincidunt.</p>                        
+<div class="block-nds block--wtph ">
+    <div class="block--wtph__inner">
+        <h2 class="block--wtph__inner__title">Was This Page Helpful?</h2>
+        
+<a class="button-nds waves-effect waves-light button--primary " type="primary" role="button" >Yes</a>        
+<a class="button-nds waves-effect waves-light button--primary " type="primary" role="button" >No</a>    </div> 
+</div>                    </div>            
+        </div>
+        </div>            </div>
+    </div>            
+
+<footer id="footer" class="global-nds global--footer container-fluid ">
+        <div class="global--footer__content row">
+        <div class="global--footer__content__logo col-md-4">
+                            
+<a class="image-nds image--logo " href="/">
+  <img class="image--logo__image" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"/>
+</a>                    </div>
+        <div class="global--footer__content__info col-md-8">
+              
+                <div class="row">
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Website Policies &amp; Notices</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a class="link--carot" href="#">Freedom of Information (FOIA)</a></li>
+                            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+                            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Related Government Websites</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+                            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+    </div>
+      
+        <div class="global--footer__tagline">
+            <p>
+                
+
+<i class="icon-nds icon--default fal fa-bolt "></i>
+                <span>Powered by the NIAID Design System</span>
+            </p>
+        </div>
+    </footer>    </div>                            </div>                        </div>
+    <div id="layouts--tabs__style-tile" class="layouts--tabs__window">
+                                
+<div class="layouts-nds layouts--body-card ">
+                                    
+<div class="builder-pl builder--style-tile ">
+    
+<div class="global-nds global--header ">
+            
+<button id="global-mobile-menu" class="button-nds button--icon global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-bars "></i>
+    </button>        
+<a href="/" class="component-nds component--branding ">
+    
+<img class="image-nds image--default component--branding__logo--desktop" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"
+                        />    
+<img class="image-nds image--default component--branding__logo--mobile" src="../assets/global/NIAID_Logo_Mobile.png" alt="NIAID Logo"
+                        />    <div class="component--branding__vertical-bar"></div>
+    
+<div class="component-nds component--product-identity ">
+    <div class="component--product-identity__top"></div>
+    <div class="component--product-identity__bottom"></div>
+</div></a>        
+<div class="form-nds form--search ">
+            <form id="sample-search" class="form--search__form">
+            
+<div class="input--text--icon"><input id="search-sample-field" class="input-nds input--text "
+          
+
+type="text" id="search-sample-field" name="search-sample-field" placeholder="Searching for something...">
+    
+
+<i class="icon-nds icon--default fal fa-search "></i>
+</div>            <input class="form-submit" type="submit" value="Search">
+        </form>
+    </div>        
+<button id="global-header-search--open" class="button-nds button--icon global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-search "></i>
+    </button>    </div>    
+<nav id="exampleNavigation" class="navigation-nds navigation--primary ">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/section-1/index.html">Section 1</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Section 2
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design">Item A</a>
+                    <a class="dropdown-item" href="/design#section-typography">Item B</a>
+                    <a class="dropdown-item" href="/design#section-icons">Item C</a>
+                    <a class="dropdown-item" href="/design#section-colors">Item D</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Section 3
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design">Item A</a>
+                    <a class="dropdown-item" href="/design#section-typography">Item B</a>
+                    <a class="dropdown-item" href="/design#section-icons">Item C</a>
+                    <a class="dropdown-item" href="/design#section-colors">Item D</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/section-4/index.html">Section 4</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/section-5/index.html">Section 5</a>
+            </div>
+        </div>
+    </nav>    <div class="container-fluid builder--style-tile__body">
+        
+<img class="image-nds image--default splotch" src="../assets/../images/global/splotch.svg" alt=""
+                        />        <div class="row">
+            <div class="col-lg-7">
+                <div class="display-row">
+                    <div class="text-nds text--headings">
+    <h1>Heading Level One</h1>
+    <h2>Heading Level Two</h2>
+    <h3>Heading Level Three</h3>
+    <h4>Heading Level Four</h4>
+    <h5>Heading Level Five</h5>
+    <h6>Heading Level Six</h6>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+</div>
+
+<style>
+    .text--headings h1, h2, h3, h4, h5, h6 {
+        margin: .75rem 0;
+    }
+    .text--headings h1 {
+        margin-top: 0;
+    }
+</style>                </div>
+                <div class="display-row">
+                    
+<a class="button-nds waves-effect waves-light button--primary " href="#" type="primary" role="button" >Primary Button</a>                    
+<a class="button-nds waves-effect waves-light button--secondary " href="#" type="secondary" role="button" >Secondary Button</a>                    
+<a class="button-nds waves-effect waves-light button--tertiary " href="#" type="tertiary" role="button" >Tertiary Button</a>                </div>
+                <div class="display-row">
+                    
+<div class="block-nds block--inputs ">
+    <div class="row">
+        <div class="col-6">
+            
+<div class="input-group-nds input-group--text ">
+    
+
+<label class="input-nds input--label form-check-label" for="input-text-example" title="Field Label">Field Label
+    </label>    
+<input id="input-text-example" class="input-nds input--text "
+          
+
+type="text" id="input-text-example" name="input-text-example" placeholder="Enter value..." title="Field Label" required>
+</div>        </div>
+        <div class="col-6">
+            
+<div class="input-group-nds input-group--text focus-field">
+    
+
+<label class="input-nds input--label form-check-label" for="input-text-example" title="Focus Field">Focus Field
+    </label>    
+<div class="input--text--icon"><input id="input-text-example" class="input-nds input--text "
+          
+
+type="text" id="input-text-example" name="input-text-example" title="Focus Field" required>
+    
+
+<i class="icon-nds icon--default fal fa-lock-alt "></i>
+</div></div>        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            
+<div class="input-group-nds input-group--text ">
+    
+
+<label class="input-nds input--label form-check-label" for="input-text-example" title="Field with Icon">Field with Icon
+    </label>    
+<div class="input--text--icon"><input id="input-text-example" class="input-nds input--text "
+          
+
+type="text" id="input-text-example" name="input-text-example" placeholder="Enter value..." title="Field with Icon" required>
+    
+
+<i class="icon-nds icon--default fal fa-filter "></i>
+</div></div>        </div>
+        <div class="col-6">
+            
+<div class="input-group-nds input-group--text error-field">
+    
+
+<label class="input-nds input--label form-check-label" for="input-text-example" title="Error Field">Error Field
+    </label>    
+<div class="input--text--icon"><input id="input-text-example" class="input-nds input--text "
+          
+
+type="text" id="input-text-example" name="input-text-example" placeholder="Password" title="Error Field" required>
+    
+
+<i class="icon-nds icon--default fal fa-lock-alt "></i>
+</div></div>        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            
+<div class="form-nds form--search ">
+            <form id="sample-search" class="form--search__form">
+            
+<div class="input--text--icon"><input id="search-sample-field" class="input-nds input--text "
+          
+
+type="text" id="search-sample-field" name="search-sample-field" placeholder="Searching for something...">
+    
+
+<i class="icon-nds icon--default fal fa-search "></i>
+</div>            <input class="form-submit" type="submit" value="Search">
+        </form>
+    </div>        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            
+<div id="form-group-example" role="checkboxgroup" aria-labelledby="label_form-group-example" class="input-group-nds input-group--checkbox ">
+    <p class="input-group--checkbox__label" id="label_form-group-example">Choose Platforms You Own</p>
+                        
+<div class="input-nds input--checkbox ">
+    <input
+              
+
+type="checkbox" id="xbox" name="form-group-example" value="xbox" required    >
+    
+
+<label class="input-nds input--label " for="xbox" title="Xbox">Xbox
+    </label></div>                    
+<div class="input-nds input--checkbox ">
+    <input
+              
+
+type="checkbox" id="playstation" name="form-group-example" value="playstation"    >
+    
+
+<label class="input-nds input--label " for="playstation" title="Playstation">Playstation
+    </label></div>                    
+<div class="input-nds input--checkbox ">
+    <input
+              
+
+type="checkbox" id="pc" name="form-group-example" value="pc"    >
+    
+
+<label class="input-nds input--label " for="pc" title="PC">PC
+    </label></div>                </div>        </div>
+        <div class="col-6">
+            
+<div id="console-select" role="radiogroup" aria-labelledby="label_console-select" class="input-group-nds input-group--radio ">
+    <p class="input-group--radio__label" id="label_console-select">Choose the Platform You Own</p>
+                        
+<div class="input-nds input--radio ">
+    <input
+              
+
+type="radio" id="xbox-radio" name="console-select-radio" value="xbox" required    >
+    
+
+<label class="input-nds input--label " for="xbox-radio" title="Xbox">Xbox
+    </label></div>                    
+<div class="input-nds input--radio ">
+    <input
+              
+
+type="radio" id="playstation-radio" name="console-select-radio" value="playstation"    >
+    
+
+<label class="input-nds input--label " for="playstation-radio" title="Playstation">Playstation
+    </label></div>                    
+<div class="input-nds input--radio ">
+    <input
+              
+
+type="radio" id="pc-radio" name="console-select-radio" value="pc"    >
+    
+
+<label class="input-nds input--label " for="pc-radio" title="PC">PC
+    </label></div>                </div>        </div>
+    </div>
+</div>                </div>
+                <div class="display-row">
+                    
+<div class="block-nds block--default ">
+            <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
+    </div>                </div>
+                <div class="display-row">
+                    <table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Location</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>Position</td>
+            <td>Office</td>
+            <td>Location</td>
+            <td>Phone</td>
+            <td>Email</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Position</td>
+            <td>Office</td>
+            <td>Location</td>
+            <td>Phone</td>
+            <td>Email</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Position</td>
+            <td>Office</td>
+            <td>Location</td>
+            <td>Phone</td>
+            <td>Email</td>
+        </tr>
+    </tbody>
+</table>                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="row">
+                    
+<div class="block-nds block--colors ">
+    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #3C3C3C"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Heading Color</span><br>
+        <span class="global--color-indicator__hex">#3C3C3C</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #404B56"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Body Color</span><br>
+        <span class="global--color-indicator__hex">#404B56</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #246CD3"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Link Color</span><br>
+        <span class="global--color-indicator__hex">#246CD3</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #888888"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Input Border</span><br>
+        <span class="global--color-indicator__hex">#888888</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator global--color-indicator--bg">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #FDFDFD"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Page Background</span><br>
+        <span class="global--color-indicator__hex">#FDFDFD</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator global--color-indicator--bg">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #F5F6FA"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Alternate Background</span><br>
+        <span class="global--color-indicator__hex">#F5F6FA</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #078A00"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Success Color</span><br>
+        <span class="global--color-indicator__hex">#078A00</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #C9191C"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Error Color</span><br>
+        <span class="global--color-indicator__hex">#C9191C</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #20558A"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">NIAID Blue</span><br>
+        <span class="global--color-indicator__hex">#20558A</span>
+    </div>
+</div>    <hr>
+    
+<div class="global-pl global--color-indicator indicator-color--1">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #157B8D"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Theme Color 1</span><br>
+        <span class="global--color-indicator__hex">#157B8D</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator indicator-color--2">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #497951"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Theme Color 2</span><br>
+        <span class="global--color-indicator__hex">#497951</span>
+    </div>
+</div>    
+<div class="global-pl global--color-indicator indicator-color--3">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #262626"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Theme Color 3</span><br>
+        <span class="global--color-indicator__hex">#262626</span>
+    </div>
+</div></div>                </div>
+                
+<div class="block-nds block--wtph ">
+    <div class="block--wtph__inner">
+        <h2 class="block--wtph__inner__title">Was This Page Helpful?</h2>
+        
+<a class="button-nds waves-effect waves-light button--primary " type="primary" role="button" >Yes</a>        
+<a class="button-nds waves-effect waves-light button--primary " type="primary" role="button" >No</a>    </div> 
+</div>            </div>
+        </div>
+    </div>
+    
+
+<footer id="footer" class="global-nds global--footer container-fluid ">
+        <div class="global--footer__content row">
+        <div class="global--footer__content__logo col-md-4">
+                            
+<a class="image-nds image--logo " href="/">
+  <img class="image--logo__image" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"/>
+</a>                    </div>
+        <div class="global--footer__content__info col-md-8">
+              
+                <div class="row">
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Website Policies &amp; Notices</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a class="link--carot" href="#">Freedom of Information (FOIA)</a></li>
+                            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+                            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Related Government Websites</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+                            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+    </div>
+      
+        <div class="global--footer__tagline">
+            <p>
+                
+
+<i class="icon-nds icon--default fal fa-bolt "></i>
+                <span>Powered by the NIAID Design System</span>
+            </p>
+        </div>
+    </footer></div>                            </div>                        </div>
+</div>            
+        </div>
+        </div>        </div>
+            
+
+<footer id="footer" class="global-nds global--footer container-fluid ">
+        <div class="global--footer__content row">
+        <div class="global--footer__content__logo col-md-4">
+                            
+<a class="image-nds image--logo " href="/">
+  <img class="image--logo__image" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"/>
+</a>                    </div>
+        <div class="global--footer__content__info col-md-8">
+              
+                <div class="row">
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Website Policies &amp; Notices</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a class="link--carot" href="#">Freedom of Information (FOIA)</a></li>
+                            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+                            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Related Government Websites</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+                            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+    </div>
+      
+        <div class="global--footer__tagline">
+            <p>
+                
+
+<i class="icon-nds icon--default fal fa-bolt "></i>
+                <span>Powered by the NIAID Design System</span>
+            </p>
+        </div>
+    </footer>    </div>
+        <!-- Pattern Lab Footer -->
+        
+        <script src="../js/custom/stickybits.min.js"></script>
+
+        <script src="../js/libraries/jquery.min.js"></script>        <script src="../js/libraries/select2.full.min.js"></script>        <script src="../js/libraries/materialize.min.js"></script>        <script src="../js/libraries/bootstrap.bundle.min.js"></script>        <script src="../js/libraries/matchMedia.js"></script>        <script src="../js/libraries/datatables.min.js"></script>        <script src="../js/libraries/bootstrap-datepicker.min.js"></script>        <script src="../js/global/script-min.js"></script>
+    </body>
+</html>

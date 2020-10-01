@@ -1,0 +1,5 @@
+{% set block_default_classes = block_default_classes|default() %}
+
+<div class="block-nds block--default {{ block_default_classes }}">
+    {% block block_content %}{% endblock %}
+</div>

@@ -1,0 +1,103 @@
+{% embed "@nds/02-molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-static-website"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h2>Building a Static Website</h2>
+        <p>With NDS, building a static website is incredibly quick and easy.</p>
+        <h3>Initialization</h3>
+        <p class="step">1. Download the Static Website Package:</p>
+        <p>
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_href": assetsPath ~ "nds.zip",
+                    "button_icon_icon": "download",
+                    "button_icon_text": "Download NDS",
+                    "button_icon_attributes": "download"
+                }
+            %}
+        </p>
+        <p class="step mt-5">2. Unzip and Open the Directory in Your Preferred Code Editor.</p>
+        <p>Editors like <a href="https://code.visualstudio.com/">Visual Studio Code</a> are free to download and provide many features that make development easier.</p>
+        <p class="step">3. Install Node and Composer Dependencies</p>
+        <code>npm install</code><br>
+        <code>composer install</code><br>
+        <p class="step">4. Open the Project on Your Localhost</p>
+        <code>gulp</code><br>
+        <h3>Working with NDS</h3>
+        <p>Once your project is ready for development, you can begin to add pages and make new components. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. <strong>Do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, those should be placed in the appropriate atomic folders outside of the 00-nds directory.</p>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_src": 'custom-components.png',
+                "component_media_alt": 'See caption for details',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": "Custom components should be placed in the atomic folders outside of the 00-nds/ directory.",
+                "component_media_lightbox": "yes"
+            }
+        %}
+        <p>The global project CSS rules can be found in the css/ in source/. The global/ folder is similar to the 00-nds/ folder in that changes should not occur within the directory. Instead, make edits in the overrides/ directory.
+        {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
+            {% block block_content %}
+                <h4>Developing with NIAID Design System</h4>
+                <p>Get more information on how NDS is structured.</p>
+                {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                    {
+                        "button_default_type": "primary",
+                        "button_default_label": "Develop with NDS",
+                        "button_default_href": link.development
+                    }
+                %}
+            {% endblock %}
+        {% endembed %}
+        <h3>Building NDS for Production</h3>
+        <p>NDS provides a way to quickly build a distribution folder with all the necessary, web-ready assets. Upon build, the assets get generated and placed into a public_html/ directory.</p>
+        <p class="step">1. Create a Distribution Pattern Folder.</p>
+        <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_src": 'dist.png',
+                "component_media_alt": 'See caption for details',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": "Create a 06-dist/ directory.",
+                "component_media_float": "right",
+                "component_media_lightbox": "yes"
+            }
+        %}
+        <p>For each page of your static site, create a new folder and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_src": 'json.png',
+                "component_media_alt": 'See caption for details',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": "An example JSON file in the 06-dist/ directory.",
+                "component_media_lightbox": "yes"
+            }
+        %}
+        <p class="step">2. Configure the Production JSON Files</p>
+        <p>The JSON file in each pages' folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
+        <ul>
+            <li>Configure the variable paths (cssPath, jsPath, etc.) to your desired structure.</p>
+            <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>
+            <li>If using an NDS-based navigation element, use the "navigationPrimaryActiveLink" parameter to add active page styling</li>
+        </ul>
+        <p>You may also add your own parameters for use in your custom patterns.</p>
+
+        <p class="step">3. Configure Gulp Paths to Your Production Pages</p>
+        <p>Once your 06-dist/ directory is setup, compile Pattern Lab. Next, open your gulpfile.js, and find the "buildPaths" variable declaration. For every page you want to deploy, add a new object. For pageName, add the name of the folder/file for that page in 06-dist/. For target_dest, specify the ultimate path you want that page to file under.</p>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_src": 'build-paths-gulp.png',
+                "component_media_alt": 'See caption for details',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": "A sample buildPaths variable declaration.",
+                "component_media_lightbox": "yes"
+            }
+        %}
+        <p class="step">4. Build the Distribution Directory</p>
+        <code>gulp buildProd</code><br>
+        <p>After running the buildProd command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
+        <h3>Updating NDS</h3>
+        <p>TODO</p>
+    {% endblock %}
+{% endembed %}

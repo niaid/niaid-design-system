@@ -1,0 +1,288 @@
+.style--shadows {
+    /* Atoms */
+    .layouts--body-card {
+        @include md-16dp;
+    }
+    .button-nds,
+    button {
+        @include md-2dp;
+        @extend .hoverable;
+        &.button--secondary {
+            background: $white;
+            border: 1px solid $white;
+            &:hover,
+            &:focus {
+                background: $white;
+                border: 1px solid $white;
+            }
+            &:active {
+                background-color: $white !important;
+            }
+        }
+        &.disabled,
+        &:disabled {
+            @include md-2dp;
+        }
+    }
+    .input--text {
+        @include md-2dp;
+        @extend .hoverable;
+        border: 1px solid transparent !important;
+        &:hover,
+        &:focus {
+            border: 1px solid transparent !important;
+            & + .icon--default {
+                color: $type-body;
+            }
+        }
+    }
+    &.style--colors--theme-1 {
+        .button--primary {
+            &:hover,
+            &:focus {
+                background: $color-theme-1-1-1;
+                border: 1px solid $color-theme-1-1-1;
+            }
+        }
+        .button--secondary {
+            &:hover,
+            &:focus {
+                background: $white;
+                color: $color-theme-1-1-1;
+            }
+            &:not([href]):not([tabindex]) {
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-theme-1-1-1;
+                    background: $white;
+                }
+            }
+        }
+        .button--tertiary {
+            &:hover,
+            &:focus {
+                background: $color-theme-1-2-1;
+                border: 1px solid $color-theme-1-2-1;
+            }
+        }
+        .button--floating {
+            &:hover,
+            &:focus {
+                background: $color-theme-1-1-1;
+            }
+            &:not([href]):not([tabindex]) {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $color-theme-1-1-1;
+                }
+            }
+        }
+    }
+    &.style--colors--theme-2 {
+        .button--primary {
+            &:hover,
+            &:focus {
+                background: $color-theme-2-1-1;
+                border: 1px solid $color-theme-2-1-1;
+            }
+        }
+        .button--secondary {
+            &:hover,
+            &:focus {
+                background: $white;
+                color: $color-theme-2-1-1;
+            }
+            &:not([href]):not([tabindex]) {
+                &:hover,
+                &:focus,
+                &:active {
+                    border-color: $white;
+                    color: $color-theme-2-1-1;
+                    background: $white;
+                }
+            }
+        }
+        .button--tertiary {
+            &:hover,
+            &:focus {
+                background: $color-theme-2-2-1;
+                border: 1px solid $color-theme-2-2-1;
+            }
+        }
+        .button--floating {
+            &:hover,
+            &:focus {
+                background: $color-theme-2-1-1;
+            }
+            &:not([href]):not([tabindex]) {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $color-theme-2-1-1;
+                }
+            }
+        }
+    }
+    &.style--colors--theme-3 {
+        .button--primary {
+            &:hover,
+            &:focus {
+                background: $color-theme-3-1-1;
+                border: 1px solid $color-theme-3-1-1;
+            }
+        }
+        .button--secondary {
+            &:hover,
+            &:focus {
+                background: $white;
+                color: $color-theme-3-1-1;
+            }
+            &:not([href]):not([tabindex]) {
+                &:hover,
+                &:focus,
+                &:active {
+                    border-color: $white;
+                    color: $color-theme-3-1-1;
+                    background: $white;
+                }
+            }
+        }
+        .button--tertiary {
+            &:hover,
+            &:focus {
+                background: $color-theme-3-2-1;
+                border: 1px solid $color-theme-3-2-1;
+            }
+        }
+        .button--floating {
+            &:hover,
+            &:focus {
+                background: $color-theme-3-1-1;
+            }
+            &:not([href]):not([tabindex]) {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $color-theme-3-1-1;
+                }
+            }
+        }
+    }
+    table {
+        @include md-1dp;
+        border: 0;
+    }
+    /* Molecules */
+    .block-nds {
+        @include md-2dp;
+        border-width: 0;
+        background: $white;
+        &.block--alert {
+            background: #be2c2c;
+            &.severity--2 {
+                background: #ff8c00;
+            }
+            &.severity--3 {
+                background: #ffff00;
+            }
+            &.severity--4 {
+                background: #008000;
+            }
+        }
+        &.block--callout {
+            background: $white;
+        } 
+        &.block--header {
+            @include md-0dp;
+            background: transparent;
+        }
+        &.block--inputs {
+            @include md-0dp;
+            background: transparent;
+        }
+        &.block--colors {
+            @include md-0dp;
+            background: transparent;
+        }
+        &.block--share {
+            @include md-0dp;
+            background: transparent;
+        }
+        &.block--full-palette {
+            @include md-0dp;
+        }
+    }
+    .social--icon {
+        @include md-2dp;
+        @extend .hoverable;
+    }
+    .form-nds {
+        .form-text {
+            @include md-1dp;
+            @extend .hoverable;
+            border: 0;
+            background: $white !important;
+        }
+        .form--search {
+            &__form {
+                input[type="submit"] {
+                    &:hover,
+                    &:focus {
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+    .navigation--local {
+        @include md-1dp;
+        background: $page-background;
+        @include media-breakpoint-up('lg') {
+            @include md-16dp;
+            border-bottom-width: .3125rem;
+            border-bottom-style: solid;
+        }
+        &__accordion {
+            &__button {
+                border-bottom: 0 !important;
+            }
+        }
+        .card {
+            background: transparent;
+        }
+    }
+    .navigation--primary {
+        @include md-8dp;
+        button {
+            @include md-0dp;
+            &:hover,
+            &:focus,
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+    .block--palette {
+        @include md-0dp;
+        background: transparent;
+    }
+    /* Organisms */
+    .global--header {
+        border-bottom: 0;
+        @include md-8dp;
+        @include media-breakpoint-up('md') {
+            @include md-0dp;
+        }
+        &__button {
+            border: 0;
+        }
+    }
+    .global--footer {
+        .block-nds {
+            @include md-0dp;
+            background: transparent;
+        }
+    }
+}

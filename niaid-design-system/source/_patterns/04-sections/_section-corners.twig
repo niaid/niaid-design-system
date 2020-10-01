@@ -1,0 +1,32 @@
+{% embed "@nds/02-molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-corners"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h2>Corners</h2>
+        <p>Another dimension of design customability that NDS provides is the roundness of corners, otherwise known as "border-radius." NDS provides three options: sharp, semi-rounded, and fully-rounded. The squares below show how each of these three options are applied in practice.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Sharp</h3>
+                    <div class="box--corners box--corners--straight">
+                        <span>0rem<br>0px</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Semi-Rounded</h3>
+                    <div class="box--corners box--corners--semi">
+                        <span>.3125rem<br>5px</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Fully-Rounded</h3>
+                    <div class="box--corners box--corners--fully">
+                        <span>1rem<br>16px</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}

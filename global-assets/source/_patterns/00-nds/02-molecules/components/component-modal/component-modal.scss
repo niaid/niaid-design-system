@@ -1,0 +1,29 @@
+.component--modal {
+    background: rgba(0, 0, 0, .8);
+    &__wrapper {
+        &__content {
+            @extend .modal-content;
+            &__header {
+                @extend .modal-header;
+                h3 {
+                    margin: 0;
+                }
+            }
+            &__body {
+                img {
+                    width: 100%;
+                }
+            }
+            &__footer {
+                @extend .modal-footer;
+                display: block;
+                align-items: stretch;
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+.component--modal--button {
+    text-align: center;
+}

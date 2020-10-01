@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" class="{{ htmlClass }}">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="{{ cssPath }}libraries/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="{{ cssPath }}libraries/select2.min.css" />
+
+    <link rel="icon" href="{{ imagePath }}global/favicons/favicon.ico" type="image/x-icon"/>
+
+    {% if prodBuild != "true" %}<link rel="stylesheet" href="{{ cssPath }}style.css?{{ cacheBuster }}" media="all" />{% else %}<link rel="stylesheet" href="{{ cssPath }}style.css" media="all" />{% endif %}
+    {% if prodBuild != "true" %}<link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />{% endif %}
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    {% if prodBuild != "true" %}{{ patternLabHead | raw }}{% endif %}
+    <!-- End Pattern Lab -->
+    
+  </head>
+  <body class="{{ bodyClass }}">

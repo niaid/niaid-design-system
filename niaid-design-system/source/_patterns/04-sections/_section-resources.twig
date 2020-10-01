@@ -1,0 +1,13 @@
+{% embed "@nds/02-molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-resources"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h2>Resources</h2>
+        <h3>Fonts</h3>
+        {% include "@molecules/blocks/block-fonts/_block-fonts-main.twig" %}
+        <h3>Design Files</h3>
+        {% include "@molecules/blocks/block-design-files/_block-design-files-main.twig" %}
+    {% endblock %}
+{% endembed %}

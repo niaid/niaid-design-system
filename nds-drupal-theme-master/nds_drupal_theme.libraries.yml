@@ -1,0 +1,15 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      nds/source/css/style.css: {}
+
+global-scripts:
+  version: 1.x
+  js:
+    nds/source/js/bootstrap.bundle.min.js: {}
+    nds/source/js/matchMedia.js: {}
+    nds/source/js/script-min.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

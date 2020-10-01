@@ -1,0 +1,103 @@
+#design {
+    .font-display {
+        font-size: 4rem;
+        .col-12 {
+            .fh-1 {
+                @extend h1;
+            }
+            .fh-2 {
+                @extend h2;
+            }
+            .fh-3 {
+                @extend h3;
+            }
+            .fh-4 {
+                @extend h4;
+            }
+        }
+    }
+    .ff-roboto {
+        font-family: "Roboto", "Public Sans", sans-serif !important;
+    }
+    .ff-publicsans {
+        font-family: "Public Sans", "Roboto", sans-serif !important;
+    }
+    .ff-martel {
+        font-family: "Martel", "Merriweather", serif !important;
+    }
+    .ff-merriweather {
+        font-family: "Merriweather", "Martel", serif !important;
+    }
+    .container {
+        margin: 2rem 0;
+        padding: 2rem;
+        border-radius: $border-radius-semi;
+        background: $page-background-alternate;
+        &--button {
+            .col-12 {
+                padding: 1rem;
+            }
+        }
+        .row {
+            margin: 1rem 0;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .focus-field {
+            input {
+                border: 1px solid $type-link;
+                box-shadow: 0 0 0 1px $type-link;
+                & + .icon--default {
+                    color: $type-link;
+                }
+            }
+        }
+        .error-field {
+            input {
+                border: 1px solid $status-error;
+                box-shadow: 0 0 0 1px $status-error;
+                & + .icon--default {
+                    color: $status-error;
+                }
+                &:focus {
+                    border: 1px solid $status-error;
+                    box-shadow: 0 0 0 1px $status-error;
+                }
+            }
+            .invalid-feedback {
+                display: block;
+            }
+        }
+        .input-group-nds {
+            p {
+                margin-top: 0;
+            }
+        }
+        h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .box--corners {
+            margin: 0 auto;
+            height: 8rem;
+            width: 8rem;
+            background: $white;
+            border: .25rem solid $type-body;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            &--semi {
+                border-radius: .3125rem;
+            }
+            &--fully {
+                border-radius: 1rem;
+            }
+        }
+    }
+}

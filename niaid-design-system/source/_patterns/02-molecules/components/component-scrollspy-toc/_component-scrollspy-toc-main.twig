@@ -1,0 +1,11 @@
+{% set component_scrollspy_toc_classes = component_scrollspy_toc_classes|default() %}
+{% set component_scrollspy_toc_data = component_scrollspy_toc_data|default() %}
+{% set component_scrollspy_toc_data_target = component_scrollspy_toc_data_target|default() %}
+    
+<div class="component-nds component--scrollspy-toc {{ component_scrollspy_toc_classes }}" data-target="{{ component_scrollspy_toc_data_target }}">
+    <ul class="component--scrollspy-toc__list section table-of-contents">
+        {% for section in component_scrollspy_toc_data %}
+            <li class="component--scrollspy-toc__list__item{% if section.class is not empty %} {{ section.class }}{% endif %}"><a href="#{{ section.href }}">{{ section.text }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

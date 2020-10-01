@@ -1,0 +1,6 @@
+{% set component_scrollspy_section_classes = component_scrollspy_section_classes|default() %}
+{% set component_scrollspy_section_id = component_scrollspy_section_id|default() %}
+
+<div id="{{ component_scrollspy_section_id }}" class="component-nds component--scrollspy-section scrollspy section {{ component_scrollspy_section_classes }}">
+    {% block component_scrollspy_section_content %}{% endblock %}
+</div>

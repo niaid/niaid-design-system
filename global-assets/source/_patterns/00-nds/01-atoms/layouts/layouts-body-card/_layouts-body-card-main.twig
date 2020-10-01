@@ -1,0 +1,5 @@
+{% set layouts_body_card_classes = layouts_body_card_classes|default() %}
+
+<div class="layouts-nds layouts--body-card {{ layouts_body_card_classes }}">
+    {% block body_card_content %}{% endblock %}
+</div>

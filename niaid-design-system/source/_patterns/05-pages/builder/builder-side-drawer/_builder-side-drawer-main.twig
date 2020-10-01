@@ -1,0 +1,208 @@
+{% set navigation_side_drawer_classes = navigation_side_drawer_classes|default() %}
+
+<div class="builder-pl builder--side-drawer {{ navigation_side_drawer_classes }}">
+    {% embed "@pages/builder/builder-controls-accordion/_builder-controls-accordion-main.twig" with
+        {
+            "builder_controls_accordion_id": "prodID",
+            "builder_controls_accordion_title": "Product Identity"
+        }
+    %}
+        {% block build_controls_control %}
+            {% include "@nds/02-molecules/forms/form-product-identity/_form-product-identity-main.twig" %}
+        {% endblock %}
+    {% endembed %}
+    {% embed "@pages/builder/builder-controls-accordion/_builder-controls-accordion-main.twig" with
+        {
+            "builder_controls_accordion_id": "fonts",
+            "builder_controls_accordion_title": "Fonts"
+        }
+    %}
+        {% block build_controls_control %}
+            <h3>Headings</h3>
+            <form class="form-nds form--controls form--controls--headings" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="roboto" type="radio" name="headings" value="roboto" checked>
+                        <label tabindex="0" for="roboto">
+                            <span>Roboto</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="public-sans" type="radio" name="headings" value="public-sans">
+                        <label tabindex="0" for="public-sans">
+                            <span>Public Sans</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="merriweather" type="radio" name="headings" value="merriweather">
+                        <label tabindex="0" for="merriweather">
+                            <span>Merriweather</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="martel" type="radio" name="headings" value="martel">
+                        <label tabindex="0" for="martel">
+                            <span>Martel</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            <h3>Body</h3>
+            <form class="form-nds form--controls form--controls--body" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="roboto-body" type="radio" name="body" value="roboto" checked>
+                        <label tabindex="0" for="roboto-body">
+                            <span>Roboto</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="public-sans-body" type="radio" name="body" value="public-sans">
+                        <label tabindex="0" for="public-sans-body">
+                            <span>Public Sans</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+        {% endblock %}
+    {% endembed %}
+    {% embed "@pages/builder/builder-controls-accordion/_builder-controls-accordion-main.twig" with
+        {
+            "builder_controls_accordion_id": "color",
+            "builder_controls_accordion_title": "Colors"
+        }
+    %}
+        {% block build_controls_control %}
+            <form class="form-nds form--controls form--controls--colors" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="theme-1" type="radio" name="colors" value="theme-1" checked>
+                        <label tabindex="0" for="theme-1">
+                            {% include "@molecules/blocks/block-palette/_block-palette-main.twig" with
+                                {
+                                    "block_palette_classes": "theme-1",
+                                    "block_palette_color_1": "#157B8D",
+                                    "block_palette_color_2": "#497951",
+                                    "block_palette_color_3": "#262626",
+                                    "block_palette_color_4": "#20558A"
+                                }
+                            %}
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="theme-2" type="radio" name="colors" value="theme-2">
+                        <label tabindex="0" for="theme-2">
+                            {% include "@molecules/blocks/block-palette/_block-palette-main.twig" with
+                                {
+                                    "block_palette_classes": "theme-2",
+                                    "block_palette_color_1": "#124559",
+                                    "block_palette_color_2": "#247BA0",
+                                    "block_palette_color_3": "#1A2A5B",
+                                    "block_palette_color_4": "#20558A"
+                                }
+                            %}
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="theme-3" type="radio" name="colors" value="theme-3">
+                        <label tabindex="0" for="theme-3">
+                            {% include "@molecules/blocks/block-palette/_block-palette-main.twig" with
+                                {
+                                    "block_palette_classes": "theme-3",
+                                    "block_palette_color_1": "#0C0910",
+                                    "block_palette_color_2": "#CE4B02",
+                                    "block_palette_color_3": "#5178A7",
+                                    "block_palette_color_4": "#20558A"
+                                }
+                            %}
+                        </label>
+                    </li>
+                </ul>
+            </form>
+        {% endblock %}
+    {% endembed %}
+    {% embed "@pages/builder/builder-controls-accordion/_builder-controls-accordion-main.twig" with
+        {
+            "builder_controls_accordion_id": "shadow",
+            "builder_controls_accordion_title": "Shadows"
+        }
+    %}
+        {% block build_controls_control %}
+            <form class="form-nds form--controls form--controls--shadows" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="no_shadows" type="radio" name="shadow" value="no_shadows" checked>
+                        <label tabindex="0" for="no_shadows">
+                            <span>Flat</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="shadows" type="radio" name="shadow" value="shadows">
+                        <label tabindex="0" for="shadows">
+                            <span>Shadows</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+        {% endblock %}
+    {% endembed %}
+    {% embed "@pages/builder/builder-controls-accordion/_builder-controls-accordion-main.twig" with
+        {
+            "builder_controls_accordion_id": "corners",
+            "builder_controls_accordion_title": "Corners"
+        }
+    %}
+        {% block build_controls_control %}
+            <form class="form-nds form--controls form--controls--corners" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="straight_corners" type="radio" name="corners" value="straight">
+                        <label tabindex="0" for="straight_corners">
+                            <span>Sharp</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="semi_rounded_corners" type="radio" name="corners" value="semirounded" checked>
+                        <label tabindex="0" for="semi_rounded_corners">
+                            <span>Semi-Rounded</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="rounded_corners" type="radio" name="corners" value="rounded">
+                        <label tabindex="0" for="rounded_corners">
+                            <span>Fully Rounded</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+        {% endblock %}
+    {% endembed %}
+    {% embed "@pages/builder/builder-controls-accordion/_builder-controls-accordion-main.twig" with
+        {
+            "builder_controls_accordion_id": "hero",
+            "builder_controls_accordion_title": "Hero"
+        }
+    %}
+        {% block build_controls_control %}
+            <form class="form-nds form--controls form--controls--hero" action="">
+                <ul>
+                    <li>
+                        <input tabindex="-1" id="hero-yes" type="radio" name="hero" value="yes">
+                        <label tabindex="0" for="hero-yes">
+                            <span>Yes</span>
+                        </label>
+                    </li>
+                    <li>
+                        <input tabindex="-1" id="hero-no" type="radio" name="hero" value="no" checked>
+                        <label tabindex="0" for="hero-no">
+                            <span>No</span>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+        {% endblock %}
+    {% endembed %}
+    <button class="button-nds waves-effect waves-light button--primary button--generate-link mt-3" role="button">Copy Link to Clipboard</button>
+    <div class="builder--side-drawer__copied">Copied!</div>
+    <div class="builder--side-drawer__link"></div>
+</div>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Development - NIAID Design System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../css/libraries/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="../css/libraries/select2.min.css" />
+
+    <link rel="icon" href="../assets/global/favicon.ico" type="image/x-icon"/>
+
+          <link rel="stylesheet" href="../css/style.css" media="all" />
+        
+    
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+        <!-- End Pattern Lab -->
+    
+  </head>
+  <body class="style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans">
+<div class="block-nds block--alert severity--4">
+            <p>This NDS site is a work in progress. The content, design, and development are subject to change.</p>
+    </div>
+
+<div class="component-nds component--style-controls ">
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="text-heading" title="Headings Font">Headings Font
+    </label>    <select id="text-heading" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+                <option value="martel">Martel</option>
+                <option value="merriweather">Merriweather</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="text-body" title="Body Font">Body Font
+    </label>    <select id="text-body" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="color-select" title="Theme">Theme
+    </label>    <select id="color-select" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="theme-1">Theme 1</option>
+                <option value="theme-2">Theme 2</option>
+                <option value="theme-3">Theme 3</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="shadows" title="Shadows">Shadows
+    </label>    <select id="shadows" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="flat">Flat</option>
+                <option value="shadows">Material</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="corners" title="Corner Style">Corner Style
+    </label>    <select id="corners" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="straight">Sharp</option>
+                <option selected="selected" value="semirounded">Semi-Rounded</option>
+                <option value="rounded">Fully-Rounded</option>
+            </select>
+</div>    </div>
+</div>
+
+<div class="page" id="development">
+           
+<div class="global-pl global--header ">
+    
+<button id="global-mobile-menu" class="button-nds button--icon global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-bars "></i>
+    </button>    
+<a href="/" class="component-nds component--branding ">
+    
+<img class="image-nds image--default component--branding__logo--desktop" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"
+                        />    
+<img class="image-nds image--default component--branding__logo--mobile" src="../assets/global/NIAID_Logo_Mobile.png" alt="NIAID Logo"
+                        />    <div class="component--branding__vertical-bar"></div>
+    
+<div class="component-nds component--product-identity ">
+    <div class="component--product-identity__top">NIAID</div>
+    <div class="component--product-identity__bottom">Design System</div>
+</div></a>    <div>
+        <span class="global--header__version">v1.0</span>
+        
+<a href="../../assets/nds.zip" class="button-nds button--icon " download>
+    
+
+<i class="icon-nds icon--default fal fa-download "></i>
+            <span class="button--icon__text">Download NDS</span>
+    </a>    </div>
+</div>                
+<nav id="main-navigation" class="navigation-nds navigation--primary ">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Getting Started
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/getting-started/index.html">Overview</a>
+                    <a class="dropdown-item" href="/getting-started/index.html##section-static-website">Building a Static Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html##section-drupal-website">Building a Drupal Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html#section-resources">Resources</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Design
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design/index.html">Overview</a>
+                    <a class="dropdown-item" href="/design/index.html#section-typography">Typography</a>
+                    <a class="dropdown-item" href="/design/index.html#section-icons">Icons</a>
+                    <a class="dropdown-item" href="/design/index.html#section-colors">Colors</a>
+                    <a class="dropdown-item" href="/design/index.html#section-forms">Forms &amp; Input</a>
+                    <a class="dropdown-item" href="/design/index.html#section-layout">Layout &amp; Spacing</a>
+                    <a class="dropdown-item" href="/design/index.html#section-shadows">Shadows</a>
+                    <a class="dropdown-item" href="/design/index.html#section-corners">Corners</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Development
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/development/index.html">Overview</a>
+                    <a class="dropdown-item" href="/development/index.html#section-atomic-design">Atomic Design</a>
+                    <a class="dropdown-item" href="/development/index.html#section-libraries">Libraries</a>
+                    <a class="dropdown-item" href="/development/index.html#section-technologies">Technologies &amp; Frameworks</a>
+                    <a class="dropdown-item" href="/development/index.html#section-themes">Themes</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a href="/components/index.html">Components</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/builder/index.html">Theme Builder</a>
+            </div>
+        </div>
+    </nav>        
+<div id="main-navigation-mobile" class="navigation-nds navigation--drawer ">
+    <div class="navigation--drawer__top">
+        <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
+        
+<button class="button-nds button--icon navigation--drawer__top__button-close" >
+    
+
+<i class="icon-nds icon--default fal fa-arrow-to-left "></i>
+    </button>    </div>
+            <div class="navigation--drawer__inner">
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="/">Home</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 1</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 2</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
+    </div>
+<div class="navigation--drawer--overlay" tabindex="0"></div>        
+<button id="custom-styles-toggle" class="button-nds button--floating " aria-label="">
+    <div class="button--floating__icon">
+        
+
+<i class="icon-nds icon--default far fa-palette "></i>
+    </div>
+    <div class="button--floating__text">Customize Page Theme</div>
+</button>            <div class="main" role="main">
+                
+
+
+
+<div class="layouts-nds layouts--main-layout " id="main-layout">
+            <div class="layouts--main-layout__column layouts--main-layout__first col-lg-3">
+                            
+<div class="navigation-nds navigation--mobile-rail ">
+    
+<div class="component-nds component--accordion " id="navigation--mobile-rail">
+                <div id="navigation--mobile-rail__button">
+                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Design Menu</button>
+            </div>
+            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
+                                                                
+<div class="component-nds component--scrollspy-toc " data-target="main-layout">
+    <ul class="component--scrollspy-toc__list section table-of-contents">
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-overview">Overview</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-atomic-design">Atomic Design</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-technologies">Technologies &amp; Frameworks</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-patternlab">Pattern Lab</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-sass">Sass</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-jquery">jQuery</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-gulp">Gulp</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-libraries">Libraries &amp; Dependencies</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-themes">Theme Options</a></li>
+            </ul>
+</div>                    
+                            </div>
+        </div></div>            
+        </div>
+                <div class="layouts--main-layout__column layouts--main-layout__second col-lg-7">
+                            
+<div class="layouts-nds layouts--body-card ">
+                            
+<div id="section-overview" class="component-nds component--scrollspy-section scrollspy section ">
+            <h1>Development</h1>
+        <p>The foundation for the NIAID Design System is built on several libraries and technologies and is based on the philosphy of Atomic Design. This page explains these concepts and how they fit into developing with NDS.</p>
+    </div>                        
+<div id="section-atomic-design" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Atomic Design</h2>
+        <p>NDS employs the use of a development philosphy known as Atomic Design. Under this system, web components are broken up into their simplest parts, like colors, fonts, and button styles. These basic building blocks of design are referred to as Atoms. Atoms combine to create Molecules, which are more complex web structures. Examples of Molecules include teaser cards, input groups, and simple navigation structures. Finally, Molecules come together to create yet another level of complex web structures, such as website headers and footers. These structures are called Organisms, and are typically the most complex components. The following video provides a useful visualization for how these structures combine together.</p>
+        
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                        
+						
+<video class="media-nds media--video "   controls="" autoplay=&quot;&quot; loop=&quot;&quot; playsinline=&quot;&quot; muted=&quot;&quot;>
+	<source src="../assets/atomic-design.mp4" type="video/mp4">			</video>                </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">Atomic Design explained.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text"><a href="https://patternlab.io/">Pattern Lab</a></span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+        <p>NDS focuses primarily on the first three levels of Atomic structure (Atoms, Molecules, &amp; Organisms), due to its focus on <a href="#section-drupal">integrating with Drupal.</a> If Drupal is not used, further Atomic levels, such as Templates and Pages, can be leveraged to create static HTML sites.
+        <h3>Benefits of Atomic Design</h3>
+        <p>There are many benefits to Atomic Design, including:</p>
+        <ol>
+            <li>Efficent code manipulation</li>
+            <li>Modular components that can be reused</li>
+            <li>Better organization of component files</li>
+        </ol>
+        <h4>1. Efficient Code Manipulation</h4>
+        <p>Perhaps the most significant benefit of Atomic Design is the speed at which changes can be made to design components. Since web components or patterns are composed of other smaller components, changes need only happen in one place. For example, if a designer wanted to change the color of a button, and that button pattern is referenced in a featured content card molecule, the developer can change the color of the button at the Atom level, and any references to that pattern will be updated automatically.</p>
+        
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/atomic-design.png" alt="Refer to the caption for explaination"
+                        />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">This diagram explains how updating properties of Design System components propogate throughout the entire system. Updating the color of a button pattern will update the color in all patterns where that button is included.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+        <h4>2. Modular components that can be reused</h4>
+        <p>Pattern Libraries of Design Systems cut down on development time by allowing components to be shared and reused across an unlimited number of web properties. NDS is constantly evolving and growing by incorporating new patterns into its component library.</p>
+        <h4>3. Better organization of component files</h4>
+        <p>Under Atomic Design, the various assets needed for a component, such as component-specific CSS, JS, and HTML, are packaged together in folders. This makes it easy to find the code that makes up a certain component, saving time during the development process. Fruthermore, this organization makes it easier to share components with other projects.</p>
+    </div>                        
+<div id="section-technologies" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Technologies &amp; Frameworks</h2>
+        <ul>
+            <li><a href="https://patternlab.io/">Pattern Lab</a></li>
+            <li><a href="https://sass-lang.com/">SCSS</a></li>
+            <li><a href="https://jquery.com/">jQuery</a></li>
+            <li><a href="https://gulpjs.com/">Gulp</a></li>
+        </ul>
+    </div>                        
+<div id="section-patternlab" class="component-nds component--scrollspy-section scrollspy section ">
+            <h3>Pattern Lab (Twig Version)</h3>
+        <p>NDS implements the Atomic Design philosphy using a framework called <a href="https://patternlab.io/">Pattern Lab.</a> Pattern Lab houses the components that NDS provides to users and organizes them into Atomic folders. The framework utilizes templating languages to create component structures, which gives developers the ability to include smaller components into larger components. These components are then compiled into web-ready HTML code.</p>
+        <h4>Twig</h4>
+        <p>Twig is a templating language which is responsible for defining the HTML structures for patterns. Unlike pure HTML, however, Twig allows users to create variables, render markup with loops, and include patterns inside others. Pattern Lab relies on templating languages to implement Atomic Design through this inclusion. Pattern Lab supports a variety of templating languages, but due to Drupal integration support, NDS uses the Twig-based version.</p>
+        
+<div class="block-nds block--default ">
+                    <h4>View Pattern Lab's Documentation</h4>
+                <p>Get more information about Pattern Lab setup, usage, and features.</p>
+                
+<a class="button-nds button--external waves-effect waves-light " href="https://patternlab.io/">
+    <span>Visit Pattern Lab&#039;s Website</span>
+    
+
+<i class="icon-nds icon--default fal fa-external-link "></i>
+</a>            </div>        <h4>Organization</h4>
+        <p>When working with NDS, it is important to understand the organization of a NDS Pattern Lab instance. The following sections describe the purpose of certain directories found within an NDS Pattern lab instance.</p>
+        <h5>Source Directory</h5>
+        <p>The ./source folder houses all NDS components as well as global CSS, JS, images, and fonts. Broadly, most development will happen within this folder.</p>
+        
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/source-folder.png" alt="Refer to the caption for explanation"
+                        />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">The ./source folder and its contents.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+        <p>Within the ./source folder, there are several important files and directories:</p>
+        <ul>
+            <li>_patterns/ Directory</li>
+            <li>css/ Directory</li>
+            <li>js/ Directory</li>
+            <li>images/ Directory</li>
+        </ul>
+        <h6>_patterns Directory</h6>
+        <p>Within the _patterns/ directory, components are grouped in folders by Atomic level (i.e. 01-atoms, 02-molecules, etc.). Each Atomic level is fruther broken up into atomic sub-categories. For example, the 01-atoms folder contains pattern categories like buttons, icons, and images. Within these sub-categories, indvidual pattern directories can be found. Pattern directories contain the necessary assets for the pattern to function. The contents of a pattern folder may include:</p>
+        <ul>
+            <li>A main twig file, denoted _[atomic-sub-category]-[pattern-name]-main.twig (i.e. _button-default-main.twig)</li>
+            <li>A SCSS file that has pattern-specific styling: (i.e. button-default.scss)</li>
+            <li>A JS file that adds pattern-specific functionality (i.e. button-default.js)</li>
+            <li>A demo directory that contains a twig file. This file contains a sample of how to reference or include the pattern in other places/patterns.</li>
+        </ul>
+        
+    
+
+<div class="component-nds component--media image--patternlab__structure">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/pattern-structure.png" alt="Refer to the caption for explanation"
+                        />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">The structure of a button pattern.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+        <p>In addition to the traditional Atomic level directories, where project-specific patterns are organized, NDS supplies its own out-of-the-box components in a 00-nds/ folder. Inside 00-nds/, patterns are organized into the usual 01-atoms, 02-molecules, etc. to mirror the conventional structure. <strong>Do not make changes to patterns in the 00-nds/ directory,</strong> since this directory may be updated as NDS evolves and changes will be removed. If you want to modify a NDS component for project-specific implementations, simply copy the pattern folder from inside 00-nds/ and add it to the proper Atomic subdirectory under the _patterns folder.
+        <h6>css/ Directory</h6>
+        <p>The css/ directory houses the styling rules for the global aspects of NDS's visual appearance, as well as holds the main "style.scss" which orchestrates how the Sass rules compile into CSS. The global/ directory houses the NDS SASS variables and mixins, as well as general styling rules such as heading and body font properties. The libraries/ directory houses third-party library CSS files. Similarly to the 00-nds/ directory, <strong>do not make changes in the global/ and libraries/ folders</strong>, as they are subject to continual updates.</p>
+        <p>For customizations of global styling rules, utilize the overrides/ directory. This folder directly mirrors the global/ folder, and NDS has been designed to give priority to rules in overrides/. For instance, if a site needed to specify its own set of breakpoints for use in responsive design, those modifications can be placed in the overrides/ folder.</p>
+        <h6>js/ Directory</h6>
+        <p>The js/ directory houses Javascript files that NDS needs. These files include third-party library scripts, such as Bootstrap and Materialize. The js/ directory also includes "script.js", a file that is a compiled version of all the pattern-specific scripts. Custom patterns with custom JS are compiled into script.js.</p>
+        <h6>images/ Directory</h6>
+        <p>The images/ directory holds some generic placeholder images, as well as global images, such as document icons. Place any project-specifc images needed into this folder.</p>
+        <h5>Public Directory</h5>
+        <p>When Pattern Lab compiles, a locally-hosted style guide is opened in a browser. This style guide comes from the ./public folder, wherein all patterns are converted to web-ready HTML.</p>
+        <p>When building a static website, the production HTML should be copied from within the ./public/patterns/ directory. The gulpfile.js file that ships with NDS has sample code to pull your final pages into a production-ready folder.</p>
+        
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/build-paths.png" alt="Refer to the caption for explanation"
+                        />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">The gulpfile.js file provides an example of how to pull your final pages into a production-ready folder.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+        <h5>Core &amp; Config Directories</h5>
+        <p>The core/ and config/ directories are out-of-the-box directories that Pattern Lab needs to run properly. Generally, users of NDS do not need to edit the files found in these directories. However, the default Pattern Lab settings can be modified in the config/config.yml file. For more information, <a href="https://patternlab.io/docs/editing-the-configuration-options/">visit the Pattern Lab documentation page on configuration options.</a></p>
+    </div>                        
+<div id="section-sass" class="component-nds component--scrollspy-section scrollspy section ">
+            <h3>Sass</h3>
+        
+<span class="text-nds text--badge ">Version: 4.0.1</span>        <p><a href="https://sass-lang.com/">Sass</a> augments CSS's cababilities by providing variables, functions (called mixins), and various other utilities. NDS relies on Sass to create standardized variables for use in patterns. During the build process, Sass code gets compiled into web-ready CSS. It is recommended that users of NDS have a basic understanding of the Sass technology.</p>
+        
+<div class="block-nds block--default ">
+                    <h4>View Sass's Documentation</h4>
+                <p>Get more information about Sass usage and features.</p>
+                
+<a class="button-nds button--external waves-effect waves-light " href="https://sass-lang.com/">
+    <span>Visit Sass&#039;s Website</span>
+    
+
+<i class="icon-nds icon--default fal fa-external-link "></i>
+</a>            </div>    </div>                        
+<div id="section-jquery" class="component-nds component--scrollspy-section scrollspy section ">
+            <h3>jQuery</h3>
+        <p><a href="https://jquery.com/">jQuery</a> is a JavaScript library that, according to its website, "makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers." In other words, jQuery simplifies many different JavaScript.</p>
+    </div>                        
+<div id="section-gulp" class="component-nds component--scrollspy-section scrollspy section ">
+            <h3>Gulp</h3>
+        <p><a href="https://gulpjs.com/">Gulp.js</a> is a build tool that NDS uses to manage a variety of processes. This includes compiling SCSS to CSS, compiling Pattern Lab (turning Twig into HTML), concatenating scripts, and running minification functions. For building static websites, Gulp is essential in the process of producing web-ready assets.</p>
+    </div>                        
+<div id="section-libraries" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Libraries &amp; Dependencies</h2>
+        <p>NDS uses the following libraries in various capacities:</p>
+        <ul>
+            <li>Bootstrap 4</li>
+            <li>Materialize</li>
+        </ul>
+        <p>This section describes what these libraries are and how they factor into development with NDS.</p>
+        <h3>Bootstrap 4</h3>
+        <p><a href="https://getbootstrap.com/">Bootstrap</a> is a front-end library that provides stylesheets and functional components designed to accelerate web development. While NDS relies on Bootstrap primarily for its Grid System, other functional components, such as dropdowns and modals, are also leveraged.</p>
+        <h3>Materialize</h3>
+        <p><a href="https://materializecss.com/">Materialize</a> is a front-end library that has converted guidance from Google's Material Design documentation into code. The main utility of this library that is leveraged in NDS is the Parallax effect for hero images, however, other capabilities may be used for custom needs as well.</p>
+    </div>                        
+<div id="section-themes" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Theme Options</h2>
+        <p>NDS comes preconfigured with a set of theming options including heading and body font family, color palettes, and corner radius. For the complete set of options, visit the <a href="/builder/index.html">Theme Builder</a>. NDS applies these styles through the use of classes applied to the body HTML tag.</p>
+        <h3 id="developing-with-typography">Developing with Typography</h3>
+        <p>NDS users can select font families for the headings and body of a page. For the headings, there are four available fonts to choose from - Public Sans, Roboto, Martel, and Merriweather. To apply one of these fonts to your headings, add the appropriate body class:</p>
+        <ul>
+            <li>Public Sans (Default): <code>style--headings--public-sans</code></li>
+            <li>Roboto: <code>style--headings--roboto</code></li>
+            <li>Martel: <code>style--headings--martel</code></li>
+            <li>Merriweather: <code>style--headings--merriweather</code></li>
+        </ul>
+        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body, add the appropriate body class:
+        <ul>
+            <li>Public Sans (Default): <code>style--body--public-sans</code></li>
+            <li>Roboto: <code>style--body--roboto</code></li>
+        </ul>
+        <h3 id="developing-with-colors">Developing with Colors</h3>
+        <p>Currently, NDS users have three color palette options to choose from, however, more may be available in the future. Add the corresponding body class for your desired palette:</p>
+        
+<div class="view-pl view--swatches container-fluid ">
+    <h4>Theme 1 (Default):</h4>
+            <code>style--colors--theme-1</code>
+        <div class="row">
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #157B8D"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Primary Button</div>
+        <div class="block--swatch__text__hex">#157B8D</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #497951"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Secondary Button</div>
+        <div class="block--swatch__text__hex">#497951</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #262626"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Navigation</div>
+        <div class="block--swatch__text__hex">#262626</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #E08A63"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Accent</div>
+        <div class="block--swatch__text__hex">#E08A63</div>
+    </div>
+</div>        </div>
+    </div>
+    <h4>Theme 2:</h4>
+            <code>style--colors--theme-2</code>
+        <div class="row">
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #586FAB"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Primary Button</div>
+        <div class="block--swatch__text__hex">#586FAB</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #247BA0"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Secondary Button</div>
+        <div class="block--swatch__text__hex">#247BA0</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #244D56"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Navigation</div>
+        <div class="block--swatch__text__hex">#244D56</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #FAB952"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Accent</div>
+        <div class="block--swatch__text__hex">#FAB952</div>
+    </div>
+</div>        </div>
+    </div>
+    <h4>Theme 3:</h4>
+            <code>style--colors--theme-3</code>
+        <div class="row">
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #123B56"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Primary Button</div>
+        <div class="block--swatch__text__hex">#123B56</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #69166E"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Secondary Button</div>
+        <div class="block--swatch__text__hex">#69166E</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #423E63"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Navigation</div>
+        <div class="block--swatch__text__hex">#423E63</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #E08A63"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Accent</div>
+        <div class="block--swatch__text__hex">#E08A63</div>
+    </div>
+</div>        </div>
+    </div>
+</div>        <h3 id="developing-with-shadows">Developing with Shadows</h3>
+        <p>NDS supports both the Flat and Material Design visual style. By default, NDS is configured in Flat design. If Material Design is desired, add the following class to the body:</p>
+        <code>style--shadows</code> 
+        <h3 id="developing-with-corners">Developing with Corners</h3>
+        <p>There are three corner styles available with NDS - Sharp, Semi-Rounded, Fully-Rounded. To apply one of these corner styles to your site, add the appropriate body class:</p>
+        <ul>
+            <li>Sharp: <code>style--corners--straight</code></li>
+            <li>Semi-Rounded (Default): <code>style--corners--semirounded</code></li>
+            <li>Fully-Rounded: <code>style--corners--rounded</code></li>
+        </ul>
+    </div>                    </div>            
+        </div>
+                <div class="layouts--main-layout__column layouts--main-layout__third col-lg-2">
+            <span></span>
+        </div>
+    </div>        </div>
+            
+
+<footer id="footer" class="global-nds global--footer container-fluid ">
+        <div class="global--footer__content row">
+        <div class="global--footer__content__logo col-md-4">
+                            
+<a class="image-nds image--logo " href="/">
+  <img class="image--logo__image" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"/>
+</a>                    </div>
+        <div class="global--footer__content__info col-md-8">
+              
+                <div class="row">
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Website Policies &amp; Notices</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a class="link--carot" href="#">Freedom of Information (FOIA)</a></li>
+                            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+                            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Related Government Websites</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+                            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+    </div>
+      
+        <div class="global--footer__tagline">
+            <p>
+                
+
+<i class="icon-nds icon--default fal fa-bolt "></i>
+                <span>Powered by the NIAID Design System</span>
+            </p>
+        </div>
+    </footer>    </div>
+        <!-- Pattern Lab Footer -->
+        
+        <script src="../js/custom/stickybits.min.js"></script>
+
+        <script src="../js/libraries/jquery.min.js"></script>        <script src="../js/libraries/select2.full.min.js"></script>        <script src="../js/libraries/materialize.min.js"></script>        <script src="../js/libraries/bootstrap.bundle.min.js"></script>        <script src="../js/libraries/matchMedia.js"></script>        <script src="../js/libraries/datatables.min.js"></script>        <script src="../js/libraries/bootstrap-datepicker.min.js"></script>        <script src="../js/global/script-min.js"></script>
+    </body>
+</html>

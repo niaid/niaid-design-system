@@ -1,0 +1,128 @@
+{% embed "@nds/02-molecules/blocks/block-alert/_block-alert-main.twig" with
+    {
+        "block_alert_classes": "severity--4"
+    }
+%}
+    {% block block_alert_content %}
+        <p>This NDS site is a work in progress. The content, design, and development are subject to change.</p>
+    {% endblock %}
+{% endembed %}
+
+{% include "@molecules/components/component-style-controls/_component-style-controls-main.twig" %}
+
+{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+    {
+        "layouts_site_id": "development"
+    }
+%}
+    {% block header %}
+       {% include "@organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "NIAID",
+                "global_header_product_id_bottom": "Design System"
+            }
+        %}
+    {% endblock %}
+    {% block global_navigation %}
+        {% include "@molecules/navigation/navigation-primary/_navigation-primary-main.twig" %}
+        {% include "@nds/02-molecules/navigation/navigation-drawer/_navigation-drawer-main.twig" with
+            {
+                "navigation_drawer_id": "main-navigation-mobile"
+            }
+        %}
+        {% include "@nds/01-atoms/buttons/button-floating/_button-floating-main.twig" with
+            {
+                "button_floating_id": "custom-styles-toggle",
+                "button_floating_icon": "palette",
+                "button_floating_text": "Customize Page Theme"
+            }
+        %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@nds/01-atoms/layouts/layouts-main-layout/_layouts-main-layout-main.twig" with
+            {
+                "layouts_main_layout_id": 'main-layout',
+                "layouts_main_layout_left": columns.left,
+                "layouts_main_layout_main": columns.main,
+                "layouts_main_layout_right": columns.right
+            }
+        %}
+            {% block left_column %}
+                {% embed "@nds/02-molecules/navigation/navigation-mobile-rail/_navigation-mobile-rail-main.twig" with
+                    {
+                        "navigation_mobile_rail_button_text": "Open Design Menu"
+                    }
+                %}
+                    {% block navigation_mobile_rail_content %}
+                        {% include "@molecules/components/component-scrollspy-toc/_component-scrollspy-toc-main.twig" with
+                            {
+                                "component_scrollspy_toc_data": [
+                                    {
+                                        "text": "Overview",
+                                        "href": "section-overview"
+                                    },
+                                    {
+                                        "text": "Atomic Design",
+                                        "href": "section-atomic-design"
+                                    },
+                                    {
+                                        "text": "Technologies & Frameworks",
+                                        "href": "section-technologies"
+                                    },
+                                    {
+                                        "text": "Pattern Lab",
+                                        "href": "section-patternlab",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Sass",
+                                        "href": "section-sass",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "jQuery",
+                                        "href": "section-jquery",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Gulp",
+                                        "href": "section-gulp",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Libraries & Dependencies",
+                                        "href": "section-libraries"
+                                    },
+                                    {
+                                        "text": "Theme Options",
+                                        "href": "section-themes"
+                                    }
+                                ],
+                                "component_scrollspy_toc_data_target": "main-layout"
+                            }
+                        %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
+                    {% block body_card_content %}
+                        {% include "@sections/_section-overview-development.twig" %}
+                        {% include "@sections/_section-atomic-design.twig" %}
+                        {% include "@sections/_section-technologies.twig" %}
+                        {% include "@sections/_section-patternlab.twig" %}
+                        {% include "@sections/_section-sass.twig" %}
+                        {% include "@sections/_section-jquery.twig" %}
+                        {% include "@sections/_section-gulp.twig" %}
+                        {% include "@sections/_section-libraries.twig" %}
+                        {% include "@sections/_section-themes.twig" %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+            {% block right_column %}<span></span>{% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% embed "@nds/03-organisms/global/global-footer/_global-footer-main.twig" %}{% endembed %}
+    {% endblock %}
+{% endembed %}

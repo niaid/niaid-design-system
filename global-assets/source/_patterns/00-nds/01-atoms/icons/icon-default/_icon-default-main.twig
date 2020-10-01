@@ -1,0 +1,19 @@
+{#
+   ---
+   title: Icons
+   ---
+   Pattern for including an icon. Icons are from the Font Awesome Library. Access the names of the icons using the [Font Awesome Cheatsheet](https://fontawesome.com/cheatsheet#use).
+
+   Parameters:
+   icon_default_class - Classes to style the icon.
+   icon_default_type - The icon name. Note: Do not include the "fa-" if present in the name of the icon.
+   icon_default_weight - The Font Awesome style of the icon. Options: - 's' = solid, 'l' = light, 'r' = regular.
+#}
+
+{% set icon_default_classes = icon_default_classes|default() %}
+{% set icon_default_type = icon_default_type|default() %}
+{% set icon_default_weight = icon_default_weight|default() %}
+{% set icon_default_sr_text = icon_default_sr_text|default() %}
+
+<i class="icon-nds icon--default fa{{ icon_default_weight }} fa-{{ icon_default_type }} {{ icon_default_classes }}"></i>
+{% if icon_default_sr_text is not empty %}<span class="sr-only">{{ icon_default_sr_text }}</span>{% endif %}

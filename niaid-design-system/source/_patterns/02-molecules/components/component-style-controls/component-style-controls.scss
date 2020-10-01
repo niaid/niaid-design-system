@@ -1,0 +1,32 @@
+.component--style-controls {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    display: flex;
+    background: $white;
+    z-index: 100000;
+    width: 100vw;
+    transition: transform .3s;
+    &__control {
+        flex: 1 1 20%;
+        max-width: 20%;
+        .input--select {
+            width: 100%;
+            margin: 1rem 0;
+            padding: 0 1rem;
+        }
+    }
+    &--open {
+        transform: translateY(0);
+        -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+        -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+        box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+    }
+}

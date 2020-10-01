@@ -1,0 +1,11 @@
+{% set block_swatch_classes = block_swatch_classes|default() %}
+{% set block_swatch_hex = block_swatch_hex|default() %}
+{% set block_swatch_label = block_swatch_label|default() %}
+
+<div class="block-nds block--swatch {{ block_swatch_classes }}">
+    <div class="block--swatch__color" style="background: {{ block_swatch_hex }}"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">{{ block_swatch_label }}</div>
+        <div class="block--swatch__text__hex">{{ block_swatch_hex }}</div>
+    </div>
+</div>

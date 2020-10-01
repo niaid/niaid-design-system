@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Components - NIAID Design System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../css/libraries/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="../css/libraries/select2.min.css" />
+
+    <link rel="icon" href="../assets/global/favicon.ico" type="image/x-icon"/>
+
+          <link rel="stylesheet" href="../css/style.css" media="all" />
+              <link rel="stylesheet" href="../css/builder.css" media="all" />
+    
+    
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+        <!-- End Pattern Lab -->
+    
+  </head>
+  <body class="style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans">
+<div class="block-nds block--alert severity--4">
+            <p>This NDS site is a work in progress. The content, design, and development are subject to change.</p>
+    </div>
+
+<div class="component-nds component--style-controls ">
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="text-heading" title="Headings Font">Headings Font
+    </label>    <select id="text-heading" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+                <option value="martel">Martel</option>
+                <option value="merriweather">Merriweather</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="text-body" title="Body Font">Body Font
+    </label>    <select id="text-body" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="color-select" title="Theme">Theme
+    </label>    <select id="color-select" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="theme-1">Theme 1</option>
+                <option value="theme-2">Theme 2</option>
+                <option value="theme-3">Theme 3</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="shadows" title="Shadows">Shadows
+    </label>    <select id="shadows" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="flat">Flat</option>
+                <option value="shadows">Material</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="corners" title="Corner Style">Corner Style
+    </label>    <select id="corners" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="straight">Sharp</option>
+                <option selected="selected" value="semirounded">Semi-Rounded</option>
+                <option value="rounded">Fully-Rounded</option>
+            </select>
+</div>    </div>
+</div>
+
+<div class="page" id="components">
+            
+<div class="global-pl global--header ">
+    
+<button id="global-mobile-menu" class="button-nds button--icon global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-bars "></i>
+    </button>    
+<a href="/" class="component-nds component--branding ">
+    
+<img class="image-nds image--default component--branding__logo--desktop" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"
+                        />    
+<img class="image-nds image--default component--branding__logo--mobile" src="../assets/global/NIAID_Logo_Mobile.png" alt="NIAID Logo"
+                        />    <div class="component--branding__vertical-bar"></div>
+    
+<div class="component-nds component--product-identity ">
+    <div class="component--product-identity__top">NIAID</div>
+    <div class="component--product-identity__bottom">Design System</div>
+</div></a>    <div>
+        <span class="global--header__version">v1.0</span>
+        
+<a href="../../assets/nds.zip" class="button-nds button--icon " download>
+    
+
+<i class="icon-nds icon--default fal fa-download "></i>
+            <span class="button--icon__text">Download NDS</span>
+    </a>    </div>
+</div>                
+<nav id="main-navigation" class="navigation-nds navigation--primary ">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Getting Started
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/getting-started/index.html">Overview</a>
+                    <a class="dropdown-item" href="/getting-started/index.html##section-static-website">Building a Static Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html##section-drupal-website">Building a Drupal Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html#section-resources">Resources</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Design
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design/index.html">Overview</a>
+                    <a class="dropdown-item" href="/design/index.html#section-typography">Typography</a>
+                    <a class="dropdown-item" href="/design/index.html#section-icons">Icons</a>
+                    <a class="dropdown-item" href="/design/index.html#section-colors">Colors</a>
+                    <a class="dropdown-item" href="/design/index.html#section-forms">Forms &amp; Input</a>
+                    <a class="dropdown-item" href="/design/index.html#section-layout">Layout &amp; Spacing</a>
+                    <a class="dropdown-item" href="/design/index.html#section-shadows">Shadows</a>
+                    <a class="dropdown-item" href="/design/index.html#section-corners">Corners</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Development
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/development/index.html">Overview</a>
+                    <a class="dropdown-item" href="/development/index.html#section-atomic-design">Atomic Design</a>
+                    <a class="dropdown-item" href="/development/index.html#section-libraries">Libraries</a>
+                    <a class="dropdown-item" href="/development/index.html#section-technologies">Technologies &amp; Frameworks</a>
+                    <a class="dropdown-item" href="/development/index.html#section-themes">Themes</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a href="/components/index.html">Components</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/builder/index.html">Theme Builder</a>
+            </div>
+        </div>
+    </nav>        
+<div id="main-navigation-mobile" class="navigation-nds navigation--drawer ">
+    <div class="navigation--drawer__top">
+        <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
+        
+<button class="button-nds button--icon navigation--drawer__top__button-close" >
+    
+
+<i class="icon-nds icon--default fal fa-arrow-to-left "></i>
+    </button>    </div>
+            <div class="navigation--drawer__inner">
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="/">Home</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 1</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 2</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
+    </div>
+<div class="navigation--drawer--overlay" tabindex="0"></div>        
+<button id="custom-styles-toggle" class="button-nds button--floating " aria-label="">
+    <div class="button--floating__icon">
+        
+
+<i class="icon-nds icon--default far fa-palette "></i>
+    </div>
+    <div class="button--floating__text">Customize Page Theme</div>
+</button>            <div class="main" role="main">
+                
+
+
+
+<div class="layouts-nds layouts--main-layout " id="main-layout">
+            <div class="layouts--main-layout__column layouts--main-layout__first col-lg-3">
+                            
+<div class="navigation-nds navigation--mobile-rail ">
+    
+<div class="component-nds component--accordion " id="navigation--mobile-rail">
+                <div id="navigation--mobile-rail__button">
+                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Design Menu</button>
+            </div>
+            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
+                                                                
+<div class="component-nds component--scrollspy-toc pushpin " data-target="main-layout">
+    <ul class="component--scrollspy-toc__list section table-of-contents">
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-components-atoms">Atoms</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-components-molecules">Molecule</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-components-organisms">Organisms</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-components-templates">Templates</a></li>
+            </ul>
+</div>                    
+                            </div>
+        </div></div>            
+        </div>
+                <div class="layouts--main-layout__column layouts--main-layout__second col-lg-9">
+                            
+<div class="layouts-nds layouts--body-card ">
+                             
+<div id="section-components-atoms" class="component-nds component--scrollspy-section scrollspy section ">
+            <h1>Components</h1>
+        <p>Find code snippets for NIAID Design System Components.</p>
+        <h2>Atoms</h2>
+        <p>Description of Components</p>
+    </div>                    </div>            
+        </div>
+                <div class="layouts--main-layout__column layouts--main-layout__third col-lg-3">
+            <span></span>
+        </div>
+    </div>        </div>
+            
+
+<footer id="footer" class="global-nds global--footer container-fluid ">
+        <div class="global--footer__content row">
+        <div class="global--footer__content__logo col-md-4">
+                            
+<a class="image-nds image--logo " href="/">
+  <img class="image--logo__image" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"/>
+</a>                    </div>
+        <div class="global--footer__content__info col-md-8">
+              
+                <div class="row">
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Website Policies &amp; Notices</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a class="link--carot" href="#">Freedom of Information (FOIA)</a></li>
+                            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+                            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Related Government Websites</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+                            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+    </div>
+      
+        <div class="global--footer__tagline">
+            <p>
+                
+
+<i class="icon-nds icon--default fal fa-bolt "></i>
+                <span>Powered by the NIAID Design System</span>
+            </p>
+        </div>
+    </footer></div>
+        <!-- Pattern Lab Footer -->
+        
+        <script src="../js/custom/stickybits.min.js"></script>
+
+        <script src="../js/libraries/jquery.min.js"></script>        <script src="../js/libraries/select2.full.min.js"></script>        <script src="../js/libraries/materialize.min.js"></script>        <script src="../js/libraries/bootstrap.bundle.min.js"></script>        <script src="../js/libraries/matchMedia.js"></script>        <script src="../js/libraries/datatables.min.js"></script>        <script src="../js/libraries/bootstrap-datepicker.min.js"></script>        <script src="../js/global/script-min.js"></script>
+    </body>
+</html>

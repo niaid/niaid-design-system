@@ -1,0 +1,27 @@
+.ext-link-icon {
+    border-bottom: 0;
+    &:hover,
+    &:focus {
+        border-bottom: 0;
+    }
+    &:after {
+        content: " \f08e";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+        font-size: 0.7rem;
+    }
+}
+
+.link--external--mail {
+    position: relative;
+    margin-right: 1.5rem;
+    &:after {
+        @include fa-icon;
+        @extend .fal;
+        content: fa-content($fa-var-envelope) !important;
+        position: absolute;
+        bottom: 0;
+        margin-left: .25rem;
+        font-size: .8rem;
+    }
+}

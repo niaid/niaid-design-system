@@ -1,0 +1,11 @@
+{% set image_embedded_classes = image_embedded_classes|default() %}
+
+<div class="image-nds image--embedded {{ image_embedded_classes }}">
+    <img class="image--embedded__image" src="{{ imagePath }}featured.jpg" alt="featured image, clinician">
+    {% include "@nds/01-atoms/text/text-image-credit-caption/_text-image-credit-caption-main.twig" with
+        {
+            "text_image_credit_caption_credit": "Unsplash",
+            "text_image_credit_caption_caption": "A clinician wearing a mask."
+        }
+    %}
+</div>

@@ -1,0 +1,9 @@
+.view--swatches {
+    padding: 0;
+    .row {
+        margin: 0;
+        > div {
+            padding: 0 .25rem;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.block--fonts {
+    .row {
+        margin-bottom: 1rem;
+        > div {
+            text-align: center;
+        }
+    }
+    .button--icon {
+        display: block;
+        text-align: center;
+        width: 100%;
+        background: transparent;
+        color: $color-theme-1-1-1;
+        &:hover,
+        &:focus {
+            background: $color-theme-1-1-1;
+            color: $white;
+        }
+        .icon--default {
+            width: 100%;
+            padding: 1rem;
+            &:before {
+                font-size: 3rem;
+            }
+        }
+        &__text {
+            padding: 0;
+            margin-top: 1rem;
+        }
+    }
+    &__credit {
+        font-size: .8rem;
+    }
+}

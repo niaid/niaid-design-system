@@ -1,0 +1,11 @@
+{% set layouts_site_id = layouts_site_id|default() %}
+
+<div class="page" id="{{ layouts_site_id }}">
+    {% block header %}{% endblock %}
+    {% block global_navigation %}{% endblock %}
+    {% block hero %}{% endblock %}
+    <div class="main" role="main">
+        {% block main %}{% endblock %}
+    </div>
+    {% block footer %}{% endblock %}
+</div>

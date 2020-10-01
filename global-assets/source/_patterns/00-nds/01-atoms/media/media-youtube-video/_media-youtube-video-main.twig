@@ -1,0 +1,9 @@
+{% set media_youtube_video_classes = media_youtube_video_classes|default() %}
+{% set media_youtube_video_title = media_youtube_video_title|default() %}
+{% set media_youtube_video_src = media_youtube_video_src|default() %}
+{% set media_youtube_video_height = media_youtube_video_height|default() %}
+{% set media_youtube_video_width = media_youtube_video_width|default() %}
+
+<div class="media-nds media--youtube-video {{ media_youtube_video_classes }}">
+    <iframe class="media--youtube-video__iframe" allowfullscreen="" frameborder="0" height="{{ media_youtube_video_height }}" width="{{ media_youtube_video_width }}" src="{{ media_youtube_video_src }}" title="{{ media_youtube_video_title }}"></iframe>
+</div>

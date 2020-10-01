@@ -1,0 +1,31 @@
+{% set global_header_classes = global_header_classes|default() %}
+{% set global_header_product_id_top = global_header_product_id_top|default() %}
+{% set global_header_product_id_bottom = global_header_product_id_bottom|default() %}
+
+<div class="global-pl global--header {{ global_header_classes }}">
+    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+        {
+            "button_icon_id": "global-mobile-menu",
+            "button_icon_classes": "global--header__button",
+            "button_icon_icon": "bars",
+            "button_icon_aria_label": "Open Global Menu"
+        }
+    %}
+    {% include "@nds/02-molecules/components/component-branding/_component-branding-main.twig" with
+        {
+            "component_branding_identity_top": global_header_product_id_top,
+            "component_branding_identity_bottom": global_header_product_id_bottom
+        }
+    %}
+    <div>
+        <span class="global--header__version">v1.0</span>
+        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+            {
+                "button_icon_href": assetsPath ~ "nds.zip",
+                "button_icon_icon": "download",
+                "button_icon_text": "Download NDS",
+                "button_icon_attributes": "download"
+            }
+        %}
+    </div>
+</div>

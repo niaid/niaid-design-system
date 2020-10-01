@@ -1,0 +1,82 @@
+.builder--style-tile {
+    background: $page-background;
+    color: $type-body;
+    line-height: 2.0;
+    &__body {
+        position: relative;
+        padding: 2rem;
+        .row {
+            margin: 0;
+        }
+        .splotch {
+            position: absolute;
+            top: 10rem;
+            left: 0;
+            z-index: 0;
+            width: 80%;
+        }
+        .display-row {
+            margin: 2rem 0;
+            .button-nds {
+                margin-right: .5rem;
+            }
+            .row {
+                .col-6 {
+                    padding-left: 0;
+                }
+                .col-12 {
+                    padding: 0;
+                }
+            }
+        }
+        .focus-field {
+            input {
+                border: 1px solid $type-link;
+                box-shadow: 0 0 0 1px $type-link;
+                & + .icon--default {
+                    color: $type-link;
+                }
+            }
+        }
+        .error-field {
+            input {
+                border: 1px solid $status-error;
+                box-shadow: 0 0 0 1px $status-error;
+                & + .icon--default {
+                    color: $status-error;
+                }
+                &:focus {
+                    border: 1px solid $status-error;
+                    box-shadow: 0 0 0 1px $status-error;
+                }
+            }
+        }
+    }
+}
+
+.style--shadows {
+    .focus-field {
+        input {
+            box-shadow: none;
+            border: 1px solid transparent;
+            @include md-8dp;
+            & + .icon--default {
+                color: $type-body;
+            }
+        }
+    }
+    .error-field {
+        input {
+            border: 1px solid $status-error !important;
+            @include md-2dp;
+            &:hover,
+            &:focus {
+                border: 1px solid $status-error !important;
+                @include md-8dp;
+                & + .icon--default {
+                    color: $status-error;
+                }
+            }
+        }
+    }
+}

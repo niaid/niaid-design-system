@@ -1,0 +1,20 @@
+.block--featured-content {
+    margin: 1rem 0;
+    max-width: 100%;
+    background: $page-background-alternate;
+    border: 0;
+    &__image {
+        height: 9.5rem;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+    &__text {
+        padding: 1rem;
+        &__featured {
+            font-weight: $font-weight-bold;
+            color: $color-theme-1-1-1;
+        }
+    }
+}

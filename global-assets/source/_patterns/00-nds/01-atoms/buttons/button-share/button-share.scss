@@ -1,0 +1,68 @@
+.button--share {
+    display: block;
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    i {
+        line-height: initial;
+    }
+    &:focus {
+        outline: -webkit-focus-ring-color auto 1px;
+    }
+    &--facebook {
+        background: #3b5998 !important;
+        color: $white !important;
+        border: 1px solid #3b5998 !important;
+    }
+    &--twitter {
+        background: #00acee !important;
+        color: $white !important;
+        border: 1px solid #00acee !important;
+    }
+    &--linkedin {
+        background: #0e76a8 !important;
+        color: $white !important;
+        border: 1px solid #0e76a8 !important;
+    }
+    &--instagram {
+        background-image: url('../images/global/instagramBG.png');
+        background-position: center;
+        color: $white !important;
+        border: 1px solid transparent !important;
+    }
+    &--youtube {
+        background: #FF0000;
+        color: $white !important;
+        border: 1px solid #FF0000 !important;
+    }
+    &--pinterest-p {
+        background: #C92228;
+        color: $white !important;
+        border: 1px solid #C92228 !important;
+    }
+    &--flickr {
+        background: #FF0084;
+        color: $white !important;
+        border: 1px solid #FF0084 !important;
+    }
+    &--google-plus-g {
+        background: #D34836;
+        color: $white !important;
+        border: 1px solid #D34836 !important;
+    }
+    &--comment,
+    &--envelope,
+    &--copyright {
+        i {
+            color: $blue;
+        }
+    }
+    & + .ext-link-icon {
+        display: none;
+    }
+}

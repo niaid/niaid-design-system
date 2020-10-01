@@ -1,0 +1,13 @@
+{% set global_color_indicator_classes = global_color_indicator_classes|default() %}
+{% set global_color_indicator_title = global_color_indicator_title|default() %}
+{% set global_color_indicator_hex = global_color_indicator_hex|default() %}
+
+<div class="global-pl global--color-indicator {{ global_color_indicator_classes }}">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: {{ global_color_indicator_hex }}"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">{{ global_color_indicator_title }}</span><br>
+        <span class="global--color-indicator__hex">{{ global_color_indicator_hex }}</span>
+    </div>
+</div>

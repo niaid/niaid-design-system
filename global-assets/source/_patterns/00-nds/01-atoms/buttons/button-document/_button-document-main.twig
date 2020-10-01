@@ -1,0 +1,104 @@
+{#
+    ---
+    title: Document Button
+    ---
+
+    Type: Atoms -> Button
+
+    Description: A button that contains an image or icon of a document type.
+
+    Parameters:
+        button_document_classes - Classes used to style the button.
+        button_document_type - The type of document to display. Options: file-word, file-excel, file-powerpoint, file-pdf, image, video
+
+    Last Updated: December 19, 2018
+#}
+
+{% set button_document_classes = button_document_classes|default() %}
+{% set button_document_type = button_document_type|default() %}
+
+<div class="button-nds button--document {% if button_document_type is not empty %}button--document--{{ button_document_type }}{% endif %} {{ button_document_classes }}">
+    {% if button_document_type == "file-word" %}
+        {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
+            {
+                "icon_document_src": "Word.png",
+                "icon_document_alt": "Word",
+                "icon_document_classes": "doc-word" 
+            }
+        %}
+    {% elseif button_document_type == "file-excel" %}
+        {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
+            {
+                "icon_document_src": "Excel.png",
+                "icon_document_alt": "Excel",
+                "icon_document_classes": "doc-excel" 
+            }
+        %}
+    {% elseif button_document_type == "file-ppt" %}
+        {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
+            {
+                "icon_document_src": "Powerpoint.png",
+                "icon_document_alt": "Powerpoint",
+                "icon_document_classes": "doc-ppt" 
+            }
+        %}
+    {% elseif button_document_type == "file-pdf" %}
+        {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
+            {
+                "icon_document_src": "PDF.png",
+                "icon_document_alt": "PDF",
+                "icon_document_classes": "doc-pdf" 
+            }
+        %}
+    {% elseif button_document_type == "video" %}
+        <div class="button--document__generic-wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": "l",
+                    "icon_default_type": "file-video"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "image" %}
+        <div class="button--document__generic-wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": "l",
+                    "icon_default_type": "file-image"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "application" %}
+        <div class="button--document__generic-wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "icon--default--application",
+                    "icon_default_weight": "l",
+                    "icon_default_type": "desktop-alt"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "link" %}
+        <div class="button--document__generic-wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": "l",
+                    "icon_default_type": "external-link-square"
+                }
+            %}
+        </div>
+    {% else %}
+        <div class="button--document__generic-wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": "l",
+                    "icon_default_type": "file-alt"
+                }
+            %}
+        </div>
+    {% endif %}
+</div>

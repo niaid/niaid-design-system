@@ -1,0 +1,71 @@
+.page-node-10557 .block--content-card__title {
+    display: none;
+}
+.view-news-releases-by-year-filter,.view-search-funding-news-by-year-filter 
+{
+    margin-top: 1em; margin-bottom: 1em;
+}
+.views-field-search-api-excerpt strong{
+    background-color: #fff1d2;
+}
+.block--whats-new__row__col .view-header {
+    border-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+/*****MOVE TO RSC****************/
+.rsc-export-to-excel {
+    float: right;
+    margin-bottom: 1em;
+    font-weight: bold;
+    .csv-feed .feed-icon {
+        background-image: none;
+        width: 36px;
+    }
+    .feed-icon {
+        display: inherit;
+        background: none;
+    }
+}
+
+#toolbar-item-administration-tray {
+    a {
+        @include no-visit-style(#565656);
+    }
+}
+
+#block-niaid-drupal-theme-local-tasks {
+    position: absolute;
+    right: calc(1rem - 1px);
+    right: 1rem;
+    top: 0;
+
+    nav.tabs {
+        background-color: rgba(0,0,0,.7);
+        border-bottom-left-radius: 1rem;
+    }
+
+    .tabs {
+        margin: 0 !important;
+        border: 0;
+
+        .is-active {
+            background: none;
+        }
+
+        li {
+            padding: .5rem 1rem;
+
+            a {
+                @extend .p-0;
+                color: $white;
+
+                &:hover, &:focus {
+                    text-decoration: underline;
+                    border-bottom: 0 !important;
+                }
+            }
+        }
+    }
+}
+/*****END MOVE TO RSC************/

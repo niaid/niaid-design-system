@@ -1,0 +1,100 @@
+{% embed "@nds/02-molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-colors"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h2>Colors</h2>
+        <p>A color scheme is one of the strongest elements of brand identity, but choosing a good palette can be challenging.</p>
+        <p>The NIAID Design System has simplified color decisions by defining a set of global colors that all NIAID properties should use. By sharing these colors across all platforms, NDS gives digital assets a sense of consistency and familiarity.</p>
+
+        {# Color swatches #}
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_title": "Heading Color",
+                            "global_color_indicator_hex": "#2F2F2F"
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_title": "Body Color",
+                            "global_color_indicator_hex": "#404B56"
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_title": "Link Color",
+                            "global_color_indicator_hex": "#246CD3"
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_classes": "global--color-indicator--bg",
+                            "global_color_indicator_title": "Page Background",
+                            "global_color_indicator_hex": "#FDFDFD"
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_classes": "global--color-indicator--bg",
+                            "global_color_indicator_title": "Alternate Background",
+                            "global_color_indicator_hex": "#F5F6FA"
+                        }
+                    %}
+                </div>
+                <div class="col-6">
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_title": "Input Border",
+                            "global_color_indicator_hex": "#888888"
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_title": "Success Color",
+                            "global_color_indicator_hex": "#078A00"
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_title": "Error Color",
+                            "global_color_indicator_hex": "#C9191C"
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_title": "NIAID Blue",
+                            "global_color_indicator_hex": "#20558A"
+                        }
+                    %}
+                </div>
+            </div>
+        </div>
+
+        <p>While consistency is an overall goal with any design system, customizability is one area where typical design systems fall short. There is a need for various web properties to have their own personality, and this necessitates variance. The NIAID Design System was created to allow users choice in one of three themes. By keeping the global colors consistent, and by applying theme colors selectively and thoughfully, digital platforms using NDS will both comply with NIAID's brand and express individuality.</p>
+
+        {% include "@organisms/views/view-swatches/_view-swatches-main.twig" with
+            {
+                "view_swatches_headings_level": '3',
+                "view_swatches_development": 'false'
+            }    
+        %}
+
+        {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
+            {% block block_content %}
+                <h4>Developing with NIAID Design System Colors</h4>
+                <p>Get more information on how to implement NDS color palettes.</p>
+                {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                    {
+                        "button_default_type": "primary",
+                        "button_default_label": "Develop with Colors",
+                        "button_default_href": link.development ~ "#developing-with-colors"
+                    }
+                %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

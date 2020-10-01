@@ -1,0 +1,64 @@
+.builder--side-drawer {
+    @include md-16dp;
+    background: #27282C;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.25rem;
+    h2,
+    h3,
+    h4 {
+        font-family: "Roboto", sans-serif !important;
+        color: #fff;
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    ul, li, span, a, p {
+        font-family: "Roboto", sans-serif !important;
+    }
+    .button--generate-link {
+        /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwNTU4YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxNjNhNWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+) !important;
+        background: -moz-linear-gradient(top, #20558a 0%, #163a5f 100%) !important;
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #20558a 0%, #163a5f 100%) !important;
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #20558a 0%, #163a5f 100%) !important;
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20558a', endColorstr='#163a5f', GradientType=0) !important;
+        /* IE6-8 */
+        background-position: center;
+        margin-right: .5rem;
+        border: 0 !important;
+    }
+
+    #fonts {
+        h3 {
+            &:last-of-type {
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    &__copied {
+        display: inline-block;
+        vertical-align: bottom;
+        opacity: 0;
+        transition: opacity 2s;
+    }
+
+    &__link {
+        display: none;
+    }
+}

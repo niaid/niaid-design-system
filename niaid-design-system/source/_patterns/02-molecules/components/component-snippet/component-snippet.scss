@@ -1,0 +1,23 @@
+.component--snippet {
+    margin: 1rem 0 2rem 0;
+    &__block {
+        @extend .block-nds;
+        padding: 0;
+        margin-bottom: 1rem;
+        &__code {
+            &__rendered {
+                padding: 1rem;
+                border-bottom: 0.0625rem solid $input-border;
+            }
+            &__snippet {
+                pre {
+                    margin: -2rem 0 0 0;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+    &__button {
+        text-align: right;
+    }
+}

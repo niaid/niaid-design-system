@@ -1,0 +1,10 @@
+{
+    "link": {
+        "index": "/",
+        "design": "/design/index.html",
+        "development": "/development/index.html",
+        "components": "/components/index.html",
+        "themeBuilder": "/builder/index.html",
+        "getStarted": "/getting-started/index.html"
+    }
+}

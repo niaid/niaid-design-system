@@ -1,0 +1,13 @@
+.block--swatch {
+    padding: .25rem;
+    display: inline-block;
+    width: 100%;
+    &__color {
+        height: 3rem;
+        width: 100%;
+        margin-bottom: .5rem;
+    }
+    &__text {
+        padding: .25rem;
+    }
+}

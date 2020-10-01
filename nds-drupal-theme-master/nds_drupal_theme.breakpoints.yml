@@ -1,0 +1,41 @@
+nds.xs:
+  label: Extra Small
+  mediaQuery: '(min-width: 375px)'
+  weight: 0
+  multipliers:
+    - 1x
+
+nds.sm:
+  label: Small
+  mediaQuery: '(min-width: 576px)'
+  weight: 1
+  multipliers:
+    - 1x
+
+nds.md:
+  label: Medium
+  mediaQuery: '(min-width: 768px)'
+  weight: 2
+  multipliers:
+    - 1x
+
+nds.lg:
+  label: Large
+  mediaQuery: '(min-width: 992px)'
+  weight: 3
+  multipliers:
+    - 1x
+
+nds.xl:
+  label: Extra Large
+  mediaQuery: '(min-width: 1200px)'
+  weight: 4
+  multipliers:
+    - 1x
+
+nds.xxl:
+  label: Extra Extra Large
+  mediaQuery: '(min-width: 1900px)'
+  weight: 5
+  multipliers:
+    - 1x

@@ -1,0 +1,26 @@
+{
+    "pageID": "builder",
+    "prodBuild": "true",
+    "title": "Theme Builder - NIAID Design System",
+    "cssPath": "../css/",
+    "jsPath": "../js/",
+    "imagePath": "../assets/",
+    "navigationPrimaryActiveLink": "builder",
+    "jsIncludes": {
+        "jquery": true,
+        "select2": true,
+        "materialize": true,
+        "bootstrap": true,
+        "matchMedia": true,
+        "dataTables": true,
+        "dateTimePicker": true
+    },
+    "link": {
+        "index": "/",
+        "design": "/design/index.html",
+        "development": "/development/index.html",
+        "components": "/components/index.html",
+        "themeBuilder": "/builder/index.html",
+        "getStarted": "/getting-started/index.html"
+    }
+}

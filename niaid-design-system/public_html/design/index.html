@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>Design - NIAID Design System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../css/libraries/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="../css/libraries/select2.min.css" />
+
+    <link rel="icon" href="../assets/global/favicon.ico" type="image/x-icon"/>
+
+          <link rel="stylesheet" href="../css/style.css" media="all" />
+        
+    
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+        <!-- End Pattern Lab -->
+    
+  </head>
+  <body class="style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans">
+<div class="block-nds block--alert severity--4">
+            <p>This NDS site is a work in progress. The content, design, and development are subject to change.</p>
+    </div>
+
+<div class="component-nds component--style-controls ">
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="text-heading" title="Headings Font">Headings Font
+    </label>    <select id="text-heading" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+                <option value="martel">Martel</option>
+                <option value="merriweather">Merriweather</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="text-body" title="Body Font">Body Font
+    </label>    <select id="text-body" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="color-select" title="Theme">Theme
+    </label>    <select id="color-select" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="theme-1">Theme 1</option>
+                <option value="theme-2">Theme 2</option>
+                <option value="theme-3">Theme 3</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="shadows" title="Shadows">Shadows
+    </label>    <select id="shadows" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="flat">Flat</option>
+                <option value="shadows">Material</option>
+            </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+<div class="input-nds input--select ">
+    
+
+<label class="input-nds input--label input--select__label" for="corners" title="Corner Style">Corner Style
+    </label>    <select id="corners" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="straight">Sharp</option>
+                <option selected="selected" value="semirounded">Semi-Rounded</option>
+                <option value="rounded">Fully-Rounded</option>
+            </select>
+</div>    </div>
+</div>
+
+<div class="page" id="design">
+            
+<div class="global-pl global--header ">
+    
+<button id="global-mobile-menu" class="button-nds button--icon global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-bars "></i>
+    </button>    
+<a href="/" class="component-nds component--branding ">
+    
+<img class="image-nds image--default component--branding__logo--desktop" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"
+                        />    
+<img class="image-nds image--default component--branding__logo--mobile" src="../assets/global/NIAID_Logo_Mobile.png" alt="NIAID Logo"
+                        />    <div class="component--branding__vertical-bar"></div>
+    
+<div class="component-nds component--product-identity ">
+    <div class="component--product-identity__top">NIAID</div>
+    <div class="component--product-identity__bottom">Design System</div>
+</div></a>    <div>
+        <span class="global--header__version">v1.0</span>
+        
+<a href="../../assets/nds.zip" class="button-nds button--icon " download>
+    
+
+<i class="icon-nds icon--default fal fa-download "></i>
+            <span class="button--icon__text">Download NDS</span>
+    </a>    </div>
+</div>                
+<nav id="main-navigation" class="navigation-nds navigation--primary ">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Getting Started
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/getting-started/index.html">Overview</a>
+                    <a class="dropdown-item" href="/getting-started/index.html##section-static-website">Building a Static Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html##section-drupal-website">Building a Drupal Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html#section-resources">Resources</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Design
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design/index.html">Overview</a>
+                    <a class="dropdown-item" href="/design/index.html#section-typography">Typography</a>
+                    <a class="dropdown-item" href="/design/index.html#section-icons">Icons</a>
+                    <a class="dropdown-item" href="/design/index.html#section-colors">Colors</a>
+                    <a class="dropdown-item" href="/design/index.html#section-forms">Forms &amp; Input</a>
+                    <a class="dropdown-item" href="/design/index.html#section-layout">Layout &amp; Spacing</a>
+                    <a class="dropdown-item" href="/design/index.html#section-shadows">Shadows</a>
+                    <a class="dropdown-item" href="/design/index.html#section-corners">Corners</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Development
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/development/index.html">Overview</a>
+                    <a class="dropdown-item" href="/development/index.html#section-atomic-design">Atomic Design</a>
+                    <a class="dropdown-item" href="/development/index.html#section-libraries">Libraries</a>
+                    <a class="dropdown-item" href="/development/index.html#section-technologies">Technologies &amp; Frameworks</a>
+                    <a class="dropdown-item" href="/development/index.html#section-themes">Themes</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a href="/components/index.html">Components</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/builder/index.html">Theme Builder</a>
+            </div>
+        </div>
+    </nav>        
+<div id="main-navigation-mobile" class="navigation-nds navigation--drawer ">
+    <div class="navigation--drawer__top">
+        <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
+        
+<button class="button-nds button--icon navigation--drawer__top__button-close" >
+    
+
+<i class="icon-nds icon--default fal fa-arrow-to-left "></i>
+    </button>    </div>
+            <div class="navigation--drawer__inner">
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="/">Home</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 1</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 2</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
+    </div>
+<div class="navigation--drawer--overlay" tabindex="0"></div>        
+<button id="custom-styles-toggle" class="button-nds button--floating " aria-label="">
+    <div class="button--floating__icon">
+        
+
+<i class="icon-nds icon--default far fa-palette "></i>
+    </div>
+    <div class="button--floating__text">Customize Page Theme</div>
+</button>            <div class="main" role="main">
+                
+
+
+
+<div class="layouts-nds layouts--main-layout " id="main-layout">
+            <div class="layouts--main-layout__column layouts--main-layout__first col-lg-3">
+                            
+<div class="navigation-nds navigation--mobile-rail ">
+    
+<div class="component-nds component--accordion " id="navigation--mobile-rail">
+                <div id="navigation--mobile-rail__button">
+                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Design Menu</button>
+            </div>
+            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
+                                                                
+<div class="component-nds component--scrollspy-toc pushpin " data-target="main-layout">
+    <ul class="component--scrollspy-toc__list section table-of-contents">
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-overview">Overview</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-typography">Typography</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-icons">Icons</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-colors">Colors</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-forms">Forms &amp; Input</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-layout">Layout &amp; Spacing</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-shadows">Shadows</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-corners">Corners</a></li>
+            </ul>
+</div>                    
+                            </div>
+        </div></div>            
+        </div>
+                <div class="layouts--main-layout__column layouts--main-layout__second col-lg-7">
+                            
+<div class="layouts-nds layouts--body-card ">
+                            
+<div id="section-overview" class="component-nds component--scrollspy-section scrollspy section ">
+            <h1>Design</h1>
+        <p>The visual style of the NIAID Design System is founded in <a href="https://material.io/design/">Material Design</a>, but has been modified to give NIAID web properties a unique look and feel. The visual style is also informed by HHS, NIH, and <a href="https://designsystem.digital.gov/">USWDS</a> policies, best practices, and many usability studies.</p>
+        
+<div class="block--design-files ">
+    
+<button class="button-nds button--image ">
+    
+<img class="image-nds image--default " src="../assets/icon_sketch.png" alt="Sketch"
+                        />    <span>Download Sketch File</span>
+</button>    
+<button class="button-nds button--image ">
+    
+<img class="image-nds image--default " src="../assets/icon_figma.png" alt="Figma"
+                        />    <span>Download Figma File</span>
+</button>    
+<button class="button-nds button--image ">
+    
+<img class="image-nds image--default " src="../assets/icon_illustrator.png" alt="Illustrator"
+                        />    <span>Download Illustrator File</span>
+</button></div>    </div>                        
+<div id="section-typography" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Typography</h2>
+        <h3>Fonts</h3>
+        <p>The NIAID Design System provides four font options. Roboto and Public Sans are Sans-Serif fonts. Martel and Merriweather are Serif fonts.</p>
+        <p>Every option has been analyzed for readability and elegance. Merriweather and Public Sans are both officially endorsed fonts of the USWDS design system.</p>
+        <h4>Headings</h4>
+        <p>NDS users can select any of the four available fonts for headings:<p>
+        <ul>
+            <li>Roboto</li>
+            <li>Public Sans</li>
+            <li>Martel</li>
+            <li>Merriweather</li>
+        </ul>
+
+        <p>Heading Font Properties:</p>
+        
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Heading Level</th>
+                    <th>Font Size</th>
+                    <th>Font Color</th>
+                    <th>Font Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>H1</td>
+                    <td>3rem</td>
+                    <td>$type-heading: #2F2F2F</td>
+                    <td>$font-weight-regular: Regular</td>
+                </tr>
+                <tr>
+                    <td>H2</td>
+                    <td>2rem</td>
+                    <td>$type-heading: #2F2F2F</td>
+                    <td>$font-weight-regular: Regular</td>
+                </tr>
+                <tr>
+                    <td>H3</td>
+                    <td>1.65rem</td>
+                    <td>$type-heading: #2F2F2F</td>
+                    <td>$font-weight-regular: Regular</td>
+                </tr>
+                <tr>
+                    <td>H4</td>
+                    <td>1.5rem</td>
+                    <td>$type-heading: #2F2F2F</td>
+                    <td>$font-weight-regular: Regular</td>
+                </tr>
+                <tr>
+                    <td>H5</td>
+                    <td>1.25rem</td>
+                    <td>$type-heading: #2F2F2F</td>
+                    <td>$font-weight-bold: Bold</td>
+                </tr>
+                <tr>
+                    <td>H6</td>
+                    <td>1.25rem</td>
+                    <td>$type-heading: #2F2F2F</td>
+                    <td>$font-weight-regular: Regular</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Body Text</h4>
+        <p>Body fonts are restricted to the two Sans Serif fonts:</p>
+        <ul>
+            <li>Roboto</li>
+            <li>Public Sans</li>
+        </ul>
+        <p>This restriction on fonts for the body is due to readability issues with Serif fonts at small text sizes.<p>
+        <p>The default font size for body text is 16px. All sizing should use the "rems" unit, which enables the sizing of elements to be responsive. For more information about sizing, visit the <a href="#section-layout">Layouts &amp; Spacing</a> section.
+
+        <h3>Text Elements</h3>
+        <h4>Links</h4>
+        <p>Links are important web elements that allow users to move between pages on a site. Section 508 requires that designers may not convey meaning or functionality through color alone, which means that links must have additional styling such as an underline to set them apart. Under NDS, links are distinguished with a 1px bottom-border:</p>
+        <p><a href="#">Example Link</a></p>
+        <p>External links, or links that open pages on other websites, must be designated with the external link icon:</p>
+        <p><a href="https://www.google.com">Example External Link - Google</a></p>
+        <p>Mailto links are automatically appended with an envelope Font Awesome icon to clarify the link type.</p>
+        <a href="mailto:caccamojr@niaid.nih.gov">Example Mailto Link</a>
+        <h4>Lists</h4>
+        <h5>Unordered List</h5>
+        <ul>
+            <li>List Item Number One</li>
+            <li>List Item Number Two</li>
+            <li>List Item Number Three</li>
+        </ul>
+        <h5>Ordered List</h5>
+        <ol>
+            <li>List Item Number One</li>
+            <li>List Item Number Two</li>
+            <li>List Item Number Three</li>
+        </ol>
+        
+<div class="block--fonts container-fluid ">
+    <div class="row">
+        <div class="col-md-6">
+            
+<a href="../../assets/public-sans.zip" class="button-nds button--icon " download>
+    
+
+<i class="icon-nds icon--default fal fa-file-archive "></i>
+            <span class="button--icon__text">Download Public Sans</span>
+    </a>            <span class="block--fonts__credit">Provided by USWDS</span>
+        </div>
+        <div class="col-md-6">
+            
+<a href="../../assets/roboto.zip" class="button-nds button--icon " download>
+    
+
+<i class="icon-nds icon--default fal fa-file-archive "></i>
+            <span class="button--icon__text">Download Roboto</span>
+    </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            
+<a href="../../assets/martel.zip" class="button-nds button--icon " download>
+    
+
+<i class="icon-nds icon--default fal fa-file-archive "></i>
+            <span class="button--icon__text">Download Martel</span>
+    </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
+        </div>
+        <div class="col-md-6">
+            
+<a href="../../assets/merriweather.zip" class="button-nds button--icon " download>
+    
+
+<i class="icon-nds icon--default fal fa-file-archive "></i>
+            <span class="button--icon__text">Download Merriweather</span>
+    </a>            <span class="block--fonts__credit">Provided by USWDS</span>
+        </div>
+    </div>
+</div>        
+<div class="block-nds block--default ">
+                    <h4>Developing with NIAID Design System Typography</h4>
+                <p>Get more information on how to implement NDS typography.</p>
+                
+<a class="button-nds waves-effect waves-light button--primary " href="/development/index.html#developing-with-typography" type="primary" role="button" >Develop with Typography</a>            </div>    </div>                        
+<div id="section-icons" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Icons</h2>
+        <p>While there are some universally recognized icons, like the magnifying glass for search, most icons do not have ubiquitous meanings, leading to comprehension issues for users. NDS encourages thoughtful icon selection, ideally verified through usability studies.</p>
+        <p>NDS requires that all icons come from the <a href="https://fontawesome.com/">Font Awesome Icon Library</a>, which provides an expansive set of icons to choose from. Sourcing all icons from the Font Awesome library keeps the visual style and design consistent.</p>
+        
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/fa.png" alt="A screenshot of the Font Awesome Icon Library"
+                        />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">A screenshot of the Font Awesome Icon Library</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text"><a href="https://fontawesome.com/icons?d=gallery">Font Awesome</a></span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+        
+<h3 class="text-nds text--heading-icon ">
+    
+
+<i class="icon-nds icon--default fal fa-exclamation-square "></i>
+    Exception
+</h3>
+
+        <p>Document icons, such as Word or Excel, or other software/product logos should be used instead of those provided under Font Awesome. The permissable document icons are listed below:</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    
+<img class="image-nds image--default " src="../assets/global/document-icons/Word.png" alt="Word Icon"
+                        />                </div>
+                <div class="col-md-3">
+                    
+<img class="image-nds image--default " src="../assets/global/document-icons/Excel.png" alt="Excel Icon"
+                        />                </div>
+                <div class="col-md-3">
+                    
+<img class="image-nds image--default " src="../assets/global/document-icons/Powerpoint.png" alt="Powerpoint Icon"
+                        />                </div>
+                <div class="col-md-3">
+                    
+<img class="image-nds image--default " src="../assets/global/document-icons/PDF.png" alt="PDF Icon"
+                        />                </div>
+            </div>
+        </div>
+    </div>                        
+<div id="section-colors" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Colors</h2>
+        <p>A color scheme is one of the strongest elements of brand identity, but choosing a good palette can be challenging.</p>
+        <p>The NIAID Design System has simplified color decisions by defining a set of global colors that all NIAID properties should use. By sharing these colors across all platforms, NDS gives digital assets a sense of consistency and familiarity.</p>
+
+                <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #2F2F2F"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Heading Color</span><br>
+        <span class="global--color-indicator__hex">#2F2F2F</span>
+    </div>
+</div>                    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #404B56"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Body Color</span><br>
+        <span class="global--color-indicator__hex">#404B56</span>
+    </div>
+</div>                    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #246CD3"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Link Color</span><br>
+        <span class="global--color-indicator__hex">#246CD3</span>
+    </div>
+</div>                    
+<div class="global-pl global--color-indicator global--color-indicator--bg">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #FDFDFD"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Page Background</span><br>
+        <span class="global--color-indicator__hex">#FDFDFD</span>
+    </div>
+</div>                    
+<div class="global-pl global--color-indicator global--color-indicator--bg">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #F5F6FA"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Alternate Background</span><br>
+        <span class="global--color-indicator__hex">#F5F6FA</span>
+    </div>
+</div>                </div>
+                <div class="col-6">
+                    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #888888"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Input Border</span><br>
+        <span class="global--color-indicator__hex">#888888</span>
+    </div>
+</div>                    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #078A00"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Success Color</span><br>
+        <span class="global--color-indicator__hex">#078A00</span>
+    </div>
+</div>                    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #C9191C"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">Error Color</span><br>
+        <span class="global--color-indicator__hex">#C9191C</span>
+    </div>
+</div>                    
+<div class="global-pl global--color-indicator ">
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__color" style="background: #20558A"></span>
+    </div>
+    <div class="global--color-indicator__wrapper">
+        <span class="global--color-indicator__name">NIAID Blue</span><br>
+        <span class="global--color-indicator__hex">#20558A</span>
+    </div>
+</div>                </div>
+            </div>
+        </div>
+
+        <p>While consistency is an overall goal with any design system, customizability is one area where typical design systems fall short. There is a need for various web properties to have their own personality, and this necessitates variance. The NIAID Design System was created to allow users choice in one of three themes. By keeping the global colors consistent, and by applying theme colors selectively and thoughfully, digital platforms using NDS will both comply with NIAID's brand and express individuality.</p>
+
+        
+<div class="view-pl view--swatches container-fluid ">
+    <h3>Theme 1 (Default):</h3>
+        <div class="row">
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #157B8D"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Primary Button</div>
+        <div class="block--swatch__text__hex">#157B8D</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #497951"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Secondary Button</div>
+        <div class="block--swatch__text__hex">#497951</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #262626"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Navigation</div>
+        <div class="block--swatch__text__hex">#262626</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #E08A63"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Accent</div>
+        <div class="block--swatch__text__hex">#E08A63</div>
+    </div>
+</div>        </div>
+    </div>
+    <h3>Theme 2:</h3>
+        <div class="row">
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #586FAB"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Primary Button</div>
+        <div class="block--swatch__text__hex">#586FAB</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #247BA0"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Secondary Button</div>
+        <div class="block--swatch__text__hex">#247BA0</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #244D56"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Navigation</div>
+        <div class="block--swatch__text__hex">#244D56</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #FAB952"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Accent</div>
+        <div class="block--swatch__text__hex">#FAB952</div>
+    </div>
+</div>        </div>
+    </div>
+    <h3>Theme 3:</h3>
+        <div class="row">
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #123B56"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Primary Button</div>
+        <div class="block--swatch__text__hex">#123B56</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #69166E"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Secondary Button</div>
+        <div class="block--swatch__text__hex">#69166E</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #423E63"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Navigation</div>
+        <div class="block--swatch__text__hex">#423E63</div>
+    </div>
+</div>        </div>
+        <div class="col-md-3">
+            
+<div class="block-nds block--swatch ">
+    <div class="block--swatch__color" style="background: #E08A63"></div>
+    <div class="block--swatch__text">
+        <div class="block--swatch__text__label">Accent</div>
+        <div class="block--swatch__text__hex">#E08A63</div>
+    </div>
+</div>        </div>
+    </div>
+</div>
+        
+<div class="block-nds block--default ">
+                    <h4>Developing with NIAID Design System Colors</h4>
+                <p>Get more information on how to implement NDS color palettes.</p>
+                
+<a class="button-nds waves-effect waves-light button--primary " href="/development/index.html#developing-with-colors" type="primary" role="button" >Develop with Colors</a>            </div>    </div>                        
+<div id="section-forms" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Forms &amp; Input</h2>
+        <p>Form controls and inputs are an essential mechanism for websites and applications to get user-provided information. From "Was This Page Helpful?" forms to Contact Us pages, form fields and inputs add a layer of interactivity to digital platforms. Form fields can be difficult to get right due to stringent accessibility laws such as <a href="https://www.ada.gov/508/">Section 508 under the Americans with Disabilities Act (ADA).</a> NDS ensures form fields are compliant and elegant by ensuring visible focus states and by meeting color contrast guidelines.</p>
+        <h3>Buttons</h3>
+        <p>NDS supports three main button styles: Primary, Seconadry, and Tertiary. These three styles are shown below, along with a sample disabled button.</p>
+        <div class="container container--button">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    
+<a class="button-nds waves-effect waves-light button--primary " type="primary" role="button" >Primary Button</a>                </div>
+                <div class="col-12 col-md-6">
+                    
+<a class="button-nds waves-effect waves-light button--secondary " type="secondary" role="button" >Secondary Button</a>                </div>
+                <div class="col-12 col-md-6">
+                    
+<a class="button-nds waves-effect waves-light button--tertiary " type="tertiary" role="button" >Tertiary Button</a>                </div>
+                <div class="col-12 col-md-6">
+                    
+<a class="button-nds waves-effect waves-light button--primary disabled" type="primary" role="button" >Disabled Button</a>                </div>
+            </div>
+        </div>
+
+        <p>In addition to the main styles, NDS also has a button pattern specifically for buttons that link to external sites:</p>
+
+        <p>For more information on buttons, please <a href="/components/index.html">visit the Components page.</a></p>
+        <h3>Text Input Fields</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    
+<div class="input-group-nds input-group--text ">
+    
+
+<label class="input-nds input--label form-check-label" for="input-text-example" title="Field Label">Field Label
+    </label>    
+<input id="input-text-example" class="input-nds input--text "
+          
+
+type="text" id="input-text-example" name="input-text-example" placeholder="Enter value..." title="Field Label" required>
+</div>                </div>
+                <div class="col-6">
+                    
+<div class="input-group-nds input-group--text focus-field">
+    
+
+<label class="input-nds input--label form-check-label" for="input-text-example" title="Focus Field">Focus Field
+    </label>    
+<div class="input--text--icon"><input id="input-text-example" class="input-nds input--text "
+          
+
+type="text" id="input-text-example" name="input-text-example" title="Focus Field" required>
+    
+
+<i class="icon-nds icon--default fal fa-lock-alt "></i>
+</div></div>                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    
+<div class="input-group-nds input-group--text ">
+    
+
+<label class="input-nds input--label form-check-label" for="input-text-example" title="Field with Icon">Field with Icon
+    </label>    
+<div class="input--text--icon"><input id="input-text-example" class="input-nds input--text "
+          
+
+type="text" id="input-text-example" name="input-text-example" placeholder="Enter value..." title="Field with Icon" required>
+    
+
+<i class="icon-nds icon--default fal fa-filter "></i>
+</div></div>                </div>
+                <div class="col-6">
+                    
+<div class="input-group-nds input-group--text error-field">
+    
+
+<label class="input-nds input--label form-check-label" for="input-text-example" title="Error Field">Error Field
+    </label>    
+<div class="input--text--icon"><input id="input-text-example" class="input-nds input--text "
+          
+
+type="text" id="input-text-example" name="input-text-example" placeholder="Password" title="Error Field" required>
+    
+
+<i class="icon-nds icon--default fal fa-lock-alt "></i>
+</div>    <small class="c-required"></small><div class="invalid-feedback">Value is required.</div>
+</div>                </div>
+            </div>
+        </div>
+        <h3>Checkbox &amp; Radio Buttons</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    
+<div id="form-group-example" role="checkboxgroup" aria-labelledby="label_form-group-example" class="input-group-nds input-group--checkbox ">
+    <p class="input-group--checkbox__label" id="label_form-group-example">Choose Platforms You Own</p>
+                                
+<div class="input-nds input--checkbox ">
+    <input
+              
+
+type="checkbox" id="xbox" name="form-group-example" value="xbox" required    >
+    
+
+<label class="input-nds input--label " for="xbox" title="Xbox">Xbox
+    </label></div>                            
+<div class="input-nds input--checkbox ">
+    <input
+              
+
+type="checkbox" id="playstation" name="form-group-example" value="playstation"    >
+    
+
+<label class="input-nds input--label " for="playstation" title="Playstation">Playstation
+    </label></div>                            
+<div class="input-nds input--checkbox ">
+    <input
+              
+
+type="checkbox" id="pc" name="form-group-example" value="pc"    >
+    
+
+<label class="input-nds input--label " for="pc" title="PC">PC
+    </label></div>                        </div>                </div>
+                <div class="col-6">
+                    
+<div id="console-select" role="radiogroup" aria-labelledby="label_console-select" class="input-group-nds input-group--radio ">
+    <p class="input-group--radio__label" id="label_console-select">Choose the Platform You Own</p>
+                                
+<div class="input-nds input--radio ">
+    <input
+              
+
+type="radio" id="xbox-radio" name="console-select-radio" value="xbox" required    >
+    
+
+<label class="input-nds input--label " for="xbox-radio" title="Xbox">Xbox
+    </label></div>                            
+<div class="input-nds input--radio ">
+    <input
+              
+
+type="radio" id="playstation-radio" name="console-select-radio" value="playstation"    >
+    
+
+<label class="input-nds input--label " for="playstation-radio" title="Playstation">Playstation
+    </label></div>                            
+<div class="input-nds input--radio ">
+    <input
+              
+
+type="radio" id="pc-radio" name="console-select-radio" value="pc"    >
+    
+
+<label class="input-nds input--label " for="pc-radio" title="PC">PC
+    </label></div>                        </div>                </div>
+            </div>
+        </div>
+        
+<div class="block-nds block--default ">
+                    <h4>Developing with NIAID Design System Forms &amp; Inputs</h4>
+                <p>Get more information about how the NIAID Design System supports development with various types of form and input elements.</p>
+                
+<a class="button-nds waves-effect waves-light button--primary " type="primary" role="button" >Develop with Forms &amp; Inputs</a>            </div>    </div>                        
+<div id="section-layout" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Layout &amp; Spacing</h2>
+        <h3>Layout</h3>
+        <p>Web pages are built using a 12 column grid system, provided under the <a href="https://getbootstrap.com/">Bootstrap 4</a> framework. To learn more about the Bootstrap 4 grid system, visit the official <a href="https://getbootstrap.com/docs/4.5/layout/grid/">Bootstrap 4 grid system documentation.</a></p>
+
+        <p>NDS websites will typically have a main content area that occupies 8 or 9 Bootstrap columns out of 12. This configuration allows for a side rail of content, such as a section for local navigation.</p>
+
+        <h3>Spacing &amp; Sizing</h3>
+        <p>Spacing in NDS is governed by an <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">8pt grid system.</a> In general, items are spaced by some factor or multiple of 8. Keeping elements spaced in this way helps to promote and maintain visual consistency.</p>
+        <p>All sizing of elements should be done using the "rem" CSS unit. Rems are based on the font sizing defined in the body. As noted above, the default font size is 16px. 1rem is therefore equivalent to 16px. The benefits of using rems are numerous, the main one being scalability. If every component is styled using the rem unit, as is the case in NDS, then altering the base font size in the body instantly scales all rems proportionally, and the size ratio of the elements are maintained. This means that your components will still look the same, but may be bigger or smaller, if the default font size is changed.</p>
+    </div>                        
+<div id="section-shadows" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Shadows</h2>
+        <p>Shadows are a popular effect in modern web design, and there are several different philosophies that govern their usage.</p>
+        <p>As part of the personalization effort, the NIAID Design System allows users to choose between Flat Design (no shadows) or Material Design.</p>
+        <h3>Flat Design</h3>
+        <p>Flat Design is the practice of designing web page without the use of shadows. Under this paradigm, users rely on color predominately to determine the importance of web components and which areas of the page require their attention.</p>
+                <h3>Material Design</h3>
+        <p><a href="https://material.io/">Material Design</a> by Google treats web components, such as buttons, cards, and images, as surfaces. Material Design creates a visual heirachy through the use of light and shadowing, where elements of greater importance appear closer or have a higher "elevation" than other elements. Not only does this strategy provide visual interest by adding a 3D effect to the design, it also directs users focus to the elements of the page that are most important or in need of attention at any given time.</p>
+        <p>In order to create uniformity, the Material Design system has <a href="https://material.io/design/environment/elevation.html">documented each web components' elevation</a>, or its positioned relative to other components. These elevations lie on a scale from zero (flat) to 24. The following graphic from the Material Design documentation shows some of these elevations:</p>
+
+        
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/elevations.png" alt="A chart showing the Material Design Eleveations"
+                        />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">This graphic shows the elevations of various web elements under the system of Material Design</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text"><a href="https://material.io/design/environment/elevation.html">Material Design, Google</a></span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+
+        
+        
+<div class="block-nds block--default ">
+                    <h4>Developing with NIAID Design System Shadows</h4>
+                <p>Get more information about how the NIAID Design System supports development with Flat or Material Design.</p>
+                
+<a class="button-nds waves-effect waves-light button--primary " href="/development/index.html#developing-with-shadows" type="primary" role="button" >Develop with Shadows</a>            </div>    </div>                        
+<div id="section-corners" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Corners</h2>
+        <p>Another dimension of design customability that NDS provides is the roundness of corners, otherwise known as "border-radius." NDS provides three options: sharp, semi-rounded, and fully-rounded. The squares below show how each of these three options are applied in practice.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Sharp</h3>
+                    <div class="box--corners box--corners--straight">
+                        <span>0rem<br>0px</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Semi-Rounded</h3>
+                    <div class="box--corners box--corners--semi">
+                        <span>.3125rem<br>5px</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Fully-Rounded</h3>
+                    <div class="box--corners box--corners--fully">
+                        <span>1rem<br>16px</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>                    </div>            
+        </div>
+                <div class="layouts--main-layout__column layouts--main-layout__third col-lg-2">
+            <span></span>
+        </div>
+    </div>        </div>
+            
+
+<footer id="footer" class="global-nds global--footer container-fluid ">
+        <div class="global--footer__content row">
+        <div class="global--footer__content__logo col-md-4">
+                            
+<a class="image-nds image--logo " href="/">
+  <img class="image--logo__image" src="../assets/global/NIAID_Logo.svg" alt="NIAID Logo"/>
+</a>                    </div>
+        <div class="global--footer__content__info col-md-8">
+              
+                <div class="row">
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Website Policies &amp; Notices</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a class="link--carot" href="#">Freedom of Information (FOIA)</a></li>
+                            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+                            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Related Government Websites</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+                            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+    </div>
+      
+        <div class="global--footer__tagline">
+            <p>
+                
+
+<i class="icon-nds icon--default fal fa-bolt "></i>
+                <span>Powered by the NIAID Design System</span>
+            </p>
+        </div>
+    </footer></div>
+        <!-- Pattern Lab Footer -->
+        
+        <script src="../js/custom/stickybits.min.js"></script>
+
+        <script src="../js/libraries/jquery.min.js"></script>        <script src="../js/libraries/select2.full.min.js"></script>        <script src="../js/libraries/materialize.min.js"></script>        <script src="../js/libraries/bootstrap.bundle.min.js"></script>        <script src="../js/libraries/matchMedia.js"></script>        <script src="../js/libraries/datatables.min.js"></script>        <script src="../js/libraries/bootstrap-datepicker.min.js"></script>        <script src="../js/global/script-min.js"></script>
+    </body>
+</html>

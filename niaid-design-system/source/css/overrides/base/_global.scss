@@ -1,0 +1,27 @@
+html,
+body {
+    transition: padding .3s;
+}
+
+#sg-vp-wrap {
+    position: relative;
+    height: 100vh;
+    top: 0;
+}
+
+.sg-header {
+    position: relative;
+    .sg-nav {
+        li {
+            float: none;
+            display: inline-flex;
+            a {
+                border-bottom: 0;
+                &:hover,
+                &:focus {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}

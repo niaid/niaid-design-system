@@ -1,0 +1,17 @@
+.style--corners--semirounded {
+    $corner-radius: .3125rem;
+    .block--swatch {
+        &__color {
+            border-radius: $corner-radius * 3 / 4;
+        }
+    }
+}
+
+.style--corners--rounded {
+    $corner-radius: 1rem;
+    .block--swatch {
+        &__color {
+            border-radius: $corner-radius * 3 / 4;
+        }
+    }
+}

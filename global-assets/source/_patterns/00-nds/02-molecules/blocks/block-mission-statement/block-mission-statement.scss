@@ -1,0 +1,37 @@
+.block--mission-statement {
+    padding: 3rem 1rem 2rem 1rem;
+    border: 0;
+    margin: 0 auto;
+    position: relative;
+    max-width: 730px;
+    text-align: center;
+    @include media-breakpoint-up('md') {
+        padding: 3rem;
+        padding-bottom: 2rem;
+    }
+    &__header {
+        @include md-2dp;
+        background: $color-theme-1-3-1;
+        padding: 1rem;
+        margin: 0;
+        position: absolute;
+        text-transform: uppercase;
+        color: $white;
+        top: 0;
+        transform: translate(-50%, -50%);
+        left: 50%;
+    }
+    &__text {
+        line-height: 1.6;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0;
+        -ms-word-break: normal;
+        word-break: normal;
+        word-break: normal;
+        -webkit-hyphens: manual;
+        -moz-hyphens: manual;
+        -ms-hyphens: manual;
+        hyphens: manual;
+    }
+}

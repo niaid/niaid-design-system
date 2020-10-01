@@ -1,0 +1,31 @@
+{% set global_header_classes = global_header_classes|default() %}
+{% set global_header_product_id_top = global_header_product_id_top|default() %}
+{% set global_header_product_id_bottom = global_header_product_id_bottom|default() %}
+
+<div class="global-nds global--header {{ global_header_classes }}">
+    {% block global_header_content %}
+        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+            {
+                "button_icon_id": "global-mobile-menu",
+                "button_icon_classes": "global--header__button",
+                "button_icon_icon": "bars",
+                "button_icon_aria_label": "Open Global Menu"
+            }
+        %}
+        {% include "@nds/02-molecules/components/component-branding/_component-branding-main.twig" with
+            {
+                "component_branding_identity_top": global_header_product_id_top,
+                "component_branding_identity_bottom": global_header_product_id_bottom
+            }
+        %}
+        {% include "@nds/02-molecules/forms/form-search/_form-search-main.twig" %}
+        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+            {
+                "button_icon_id": "global-header-search--open",
+                "button_icon_classes": "global--header__button",
+                "button_icon_icon": "search",
+                "button_icon_aria_label": "Open Global Search"
+            }
+        %}
+    {% endblock %}
+</div>

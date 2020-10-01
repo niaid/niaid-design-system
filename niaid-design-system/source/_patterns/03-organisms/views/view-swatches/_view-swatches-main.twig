@@ -1,0 +1,120 @@
+{% set view_swatches_classes = view_swatches_classes|default() %}
+{% set view_swatches_headings_level = view_swatches_headings_level|default('4') %}
+{% set view_swatches_development = view_swatches_development|default('true') %}
+
+<div class="view-pl view--swatches container-fluid {{ view_swatches_classes }}">
+    <h{{ view_swatches_headings_level }}>Theme 1 (Default):</h{{ view_swatches_headings_level }}>
+    {% if view_swatches_development == "true" %}
+        <code>style--colors--theme-1</code>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_1.primary,
+                    "block_swatch_label": "Primary Button"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_1.secondary,
+                    "block_swatch_label": "Secondary Button"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_1.tertiary,
+                    "block_swatch_label": "Navigation"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_1.accent,
+                    "block_swatch_label": "Accent"
+                }
+            %}
+        </div>
+    </div>
+    <h{{ view_swatches_headings_level }}>Theme 2:</h{{ view_swatches_headings_level }}>
+    {% if view_swatches_development == "true" %}
+        <code>style--colors--theme-2</code>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_2.primary,
+                    "block_swatch_label": "Primary Button"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_2.secondary,
+                    "block_swatch_label": "Secondary Button"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_2.tertiary,
+                    "block_swatch_label": "Navigation"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_2.accent,
+                    "block_swatch_label": "Accent"
+                }
+            %}
+        </div>
+    </div>
+    <h{{ view_swatches_headings_level }}>Theme 3:</h{{ view_swatches_headings_level }}>
+    {% if view_swatches_development == "true" %}
+        <code>style--colors--theme-3</code>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_3.primary,
+                    "block_swatch_label": "Primary Button"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_3.secondary,
+                    "block_swatch_label": "Secondary Button"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_3.tertiary,
+                    "block_swatch_label": "Navigation"
+                }
+            %}
+        </div>
+        <div class="col-md-3">
+            {% include "@molecules/blocks/block-swatch/_block-swatch-main.twig" with
+                {
+                    "block_swatch_hex": colors.theme_3.accent,
+                    "block_swatch_label": "Accent"
+                }
+            %}
+        </div>
+    </div>
+</div>

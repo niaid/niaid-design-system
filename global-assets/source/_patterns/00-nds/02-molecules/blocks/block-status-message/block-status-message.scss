@@ -1,0 +1,62 @@
+.block--status-message,
+.message-panel {
+    padding-top: 2rem;
+    position: relative;
+    margin-top: 3rem;
+    background: $white;
+    &:before {
+        border: 0.0625rem solid $type-link-underline;
+        @include fa-icon;
+        @extend .fal;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 100%;
+        background: $white;
+        color: $body-color;
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &.message--warning {
+        background: #fff1d2;
+        &:before {
+            color: $white;
+            background: #fdb81e;
+            content: fa-content($fa-var-exclamation-triangle);
+        }
+    }
+    &.message--information {
+        background: #d4eeff;
+        &:before {
+            color: $white;
+            background: #449be2;
+            content: fa-content($fa-var-info-circle);
+        }
+    }
+    &.message--success {
+        background: #e7f4e4;
+        &:before {
+            color: $white;
+            background: #2e8540;
+            content: fa-content($fa-var-check);
+        }
+    }
+    &.message--error {
+        background: #f9dede;
+        &:before {
+            color: $white;
+            background: #cd2026;
+            content: fa-content($fa-var-times);
+        }
+    }
+    a,
+    p,
+    ol,
+    ul {
+        max-width: none;
+    }
+}

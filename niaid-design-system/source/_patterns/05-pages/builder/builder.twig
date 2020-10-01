@@ -1,0 +1,66 @@
+{% embed "@nds/02-molecules/blocks/block-alert/_block-alert-main.twig" with
+    {
+        "block_alert_classes": "severity--4"
+    }
+%}
+    {% block block_alert_content %}
+        <p>This NDS site is a work in progress. The content, design, and development are subject to change.</p>
+    {% endblock %}
+{% endembed %}
+{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+    {
+        "layouts_site_id": "builder"
+    }
+%}
+    {% block header %}
+        {% include "@organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "NIAID",
+                "global_header_product_id_bottom": "Design System"
+            }
+        %}
+    {% endblock %}
+    {% block global_navigation %}
+        {% include "@molecules/navigation/navigation-primary/_navigation-primary-main.twig" %}
+        {% include "@nds/02-molecules/navigation/navigation-drawer/_navigation-drawer-main.twig" with
+            {
+                "navigation_drawer_id": "main-navigation-mobile"
+            }
+        %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@nds/01-atoms/layouts/layouts-main-layout/_layouts-main-layout-main.twig" with
+            {
+                "layouts_main_layout_left": 3,
+                "layouts_main_layout_right": 9,
+                "layouts_main_layout_breakpoint": "xl",
+                "layouts_main_layout_id": "builder__main-layout"
+            }
+        %}
+            {% block left_column %}
+                {% include "@pages/builder/builder-side-drawer/_builder-side-drawer-main.twig" %}
+            {% endblock %}
+            {% block main_column %}
+                {% embed "@atoms/layouts/layouts-tabs/_layouts-tabs-main.twig" %}
+                    {% block layouts_tabs_mockup_content %}
+                        {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
+                            {% block body_card_content %}
+                                {% include "@pages/builder/builder-mockup/_builder-mockup-main.twig" %}
+                            {% endblock %}
+                        {% endembed %}
+                    {% endblock %}
+                    {% block layouts_tabs_style_title_content %}
+                        {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
+                            {% block body_card_content %}
+                                {% include "@pages/builder/builder-style-tile/_builder-style-tile-main.twig" %}
+                            {% endblock %}
+                        {% endembed %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% embed "@nds/03-organisms/global/global-footer/_global-footer-main.twig" %}{% endembed %}
+    {% endblock %}
+{% endembed %}

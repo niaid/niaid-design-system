@@ -1,0 +1,15 @@
+.DS_Store
+export/*
+public/*
+source/styleguide/*
+source/_patterns/00-nds/
+source/css/global
+source/css/libraries
+source/js/global
+source/js/libraries
+!source/js/custom/
+source/images/global/*
+vendor/*
+node_modules/*
+nds.zip
+!public_html/assets/nds.zip
