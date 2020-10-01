@@ -10,9 +10,9 @@ This repository houses the source code for:
 
 Current Sites Running on NDS:
 * NIAID Digital Policy Website
-* Coronavirus Prevention Network (CoVPN)
-* ECM @ NIH
-* NDS Documentation Site
+* [Coronavirus Prevention Network (CoVPN)](https://coronaviruspreventionnetwork.org)
+* [ECM @ NIH](https://ecm.nih.gov/)
+* [NDS Documentation Site](http://ids-theme-builder.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/)
 
 ## Repo Organization
 
@@ -53,7 +53,7 @@ composer install
 
 ## Running the Project
 
-To view the site in a locally-hosted sandbox, run 'gulp.' This will open a localhost url with the project running.
+To view the site in a locally-hosted sandbox, run 'gulp' from within ./niaid-design-system. This will open a localhost url with the project running.
 
 ```
 gulp
@@ -63,7 +63,11 @@ Navigate to the site pages using the Pages dropdown at the top.
 
 ### Maintaining NDS
 
-All changes to the global NDS system (components, global CSS, JS, etc.) occur within the ./global-assets directory. This directory is responsible for housing the entirety NDS in its release form. The NDS global assets for the documentation site live in the ./niaid-design-system/source/_patterns/00-nds/ directory. This directory gets automatically update from the components in the ./global-assets directory. If changes need to occur to official NDS components, make those changes in the ./global-assets directory. If changes to the documentation site-specific components are needed, make the changes in ./niaid-design-system/source/_patterns/ (with the exception of 00-nds/).
+All of the official, supported components, stylesheets, and scripts live in the ./global-assets directory. When the official components or other assets need updating, the changes occur within this directory.
+
+The global components, stylesheets, and scripts from ./global-assets get pulled into ./niaid-design-system (the documentation site) and ./nds-drupal-theme-master via Gulp. Both the documentation site and the Drupal Theme get updated with these assets when gulp is run from within the ./niaid-design-system directory, so the global assets do not need to be manually updated. The global assets that are pulled into each directory live in gitignored folders, thus, changes to these files must occur in the ./global-assets folder.
+
+Changes to the documentation site or the Drupal Theme specific files may occur, and should happen in the approriate directory. 
 
 ## Creating a Production Build
 
@@ -81,10 +85,15 @@ To make a production build, run the make deploy command. This will compile the p
 make deploy
 ```
 
+Specific Events that Occur:
+* Pattern Lab gets compiled and production assets are moved into public_html.
+* A copy of the contents of ./global-assets gets moved into a dist directory and zipped. This zip file is then moved into public_html. This is the official Pattern Lab-only version of NDS (The format for generating static sites).
+* A copy of the contents of ./nds-drupal-theme-master get zipped and moved into public_html. This is the official source code for the NDS Drupal Theme
+
 ## Built With
 
 * [Pattern Lab](https://patternlab.io/) - Atomic Design System
-* [Bootstrap](https://getbootstrap.com/) - Grid System Framework
+* [Bootstrap 4](https://getbootstrap.com/) - Grid System Framework
 
 ## Developers
 
