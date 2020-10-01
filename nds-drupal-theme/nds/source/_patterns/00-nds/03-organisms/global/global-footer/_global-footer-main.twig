@@ -1,0 +1,71 @@
+{#
+    ---
+    title: Footer
+    ---
+    The footer of the website that includes navigational links.
+#}
+
+{% set global_footer_classes = global_footer_classes|default() %}
+{% set global_footer_logo_src = global_footer_logo_src|default('global/NIAID_Logo.svg') %}
+{% set global_footer_logo_alt = global_footer_logo_alt|default('NIAID Logo') %}
+{% set global_footer_logo_columns = global_footer_logo_columns|default('col-md-4') %}
+{% set global_footer_info_columns = global_footer_info_columns|default('col-md-8') %}
+{% set global_footer_classes = global_footer_classes|default() %}
+{% set global_footer_prefooter_content = block('global_footer_prefooter_content') %}
+
+<footer id="footer" class="global-nds global--footer container-fluid {{ global_footer_classes }}">
+    {% if global_footer_prefooter_content|trim is not empty %}
+        <div class="global--footer__prefooter row">
+            {{ global_footer_prefooter_content|raw }}
+        </div>
+    {% endif %}
+    <div class="global--footer__content row">
+        <div class="global--footer__content__logo {{ global_footer_logo_columns }}">
+            {% block global_footer_logo_content %}
+                {% include "@nds/01-atoms/images/image-logo/_image-logo-main.twig" with
+                    {
+                        "image_logo_src": global_footer_logo_src,
+                        "image_logo_alt": global_footer_logo_alt,
+                        "image_logo_href": "/"
+                    }
+                %}
+            {% endblock %}
+        </div>
+        <div class="global--footer__content__info {{ global_footer_info_columns }}">
+            {% block global_footer_content %}  
+                <div class="row">
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Website Policies &amp; Notices</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a class="link--carot" href="#">Freedom of Information (FOIA)</a></li>
+                            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+                            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="global--footer__content__info__section col-md-6">
+                        <h4>Related Government Websites</h4>
+                        <ul class="global--footer__content__list">
+                            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+                            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                        </ul>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+    {% block global_footer_tagline %}  
+        <div class="global--footer__tagline">
+            <p>
+                {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+                    {
+                        "icon_default_type": "bolt",
+                        "icon_default_weight": "l"
+                    }
+                %}
+                <span>Powered by the NIAID Design System</span>
+            </p>
+        </div>
+    {% endblock %}
+</footer>

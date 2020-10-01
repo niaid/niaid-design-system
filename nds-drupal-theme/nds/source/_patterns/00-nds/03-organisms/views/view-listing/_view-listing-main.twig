@@ -1,0 +1,36 @@
+{% set view_listing_classes = view_listing_classes|default() %}
+{% set view_listing_data = view_listing_data|default() %}
+{% set view_listing_heading = view_listing_heading|default() %}
+{% set view_listing_button_text = view_listing_button_text|default() %}
+{% set view_listing_button_href = view_listing_button_href|default() %}
+
+<div class="view-nds view--listing {{ view_listing_classes }}">
+    {% block view_listing_heading %}
+        <h2 class="view--listing__heading">{{ view_listing_heading }}</h2>
+    {% endblock %}
+    <div class="view--listing__blocks">
+        {% block view_listing_content %}
+            {% for listing in view_listing_data %}
+                {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
+                    {% block block_content %}
+                        {{ listing.content|raw }}
+                    {% endblock %}
+                {% endembed %}
+            {% endfor %}
+        {% endblock %}
+    </div>
+    {% block view_listing_button %}
+        {% if view_listing_button_text is not empty %}
+            <div class="view--listing__button-wrapper">
+                {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                    {
+                        "button_default_classes": "view--listing__button-wrapper__button",
+                        "button_default_type": "primary",
+                        "button_default_label": view_listing_button_text,
+                        "button_default_href": view_listing_button_href
+                    }
+                %}
+            </div>
+        {% endif %}
+    {% endblock %}
+</div>

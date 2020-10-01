@@ -1,0 +1,5 @@
+{% set block_alert_classes = block_alert_classes|default() %}
+
+<div class="block-nds block--alert {{ block_alert_classes }}">
+    {% block block_alert_content %}{% endblock %}
+</div>

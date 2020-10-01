@@ -1,0 +1,29 @@
+{% set media_video_classes = media_video_classes|default() %}
+{% set media_video_height = media_video_height|default() %}
+{% set media_video_width = media_video_width|default() %}
+{% set media_video_controls = media_video_controls|default() %}
+{% set media_video_src_mp4 = media_video_src_mp4|default() %}
+{% set media_video_src_webm = media_video_src_webm|default() %}
+{% set media_video_src_ogg = media_video_src_ogg|default() %}
+{% set media_video_alt = media_video_alt|default() %}
+{% set media_video_attributes = media_video_attributes|default() %}
+{% set media_video_is_relative = media_video_is_relative|default() %}
+
+{% if media_video_is_relative == "true" %}
+	{% if media_video_src_mp4 is not empty %}
+		{% set media_video_src_mp4 = imagePath ~ media_video_src_mp4 %}
+	{% endif %}
+	{% if media_video_src_webm is not empty %}
+		{% set media_video_src_webm = imagePath ~ media_video_src_webm %}
+	{% endif %}
+	{% if media_video_src_ogg is not empty %}
+		{% set media_video_src_ogg = imagePath ~ media_video_src_ogg %}
+	{% endif %}
+{% endif %}
+
+<video class="media-nds media--video {{ media_video_classes }}" {% if media_video_width is not empty %} width="{{ media_video_width }}"{% endif %} {% if media_video_height is not empty %} height="{{ media_video_height }}"{% endif %} controls="{{ media_video_controls }}" {{ media_video_attributes }}>
+	{% if media_video_src_mp4 is not empty %}<source src="{{ media_video_src_mp4 }}" type="video/mp4">{% endif %}
+	{% if media_video_src_webm is not empty %}<source src="{{ media_video_src_webm }}" type="video/webm">{% endif %}
+	{% if media_video_src_ogg is not empty %}<source src="{{ media_video_src_ogg }}" type="video/ogg">{% endif %}
+	{% if media_video_alt is not empty %}<img src="" width="{{ media_video_width }}" height="{{ media_video_height }}" alt="{{ media_video_alt }}" title="No video playback capabilities, please download">{% endif %}
+</video>

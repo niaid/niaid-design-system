@@ -1,0 +1,19 @@
+.block--share {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    margin: 0;
+    margin-right: .5rem;
+    border: 0;
+    position: absolute;
+    right: 0;
+    &__wrapper {
+        width: 100%;
+        .button--share {
+            height: 1.75rem;
+            width: 1.75rem;
+            margin: 0 .5rem .75rem 0;
+        }
+    }
+}

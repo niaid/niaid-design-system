@@ -1,0 +1,37 @@
+.component--branding {
+    height: 3.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-bottom: 0;
+    &:hover,
+    &:focus {
+        border-bottom: 0;
+    }
+    .image--default {
+        height: 100%;
+    }
+    &__vertical-bar {
+        display: block;
+        width: 0.0625rem;
+        height: 100%;
+        margin: 0 .75rem;
+        background: #777777;
+    }
+    &__logo {
+        &--mobile {
+            @include media-breakpoint-up(sm) {
+                display: none;
+            }
+        }
+        &--desktop {
+            display: none;
+            @include media-breakpoint-up(sm) {
+                display: block;
+            }
+        }
+    }
+    .component--product-identity {
+        color: $type-heading;
+    }
+}

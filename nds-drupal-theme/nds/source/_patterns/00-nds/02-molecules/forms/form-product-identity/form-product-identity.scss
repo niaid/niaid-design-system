@@ -1,0 +1,41 @@
+.form--product-identity {
+    margin-top: 1rem;
+    &__labels {
+        display: inline-block;
+        text-align: right;
+        label {
+            display: block;
+            margin-bottom: 1.5rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__inputs {
+        display: inline-block;
+        input {
+            color: $white;
+            background: #464C50;
+            border: 0;
+            padding: .5rem;
+            margin-left: .5rem;
+            margin-bottom: .5rem;
+            border-radius: .3125rem;
+        }
+        &__buttons {
+            border-radius: .3125rem !important;
+            border: 0.0625rem solid $white !important;
+            color: $white !important;
+            background: transparent !important;
+            &--bold {
+                font-weight: $font-weight-bold;
+                font-family: "Martel", serif !important;
+            }
+            &--italics {
+                padding: .5rem 1.15rem;
+                font-style: italic;
+                font-family: "Martel", serif !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{% set navigation_drawer_id = navigation_drawer_id|default() %}
+{% set navigation_drawer_classes = navigation_drawer_classes|default() %}
+
+<div id="{{ navigation_drawer_id }}" class="navigation-nds navigation--drawer {{ navigation_drawer_classes }}">
+    <div class="navigation--drawer__top">
+        <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
+        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+            {
+                "button_icon_classes": "navigation--drawer__top__button-close",
+                "button_icon_icon": "arrow-to-left",
+                "button_icon_aria_label": "Close Global Menu",
+                "button_icon_tabindex": "-1"
+            }
+        %}
+    </div>
+    {% block navigation_drawer_content %}
+        <div class="navigation--drawer__inner">
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="/">Home</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 1</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 2</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
+    {% endblock %}
+</div>
+<div class="navigation--drawer--overlay" tabindex="0"></div>

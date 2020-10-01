@@ -223,7 +223,7 @@ function moveAssets() {
 // Move Assets to Dist for Zip
 
 function cleanDist() {
-    del('../nds-drupal-theme/patternlab/**/*', {force:true});
+    del('../nds-drupal-theme/nds/**/*', {force:true});
     return del('../global-assets/dist/**', {force:true});
 }
 
@@ -287,7 +287,7 @@ function zipDist() {
     
     console.log("Move Pattern Lab to Drupal Theme");
     gulp.src('../global-assets/dist/**/*', {dot: true})
-        .pipe(gulp.dest('../nds-drupal-theme/patternlab/'));
+        .pipe(gulp.dest('../nds-drupal-theme/nds/'));
 
     console.log("Zipping Pattern Lab Dist");
     return gulp.src('../global-assets/dist/**', {dot: true})

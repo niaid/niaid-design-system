@@ -1,0 +1,44 @@
+{% set form_product_identity_classes = form_product_identity_classes|default() %}
+
+<div class="form-nds form--product-identity {{ form_product_identity_classes }}">
+    <div class="form--product-identity__labels">
+        <label class="form--product-identity__labels__label form--product-identity__labels__label--top" for="product-id__text--top">Top</label>
+        <label class="form--product-identity__labels__label form--product-identity__labels__label--bottom" for="product-id__text--bottom">Bottom</label>
+    </div>
+    <div class="form--product-identity__inputs">
+        <div>
+            {#{% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_classes": "form--product-identity__inputs__buttons form--product-identity__inputs__buttons--bold",
+                    "button_default_type": "primary",
+                    "button_default_label": "B"
+                }
+            %}
+            {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_classes": "form--product-identity__inputs__buttons form--product-identity__inputs__buttons--italics",
+                    "button_default_type": "primary",
+                    "button_default_label": "I"
+                }
+            %}#}
+            <input id="form--product-identity__inputs__top" class="form--product-identity__inputs__top" type="text" name="form--product-identity__inputs__top">
+        </div>
+        <div>
+            {#{% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_classes": "form--product-identity__inputs__buttons form--product-identity__inputs__buttons--bold",
+                    "button_default_type": "primary",
+                    "button_default_label": "B"
+                }
+            %}
+            {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_classes": "form--product-identity__inputs__buttons form--product-identity__inputs__buttons--italics",
+                    "button_default_type": "primary",
+                    "button_default_label": "I"
+                }
+            %}#}
+            <input id="form--product-identity__inputs__bottom" class="form--product-identity__inputs__bottom" type="text" name="form--product-identity__inputs__bottom">
+        </div>
+    </div>
+</div>

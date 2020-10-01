@@ -1,0 +1,12 @@
+{% set text_chip_classes = text_chip_classes|default() %}
+{% set text_chip_text = text_chip_text|default() %}
+{% set text_chip_href = text_chip_href|default() %}
+
+<div class="text-nds text--chip {{ text_chip_classes }}">{{ text_chip_text }}<a aria-label="Remove {{ text_chip_text }} Facet" href="{{ text_chip_href }}">
+    {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+        {
+            "icon_default_type": "times",
+            "icon_default_weight": "l"
+        }
+    %}
+</a></div>

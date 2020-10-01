@@ -1,0 +1,18 @@
+{% set block_share_classes = block_share_classes|default() %}
+{% set block_share_data = block_share_data|default() %}
+
+<div class="block-nds block--share {{ block_share_classes }}">
+    {% for icon in block_share_data %}
+        <div class="block--share__wrapper">
+            {% include "@nds/01-atoms/buttons/button-share/_button-share-main.twig" with
+                {
+                    "button_share_classes": "button--share--" ~ icon.type,
+                    "button_share_icon": icon.icon,
+                    "button_share_icon_weight": "b",
+                    "button_share_href": icon.href,
+                    "button_share_aria_label": icon.ariaLabel
+                }
+            %}
+        </div>
+    {% endfor %}
+</div>

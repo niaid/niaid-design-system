@@ -1,0 +1,18 @@
+{% set input_select_classes = input_select_classes|default() %}
+{% set input_select_id = input_select_id|default() %}
+{% set input_select_icon = input_select_icon|default() %}
+{% set input_select_label = input_select_label|default() %}
+{% set input_select_placeholder = input_select_placeholder|default() %}
+{% set input_select_selected_at_all_times = input_select_selected_at_all_times|default(false) %}
+{% set input_select_multiple = input_select_multiple|default(false) %}
+
+<div class="input-nds input--select {{ input_select_classes }}">
+    {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
+        {
+            "input_label_id": input_select_id,
+            "input_label_classes": "input--select__label",
+            "input_label_text": input_select_label
+        }
+    %}
+    <select id="{{ input_select_id }}" class="input--select__field" data-placeholder="{{ input_select_placeholder }}"{% if input_select_multiple %} multiple=""{% endif %}{% if input_select_selected_at_all_times == "true" %} data-select-all-times="true"{% endif %}>{% block input_select_input %}{% endblock %}</select>
+</div>

@@ -1,0 +1,9 @@
+{% set input_group_radio_id = input_group_radio_id|default() %}
+{% set input_group_radio_classes = input_group_radio_classes|default() %}
+{% set input_group_radio_label = input_group_radio_label|default() %}
+{% set input_group_radio_tooltip = input_group_radio_tooltip|default() %}
+
+<div id="{{ input_group_radio_id }}" role="radiogroup" aria-labelledby="label_{{ input_group_radio_id }}" class="input-group-nds input-group--radio {{ input_group_radio_classes }}">
+    <p class="input-group--radio__label" id="label_{{ input_group_radio_id }}">{{ input_group_radio_label }}</p>
+    {% block input_radio_options %}{% endblock %}
+</div>

@@ -1,0 +1,30 @@
+{% set input_checkbox_id = input_checkbox_id|default() %}
+{% set input_checkbox_classes = input_checkbox_classes|default() %}
+{% set input_checkbox_name = input_checkbox_name|default() %}
+{% set input_checkbox_label = input_checkbox_label|default() %}
+{% set input_checkbox_value = input_checkbox_value|default() %}
+{% set input_checkbox_disabled = input_checkbox_disabled|default() %}
+{% set input_checkbox_readonly = input_checkbox_readonly|default() %}
+{% set input_checkbox_required = input_checkbox_required|default() %}
+
+<div class="input-nds input--checkbox {{ input_checkbox_classes }}">
+    <input
+        {% include "@nds/01-atoms/input/input-attributes/_input-attributes-main.twig" with
+            {
+                "input_attributes_id": input_checkbox_id,
+                "input_attributes_name": input_checkbox_name,
+                "input_attributes_type": "checkbox",
+                "input_attributes_value": input_checkbox_value,
+                "input_attributes_disabled": input_checkbox_disabled,
+                "input_attributes_readonly": input_checkbox_readonly,
+                "input_attributes_required": input_checkbox_required
+            }
+        %}
+    >
+    {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
+        {
+            "input_label_id": input_checkbox_id,
+            "input_label_text": input_checkbox_label
+        }
+    %}
+</div>

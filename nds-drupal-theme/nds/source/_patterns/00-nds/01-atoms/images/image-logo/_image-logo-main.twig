@@ -1,0 +1,9 @@
+{% set image_logo_classes = image_logo_classes|default() %}
+{% set image_logo_src = image_logo_src|default() %}
+{% set image_logo_alt = image_logo_alt|default() %}
+{% set image_logo_href = image_logo_href|default() %}
+{% set image_logo_loc = image_logo_loc|default("head") %}
+
+<a class="image-nds image--logo {{ image_logo_classes }}" href="{{ image_logo_href }}">
+  <img class="image--logo__image" src="{{ imagePath }}{{ image_logo_src }}" alt="{{ image_logo_alt }}"/>
+</a>

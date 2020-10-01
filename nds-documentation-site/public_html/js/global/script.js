@@ -53,6 +53,70 @@ $(document).ready(function () {
 });
 
 (function ($) {
+  function initComponentSnippet() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.component--snippet__block__code__snippet').each(function () {
+      var codeSnippet = $(this).find('pre').html().replace(/(\r\n|\n|\r)/gm, "");
+      $(this).find('pre').empty();
+      $(this).find('pre').text(process(codeSnippet));
+    }); // $('.component--snippet').find('.button--icon').on('click', function() {
+    //     copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
+    // });
+  }
+
+  function copyToClipboard($element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($element.text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+
+  function process(str) {
+    var div = document.createElement('div');
+    div.innerHTML = str.trim();
+    return format(div, 0).innerHTML;
+  }
+
+  function format(node, level) {
+    var indentBefore = new Array(level++ + 1).join('  '),
+        indentAfter = new Array(level - 1).join('  '),
+        textNode;
+
+    for (var i = 0; i < node.children.length; i++) {
+      textNode = document.createTextNode('\n' + indentBefore);
+      node.insertBefore(textNode, node.children[i]);
+      format(node.children[i], level);
+
+      if (node.lastElementChild == node.children[i]) {
+        textNode = document.createTextNode('\n' + indentAfter);
+        node.appendChild(textNode);
+      }
+    }
+
+    return node;
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentSnippet = {
+        attach: function attach(context) {
+          $('body', context).once('nds-component-snippet').each(function () {
+            initComponentSnippet(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentSnippet();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initComponentStickybits() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $(window).ready(function () {
@@ -663,6 +727,146 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
+  function initInputDatePicker() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.input--date-picker').length) {
+      $('.input--date-picker').find('input').datepicker();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputDatePicker = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-date-picker').each(function () {
+            initInputDatePicker(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputDatePicker();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initInputSelect() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('select').each(function () {
+      $(this).select2({
+        minimumResultsForSearch: 10
+      });
+
+      if ($(this).val() != "") {
+        $(this).siblings('.select2-container').addClass('no-clear selection-made');
+      }
+    });
+    $('select').change(function (e, p) {
+      if (!e.target.multiple) {
+        $(this).siblings('.select2-container').addClass('selection-made');
+
+        if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
+          $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
+        }
+      }
+    }); // Listener to Add Accessibility Compliance to Open Modals
+
+    $('select').on('select2:open', function (e) {
+      $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
+      $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
+    });
+    $(document).on('click', '.single-clear', function (e) {
+      e.stopPropagation();
+      var $selectField = $(this).parent().siblings('select');
+      $selectField.prop('selectedIndex', 0);
+      var placeholder = $selectField.attr("data-placeholder");
+      $(this).parent().removeClass('selection-made');
+      $(this).siblings('.selection').find('.select2-selection__rendered').text(placeholder);
+      $(this).remove();
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputSelect = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-select').each(function () {
+            initInputSelect(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputSelect();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initTableDefault() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    /* KEY
+        Sorting: Add data-tablesort="true" to the <table> tag.
+        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
+    */
+    $("table").each(function () {
+      var defaultConfigs = {
+        "responsive": true,
+        "paging": false,
+        "info": false,
+        "autoWidth": false,
+        "searching": false
+      };
+
+      if (!($(this).attr('data-tablesort') == "true")) {
+        defaultConfigs['ordering'] = false;
+      } else {
+        // Determine Column Type
+        var columns = [];
+        $(this).find('thead').find('th').each(function (i) {
+          if ($(this).attr('data-column-num') == "true") {
+            columns.push({
+              "type": "natural",
+              "targets": i
+            });
+          }
+        });
+        defaultConfigs['columnDefs'] = columns;
+      }
+
+      $(this).dataTable(defaultConfigs);
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initTableDefault = {
+        attach: function attach(context) {
+          $("body", context).once('nds-table-default').each(function () {
+            initTableDefault(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initTableDefault();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initBlockHero() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -878,146 +1082,6 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationLocal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initInputDatePicker() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.input--date-picker').length) {
-      $('.input--date-picker').find('input').datepicker();
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputDatePicker = {
-        attach: function attach(context) {
-          $('body', context).once('nds-input-date-picker').each(function () {
-            initInputDatePicker(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputDatePicker();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initInputSelect() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('select').each(function () {
-      $(this).select2({
-        minimumResultsForSearch: 10
-      });
-
-      if ($(this).val() != "") {
-        $(this).siblings('.select2-container').addClass('no-clear selection-made');
-      }
-    });
-    $('select').change(function (e, p) {
-      if (!e.target.multiple) {
-        $(this).siblings('.select2-container').addClass('selection-made');
-
-        if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
-          $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
-        }
-      }
-    }); // Listener to Add Accessibility Compliance to Open Modals
-
-    $('select').on('select2:open', function (e) {
-      $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
-      $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
-    });
-    $(document).on('click', '.single-clear', function (e) {
-      e.stopPropagation();
-      var $selectField = $(this).parent().siblings('select');
-      $selectField.prop('selectedIndex', 0);
-      var placeholder = $selectField.attr("data-placeholder");
-      $(this).parent().removeClass('selection-made');
-      $(this).siblings('.selection').find('.select2-selection__rendered').text(placeholder);
-      $(this).remove();
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputSelect = {
-        attach: function attach(context) {
-          $('body', context).once('nds-input-select').each(function () {
-            initInputSelect(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputSelect();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initTableDefault() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    /* KEY
-        Sorting: Add data-tablesort="true" to the <table> tag.
-        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
-    */
-    $("table").each(function () {
-      var defaultConfigs = {
-        "responsive": true,
-        "paging": false,
-        "info": false,
-        "autoWidth": false,
-        "searching": false
-      };
-
-      if (!($(this).attr('data-tablesort') == "true")) {
-        defaultConfigs['ordering'] = false;
-      } else {
-        // Determine Column Type
-        var columns = [];
-        $(this).find('thead').find('th').each(function (i) {
-          if ($(this).attr('data-column-num') == "true") {
-            columns.push({
-              "type": "natural",
-              "targets": i
-            });
-          }
-        });
-        defaultConfigs['columnDefs'] = columns;
-      }
-
-      $(this).dataTable(defaultConfigs);
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initTableDefault = {
-        attach: function attach(context) {
-          $("body", context).once('nds-table-default').each(function () {
-            initTableDefault(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initTableDefault();
     });
   }
 })(jQuery);

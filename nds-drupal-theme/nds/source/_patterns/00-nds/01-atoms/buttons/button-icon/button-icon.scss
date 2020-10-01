@@ -1,0 +1,7 @@
+.button--icon {
+    @extend .button--primary;
+    
+    &__text {
+        padding-left: .25rem;
+    }
+}

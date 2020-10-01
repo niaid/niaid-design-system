@@ -33,6 +33,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }), function (t) {
   function o() {
     var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    t(".component--snippet__block__code__snippet").each(function () {
+      var o,
+          n,
+          e = t(this).find("pre").html().replace(/(\r\n|\n|\r)/gm, "");
+      t(this).find("pre").empty(), t(this).find("pre").text((o = e, (n = document.createElement("div")).innerHTML = o.trim(), function t(o, n) {
+        for (var e, i = new Array(1 + n++).join("  "), a = new Array(n - 1).join("  "), c = 0; c < o.children.length; c++) {
+          e = document.createTextNode("\n" + i), o.insertBefore(e, o.children[c]), t(o.children[c], n), o.lastElementChild == o.children[c] && (e = document.createTextNode("\n" + a), o.appendChild(e));
+        }
+
+        return o;
+      }(n, 0).innerHTML));
+    });
+  }
+
+  "undefined" != typeof Drupal ? function (t, n) {
+    n.behaviors.initComponentSnippet = {
+      attach: function attach(n) {
+        t("body", n).once("nds-component-snippet").each(function () {
+          o(n);
+        });
+      }
+    };
+  }(jQuery, Drupal) : t(document).ready(function () {
+    o();
+  });
+}(jQuery), function (t) {
+  function o() {
+    var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     t(window).ready(function () {
       stickybits(".component--accordion", {
         useStickyClasses: !0,
@@ -74,8 +102,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     function e(o, n, e) {
       var i,
           a,
-          s = o.val();
-      return t("body").removeClass("style--" + n + "--" + e[n]), t("body").addClass("style--" + n + "--" + s), i = e, a = _defineProperty({}, n, s), _objectSpread({}, i, {}, a);
+          c = o.val();
+      return t("body").removeClass("style--" + n + "--" + e[n]), t("body").addClass("style--" + n + "--" + c), i = e, a = _defineProperty({}, n, c), _objectSpread({}, i, {}, a);
     }
 
     t("#text-heading").on("change", function () {
@@ -105,7 +133,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }(jQuery), function (t) {
   function o(o) {
     window.matchMedia("all and (max-width: 991px)");
-    var s = {
+    var c = {
       tab: "mockup",
       heading: "roboto",
       body: "roboto",
@@ -116,7 +144,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       productIDTop: "",
       productIDBottom: ""
     },
-        c = a(window.location.href);
+        s = a(window.location.href);
 
     function r(o) {
       var e = t("input[name='headings']:checked").val();
@@ -190,48 +218,48 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       "" != o.productIDTop && (t("#form--product-identity__inputs__top").val(o.productIDTop), t(".main").find(".component--product-identity__top").text(o.productIDTop));
       "" != o.productIDBottom && (t("#form--product-identity__inputs__bottom").val(o.productIDBottom), t(".main").find(".component--product-identity__bottom").text(o.productIDBottom));
       "" == o.productIDTop && "" == o.productIDBottom || t(".main").find(".component--branding__vertical-bar").css("display", "inline-block");
-    })(s = n(s, c)), t("body").addClass("style--headings--" + s.heading), t(".form--controls--headings input[type='radio']").click(function () {
-      s = r(s);
+    })(c = n(c, s)), t("body").addClass("style--headings--" + c.heading), t(".form--controls--headings input[type='radio']").click(function () {
+      c = r(c);
     }), t(".form--controls--headings label", o).keypress(function (o) {
-      13 == o.which && (t(this).siblings("input").prop("checked", !0), s = r(s));
-    }), t("body").addClass("style--body--" + s.body), t(".form--controls--body input[type='radio']").click(function () {
-      s = l(s);
+      13 == o.which && (t(this).siblings("input").prop("checked", !0), c = r(c));
+    }), t("body").addClass("style--body--" + c.body), t(".form--controls--body input[type='radio']").click(function () {
+      c = l(c);
     }), t(".form--controls--body label", o).keypress(function (o) {
-      13 == o.which && (t(this).siblings("input").prop("checked", !0), s = l(s));
-    }), t("body").addClass("style--colors--" + s.colors), t(".form--controls--colors input[type='radio']").click(function () {
-      s = d(s);
+      13 == o.which && (t(this).siblings("input").prop("checked", !0), c = l(c));
+    }), t("body").addClass("style--colors--" + c.colors), t(".form--controls--colors input[type='radio']").click(function () {
+      c = d(c);
     }), t(".block--palette").click(function () {
       var o = t(this).attr("class").split(" "),
           e = o[o.length - 1];
-      t("input[name='colors'][value=" + e + "]").prop("checked", !0), t("body").removeClass("style--colors--" + s.colors), t("body").addClass("style--colors--" + e), i(e), s = n(s, {
+      t("input[name='colors'][value=" + e + "]").prop("checked", !0), t("body").removeClass("style--colors--" + c.colors), t("body").addClass("style--colors--" + e), i(e), c = n(c, {
         colors: e
       });
     }), t(".form--controls--colors label", o).keypress(function (o) {
-      13 == o.which && (t(this).siblings("input").prop("checked", !0), s = d(s));
+      13 == o.which && (t(this).siblings("input").prop("checked", !0), c = d(c));
     }), t(".form--controls--shadows input[type='radio']").click(function () {
-      s = u(s);
+      c = u(c);
     }), t(".form--controls--shadows label", o).keypress(function (o) {
-      13 == o.which && (t(this).siblings("input").prop("checked", !0), s = u(s));
+      13 == o.which && (t(this).siblings("input").prop("checked", !0), c = u(c));
     }), t(".form--controls--corners input[type='radio']").click(function () {
-      s = h(s);
+      c = h(c);
     }), t(".form--controls--corners label", o).keypress(function (o) {
-      13 == o.which && (t(this).siblings("input").prop("checked", !0), s = h(s));
+      13 == o.which && (t(this).siblings("input").prop("checked", !0), c = h(c));
     }), t(".form--controls--hero input[type='radio']").click(function () {
-      s = p(s);
+      c = p(c);
     }), t(".form--controls--hero label", o).keypress(function (o) {
-      13 == o.which && (t(this).siblings("input").prop("checked", !0), s = p(s));
+      13 == o.which && (t(this).siblings("input").prop("checked", !0), c = p(c));
     }), t("#tab--mockup", o).click(function () {
-      s = f(s, this, "mockup");
+      c = f(c, this, "mockup");
     }), t("#tab--style-tile", o).click(function () {
-      s = f(s, this, "st");
+      c = f(c, this, "st");
     }), t("#tab--mockup", o).keypress(function (t) {
-      13 == t.which && (s = f(s, this, "mockup"));
+      13 == t.which && (c = f(c, this, "mockup"));
     }), t("#tab--style-tile", o).keypress(function (t) {
-      13 == t.which && (s = f(s, this, "st"));
+      13 == t.which && (c = f(c, this, "st"));
     }), t("#form--product-identity__inputs__top").on("input", function () {
-      s = e(s, this);
+      c = e(c, this);
     }), t("#form--product-identity__inputs__bottom").on("input", function () {
-      s = e(s, this);
+      c = e(c, this);
     }), t(".button--generate-link").click(function () {
       var o, n;
       t(".builder--side-drawer__copied").css("opacity", 0), function (o) {
@@ -242,7 +270,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         });
         var i = window.location.href.split("?")[0];
         t(".builder--side-drawer__link").text(i + n);
-      }(s), o = ".builder--side-drawer__link", n = t("<input>"), t("body").append(n), n.val(t(o).text()).select(), document.execCommand("copy"), n.remove(), t(".builder--side-drawer__copied").css("opacity", 1), setTimeout(function () {
+      }(c), o = ".builder--side-drawer__link", n = t("<input>"), t("body").append(n), n.val(t(o).text()).select(), document.execCommand("copy"), n.remove(), t(".builder--side-drawer__copied").css("opacity", 1), setTimeout(function () {
         t(".builder--side-drawer__copied").css("opacity", 0);
       }, 2e3);
     });
@@ -296,6 +324,89 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   }(jQuery, Drupal) : t(document).ready(function () {
     t("#builder").length && o();
+  });
+}(jQuery), function (t) {
+  function o() {
+    var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    t(".input--date-picker").length && t(".input--date-picker").find("input").datepicker();
+  }
+
+  "undefined" != typeof Drupal ? function (t, n) {
+    n.behaviors.initInputDatePicker = {
+      attach: function attach(n) {
+        t("body", n).once("nds-input-date-picker").each(function () {
+          o(n);
+        });
+      }
+    };
+  }(jQuery, Drupal) : t(document).ready(function () {
+    o();
+  });
+}(jQuery), function (t) {
+  function o() {
+    var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    t("select").each(function () {
+      t(this).select2({
+        minimumResultsForSearch: 10
+      }), "" != t(this).val() && t(this).siblings(".select2-container").addClass("no-clear selection-made");
+    }), t("select").change(function (o, n) {
+      o.target.multiple || (t(this).siblings(".select2-container").addClass("selection-made"), t(this).siblings(".select2-container").find(".single-clear").length || "true" == t(this).attr("data-select-all-times") || t(this).siblings(".select2-container").append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>'));
+    }), t("select").on("select2:open", function (o) {
+      t(".select2-container").find(".select2-search__field").attr("aria-label", "Search for choices"), t(".select2-container").find(".select2-results__options").attr("aria-label", "Available choices");
+    }), t(document).on("click", ".single-clear", function (o) {
+      o.stopPropagation();
+      var n = t(this).parent().siblings("select");
+      n.prop("selectedIndex", 0);
+      var e = n.attr("data-placeholder");
+      t(this).parent().removeClass("selection-made"), t(this).siblings(".selection").find(".select2-selection__rendered").text(e), t(this).remove();
+    });
+  }
+
+  "undefined" != typeof Drupal ? function (t, n) {
+    n.behaviors.initInputSelect = {
+      attach: function attach(n) {
+        t("body", n).once("nds-input-select").each(function () {
+          o(n);
+        });
+      }
+    };
+  }(jQuery, Drupal) : t(document).ready(function () {
+    o();
+  });
+}(jQuery), function (t) {
+  function o() {
+    var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    t("table").each(function () {
+      var o = {
+        responsive: !0,
+        paging: !1,
+        info: !1,
+        autoWidth: !1,
+        searching: !1
+      };
+      if ("true" != t(this).attr("data-tablesort")) o.ordering = !1;else {
+        var n = [];
+        t(this).find("thead").find("th").each(function (o) {
+          "true" == t(this).attr("data-column-num") && n.push({
+            type: "natural",
+            targets: o
+          });
+        }), o.columnDefs = n;
+      }
+      t(this).dataTable(o);
+    });
+  }
+
+  "undefined" != typeof Drupal ? function (t, n) {
+    n.behaviors.initTableDefault = {
+      attach: function attach(n) {
+        t("body", n).once("nds-table-default").each(function () {
+          o(n);
+        });
+      }
+    };
+  }(jQuery, Drupal) : t(document).ready(function () {
+    o();
   });
 }(jQuery), function (t) {
   function o() {
@@ -420,89 +531,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     n.behaviors.initNavigationLocal = {
       attach: function attach(n) {
         t("body", n).once("nds-navigation-local").each(function () {
-          o(n);
-        });
-      }
-    };
-  }(jQuery, Drupal) : t(document).ready(function () {
-    o();
-  });
-}(jQuery), function (t) {
-  function o() {
-    var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    t(".input--date-picker").length && t(".input--date-picker").find("input").datepicker();
-  }
-
-  "undefined" != typeof Drupal ? function (t, n) {
-    n.behaviors.initInputDatePicker = {
-      attach: function attach(n) {
-        t("body", n).once("nds-input-date-picker").each(function () {
-          o(n);
-        });
-      }
-    };
-  }(jQuery, Drupal) : t(document).ready(function () {
-    o();
-  });
-}(jQuery), function (t) {
-  function o() {
-    var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    t("select").each(function () {
-      t(this).select2({
-        minimumResultsForSearch: 10
-      }), "" != t(this).val() && t(this).siblings(".select2-container").addClass("no-clear selection-made");
-    }), t("select").change(function (o, n) {
-      o.target.multiple || (t(this).siblings(".select2-container").addClass("selection-made"), t(this).siblings(".select2-container").find(".single-clear").length || "true" == t(this).attr("data-select-all-times") || t(this).siblings(".select2-container").append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>'));
-    }), t("select").on("select2:open", function (o) {
-      t(".select2-container").find(".select2-search__field").attr("aria-label", "Search for choices"), t(".select2-container").find(".select2-results__options").attr("aria-label", "Available choices");
-    }), t(document).on("click", ".single-clear", function (o) {
-      o.stopPropagation();
-      var n = t(this).parent().siblings("select");
-      n.prop("selectedIndex", 0);
-      var e = n.attr("data-placeholder");
-      t(this).parent().removeClass("selection-made"), t(this).siblings(".selection").find(".select2-selection__rendered").text(e), t(this).remove();
-    });
-  }
-
-  "undefined" != typeof Drupal ? function (t, n) {
-    n.behaviors.initInputSelect = {
-      attach: function attach(n) {
-        t("body", n).once("nds-input-select").each(function () {
-          o(n);
-        });
-      }
-    };
-  }(jQuery, Drupal) : t(document).ready(function () {
-    o();
-  });
-}(jQuery), function (t) {
-  function o() {
-    var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    t("table").each(function () {
-      var o = {
-        responsive: !0,
-        paging: !1,
-        info: !1,
-        autoWidth: !1,
-        searching: !1
-      };
-      if ("true" != t(this).attr("data-tablesort")) o.ordering = !1;else {
-        var n = [];
-        t(this).find("thead").find("th").each(function (o) {
-          "true" == t(this).attr("data-column-num") && n.push({
-            type: "natural",
-            targets: o
-          });
-        }), o.columnDefs = n;
-      }
-      t(this).dataTable(o);
-    });
-  }
-
-  "undefined" != typeof Drupal ? function (t, n) {
-    n.behaviors.initTableDefault = {
-      attach: function attach(n) {
-        t("body", n).once("nds-table-default").each(function () {
           o(n);
         });
       }

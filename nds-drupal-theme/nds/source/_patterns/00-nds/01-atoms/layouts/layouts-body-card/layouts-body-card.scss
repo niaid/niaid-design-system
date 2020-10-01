@@ -1,0 +1,10 @@
+.layouts--body-card {
+    background: $page-background;
+    max-width: $layout-body-max-width;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem;
+    @include media-breakpoint-up('lg') {
+        padding: 4rem;
+    }
+}

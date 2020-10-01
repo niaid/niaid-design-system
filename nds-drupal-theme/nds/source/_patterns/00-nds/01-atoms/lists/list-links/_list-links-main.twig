@@ -1,0 +1,29 @@
+{% set list_links_classes = list_links_classes|default() %}
+{% set list_links_data = list_links_data|default() %}
+{% set list_links_num = list_links_num|default() %}
+
+<ul class="list-nds list--links {{ list_links_classes }}">
+    {% for link in list_links_data %}
+        <li>
+            {% if link.icon is not empty %}
+                {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
+                    {
+                        "link_icon_href": link.href,
+                        "link_icon_text": link.text,
+                        "link_icon_type": link.icon,
+                        "link_icon_weight": link.weight,
+                        "link_icon_classes": link.classes,
+                        "link_icon_position": link.position
+                    }
+                %}
+            {% else %}
+                {% include "@nds/01-atoms/links/link-default/_link-default-main.twig" with
+                    {
+                        "link_default_href": link.href,
+                        "link_default_text": link.text
+                    }
+                %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

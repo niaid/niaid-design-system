@@ -1,0 +1,10 @@
+{#
+    block_status_message_type: message--information, message--warning, message--success, message--error
+#}
+
+{% set block_status_message_classes = block_status_message_classes|default() %}
+{% set block_status_message_type = block_status_message_type|default() %}
+
+<div class="block-nds block--status-message {{ block_status_message_type }} {{ block_status_message_classes }}">
+    {% block block_status_message_content %}{% endblock %}
+</div>

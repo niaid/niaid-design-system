@@ -1,0 +1,35 @@
+{% embed "@nds/02-molecules/input-group/input-group-checkbox/_input-group-checkbox-main.twig" with
+    {
+        "input_group_checkbox_id": "form-group-example",
+        "input_group_checkbox_label": "Choose Platforms You Own",
+        "input_group_checkbox_tooltip": ""
+    }
+%}
+    {% block input_checkbox_options %}
+        {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
+            {
+                "input_checkbox_name": "form-group-example",
+                "input_checkbox_id": "xbox",
+                "input_checkbox_value": "xbox",
+                "input_checkbox_label": "Xbox",
+                "input_checkbox_required": "yes"
+            }
+        %}
+        {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
+            {
+                "input_checkbox_name": "form-group-example",
+                "input_checkbox_id": "playstation",
+                "input_checkbox_value": "playstation",
+                "input_checkbox_label": "Playstation"
+            }
+        %}
+        {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
+            {
+                "input_checkbox_name": "form-group-example",
+                "input_checkbox_id": "pc",
+                "input_checkbox_value": "pc",
+                "input_checkbox_label": "PC"
+            }
+        %}
+    {% endblock %}
+{% endembed %}

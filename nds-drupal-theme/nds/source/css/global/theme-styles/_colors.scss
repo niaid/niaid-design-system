@@ -1,0 +1,348 @@
+.style--colors--theme-2 {
+    /* Atoms */
+    .button-nds {
+        &.button--primary {
+            background: $color-theme-2-1-1;
+            border: 0.0625rem solid $color-theme-2-1-1;
+            &:hover,
+            &:focus {
+                background: $color-theme-2-1-2;
+                border: 0.0625rem solid $color-theme-2-1-2;
+            }
+        }
+        &.button--secondary {
+            color: $color-theme-2-1-1;
+            border: 0.0625rem solid $color-theme-2-1-1;
+            &:hover,
+            &:focus {
+                color: $white;
+                background: $color-theme-2-1-1;
+            }
+            &:not([href]):not([tabindex]) {
+                color: $color-theme-2-1-1;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $white;
+                    background: $color-theme-2-1-1;
+                    border-color: $color-theme-2-1-1;
+                }
+            }
+        }
+        &.button--tertiary {
+            background: $color-theme-2-2-1;
+            border: 0.0625rem solid $color-theme-2-2-1;
+            &:hover,
+            &:focus {
+                background: $color-theme-2-2-2;
+                border: 0.0625rem solid $color-theme-2-2-2;
+            }
+        }
+        &.button--floating {
+            &:hover,
+            &:focus {
+                background: $color-theme-2-1-2;
+            }
+        }
+        
+    }
+    button {
+        background: $color-theme-2-1-1;
+        border: 0.0625rem solid $color-theme-2-1-1;
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            background: $color-theme-2-1-2;
+            border: 0.0625rem solid $color-theme-2-1-2;
+        }
+        &:not([href]):not([tabindex]) {
+            color: $white;
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $color-theme-2-1-2;
+                border: 0.0625rem solid $color-theme-2-1-2;
+            }
+        }
+    }
+    .input--radio {
+        input:checked~label {
+            &:before {
+                background: $color-theme-2-1-1;
+                border: 0.0625rem solid $color-theme-2-1-1;
+            }
+        }
+    }
+    .input--checkbox {
+        input:checked~label {
+            &:before {
+                background: $color-theme-2-1-1 !important;
+            }
+        }
+    }
+    .text--image-credit-caption {
+        border-left: 0.125rem solid $color-theme-2-1-1;
+    }
+    .layouts--tabs {
+        &__tab {
+            &:hover,
+            &:focus {
+                color: $white;
+                background: $color-theme-2-1-1;
+            }
+        }
+    }
+    /* Molecules */
+    .block-nds {
+        &.block--featured-content {
+            .block--featured-content__text {
+                &__featured {
+                    color: $color-theme-2-2-1;
+                }
+            }
+        }
+        &.block--mission-statement {
+            .block--mission-statement__header {
+                background: $color-theme-2-3-1;
+            }
+        }
+    }
+    .component-nds {
+        &.component--scrollspy-toc {
+            .active {
+                border-left: 0.125rem solid $color-theme-2-1-1;
+                &:hover,
+                &:focus {
+                    border-left: 0.125rem solid $color-theme-2-1-1;
+                }
+            }
+        }
+    }
+    .navigation-nds {
+        &.navigation--primary {
+            background: $color-theme-2-3-1;
+            .navigation--primary__inner {
+                a,
+                button {
+                    &:hover,
+                    &:focus {
+                        background: $color-theme-2-3-2;
+                    }
+                    &:not([href]):not([tabindex]) {
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background: $color-theme-2-3-2;
+                        }
+                    }
+                }
+                .dropdown-menu {
+                    background: $color-theme-2-3-2;
+                    .dropdown-item {
+                        &:hover,
+                        &:focus {
+                            background: $color-theme-2-3-1;
+                        }
+                        &.active {
+                            &:hover,
+                            &:focus {
+                                background: $color-theme-2-3-1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.navigation--local {
+            border-bottom-color: $color-theme-2-1-1;
+            .accordion-arrow {
+                color: $color-theme-2-1-1;
+            }
+        }
+        &.navigation--mobile-rail {
+            .navigation--mobile-rail__button {
+                color: $color-theme-2-1-1;
+                border: 0.0625rem solid $color-theme-2-1-1;
+                &:hover,
+                &:focus {
+                    background: $color-theme-2-1-1;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.style--colors--theme-3 {
+    /* Atoms */
+    .button-nds {
+        &.button--primary {
+            background: $color-theme-3-1-1;
+            border: 0.0625rem solid $color-theme-3-1-1;
+            &:hover,
+            &:focus {
+                background: $color-theme-3-1-2;
+                border: 0.0625rem solid $color-theme-3-1-2;
+            }
+        }
+        &.button--secondary {
+            color: $color-theme-3-1-1;
+            border: 0.0625rem solid $color-theme-3-1-1;
+            &:hover,
+            &:focus {
+                color: $white;
+                background: $color-theme-3-1-1;
+            }
+            &:not([href]):not([tabindex]) {
+                color: $color-theme-3-1-1;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $white;
+                    background: $color-theme-3-1-1;
+                    border-color: $color-theme-3-1-1;
+                }
+            }
+        }
+        &.button--tertiary {
+            background: $color-theme-3-2-1;
+            border: 0.0625rem solid $color-theme-3-2-1;
+            &:hover,
+            &:focus {
+                background: $color-theme-3-2-2;
+                border: 0.0625rem solid $color-theme-3-2-2;
+            }
+        }
+        &.button--floating {
+            &:hover,
+            &:focus {
+                background: $color-theme-3-1-2;
+            }
+        }
+    }
+    button {
+        background: $color-theme-3-1-1;
+        border: 0.0625rem solid $color-theme-3-1-1;
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            background: $color-theme-3-1-2;
+            border: 0.0625rem solid $color-theme-3-1-2;
+        }
+        &:not([href]):not([tabindex]) {
+            color: $white;
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $color-theme-3-1-2;
+                border: 0.0625rem solid $color-theme-3-1-2;
+            }
+        }
+    }
+    .input--radio {
+        input:checked~label {
+            &:before {
+                background: $color-theme-3-1-1;
+                border: 0.0625rem solid $color-theme-3-1-1;
+            }
+        }
+    }
+    .input--checkbox {
+        input:checked~label {
+            &:before {
+                background: $color-theme-3-1-1 !important;
+            }
+        }
+    }
+    .text--image-credit-caption {
+        border-left: 0.125rem solid $color-theme-3-1-1;
+    }
+    .layouts--tabs {
+        &__tab {
+            &:hover,
+            &:focus {
+                color: $white;
+                background: $color-theme-3-2-1;
+            }
+        }
+    }
+    /* Molecules */
+    .block-nds {
+        &.block--featured-content {
+            .block--featured-content__text {
+                &__featured {
+                    color: $color-theme-3-3-1;
+                }
+            }
+        }
+        &.block--mission-statement {
+            .block--mission-statement__header {
+                background: $color-theme-3-3-1;
+            }
+        }
+    }
+    .component-nds {
+        &.component--scrollspy-toc {
+            .active {
+                border-left: 0.125rem solid $color-theme-3-1-1;
+                &:hover,
+                &:focus {
+                    border-left: 0.125rem solid $color-theme-3-1-1;
+                }
+            }
+        }
+    }
+    .navigation-nds {
+        &.navigation--primary {
+            background: $color-theme-3-3-1;
+            .navigation--primary__inner {
+                a,
+                button {
+                    &:hover,
+                    &:focus {
+                        background: $color-theme-3-3-2;
+                    }
+                    &:not([href]):not([tabindex]) {
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background: $color-theme-3-3-2;
+                        }
+                    }
+                }
+                .dropdown-menu {
+                    background: $color-theme-3-3-2;
+                    .dropdown-item {
+                        &:hover,
+                        &:focus {
+                            background: $color-theme-3-3-1;
+                        }
+                        &.active {
+                            &:hover,
+                            &:focus {
+                                background: $color-theme-3-3-1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.navigation--local {
+            border-bottom-color: $color-theme-3-1-1;
+            .accordion-arrow {
+                color: $color-theme-3-1-1;
+            }
+        }
+        &.navigation--mobile-rail {
+            .navigation--mobile-rail__button {
+                color: $color-theme-3-1-1;
+                border: 0.0625rem solid $color-theme-3-1-1;
+                &:hover,
+                &:focus {
+                    background: $color-theme-3-1-1;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

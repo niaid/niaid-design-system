@@ -1,0 +1,23 @@
+{% set input_date_picker_classes = input_date_picker_classes|default() %}
+{% set input_date_picker_id = input_date_picker_id|default() %}
+{% set input_date_picker_label = input_date_picker_label|default() %}
+{% set input_date_picker_placeholder = input_date_picker_placeholder|default('"MM/DD/YYYY') %}
+{% set input_date_picker_disabled = input_date_picker_disabled|default() %}
+{% set input_date_picker_readonly = input_date_picker_readonly|default() %}
+{% set input_date_picker_required = input_date_picker_required|default() %}
+
+<div class="input-nds input--date-picker {{ input_date_picker_classes }}">
+    {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
+        {
+            "input_label_id": input_date_picker_id,
+            "input_label_classes": "input--select__label",
+            "input_label_text": input_date_picker_label
+        }
+    %}
+    <div class="input-group date">
+        <input id="{{ input_date_picker_id }}" type="text" class="form-control">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
+</div>

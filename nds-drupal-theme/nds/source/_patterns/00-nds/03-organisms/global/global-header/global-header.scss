@@ -1,0 +1,36 @@
+.global--header {
+    background: $page-background;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.0625rem solid $type-body;
+    @include media-breakpoint-up('md') {
+        border-bottom: 0;
+    }
+    &__button {
+        padding: 0.45rem 0.725rem;
+        background: $white !important;
+        color: #000 !important;
+        border-radius: .3125rem;
+        border: 0.0625rem solid #545359;
+        &:hover,
+        &:focus {
+            background: #20558a;
+            color: $white;
+        }
+        @include media-breakpoint-up('sm') {
+            padding: 0.7rem 1.05rem;
+        }
+        @include media-breakpoint-up('md') {
+            display: none;
+        }
+    }
+    .form--search {
+        @include media-breakpoint-up(md) {
+            .input--text {
+                min-width: 18rem;
+            }
+        }
+    }
+}

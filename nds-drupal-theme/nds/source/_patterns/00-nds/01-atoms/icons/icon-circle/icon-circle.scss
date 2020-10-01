@@ -1,0 +1,15 @@
+.icon--circle {
+    background: $white;
+    @include md-2dp;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+
+    span {
+        display: block;
+        position: relative;
+        text-align: center;
+        @include vertical-center;
+        color: $type-body;
+    }
+}

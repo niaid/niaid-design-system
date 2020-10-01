@@ -1,0 +1,7 @@
+.icon--document {
+    display: block;
+    position: relative;
+    max-height: 2.5rem;
+    margin: 0 auto;
+    @include vertical-center;
+}
