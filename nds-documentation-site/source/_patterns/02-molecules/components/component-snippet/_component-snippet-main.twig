@@ -1,12 +1,15 @@
 {% set component_snippet_classes = component_snippet_classes|default() %}
 {% set component_snippet_code = block('component_snippet_code') %}
+{% set component_snippet_show_rendered = component_snippet_show_rendered|default('yes') %}
 
-<div class="component-nds component--snippet {{ component_snippet_classes }}">
+<div class="component-nds component--snippet {{ component_snippet_classes }} {% if component_snippet_show_rendered == 'no' %}no-render{% endif %}">
     <div class="component--snippet__block">
         <div class="component--snippet__block__code">
-            <div class="component--snippet__block__code__rendered">
-                {{ component_snippet_code|raw }}
-            </div>
+            {% if component_snippet_show_rendered == 'yes' %}
+                <div class="component--snippet__block__code__rendered">
+                    {{ component_snippet_code|raw }}
+                </div>
+            {% endif %}
             <div class="component--snippet__block__code__snippet">
                 <pre>
                     {{ component_snippet_code|raw }}

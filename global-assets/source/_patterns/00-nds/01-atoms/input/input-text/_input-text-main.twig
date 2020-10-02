@@ -5,6 +5,7 @@
 {% set input_text_value = input_text_value|default() %}
 {% set input_text_title = input_text_title|default() %}
 {% set input_text_icon = input_text_icon|default() %}
+{% set input_text_icon_weight = input_text_icon_weight|default('l') %}
 {% set input_text_tabindex = input_text_tabindex|default() %}
 {% set input_text_disabled = input_text_disabled|default() %}
 {% set input_text_readonly = input_text_readonly|default() %}
@@ -32,7 +33,7 @@
     {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
         {
             "icon_default_type": input_text_icon,
-            "icon_default_weight": "l"
+            "icon_default_weight": input_text_icon_weight
         }
     %}
 </div>{% endif %}

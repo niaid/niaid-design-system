@@ -23,9 +23,7 @@
             }
             &__rendered {
                 display: inline-flex;
-                font-size: .8rem;
-                font-style: italic;
-                color: #9AA6B5;
+                color: $input-placeholder;
                 line-height: initial;
                 padding: 0;
             }
