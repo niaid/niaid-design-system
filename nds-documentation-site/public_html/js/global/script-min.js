@@ -7,6 +7,30 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 !function (t) {
+  function o(o) {
+    t("#tab--mockup").attr("tabindex", "-1");
+  }
+
+  "undefined" != typeof Drupal ? function (t, n) {
+    n.behaviors.layoutsTabs = {
+      attach: function attach(t) {
+        o();
+      }
+    };
+  }(jQuery, Drupal) : t(document).ready(function () {
+    o();
+  });
+}(jQuery), $(document).ready(function () {
+  $("a:not(:has(img))").each(function () {
+    if ($(this).text()) {
+      var t = $(this).attr("href"),
+          o = this.hostname;
+      t && o !== location.hostname && ((t = t.toLowerCase()).indexOf("http://") > -1 || t.indexOf("https://") > -1) && t.indexOf("localhost:3002") <= 0 && ($(this).attr("target", "_blank"), $(this).after('<a title="Link is External" aria-label="Link is External" class="ext-link-icon" href="' + t + '"></a>'));
+    }
+  }), $('a[href^="mailto:"]').each(function () {
+    $(this).addClass("link--external--mail");
+  });
+}), function (t) {
   function o() {
     var o = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     t(".component--snippet__block__code__snippet").each(function () {
@@ -107,30 +131,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     t("#builder").length || o();
   });
 }(jQuery), function (t) {
-  function o(o) {
-    t("#tab--mockup").attr("tabindex", "-1");
-  }
-
-  "undefined" != typeof Drupal ? function (t, n) {
-    n.behaviors.layoutsTabs = {
-      attach: function attach(t) {
-        o();
-      }
-    };
-  }(jQuery, Drupal) : t(document).ready(function () {
-    o();
-  });
-}(jQuery), $(document).ready(function () {
-  $("a:not(:has(img))").each(function () {
-    if ($(this).text()) {
-      var t = $(this).attr("href"),
-          o = this.hostname;
-      t && o !== location.hostname && ((t = t.toLowerCase()).indexOf("http://") > -1 || t.indexOf("https://") > -1) && t.indexOf("localhost:3002") <= 0 && ($(this).attr("target", "_blank"), $(this).after('<a title="Link is External" aria-label="Link is External" class="ext-link-icon" href="' + t + '"></a>'));
-    }
-  }), $('a[href^="mailto:"]').each(function () {
-    $(this).addClass("link--external--mail");
-  });
-}), function (t) {
   function o(o) {
     window.matchMedia("all and (max-width: 991px)");
     var c = {
