@@ -35,4 +35,9 @@
             }
         }
     }
+    &.component--snippet--block-share {
+        .block--share {
+            position: relative;
+        }
+    }
 }

@@ -6,4 +6,4 @@
 {% set button_default_href = button_default_href|default() %}
 {% set button_default_attributes = button_default_attributes|default() %}
 
-<a class="button-nds waves-effect waves-light button--{{ button_default_type }} {{ button_default_classes }}"{% if button_default_id is not empty %} id="{{ button_default_id }}"{% endif %}{% if button_default_href is not empty %} href="{{ button_default_href }}"{% endif %}{% if button_default_type is not empty %} type="{{ button_default_type }}"{% endif %} role="button" {{ button_default_attributes }}>{{ button_default_label }}</a>
+<a class="button-nds waves-effect waves-light button--{{ button_default_type }} {{ button_default_classes }}"{% if button_default_id is not empty %} id="{{ button_default_id }}"{% endif %}{% if button_default_href is not empty %} href="{{ button_default_href }}"{% endif %} role="button" {{ button_default_attributes }}>{{ button_default_label }}</a>

@@ -107,8 +107,33 @@
                                         "class": "ml-3"
                                     },
                                     {
-                                        "text": "Molecule",
+                                        "text": "Molecules",
                                         "href": "section-components-molecules"
+                                    },
+                                    {
+                                        "text": "Blocks",
+                                        "href": "section-components-molecules-blocks",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Components",
+                                        "href": "section-components-molecules-components",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Navigation",
+                                        "href": "section-components-molecules-navigation",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Input Groups",
+                                        "href": "section-components-molecules-input-groups",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Forms",
+                                        "href": "section-components-molecules-forms",
+                                        "class": "ml-3"
                                     },
                                     {
                                         "text": "Organisms",
@@ -129,6 +154,7 @@
                 {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
                     {% block body_card_content %}
                          {% include "@sections/_section-components-atoms.twig" %}
+                         {% include "@sections/_section-components-molecules.twig" %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}

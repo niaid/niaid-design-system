@@ -2,39 +2,5 @@
 {% set navigation_primary_id = navigation_primary_id|default() %}
 
 <nav id="{{ navigation_primary_id }}" class="navigation-nds navigation--primary {{ navigation_primary_classes }}">
-    {% block navigation_primary_content %}
-        <div class="navigation--primary__inner">
-            <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "section-1" ? "active" : "" }}" href="/section-1/index.html">Section 1</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="{{ navigationPrimaryActiveLink == "section-2" ? "active" : "" }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 2
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/design">Item A</a>
-                    <a class="dropdown-item" href="/design#section-typography">Item B</a>
-                    <a class="dropdown-item" href="/design#section-icons">Item C</a>
-                    <a class="dropdown-item" href="/design#section-colors">Item D</a>
-                </div>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="{{ navigationPrimaryActiveLink == "section-3" ? "active" : "" }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 3
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/design">Item A</a>
-                    <a class="dropdown-item" href="/design#section-typography">Item B</a>
-                    <a class="dropdown-item" href="/design#section-icons">Item C</a>
-                    <a class="dropdown-item" href="/design#section-colors">Item D</a>
-                </div>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "section-4" ? "active" : "" }}" href="/section-4/index.html">Section 4</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "section-5" ? "active" : "" }}" href="/section-5/index.html">Section 5</a>
-            </div>
-        </div>
-    {% endblock %}
+    {% block navigation_primary_content %}{% endblock %}
 </nav>
