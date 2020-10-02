@@ -36,9 +36,9 @@ ul {
 
 code {
     border-radius: $border-radius;
-    color: $status-error;
+    color: $type-link;
     display: inline-flex;
     padding: .5rem;
-    background: #FAEFEF;
+    background: $page-background-alternate;;
     margin-bottom: .5rem;
 }

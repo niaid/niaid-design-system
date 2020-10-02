@@ -1,6 +1,7 @@
 (function($) {
     function initComponentSnippet(context = document) {
         $('.component--snippet__block__code__snippet').each(function() {
+            // console.log($(this).find('pre').html());
             var codeSnippet = $(this).find('pre').html().replace(/(\r\n|\n|\r)/gm, "");
             $(this).find('pre').empty();
             $(this).find('pre').text(process(codeSnippet));
@@ -20,7 +21,6 @@
     }
 
     function process(str) {
-
         var div = document.createElement('div');
         div.innerHTML = str.trim();
     

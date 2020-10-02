@@ -289,11 +289,12 @@ function zipDist() {
     gulp.src('../global-assets/dist/**/*', {dot: true})
         .pipe(gulp.dest('../nds-drupal-theme/nds/'));
 
+    gulp.src('../nds-drupal-theme/**', {dot: true})
+        .pipe(zip('nds-drupal-theme.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
+
     console.log("Zipping Pattern Lab Dist");
     return gulp.src('../global-assets/dist/**', {dot: true})
-        .pipe(tap(function(file, t) {
-            console.log(file.path);
-        }))
         .pipe(zip('nds.zip'))
         .pipe(gulp.dest('./'))
         .pipe(gulp.dest('./public_html/assets/'));

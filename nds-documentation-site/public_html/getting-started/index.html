@@ -209,6 +209,7 @@
                     <li class="component--scrollspy-toc__list__item"><a href="#main-content">Overview</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-static-website">Building a Static Site</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-drupal-website">Building a Drupal Site</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-working-with-nds">Working with NDS</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-resources">Resources</a></li>
             </ul>
 </div>                    
@@ -271,37 +272,7 @@
         <code>composer install</code><br>
         <p class="step">4. Open the Project on Your Localhost</p>
         <code>gulp</code><br>
-        <h3>Working with NDS</h3>
-        <p>Once your project is ready for development, you can begin to add pages and make new components. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. <strong>Do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, those should be placed in the appropriate atomic folders outside of the 00-nds directory.</p>
-        
-    
-
-<div class="component-nds component--media ">
-    <div class="component--media__media">
-                    
-<img class="image-nds image--default materialboxed" src="../assets/custom-components.png" alt="See caption for details"
-                        />            </div>
-    <div class="component--media__text">
-        <div class="component--media__text__content-wrapper">
-                            
-<div class="text-nds text--image-credit-caption ">
-            <div class="text--image-credit-caption__caption">
-            <p class="text--image-credit-caption__caption__text">Custom components should be placed in the atomic folders outside of the 00-nds/ directory.</p>
-        </div>
-                <div class="text--image-credit-caption__credit">
-            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
-            <span class="text--image-credit-caption__credit__text">NIAID</span>
-        </div>
-    </div>                    </div>
-    </div>
-</div>
-        <p>The global project CSS rules can be found in the css/ in source/. The global/ folder is similar to the 00-nds/ folder in that changes should not occur within the directory. Instead, make edits in the overrides/ directory.
-        
-<div class="block-nds block--default ">
-                    <h4>Developing with NIAID Design System</h4>
-                <p>Get more information on how NDS is structured.</p>
-                
-<a class="button-nds waves-effect waves-light button--primary " href="/development/index.html" type="primary" role="button" >Develop with NDS</a>            </div>        <h3>Building NDS for Production</h3>
+        <h3>Building NDS for Production</h3>
         <p>NDS provides a way to quickly build a distribution folder with all the necessary, web-ready assets. Upon build, the assets get generated and placed into a public_html/ directory.</p>
         <p class="step">1. Create a Distribution Pattern Folder.</p>
         <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
@@ -390,8 +361,105 @@
         <p>TODO</p>
     </div>                        
 <div id="section-drupal-website" class="component-nds component--scrollspy-section scrollspy section ">
-            <h2>Drupal</h2>
+            <h2>Building a Drupal Site</h2>
+        <h3>Overview</h3>
+        <p>NDS Drupal Theme is a base theme which is integrated with NIAID Design System. NDS Drupal Theme out of the box is a responsive with many regions provided for advance functionality. NDS Drupal Theme distributions come with a great number of theme settings. </p>
+        <p>Followings are the features for the theme:</p>
+        <ul>
+            <li>Change the look of the website by selecting the theme base color.</li>
+            <li>Configurable NIAID Design System branding logo.</li>
+            <li>Configurable Fonts.</li>
+            <li>Configured system branding and page title blocks.</li>
+            <li>Responsive</li>
+        </ul>
+        <h3>Downloading &amp; Installing NDS Drupal Theme</h3>
+        <p>Download &amp; Unzip the NDS Drupal Theme Folder:</p>
+        <p>
+            
+<a href="../../assets/nds-drupal-theme.zip" class="button-nds button--icon waves-effect waves-light " download>
+    
+
+<i class="icon-nds icon--default fal fa-download "></i>
+            <span class="button--icon__text">Download NDS Drupal Theme</span>
+    </a>        </p>
+        <p>Install as any other Drupal Contributed Theme. For more information about installing a Contributed theme, please visit the <a href="https://www.drupal.org/docs/extending-drupal/installing-themes">Drupal documentation site.</a></p>
+        
+        <h3>Developing with NDS</h3>
+        <ul>
+        <li><p>Please visit our Getting Started Page to find out more information about Developing with NIAID Design System. All NDS out-of-the-box components live in the 00-nds directory inside _patterns/folder. As this folder gets overwritten, you need to make your own custom components, these should be placed in the appropriate atomic folders outiside of 00-nds directory. </p>
+        </li>
+        <li><p>CSS and JS Files </p>
+        <ul>
+        <li>The global CSS rules can be found in the css/ folder. If you need to override pattern or add some css, you should make edits in the overrides directory. Please go to source/css/overrides and create a .scss files for example drupal/drupal.scss and run gulp to see your changes. </li>
+        <li>The global JS rules can be found in the JS/ folder. If you need to add project specific JS, you should make edits in the JS directory. Please go to source/JS/ and create a .js file for example project_name.js and run gulp to see your changes.</li>
+        <li>CSS and JS files are compiled into style.css and script-min.js respectively and the path to base files are already included in nds_drupal_theme.libraries.yml file.   </li>
+        </ul>
+        </li>
+        </ul>
+        <h3>Drupal Theme Configuration</h3>
+        <p>Configure Drupal theme settings by navigating: Administration > Appearance > Settings > NDS Drupal Theme</p>
+        <ul>
+        <li>For Logo <ul>
+        <li>Select Product Identity and fill Out Top Field - For example NIAID </li>
+        <li>Select Product Identity and fill out Bottom Field - For example Design System</li>
+        </ul>
+        </li>
+        <li>Font Headings <ul>
+        <li>Select one from the available options </li>
+        </ul>
+        </li>
+        <li>Body Headings <ul>
+        <li>Select one from the available options </li>
+        </ul>
+        </li>
+        <li>Shadows <ul>
+        <li>Pick either flat or shadows </li>
+        </ul>
+        </li>
+        <li>Corners <ul>
+        <li>Select one from the available options </li>
+        </ul>
+        </li>
+        <li>Website Colors: <ul>
+        <li>Select website base theme color.</li>
+        </ul>
+        </li>
+        </ul>
+        <h3 id="menus">Menus</h3>
+        <p>In NDS Drupal Theme, primary menu is right now hardcoaded and implemented using NIAID Design System component. Inorder to modify this menu, please place the menu block on Primary Menu region and uncomment the  on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig.</p>
     </div>                        
+<div id="section-working-with-nds" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Working with NDS</h2>
+        <p>Whether you are building a Static site or Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. <strong>Do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, those should be placed in the appropriate atomic folders outside of the 00-nds directory.</p>
+        
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/custom-components.png" alt="See caption for details"
+                        />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">Custom components should be placed in the atomic folders outside of the 00-nds/ directory.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+        <p>The global project CSS rules can be found in the css/ in source/. The global/ folder is similar to the 00-nds/ folder in that changes should not occur within the directory. Instead, make edits in the overrides/ directory.</p>
+        
+<div class="block-nds block--default ">
+                    <h4>Developing with NIAID Design System</h4>
+                <p>Get more information on how NDS is structured.</p>
+                
+<a class="button-nds waves-effect waves-light button--primary " href="/development/index.html" type="primary" role="button" >Develop with NDS</a>            </div>    </div>                        
 <div id="section-resources" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Resources</h2>
         <h3>Fonts</h3>

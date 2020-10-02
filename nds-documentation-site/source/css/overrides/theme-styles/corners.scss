@@ -5,6 +5,11 @@
             border-radius: $corner-radius * 3 / 4;
         }
     }
+    .component--snippet {
+        pre {
+            border-radius: 0 0 $corner-radius $corner-radius;
+        }
+    }
 }
 
 .style--corners--rounded {
@@ -12,6 +17,11 @@
     .block--swatch {
         &__color {
             border-radius: $corner-radius * 3 / 4;
+        }
+    }
+    .component--snippet {
+        pre {
+            border-radius: 0 0 $corner-radius $corner-radius;
         }
     }
 }

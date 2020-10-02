@@ -10,14 +10,29 @@
                 border-bottom: 0.0625rem solid $input-border;
             }
             &__snippet {
+                overflow: hidden;
                 pre {
+                    background: $page-background-alternate;
                     margin: -2rem 0 0 0;
                     padding: 1rem;
+                    color: $type-link;
                 }
             }
         }
     }
     &__button {
         text-align: right;
+    }
+    .button--floating {
+        position: relative !important;
+        bottom: auto;
+        right: auto;
+    }
+    &.component--snippet--icon-default {
+        .component--snippet__block {
+            .icon--default {
+                margin-right: 1rem;
+            }
+        }
     }
 }

@@ -4,6 +4,73 @@
     }
 %}
     {% block component_scrollspy_section_content %}
-        <h2>Drupal</h2>
+        <h2>Building a Drupal Site</h2>
+        <h3>Overview</h3>
+        <p>NDS Drupal Theme is a base theme which is integrated with NIAID Design System. NDS Drupal Theme out of the box is a responsive with many regions provided for advance functionality. NDS Drupal Theme distributions come with a great number of theme settings. </p>
+        <p>Followings are the features for the theme:</p>
+        <ul>
+            <li>Change the look of the website by selecting the theme base color.</li>
+            <li>Configurable NIAID Design System branding logo.</li>
+            <li>Configurable Fonts.</li>
+            <li>Configured system branding and page title blocks.</li>
+            <li>Responsive</li>
+        </ul>
+        <h3>Downloading &amp; Installing NDS Drupal Theme</h3>
+        <p>Download &amp; Unzip the NDS Drupal Theme Folder:</p>
+        <p>
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_href": assetsPath ~ "nds-drupal-theme.zip",
+                    "button_icon_icon": "download",
+                    "button_icon_text": "Download NDS Drupal Theme",
+                    "button_icon_attributes": "download"
+                }
+            %}
+        </p>
+        <p>Install as any other Drupal Contributed Theme. For more information about installing a Contributed theme, please visit the <a href="https://www.drupal.org/docs/extending-drupal/installing-themes">Drupal documentation site.</a></p>
+        
+        <h3>Developing with NDS</h3>
+        <ul>
+        <li><p>Please visit our Getting Started Page to find out more information about Developing with NIAID Design System. All NDS out-of-the-box components live in the 00-nds directory inside _patterns/folder. As this folder gets overwritten, you need to make your own custom components, these should be placed in the appropriate atomic folders outiside of 00-nds directory. </p>
+        </li>
+        <li><p>CSS and JS Files </p>
+        <ul>
+        <li>The global CSS rules can be found in the css/ folder. If you need to override pattern or add some css, you should make edits in the overrides directory. Please go to source/css/overrides and create a .scss files for example drupal/drupal.scss and run gulp to see your changes. </li>
+        <li>The global JS rules can be found in the JS/ folder. If you need to add project specific JS, you should make edits in the JS directory. Please go to source/JS/ and create a .js file for example project_name.js and run gulp to see your changes.</li>
+        <li>CSS and JS files are compiled into style.css and script-min.js respectively and the path to base files are already included in nds_drupal_theme.libraries.yml file.   </li>
+        </ul>
+        </li>
+        </ul>
+        <h3>Drupal Theme Configuration</h3>
+        <p>Configure Drupal theme settings by navigating: Administration > Appearance > Settings > NDS Drupal Theme</p>
+        <ul>
+        <li>For Logo <ul>
+        <li>Select Product Identity and fill Out Top Field - For example NIAID </li>
+        <li>Select Product Identity and fill out Bottom Field - For example Design System</li>
+        </ul>
+        </li>
+        <li>Font Headings <ul>
+        <li>Select one from the available options </li>
+        </ul>
+        </li>
+        <li>Body Headings <ul>
+        <li>Select one from the available options </li>
+        </ul>
+        </li>
+        <li>Shadows <ul>
+        <li>Pick either flat or shadows </li>
+        </ul>
+        </li>
+        <li>Corners <ul>
+        <li>Select one from the available options </li>
+        </ul>
+        </li>
+        <li>Website Colors: <ul>
+        <li>Select website base theme color.</li>
+        </ul>
+        </li>
+        </ul>
+        <h3 id="menus">Menus</h3>
+        <p>In NDS Drupal Theme, primary menu is right now hardcoaded and implemented using NIAID Design System component. Inorder to modify this menu, please place the menu block on Primary Menu region and uncomment the {{ page.primary_meneu }} on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig.</p>
     {% endblock %}
 {% endembed %}

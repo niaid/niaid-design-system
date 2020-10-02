@@ -1,0 +1,33 @@
+{% embed "@nds/02-molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-working-with-nds"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h2>Working with NDS</h2>
+        <p>Whether you are building a Static site or Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. <strong>Do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, those should be placed in the appropriate atomic folders outside of the 00-nds directory.</p>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_src": 'custom-components.png',
+                "component_media_alt": 'See caption for details',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": "Custom components should be placed in the atomic folders outside of the 00-nds/ directory.",
+                "component_media_lightbox": "yes"
+            }
+        %}
+        <p>The global project CSS rules can be found in the css/ in source/. The global/ folder is similar to the 00-nds/ folder in that changes should not occur within the directory. Instead, make edits in the overrides/ directory.</p>
+        {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
+            {% block block_content %}
+                <h4>Developing with NIAID Design System</h4>
+                <p>Get more information on how NDS is structured.</p>
+                {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                    {
+                        "button_default_type": "primary",
+                        "button_default_label": "Develop with NDS",
+                        "button_default_href": link.development
+                    }
+                %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

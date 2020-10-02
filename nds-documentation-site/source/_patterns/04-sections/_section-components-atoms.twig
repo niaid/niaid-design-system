@@ -7,8 +7,10 @@
         <h1>Components</h1>
         <p>Find code snippets for NIAID Design System Components.</p>
         <h2>Atoms</h2>
+
         <h3>Buttons</h3>
         {# Buttons - Primary, Secondary, Tertiary, Disabled #}
+        <h4>Default Button</h4>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 <div class="container-fluid">
@@ -30,12 +32,16 @@
             {% endblock %}
         {% endembed %}
         {# Button External #}
+        <h4>External Button</h4>
+        <p>Used specifically for links to external sites shown in a button-type format.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/buttons/button-external/demo/button-external.twig" %}
             {% endblock %}
         {% endembed %}
         {# Button Document #}
+        <h4>Document Buttons</h4>
+        <p>NDS respects third-party application logos for Word, Excel, PowerPoint, and PDF.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 <div class="container-fluid">
@@ -60,6 +66,79 @@
                         </div>
                     </div>
                 </div>
+            {% endblock %}
+        {% endembed %}
+        {# Button Floating #}
+        <h4>Default Button</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/buttons/button-floating/demo/_button-floating.twig" %}
+            {% endblock %}
+        {% endembed %}
+        {# Button Icon #}
+        <h4>Default Button</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/buttons/button-icon/demo/button-icon.twig" %}
+            {% endblock %}
+        {% endembed %}
+        {# Button Document #}
+        <h4>Default Button</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-share/demo/button-share-facebook.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-share/demo/button-share-twitter.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-share/demo/button-share-linkedin.twig" %}
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        {% endembed %}
+
+        <h3>Icons</h3>
+        <p>NDS uses the Font Awesome library for all icons (with the except of third-party applications and companies).</p>
+        {# Icon Default #}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with { "component_snippet_classes": "component--snippet--icon-default" } %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/icons/icon-default/demo/icon-default.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        {# Icon Circle #}
+        <h4>Icon Circle</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/icons/icon-circle/demo/icon-circle.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        <h3>Images</h3>
+        {# Image Default #}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/images/image-default/demo/image-default.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        {# Image Logo #}
+        <h4>NIAID Logo</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/images/image-logo/demo/image-logo.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        <h3>Input</h3>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/input/input-checkbox/demo/input-checkbox.twig" %}
             {% endblock %}
         {% endembed %}
     {% endblock %}
