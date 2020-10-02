@@ -1,0 +1,63 @@
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-components-organisms"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h2>Organisms</h2>
+    {% endblock %}
+{% endembed %}
+
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-components-organisms-global"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h3>Global</h3>
+        <h4>Header</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_show_rendered": "no"
+            }
+        %}
+            {% block component_snippet_code %}
+                {% include "@nds/03-organisms/global/global-header/demo/global-header.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Footer</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_show_rendered": "no"
+            }
+        %}
+            {% block component_snippet_code %}
+                {% include "@nds/03-organisms/global/global-footer/demo/global-footer.twig" %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}
+<hr>
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-components-organisms-views"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h3>Views</h3>
+        <h4>Listing View</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/03-organisms/views/view-listing/demo/view-listing.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Featured Content Cards View</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/03-organisms/views/view-featured-content-cards/demo/view-featured-content-cards.twig" %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

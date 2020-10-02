@@ -2,44 +2,48 @@
 {% set block_header_title = block_header_title|default() %}
 
 <div id="block--header" class="block-nds block--header {{ block_header_classes }}">
-    {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/_navigation-breadcrumbs-main.twig" with
-        {
-            "navigation_breadcrumbs_data": [
-                {
-                    "text":"Level 1",
-                    "href":""
-                },
-                {
-                    "text":"Level 2",
-                    "href":"#"
-                },
-                {
-                    "text":"Level 3",
-                    "href":"#"
-                }
-            ]
-        }
-    %}
+    {% block block_header_breadcrumb_content %}
+        {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/_navigation-breadcrumbs-main.twig" with
+            {
+                "navigation_breadcrumbs_data": [
+                    {
+                        "text": "Level 1",
+                        "href": "#"
+                    },
+                    {
+                        "text": "Level 2",
+                        "href": "#"
+                    },
+                    {
+                        "text": "Level 3",
+                        "href": "#"
+                    }
+                ]
+            }
+        %}
+    {% endblock %}
     <h1 class="block--header__title">{{ block_header_title }}</h1>
-    {% include "@nds/02-molecules/blocks/block-share/_block-share-main.twig" with
-        {
-            "block_share_data": [
-                {
-                    "text": "facebook",
-                    "href": "#",
-                    "type": "facebook-f"
-                },
-                {
-                    "text": "twitter",
-                    "href": "#",
-                    "type": "twitter"
-                },
-                {
-                    "text": "linkedin",
-                    "href": "#",
-                    "type": "linkedin-in"
-                }
-            ]
-        }
-    %}
+    {% block block_header_share_content %}
+        {% include "@nds/02-molecules/blocks/block-share/_block-share-main.twig" with
+            {
+                "block_share_data": [
+                    {
+                        "text": "facebook",
+                        "href": "#",
+                        "type": "facebook-f"
+                    },
+                    {
+                        "text": "twitter",
+                        "href": "#",
+                        "type": "twitter"
+                    },
+                    {
+                        "text": "linkedin",
+                        "href": "#",
+                        "type": "linkedin-in"
+                    }
+                ]
+            }
+        %}
+    {% endblock %}
 </div>

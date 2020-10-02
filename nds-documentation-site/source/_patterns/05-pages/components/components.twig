@@ -140,6 +140,16 @@
                                         "href": "section-components-organisms"
                                     },
                                     {
+                                        "text": "Global",
+                                        "href": "section-components-molecules-global",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Views",
+                                        "href": "section-components-molecules-views",
+                                        "class": "ml-3"
+                                    },
+                                    {
                                         "text": "Templates",
                                         "href": "section-components-templates"
                                     }
@@ -155,6 +165,7 @@
                     {% block body_card_content %}
                          {% include "@sections/_section-components-atoms.twig" %}
                          {% include "@sections/_section-components-molecules.twig" %}
+                         {% include "@sections/_section-components-organisms.twig" %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
