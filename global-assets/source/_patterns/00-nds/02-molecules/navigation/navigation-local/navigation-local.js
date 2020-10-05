@@ -1,23 +1,12 @@
 (function($) {
     function initNavigationLocal(context = document) {
-        var mql = window.matchMedia('all and (max-width: 990.0625rem)');
-        var wWidth = $(window).width();
-        if (mql.matches) {
-            $("#localNavMobileTarget").collapse('hide');
-        } else {
-            $("#localNavMobileTarget").collapse('show');
-        }
-
-        $(window).resize(function() {
-            if (wWidth != $(this).width()) {
-                wWidth = $(this).width();
-                if (mql.matches) {
-                    $("#localNavMobileTarget").collapse('hide');
-                } else {
-                    $("#localNavMobileTarget").collapse('show');
+        if ($('.navigation--local').length) {
+            $('.navigation--local__group__label', context).keypress(function(e) {
+                if (e.which == 13) {
+                    $(this).click();
                 }
-            }
-        });
+            });
+        }
     }
 
     if (typeof Drupal !== 'undefined') {
@@ -25,7 +14,7 @@
         (function($, Drupal) {
             Drupal.behaviors.initNavigationLocal = {
                 attach: function(context) {
-                    $('body', context).once('nds-navigation-local').each(function() {
+                    $(".page", context).once('nds-local-navigation').each(function() {
                         initNavigationLocal(context);
                     });
                 },

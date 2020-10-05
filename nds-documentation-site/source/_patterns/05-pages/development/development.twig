@@ -54,51 +54,50 @@
                     }
                 %}
                     {% block navigation_mobile_rail_content %}
-                        {% include "@molecules/components/component-scrollspy-toc/_component-scrollspy-toc-main.twig" with
+                        {% include "@nds/02-molecules/navigation/navigation-local/_navigation-local-main.twig" with
                             {
-                                "component_scrollspy_toc_data": [
+                                "navigation_local_id": "navigation-local",
+                                "navigation_local_title_text": "Development",
+                                "navigation_local_items": [
                                     {
                                         "text": "Overview",
-                                        "href": "section-overview"
+                                        "href": "#section-overview"
                                     },
                                     {
                                         "text": "Atomic Design",
-                                        "href": "section-atomic-design"
+                                        "href": "#section-atomic-design"
                                     },
                                     {
                                         "text": "Technologies & Frameworks",
-                                        "href": "section-technologies"
+                                        "href": "#section-technologies"
                                     },
                                     {
                                         "text": "Pattern Lab",
-                                        "href": "section-patternlab",
-                                        "class": "ml-3"
-                                    },
-                                    {
-                                        "text": "Sass",
-                                        "href": "section-sass",
-                                        "class": "ml-3"
-                                    },
-                                    {
-                                        "text": "jQuery",
-                                        "href": "section-jquery",
-                                        "class": "ml-3"
-                                    },
-                                    {
-                                        "text": "Gulp",
-                                        "href": "section-gulp",
-                                        "class": "ml-3"
+                                        "href": "#section-patternlab",
+                                        "below": [
+                                            {
+                                                "text": "Sass",
+                                                "href": "#section-sass"
+                                            },
+                                            {
+                                                "text": "jQuery",
+                                                "href": "#section-jquery"
+                                            },
+                                            {
+                                                "text": "Gulp",
+                                                "href": "#section-gulp"
+                                            }
+                                        ]
                                     },
                                     {
                                         "text": "Libraries & Dependencies",
-                                        "href": "section-libraries"
+                                        "href": "#section-libraries"
                                     },
                                     {
                                         "text": "Theme Options",
-                                        "href": "section-themes"
+                                        "href": "#section-themes"
                                     }
-                                ],
-                                "component_scrollspy_toc_data_target": "main-layout"
+                                ]
                             }
                         %}
                     {% endblock %}

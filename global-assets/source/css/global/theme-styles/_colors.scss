@@ -155,7 +155,7 @@
         }
         &.navigation--local {
             border-bottom-color: $color-theme-2-1-1;
-            .accordion-arrow {
+            .navigation--local__group__label__button__arrow {
                 color: $color-theme-2-1-1;
             }
         }
@@ -329,7 +329,7 @@
         }
         &.navigation--local {
             border-bottom-color: $color-theme-3-1-1;
-            .accordion-arrow {
+            .navigation--local__group__label__button__arrow {
                 color: $color-theme-3-1-1;
             }
         }

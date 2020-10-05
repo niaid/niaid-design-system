@@ -54,43 +54,44 @@
                     }
                 %}
                     {% block navigation_mobile_rail_content %}
-                        {% include "@molecules/components/component-scrollspy-toc/_component-scrollspy-toc-main.twig" with
+                        {% include "@nds/02-molecules/navigation/navigation-local/_navigation-local-main.twig" with
                             {
-                                "component_scrollspy_toc_data": [
+                                "navigation_local_id": "navigation-local",
+                                "navigation_local_title_text": "Design",
+                                "navigation_local_items": [
                                     {
                                         "text": "Overview",
-                                        "href": "section-overview"
+                                        "href": "#section-overview"
                                     },
                                     {
                                         "text": "Typography",
-                                        "href": "section-typography"
+                                        "href": "#section-typography"
                                     },
                                     {
                                         "text": "Icons",
-                                        "href": "section-icons"
+                                        "href": "#section-icons"
                                     },
                                     {
                                         "text": "Colors",
-                                        "href": "section-colors"
+                                        "href": "#section-colors"
                                     },
                                     {
                                         "text": "Forms & Input",
-                                        "href": "section-forms"
+                                        "href": "#section-forms"
                                     },
                                     {
                                         "text": "Layout & Spacing",
-                                        "href": "section-layout"
+                                        "href": "#section-layout"
                                     },
                                     {
                                         "text": "Shadows",
-                                        "href": "section-shadows"
+                                        "href": "#section-shadows"
                                     },
                                     {
                                         "text": "Corners",
-                                        "href": "section-corners"
+                                        "href": "#section-corners"
                                     }
-                                ],
-                                "component_scrollspy_toc_data_target": "main-layout"
+                                ]
                             }
                         %}
                     {% endblock %}

@@ -54,31 +54,32 @@
                     }
                 %}
                     {% block navigation_mobile_rail_content %}
-                        {% include "@molecules/components/component-scrollspy-toc/_component-scrollspy-toc-main.twig" with
+                        {% include "@nds/02-molecules/navigation/navigation-local/_navigation-local-main.twig" with
                             {
-                                "component_scrollspy_toc_data": [
+                                "navigation_local_id": "navigation-local",
+                                "navigation_local_title_text": "Getting Started",
+                                "navigation_local_items": [
                                     {
                                         "text": "Overview",
-                                        "href": "main-content"
+                                        "href": "#main-content"
                                     },
                                     {
                                         "text": "Building a Static Site",
-                                        "href": "section-static-website"
+                                        "href": "#section-static-website"
                                     },
                                     {
                                         "text": "Building a Drupal Site",
-                                        "href": "section-drupal-website"
+                                        "href": "#section-drupal-website"
                                     },
                                     {
                                         "text": "Working with NDS",
-                                        "href": "section-working-with-nds"
+                                        "href": "#section-working-with-nds"
                                     },
                                     {
                                         "text": "Resources",
-                                        "href": "section-resources"
+                                        "href": "#section-resources"
                                     }
-                                ],
-                                "component_scrollspy_toc_data_target": "main-layout"
+                                ]
                             }
                         %}
                     {% endblock %}

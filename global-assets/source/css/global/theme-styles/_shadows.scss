@@ -236,23 +236,6 @@
             }
         }
     }
-    .navigation--local {
-        @include md-1dp;
-        background: $page-background;
-        @include media-breakpoint-up('lg') {
-            @include md-16dp;
-            border-bottom-width: .3125rem;
-            border-bottom-style: solid;
-        }
-        &__accordion {
-            &__button {
-                border-bottom: 0 !important;
-            }
-        }
-        .card {
-            background: transparent;
-        }
-    }
     .navigation--primary {
         @include md-8dp;
         button {
@@ -262,6 +245,15 @@
             &:active {
                 box-shadow: none;
             }
+        }
+    }
+    .navigation--local {
+        @include md-1dp;
+        background: $page-background;
+        @include media-breakpoint-up('lg') {
+            @include md-16dp;
+            border-bottom-width: .3125rem;
+            border-bottom-style: solid;
         }
     }
     .block--palette {
