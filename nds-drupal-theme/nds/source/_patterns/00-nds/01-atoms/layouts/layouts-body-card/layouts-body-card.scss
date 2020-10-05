@@ -7,4 +7,7 @@
     @include media-breakpoint-up('lg') {
         padding: 4rem;
     }
+    &.layouts--body-card--no-vertical-padding {
+        padding-top: 0;
+    }
 }

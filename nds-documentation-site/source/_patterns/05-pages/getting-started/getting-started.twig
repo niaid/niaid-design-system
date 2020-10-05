@@ -86,7 +86,11 @@
                 {% endembed %}
             {% endblock %}
             {% block main_column %}
-                {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
+                {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" with
+                    {
+                        "layouts_body_card_vertical_padding": "no"
+                    }
+                %}
                     {% block body_card_content %}
                         <h1 id="main-content">Getting Started</h1>
                         <p>Thank you for your interest in using the NIAID Design System. This page contains information on how to get started using NDS for your project. In addition to technical installation steps, we also provide design files to jump start your designs and bundles for our supported fonts.</p>

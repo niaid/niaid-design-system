@@ -98,7 +98,11 @@
                 {% endembed %}
             {% endblock %}
             {% block main_column %}
-                {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
+                {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" with
+                    {
+                        "layouts_body_card_vertical_padding": "no"
+                    }
+                %}
                     {% block body_card_content %}
                         {% include "@sections/_section-overview-design.twig" %}
                         {% include "@sections/_section-typography.twig" %}

@@ -265,7 +265,11 @@
             }
         %}
             {% block component_snippet_code %}
-                {% include "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
+                {% include "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" with
+                    {
+                        "layouts_body_card_vertical_padding": "yes"
+                    }
+                %}
             {% endblock %}
         {% endembed %}
     {% endblock %}

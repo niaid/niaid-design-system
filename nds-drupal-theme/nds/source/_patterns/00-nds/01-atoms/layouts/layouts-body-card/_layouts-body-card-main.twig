@@ -1,5 +1,6 @@
 {% set layouts_body_card_classes = layouts_body_card_classes|default() %}
+{% set layouts_body_card_vertical_padding = layouts_body_card_vertical_padding|default('yes') %}
 
-<div class="layouts-nds layouts--body-card {{ layouts_body_card_classes }}">
+<div class="layouts-nds layouts--body-card {{ layouts_body_card_classes }}{{ layouts_body_card_vertical_padding != 'yes' ? 'layouts--body-card--no-vertical-padding' }}">
     {% block body_card_content %}{% endblock %}
 </div>
