@@ -11,8 +11,9 @@
             }
         }
     }
-    #getting-started {
-        .button--jump-links {
+    #getting-started, #design {
+        .button--jump-links,
+        .block--fonts {
             .button--icon {
                 border-color: transparent !important;
                 &:hover,

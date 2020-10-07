@@ -19,6 +19,9 @@
         <h3>Buttons</h3>
 
         <h4>Default Button</h4>
+        <p>There are three button styles for each Color Theme option: Primary, Secondary, and Tertiary.</p>
+        <h5>Pattern Usage</h5>
+        <p>To use one of these styles, pass the "button_default_type" parameter the desired style ("primary", "secondary" or "tertiary").</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 <div class="container-fluid">
@@ -52,6 +55,16 @@
 
         <h4>Document Buttons</h4>
         <p>NDS respects third-party application logos for Word, Excel, PowerPoint, and PDF.</p>
+        <h5>Pattern Usage</h5>
+        <p>Use the "button_document_type" parameter to choose a type as follows:</p>
+        <ul>
+            <li>Word - "file-word"</li>
+            <li>Excel - "file-excel"</li>
+            <li>PowerPoint - "file-ppt"</li>
+            <li>PDF - "file-pdf"</li>
+            <li>Image - "image"</li>
+            <li>Video - "video"</li>
+        </ul>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 <div class="container-fluid">
@@ -107,6 +120,9 @@
                         <div class="col-md">
                             {% include "@nds/01-atoms/buttons/button-share/demo/button-share-linkedin.twig" %}
                         </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-share/demo/button-share-instagram.twig" %}
+                        </div>
                     </div>
                 </div>
             {% endblock %}
@@ -121,7 +137,7 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>Icons</h3>
-        <p>NDS uses the Font Awesome library for all icons (with the except of third-party applications and companies). Icons are selected using classes. The specific icon is selected with the fa- class (i.e. fa-envelope). Specify the icon weight (thickness) by adding the following class corresponding to your needs:</p>
+        <p>NDS uses the Font Awesome library for all icons (with the except of third-party applications and companies). Icons are selected using classes. The specific icon is selected with: fa- class (i.e. fa-envelope). Specify the icon weight (thickness) by adding the following class corresponding to your needs:</p>
         <ul>
             <li>fa/far - Regular</li>
             <li>fal - Light</li>

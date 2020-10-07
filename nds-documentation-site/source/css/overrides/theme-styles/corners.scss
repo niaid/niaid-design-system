@@ -22,6 +22,11 @@
             }
         }
     }
+    #design {
+        .container {
+            border-radius: $corner-radius;
+        }
+    }
 }
 
 .style--corners--rounded {
@@ -46,6 +51,11 @@
             pre {
                 border-radius: $corner-radius;
             }
+        }
+    }
+    #design {
+        .container {
+            border-radius: $corner-radius;
         }
     }
 }

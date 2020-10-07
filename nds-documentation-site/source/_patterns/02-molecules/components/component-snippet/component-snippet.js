@@ -1,23 +1,25 @@
 (function($) {
     function initComponentSnippet(context = document) {
         $('.component--snippet__block__code__snippet').each(function() {
-            // console.log($(this).find('pre').html());
             var codeSnippet = $(this).find('pre').html().replace(/(\r\n|\n|\r)/gm, "");
             $(this).find('pre').empty();
             $(this).find('pre').text(process(codeSnippet));
         });
 
-        // $('.component--snippet').find('.button--icon').on('click', function() {
-        //     copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
-        // });
+        $('.component--snippet').find('.button--icon').on('click', function() {
+            copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
+        });
     }
 
     function copyToClipboard($element) {
-        var $temp = $("<input>");
-        $("body").append($temp);
-        $temp.val($element.text()).select();
+        const copyText = $element.text();
+        const textArea = document.createElement('textarea');
+        textArea.classList.add("hidden-textarea");
+        textArea.textContent = copyText;
+        document.body.append(textArea);
+        textArea.select();
         document.execCommand("copy");
-        $temp.remove();
+        textArea.remove();
     }
 
     function process(str) {

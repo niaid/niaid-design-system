@@ -41,3 +41,9 @@
         }
     }
 }
+
+.hidden-textarea {
+    position: absolute;
+    left: -1000000px;
+    top: -100000000px;
+}

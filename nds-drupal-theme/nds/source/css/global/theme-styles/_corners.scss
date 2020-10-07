@@ -72,6 +72,13 @@
             }
         }
     }
+    .component-nds {
+        &.component--media {
+            img {
+                border-radius: $corner-radius;
+            }
+        }
+    }
     .form-nds {
         .form-text {
             border-top-left-radius: $corner-radius;
@@ -158,6 +165,13 @@
         }
         &.block--mission-statement {
             .block--mission-statement__header {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+    .component-nds {
+        &.component--media {
+            img {
                 border-radius: $corner-radius;
             }
         }
