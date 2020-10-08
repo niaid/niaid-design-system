@@ -171,7 +171,7 @@ var buildPaths = [{
 ];
 
 // buildProd Task Definition
-gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, moveAssets, cleanDist, dist_copyFonts, dist_copyGlobalImages, dist_copyGlobalSass, dist_copyGlobalJS, dist_copyGlobalPatterns, dist_copyOther, zipDist));
+gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, moveAssets, cleanDist, compileGlobalAssets, dist_copyFonts, dist_copyGlobalImages, dist_copyGlobalSass, dist_copyGlobalJS, dist_copyGlobalPatterns, dist_copyOther, zipDist));
 
 // Move Assets to the public_html Folder for Deployment
 function moveAssets() {
@@ -220,6 +220,37 @@ function moveAssets() {
         .pipe(gulp.dest('./public_html/webfonts'));
 }
 
+// compileGlobalAssets - A function to concatenate and compile the component CSS and JS files into single .css and .js distribution files.
+function compileGlobalAssets() {
+    // SASS
+    gulp.src('../global-assets/source/css/style.scss')
+        .pipe(sassGlob())
+        .pipe(concat('style.css'))
+        .pipe(rename({
+            basename: 'style',
+            extname: '.css'
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ["../global-assets/node_modules/bootstrap/scss", "../global-assets/node_modules/font-awesome/scss"]
+        }).on('error', sass.logError))
+        .pipe(sourcemaps.write('../global-assets/source/maps'))
+        .pipe(gulp.dest('../global-assets/source/css'))
+        .pipe(cache.clear())
+        .pipe(browserSync.stream());
+
+    // JS
+    return gulp.src('../global-assets/source/_patterns/**/*.js')
+        .pipe(concat('script.js'))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(minify())
+        .pipe(sourcemaps.write('../global-assets/source/js/global/'))
+        .pipe(gulp.dest('../global-assets/source/js/global/'));
+}
+
 // Move Assets to Dist for Zip
 
 function cleanDist() {
@@ -235,6 +266,7 @@ function dist_copyFonts() {
 function dist_copyGlobalSass() {
     console.log("Transferring Assets from Global SASS...");
     gulp.src('../global-assets/source/css/style.scss').pipe(gulp.dest('../global-assets/dist/source/css/'));
+    gulp.src('../global-assets/source/css/style.css').pipe(gulp.dest('../global-assets/dist/source/css/'));
     gulp.src('../global-assets/source/css/libraries/**/*').pipe(gulp.dest('../global-assets/dist/source/css/libraries/'));
     gulp.src('../global-assets/source/css/overrides/**/*').pipe(gulp.dest('../global-assets/dist/source/css/overrides/'));
     return gulp.src('../global-assets/source/css/global/**/*').pipe(gulp.dest('../global-assets/dist/source/css/global/'));
