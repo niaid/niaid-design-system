@@ -1,7 +1,7 @@
 .icon--circle {
     background: $white;
-    @include md-2dp;
     height: 3rem;
+    border: 0.0625rem solid $input-border;
     width: 3rem;
     border-radius: 100%;
     display: flex;

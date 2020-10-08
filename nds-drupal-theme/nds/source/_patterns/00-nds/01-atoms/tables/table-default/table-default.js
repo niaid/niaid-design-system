@@ -7,30 +7,33 @@
         */
 
         $("table").each(function() {
-            var defaultConfigs = {
-                "responsive": true,
-                "paging": false,
-                "info": false,
-                "autoWidth": false,
-                "searching": false
-            };
+            if ($(this).attr('nds-datatable') == 'true') {
+                console.log('true');
+                var defaultConfigs = {
+                    "responsive": true,
+                    "paging": false,
+                    "info": false,
+                    "autoWidth": false,
+                    "searching": false
+                };
 
-            if (!($(this).attr('data-tablesort') == "true")) {
-                defaultConfigs['ordering'] = false;
-            } else {
-                // Determine Column Type
-                var columns = [];
+                if (!($(this).attr('data-tablesort') == "true")) {
+                    defaultConfigs['ordering'] = false;
+                } else {
+                    // Determine Column Type
+                    var columns = [];
 
-                $(this).find('thead').find('th').each(function(i) {
-                    if ($(this).attr('data-column-num') == "true") {
-                        columns.push({ "type": "natural", "targets": i });
-                    }
-                });
+                    $(this).find('thead').find('th').each(function(i) {
+                        if ($(this).attr('data-column-num') == "true") {
+                            columns.push({ "type": "natural", "targets": i });
+                        }
+                    });
 
-                defaultConfigs['columnDefs'] = columns;
+                    defaultConfigs['columnDefs'] = columns;
+                }
+
+                $(this).dataTable(defaultConfigs);
             }
-
-            $(this).dataTable(defaultConfigs);
         });
     }
 

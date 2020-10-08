@@ -59,8 +59,10 @@
         }
         &.block--featured-content {
             .block--featured-content__image {
-                border-top-left-radius: $corner-radius;
-                border-top-right-radius: $corner-radius;
+                img {
+                    border-top-left-radius: $corner-radius * .75;
+                    border-top-right-radius: $corner-radius * .75;
+                }
             }
         }
         &.block--wtph {
@@ -156,8 +158,10 @@
         }
         &.block--featured-content {
             .block--featured-content__image {
-                border-top-left-radius: $corner-radius;
-                border-top-right-radius: $corner-radius;
+                img {
+                    border-top-left-radius: $corner-radius * .75;
+                    border-top-right-radius: $corner-radius * .75;
+                }
             }
         }
         &.block--wtph {

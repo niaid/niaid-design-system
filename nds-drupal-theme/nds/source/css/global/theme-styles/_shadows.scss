@@ -24,6 +24,10 @@
             @include md-2dp;
         }
     }
+    .icon--circle {
+        @include md-2dp;
+        border: 0;
+    }
     .input--text {
         @include md-2dp;
         @extend .hoverable;

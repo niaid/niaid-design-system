@@ -250,7 +250,7 @@
     {% block component_scrollspy_section_content %}
         <h3>Layouts</h3>
         <h4>Site Layout</h4>
-        <p>TODO</p>
+        <p>The Site Layout component provides a generally franework for a NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility:</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_show_rendered": "no"
@@ -361,7 +361,7 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>Tables</h3>
-        <p>TODO - datatables</p>
+        <p>Tables can be tricky on the web for accessibility and responsive reasons. NDS employs <a href="https://datatables.net/">DataTables</a> to improve the experience of tables across devices. DataTables functionality works for properly formatted, simple tables and needs to be enabled through a custom attribute: nds-datatable="true". Adding this attribute to the table tag will initialize rthe esponsive functionality of Datatables.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/tables/table-default/demo/table-default.twig" %}

@@ -1,10 +1,15 @@
 .block--featured-content {
     margin: 1rem 0;
     max-width: 100%;
-    background: $page-background-alternate;
-    border: 0;
+    padding: 0;
+    background: $white;
+    border: 0.0625rem solid $input-border;
+    @include media-breakpoint-up(sm) {
+        height: 100%;
+    }
     &__image {
-        height: 9.5rem;
+        padding: .25rem;
+        height: auto;
         overflow: hidden;
         img {
             width: 100%;
@@ -12,9 +17,20 @@
     }
     &__text {
         padding: 1rem;
+        &__title {
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
         &__featured {
-            font-weight: $font-weight-bold;
+            font-weight: $font-weight-semibold;
+            font-size: .8rem;
+            margin-top: -.5rem;
+            display: block;
+            margin-bottom: .5rem;
             color: $color-theme-1-1-1;
+        }
+        &__description {
+            margin-bottom: 0;
         }
     }
 }

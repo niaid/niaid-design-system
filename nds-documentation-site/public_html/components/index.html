@@ -1290,7 +1290,7 @@ type="text" id="text-example" placeholder="Enter text here...">
 <div id="section-components-atoms-layouts" class="component-nds component--scrollspy-section scrollspy section ">
             <h3>Layouts</h3>
         <h4>Site Layout</h4>
-        <p>TODO</p>
+        <p>The Site Layout component provides a generally franework for a NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility:</p>
         
 <div class="component-nds component--snippet  no-render">
     <div class="component--snippet__block">
@@ -1558,13 +1558,13 @@ type="text" id="text-example" placeholder="Enter text here...">
 
 <div id="section-components-atoms-tables" class="component-nds component--scrollspy-section scrollspy section ">
             <h3>Tables</h3>
-        <p>TODO - datatables</p>
+        <p>Tables can be tricky on the web for accessibility and responsive reasons. NDS employs <a href="https://datatables.net/">DataTables</a> to improve the experience of tables across devices. DataTables functionality works for properly formatted, simple tables and needs to be enabled through a custom attribute: nds-datatable="true". Adding this attribute to the table tag will initialize rthe esponsive functionality of Datatables.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
         <div class="component--snippet__block__code">
                             <div class="component--snippet__block__code__rendered">
-                                    <table id="example" class="display" style="width:100%">
+                                    <table nds-datatable="true" id="example" style="width:100%">
     <thead>
         <tr>
             <th>Name</th>
@@ -1605,7 +1605,7 @@ type="text" id="text-example" placeholder="Enter text here...">
                 </div>
                         <div class="component--snippet__block__code__snippet">
                 <pre>
-                                    <table id="example" class="display" style="width:100%">
+                                    <table nds-datatable="true" id="example" style="width:100%">
     <thead>
         <tr>
             <th>Name</th>
@@ -1890,9 +1890,12 @@ type="text" id="text-example" placeholder="Enter text here...">
 <img class="image-nds image--default " src="../assets/featured-2.jpg" alt="A lab table with scientific equipment."
                         />            </div>
     <div class="block--featured-content__text">
-                <h2><a href="#">What is a Clinical Study?</a></h2>
-        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
-        </div>
+                                                        <span class="block--featured-content__text__featured">Featured</span>
+                                <h2 class="block--featured-content__text__title">
+                    <a href="#">                    What is a Clinical Study?
+                    </a>                </h2>
+                                        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
+                        </div>
 </div>            
                 </div>
                         <div class="component--snippet__block__code__snippet">
@@ -1904,9 +1907,12 @@ type="text" id="text-example" placeholder="Enter text here...">
 <img class="image-nds image--default " src="../assets/featured-2.jpg" alt="A lab table with scientific equipment."
                         />            </div>
     <div class="block--featured-content__text">
-                <h2><a href="#">What is a Clinical Study?</a></h2>
-        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
-        </div>
+                                                        <span class="block--featured-content__text__featured">Featured</span>
+                                <h2 class="block--featured-content__text__title">
+                    <a href="#">                    What is a Clinical Study?
+                    </a>                </h2>
+                                        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
+                        </div>
 </div>            
                 </pre>
             </div>
@@ -3607,9 +3613,12 @@ type="text" id="search-sample-field" name="search-sample-field" placeholder="Sea
 <img class="image-nds image--default " src="../assets/featured-2.jpg" alt="A lab table with scientific equipment."
                         />            </div>
     <div class="block--featured-content__text">
-                <h2><a href="#">What is a Clinical Study?</a></h2>
-        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
-        </div>
+                                                        <span class="block--featured-content__text__featured">Featured</span>
+                                <h2 class="block--featured-content__text__title">
+                    <a href="#">                    What is a Clinical Study?
+                    </a>                </h2>
+                                        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
+                        </div>
 </div>                </div>
                 <div class="col-sm-6">
                     
@@ -3619,9 +3628,12 @@ type="text" id="search-sample-field" name="search-sample-field" placeholder="Sea
 <img class="image-nds image--default " src="../assets/featured-2.jpg" alt="A lab table with scientific equipment."
                         />            </div>
     <div class="block--featured-content__text">
-                <h2><a href="#">What is a Clinical Study?</a></h2>
-        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
-        </div>
+                                                        <span class="block--featured-content__text__featured">Featured</span>
+                                <h2 class="block--featured-content__text__title">
+                    <a href="#">                    What is a Clinical Study?
+                    </a>                </h2>
+                                        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
+                        </div>
 </div>                </div>
             </div>
         </div>
@@ -3641,9 +3653,12 @@ type="text" id="search-sample-field" name="search-sample-field" placeholder="Sea
 <img class="image-nds image--default " src="../assets/featured-2.jpg" alt="A lab table with scientific equipment."
                         />            </div>
     <div class="block--featured-content__text">
-                <h2><a href="#">What is a Clinical Study?</a></h2>
-        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
-        </div>
+                                                        <span class="block--featured-content__text__featured">Featured</span>
+                                <h2 class="block--featured-content__text__title">
+                    <a href="#">                    What is a Clinical Study?
+                    </a>                </h2>
+                                        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
+                        </div>
 </div>                </div>
                 <div class="col-sm-6">
                     
@@ -3653,9 +3668,12 @@ type="text" id="search-sample-field" name="search-sample-field" placeholder="Sea
 <img class="image-nds image--default " src="../assets/featured-2.jpg" alt="A lab table with scientific equipment."
                         />            </div>
     <div class="block--featured-content__text">
-                <h2><a href="#">What is a Clinical Study?</a></h2>
-        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
-        </div>
+                                                        <span class="block--featured-content__text__featured">Featured</span>
+                                <h2 class="block--featured-content__text__title">
+                    <a href="#">                    What is a Clinical Study?
+                    </a>                </h2>
+                                        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
+                        </div>
 </div>                </div>
             </div>
         </div>

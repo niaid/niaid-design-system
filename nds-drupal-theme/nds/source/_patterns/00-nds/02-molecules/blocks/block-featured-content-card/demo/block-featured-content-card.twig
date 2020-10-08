@@ -1,11 +1,10 @@
-{% embed "@nds/02-molecules/blocks/block-featured-content-card/_block-featured-content-card-main.twig" with
+{% include "@nds/02-molecules/blocks/block-featured-content-card/_block-featured-content-card-main.twig" with
     {
         "block_featured_content_card_src": "featured-2.jpg",
-        "block_featured_content_card_alt": "A lab table with scientific equipment."
+        "block_featured_content_card_alt": "A lab table with scientific equipment.",
+        "block_featured_content_card_title": "What is a Clinical Study?",
+        "block_featured_content_card_title_link": "#",
+        "block_featured_content_card_description": "Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.",
+        "block_featured_content_card_featured": "Featured"
     }
 %}
-    {% block featured_content_card_content %}
-        <h2><a href="#">What is a Clinical Study?</a></h2>
-        <p class="block--featured-content__text__description">Learn about the different stages of clinical studies and see a list of active vaccine and antibody studies.</p>
-    {% endblock %}
-{% endembed %}
