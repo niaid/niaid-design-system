@@ -105,10 +105,10 @@ function compileJS() {
     console.log("Compiling JS...");
     return gulp.src(includedJS, {base: './source/'})
         .pipe(concat('script.js'))
-        .pipe(minify())
         .pipe(babel({
             presets: ['@babel/env']
         }))
+        .pipe(minify())
         .pipe(sourcemaps.write('./source/js/global/'))
         .pipe(gulp.dest('./source/js/global/'));
 }
