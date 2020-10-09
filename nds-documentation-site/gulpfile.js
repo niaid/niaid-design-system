@@ -1,6 +1,6 @@
 /* Gulp File
     Last Modified by: Jacob Caccamo
-    September 30, 2020
+    October 9, 2020
 */
 
 const gulp = require('gulp');
@@ -20,13 +20,7 @@ const fileinclude = require('gulp-file-include');
 const zip = require('gulp-zip');
 const del = require('del');
 
-/* Fonts */
-function copyFonts() {
-    return gulp.src('../global-assets/source/webfonts/**/*')
-        .pipe(gulp.dest('./source/webfonts/'));
-}
-
-/* SASS */
+// Compile CSS for NDS Documentation
 function compileSass() {
     console.log("Compiling Sass...");
     return gulp.src('source/css/style.scss')
@@ -47,33 +41,8 @@ function compileSass() {
         .pipe(browserSync.stream());
 }
 
-function copyGlobalSass() {
-    console.log("Transferring Assets from Global SASS...");
-    gulp.src('../global-assets/source/css/style.scss').pipe(gulp.dest('./source/css/'));
-    gulp.src('../global-assets/source/css/libraries/**/*').pipe(gulp.dest('./source/css/libraries/'));
-    return gulp.src('../global-assets/source/css/global/**/*').pipe(gulp.dest('./source/css/global/'));
-}
-
-/* Patterns */
-function compilePatternLab(cb) {
-    console.log("Compiling Pattern Lab...")
-    return exec('php core/console --generate', function(err, stdout, stderr) {
-        cache.clearAll();
-        browserSync.reload();
-        cb(err);
-    });
-}
-
-function cleanNDS() {
-    return del('./source/_patterns/00-nds/**/*', {force:true});
-}
-
-function copyGlobalPatterns() {
-    console.log("Transferring Assets from Global Patterns...");
-    console.log("Copying Patterns...");
-    return gulp.src('../global-assets/source/_patterns/00-nds/**/*').pipe(gulp.dest('./source/_patterns/00-nds/'));
-}
-
+// Compile JS for NDS Documentation
+// This logic replaces any scripts on build in the 00-nds folder with scripts of the same name in the custom directories (01-atoms, etc.).
 var includedJS = [];
 gulp.task('computeIncludedJSFiles', function() {
     var overridesJS = [];
@@ -98,8 +67,6 @@ gulp.task('computeIncludedJSFiles', function() {
         }
     }));
 });
-
-/* JS */
 function compileJS() {
     console.log(includedJS);
     console.log("Compiling JS...");
@@ -113,18 +80,55 @@ function compileJS() {
         .pipe(gulp.dest('./source/js/global/'));
 }
 
+// Compile Pattern Lab for NDS Documentation
+function compilePatternLab(cb) {
+    console.log("Compiling Pattern Lab...")
+    return exec('php core/console --generate', function(err, stdout, stderr) {
+        cache.clearAll();
+        browserSync.reload();
+        cb(err);
+    });
+}
+
+// Copy CSS into NDS Documentation
+function copyGlobalSass() {
+    console.log("Transferring Assets from Global SASS...");
+    gulp.src('../global-assets/source/css/style.scss').pipe(gulp.dest('./source/css/'));
+    gulp.src('../global-assets/source/css/libraries/**/*').pipe(gulp.dest('./source/css/libraries/'));
+    return gulp.src('../global-assets/source/css/global/**/*').pipe(gulp.dest('./source/css/global/'));
+}
+
+// Copy JS into NDS Documentation
 function copyGlobalJS() {
     console.log("Transferring Assets from Global JS...");
     return gulp.src('../global-assets/source/js/**/*').pipe(gulp.dest('./source/js/'));
 }
 
-// Images
+// Copy Patterns into NDS Documentation
+function copyGlobalPatterns() {
+    console.log("Transferring Assets from Global Patterns...");
+    console.log("Copying Patterns...");
+    return gulp.src('../global-assets/source/_patterns/00-nds/**/*').pipe(gulp.dest('./source/_patterns/00-nds/'));
+}
+
+// Copy Images into NDS Documentation
 function copyGlobalImages() {
     console.log("Transferring Assets from Global Images...");
     return gulp.src('../global-assets/source/images/**/*').pipe(gulp.dest('./source/images/'));
 }
 
-// Watching Source Files
+// Copy Fonts into NDS Documentation
+function copyFonts() {
+    return gulp.src('../global-assets/source/webfonts/**/*')
+        .pipe(gulp.dest('./source/webfonts/'));
+}
+
+// cleanNDS - Clear out the 00-nds folder.
+function cleanNDS() {
+    return del('./source/_patterns/00-nds/**/*', {force:true});
+}
+
+// GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
     browserSync.init({
         server: {
@@ -140,41 +144,43 @@ gulp.task('serveProject', function() {
     gulp.watch('../global-assets/source/_patterns/**/*', gulp.series(cleanNDS, copyGlobalPatterns, compileSass, compileJS, compilePatternLab));
 });
 
-// Need to add copyNodeModules
+// GULP: default - Running gulp compiles the NDS Documentaiton site and serves it locally.
+// TODO: Add copyNodeModules
 gulp.task('default', gulp.series(copyFonts, copyGlobalImages, copyGlobalSass, copyGlobalJS, cleanNDS, copyGlobalPatterns, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
-// Define Paths to Compiled Pages & Desired Distribution Paths
-var buildPaths = [{
-        "page_name": "index",
-        "target_dest": "./public_html/"
-    },
-    {
-        "page_name": "design",
-        "target_dest": "./public_html/design/"
-    },
-    {
-        "page_name": "development",
-        "target_dest": "./public_html/development"
-    },
-    {
-        "page_name": "builder",
-        "target_dest": "./public_html/builder"
-    },
-    {
-        "page_name": "getting-started",
-        "target_dest": "./public_html/getting-started"
-    },
-    {
-        "page_name": "components",
-        "target_dest": "./public_html/components"
-    }
-];
+// GULP - buildProd - Build the NDS Documentation site for deploy.
+gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, buildNDSDocumentationSite, compileGlobalAssets, buildDist, zipAssets));
 
-// buildProd Task Definition
-gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, moveAssets, cleanDist, compileGlobalAssets, dist_copyFonts, dist_copyGlobalImages, dist_copyGlobalSass, dist_copyGlobalJS, dist_copyGlobalPatterns, dist_copyOther, zipDist));
+// buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
+function buildNDSDocumentationSite() {
+    // Define Paths to Compiled Pages & Desired Distribution Paths
+    var buildPaths = [
+        {
+            "page_name": "index",
+            "target_dest": "./public_html/"
+        },
+        {
+            "page_name": "design",
+            "target_dest": "./public_html/design/"
+        },
+        {
+            "page_name": "development",
+            "target_dest": "./public_html/development"
+        },
+        {
+            "page_name": "builder",
+            "target_dest": "./public_html/builder"
+        },
+        {
+            "page_name": "getting-started",
+            "target_dest": "./public_html/getting-started"
+        },
+        {
+            "page_name": "components",
+            "target_dest": "./public_html/components"
+        }
+    ];
 
-// Move Assets to the public_html Folder for Deployment
-function moveAssets() {
     // Move HTML to Proper Positions
     for (var i = 0; i < buildPaths.length; i++) {
         var path = "./public/patterns/06-dist-" + buildPaths[i].page_name + "-" + buildPaths[i].page_name + "/06-dist-" + buildPaths[i].page_name + "-" + buildPaths[i].page_name + ".html";
@@ -188,12 +194,10 @@ function moveAssets() {
 
     // Copy CSS
     console.log("Starting Copy of CSS");
-    gulp.src('./source/css/style.css')
-        .pipe(gulp.dest('./public_html/css'));
-    gulp.src('./source/css/builder.css')
+    gulp.src(['./source/css/style.css', './source/css/builder.css'])
         .pipe(gulp.dest('./public_html/css'));
     gulp.src('./source/css/libraries/*.css')
-        .pipe(gulp.dest('./public_html/css/libraries'));
+        .pipe(gulp.dest('./public_html/css/libraries/'));
     console.log("Finished Copying CSS");
 
     // Copy JS
@@ -216,8 +220,12 @@ function moveAssets() {
 
     // Copy Webfonts
     console.log("Starting Copy Webfonts");
-    return gulp.src('./source/webfonts/**/*')
+    gulp.src('./source/webfonts/**/*')
         .pipe(gulp.dest('./public_html/webfonts'));
+
+    console.log("Move Pattern Lab to Drupal Theme");
+    return gulp.src('../global-assets/dist/**/*', {dot: true})
+        .pipe(gulp.dest('../nds-drupal-theme/nds/'));
 }
 
 // compileGlobalAssets - A function to concatenate and compile the component CSS and JS files into single .css and .js distribution files.
@@ -230,12 +238,10 @@ function compileGlobalAssets() {
             basename: 'style',
             extname: '.css'
         }))
-        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed',
             includePaths: ["../global-assets/node_modules/bootstrap/scss", "../global-assets/node_modules/font-awesome/scss"]
         }).on('error', sass.logError))
-        .pipe(sourcemaps.write('../global-assets/source/maps'))
         .pipe(gulp.dest('../global-assets/source/css'))
         .pipe(cache.clear())
         .pipe(browserSync.stream());
@@ -247,52 +253,38 @@ function compileGlobalAssets() {
             presets: ['@babel/env']
         }))
         .pipe(minify())
-        .pipe(sourcemaps.write('../global-assets/source/js/global/'))
         .pipe(gulp.dest('../global-assets/source/js/global/'));
 }
 
-// Move Assets to Dist for Zip
-
-function cleanDist() {
-    del('../nds-drupal-theme/nds/**/*', {force:true});
-    return del('../global-assets/dist/**', {force:true});
-}
-
-function dist_copyFonts() {
-    return gulp.src('../global-assets/source/webfonts/**/*')
+// buildDist - Copies global files from global-assets into a distribution folder.
+function buildDist() {
+    // Transfer Fonts
+    console.log("Transferring Assets from Global Webfonts...");
+    gulp.src('../global-assets/source/webfonts/**/*')
         .pipe(gulp.dest('../global-assets/dist/source/webfonts/'));
-}
 
-function dist_copyGlobalSass() {
+    // Transfer CSS
     console.log("Transferring Assets from Global SASS...");
-    gulp.src('../global-assets/source/css/style.scss').pipe(gulp.dest('../global-assets/dist/source/css/'));
-    gulp.src('../global-assets/source/css/style.css').pipe(gulp.dest('../global-assets/dist/source/css/'));
-    gulp.src('../global-assets/source/css/libraries/**/*').pipe(gulp.dest('../global-assets/dist/source/css/libraries/'));
-    gulp.src('../global-assets/source/css/overrides/**/*').pipe(gulp.dest('../global-assets/dist/source/css/overrides/'));
-    return gulp.src('../global-assets/source/css/global/**/*').pipe(gulp.dest('../global-assets/dist/source/css/global/'));
-}
+    gulp.src('../global-assets/source/css/**/*').pipe(gulp.dest('../global-assets/dist/source/css/'));
 
-function dist_copyGlobalPatterns() {
-    console.log("Transferring Assets from Global Patterns...");
-    console.log("Copying Data...");
-    gulp.src('../global-assets/source/_data/**/*').pipe(gulp.dest('../global-assets/dist/source/_data/'));
-    console.log("Copying Meta...");
-    gulp.src('../global-assets/source/_meta/**/*').pipe(gulp.dest('../global-assets/dist/source/_meta/'));
-    console.log("Copying Patterns...");
-    return gulp.src('../global-assets/source/_patterns/**/*').pipe(gulp.dest('../global-assets/dist/source/_patterns/'));
-}
-
-function dist_copyGlobalJS() {
+    // Transfer JS
     console.log("Transferring Assets from Global JS...");
-    return gulp.src('../global-assets/source/js/**/*').pipe(gulp.dest('../global-assets/dist/source/js/'));
-}
+    gulp.src('../global-assets/source/js/**/*').pipe(gulp.dest('../global-assets/dist/source/js/'));
 
-function dist_copyGlobalImages() {
+    // Transfer Patterns
+    console.log("Transferring Assets from Global Patterns...");
+    gulp.src('../global-assets/source/_patterns/**/*').pipe(gulp.dest('../global-assets/dist/source/_patterns/'));
+
+    // Transfer Data and Meta
+    console.log("Transferring Assets from Data and Meta...");
+    gulp.src('../global-assets/source/_data/**/*').pipe(gulp.dest('../global-assets/dist/source/_data/'));
+    gulp.src('../global-assets/source/_meta/**/*').pipe(gulp.dest('../global-assets/dist/source/_meta/'));
+
+    // Transfer Images
     console.log("Transferring Assets from Global Images...");
-    return gulp.src('../global-assets/source/images/**/*').pipe(gulp.dest('../global-assets/dist/source/images/global/'));
-}
+    gulp.src('../global-assets/source/images/**/*').pipe(gulp.dest('../global-assets/dist/source/images/'));
 
-function dist_copyOther() {
+    // Other Files
     gulp.src('../global-assets/config/**/*').pipe(gulp.dest('../global-assets/dist/config'));
     gulp.src('../global-assets/core/**/*').pipe(gulp.dest('../global-assets/dist/core'));
     gulp.src('../global-assets/package.json').pipe(gulp.dest('../global-assets/dist/'));
@@ -303,7 +295,10 @@ function dist_copyOther() {
     return gulp.src('../global-assets/gulpfile.js').pipe(gulp.dest('../global-assets/dist/'));
 }
 
-function zipDist() {
+// zipAssets - Zips webfont pacakges, the NDS Drupal Theme, and the distribution folder created in buildDist.
+function zipAssets() {
+    // Zip Font Folders
+    console.log("Zipping Font Folders");
     gulp.src('../global-assets/source/webfonts/martel/**', {dot: true})
         .pipe(zip('martel.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
@@ -316,18 +311,16 @@ function zipDist() {
     gulp.src('../global-assets/source/webfonts/roboto/**', {dot: true})
         .pipe(zip('roboto.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
-    
-    console.log("Move Pattern Lab to Drupal Theme");
-    gulp.src('../global-assets/dist/**/*', {dot: true})
-        .pipe(gulp.dest('../nds-drupal-theme/nds/'));
 
+    // Zip Drupal Theme
+    console.log("Zipping Drupal Theme");
     gulp.src('../nds-drupal-theme/**', {dot: true})
         .pipe(zip('nds-drupal-theme.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
 
-    console.log("Zipping Pattern Lab Dist");
+    // Zip Pattern Lab
+    console.log("Zipping Pattern Lab");
     return gulp.src('../global-assets/dist/**', {dot: true})
         .pipe(zip('nds.zip'))
-        .pipe(gulp.dest('./'))
         .pipe(gulp.dest('./public_html/assets/'));
 }
