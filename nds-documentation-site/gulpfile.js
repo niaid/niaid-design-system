@@ -151,7 +151,7 @@ gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compil
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
-    // Define Paths to Compiled Pages & Desired Distribution Paths
+    // Define Names of Pages to Build for Production (Use the name of the Twig file in the 06-dist folder) to Compiled Pages & Desired Distribution Paths.
     var buildPaths = [
         {
             "page_name": "index",

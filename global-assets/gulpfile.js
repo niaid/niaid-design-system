@@ -114,10 +114,10 @@ gulp.task('buildProd', gulp.series(compileSass, compileJS, compilePatternLab, bu
 
 // buildDist - Build public_html folder for deploy.
 function buildDist() {
-    // Define your build paths. For page_name, put the relative path to the pattern in the public/patterns folder. For target_dest, define where you want the page to live for your deployed site.
+    // Define Names of Pages to Build for Production (Use the name of the Twig file in the 06-dist folder) to Compiled Pages & Desired Distribution Paths.
     var buildPaths = [
         {
-            "page_name": "PATH_TO_PATTERN",
+            "page_name": "PAGE_NAME_IN_06_DIST",
             "target_dest": "./public_html/TARGET_PATH/"
         }
     ];

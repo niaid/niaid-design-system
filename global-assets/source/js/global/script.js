@@ -193,34 +193,6 @@
 })(jQuery);
 
 (function ($) {
-  function initComponentLightbox() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.materialboxed').length) {
-      $('.materialboxed').materialbox();
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentLightbox = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-lightbox').each(function () {
-            initComponentLightbox(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentLightbox();
-    });
-  }
-})(jQuery);
-
-(function ($) {
   function initBlockHero() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -244,6 +216,34 @@
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initBlockHero();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentLightbox() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.materialboxed').length) {
+      $('.materialboxed').materialbox();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentLightbox = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-lightbox').each(function () {
+            initComponentLightbox(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentLightbox();
     });
   }
 })(jQuery);

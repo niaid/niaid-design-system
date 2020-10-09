@@ -23,6 +23,16 @@
         <p class="step">3. Install Node and Composer Dependencies</p>
         <code>npm install</code><br>
         <code>composer install</code><br>
+        <p>When you run "composer install" there may be a prompt asking if you want to install a default theme. Type "n" and hit enter.</p>
+        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+            {
+                "component_media_src": 'composer-install.png',
+                "component_media_alt": 'See caption for details',
+                "component_media_credit": 'NIAID',
+                "component_media_caption": 'Do not install the default theme when prompoted by typing "n" and hitting enter.',
+                "component_media_lightbox": "yes"
+            }
+        %}
         <p class="step">4. Open the Project on Your Localhost</p>
         <code>gulp</code><br>
         <h3>Building NDS for Production</h3>
