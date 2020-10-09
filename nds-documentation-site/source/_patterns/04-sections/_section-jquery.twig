@@ -5,6 +5,11 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>jQuery</h3>
+        {% include "@nds/01-atoms/text/text-badge/_text-badge-main.twig" with
+            {
+                "text_badge_text": "Version: 3.5.1"
+            }
+        %}
         <p><a href="https://jquery.com/">jQuery</a> is a JavaScript library that, according to its website, "makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers." In other words, jQuery simplifies many different JavaScript.</p>
     {% endblock %}
 {% endembed %}

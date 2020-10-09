@@ -79,7 +79,7 @@ gulp buildProd
 
 ## Deploying the Site
 
-To make a production build, run the make deploy command. This will compile the project, move assets into the public_html directory, and deploy the contents of the directory to the AWS S3 bucket.
+To make a production build, run the make deploy command. This will compile the project, move assets into the public_html directory, and deploy the contents of the directory to the AWS S3 bucket. You must be connected to BAH AWS SAML.
 
 ```
 make deploy

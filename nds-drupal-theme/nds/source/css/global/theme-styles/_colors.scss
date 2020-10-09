@@ -44,7 +44,25 @@
                 background: $color-theme-2-1-2;
             }
         }
-        
+        &.button--image {
+            background: transparent;
+            border: 0.0625rem solid $color-theme-2-1-1;
+            span {
+                color: $color-theme-2-1-1;
+            }
+            &:hover,
+            &:focus {
+                span {
+                    color: $white;
+                }
+            }
+            &:not([href]):not([tabindex]):hover,
+            &:not([href]):not([tabindex]):focus,
+            &:not([href]):not([tabindex]):active {
+                border: 0.0625rem solid $color-theme-2-1-1;
+                background-color: $color-theme-2-1-1;
+            }
+        }
     }
     button {
         background: $color-theme-2-1-1;
@@ -217,6 +235,25 @@
             &:hover,
             &:focus {
                 background: $color-theme-3-1-2;
+            }
+        }
+        &.button--image {
+            background: transparent;
+            border: 0.0625rem solid $color-theme-3-1-1;
+            span {
+                color: $color-theme-3-1-1;
+            }
+            &:hover,
+            &:focus {
+                span {
+                    color: $white;
+                }
+            }
+            &:not([href]):not([tabindex]):hover,
+            &:not([href]):not([tabindex]):focus,
+            &:not([href]):not([tabindex]):active {
+                border: 0.0625rem solid $color-theme-3-1-1;
+                background-color: $color-theme-3-1-1;
             }
         }
     }
