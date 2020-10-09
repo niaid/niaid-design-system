@@ -1,6 +1,6 @@
 /* Gulp File
     Last Modified by: Jacob Caccamo
-    March 5, 2020
+    October 9, 2020
 */
 
 const gulp = require('gulp');
@@ -15,18 +15,18 @@ const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 const babel = require('gulp-babel');
 
-var fonts = {
-    fa_in: './node_modules/@fortawesome/fontawesome-pro/webfonts/**'
-}
-
+// copyFonts - Copy Font Awesome from node_modules into project.
 function copyFonts() {
-    return gulp
-        .src([fonts.fa_in])
+    var fonts = {
+        fa_in: './node_modules/@fortawesome/fontawesome-pro/webfonts/**'
+    }
+
+    return gulp.src([fonts.fa_in])
         .pipe(gulp.dest('./fonts'))
         .pipe(gulp.dest('./source/webfonts/font-awesome'));
 }
 
-/* SASS */
+// compileSass - Compile CSS for your static site.
 function compileSass() {
     console.log("Compiling Sass...");
     return gulp.src('source/css/style.scss')
@@ -45,16 +45,8 @@ function compileSass() {
         .pipe(gulp.dest('./source/css'));
 }
 
-/* Patterns */
-function compilePatternLab(cb) {
-    console.log("Compiling Pattern Lab...")
-    return exec('php core/console --generate', function(err, stdout, stderr) {
-        browserSync.reload();
-        cb(err);
-    });
-}
-
-/* JS */
+// compileJS - Compile JS for your static site.
+// This logic replaces any scripts on build in the 00-nds folder with scripts of the same name in the custom directories (01-atoms, etc.).
 var includedJS = [];
 gulp.task('computeIncludedJSFiles', function() {
     var overridesJS = [];
@@ -79,7 +71,6 @@ gulp.task('computeIncludedJSFiles', function() {
         }
     }));
 });
-
 function compileJS() {
     console.log(includedJS);
     console.log("Compiling JS...");
@@ -93,7 +84,16 @@ function compileJS() {
         .pipe(gulp.dest('./source/js/global/'));
 }
 
-// Watching Source Files
+// compilePatternLab - Compile Pattern Lab for your static site.
+function compilePatternLab(cb) {
+    console.log("Compiling Pattern Lab...")
+    return exec('php core/console --generate', function(err, stdout, stderr) {
+        browserSync.reload();
+        cb(err);
+    });
+}
+
+// GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
     browserSync.init({
         server: {
@@ -106,18 +106,22 @@ gulp.task('serveProject', function() {
     gulp.watch(['./source/**/*'], gulp.series(compileSass, compileJS, compilePatternLab));
 });
 
+// GULP: default - Running gulp compiles the your static site and serves it locally.
 gulp.task('default', gulp.series(copyFonts, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
-var buildPaths = [
-    {
-        "page_name": "PATH_TO_PATTERN",
-        "target_dest": "./public_html/TARGET_PATH/"
-    }
-];
+// GULP: buildProd - Compile your project assets and build public_html folder for deploy.
+gulp.task('buildProd', gulp.series(compileSass, compileJS, compilePatternLab, buildDist));
 
-gulp.task('buildProd', gulp.series(compileSass, compileJS, compilePatternLab, moveAssets));
+// buildDist - Build public_html folder for deploy.
+function buildDist() {
+    // Define your build paths. For page_name, put the relative path to the pattern in the public/patterns folder. For target_dest, define where you want the page to live for your deployed site.
+    var buildPaths = [
+        {
+            "page_name": "PATH_TO_PATTERN",
+            "target_dest": "./public_html/TARGET_PATH/"
+        }
+    ];
 
-function moveAssets() {
     // Move HTML to Proper Positions
     for (var i = 0; i < buildPaths.length; i++) {
         var path = "./public/patterns/06-dist-" + buildPaths[i].page_name + "-" + buildPaths[i].page_name + "/06-dist-" + buildPaths[i].page_name + "-" + buildPaths[i].page_name + ".html";

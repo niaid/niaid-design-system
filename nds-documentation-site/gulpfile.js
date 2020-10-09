@@ -15,12 +15,10 @@ const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 const babel = require('gulp-babel');
 const cache = require('gulp-cache');
-const change = require('gulp-change');
-const fileinclude = require('gulp-file-include');
 const zip = require('gulp-zip');
 const del = require('del');
 
-// Compile CSS for NDS Documentation
+// compileSass - Compile CSS for NDS Documentation
 function compileSass() {
     console.log("Compiling Sass...");
     return gulp.src('source/css/style.scss')
@@ -41,7 +39,7 @@ function compileSass() {
         .pipe(browserSync.stream());
 }
 
-// Compile JS for NDS Documentation
+// compileJS - Compile JS for NDS Documentation
 // This logic replaces any scripts on build in the 00-nds folder with scripts of the same name in the custom directories (01-atoms, etc.).
 var includedJS = [];
 gulp.task('computeIncludedJSFiles', function() {
@@ -80,7 +78,7 @@ function compileJS() {
         .pipe(gulp.dest('./source/js/global/'));
 }
 
-// Compile Pattern Lab for NDS Documentation
+// compilePatternLab - Compile Pattern Lab for NDS Documentation
 function compilePatternLab(cb) {
     console.log("Compiling Pattern Lab...")
     return exec('php core/console --generate', function(err, stdout, stderr) {
@@ -90,7 +88,7 @@ function compilePatternLab(cb) {
     });
 }
 
-// Copy CSS into NDS Documentation
+// copyGlobalSass - Copy CSS into NDS Documentation
 function copyGlobalSass() {
     console.log("Transferring Assets from Global SASS...");
     gulp.src('../global-assets/source/css/style.scss').pipe(gulp.dest('./source/css/'));
@@ -98,26 +96,26 @@ function copyGlobalSass() {
     return gulp.src('../global-assets/source/css/global/**/*').pipe(gulp.dest('./source/css/global/'));
 }
 
-// Copy JS into NDS Documentation
+// copyGlobalJS - Copy JS into NDS Documentation
 function copyGlobalJS() {
     console.log("Transferring Assets from Global JS...");
     return gulp.src('../global-assets/source/js/**/*').pipe(gulp.dest('./source/js/'));
 }
 
-// Copy Patterns into NDS Documentation
+// copyGlobalPatterns - Copy Patterns into NDS Documentation
 function copyGlobalPatterns() {
     console.log("Transferring Assets from Global Patterns...");
     console.log("Copying Patterns...");
     return gulp.src('../global-assets/source/_patterns/00-nds/**/*').pipe(gulp.dest('./source/_patterns/00-nds/'));
 }
 
-// Copy Images into NDS Documentation
+// copyGlobalImages - Copy Images into NDS Documentation
 function copyGlobalImages() {
     console.log("Transferring Assets from Global Images...");
     return gulp.src('../global-assets/source/images/**/*').pipe(gulp.dest('./source/images/'));
 }
 
-// Copy Fonts into NDS Documentation
+// copyFonts - Copy Fonts into NDS Documentation
 function copyFonts() {
     return gulp.src('../global-assets/source/webfonts/**/*')
         .pipe(gulp.dest('./source/webfonts/'));
