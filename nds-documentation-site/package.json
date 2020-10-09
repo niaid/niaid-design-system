@@ -5,7 +5,7 @@
   "main": "public/index.html",
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.9.0",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.5.2",
     "bootstrap-datepicker": "^1.9.0",
     "datatables.net": "^1.10.20",
     "datatables.net-responsive-dt": "^2.2.3",
