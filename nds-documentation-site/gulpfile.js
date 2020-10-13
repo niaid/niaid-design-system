@@ -147,7 +147,7 @@ gulp.task('serveProject', function() {
 gulp.task('default', gulp.series(copyFonts, copyGlobalImages, copyGlobalSass, copyGlobalJS, cleanNDS, copyGlobalPatterns, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
 // GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, buildNDSDocumentationSite, compileGlobalAssets, buildDist, zipAssets));
+gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, buildNDSDocumentationSite, copyAssetsToDrupalTheme, compileGlobalAssets, buildDist, zipAssets));
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
@@ -218,9 +218,12 @@ function buildNDSDocumentationSite() {
 
     // Copy Webfonts
     console.log("Starting Copy Webfonts");
-    gulp.src('./source/webfonts/**/*')
+    return gulp.src('./source/webfonts/**/*')
         .pipe(gulp.dest('./public_html/webfonts'));
+}
 
+// copyAssetsToDrupalTheme - Move a copy of the NDS files into the NDS-based Drupal theme.
+function copyAssetsToDrupalTheme() {
     console.log("Move Pattern Lab to Drupal Theme");
     return gulp.src('../global-assets/dist/**/*', {dot: true})
         .pipe(gulp.dest('../nds-drupal-theme/nds/'));
