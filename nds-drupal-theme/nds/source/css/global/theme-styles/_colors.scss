@@ -125,17 +125,6 @@
             }
         }
     }
-    .component-nds {
-        &.component--scrollspy-toc {
-            .active {
-                border-left: 0.125rem solid $color-theme-2-1-1;
-                &:hover,
-                &:focus {
-                    border-left: 0.125rem solid $color-theme-2-1-1;
-                }
-            }
-        }
-    }
     .navigation-nds {
         &.navigation--primary {
             background: $color-theme-2-3-1;
@@ -315,17 +304,6 @@
         &.block--mission-statement {
             .block--mission-statement__header {
                 background: $color-theme-3-3-1;
-            }
-        }
-    }
-    .component-nds {
-        &.component--scrollspy-toc {
-            .active {
-                border-left: 0.125rem solid $color-theme-3-1-1;
-                &:hover,
-                &:focus {
-                    border-left: 0.125rem solid $color-theme-3-1-1;
-                }
             }
         }
     }

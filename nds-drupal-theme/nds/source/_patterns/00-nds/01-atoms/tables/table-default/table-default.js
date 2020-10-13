@@ -8,7 +8,6 @@
 
         $("table").each(function() {
             if ($(this).attr('nds-datatable') == 'true') {
-                console.log('true');
                 var defaultConfigs = {
                     "responsive": true,
                     "paging": false,

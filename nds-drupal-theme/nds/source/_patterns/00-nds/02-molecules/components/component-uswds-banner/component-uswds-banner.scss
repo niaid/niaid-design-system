@@ -1,0 +1,66 @@
+.component--uswds-banner {
+    background-color: $type-heading;
+    * {
+        color: $white;
+    }
+    .usa-banner__inner {
+        max-width: none;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .usa-banner__content {
+        padding: 1rem 2rem;
+    }
+    .usa-media-block__img {
+        margin-right: 1rem;
+    }
+    .usa-banner__button {
+        border: 0 !important;
+        background: transparent !important;
+        span {
+            text-decoration: none;
+        }
+        &:after {
+            @include fa-icon;
+            @extend .fal;
+            content: fa-content($fa-var-chevron-right) !important;
+            color: $white;
+            -webkit-mask: none;
+            mask: none;
+            background-color: transparent;
+            height: auto;
+        }
+        &[aria-expanded="true"] {
+            &:after {
+                content: fa-content($fa-var-chevron-down) !important;
+                background-color: transparent;
+                transform: none;
+                margin-left: .25rem;
+            }
+        }
+    }
+    @media (max-width: 39.99em) {
+        .usa-banner__button {
+            &:after {
+                display: none;
+            }
+        }
+        .usa-banner__button {
+            &[aria-expanded=true] {
+                text-align: center;
+                &:before {
+                    background-color: #000;
+                }
+                &:after {
+                    font-size: 1.5rem;
+                    display: block;
+                    content: fa-content($fa-var-times) !important;
+                    margin-left: .25rem;
+                    top: 50%;
+                    bottom: auto;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
