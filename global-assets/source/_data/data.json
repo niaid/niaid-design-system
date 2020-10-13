@@ -1,10 +1,16 @@
 {
+    "language": "en",
     "prodBuild": "false",
     "cssPath": "../../css/",
     "jsPath": "../../js/",
     "imagePath": "../../images/",
     "assetsPath": "../../assets/",
     "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans",
+    "cssIncludes": {
+        "select2": true,
+        "bootstrapDatepicker": true,
+        "uswds": true
+    },
     "jsIncludes": {
         "jquery": true,
         "select2": true,
@@ -12,6 +18,7 @@
         "bootstrap": true,
         "matchMedia": true,
         "dataTables": true,
-        "dateTimePicker": true
+        "dateTimePicker": true,
+        "uswds": true
     }
 }

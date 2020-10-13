@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="{{ htmlClass }}">
+<html lang="{{ language|default('en') }}" class="{{ htmlClass }}">
   <head>
     <title>{{ title }}</title>
+    {% if metaDescription is not empty %}<meta name="description" content="{{ metaDescription }}">{% endif %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="{{ cssPath }}libraries/bootstrap-datepicker.min.css" />
-    <link rel="stylesheet" href="{{ cssPath }}libraries/select2.min.css" />
+    {% if cssIncludes.bootstrapDatepicker %}<link rel="stylesheet" href="{{ cssPath }}libraries/bootstrap-datepicker/bootstrap-datepicker.min.css" />{% endif %}
+    {% if cssIncludes.select2 %}<link rel="stylesheet" href="{{ cssPath }}libraries/select2/select2.min.css" />{% endif %}
+    {% if cssIncludes.uswds %}<link rel="stylesheet" href="{{ cssPath }}libraries/uswds/uswds.min.css" />{% endif %}
 
     <link rel="icon" href="{{ imagePath }}global/favicon.ico" type="image/x-icon"/>
 
@@ -18,11 +20,13 @@
       <link rel="stylesheet" href="{{ cssPath }}builder.css" media="all" />
     {% endif %}
 
-    {% if prodBuild != "true" %}<link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />{% endif %}
+    {% if prodBuild != "true" %}<link rel="stylesheet" href="{{ cssPath }}libraries/pattern-lab/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />{% endif %}
 
-    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    {% if prodBuild != "true" %}{{ patternLabHead | raw }}{% endif %}
-    <!-- End Pattern Lab -->
+    {% if prodBuild != "true" %}
+      <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+      {{ patternLabHead | raw }}
+      <!-- End Pattern Lab -->
+    {% endif %}
     
   </head>
   <body class="{{ bodyClass }}">

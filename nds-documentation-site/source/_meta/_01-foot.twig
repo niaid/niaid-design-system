@@ -1,16 +1,16 @@
-
-        <!-- Pattern Lab Footer -->
         {% if prodBuild != "true" %}
+            <!-- Pattern Lab Footer -->
             {{ patternLabFoot | raw }}
         {% endif %}
 
-        {% if jsIncludes.jquery %}<script src="{{ jsPath }}libraries/jquery.min.js"></script>{% endif %}
-        {% if jsIncludes.select2 %}<script src="{{ jsPath }}libraries/select2.full.min.js"></script>{% endif %}
-        {% if jsIncludes.materialize %}<script src="{{ jsPath }}libraries/materialize.min.js"></script>{% endif %}
-        {% if jsIncludes.bootstrap %}<script src="{{ jsPath }}libraries/bootstrap.bundle.min.js"></script>{% endif %}
-        {% if jsIncludes.matchMedia %}<script src="{{ jsPath }}libraries/matchMedia.js"></script>{% endif %}
-        {% if jsIncludes.dataTables %}<script src="{{ jsPath }}libraries/datatables.min.js"></script>{% endif %}
-        {% if jsIncludes.dateTimePicker %}<script src="{{ jsPath }}libraries/bootstrap-datepicker.min.js"></script>{% endif %}
+        {% if jsIncludes.jquery %}<script src="{{ jsPath }}libraries/jquery/jquery.min.js"></script>{% endif %}
+        {% if jsIncludes.select2 %}<script src="{{ jsPath }}libraries/select2/select2.full.min.js"></script>{% endif %}
+        {% if jsIncludes.materialize %}<script src="{{ jsPath }}libraries/materialize/materialize.min.js"></script>{% endif %}
+        {% if jsIncludes.bootstrap %}<script src="{{ jsPath }}libraries/bootstrap/bootstrap.bundle.min.js"></script>{% endif %}
+        {% if jsIncludes.matchMedia %}<script src="{{ jsPath }}libraries/match-media/match-media.js"></script>{% endif %}
+        {% if jsIncludes.dataTables %}<script src="{{ jsPath }}libraries/datatables/datatables.min.js"></script>{% endif %}
+        {% if jsIncludes.dateTimePicker %}<script src="{{ jsPath }}libraries/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>{% endif %}
+        {% if jsIncludes.uswds %}<script src="{{ jsPath }}libraries/uswds/uswds.min.js"></script>{% endif %}
         <script src="{{ jsPath }}global/script-min.js"></script>
     </body>
 </html>
