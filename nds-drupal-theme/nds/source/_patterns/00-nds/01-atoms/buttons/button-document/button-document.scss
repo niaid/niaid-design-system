@@ -1,8 +1,8 @@
 .button--document {
     display: block;
     position: relative;
-    border-radius: 50%;
-    @include size(70px);
+    height: 4rem;
+    width: 4rem;
     padding: 0;
     &__generic-wrapper {
         display: flex;

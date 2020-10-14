@@ -194,7 +194,7 @@ function buildNDSDocumentationSite() {
     console.log("Starting Copy of CSS");
     gulp.src(['./source/css/style.css', './source/css/builder.css'])
         .pipe(gulp.dest('./public_html/css'));
-    gulp.src('./source/css/libraries/*.css')
+    gulp.src('./source/css/libraries/**/*')
         .pipe(gulp.dest('./public_html/css/libraries/'));
     console.log("Finished Copying CSS");
 
