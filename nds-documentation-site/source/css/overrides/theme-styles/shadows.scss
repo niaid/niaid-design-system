@@ -21,6 +21,12 @@
         }
     }
 
+    .block-nds {
+        &.block--full-palette {
+            @include md-0dp;
+        }
+    }
+
     &.style--colors--theme-2 {
         .button--icon--outline {
             &:hover,

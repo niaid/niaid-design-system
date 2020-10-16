@@ -16,6 +16,9 @@
                     $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
                 }
             } 
+            else {
+                $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
+            }
         });
 
         // Listener to Add Accessibility Compliance to Open Modals

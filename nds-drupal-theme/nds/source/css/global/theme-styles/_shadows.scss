@@ -19,6 +19,19 @@
                 background-color: $white !important;
             }
         }
+        &.button--image {
+            border: 0.0625rem solid $white;
+            &:hover,
+            &:focus {
+                background-color: $white;
+            }
+            &:not([href]):not([tabindex]):hover,
+            &:not([href]):not([tabindex]):focus,
+            &:not([href]):not([tabindex]):active {
+                background-color: $white;
+                border: 0.0625rem solid $white;
+            }
+        }
         &.disabled,
         &:disabled {
             @include md-2dp;
@@ -83,6 +96,14 @@
                 }
             }
         }
+        .button--image {
+            &:hover,
+            &:focus {
+                span {
+                    color: $color-theme-1-1-1;
+                }
+            }
+        }
     }
     &.style--colors--theme-2 {
         .button--primary {
@@ -128,6 +149,14 @@
                 }
             }
         }
+        .button--image {
+            &:hover,
+            &:focus {
+                span {
+                    color: $color-theme-2-1-1;
+                }
+            }
+        }
     }
     &.style--colors--theme-3 {
         .button--primary {
@@ -170,6 +199,14 @@
                 &:focus,
                 &:active {
                     background-color: $color-theme-3-1-1;
+                }
+            }
+        }
+        .button--image {
+            &:hover,
+            &:focus {
+                span {
+                    color: $color-theme-3-1-1;
                 }
             }
         }
