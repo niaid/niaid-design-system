@@ -1,0 +1,10 @@
+.block--files {
+    display: flex;
+    margin: 0 auto;
+    .row {
+        margin: 0 -1rem;
+    }
+    &__col {
+        padding: 1rem;
+    }
+}

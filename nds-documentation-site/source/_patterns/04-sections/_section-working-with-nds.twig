@@ -5,7 +5,7 @@
 %}
     {% block component_scrollspy_section_content %}
         <h2>Working with NDS</h2>
-        <p>Whether you are building a Static site or Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. <strong>Do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, those should be placed in the appropriate atomic folders outside of the 00-nds directory.</p>
+        <p>Whether you are building a Static site or Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. For Drupal-based projects, the _patterns/ folder is located under the ./nds directory. If custom components, style rules, or functionality are needed, <strong>do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, place them in the appropriate atomic folders outside of the 00-nds directory.</p>
         {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
             {
                 "component_media_src": 'custom-components.png',
@@ -15,7 +15,18 @@
                 "component_media_lightbox": "yes"
             }
         %}
-        <p>The global project CSS rules can be found in the css/ in source/. The global/ folder is similar to the 00-nds/ folder in that changes should not occur within the directory. Instead, make edits in the overrides/ directory.</p>
+        <p>The global project CSS rules can be found in the css/ directory in source/. The global/ folder is similar to the 00-nds/ folder in that custom changes should not occur within the directory. Instead, make edits in the overrides/ directory. Here, you can create new files and write custom style rules.</p>
+        <p>For both Static and Drupal-based websites, the CSS and JS will need to be compiled before it is reflected on the site. Run the following commands depending on your project type:</p>
+        <p><strong>Static Websites:</strong></p>
+        <code>gulp</code><br>
+        <p><strong>Drupal Websites:</strong></p>
+        <code>cd nds</code><br>
+        <code>gulp</code><br>
+
+        <p>Running the gulp command will compile the project assets and produce a localhost with your Pattern Lab styleguide. Note that the Gulp script is configured to watch files and listen for changes. When changes are detected, Gulp will automatically recompile your assets and refresh the localhost, so that you may verify your changes look correct.</p>
+
+        <p>For Drupal-based projects, you may need to clear the Drupal cache to see your changes.</p>
+
         {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
             {% block block_content %}
                 <h4>Developing with NIAID Design System</h4>

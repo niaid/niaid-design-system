@@ -1,0 +1,30 @@
+{% set block_files_classes = block_files_classes|default() %}
+
+<div class="block--files {{ block_files_classes }}">
+    <div class="row">
+        <div class="block--files__col col-12 col-sm-6">
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_classes": "button--icon--outline",
+                    "button_icon_icon": "js",
+                    "button_icon_icon_weight": "b",
+                    "button_icon_href": assetsPath ~ "script-min.js",
+                    "button_icon_text": "Download NDS Global JS",
+                    "button_icon_attributes": "download"
+                }
+            %}
+        </div>
+        <div class="block--files__col col-12 col-sm-6">
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_classes": "button--icon--outline",
+                    "button_icon_icon": "css3",
+                    "button_icon_icon_weight": "b",
+                    "button_icon_href": assetsPath ~ "stlye.css",
+                    "button_icon_text": "Download NDS Global CSS",
+                    "button_icon_attributes": "download"
+                }
+            %}
+        </div>
+    </div>
+</div>

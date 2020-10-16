@@ -25,7 +25,7 @@
             "primary": "#157B8D",
             "secondary": "#497951",
             "tertiary": "#262626",
-            "accent": "#E08A63"
+            "accent": "#75C3AC"
         },
         "theme_2": {
             "primary": "#586FAB",
@@ -34,10 +34,10 @@
             "accent": "#FAB952"
         },
         "theme_3": {
-            "primary": "#123B56",
+            "primary": "#423E63",
             "secondary": "#69166E",
-            "tertiary": "#423E63",
-            "accent": "#E08A63"
+            "tertiary": "#123B56",
+            "accent": "#D88D89"
         }
     }
 }

@@ -244,8 +244,7 @@ function compileGlobalAssets() {
             includePaths: ["../global-assets/node_modules/bootstrap/scss", "../global-assets/node_modules/font-awesome/scss"]
         }).on('error', sass.logError))
         .pipe(gulp.dest('../global-assets/source/css'))
-        .pipe(cache.clear())
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('./public_html/assets'));
 
     // JS
     return gulp.src('../global-assets/source/_patterns/**/*.js')
@@ -254,7 +253,8 @@ function compileGlobalAssets() {
             presets: ['@babel/env']
         }))
         .pipe(minify())
-        .pipe(gulp.dest('../global-assets/source/js/global/'));
+        .pipe(gulp.dest('../global-assets/source/js/global/'))
+        .pipe(gulp.dest('./public_html/assets'));
 }
 
 // buildDist - Copies global files from global-assets into a distribution folder.
