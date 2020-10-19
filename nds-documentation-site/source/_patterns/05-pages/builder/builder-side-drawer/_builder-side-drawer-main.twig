@@ -202,7 +202,13 @@
             </form>
         {% endblock %}
     {% endembed %}
-    <button class="button-nds waves-effect waves-light button--primary button--generate-link mt-3" role="button">Copy Link to Clipboard</button>
+    {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+        {
+            "button_default_classes": "button--generate-link mt-3",
+            "button_default_type": "primary",
+            "button_default_label": "Copy Link to Clipboard"
+        }
+    %}
     <div class="builder--side-drawer__copied">Copied!</div>
     <div class="builder--side-drawer__link"></div>
 </div>
