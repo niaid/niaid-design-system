@@ -82,3 +82,4 @@ MAINAINERS
 
 Current maintainers: 
 * Roshana Devkota
+* Jacob Caccamo
