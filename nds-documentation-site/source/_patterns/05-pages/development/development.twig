@@ -40,12 +40,12 @@
         %}
     {% endblock %}
     {% block main %}
-        {% embed "@atoms/layouts/layouts-main-layout/_layouts-main-layout-main.twig" with
+        {% embed "@atoms/layouts/layouts-main/_layouts-main-main.twig" with
             {
-                "layouts_main_layout_id": 'main-layout',
-                "layouts_main_layout_left": columns.left,
-                "layouts_main_layout_main": columns.main,
-                "layouts_main_layout_right": columns.right
+                "layouts_main_id": 'main',
+                "layouts_main_left": columns.left,
+                "layouts_main_main": columns.main,
+                "layouts_main_right": columns.right
             }
         %}
             {% block left_column %}
@@ -105,12 +105,12 @@
                 {% endembed %}
             {% endblock %}
             {% block main_column %}
-                {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" with
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" with
                     {
-                        "layouts_body_card_vertical_padding": "no"
+                        "layouts_body_vertical_padding": "no"
                     }
                 %}
-                    {% block body_card_content %}
+                    {% block body_content %}
                         {% include "@sections/_section-overview-development.twig" %}
                         {% include "@sections/_section-atomic-design.twig" %}
                         {% include "@sections/_section-technologies.twig" %}

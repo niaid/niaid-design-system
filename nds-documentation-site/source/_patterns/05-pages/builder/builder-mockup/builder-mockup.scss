@@ -1,18 +1,18 @@
 .builder--mockup {
     line-height: 2.0;
     color: $type-body;
-    .layouts--main-layout__first {
+    .layouts--main__first {
         padding: 0 1rem !important;
         @include media-breakpoint-up('lg') {
             padding: 0 1.5rem 0 1rem !important;
         }
     }
-    .layouts--main-layout__second {
+    .layouts--main__second {
         padding: 0 1rem !important;
         @include media-breakpoint-up('lg') {
             padding: 0 1rem 0 .5rem !important;
         }
-        .layouts--body-card {
+        .layouts--body {
             min-height: auto !important;
             padding: 1rem !important;
             >.block--share {

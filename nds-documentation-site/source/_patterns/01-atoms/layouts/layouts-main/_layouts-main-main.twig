@@ -13,6 +13,11 @@
 {% set main_additional_classes = "" %}
 {% set right_additional_classes = "" %}
 
+{% if layouts_main_id == "builder__main" %}
+    {% set left_additional_classes = "col-lg-4" %}
+    {% set main_additional_classes = "col-lg-8" %}
+{% endif %}
+
 <div class="layouts-nds layouts--main {{ layouts_main_classes }}"{% if layouts_main_id is not empty %} id="{{ layouts_main_id }}"{% endif %}>
     {% if layouts_main_left_column|trim is not empty %}
         <div class="layouts--main__column layouts--main__first col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_left is not empty %}-{{ layouts_main_left }}{% endif %}{% if left_additional_classes is not empty %} {{ left_additional_classes }}{% endif %}">

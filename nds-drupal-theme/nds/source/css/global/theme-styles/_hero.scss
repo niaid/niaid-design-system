@@ -2,7 +2,7 @@
     .page {
         background: $page-background-alternate;
     }
-    .layouts--main-layout {
+    .layouts--main {
         @include media-breakpoint-up(sm) {
             margin-top: -4rem;
         }
@@ -16,7 +16,7 @@
 
     &.style--corners--semirounded {
         $corner-radius: .3125rem;
-        .layouts--body-card {
+        .layouts--body {
             @include media-breakpoint-up(lg){
                 border-top-left-radius: $corner-radius;
                 border-top-right-radius: $corner-radius;
@@ -39,7 +39,7 @@
 
     &.style--corners--rounded {
         $corner-radius: 1rem;
-        .layouts--body-card {
+        .layouts--body {
             @include media-breakpoint-up(lg){
                 border-top-left-radius: $corner-radius;
                 border-top-right-radius: $corner-radius;

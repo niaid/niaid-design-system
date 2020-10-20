@@ -86,12 +86,12 @@
           </div>
         </div>
       {% endif %}
-      {% embed "@nds/01-atoms/layouts/layouts-main-layout/_layouts-main-layout-main.twig" with
+      {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" with
         {
-          "layouts_main_layout_breadcrumb_show": display_breadcrumbs,
-          "layouts_main_layout_breadcrumb_cols": breadcrumb_cols,
-          "layouts_main_layout_left": sidebar_left_cols,
-          "layouts_main_layout_main": main_cols
+          "layouts_main_breadcrumb_show": display_breadcrumbs,
+          "layouts_main_breadcrumb_cols": breadcrumb_cols,
+          "layouts_main_left": sidebar_left_cols,
+          "layouts_main_main": main_cols
         }
       %}
         {% block left_column %}
@@ -111,8 +111,8 @@
         {% endblock %}
         {% block main_column %}
           <div id="page-content">
-            {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
-              {% block body_card_content %}
+            {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+              {% block body_content %}
                 <div id="content-top">
                   {{ page.breadcrumbs }}
                   {{ page.content_top }}

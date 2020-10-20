@@ -40,14 +40,14 @@
         %}
     {% endblock %}
     {% block main %}
-        {% embed "@atoms/layouts/layouts-main-layout/_layouts-main-layout-main.twig" with
+        {% embed "@atoms/layouts/layouts-main/_layouts-main-main.twig" with
             {
-                "layouts_main_layout_main": columns.main
+                "layouts_main_main": columns.main
             }
         %}
             {% block main_column %}
-                {% embed "@nds/01-atoms/layouts/layouts-body-card/_layouts-body-card-main.twig" %}
-                    {% block body_card_content %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                    {% block body_content %}
                         <h1>NIAID Design System</h1>
                         {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
                             {
