@@ -17,8 +17,8 @@
             height: auto;
             padding: .625rem 4rem .625rem 1rem;
             background: $white;
-            border-radius: $border-radius-semi;
             border: 0.0625rem solid $input-border;
+            border-radius: 0;
             &__arrow {
                 display: none;
             }
@@ -31,7 +31,6 @@
             &:after {
                 @include fa-icon;
                 @extend .fal;
-                border-radius: $border-radius-semi;
                 cursor: pointer;
                 content: fa-content($fa-var-chevron-right);
                 font-weight: 900;
@@ -80,13 +79,12 @@
                         font-size: 1rem;
                         padding: .792rem 2.5rem .792rem 1rem;
                         background-image: none !important;
-                        background: map-get(map-get(map-get($theme, 1), 2), 1);
+                        background: $color-theme-1-2-1;
                         color: $white !important;
-                        border-radius: $border-radius-semi !important;
                         border: 0 !important;
                         .select2-selection__choice__remove {
                             position: absolute;
-                            color: map-get(map-get(map-get($theme, 1), 2), 1);
+                            color: $color-theme-1-2-1;
                             top: 50%!important;
                             transform: translateY(-50%)!important;
                             right: 0;
@@ -95,7 +93,7 @@
                             font-size: initial !important;
                             &:hover,
                             &:focus {
-                                color: map-get(map-get(map-get($theme, 1), 2), 1);
+                                color: $color-theme-1-2-1;
                             }
                             &:before {
                                 content: fa-content($fa-var-times);
@@ -120,9 +118,8 @@
                         font-size: 1rem;
                         padding: .792rem 2.5rem .792rem 1rem;
                         background-image: none !important;
-                        background: map-get(map-get(map-get($theme, 1), 2), 1);
+                        background: $color-theme-1-2-1;
                         color: $white !important;
-                        border-radius: $border-radius-semi !important;
                         border: 0 !important;
                         white-space: normal;
                     }
@@ -131,9 +128,6 @@
                             padding: .4rem 2.5rem .4rem 1rem;
                         }
                     }
-                }
-                &.select2-selection--multiple {
-                    padding: .25rem 4rem .25rem .25rem;
                 }
             }
             .single-clear {
@@ -158,6 +152,11 @@
                     content: fa-content($fa-var-times);
                     font-weight: 900;
                 }
+            }
+        }
+        &.selection-made-multi {
+            .select2-selection  {
+                padding: .25rem 4rem .25rem .25rem;
             }
         }
         &.select2-container--open {

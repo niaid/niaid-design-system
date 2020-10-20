@@ -83,18 +83,49 @@
             }
         }
     }
-    .input--radio {
-        input:checked~label {
-            &:before {
-                background: $color-theme-2-1-1;
-                border: 0.0625rem solid $color-theme-2-1-1;
+    .input-nds {
+        &.input--select {
+            .select2-container {
+                .select2-selection  {
+                    &.select2-selection--multiple {
+                        .select2-selection__rendered {
+                            .select2-selection__choice {
+                                background: $color-theme-2-2-1;
+                                .select2-selection__choice__remove {
+                                    color: $color-theme-2-2-1;
+                                    &:hover,
+                                    &:focus {
+                                        color: $color-theme-2-2-1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.selection-made {
+                    .select2-selection {
+                        &.select2-selection--single {
+                            .select2-selection__rendered {
+                                background: $color-theme-2-2-1;
+                            }
+                        }
+                    }
+                }
             }
         }
-    }
-    .input--checkbox {
-        input:checked~label {
-            &:before {
-                background: $color-theme-2-1-1 !important;
+        &.input--radio {
+            input:checked~label {
+                &:before {
+                    background: $color-theme-2-1-1;
+                    border: 0.0625rem solid $color-theme-2-1-1;
+                }
+            }
+        }
+        &.input--checkbox {
+            input:checked~label {
+                &:before {
+                    background: $color-theme-2-1-1 !important;
+                }
             }
         }
     }
@@ -265,18 +296,49 @@
             }
         }
     }
-    .input--radio {
-        input:checked~label {
-            &:before {
-                background: $color-theme-3-1-1;
-                border: 0.0625rem solid $color-theme-3-1-1;
+    .input-nds {
+        &.input--select {
+            .select2-container {
+                .select2-selection  {
+                    &.select2-selection--multiple {
+                        .select2-selection__rendered {
+                            .select2-selection__choice {
+                                background: $color-theme-3-2-1;
+                                .select2-selection__choice__remove {
+                                    color: $color-theme-3-2-1;
+                                    &:hover,
+                                    &:focus {
+                                        color: $color-theme-3-2-1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.selection-made {
+                    .select2-selection {
+                        &.select2-selection--single {
+                            .select2-selection__rendered {
+                                background: $color-theme-3-2-1;
+                            }
+                        }
+                    }
+                }
             }
         }
-    }
-    .input--checkbox {
-        input:checked~label {
-            &:before {
-                background: $color-theme-3-1-1 !important;
+        &.input--radio {
+            input:checked~label {
+                &:before {
+                    background: $color-theme-3-1-1;
+                    border: 0.0625rem solid $color-theme-3-1-1;
+                }
+            }
+        }
+        &.input--checkbox {
+            input:checked~label {
+                &:before {
+                    background: $color-theme-3-1-1 !important;
+                }
             }
         }
     }

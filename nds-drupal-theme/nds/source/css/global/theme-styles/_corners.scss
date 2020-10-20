@@ -35,6 +35,21 @@
     }
     .input-nds {
         border-radius: $corner-radius;
+        &.input--select {
+            .select2-container {
+                .select2-selection  {
+                    border-radius: $corner-radius;
+                }
+                .select2-selection__choice {
+                    border-radius: $corner-radius * .75;
+                }
+                &.selection-made {
+                    .select2-selection__rendered {
+                        border-radius: $corner-radius * .75;
+                    }
+                }
+            }
+        }
     }
     table {
         border-radius: $corner-radius;
@@ -134,6 +149,21 @@
     }
     .input-nds {
         border-radius: 100rem;
+        &.input--select {
+            .select2-container {
+                .select2-selection  {
+                    border-radius: $corner-radius;
+                }
+                .select2-selection__choice {
+                    border-radius: $corner-radius * .75;
+                }
+                &.selection-made {
+                    .select2-selection__rendered {
+                        border-radius: $corner-radius * .75;
+                    }
+                }
+            }
+        }
     }
     table {
         border-radius: $corner-radius;

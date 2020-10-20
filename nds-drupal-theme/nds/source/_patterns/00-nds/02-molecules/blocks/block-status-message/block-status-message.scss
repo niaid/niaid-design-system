@@ -1,5 +1,4 @@
-.block--status-message,
-.message-panel {
+.block--status-message {
     padding-top: 2rem;
     position: relative;
     margin-top: 3rem;
@@ -41,7 +40,7 @@
         background: #e7f4e4;
         &:before {
             color: $white;
-            background: #2e8540;
+            background: $status-success;
             content: fa-content($fa-var-check);
         }
     }
@@ -49,7 +48,7 @@
         background: #f9dede;
         &:before {
             color: $white;
-            background: #cd2026;
+            background: $status-error;
             content: fa-content($fa-var-times);
         }
     }
@@ -58,5 +57,10 @@
     ol,
     ul {
         max-width: none;
+    }
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
