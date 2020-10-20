@@ -1,8 +1,10 @@
 (function($) {
     function initInputDatePicker(context = document) {
-        if ($('.input--date-picker').length) {
-            $('.input--date-picker').find('input').datepicker();
-        }
+        $('.input--date-picker').each(function() {
+            if ($(this).find('input').attr('nds-date-picker') == 'true') {
+                $(this).find('input').datepicker();
+            }
+        });
     }
 
     if (typeof Drupal !== 'undefined') {

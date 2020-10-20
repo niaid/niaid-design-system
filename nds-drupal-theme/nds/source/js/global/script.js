@@ -3,10 +3,11 @@
 (function ($) {
   function initInputDatePicker() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.input--date-picker').length) {
-      $('.input--date-picker').find('input').datepicker();
-    }
+    $('.input--date-picker').each(function () {
+      if ($(this).find('input').attr('nds-date-picker') == 'true') {
+        $(this).find('input').datepicker();
+      }
+    });
   }
 
   if (typeof Drupal !== 'undefined') {
@@ -32,23 +33,27 @@
   function initInputSelect() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $('select').each(function () {
-      $(this).select2({
-        minimumResultsForSearch: 10
-      });
+      if ($(this).attr('nds-select') == 'true') {
+        $(this).select2({
+          minimumResultsForSearch: 10
+        });
 
-      if ($(this).val() != "") {
-        $(this).siblings('.select2-container').addClass('no-clear selection-made');
+        if ($(this).val() != "") {
+          $(this).siblings('.select2-container').addClass('no-clear selection-made');
+        }
       }
     });
     $('select').change(function (e, p) {
-      if (!e.target.multiple) {
-        $(this).siblings('.select2-container').addClass('selection-made');
+      if ($(this).attr('nds-select') == 'true') {
+        if (!e.target.multiple) {
+          $(this).siblings('.select2-container').addClass('selection-made');
 
-        if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
-          $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
+          if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
+            $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
+          }
+        } else {
+          $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
         }
-      } else {
-        $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
       }
     }); // Listener to Add Accessibility Compliance to Open Modals
 
@@ -194,34 +199,6 @@
 })(jQuery);
 
 (function ($) {
-  function initBlockHero() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.parallax').length) {
-      $('.parallax').parallax();
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
-        attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initBlockHero();
-    });
-  }
-})(jQuery);
-
-(function ($) {
   function initComponentLightbox() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -340,6 +317,34 @@
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationLocal();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.parallax').length) {
+      $('.parallax').parallax();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
     });
   }
 })(jQuery);

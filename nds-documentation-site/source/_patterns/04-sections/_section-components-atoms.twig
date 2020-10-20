@@ -102,6 +102,7 @@
         {% endembed %}
 
         <h4>Button with Icon</h4>
+        <p>This component allows users to include a Font Awesome icon inside an NDS button.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/buttons/button-icon/demo/button-icon.twig" %}
@@ -109,6 +110,7 @@
         {% endembed %}
 
         <h4>Share Buttons</h4>
+        <p>Following the NDS icon policy, social share buttons for popular social media platforms are included ready to use.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 <div class="container-fluid">
@@ -192,8 +194,10 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>Input</h3>
+        <p>Receiving data is a key interaction point for users of websites. NDS has several types of input components to help get information from users.</p>
 
         <h4>Checkbox</h4>
+        <p>Checkboxes are used when multiple options of a set can be selected simulataneously. See the Checkbox Input Group (molecule - input-group-checkbox) to create a group of checkboxes.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/input/input-checkbox/demo/input-checkbox.twig" %}
@@ -201,6 +205,7 @@
         {% endembed %}
 
         <h4>Radio Button</h4>
+        <p>Radio buttons are used when only one option of a set can be selected at one time. See the Radio Input Group (molecule - input-group-radio) to create a group of radio buttons.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/input/input-radio/demo/input-radio.twig" %}
@@ -208,6 +213,7 @@
         {% endembed %}
 
         <h4>Text Input</h4>
+        <p>Text fields have a variety of uses, from gathering usernames and passwords to filling out contact information. To create a complete text field, see the Text Input Group (molecule - input-group-text).</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/input/input-text/demo/input-text.twig" %}
@@ -215,6 +221,7 @@
         {% endembed %}
 
         <h4>Text Input with Icon</h4>
+        <p>This component is a variation on the Text Input component and includes the ability to add a Font Awesome icon in the field.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/input/input-text/demo/input-text-icon.twig" %}
@@ -222,6 +229,8 @@
         {% endembed %}
 
         <h4>Select (Dropdown)</h4>
+        <p>Single choice select fields can be used in the place of radio button groups.</p>
+        <p>NDS uses the <a href="https://select2.org/">Select2 JS</a> library to enhance the functionality and usability of select (dropdowns) fields. In order for a select fields to utilize the Select2 functionality, the nds-select="true" attribute must be present on the select HTML element.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/input/input-select/demo/input-select.twig" %}
@@ -229,6 +238,7 @@
         {% endembed %}
 
         <h4>Multiselect (Dropdown)</h4>
+        <p>Multiple choice select fields can be used in the place of checkbox groups.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/input/input-select/demo/input-multiselect.twig" %}
@@ -236,6 +246,7 @@
         {% endembed %}
 
         <h4>Datepicker</h4>
+        <p>NDS uses <a href="https://bootstrap-datepicker.readthedocs.io/en/latest/">Bootstrap Datepicker</a> to make the experience of selecting a date in a form easier. In order for a datepicker to be initialized with this functionality, the nds-date-picker="true" attribute must be present on the input HTML element.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/input/input-date-picker/demo/input-date-picker.twig" %}
@@ -264,7 +275,7 @@
         {% endembed %}
 
         <h4>Main Layout</h4>
-        <p>TODO</p>
+        <p>The Main Layout component defines the major sections of an NDS page. The component provides three main columns: left, main, and right.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_show_rendered": "no"
@@ -276,7 +287,7 @@
         {% endembed %}
 
         <h4>Body Card</h4>
-        <p>TODO</p>
+        <p>The Body Card component is used to display a page's main content. This component handles padding at various breakpoints, ensuring a visually appealing experience regardless of device or browser.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_show_rendered": "no"

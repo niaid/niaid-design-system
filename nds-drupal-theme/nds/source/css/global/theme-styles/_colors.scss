@@ -129,8 +129,13 @@
             }
         }
     }
-    .text--image-credit-caption {
-        border-left: 0.125rem solid $color-theme-2-1-1;
+    .text-nds {
+        &.text--blockquote {
+            border-left: .125rem solid $color-theme-2-accent;
+        }
+        &.text--image-credit-caption {
+            border-left: 0.125rem solid $color-theme-2-accent;
+        }
     }
     .layouts--tabs {
         &__tab {
@@ -342,8 +347,13 @@
             }
         }
     }
-    .text--image-credit-caption {
-        border-left: 0.125rem solid $color-theme-3-1-1;
+    .text-nds {
+        &.text--blockquote {
+            border-left: .125rem solid $color-theme-3-accent;
+        }
+        &.text--image-credit-caption {
+            border-left: 0.125rem solid $color-theme-3-accent;
+        }
     }
     .layouts--tabs {
         &__tab {

@@ -24,7 +24,7 @@
     
 
 <label class="input-nds input--label input--select__label" for="text-heading" title="Headings Font">Headings Font
-    </label>    <select id="text-heading" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
+    </label>    <select nds-select="true" id="text-heading" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
                 <option value="roboto">Roboto</option>
                 <option value="martel">Martel</option>
                 <option value="merriweather">Merriweather</option>
@@ -36,7 +36,7 @@
     
 
 <label class="input-nds input--label input--select__label" for="text-body" title="Body Font">Body Font
-    </label>    <select id="text-body" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
+    </label>    <select nds-select="true" id="text-body" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="public-sans">Public Sans</option>
                 <option value="roboto">Roboto</option>
             </select>
 </div>    </div>
@@ -46,7 +46,7 @@
     
 
 <label class="input-nds input--label input--select__label" for="color-select" title="Theme">Theme
-    </label>    <select id="color-select" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="theme-1">Theme 1</option>
+    </label>    <select nds-select="true" id="color-select" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="theme-1">Theme 1</option>
                 <option value="theme-2">Theme 2</option>
                 <option value="theme-3">Theme 3</option>
             </select>
@@ -57,7 +57,7 @@
     
 
 <label class="input-nds input--label input--select__label" for="shadows" title="Shadows">Shadows
-    </label>    <select id="shadows" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="flat">Flat</option>
+    </label>    <select nds-select="true" id="shadows" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="flat">Flat</option>
                 <option value="shadows">Material</option>
             </select>
 </div>    </div>
@@ -67,7 +67,7 @@
     
 
 <label class="input-nds input--label input--select__label" for="corners" title="Corner Style">Corner Style
-    </label>    <select id="corners" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="straight">Sharp</option>
+    </label>    <select nds-select="true" id="corners" class="input--select__field" data-placeholder="" data-select-all-times="true">                <option value="straight">Sharp</option>
                 <option selected="selected" value="semirounded">Semi-Rounded</option>
                 <option value="rounded">Fully-Rounded</option>
             </select>
@@ -754,6 +754,7 @@
     </button>    </div>
 </div>
         <h4>Button with Icon</h4>
+        <p>This component allows users to include a Font Awesome icon inside an NDS button.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -790,6 +791,7 @@
     </button>    </div>
 </div>
         <h4>Share Buttons</h4>
+        <p>Following the NDS icon policy, social share buttons for popular social media platforms are included ready to use.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -1039,8 +1041,10 @@
 
 <div id="section-components-atoms-input" class="component-nds component--scrollspy-section scrollspy section ">
             <h3>Input</h3>
+        <p>Receiving data is a key interaction point for users of websites. NDS has several types of input components to help get information from users.</p>
 
         <h4>Checkbox</h4>
+        <p>Checkboxes are used when multiple options of a set can be selected simulataneously. See the Checkbox Input Group (molecule - input-group-checkbox) to create a group of checkboxes.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -1083,6 +1087,7 @@ type="checkbox" id="xbox" name="form-group-example" value="xbox" required    >
     </button>    </div>
 </div>
         <h4>Radio Button</h4>
+        <p>Radio buttons are used when only one option of a set can be selected at one time. See the Radio Input Group (molecule - input-group-radio) to create a group of radio buttons.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -1125,6 +1130,7 @@ type="radio" id="xbox-radio" name="form-radio-example" value="xbox" required    
     </button>    </div>
 </div>
         <h4>Text Input</h4>
+        <p>Text fields have a variety of uses, from gathering usernames and passwords to filling out contact information. To create a complete text field, see the Text Input Group (molecule - input-group-text).</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -1159,6 +1165,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Text Input with Icon</h4>
+        <p>This component is a variation on the Text Input component and includes the ability to add a Font Awesome icon in the field.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -1199,6 +1206,8 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Select (Dropdown)</h4>
+        <p>Single choice select fields can be used in the place of radio button groups.</p>
+        <p>NDS uses the <a href="https://select2.org/">Select2 JS</a> library to enhance the functionality and usability of select (dropdowns) fields. In order for a select fields to utilize the Select2 functionality, the nds-select="true" attribute must be present on the select HTML element.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -1209,7 +1218,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     
 
 <label class="input-nds input--label input--select__label" for="fruit-select" title="Select Fruit">Select Fruit
-    </label>    <select id="fruit-select" class="input--select__field" data-placeholder="Select a Fruit...">        <option value=""></option>
+    </label>    <select nds-select="true" id="fruit-select" class="input--select__field" data-placeholder="Select a Fruit...">        <option value=""></option>
         <option value="Apple">Apple</option>
         <option value="Banana">Banana</option>
         <option value="Cherry">Cherry</option>
@@ -1226,7 +1235,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     
 
 <label class="input-nds input--label input--select__label" for="fruit-select" title="Select Fruit">Select Fruit
-    </label>    <select id="fruit-select" class="input--select__field" data-placeholder="Select a Fruit...">        <option value=""></option>
+    </label>    <select nds-select="true" id="fruit-select" class="input--select__field" data-placeholder="Select a Fruit...">        <option value=""></option>
         <option value="Apple">Apple</option>
         <option value="Banana">Banana</option>
         <option value="Cherry">Cherry</option>
@@ -1249,6 +1258,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Multiselect (Dropdown)</h4>
+        <p>Multiple choice select fields can be used in the place of checkbox groups.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -1259,7 +1269,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     
 
 <label class="input-nds input--label input--select__label" for="fruit-multiselect" title="Select Multiple Fruits">Select Multiple Fruits
-    </label>    <select id="fruit-multiselect" class="input--select__field" data-placeholder="Select Multiple Fruits..." multiple="">        <option value=""></option>
+    </label>    <select nds-select="true" id="fruit-multiselect" class="input--select__field" data-placeholder="Select Multiple Fruits..." multiple="">        <option value=""></option>
         <option value="Apple">Apple</option>
         <option value="Banana">Banana</option>
         <option value="Cherry">Cherry</option>
@@ -1276,7 +1286,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     
 
 <label class="input-nds input--label input--select__label" for="fruit-multiselect" title="Select Multiple Fruits">Select Multiple Fruits
-    </label>    <select id="fruit-multiselect" class="input--select__field" data-placeholder="Select Multiple Fruits..." multiple="">        <option value=""></option>
+    </label>    <select nds-select="true" id="fruit-multiselect" class="input--select__field" data-placeholder="Select Multiple Fruits..." multiple="">        <option value=""></option>
         <option value="Apple">Apple</option>
         <option value="Banana">Banana</option>
         <option value="Cherry">Cherry</option>
@@ -1299,6 +1309,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Datepicker</h4>
+        <p>NDS uses <a href="https://bootstrap-datepicker.readthedocs.io/en/latest/">Bootstrap Datepicker</a> to make the experience of selecting a date in a form easier. In order for a datepicker to be initialized with this functionality, the nds-date-picker="true" attribute must be present on the input HTML element.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -1310,7 +1321,7 @@ type="text" id="text-example" placeholder="Enter text here...">
 
 <label class="input-nds input--label input--select__label" for="date-picker-example" title="Choose a Date">Choose a Date
     </label>    <div class="input-group date">
-        <input id="date-picker-example" type="text" class="form-control">
+        <input id="date-picker-example" type="text" nds-date-picker="true">
         <div class="input-group-addon">
             <span class="glyphicon glyphicon-th"></span>
         </div>
@@ -1325,7 +1336,7 @@ type="text" id="text-example" placeholder="Enter text here...">
 
 <label class="input-nds input--label input--select__label" for="date-picker-example" title="Choose a Date">Choose a Date
     </label>    <div class="input-group date">
-        <input id="date-picker-example" type="text" class="form-control">
+        <input id="date-picker-example" type="text" nds-date-picker="true">
         <div class="input-group-addon">
             <span class="glyphicon glyphicon-th"></span>
         </div>
@@ -1374,7 +1385,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Main Layout</h4>
-        <p>TODO</p>
+        <p>The Main Layout component defines the major sections of an NDS page. The component provides three main columns: left, main, and right.</p>
         
 <div class="component-nds component--snippet  no-render">
     <div class="component--snippet__block">
@@ -1382,7 +1393,6 @@ type="text" id="text-example" placeholder="Enter text here...">
                         <div class="component--snippet__block__code__snippet">
                 <pre>
                                     
-
 
 
 <div class="layouts-nds layouts--main-layout " id="main-layout">
@@ -1401,7 +1411,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Body Card</h4>
-        <p>TODO</p>
+        <p>The Body Card component is used to display a page's main content. This component handles padding at various breakpoints, ensuring a visually appealing experience regardless of device or browser.</p>
         
 <div class="component-nds component--snippet  no-render">
     <div class="component--snippet__block">

@@ -1,23 +1,27 @@
 (function($) {
     function initInputSelect(context = document) {
         $('select').each(function() {
-            $(this).select2({
-                minimumResultsForSearch: 10
-            });
-            if ($(this).val() != "") {
-                $(this).siblings('.select2-container').addClass('no-clear selection-made');
+            if ($(this).attr('nds-select') == 'true') {
+                $(this).select2({
+                    minimumResultsForSearch: 10
+                });
+                if ($(this).val() != "") {
+                    $(this).siblings('.select2-container').addClass('no-clear selection-made');
+                }
             }
         });
 
         $('select').change(function(e, p) {
-            if (!e.target.multiple) {
-                $(this).siblings('.select2-container').addClass('selection-made');
-                if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true" ) {
-                    $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
+            if ($(this).attr('nds-select') == 'true') {
+                if (!e.target.multiple) {
+                    $(this).siblings('.select2-container').addClass('selection-made');
+                    if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true" ) {
+                        $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
+                    }
+                } 
+                else {
+                    $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
                 }
-            } 
-            else {
-                $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
             }
         });
 
