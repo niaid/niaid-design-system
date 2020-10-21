@@ -39,6 +39,9 @@
             }
         %}
     {% endblock %}
+    {% block hero %}
+        {% include "@organisms/heros/hero-home/_hero-home-main.twig" %}
+    {% endblock %}
     {% block main %}
         {% embed "@atoms/layouts/layouts-main/_layouts-main-main.twig" with
             {
@@ -48,14 +51,50 @@
             {% block main_column %}
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
-                        <h1>NIAID Design System</h1>
-                        {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
-                            {
-                                "image_default_classes": 'hero-image',
-                                "image_default_src": 'homeHero.svg',
-                                "image_default_alt": 'A collection of NIAID employees going about their work'
-                            }
-                        %}
+                        {% embed "@nds/03-organisms/views/view-featured-content-cards/_view-featured-content-cards-main.twig" %}
+                            {% block view_featured_content_cards_content %}
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            {% include "@nds/02-molecules/blocks/block-featured-content-card/_block-featured-content-card-main.twig" with
+                                                {
+                                                    "block_featured_content_card_src": "feature-3.jpg",
+                                                    "block_featured_content_card_alt": "Molecule",
+                                                    "block_featured_content_card_title": "Getting Started with NDS",
+                                                    "block_featured_content_card_title_link": link.getStarted,
+                                                    "block_featured_content_card_description": "Read more on how to get started making a website with NDS.",
+                                                    "block_featured_content_card_featured": "FEATURED"
+                                                }
+                                            %}
+                                        </div>
+                                        <div class="col-sm-4">
+                                            {% include "@nds/02-molecules/blocks/block-featured-content-card/_block-featured-content-card-main.twig" with
+                                                {
+                                                    "block_featured_content_card_src": "policy-site.png",
+                                                    "block_featured_content_card_alt": "Laptop on a tab.",
+                                                    "block_featured_content_card_title": "NIAID Digital Policy Site",
+                                                    "block_featured_content_card_title_link": "#",
+                                                    "block_featured_content_card_description": "Learn about the broader world of digital policies spanning NIAID, NIH, & HHS.",
+                                                    "block_featured_content_card_featured": "NDS WEBSITE"
+                                                }
+                                            %}
+                                        </div>
+                                        <div class="col-sm-4">
+                                            {% include "@nds/02-molecules/blocks/block-featured-content-card/_block-featured-content-card-main.twig" with
+                                                {
+                                                    "block_featured_content_card_src": "covpn.png",
+                                                    "block_featured_content_card_alt": "CoVPN - Coronavirus Prevention Network",
+                                                    "block_featured_content_card_title": "Coronavrius Prevention Network",
+                                                    "block_featured_content_card_title_link": "https://www.coronaviruspreventionnetwork.org",
+                                                    "block_featured_content_card_description": "The Coronavrius Prevention Network (CoVPN) strives to register volunteers to participate in vaccine trials.",
+                                                    "block_featured_content_card_featured": "NDS WEBSITE"
+                                                }
+                                            %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endblock %}
+                        {% endembed %}
                         {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
                             {
                                 "component_scrollspy_section_id": "section-overview"

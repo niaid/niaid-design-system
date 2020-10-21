@@ -1,0 +1,19 @@
+{% set hero_home_classes = hero_home_classes|default() %}
+
+<div class="hero-nds hero--home {{ hero_home_classes }}">
+    {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
+        {
+            "image_default_src": 'HeroV2.png',
+            "image_default_alt": 'Doctor wearing a face shield'
+        }
+    %}
+    <div class="hero--home__content">
+        {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
+            {
+                "image_default_src": 'global/niaid/logo-niaid-white.svg',
+                "image_default_alt": 'NIAID'
+            }
+        %}
+        <h1>Design System</h1>
+    </div>
+</div>

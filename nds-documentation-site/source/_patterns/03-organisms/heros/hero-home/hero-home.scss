@@ -1,0 +1,12 @@
+.hero--home {
+    position: relative;
+    &__content {
+        position: absolute;
+        right: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        h1{
+            color: $white;
+        }
+    }
+}
