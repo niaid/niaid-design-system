@@ -1,12 +1,39 @@
 .hero--home {
     position: relative;
+    .desktop {
+        display: none;
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
+    .mobile {
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }   
+    }
     &__content {
-        position: absolute;
-        right: 15%;
-        top: 50%;
-        transform: translateY(-50%);
-        h1{
+        background: #1F1F1F;
+        padding: 4rem 4rem 2rem 4rem;
+        h1 {
             color: $white;
+            @include media-breakpoint-down(sm) {
+                font-size: 3rem;
+            }
+        }
+        img {
+            height: 4rem;
+            max-width: 100%;
+            @include media-breakpoint-up(lg) {
+                height: 5rem;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 0;
+            background: transparent;
+            position: absolute;
+            right: 15%;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 }

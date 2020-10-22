@@ -1,4 +1,10 @@
 .global--header {
+    .component--product-identity {
+        min-width: 15rem;
+        &__top {
+            font-size: 1.25rem;
+        }
+    }
     &__version {
         padding-right: 1rem;
     }

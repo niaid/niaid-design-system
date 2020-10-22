@@ -1,12 +1,3 @@
-{% embed "@nds/02-molecules/blocks/block-alert/_block-alert-main.twig" with
-    {
-        "block_alert_classes": "severity--4"
-    }
-%}
-    {% block block_alert_content %}
-        <p>This NDS site is a work in progress. The content, design, and development are subject to change.</p>
-    {% endblock %}
-{% endembed %}
 {% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
     {
         "layouts_site_id": "builder"
@@ -16,8 +7,7 @@
         {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
         {% include "@organisms/global/global-header/_global-header-main.twig" with
             {
-                "global_header_product_id_top": "NIAID",
-                "global_header_product_id_bottom": "Design System"
+                "global_header_product_id_top": "NIAID Design System"
             }
         %}
     {% endblock %}

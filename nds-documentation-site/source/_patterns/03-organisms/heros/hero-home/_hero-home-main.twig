@@ -3,6 +3,7 @@
 <div class="hero-nds hero--home {{ hero_home_classes }}">
     {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
         {
+            "image_default_classes": 'desktop',
             "image_default_src": 'HeroV2.png',
             "image_default_alt": 'Doctor wearing a face shield'
         }
@@ -16,4 +17,11 @@
         %}
         <h1>Design System</h1>
     </div>
+    {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
+        {
+            "image_default_classes": 'mobile',
+            "image_default_src": 'HeroV2-mobile.png',
+            "image_default_alt": 'Doctor wearing a face shield'
+        }
+    %}
 </div>
