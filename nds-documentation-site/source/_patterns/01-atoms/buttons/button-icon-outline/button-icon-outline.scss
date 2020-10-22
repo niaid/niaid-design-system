@@ -9,6 +9,9 @@
         background: $color-theme-1-1-1;
         color: $white;
     }
+    &:visited {
+        color: $color-theme-1-1-1;
+    }
     .icon--default {
         width: 100%;
         padding: 1rem;

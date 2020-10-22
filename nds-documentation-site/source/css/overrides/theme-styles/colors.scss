@@ -8,6 +8,13 @@
             background: $color-theme-2-1-1 !important;
             color: $white;
         }
+        &:visited {
+            color: $color-theme-2-1-1;
+            &:hover,
+            &:focus {
+                color: $white;
+            }
+        }
     }
 }
 
@@ -20,6 +27,13 @@
         &:focus {
             background: $color-theme-3-1-1 !important;
             color: $white;
+        }
+        &:visited {
+            color: $color-theme-3-1-1;
+            &:hover,
+            &:focus {
+                color: $white;
+            }
         }
     }
 }

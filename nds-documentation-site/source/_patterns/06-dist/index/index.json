@@ -4,7 +4,6 @@
     "cssPath": "./css/",
     "jsPath": "./js/",
     "imagePath": "./assets/",
-    "navigationPrimaryActiveLink": "design",
     "jsIncludes": {
         "jquery": true,
         "select2": true,

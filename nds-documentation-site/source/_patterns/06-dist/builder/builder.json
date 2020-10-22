@@ -1,7 +1,7 @@
 {
     "pageID": "builder",
     "prodBuild": "true",
-    "title": "Theme Builder - NIAID Design System",
+    "title": "Theme Builder | NIAID Design System",
     "cssPath": "../css/",
     "jsPath": "../js/",
     "imagePath": "../assets/",

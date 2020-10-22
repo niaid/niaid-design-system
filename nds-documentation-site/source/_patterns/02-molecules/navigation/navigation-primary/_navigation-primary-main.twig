@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="navigation--primary__inner__item">
-                <a href="{{ link.components }}">Components</a>
+                <a class="{{ navigationPrimaryActiveLink == "components" ? "active" : "" }}" href="{{ link.components }}">Components</a>
             </div>
             <div class="navigation--primary__inner__item">
                 <a class="{{ navigationPrimaryActiveLink == "builder" ? "active" : "" }}" href="{{ link.themeBuilder }}">Theme Builder</a>
