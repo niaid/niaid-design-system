@@ -14,12 +14,6 @@
             color: $white;
         }
     }
-    &:not([href]):not([tabindex]):hover,
-    &:not([href]):not([tabindex]):focus,
-    &:not([href]):not([tabindex]):active {
-        border: 0.0625rem solid $color-theme-1-1-1;
-        background-color: $color-theme-1-1-1;
-    }
     .image--default {
         height: 2rem;
         margin-right: 1rem;

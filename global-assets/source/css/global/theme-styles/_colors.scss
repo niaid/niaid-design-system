@@ -191,6 +191,20 @@
             background: $white !important;
         }
     }
+    .global--footer {
+        border-top: .25rem solid $color-theme-2-accent;
+        &__content {
+            &__info {
+                &__section {
+                    .link--carot {
+                        &:after {
+                            color: $color-theme-2-accent;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .style--colors--theme-3 {
@@ -383,5 +397,19 @@
     }
     .global--header {
         background: $white !important;
+    }
+    .global--footer {
+        border-top: .25rem solid $color-theme-3-accent;
+        &__content {
+            &__info {
+                &__section {
+                    .link--carot {
+                        &:after {
+                            color: $color-theme-3-accent;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

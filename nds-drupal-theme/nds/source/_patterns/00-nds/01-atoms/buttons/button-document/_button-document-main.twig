@@ -16,8 +16,9 @@
 
 {% set button_document_classes = button_document_classes|default() %}
 {% set button_document_type = button_document_type|default() %}
+{% set button_document_href = button_document_href|default() %}
 
-<div class="button-nds button--document {% if button_document_type is not empty %}button--document--{{ button_document_type }}{% endif %} {{ button_document_classes }}">
+<{{ button_document_href != "" ? 'a' : 'div' }} class="button-nds button--document {% if button_document_type is not empty %}button--document--{{ button_document_type }}{% endif %} {{ button_document_classes }}">
     {% if button_document_type == "file-word" %}
         {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
             {
@@ -101,4 +102,4 @@
             %}
         </div>
     {% endif %}
-</div>
+</{{ button_document_href != "" ? 'a' : 'div' }}>

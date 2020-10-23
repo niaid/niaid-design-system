@@ -2,7 +2,7 @@
 {% set button_external_text = button_external_text|default() %}
 {% set button_external_href = button_external_href|default() %}
 
-<a class="button-nds button--external waves-effect waves-light {{ button_external_classes }}" href="{{ button_external_href }}">
+<{{ button_external_href != "" ? 'a' : 'button' }} class="button-nds button--external waves-effect waves-light {{ button_external_classes }}" href="{{ button_external_href }}">
     <span>{{ button_external_text }}</span>
     {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
         {
@@ -10,4 +10,4 @@
             "icon_default_weight": "l"
         }
     %}
-</a>
+</{{ button_external_href != "" ? 'a' : 'button' }}>

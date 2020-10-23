@@ -1,9 +1,16 @@
 .global--footer {
-    @include md-8dp;
-    background: $page-background;
-    min-height: 50px;
+    $footer-background: $type-heading;
+    background: $footer-background;
+    min-height: 3.125rem;
     position: relative;
     padding: 0;
+    border-top: .25rem solid $color-theme-1-accent;
+    * {
+        color: $white;
+    }
+    a:visited {
+        color: $white;
+    }
     @include media-breakpoint-up(md) {
         padding: 0 4rem;
     }
@@ -146,12 +153,13 @@
                 }
                 .link--carot {
                     &:after {
+                        color: $color-theme-1-accent;
                         content: " \f054";
                         font-family: "Font Awesome 5 Pro";
                         font-weight: 300;
                         font-size: 0.8rem;
                         padding-left: .25rem;
-                        border-bottom: 3px solid white;
+                        border-bottom: 3px solid $footer-background;
                     }
                 }
             }
@@ -166,7 +174,7 @@
             content: "";
             height: 0.0625rem;
             width: 3rem;
-            background: $type-body;
+            background: $white;
         }
         &:before {
             margin-right: 1rem;

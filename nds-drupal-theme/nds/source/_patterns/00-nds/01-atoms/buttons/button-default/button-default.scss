@@ -10,16 +10,6 @@ button {
         background: $color-theme-1-1-2;
         border: 0.0625rem solid $color-theme-1-1-2;
     }
-    &:not([href]):not([tabindex]) {
-        color: $white;
-        &:hover,
-        &:focus,
-        &:active {
-            color: $white;
-            background-color: $color-theme-1-1-2;
-            border-color: $color-theme-1-1-2;
-        }
-    }
     & + .ext-link-icon {
         display: none;
     }
@@ -36,16 +26,6 @@ button {
     &:visited {
         color: $color-theme-1-1-1;
     }
-    &:not([href]):not([tabindex]) {
-        color: $color-theme-1-1-1;
-        &:hover,
-        &:focus,
-        &:active {
-            background: $color-theme-1-1-1;
-            color: $white;
-            border-color: $color-theme-1-1-1;
-        }
-    }
 }
 
 .button--tertiary {
@@ -58,15 +38,5 @@ button {
         color: $white;
         background: $color-theme-1-2-2;
         border: 0.0625rem solid $color-theme-1-2-2;
-    }
-    &:not([href]):not([tabindex]) {
-        color: $white;
-        &:hover,
-        &:focus,
-        &:active {
-            color: $white;
-            background-color: $color-theme-1-2-2;
-            border-color: $color-theme-1-2-2;
-        }
     }
 }
