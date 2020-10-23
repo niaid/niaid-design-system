@@ -12,48 +12,48 @@
         line-height: initial;
     }
     &:focus {
-        outline: -webkit-focus-ring-color auto 1px;
+        outline: -webkit-focus-ring-color auto 0.0625rem;
     }
     &--facebook {
         background: #3b5998 !important;
         color: $white !important;
-        border: 1px solid #3b5998 !important;
+        border: 0.0625rem solid #3b5998 !important;
     }
     &--twitter {
         background: #00acee !important;
         color: $white !important;
-        border: 1px solid #00acee !important;
+        border: 0.0625rem solid #00acee !important;
     }
     &--linkedin {
         background: #0e76a8 !important;
         color: $white !important;
-        border: 1px solid #0e76a8 !important;
+        border: 0.0625rem solid #0e76a8 !important;
     }
     &--instagram {
         background-image: url('../images/global/icons/social/icon-social-instagram-background.png');
         background-position: center;
         color: $white !important;
-        border: 1px solid transparent !important;
+        border: 0.0625rem solid transparent !important;
     }
     &--youtube {
         background: #FF0000;
         color: $white !important;
-        border: 1px solid #FF0000 !important;
+        border: 0.0625rem solid #FF0000 !important;
     }
     &--pinterest-p {
         background: #C92228;
         color: $white !important;
-        border: 1px solid #C92228 !important;
+        border: 0.0625rem solid #C92228 !important;
     }
     &--flickr {
         background: #FF0084;
         color: $white !important;
-        border: 1px solid #FF0084 !important;
+        border: 0.0625rem solid #FF0084 !important;
     }
     &--google-plus-g {
         background: #D34836;
         color: $white !important;
-        border: 1px solid #D34836 !important;
+        border: 0.0625rem solid #D34836 !important;
     }
     &--comment,
     &--envelope,

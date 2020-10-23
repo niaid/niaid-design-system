@@ -2,7 +2,7 @@
 {% set view_swatches_headings_level = view_swatches_headings_level|default('4') %}
 {% set view_swatches_development = view_swatches_development|default('true') %}
 
-<div class="view-pl view--swatches container-fluid {{ view_swatches_classes }}">
+<div class="view-nds view--swatches container-fluid {{ view_swatches_classes }}">
     <h{{ view_swatches_headings_level }}>Theme 1 (Default):</h{{ view_swatches_headings_level }}>
     {% if view_swatches_development == "true" %}
         <code>style--colors--theme-1</code>

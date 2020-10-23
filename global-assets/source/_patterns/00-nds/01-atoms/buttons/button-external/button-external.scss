@@ -1,11 +1,18 @@
 .button--external {
     @extend .button--primary;
-
     .icon--default {
         margin-left: .5rem;
     }
-
     & + .ext-link-icon {
         display: none !important;
+    }
+    &.button--secondary {
+        color: $color-theme-1-1-1;
+        background: transparent;
+        &:hover,
+        &:focus {
+            background: $color-theme-1-1-2;
+            color: $white;
+        }
     }
 }

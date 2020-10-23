@@ -51,7 +51,33 @@
         <p>Used specifically for links to external sites shown in a button-type format.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                {% include "@nds/01-atoms/buttons/button-external/demo/button-external.twig" %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
+                                {
+                                    "button_external_text": "Button"
+                                }
+                            %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
+                                {
+                                    "button_external_classes": "button--secondary",
+                                    "button_external_text": "Button"
+                                }
+                            %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
+                                {
+                                    "button_external_classes": "button--tertiary",
+                                    "button_external_text": "Button"
+                                }
+                            %}
+                        </div>
+                    </div>
+                </div>
             {% endblock %}
         {% endembed %}
 
@@ -105,7 +131,36 @@
         <p>This component allows users to include a Font Awesome icon inside an NDS button.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                {% include "@nds/01-atoms/buttons/button-icon/demo/button-icon.twig" %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                {
+                                    "button_icon_icon": "question-circle",
+                                    "button_icon_text": "Button"
+                                }
+                            %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                {
+                                    "button_icon_classes": "button--secondary",
+                                    "button_icon_icon": "question-circle",
+                                    "button_icon_text": "Button"
+                                }
+                            %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                {
+                                    "button_icon_classes": "button--tertiary",
+                                    "button_icon_icon": "question-circle",
+                                    "button_icon_text": "Button"
+                                }
+                            %}
+                        </div>
+                    </div>
+                </div>
             {% endblock %}
         {% endembed %}
 

@@ -9,26 +9,46 @@
         @extend .hoverable;
         &.button--secondary {
             background: $white;
-            border: 1px solid $white;
+            border: 0.0625rem solid $white;
             &:hover,
             &:focus {
                 background: $white;
-                border: 1px solid $white;
+                border: .0625rem solid $white;
             }
             &:active {
                 background-color: $white !important;
             }
         }
-        &.button--image {
-            border: 0.0625rem solid $white;
-            &:hover,
-            &:focus {
-                background-color: $white;
-            }
-        }
         &.disabled,
         &:disabled {
             @include md-2dp;
+        }
+    }
+    .button--primary {
+        &:hover,
+        &:focus {
+            background: $color-theme-1-1-1;
+            border: 0.0625rem solid $color-theme-1-1-1;
+        }
+    }
+    .button--secondary {
+        &:hover,
+        &:focus {
+            background: $white;
+            color: $color-theme-1-1-1;
+        }
+    }
+    .button--tertiary {
+        &:hover,
+        &:focus {
+            background: $color-theme-1-2-1;
+            border: 0.0625rem solid $color-theme-1-2-1;
+        }
+    }
+    .button--floating {
+        &:hover,
+        &:focus {
+            background: $color-theme-1-1-1;
         }
     }
     .icon--circle {
@@ -41,7 +61,7 @@
                 .select2-selection  {
                     @include md-2dp;
                     @extend .hoverable;
-                    border: 1px solid transparent !important;
+                    border: 0.0625rem solid transparent !important;
                 }
                 .single-clear {
                     @include md-0dp;
@@ -55,49 +75,12 @@
         &.input--text {
             @include md-2dp;
             @extend .hoverable;
-            border: 1px solid transparent !important;
+            border: 0.0625rem solid transparent !important;
             &:hover,
             &:focus {
-                border: 1px solid transparent !important;
+                border: 0.0625rem solid transparent !important;
                 & + .icon--default {
                     color: $type-body;
-                }
-            }
-        }
-    }
-    &.style--colors--theme-1 {
-        .button--primary {
-            &:hover,
-            &:focus {
-                background: $color-theme-1-1-1;
-                border: 1px solid $color-theme-1-1-1;
-            }
-        }
-        .button--secondary {
-            &:hover,
-            &:focus {
-                background: $white;
-                color: $color-theme-1-1-1;
-            }
-        }
-        .button--tertiary {
-            &:hover,
-            &:focus {
-                background: $color-theme-1-2-1;
-                border: 1px solid $color-theme-1-2-1;
-            }
-        }
-        .button--floating {
-            &:hover,
-            &:focus {
-                background: $color-theme-1-1-1;
-            }
-        }
-        .button--image {
-            &:hover,
-            &:focus {
-                span {
-                    color: $color-theme-1-1-1;
                 }
             }
         }
@@ -107,7 +90,7 @@
             &:hover,
             &:focus {
                 background: $color-theme-2-1-1;
-                border: 1px solid $color-theme-2-1-1;
+                border: 0.0625rem solid $color-theme-2-1-1;
             }
         }
         .button--secondary {
@@ -121,7 +104,7 @@
             &:hover,
             &:focus {
                 background: $color-theme-2-2-1;
-                border: 1px solid $color-theme-2-2-1;
+                border: 0.0625rem solid $color-theme-2-2-1;
             }
         }
         .button--floating {
@@ -130,11 +113,15 @@
                 background: $color-theme-2-1-1;
             }
         }
-        .button--image {
-            &:hover,
-            &:focus {
-                span {
+        .button--image,
+        .button--icon,
+        .button--external {
+            &.button--secondary {
+                &:hover,
+                &:focus {
+                    background: $white;
                     color: $color-theme-2-1-1;
+                    border: 0.0625rem solid $white;
                 }
             }
         }
@@ -144,7 +131,7 @@
             &:hover,
             &:focus {
                 background: $color-theme-3-1-1;
-                border: 1px solid $color-theme-3-1-1;
+                border: 0.0625rem solid $color-theme-3-1-1;
             }
         }
         .button--secondary {
@@ -158,7 +145,7 @@
             &:hover,
             &:focus {
                 background: $color-theme-3-2-1;
-                border: 1px solid $color-theme-3-2-1;
+                border: 0.0625rem solid $color-theme-3-2-1;
             }
         }
         .button--floating {
@@ -167,11 +154,15 @@
                 background: $color-theme-3-1-1;
             }
         }
-        .button--image {
-            &:hover,
-            &:focus {
-                span {
+        .button--image,
+        .button--icon,
+        .button--external {
+            &.button--secondary {
+                &:hover,
+                &:focus {
+                    background: $white;
                     color: $color-theme-3-1-1;
+                    border: 0.0625rem solid $white;
                 }
             }
         }

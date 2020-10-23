@@ -31,10 +31,10 @@
                 text-align: left;
                 a {
                     width: 100%;
-                    border-bottom: 1px solid transparent;
+                    border-bottom: 0.0625rem solid transparent;
                     &:hover,
                     &:focus {
-                        border-bottom: 1px solid $type-link-underline;
+                        border-bottom: 0.0625rem solid $type-link-underline;
                     }
                 }
                 p {

@@ -2,7 +2,7 @@
 {% set global_header_product_id_top = global_header_product_id_top|default() %}
 {% set global_header_product_id_bottom = global_header_product_id_bottom|default() %}
 
-<div class="global-pl global--header {{ global_header_classes }}">
+<div class="global-nds global--header {{ global_header_classes }}">
     {% include "@nds/02-molecules/components/component-branding/_component-branding-main.twig" with
         {
             "component_branding_identity_top": global_header_product_id_top,
@@ -23,7 +23,7 @@
     {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
         {
             "button_icon_id": "global-mobile-menu",
-            "button_icon_classes": "global--header__button",
+            "button_icon_classes": "global--header__button button--secondary",
             "button_icon_icon": "bars",
             "button_icon_aria_label": "Open Global Menu"
         }

@@ -1,6 +1,5 @@
 .global--footer {
     $footer-background: $type-heading;
-    @include md-8dp;
     background: $footer-background;
     min-height: 3.125rem;
     position: relative;

@@ -281,6 +281,7 @@
         }
     }
     .global--footer {
+        @include md-8dp;
         .block-nds {
             @include md-0dp;
             background: transparent;

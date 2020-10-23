@@ -47,6 +47,19 @@
                 }
             }
         }
+        &.button--image,
+        &.button--icon,
+        &.button--external {
+            &.button--secondary {
+                color: $color-theme-2-1-1;
+                background: transparent;
+                &:hover,
+                &:focus {
+                    background: $color-theme-2-1-2;
+                    color: $white;
+                }
+            }
+        }
     }
     button {
         background: $color-theme-2-1-1;
@@ -186,19 +199,21 @@
             }
         }
     }
-    .global--header {
-        &__button {
-            background: $white !important;
+    .global-nds {
+        &.global--header {
+            .global--header__button {
+                background: transparent;
+            }
         }
-    }
-    .global--footer {
-        border-top: .25rem solid $color-theme-2-accent;
-        &__content {
-            &__info {
-                &__section {
-                    .link--carot {
-                        &:after {
-                            color: $color-theme-2-accent;
+        &.global--footer {
+            border-top: .25rem solid $color-theme-2-accent;
+            &__content {
+                &__info {
+                    &__section {
+                        .link--carot {
+                            &:after {
+                                color: $color-theme-2-accent;
+                            }
                         }
                     }
                 }
@@ -252,6 +267,19 @@
             &:hover,
             &:focus {
                 span {
+                    color: $white;
+                }
+            }
+        }
+        &.button--image,
+        &.button--icon,
+        &.button--external {
+            &.button--secondary {
+                color: $color-theme-3-1-1;
+                background: transparent;
+                &:hover,
+                &:focus {
+                    background: $color-theme-3-1-2;
                     color: $white;
                 }
             }
@@ -395,17 +423,21 @@
             }
         }
     }
-    .global--header {
-        background: $white !important;
-    }
-    .global--footer {
-        border-top: .25rem solid $color-theme-3-accent;
-        &__content {
-            &__info {
-                &__section {
-                    .link--carot {
-                        &:after {
-                            color: $color-theme-3-accent;
+    .global-nds {
+        &.global--header {
+            .global--header__button {
+                background: transparent;
+            }
+        }
+        &.global--footer {
+            border-top: .25rem solid $color-theme-3-accent;
+            &__content {
+                &__info {
+                    &__section {
+                        .link--carot {
+                            &:after {
+                                color: $color-theme-3-accent;
+                            }
                         }
                     }
                 }

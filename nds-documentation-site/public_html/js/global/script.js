@@ -28,6 +28,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }
 })(jQuery);
 
+$(document).ready(function () {
+  $('a:not(:has(img))').each(function () {
+    var varText = $(this).text();
+
+    if (varText) {
+      // Get URL and verify it exists
+      var url = $(this).attr('href');
+      var hostName = this.hostname;
+
+      if (url && hostName !== location.hostname) {
+        url = url.toLowerCase();
+
+        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+          $(this).attr('target', '_blank');
+          $(this).after('<a title="Link is External" aria-label="Link is External" class="ext-link-icon" href="' + url + '"></a>');
+        }
+      }
+    }
+  });
+  $('a[href^="mailto:"]').each(function () {
+    $(this).addClass('link--external--mail');
+  });
+});
+
 (function ($) {
   function initComponentScrollspySection() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
@@ -52,74 +76,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentScrollspySection();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initComponentSnippet() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('.component--snippet__block__code__snippet').each(function () {
-      var codeSnippet = $(this).find('pre').html().replace(/(\r\n|\n|\r)/gm, "");
-      $(this).find('pre').empty();
-      $(this).find('pre').text(process(codeSnippet));
-    });
-    $('.component--snippet').find('.button--icon').on('click', function () {
-      copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
-    });
-  }
-
-  function copyToClipboard($element) {
-    var copyText = $element.text();
-    var textArea = document.createElement('textarea');
-    textArea.classList.add("hidden-textarea");
-    textArea.textContent = copyText;
-    document.body.append(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    textArea.remove();
-  }
-
-  function process(str) {
-    var div = document.createElement('div');
-    div.innerHTML = str.trim();
-    return format(div, 0).innerHTML;
-  }
-
-  function format(node, level) {
-    var indentBefore = new Array(level++ + 1).join('  '),
-        indentAfter = new Array(level - 1).join('  '),
-        textNode;
-
-    for (var i = 0; i < node.children.length; i++) {
-      textNode = document.createTextNode('\n' + indentBefore);
-      node.insertBefore(textNode, node.children[i]);
-      format(node.children[i], level);
-
-      if (node.lastElementChild == node.children[i]) {
-        textNode = document.createTextNode('\n' + indentAfter);
-        node.appendChild(textNode);
-      }
-    }
-
-    return node;
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentSnippet = {
-        attach: function attach(context) {
-          $('body', context).once('nds-component-snippet').each(function () {
-            initComponentSnippet(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentSnippet();
     });
   }
 })(jQuery); // Functionality for Sticky Local Nav, NOT IN USE
@@ -223,30 +179,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     });
   }
 })(jQuery);
-
-$(document).ready(function () {
-  $('a:not(:has(img))').each(function () {
-    var varText = $(this).text();
-
-    if (varText) {
-      // Get URL and verify it exists
-      var url = $(this).attr('href');
-      var hostName = this.hostname;
-
-      if (url && hostName !== location.hostname) {
-        url = url.toLowerCase();
-
-        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-          $(this).attr('target', '_blank');
-          $(this).after('<a title="Link is External" aria-label="Link is External" class="ext-link-icon" href="' + url + '"></a>');
-        }
-      }
-    }
-  });
-  $('a[href^="mailto:"]').each(function () {
-    $(this).addClass('link--external--mail');
-  });
-});
 
 (function ($) {
   function init_build_controls(context) {
@@ -751,6 +683,74 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
+  function initComponentSnippet() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.component--snippet__block__code__snippet').each(function () {
+      var codeSnippet = $(this).find('pre').html().replace(/(\r\n|\n|\r)/gm, "");
+      $(this).find('pre').empty();
+      $(this).find('pre').text(process(codeSnippet));
+    });
+    $('.component--snippet').find('.button--icon').on('click', function () {
+      copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
+    });
+  }
+
+  function copyToClipboard($element) {
+    var copyText = $element.text();
+    var textArea = document.createElement('textarea');
+    textArea.classList.add("hidden-textarea");
+    textArea.textContent = copyText;
+    document.body.append(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+  }
+
+  function process(str) {
+    var div = document.createElement('div');
+    div.innerHTML = str.trim();
+    return format(div, 0).innerHTML;
+  }
+
+  function format(node, level) {
+    var indentBefore = new Array(level++ + 1).join('  '),
+        indentAfter = new Array(level - 1).join('  '),
+        textNode;
+
+    for (var i = 0; i < node.children.length; i++) {
+      textNode = document.createTextNode('\n' + indentBefore);
+      node.insertBefore(textNode, node.children[i]);
+      format(node.children[i], level);
+
+      if (node.lastElementChild == node.children[i]) {
+        textNode = document.createTextNode('\n' + indentAfter);
+        node.appendChild(textNode);
+      }
+    }
+
+    return node;
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentSnippet = {
+        attach: function attach(context) {
+          $('body', context).once('nds-component-snippet').each(function () {
+            initComponentSnippet(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentSnippet();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initInputDatePicker() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $('.input--date-picker').each(function () {
@@ -900,34 +900,6 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
-  function initComponentLightbox() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.materialboxed').length) {
-      $('.materialboxed').materialbox();
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentLightbox = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-lightbox').each(function () {
-            initComponentLightbox(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentLightbox();
-    });
-  }
-})(jQuery);
-
-(function ($) {
   function initBlockHero() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -951,6 +923,34 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initBlockHero();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentLightbox() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.materialboxed').length) {
+      $('.materialboxed').materialbox();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentLightbox = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-lightbox').each(function () {
+            initComponentLightbox(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentLightbox();
     });
   }
 })(jQuery);

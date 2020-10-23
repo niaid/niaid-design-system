@@ -1,16 +1,7 @@
 .navigation--dropdown {
     &__text {
         &__button {
-            display: block;
-            border: 0;
-            color: $white;
-            background: transparent;
             padding: .75rem 1.5rem;
-            cursor: pointer;
-            &:hover,
-            &:focus {
-                color: $white;
-            }
         }
     }
     &__menu {
