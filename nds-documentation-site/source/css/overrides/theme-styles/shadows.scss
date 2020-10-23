@@ -11,36 +11,10 @@
             }
         }
     }
-    .button--icon--outline {
-        border-color: transparent !important;
-        background: $white !important;
-        &:hover,
-        &:focus {
-            background: $white !important;
-            color: $color-theme-1-1-1;
-        }
-    }
 
     .block-nds {
         &.block--full-palette {
             @include md-0dp;
-        }
-    }
-
-    &.style--colors--theme-2 {
-        .button--icon--outline {
-            &:hover,
-            &:focus {
-                color: $color-theme-2-1-1;
-            }                    
-        }
-    }
-    &.style--colors--theme-3 {
-        .button--icon--outline {
-            &:hover,
-            &:focus {
-                color: $color-theme-3-1-1;
-            }                    
         }
     }
 }

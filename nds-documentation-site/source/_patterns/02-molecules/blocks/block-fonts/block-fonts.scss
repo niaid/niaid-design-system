@@ -8,4 +8,20 @@
     &__credit {
         font-size: .8rem;
     }
+    .button--icon {
+        display: block;
+        text-align: center;
+        width: 100%;
+        .icon--default {
+            width: 100%;
+            padding: 1rem;
+            &:before {
+                font-size: 3rem;
+            }
+        }
+        &__text {
+            padding: 0;
+            margin-top: 1rem;
+        }
+    }
 }
