@@ -74,16 +74,6 @@
                         color: $white;
                     }
                 }
-                &:not([href]):not([tabindex]) {
-                    background: transparent;
-                    border: 0;
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        border: 0 !important;
-                        background: $color-theme-1-3-2;
-                    }
-                }
             }
             .dropdown-menu {
                 margin: 0;

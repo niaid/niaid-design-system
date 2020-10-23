@@ -4,7 +4,7 @@
 {% set button_image_src = button_image_src|default() %}
 {% set button_image_alt = button_image_alt|default() %}
 
-<button class="button-nds button--image {{ button_image_classes }}">
+<{{ button_image_href != "" ? 'a' : 'button' }} class="button-nds button--image {{ button_image_classes }}">
     {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
         {
             "image_default_src": button_image_src,
@@ -12,4 +12,4 @@
         }
     %}
     <span>{{ button_image_text }}</span>
-</button>
+</{{ button_image_href != "" ? 'a' : 'button' }}>

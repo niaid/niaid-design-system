@@ -15,9 +15,6 @@
                 @extend .button-nds;
                 @extend .button--secondary;
                 padding: 1rem 1.4rem;
-                &:not([href]) {
-                    display: none;
-                }
                 &:visited {
                     color: $white;
                 }

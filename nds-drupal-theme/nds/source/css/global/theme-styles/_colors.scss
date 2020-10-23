@@ -214,6 +214,11 @@
             }
         }
     }
+    .global--header {
+        &__button {
+            background: $white !important;
+        }
+    }
 }
 
 .style--colors--theme-3 {
@@ -431,5 +436,8 @@
                 }
             }
         }
+    }
+    .global--header {
+        background: $white !important;
     }
 }
