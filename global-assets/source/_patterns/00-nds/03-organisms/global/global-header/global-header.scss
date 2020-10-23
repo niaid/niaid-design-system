@@ -9,14 +9,16 @@
         border-bottom: 0;
     }
     &__button {
-        padding: 0.45rem 0.725rem;
-        background: $white !important;
-        color: #000 !important;
+        padding: 1rem 1.25rem;
+        background: $white;
         border-radius: .3125rem;
-        border: 0.0625rem solid #545359;
+        border: 0.0625rem solid $black;
+        &:not([href]):not([tabindex]) {
+            color: $black;
+        }
         &:hover,
         &:focus {
-            background: #20558a;
+            background: $color-theme-1-1-1;
             color: $white;
         }
         @include media-breakpoint-up('sm') {

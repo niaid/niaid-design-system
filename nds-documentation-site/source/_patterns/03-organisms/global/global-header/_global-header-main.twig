@@ -3,14 +3,6 @@
 {% set global_header_product_id_bottom = global_header_product_id_bottom|default() %}
 
 <div class="global-pl global--header {{ global_header_classes }}">
-    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-        {
-            "button_icon_id": "global-mobile-menu",
-            "button_icon_classes": "global--header__button",
-            "button_icon_icon": "bars",
-            "button_icon_aria_label": "Open Global Menu"
-        }
-    %}
     {% include "@nds/02-molecules/components/component-branding/_component-branding-main.twig" with
         {
             "component_branding_identity_top": global_header_product_id_top,
@@ -21,10 +13,19 @@
         <span class="global--header__version">v 1.0.0</span>
         {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
             {
+                "button_icon_classes": 'global--header__download-button',
                 "button_icon_href": link.getStarted,
                 "button_icon_icon": "download",
                 "button_icon_text": "Download NDS"
             }
         %}
     </div>
+    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+        {
+            "button_icon_id": "global-mobile-menu",
+            "button_icon_classes": "global--header__button",
+            "button_icon_icon": "bars",
+            "button_icon_aria_label": "Open Global Menu"
+        }
+    %}
 </div>

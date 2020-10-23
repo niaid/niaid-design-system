@@ -1,0 +1,56 @@
+.navigation--drawer {
+    max-width: 100%;
+    width: 24rem;
+    &__inner {
+        &__section {
+            width: auto;
+            padding: .5rem 1rem .5rem 2rem;
+            &__button-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &__button {
+                    cursor: pointer;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    background: $white;
+                    padding: 0;
+                    @include md-1dp;
+                    @extend .hoverable;
+                    border-radius: $border-radius;
+                    border: 0.0625rem solid $white;
+                    background: $white !important;
+                    &:hover,
+                    &:focus {
+                        border: 0.0625rem solid $white !important;
+                    }
+                    &:after {
+                        color: $black;
+                        @include fa-icon;
+                        @extend .fal;
+                        content: fa-content($fa-var-chevron-right);
+                    }
+                    &[aria-expanded="true"] {
+                        &:after {
+                            content: fa-content($fa-var-chevron-down);
+                        }
+                    }
+                }
+            }
+            &__dropdown {
+                padding-left: 1rem;
+                &__item {
+                    width: 100%;
+                    margin: 1rem 0;
+                    display: block;
+                }
+            }
+        }
+        &__download {
+            padding: 2rem;
+        }
+    }
+    .ext-link-icon {
+        display: none;
+    }
+}

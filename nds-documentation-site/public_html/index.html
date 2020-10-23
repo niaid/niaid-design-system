@@ -116,11 +116,6 @@
 </section>        
 <div class="global-pl global--header ">
     
-<button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button" >
-    
-
-<i class="icon-nds icon--default fal fa-bars "></i>
-    </button>    
 <a href="/" class="component-nds component--branding ">
     
 <img class="image-nds image--default component--branding__logo--desktop" src="./assets/global/niaid/logo-niaid.svg" alt="NIAID Logo"
@@ -129,18 +124,23 @@
                         />    <div class="component--branding__vertical-bar"></div>
     
 <div class="component-nds component--product-identity ">
-    <div class="component--product-identity__top">NIAID Design System</div>
+    <div class="component--product-identity__top">Design System</div>
     <div class="component--product-identity__bottom"></div>
 </div></a>    <div>
         <span class="global--header__version">v 1.0.0</span>
         
-<a href="/getting-started/index.html" class="button-nds button--icon waves-effect waves-light " >
+<a href="/getting-started/index.html" class="button-nds button--icon waves-effect waves-light global--header__download-button" >
     
 
 <i class="icon-nds icon--default fal fa-download "></i>
             <span class="button--icon__text">Download NDS</span>
     </a>    </div>
-</div>                
+    
+<button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button" >
+    
+
+<i class="icon-nds icon--default fal fa-bars "></i>
+    </button></div>                
 <nav id="main-navigation" class="navigation-nds navigation--primary ">
             <div class="navigation--primary__inner">
             <div class="navigation--primary__inner__item">
@@ -149,8 +149,8 @@
                 </button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/getting-started/index.html">Overview</a>
-                    <a class="dropdown-item" href="/getting-started/index.html##section-static-website">Building a Static Site</a>
-                    <a class="dropdown-item" href="/getting-started/index.html##section-drupal-website">Building a Drupal Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html#section-static-website">Building a Static Site</a>
+                    <a class="dropdown-item" href="/getting-started/index.html#section-drupal-website">Building a Drupal Site</a>
                     <a class="dropdown-item" href="/getting-started/index.html#section-resources">Resources</a>
                 </div>
             </div>
@@ -203,14 +203,60 @@
                 <a tabindex="-1" href="/">Home</a>
             </div>
             <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" href="#">Link 1</a>
+                <div class="navigation--drawer__inner__section__button-wrapper" id="navGettingStarted">
+                    <a href="/getting-started/index.html">Getting Started</a>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" tabindex="-1"></button>
+                </div>
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseOne" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/index.html">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/index.html#section-static-website">Building a Static Site</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/index.html#section-drupal-website">Building a Drupal Site</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/index.html#section-resources">Resources</a>
+                </div>
             </div>
             <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" href="#">Link 2</a>
+                <div class="navigation--drawer__inner__section__button-wrapper" id="navDesign">
+                    <a href="/design/index.html">Design</a>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" tabindex="-1"></button>
+                </div>
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseTwo" class="collapse" aria-labelledby="navDesign" data-parent="#main-navigation-mobile">
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/index.html">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/index.html#section-typography">Typography</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/index.html#section-icons">Icons</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/index.html#section-colors">Colors</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/index.html#section-forms">Forms &amp; Input</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/index.html#section-layout">Layout &amp; Spacing</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/index.html#section-shadows">Shadows</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/index.html#section-corners">Corners</a>
+                </div>
             </div>
             <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" href="#">Link 3</a>
+                <div class="navigation--drawer__inner__section__button-wrapper" id="navDevelopment">
+                    <a href="/development/index.html">Development</a>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" tabindex="-1"></button>
+                </div>
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseThree" class="collapse" aria-labelledby="navDevelopment" data-parent="#main-navigation-mobile">
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/index.html">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/index.html#section-atomic-design">Atomic Design</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/index.html#section-libraries">Libraries</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/index.html#section-technologies">Technologies &amp; Frameworks</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/index.html#section-themes">Themes</a>
+                </div>
             </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" class="" href="/components/index.html">Components</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" class="" href="/builder/index.html">Theme Builder</a>
+            </div>
+            <div class="navigation--drawer__inner__download">
+                 
+<a href="/getting-started/index.html" class="button-nds button--icon waves-effect waves-light " >
+    
+
+<i class="icon-nds icon--default fal fa-download "></i>
+            <span class="button--icon__text">Download NDS</span>
+    </a>            </div>
         </div>
         <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
     </div>

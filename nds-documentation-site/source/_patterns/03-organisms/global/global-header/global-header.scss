@@ -1,11 +1,56 @@
 .global--header {
+    &__button {
+        padding: 1rem 1.25rem;
+        display: block;
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+        @media only screen and (min-width: $mobile-breakpoint) {
+            display: none;
+        }
+    }
     .component--product-identity {
-        min-width: 15rem;
+        min-width: auto;
         &__top {
             font-size: 1.25rem;
+            @media only screen and (min-width: $mobile-breakpoint) {
+                width: 13rem;
+            }
+        }
+    }
+    .component--branding {
+        &__logo--mobile {
+            display: block;
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
+            @media only screen and (min-width: $mobile-breakpoint) {
+                display: none;
+            }
+        }
+        &__vertical-bar {
+            display: block !important;
+        }
+        &__logo--desktop {
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+            @media only screen and (min-width: $mobile-breakpoint) {
+                display: block;
+            }
         }
     }
     &__version {
         padding-right: 1rem;
+    }
+    & > div {
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+        @media only screen and (min-width: $mobile-breakpoint) {
+            display: inline-block;
+        }
     }
 }
