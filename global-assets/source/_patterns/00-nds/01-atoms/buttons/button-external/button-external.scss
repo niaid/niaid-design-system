@@ -11,8 +11,9 @@
         background: transparent;
         &:hover,
         &:focus {
-            background: $color-theme-1-1-2;
+            background: $color-theme-1-1-1;
             color: $white;
+            border: 0.0625rem solid $color-theme-1-1-1;
         }
     }
 }

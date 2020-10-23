@@ -7,18 +7,6 @@
     button {
         @include md-2dp;
         @extend .hoverable;
-        &.button--secondary {
-            background: $white;
-            border: 0.0625rem solid $white;
-            &:hover,
-            &:focus {
-                background: $white;
-                border: .0625rem solid $white;
-            }
-            &:active {
-                background-color: $white !important;
-            }
-        }
         &.disabled,
         &:disabled {
             @include md-2dp;
@@ -32,10 +20,16 @@
         }
     }
     .button--secondary {
+        background: $white;
+        border: 0.0625rem solid $white;
         &:hover,
         &:focus {
             background: $white;
+            border: .0625rem solid $white;
             color: $color-theme-1-1-1;
+        }
+        &:active {
+            background-color: $white !important;
         }
     }
     .button--tertiary {
@@ -94,10 +88,12 @@
             }
         }
         .button--secondary {
+            border: 0.0625rem solid $white;
             &:hover,
             &:focus {
                 background: $white;
                 color: $color-theme-2-1-1;
+                border: 0.0625rem solid $white;
             }
         }
         .button--tertiary {
@@ -135,10 +131,12 @@
             }
         }
         .button--secondary {
+            border: 0.0625rem solid $white;
             &:hover,
             &:focus {
                 background: $white;
                 color: $color-theme-3-1-1;
+                border: 0.0625rem solid $white;
             }
         }
         .button--tertiary {

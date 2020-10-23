@@ -1,5 +1,35 @@
 .style--colors--theme-2 {
     /* Atoms */
+    button {
+        background: $color-theme-2-1-1;
+        border: 0.0625rem solid $color-theme-2-1-1;
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-theme-2-1-2;
+            border: 0.0625rem solid $color-theme-2-1-2;
+        }
+        &.button--secondary {
+            color: $color-theme-2-1-1;
+            background: transparent;
+            &:hover,
+            &:focus {
+                background: $color-theme-2-1-1;
+                color: $white;
+                border: 0.0625rem solid $color-theme-2-1-1;
+            }
+        }
+        &.button--tertiary {
+            background: $color-theme-2-2-1;
+            border: 0.0625rem solid $color-theme-2-2-1;
+            &:hover,
+            &:focus,
+            &:active {
+                background: $color-theme-2-2-2;
+                border: 0.0625rem solid $color-theme-2-2-2;
+            }
+        }
+    }
     .button-nds {
         &.button--primary {
             background: $color-theme-2-1-1;
@@ -17,6 +47,7 @@
             &:focus {
                 color: $white;
                 background: $color-theme-2-1-1;
+                border: 0.0625rem solid $color-theme-2-1-1;
             }
         }
         &.button--tertiary {
@@ -55,20 +86,11 @@
                 background: transparent;
                 &:hover,
                 &:focus {
-                    background: $color-theme-2-1-2;
+                    background: $color-theme-2-1-1;
                     color: $white;
+                    border: 0.0625rem solid $color-theme-2-1-1;
                 }
             }
-        }
-    }
-    button {
-        background: $color-theme-2-1-1;
-        border: 0.0625rem solid $color-theme-2-1-1;
-        &:hover,
-        &:focus {
-            background-color: transparent;
-            background: $color-theme-2-1-2;
-            border: 0.0625rem solid $color-theme-2-1-2;
         }
     }
     .input-nds {
@@ -224,6 +246,36 @@
 
 .style--colors--theme-3 {
     /* Atoms */
+    button {
+        background: $color-theme-3-1-1;
+        border: 0.0625rem solid $color-theme-3-1-1;
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-theme-3-1-2;
+            border: 0.0625rem solid $color-theme-3-1-2;
+        }
+        &.button--secondary {
+            color: $color-theme-3-1-1;
+            background: transparent;
+            &:hover,
+            &:focus {
+                background: $color-theme-3-1-1;
+                color: $white;
+                border: 0.0625rem solid $color-theme-3-1-1;
+            }
+        }
+        &.button--tertiary {
+            background: $color-theme-3-2-1;
+            border: 0.0625rem solid $color-theme-3-2-1;
+            &:hover,
+            &:focus,
+            &:active {
+                background: $color-theme-3-2-2;
+                border: 0.0625rem solid $color-theme-3-2-2;
+            }
+        }
+    }
     .button-nds {
         &.button--primary {
             background: $color-theme-3-1-1;
@@ -241,6 +293,7 @@
             &:focus {
                 color: $white;
                 background: $color-theme-3-1-1;
+                border: 0.0625rem solid $color-theme-3-1-1;
             }
         }
         &.button--tertiary {
@@ -279,20 +332,11 @@
                 background: transparent;
                 &:hover,
                 &:focus {
-                    background: $color-theme-3-1-2;
+                    background: $color-theme-3-1-1;
                     color: $white;
+                    border: 0.0625rem solid $color-theme-3-1-1;
                 }
             }
-        }
-    }
-    button {
-        background: $color-theme-3-1-1;
-        border: 0.0625rem solid $color-theme-3-1-1;
-        &:hover,
-        &:focus {
-            background-color: transparent;
-            background: $color-theme-3-1-2;
-            border: 0.0625rem solid $color-theme-3-1-2;
         }
     }
     .input-nds {

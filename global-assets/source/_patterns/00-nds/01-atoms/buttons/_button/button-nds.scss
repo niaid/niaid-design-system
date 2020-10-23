@@ -16,15 +16,6 @@ button {
     }
 }
 
-button {
-    border: 0.0625rem solid $color-theme-1-1-1;
-    &:hover,
-    &:focus,
-    &:active {
-        border: 0.0625rem solid $color-theme-1-1-2;
-    }
-}
-
 .disabled,
 button:disabled,
 button[disabled] {

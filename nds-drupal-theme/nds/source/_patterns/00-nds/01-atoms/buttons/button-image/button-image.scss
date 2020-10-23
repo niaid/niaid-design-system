@@ -18,4 +18,14 @@
         height: 2rem;
         margin-right: 1rem;
     }
+    &.button--secondary {
+        color: $color-theme-1-1-1;
+        background: transparent;
+        &:hover,
+        &:focus {
+            background: $color-theme-1-1-1;
+            color: $white;
+            border: 0.0625rem solid $color-theme-1-1-1;
+        }
+    }
 }

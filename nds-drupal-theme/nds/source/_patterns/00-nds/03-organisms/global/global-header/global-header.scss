@@ -10,17 +10,6 @@
     }
     &__button {
         padding: 1rem 1.25rem;
-        background: $white;
-        border-radius: .3125rem;
-        border: 0.0625rem solid $black;
-        &:hover,
-        &:focus {
-            background: $color-theme-1-1-1;
-            color: $white;
-        }
-        @include media-breakpoint-up('sm') {
-            padding: 0.7rem 1.05rem;
-        }
         @include media-breakpoint-up('md') {
             display: none;
         }

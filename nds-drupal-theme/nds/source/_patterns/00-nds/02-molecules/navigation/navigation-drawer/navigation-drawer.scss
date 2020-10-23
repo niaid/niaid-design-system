@@ -13,28 +13,19 @@
     &__top {
         padding: 1rem 2rem;
         &__button-close {
-            padding: 0.45rem 0.725rem;
-            background: $white !important;
-            color: #000 !important;
-            border-radius: $border-radius-semi;
-            border: 0 !important;
-            &:hover,
-            &:focus {
-                color: #000 !important;
-                background: $white !important;
-            }
+            padding: 1rem 1.25rem;
         }
     }
     &__inner {
         &__section {
             padding: .5rem 2rem;
-            border-bottom: 1px solid $input-border;
+            border-bottom: 0.0625rem solid $input-border;
             width: 16rem;
             &:first-child {
-                border-top: 1px solid $input-border;
+                border-top: 0.0625rem solid $input-border;
             }
             a {
-                border-bottom: 1px solid transparent;
+                border-bottom: 0.0625rem solid transparent;
             }
         }
     }
