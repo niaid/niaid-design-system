@@ -1,5 +1,27 @@
 (function($) {
-    function init_style_controls(context) {
+    function init_style_controls(context = document) {
+        var mql = window.matchMedia('all and (max-width: 992px)');
+        var wWidth = $(window).width();
+        if (mql.matches) {
+            $('#custom-styles-toggle').hide();
+        }
+        else {
+            $('#custom-styles-toggle').show();
+        }
+
+        $(window).on('resize', function() {
+            if (wWidth != $(this).width()) {
+                wWidth = $(this).width();
+                if (mql.matches) {
+                    $('#custom-styles-toggle').hide();
+                    $('.component--style-controls').removeClass('component--style-controls--open');
+                    $('body').css('padding-top', 0);
+                }
+                else {
+                    $('#custom-styles-toggle').show();
+                }
+            }
+        });
 
         $('#custom-styles-toggle').on('click', function() {
             $('.component--style-controls').toggleClass('component--style-controls--open');

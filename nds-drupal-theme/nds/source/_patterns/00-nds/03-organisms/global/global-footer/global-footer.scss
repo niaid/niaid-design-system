@@ -9,6 +9,7 @@
         color: $white;
     }
     a {
+        border-bottom: 0.0625rem solid $white;
         &:hover,
         &:focus {
             color: $white;
