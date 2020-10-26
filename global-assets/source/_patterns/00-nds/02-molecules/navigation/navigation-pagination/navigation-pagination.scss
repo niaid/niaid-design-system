@@ -1,27 +1,30 @@
-.pager {
-    .visually-hidden {
-        position: absolute !important;
-        overflow: hidden;
-        clip: rect(0.0625rem, 0.0625rem, 0.0625rem, 0.0625rem);
-        width: 0.0625rem;
-        height: 0.0625rem;
-    }
-    .pager__items {
-        padding: 0;
-        list-style: none;
-        .pager__item {
-            display: inline-flex;
-            a {
-                @extend .button-nds;
-                @extend .button--secondary;
-                padding: 1rem 1.4rem;
-                &:visited {
-                    color: $white;
-                }
-            }
-            &.is-active {
+.navigation--pagination {
+    .pager {
+        .visually-hidden {
+            position: absolute !important;
+            overflow: hidden;
+            width: 0.0625rem;
+            height: 0.0625rem;
+        }
+        .pager__items {
+            padding: 0;
+            list-style: none;
+            .pager__item {
+                margin-right: .75rem;
+                display: inline-flex;
                 a {
-                    @extend .button--primary;
+                    @extend .button-nds;
+                    @extend .button--secondary;
+                    padding: 1rem 1.4rem;
+                    &:visited {
+                        color: $white;
+                    }
+                }
+                &.is-active {
+                    a {
+                        background: $color-theme-1-1-1;
+                        color: $white;
+                    }
                 }
             }
         }

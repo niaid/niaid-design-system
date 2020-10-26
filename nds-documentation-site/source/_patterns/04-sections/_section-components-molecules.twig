@@ -154,9 +154,18 @@
         {% endembed %}
 
         <h4>Side Drawer (Mobile Menu)</h4>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        <p>When viewing websites on mobile devices, the site navigation often changes to accomodate the smaller screen size. NDS offers a "drawer" style slide out menu wherein menu links can be added. NDS has pre-made JS that toggles the drawer open and close on click of a button with an ID of "global-mobile-menu."</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_show_rendered": "no"
+            }
+        %}
             {% block component_snippet_code %}
-                {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" %}
+                {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" with
+                    {
+                        "navigation_drawer_id": "side-drawer"
+                    }
+                %}
             {% endblock %}
         {% endembed %}
 

@@ -1,0 +1,5 @@
+{% set navigation_pagination_classes = navigation_pagination_classes|default() %}
+
+<div class="navigation-nds navigation--pagination {{ navigation_pagination_classes }}">
+    {% block navigation_pagination_content %}{% endblock %}
+</div>

@@ -8,16 +8,6 @@
     * {
         color: $white;
     }
-    a {
-        border-bottom: 0.0625rem solid $white;
-        &:hover,
-        &:focus {
-            color: $white;
-        }
-        &:visited {
-            color: $white;
-        }
-    }
     @include media-breakpoint-up(md) {
         padding: 0 4rem;
     }
@@ -143,6 +133,17 @@
         }
         &__info {
             padding: 0;
+            a {
+                border-bottom: 0.0625rem solid $white;
+                &:hover,
+                &:focus {
+                    color: $white;
+                    border-bottom: 0.0625rem solid transparent;
+                }
+                &:visited {
+                    color: $white;
+                }
+            }
             &__section {
                 padding: 0 0 2rem 0;
                 @include media-breakpoint-up(md) {
