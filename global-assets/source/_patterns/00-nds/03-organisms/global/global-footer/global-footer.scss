@@ -13,6 +13,7 @@
         &:hover,
         &:focus {
             color: $white;
+            border-bottom: 0.0625rem solid transparent;
         }
         &:visited {
             color: $white;
