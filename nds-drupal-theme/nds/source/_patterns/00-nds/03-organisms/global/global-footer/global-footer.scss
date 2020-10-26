@@ -8,8 +8,14 @@
     * {
         color: $white;
     }
-    a:visited {
-        color: $white;
+    a {
+        &:hover,
+        &:focus {
+            color: $white;
+        }
+        &:visited {
+            color: $white;
+        }
     }
     @include media-breakpoint-up(md) {
         padding: 0 4rem;
