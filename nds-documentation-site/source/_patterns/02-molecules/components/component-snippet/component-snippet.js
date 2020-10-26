@@ -7,7 +7,13 @@
         });
 
         $('.component--snippet').find('.button--icon').on('click', function() {
+            let $copyText = $(this).siblings('.component--snippet__button__copied');
+            $copyText.css('opacity', 0);
             copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
+            $copyText.css('opacity', 1);
+            setTimeout(function() {
+                $copyText.css('opacity', 0);
+            }, 2000);
         });
     }
 

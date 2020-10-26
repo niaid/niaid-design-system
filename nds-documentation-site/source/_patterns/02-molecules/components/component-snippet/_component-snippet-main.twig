@@ -18,8 +18,10 @@
         </div>
     </div>
     <div class="component--snippet__button">
+        <div class="component--snippet__button__copied">Copied</div>
         {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
             {
+                "button_icon_classes": "component--snippet__button__copy",
                 "button_icon_icon": "clipboard-list",
                 "button_icon_text": "Copy to Clipboard"
             }
