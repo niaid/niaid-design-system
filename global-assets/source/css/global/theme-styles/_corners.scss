@@ -50,6 +50,13 @@
                 }
             }
         }
+        &.input--date-picker {
+            .input--date-picker__form {
+                &__field {
+                    border-radius: $corner-radius;
+                }
+            }
+        }
     }
     table {
         border-radius: $corner-radius;
@@ -161,6 +168,13 @@
                     .select2-selection__rendered {
                         border-radius: $corner-radius * .75;
                     }
+                }
+            }
+        }
+        &.input--date-picker {
+            .input--date-picker__form {
+                &__field {
+                    border-radius: $corner-radius;
                 }
             }
         }

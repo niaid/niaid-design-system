@@ -14,10 +14,15 @@
             "input_label_text": input_date_picker_label
         }
     %}
-    <div class="input-group date">
-        <input id="{{ input_date_picker_id }}" type="text" nds-date-picker="true">
-        <div class="input-group-addon">
-            <span class="glyphicon glyphicon-th"></span>
+    <div class="input--date-picker__form">
+        <input id="{{ input_date_picker_id }}" class="input--date-picker__form__field" type="text" nds-date-picker="true">
+        <div class="input--date-picker__form__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+                {
+                    "icon_default_type": "calendar",
+                    "icon_default_weight": "l"
+                }
+            %}
         </div>
     </div>
 </div>
