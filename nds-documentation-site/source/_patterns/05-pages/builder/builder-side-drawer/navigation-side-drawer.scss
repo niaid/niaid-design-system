@@ -26,9 +26,6 @@
     ul, li, span, a, p {
         font-family: "Roboto", sans-serif !important;
     }
-    .button--generate-link {
-        margin-right: .5rem;
-    }
 
     #fonts {
         h3 {
@@ -38,14 +35,29 @@
         }
     }
 
+    .button--use-theme,
+    .button--share-theme {
+        margin: 1rem 0;
+        display: block;
+        width: 100%;
+    }
+
     &__copied {
-        display: inline-block;
-        vertical-align: bottom;
+        display: block;
         opacity: 0;
         transition: opacity 2s;
     }
 
     &__link {
         display: none;
+    }
+
+    #getStartedModal {
+        h1, h2, h3, h4 {
+            color: $type-heading !important;
+        }
+        p, span, div {
+            color: $type-body !important;
+        }
     }
 }

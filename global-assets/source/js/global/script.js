@@ -255,25 +255,45 @@
 })(jQuery);
 
 (function ($) {
-  function initNavigationLocal() {
+  function initComponentModal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-    if ($('.navigation--local').length) {
-      $('.navigation--local__group__label', context).keypress(function (e) {
-        if (e.which == 13) {
-          $(this).click();
+    if ($('.component--modal').length) {
+      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      var modal = document.querySelector('#getStartedModal');
+      var firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
+      var focusableContent = modal.querySelectorAll(focusableElements);
+      var lastFocusableElement = focusableContent[focusableContent.length - 1];
+      document.addEventListener('keydown', function (e) {
+        var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+        if (!isTabPressed) {
+          return;
+        }
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
         }
       });
+      firstFocusableElement.focus();
     }
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initNavigationLocal = {
+      Drupal.behaviors.initComponentModal = {
         attach: function attach(context) {
-          $(".page", context).once('nds-local-navigation').each(function () {
-            initNavigationLocal(context);
+          $("body", context).once('nds-component-modal').each(function () {
+            initComponentModal(context);
           });
         }
       };
@@ -281,7 +301,7 @@
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initNavigationLocal();
+      initComponentModal();
     });
   }
 })(jQuery);
@@ -345,6 +365,38 @@
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationDrawer();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initNavigationLocal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.navigation--local').length) {
+      $('.navigation--local__group__label', context).keypress(function (e) {
+        if (e.which == 13) {
+          $(this).click();
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationLocal = {
+        attach: function attach(context) {
+          $(".page", context).once('nds-local-navigation').each(function () {
+            initNavigationLocal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationLocal();
     });
   }
 })(jQuery);

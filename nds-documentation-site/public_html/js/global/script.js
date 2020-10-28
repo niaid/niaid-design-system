@@ -78,7 +78,37 @@ $(document).ready(function () {
       initComponentScrollspySection();
     });
   }
-})(jQuery);
+})(jQuery); // Functionality for Sticky Local Nav, NOT IN USE
+// (function($) {
+//     function initComponentStickybits(context = document) {
+//         $(window).ready(function() {
+//             stickybits(".component--accordion", { useStickyClasses: true, stickyBitStickyOffset: 24 });
+//             const stickybitsInstancetoBeUpdated = stickybits(".component--accordion");
+//             window.addEventListener('resize', function() {
+//                 console.log('resize');
+//                 stickybitsInstancetoBeUpdated.update({ useStickyClasses: true, stickyBitStickyOffset: 24 });
+//             });
+//         });
+//     }
+//     if (typeof Drupal !== 'undefined') {
+//         // Define Drupal behavior.
+//         (function($, Drupal) {
+//             Drupal.behaviors.initComponentStickybits = {
+//                 attach: function(context) {
+//                     $('body', context).once('nds-component-stickybits').each(function() {
+//                         initComponentStickybits(context);
+//                     });
+//                 },
+//             };
+//         })(jQuery, Drupal);
+//     } else {
+//         // If Drupal isn't loaded, add JS for Pattern Lab.
+//         $(document).ready(function() {
+//             initComponentStickybits();
+//         });
+//     }
+// })(jQuery);
+
 
 (function ($) {
   function initComponentSnippet() {
@@ -152,37 +182,7 @@ $(document).ready(function () {
       initComponentSnippet();
     });
   }
-})(jQuery); // Functionality for Sticky Local Nav, NOT IN USE
-// (function($) {
-//     function initComponentStickybits(context = document) {
-//         $(window).ready(function() {
-//             stickybits(".component--accordion", { useStickyClasses: true, stickyBitStickyOffset: 24 });
-//             const stickybitsInstancetoBeUpdated = stickybits(".component--accordion");
-//             window.addEventListener('resize', function() {
-//                 console.log('resize');
-//                 stickybitsInstancetoBeUpdated.update({ useStickyClasses: true, stickyBitStickyOffset: 24 });
-//             });
-//         });
-//     }
-//     if (typeof Drupal !== 'undefined') {
-//         // Define Drupal behavior.
-//         (function($, Drupal) {
-//             Drupal.behaviors.initComponentStickybits = {
-//                 attach: function(context) {
-//                     $('body', context).once('nds-component-stickybits').each(function() {
-//                         initComponentStickybits(context);
-//                     });
-//                 },
-//             };
-//         })(jQuery, Drupal);
-//     } else {
-//         // If Drupal isn't loaded, add JS for Pattern Lab.
-//         $(document).ready(function() {
-//             initComponentStickybits();
-//         });
-//     }
-// })(jQuery);
-
+})(jQuery);
 
 (function ($) {
   function init_style_controls() {
@@ -552,9 +552,21 @@ $(document).ready(function () {
             state = updateState(state, { "productIDBottomStyles":  styles});
         }
     });*/
-    // Generate
+    // Use Theme Button
 
-    $('.button--generate-link').click(function () {
+    $('.button--use-theme').on('click', function () {
+      var bodyClasses = '"bodyClass": "';
+      bodyClasses += 'style--headings--' + state.heading;
+      bodyClasses += ' style--body--' + state.body;
+      bodyClasses += ' style--colors--' + state.colors;
+      state.shadows == 'true' ? bodyClasses += ' style--shadows' : bodyClasses += '';
+      state.hero == 'true' ? bodyClasses += ' style--hero' : bodyClasses += '';
+      bodyClasses += ' style--corners--' + state.corners;
+      bodyClasses += '"';
+      $('#selected-choices').text(bodyClasses);
+    }); // Share Button
+
+    $('.button--share-theme').click(function () {
       $('.builder--side-drawer__copied').css('opacity', 0);
       generateShareLink(state);
       copyToClipboard('.builder--side-drawer__link');
@@ -980,6 +992,58 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentLightbox();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentModal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.component--modal').length) {
+      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      var modal = document.querySelector('#getStartedModal');
+      var firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
+      var focusableContent = modal.querySelectorAll(focusableElements);
+      var lastFocusableElement = focusableContent[focusableContent.length - 1];
+      document.addEventListener('keydown', function (e) {
+        var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+        if (!isTabPressed) {
+          return;
+        }
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastFocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
+        }
+      });
+      firstFocusableElement.focus();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentModal = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-modal').each(function () {
+            initComponentModal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentModal();
     });
   }
 })(jQuery);

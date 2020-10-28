@@ -258,8 +258,22 @@
             }
         });*/
 
-        // Generate
-        $('.button--generate-link').click(function() {
+
+        // Use Theme Button
+        $('.button--use-theme').on('click', function() {
+            let bodyClasses = '"bodyClass": "';
+            bodyClasses += 'style--headings--' + state.heading;
+            bodyClasses += ' style--body--' + state.body;
+            bodyClasses += ' style--colors--' + state.colors;
+            state.shadows == 'true' ? bodyClasses += ' style--shadows' : bodyClasses += '';
+            state.hero == 'true' ? bodyClasses += ' style--hero' : bodyClasses += '';
+            bodyClasses += ' style--corners--' + state.corners;
+            bodyClasses += '"';
+            $('#selected-choices').text(bodyClasses);
+        });
+
+        // Share Button
+        $('.button--share-theme').click(function() {
             $('.builder--side-drawer__copied').css('opacity', 0);
             generateShareLink(state);
             copyToClipboard('.builder--side-drawer__link');
