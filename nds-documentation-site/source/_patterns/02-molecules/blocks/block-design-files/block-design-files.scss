@@ -1,4 +1,8 @@
 .block--design-files {
     padding: 0;
     border: 0;
+    .button--image {
+        display: inline-flex;
+        margin: .5rem;
+    }
 }

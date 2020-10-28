@@ -164,6 +164,46 @@
             {% endblock %}
         {% endembed %}
 
+        <h4>Button with Image</h4>
+        <p>This component allows for an image to be included inside a button.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
+                                {
+                                    "button_image_src": "global/icons/document/icon-document-excel.png",
+                                    "button_image_alt": "Excel",
+                                    "button_image_text": "Export"
+                                }
+                            %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
+                                {
+                                    "button_image_classes": "button--secondary",
+                                    "button_image_src": "global/icons/document/icon-document-excel.png",
+                                    "button_image_alt": "Excel",
+                                    "button_image_text": "Export"
+                                }
+                            %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
+                                {
+                                    "button_image_classes": "button--tertiary",
+                                    "button_image_src": "global/icons/document/icon-document-excel.png",
+                                    "button_image_alt": "Excel",
+                                    "button_image_text": "Export"
+                                }
+                            %}
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        {% endembed %}
+
         <h4>Share Buttons</h4>
         <p>Following the NDS icon policy, social share buttons for popular social media platforms are included ready to use.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}

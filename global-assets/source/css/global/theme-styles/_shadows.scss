@@ -8,41 +8,48 @@
         @include md-2dp;
         @extend .hoverable;
         &.disabled,
-        &:disabled {
-            @include md-2dp;
+        &:disabled,
+        &[disabled] {
+            box-shadow: none !important;
+            &:hover,
+            &:focus {
+                box-shadow: none !important;
+            }
         }
     }
-    .button--primary {
-        &:hover,
-        &:focus {
-            background: $color-theme-1-1-1;
-            border: 0.0625rem solid $color-theme-1-1-1;
+    .button-nds {
+        &.button--primary {
+            &:hover,
+            &:focus {
+                background: $color-theme-1-1-1;
+                border: 0.0625rem solid $color-theme-1-1-1;
+            }
         }
-    }
-    .button--secondary {
-        background: $white;
-        border: 0.0625rem solid $white;
-        &:hover,
-        &:focus {
+        &.button--secondary {
             background: $white;
-            border: .0625rem solid $white;
-            color: $color-theme-1-1-1;
+            border: 0.0625rem solid $white;
+            &:hover,
+            &:focus {
+                background: $white;
+                border: .0625rem solid $white;
+                color: $color-theme-1-1-1;
+            }
+            &:active {
+                background-color: $white !important;
+            }
         }
-        &:active {
-            background-color: $white !important;
+        &.button--tertiary {
+            &:hover,
+            &:focus {
+                background: $color-theme-1-2-1;
+                border: 0.0625rem solid $color-theme-1-2-1;
+            }
         }
-    }
-    .button--tertiary {
-        &:hover,
-        &:focus {
-            background: $color-theme-1-2-1;
-            border: 0.0625rem solid $color-theme-1-2-1;
-        }
-    }
-    .button--floating {
-        &:hover,
-        &:focus {
-            background: $color-theme-1-1-1;
+        &.button--floating {
+            &:hover,
+            &:focus {
+                background: $color-theme-1-1-1;
+            }
         }
     }
     .icon--circle {
