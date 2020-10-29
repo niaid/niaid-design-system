@@ -27,7 +27,7 @@ DOWNLOADING AND INSTALLING a NDS DRUPAL THEME
 ---------------------------------------------------- 
 
 * Unzip the NDS Drupal Theme Folder 
-* Install as any other Drupal Contributed Theme. For more information about installing a Contributed theme, please visit https://www.drupal.org/docs/extending-drupal/installing-themes 
+* Install as any other Drupal Contributed Theme and place is under Custom Directory (themes/custom/nds-drupal-theme). For more information about installing a Contributed theme, please visit https://www.drupal.org/docs/extending-drupal/installing-themes 
 
 INTEGRATING NDS DESIGN SYSTEM WITH NDS DRUPAL THEME
 ---------------------------------------------------------------- 
@@ -37,7 +37,6 @@ INTEGRATING NDS DESIGN SYSTEM WITH NDS DRUPAL THEME
 - NPM (https://www.npmjs.com/get-npm)
 - Composer (https://getcomposer.org/download/)
 
-* Download the NDS Design System, unzip it, rename the folder to nds and paste it in NDS-DRUPAL-Theme Directory  
 * CD into nds folder and install Node and Composer Dependencies
     - npm install
     - composer install
@@ -71,11 +70,11 @@ Configure theme settings in Administration  » Appearance » Settings » NDS Dru
 * Corners 
     - Select one from the available options 
 * Website Colors: 
-    - Select website base theme color.
+    - Select website base theme color. For more information about NDS Theme Color, please visit http://ids-theme-builder.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/. 
 
 Menus
 --------------
-In NDS Drupal Theme, primary menu is right now hardcoaded and implemented using NIAID Design System component. Inorder to modify this menu, please place the menu block on Primary Menu region and uncomment the {{ page.primary_meneu }} on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig. 
+In NDS Drupal Theme, primary menu is right now hardcoded and implemented using NIAID Design System component. Inorder to modify this menu, please place the menu block on Primary Menu region and uncomment the {{ page.primary_meneu }} on page.html.twig file. The pattern for the menu is found here: @nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig. 
 
 MAINAINERS 
 -------------- 

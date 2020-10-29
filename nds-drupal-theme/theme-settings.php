@@ -34,6 +34,7 @@ function nds_drupal_theme_form_system_theme_settings_alter(&$form, &$form_state)
   $form['font_family'] = [
         '#type' => 'details',
         '#title' => t('Fonts Headings'),
+        '#weight' => -999,
         '#open'  => TRUE,
       ];
 
@@ -53,6 +54,7 @@ function nds_drupal_theme_form_system_theme_settings_alter(&$form, &$form_state)
     $form['font_family_body'] = [
       '#type' => 'details',
       '#title' => t('Body Headings'),
+      '#weight' => -999,
       '#open'  => TRUE,
       ];
 
@@ -72,6 +74,7 @@ function nds_drupal_theme_form_system_theme_settings_alter(&$form, &$form_state)
     $form['box_shadows'] = [
       '#type' => 'details',
       '#title' => t('Shadows'),
+      '#weight'  => -999,
       '#open'  => TRUE,
     ];
     $form['box_shadows']['shadows'] = [
@@ -88,6 +91,7 @@ function nds_drupal_theme_form_system_theme_settings_alter(&$form, &$form_state)
   $form['box_corners'] = [
     '#type' => 'details',
     '#title' => t('Corners'),
+    '#weight' => -999,
     '#open'  => TRUE,
   ];
     $form['box_corners']['corners'] = [
@@ -96,7 +100,7 @@ function nds_drupal_theme_form_system_theme_settings_alter(&$form, &$form_state)
         '#options' => [
             'sharp' => 'Sharp', 
             'semirounded' => 'Semi Rounded',
-            'fullyrounded' => 'Fully Rounded' 
+            'rounded' => 'Fully Rounded' 
         ],
         '#default_value'  => theme_get_setting('corners'),
       ];
@@ -105,19 +109,20 @@ function nds_drupal_theme_form_system_theme_settings_alter(&$form, &$form_state)
     $form['website_color'] = [
       '#type' => 'details',
       '#title' => t('Website Color'),
+      '#weight' => -999,
       '#open'  => TRUE,
     ];
 
     $form['website_color']['website_base_color'] = [
       '#type' => 'radios',
       '#title' => t('Select Website Theme Color'),
-      '#default_value' => NULL !== theme_get_setting('website_base_color') ? theme_get_setting('website_base_color') : 'sea-blue',
+      '#default_value' => NULL !== theme_get_setting('website_base_color'),
       '#options' => [
         'theme-1' => t('Theme One'),
         'theme-2' => t('Theme Two'),
         'theme-3' => t('Theme Three'),
       ],
-      '#description' => t('Select the base color of the theme to give a complete new look to the website.'),
+      '#description' => t('Select the base color of the theme to give a complete new look to the website. Please visit the <a href="http://ids-theme-builder.niaid.nih.gov.s3-website-us-east-1.amazonaws.com">NIAID Design System documentation site</a> to find out about available color options'),
   ];
 }
 
