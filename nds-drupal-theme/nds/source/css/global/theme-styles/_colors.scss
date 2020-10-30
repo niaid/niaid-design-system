@@ -65,19 +65,6 @@
                 background: $color-theme-2-1-2;
             }
         }
-        &.button--image {
-            background: transparent;
-            border: 0.0625rem solid $color-theme-2-1-1;
-            span {
-                color: $color-theme-2-1-1;
-            }
-            &:hover,
-            &:focus {
-                span {
-                    color: $white;
-                }
-            }
-        }
         &.button--image,
         &.button--icon,
         &.button--external {
@@ -323,19 +310,6 @@
             &:hover,
             &:focus {
                 background: $color-theme-3-1-2;
-            }
-        }
-        &.button--image {
-            background: transparent;
-            border: 0.0625rem solid $color-theme-3-1-1;
-            span {
-                color: $color-theme-3-1-1;
-            }
-            &:hover,
-            &:focus {
-                span {
-                    color: $white;
-                }
             }
         }
         &.button--image,

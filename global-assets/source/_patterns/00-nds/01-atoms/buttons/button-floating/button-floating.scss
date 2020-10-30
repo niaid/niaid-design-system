@@ -1,5 +1,4 @@
 .button--floating {
-    @extend .button-nds;
     @extend .button--primary;
     position: fixed;
     bottom: 3rem;
@@ -29,6 +28,16 @@
         width: 16.5rem;
         .button--floating__text {
             width: 13rem;
+        }
+    }
+    &.button--secondary {
+        color: $color-theme-1-1-1;
+        background: transparent;
+        &:hover,
+        &:focus {
+            background: $color-theme-1-1-1;
+            color: $white;
+            border: 0.0625rem solid $color-theme-1-1-1;
         }
     }
 }

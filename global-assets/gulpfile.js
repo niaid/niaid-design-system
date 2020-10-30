@@ -103,7 +103,7 @@ gulp.task('serveProject', function() {
         open: true
     });
 
-    gulp.watch(['./source/**/*'], gulp.series(compileSass, compileJS, compilePatternLab));
+    gulp.watch(['./source/_patterns/**/*', './source/css/**/*.scss'], gulp.series(compileSass, compileJS, compilePatternLab));
 });
 
 // GULP: default - Running gulp compiles the your static site and serves it locally.

@@ -1,22 +1,12 @@
 .button--image {
-    margin: .5rem .25rem;
-    padding: 1rem;
-    background: transparent;
-    display: inline-flex;
+    @extend .button--primary;
+    display: flex;
     align-items: center;
-    border: 0.0625rem solid $color-theme-1-1-1;
-    span {
-        color: $color-theme-1-1-1;
+    &__text {
+        padding-left: .75rem;
     }
-    &:hover,
-    &:focus {
-        span {
-            color: $white;
-        }
-    }
-    .image--default {
-        height: 2rem;
-        margin-right: 1rem;
+    img {
+        max-height: 2rem;
     }
     &.button--secondary {
         color: $color-theme-1-1-1;

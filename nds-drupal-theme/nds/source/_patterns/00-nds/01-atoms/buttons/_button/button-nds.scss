@@ -20,6 +20,13 @@ button {
 button:disabled,
 button[disabled] {
     @extend .btn;
+    background: $input-border !important;
+    color: $type-heading !important;
     border-color: transparent !important;
-    cursor: not-allowed;
+    cursor: not-allowed !important;
+    &:hover,
+    &:focus {
+        background: $input-border !important;
+        color: $type-heading !important;
+    }
 }

@@ -11,5 +11,7 @@
             "image_default_alt": button_image_alt
         }
     %}
-    <span>{{ button_image_text }}</span>
+    {% if button_image_text is not empty %}
+        <span class="button--image__text">{{ button_image_text }}</span>
+    {% endif %}
 </{{ button_image_href != "" ? 'a' : 'button' }}>
