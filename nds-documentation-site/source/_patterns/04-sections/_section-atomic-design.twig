@@ -5,7 +5,7 @@
 %}
     {% block component_scrollspy_section_content %}
         <h2>Atomic Design</h2>
-        <p>NDS employs the use of a development philosphy known as Atomic Design. Under this system, web components are broken up into their simplest parts, like colors, fonts, and button styles. These basic building blocks of design are referred to as Atoms. Atoms combine to create Molecules, which are more complex web structures. Examples of Molecules include teaser cards, input groups, and simple navigation structures. Finally, Molecules come together to create yet another level of complex web structures, such as website headers and footers. These structures are called Organisms, and are typically the most complex components. The following video provides a useful visualization for how these structures combine together.</p>
+        <p>NDS employs the use of a development philosophy known as Atomic Design. Under this system, web components are broken up into their simplest parts, like colors, fonts, and button styles. These basic building blocks of design are referred to as Atoms. Atoms combine to create Molecules, which are more complex web structures. Examples of Molecules include teaser cards, input groups, and simple navigation structures. Finally, Molecules come together to create yet another level of complex web structures, such as website headers and footers. These structures are called Organisms, and are typically the most complex components. The following video provides a useful visualization for how these structures combine together.</p>
         {% embed "@nds/02-molecules/components/component-media/_component-media-main.twig" with
             {
                 "component_media_credit": '<a href="https://patternlab.io/">Pattern Lab</a>',
@@ -27,11 +27,11 @@
         <h3>Benefits of Atomic Design</h3>
         <p>There are many benefits to Atomic Design, including:</p>
         <ol>
-            <li>Efficent code manipulation</li>
+            <li>Efficient code manipulation</li>
             <li>Modular components that can be reused</li>
             <li>Better organization of component files</li>
         </ol>
-        <h4>1. Efficient Code Manipulation</h4>
+        <h4>1. Efficient code manipulation</h4>
         <p>Perhaps the most significant benefit of Atomic Design is the speed at which changes can be made to design components. Since web components or patterns are composed of other smaller components, changes need only happen in one place. For example, if a designer wanted to change the color of a button, and that button pattern is referenced in a featured content card molecule, the developer can change the color of the button at the Atom level, and any references to that pattern will be updated automatically.</p>
         {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
             {
@@ -45,6 +45,6 @@
         <h4>2. Modular components that can be reused</h4>
         <p>Pattern Libraries of Design Systems cut down on development time by allowing components to be shared and reused across an unlimited number of web properties. NDS is constantly evolving and growing by incorporating new patterns into its component library.</p>
         <h4>3. Better organization of component files</h4>
-        <p>Under Atomic Design, the various assets needed for a component, such as component-specific CSS, JS, and HTML, are packaged together in folders. This makes it easy to find the code that makes up a certain component, saving time during the development process. Fruthermore, this organization makes it easier to share components with other projects.</p>
+        <p>Under Atomic Design, the various assets needed for a component, such as component-specific CSS, JS, and HTML, are packaged together in folders. This makes it easy to find the code that makes up a certain component, saving time during the development process. Furthermore, this organization makes it easier to share components with other projects.</p>
     {% endblock %}
 {% endembed %}
