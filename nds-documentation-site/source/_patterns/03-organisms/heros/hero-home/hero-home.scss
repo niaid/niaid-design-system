@@ -1,28 +1,63 @@
 .hero--home {
     position: relative;
-    .desktop {
-        display: none;
-        @include media-breakpoint-up(lg) {
-            display: block;
-        }
-    }
-    .mobile {
-        @include media-breakpoint-up(lg) {
-            display: none;
-        }   
-    }
-    img {
-        max-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
     }
     &__content {
-        background: #1F1F1F;
-        padding: 4rem 4rem 2rem 4rem;
+        padding: 6rem 4rem;
+        text-align: center;
+        z-index: 1;
+        img {
+            height: 4rem;
+        }
         h1 {
             color: $white;
             padding-top: 1rem;
             margin-bottom: .5rem;
             @include media-breakpoint-down(sm) {
                 font-size: 3rem;
+            }
+        }
+        p {
+            font-size: 1.25rem;
+            font-weight: $font-weight-light;
+            color: $white;
+            margin: 2.5rem 0 2.75rem 0;
+        }
+        &__buttons {
+            margin: 0 auto;
+            .button--get-started {
+                background: #D81F50 !important;
+                border: .0625rem solid #D81F50 !important;
+                margin-right: .5rem;
+                &:hover,
+                &:focus,
+                &:active {
+                    background: $white !important;
+                    border: .0625rem solid $white !important;
+                    color: #D81F50 !important;
+                }
+            }
+            .button--learn-more {
+                background: transparent !important;
+                border: .0625rem solid $white !important;
+                color: $white !important;
+                margin-left: .5rem;
+                &:hover,
+                &:focus,
+                &:active {
+                    background: $white !important;
+                    border: .0625rem solid $white !important;
+                    color: #D81F50 !important;
+                }
             }
         }
         &__flair {
@@ -44,20 +79,6 @@
                     background: $color-theme-3-accent;
                 }
             }
-        }
-        img {
-            height: 4rem;
-            @include media-breakpoint-up(lg) {
-                height: 5rem;
-            }
-        }
-        @include media-breakpoint-up(lg) {
-            padding: 0;
-            background: transparent;
-            position: absolute;
-            right: 15%;
-            top: 50%;
-            transform: translateY(-50%);
         }
     }
 }
