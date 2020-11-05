@@ -97,6 +97,11 @@
         @include md-2dp;
         border-width: 0;
         background: $white;
+        &.block--default {
+            &.block--default--accent {
+                border-left: .25rem solid $color-theme-1-accent;
+            }
+        }
         &.block--alert {
             background: #be2c2c;
             &.severity--2 {
@@ -256,6 +261,13 @@
                 }
             }
         }
+        .block-nds {
+            &.block--default {
+                &.block--default--accent {
+                    border-left: .25rem solid $color-theme-2-accent;
+                }
+            }
+        }
         .navigation-nds {
             &.navigation--pagination {
                 .pager {
@@ -307,6 +319,13 @@
                     background: $white;
                     color: $color-theme-3-1-1;
                     border: 0.0625rem solid $white;
+                }
+            }
+        }
+        .block-nds {
+            &.block--default {
+                &.block--default--accent {
+                    border-left: .25rem solid $color-theme-3-accent;
                 }
             }
         }

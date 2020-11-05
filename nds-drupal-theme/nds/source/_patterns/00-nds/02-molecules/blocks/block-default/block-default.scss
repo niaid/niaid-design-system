@@ -32,4 +32,7 @@
             margin-top: 1rem !important;
         }
     }
+    &.block--default--accent {
+        border-left: .25rem solid $color-theme-1-accent;
+    }
 }

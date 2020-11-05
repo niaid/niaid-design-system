@@ -18,10 +18,11 @@
         <p>Blocks tend to be non-functional components that are visually distinct from the normal body content.</p>
 
         <h4>Default Block</h4>
-        <p>Appropriate uses include... todo</p>
+        <p>The default block is a flexible pattern that can be used with almost any content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-default/demo/block-default.twig" %}
+                {% include "@nds/02-molecules/blocks/block-default/demo/block-default-accent.twig" %}
             {% endblock %}
         {% endembed %}
 

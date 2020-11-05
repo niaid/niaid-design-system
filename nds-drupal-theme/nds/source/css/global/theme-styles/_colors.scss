@@ -140,6 +140,11 @@
     }
     /* Molecules */
     .block-nds {
+        &.block--default {
+            &.block--default--accent {
+                border-left: .25rem solid $color-theme-2-accent;
+            }
+        }
         &.block--featured-content {
             .block--featured-content__text {
                 &__featured {
@@ -382,6 +387,11 @@
     }
     /* Molecules */
     .block-nds {
+        &.block--default {
+            &.block--default--accent {
+                border-left: .25rem solid $color-theme-3-accent;
+            }
+        }
         &.block--featured-content {
             .block--featured-content__text {
                 &__featured {
