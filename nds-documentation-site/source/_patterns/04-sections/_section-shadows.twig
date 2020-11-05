@@ -8,11 +8,10 @@
         <p>Shadows are a popular effect in modern web design, and there are several different philosophies that govern their usage.</p>
         <p>As part of the personalization effort, the NIAID Design System allows users to choose between Flat Design (no shadows) or Material Design.</p>
         <h3>Flat Design</h3>
-        <p>Flat Design is the practice of designing web page without the use of shadows. Under this paradigm, users rely on color predominately to determine the importance of web components and which areas of the page require their attention.</p>
-        {# Examples of Flat Design #}
+        <p>Flat Design is the practice of designing web pages without the use of shadows. Under this paradigm, users rely predominately on color to determine the importance of web components and which areas of the page require their attention.</p>
         <h3>Material Design</h3>
-        <p><a href="https://material.io/">Material Design</a> by Google treats web components, such as buttons, cards, and images, as surfaces. Material Design creates a visual heirachy through the use of light and shadowing, where elements of greater importance appear closer or have a higher "elevation" than other elements. Not only does this strategy provide visual interest by adding a 3D effect to the design, it also directs users focus to the elements of the page that are most important or in need of attention at any given time.</p>
-        <p>In order to create uniformity, the Material Design system has <a href="https://material.io/design/environment/elevation.html">documented each web components' elevation</a>, or its positioned relative to other components. These elevations lie on a scale from zero (flat) to 24. The following graphic from the Material Design documentation shows some of these elevations:</p>
+        <p><a href="https://material.io/">Material Design</a> by Google treats web components, such as buttons, cards, and images, as surfaces. Material Design creates a visual hierachy through the use of light and shadowing, where elements of greater importance appear closer or have a higher "elevation" than other elements. Not only does this strategy provide visual interest by adding a 3D effect to the design, it also directs users focus to the elements of the page that are most important or in need of attention at any given time.</p>
+        <p>In order to create uniformity, the Material Design system has <a href="https://material.io/design/environment/elevation.html">documented each web components' elevation</a>, or its position relative to other components. These elevations lie on a scale from zero (flat) to 24. The following graphic from the Material Design documentation shows some of these elevations:</p>
 
         {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
             {
@@ -23,8 +22,6 @@
                 "component_media_lightbox": "yes"
             }
         %}
-
-        {# Examples of MD #}
 
         {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
             {% block block_content %}

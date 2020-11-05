@@ -342,7 +342,7 @@
                             
 <div class="layouts-nds layouts--body layouts--body--no-vertical-padding">
                             <h1 id="main-content">Getting Started</h1>
-                        <p>Thank you for your interest in using the NIAID Design System. This page contains information on how to get started using NDS for your project. In addition to technical installation steps, we also provide design files to jump start your designs and bundles for our supported fonts.</p>
+                        <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project. In addition to technical installation steps, we provide design files to jump start your designs and bundles of our supported fonts.</p>
                         <p><a href="/components/index.html">NDS components</a> can be used simply by including the global NDS CSS and JS files in your website. If you wish to use NDS components without making a Drupal or Static site (as outlined below), download and reference the global NDS CSS and JS files here:</p>
                         
 <div class="block--files ">
@@ -397,7 +397,7 @@
                         
 <div id="section-static-website" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Building a Static Website</h2>
-        <p>With NDS, building a static website is incredibly quick and easy. While you may use any framework, NDS encourages the use Pattern Lab for its Atomic Design benefits and organizational advantages. The following steps will detail how to create a Pattern Lab instance to manage your static website.</p>
+        <p>With NDS, building a static website is incredibly quick and easy. While you may use any framework, NDS encourages the use of Pattern Lab for its Atomic Design benefits and organizational advantages. The following steps will detail how to create a Pattern Lab instance to manage your static website.</p>
         <h3>Initialization</h3>
         <p class="step">1. Download the Static Website Package:</p>
         <p>
@@ -495,7 +495,7 @@
             <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>
             <li>If using an NDS-based navigation element, use the "navigationPrimaryActiveLink" parameter to add active page styling.</li>
         </ul>
-        <p>You may also add your own parameters for use in your custom patterns.</p>
+        <p>You may also add your own parameters for use in custom patterns.</p>
 
         <p class="step">3. Configure Gulp Paths to Your Production Pages</p>
         <p>Once your 06-dist/ directory is setup, compile Pattern Lab. Next, open your gulpfile.js, and find the "buildPaths" variable declaration. For every page you want to deploy, add a new object. For pageName, add the name of the folder/file for that page in 06-dist/. For target_dest, specify the ultimate path you want that page to file under.</p>
@@ -538,7 +538,7 @@
             <li>Responsive design support for mobile and tablet experiences.</li>
         </ul>
         <h3>Downloading &amp; Installing NDS Drupal Theme</h3>
-        <p>Download &amp; Unzip the NDS Drupal Theme Folder:</p>
+        <p>Download and unzip the NDS Drupal Theme Folder:</p>
         <p>
             
 <a href="../../assets/nds-drupal-theme.zip" class="button-nds button--icon waves-effect waves-light " download>
@@ -547,43 +547,56 @@
 <i class="icon-nds icon--default fal fa-download "></i>
             <span class="button--icon__text">Download NDS Drupal Theme</span>
     </a>        </p>
-        <p>Install as any other Drupal Contributed Theme. For more information about installing a Contributed theme, please visit the <a href="https://www.drupal.org/docs/extending-drupal/installing-themes">Drupal documentation site.</a></p>
+        <p>Install as any other Drupal Contributed Theme. For more information about installing a contributed theme, please visit the <a href="https://www.drupal.org/docs/extending-drupal/installing-themes">Drupal documentation site.</a></p>
 
         <h3>Drupal Theme Configuration</h3>
-        <p>Configure Drupal theme settings by navigating: Administration > Appearance > Settings > NDS Drupal Theme</p>
+        <p>Configure Drupal theme settings by navigating: Administration > Appearance > Settings > NDS Drupal Theme. Select from the provided theme options.</p>
         <ul>
-        <li>For Logo <ul>
-        <li>Select Product Identity and fill Out Top Field - For example NIAID </li>
-        <li>Select Product Identity and fill out Bottom Field - For example Design System</li>
-        </ul>
-        </li>
-        <li>Font Headings <ul>
-        <li>Select one from the available options </li>
-        </ul>
-        </li>
-        <li>Body Headings <ul>
-        <li>Select one from the available options </li>
-        </ul>
-        </li>
-        <li>Shadows <ul>
-        <li>Pick either flat or shadows </li>
-        </ul>
-        </li>
-        <li>Corners <ul>
-        <li>Select one from the available options </li>
-        </ul>
-        </li>
-        <li>Website Colors: <ul>
-        <li>Select website base theme color.</li>
-        </ul>
-        </li>
+            <li>Product Identity
+                <ul>
+                    <li>Select Product Identity and fill out Top Field. - For example, NIAID </li>
+                    <li>Select Product Identity and fill out Bottom Field. - For example, Design System</li>
+                </ul>
+            </li>
+            <li>Font Headings
+                <ul>
+                    <li>Roboto</li>
+                    <li>Public Sans</li>
+                    <li>Merriweather</li>
+                    <li>Martel</li>
+                </ul>
+            </li>
+            <li>Body Headings
+                <ul>
+                    <li>Roboto</li>
+                    <li>Public Sans</li>
+                </ul>
+            </li>
+            <li>Shadows
+                <ul>
+                    <li>Flat</li>
+                    <li>Material (Shadows)</li>
+                </ul>
+            </li>
+            <li>Corners
+                <ul>
+                    <li>Sharp</li>
+                    <li>Semi-Rounded</li>
+                    <li>Fully-Rounded</li>
+                </ul>
+            </li>
+            <li>Colors
+                <ul>
+                    <li>Select from one of the three available theme palettes.</li>
+                </ul>
+            </li>
         </ul>
         <h3 id="menus">Menus</h3>
-        <p>In NDS Drupal Theme, primary menu is right now hardcoaded and implemented using NIAID Design System component. Inorder to modify this menu, please place the menu block on Primary Menu region and uncomment the  on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig.</p>
+        <p>In NDS Drupal Theme, the primary menu is currently hard-coded and implemented using the NIAID Design System component. In order to modify this menu, please place the menu block on Primary Menu region and uncomment the  on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig.</p>
     </div>                        
 <div id="section-working-with-nds" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Working with NDS</h2>
-        <p>Whether you are building a Static site or Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. For Drupal-based projects, the _patterns/ folder is located under the ./nds directory. If custom components, style rules, or functionality are needed, <strong>do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, place them in the appropriate atomic folders outside of the 00-nds directory.</p>
+        <p>Whether you are building a static site or a Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. For Drupal-based projects, the _patterns/ folder is located under the ./nds directory. If custom components, style rules, or functionality are needed, <strong>do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, place them in the appropriate atomic folders outside of the 00-nds directory.</p>
         
     
 
@@ -607,7 +620,7 @@
     </div>
 </div>
         <p>The global project CSS rules can be found in the css/ directory in source/. The global/ folder is similar to the 00-nds/ folder in that custom changes should not occur within the directory. Instead, make edits in the overrides/ directory. Here, you can create new files and write custom style rules.</p>
-        <p>For both Static and Drupal-based websites, the CSS and JS will need to be compiled before it is reflected on the site. Run the following commands depending on your project type:</p>
+        <p>For both static and Drupal-based websites, the CSS and JS will need to be compiled before it is reflected on the site. Run the following commands depending on your project type:</p>
         <p><strong>Static Websites:</strong></p>
         <code>gulp</code><br>
         <p><strong>Drupal Websites:</strong></p>

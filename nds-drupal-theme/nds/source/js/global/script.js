@@ -95,9 +95,7 @@
   function initLinkExternal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $('a:not(:has(img))').each(function () {
-      var varText = $(this).text();
-
-      if (varText) {
+      if ($(this).text()) {
         var url = $(this).attr('href');
         var hostName = this.hostname;
 
@@ -279,6 +277,66 @@
 })(jQuery);
 
 (function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.parallax').length) {
+      $('.parallax').parallax();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initNavigationLocal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.navigation--local').length) {
+      $('.navigation--local__group__label', context).keypress(function (e) {
+        if (e.which == 13) {
+          $(this).click();
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationLocal = {
+        attach: function attach(context) {
+          $(".page", context).once('nds-local-navigation').each(function () {
+            initNavigationLocal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationLocal();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initNavigationDrawer() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     var wWidth = $(window).width();
@@ -337,66 +395,6 @@
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationDrawer();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initNavigationLocal() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.navigation--local').length) {
-      $('.navigation--local__group__label', context).keypress(function (e) {
-        if (e.which == 13) {
-          $(this).click();
-        }
-      });
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationLocal = {
-        attach: function attach(context) {
-          $(".page", context).once('nds-local-navigation').each(function () {
-            initNavigationLocal(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationLocal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initBlockHero() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.parallax').length) {
-      $('.parallax').parallax();
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
-        attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initBlockHero();
     });
   }
 })(jQuery);

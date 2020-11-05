@@ -1,8 +1,7 @@
 (function($) {
     function initLinkExternal(context = document) {
         $('a:not(:has(img))').each(function() {
-            var varText = $(this).text();
-            if (varText) {
+            if ($(this).text()) {
                 var url = $(this).attr('href');
                 var hostName = this.hostname;
                 if (url && hostName !== location.hostname) {

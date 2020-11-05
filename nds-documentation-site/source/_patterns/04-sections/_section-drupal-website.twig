@@ -14,7 +14,7 @@
             <li>Responsive design support for mobile and tablet experiences.</li>
         </ul>
         <h3>Downloading &amp; Installing NDS Drupal Theme</h3>
-        <p>Download &amp; Unzip the NDS Drupal Theme Folder:</p>
+        <p>Download and unzip the NDS Drupal Theme Folder:</p>
         <p>
             {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                 {
@@ -25,38 +25,51 @@
                 }
             %}
         </p>
-        <p>Install as any other Drupal Contributed Theme. For more information about installing a Contributed theme, please visit the <a href="https://www.drupal.org/docs/extending-drupal/installing-themes">Drupal documentation site.</a></p>
+        <p>Install as any other Drupal Contributed Theme. For more information about installing a contributed theme, please visit the <a href="https://www.drupal.org/docs/extending-drupal/installing-themes">Drupal documentation site.</a></p>
 
         <h3>Drupal Theme Configuration</h3>
-        <p>Configure Drupal theme settings by navigating: Administration > Appearance > Settings > NDS Drupal Theme</p>
+        <p>Configure Drupal theme settings by navigating: Administration > Appearance > Settings > NDS Drupal Theme. Select from the provided theme options.</p>
         <ul>
-        <li>For Logo <ul>
-        <li>Select Product Identity and fill Out Top Field - For example NIAID </li>
-        <li>Select Product Identity and fill out Bottom Field - For example Design System</li>
-        </ul>
-        </li>
-        <li>Font Headings <ul>
-        <li>Select one from the available options </li>
-        </ul>
-        </li>
-        <li>Body Headings <ul>
-        <li>Select one from the available options </li>
-        </ul>
-        </li>
-        <li>Shadows <ul>
-        <li>Pick either flat or shadows </li>
-        </ul>
-        </li>
-        <li>Corners <ul>
-        <li>Select one from the available options </li>
-        </ul>
-        </li>
-        <li>Website Colors: <ul>
-        <li>Select website base theme color.</li>
-        </ul>
-        </li>
+            <li>Product Identity
+                <ul>
+                    <li>Select Product Identity and fill out Top Field. - For example, NIAID </li>
+                    <li>Select Product Identity and fill out Bottom Field. - For example, Design System</li>
+                </ul>
+            </li>
+            <li>Font Headings
+                <ul>
+                    <li>Roboto</li>
+                    <li>Public Sans</li>
+                    <li>Merriweather</li>
+                    <li>Martel</li>
+                </ul>
+            </li>
+            <li>Body Headings
+                <ul>
+                    <li>Roboto</li>
+                    <li>Public Sans</li>
+                </ul>
+            </li>
+            <li>Shadows
+                <ul>
+                    <li>Flat</li>
+                    <li>Material (Shadows)</li>
+                </ul>
+            </li>
+            <li>Corners
+                <ul>
+                    <li>Sharp</li>
+                    <li>Semi-Rounded</li>
+                    <li>Fully-Rounded</li>
+                </ul>
+            </li>
+            <li>Colors
+                <ul>
+                    <li>Select from one of the three available theme palettes.</li>
+                </ul>
+            </li>
         </ul>
         <h3 id="menus">Menus</h3>
-        <p>In NDS Drupal Theme, primary menu is right now hardcoaded and implemented using NIAID Design System component. Inorder to modify this menu, please place the menu block on Primary Menu region and uncomment the {{ page.primary_meneu }} on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig.</p>
+        <p>In NDS Drupal Theme, the primary menu is currently hard-coded and implemented using the NIAID Design System component. In order to modify this menu, please place the menu block on Primary Menu region and uncomment the {{ page.primary_meneu }} on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig.</p>
     {% endblock %}
 {% endembed %}

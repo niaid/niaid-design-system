@@ -5,7 +5,7 @@
 {
     margin-top: 1em; margin-bottom: 1em;
 }
-.views-field-search-api-excerpt strong{
+.views-field-search-api-excerpt strong {
     background-color: #fff1d2;
 }
 .block--whats-new__row__col .view-header {
@@ -29,6 +29,9 @@
 }
 
 #toolbar-item-administration-tray {
+    ul, ol, li, p {
+        max-width: none;
+    }
     a {
         @include no-visit-style(#565656);
     }
@@ -68,4 +71,4 @@
         }
     }
 }
-/*****END MOVE TO RSC************/
+
