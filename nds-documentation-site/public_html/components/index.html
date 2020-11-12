@@ -517,9 +517,10 @@
             <h3>Buttons</h3>
 
         <h4>Default Button</h4>
-        <p>There are three button styles for each Color Theme option: Primary, Secondary, and Tertiary.</p>
+        <p>There are three button styles for each Color Theme option: Primary, Secondary, and Tertiary. In general, buttons are used for actions that occur on the page, while links take users from one page to another. Depending on the importance of a link, you may decide to style it as a button to make it stand out more.</p>
         <h5>Pattern Usage</h5>
-        <p>To use one of these styles, pass the "button_default_type" parameter the desired style ("primary", "secondary" or "tertiary").</p>
+        <p>The Default Button pattern supports both buttons and links. Links are created automatically if the button_default_href attribute is passed. If omitted, the resultant output will be a button element.</p>
+        <p>To use one of the styles below, pass the "button_default_type" parameter the desired style ("primary", "secondary" or "tertiary").</p>
         <p>These button styles can also be applied to other button components by passing the desired classes (i.e. button--primary) to the pattern. See below for examples of using various button styles on other button components.</p>
         
 <div class="component-nds component--snippet  ">
@@ -1670,6 +1671,7 @@ type="text" id="text-example" placeholder="Enter text here...">
 
 <div id="section-components-atoms-links" class="component-nds component--scrollspy-section scrollspy section ">
             <h3>Links</h3>
+        <p>Links are used to take website users from page to page. NDS uses a bottom-border instead of an underline to make links look more elegant.</p>
         <h4>Default Link</h4>
         
 <div class="component-nds component--snippet  ">
@@ -2248,6 +2250,21 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Alert Block</h4>
+        <p>Alerts are used to display important, need to know information to site users. NDS offers for alert severity blocks. Alerts are for high priority only and must be for immediate notification. Only one alert can show at any time.</p>
+        <p>Examples of Alerts include:</p>
+        <ul>
+            <li>System outages</li>
+            <li>Water outages/building closures</li>
+            <li>Active shooter</li>
+            <li>Day of system outage</li>
+        </ul>
+        <p>Alert severity standards are defined below:</p>
+        <ul>
+            <li>Severity One (Red): </li>
+            <li>Severity Two (Orange): </li>
+            <li>Severity Three (Yellow): </li>
+            <li>Severity Four (Green): </li>
+        </ul>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -2321,6 +2338,13 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Status Message Block</h4>
+        <p>Status messages are used to convery important information to users. There are four types of status messages - Success, Information, Warning, and Error:
+        <ul>
+            <li>Success - Used to indicate a user has completed an important step or call to action.</li>
+            <li>Information - Used to call out an important snippet of information a user could find useful at-a-glance.</li>
+            <li>Warning - Used to slow a reader down if skimming through the content. Indicates the user may need to take action before moving on.</li>
+            <li>Error - Used in rare cases where a user should stop reading or moving forward and take additional action.</li>
+        </ul>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -2384,6 +2408,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Header Block</h4>
+        <p>The Header Block component provides users with the ability to optionally include components above and below the main heading (h1). A typical use case for this pattern is including breadcrumbs and/or a subheading for the page.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -2412,24 +2437,24 @@ type="text" id="text-example" placeholder="Enter text here...">
 <div class="block-nds block--share ">
             <div class="block--share__wrapper">
             
-<a href="#"  class="button-nds button--share button--share--facebook-f" >
+<a href="#"  class="button-nds button--share button--share--facebook" aria-label="Share on Facebook" >
     
 
-<i class="icon-nds icon--default fab fa- "></i>
+<i class="icon-nds icon--default fab fa-facebook-f "></i>
 </a>        </div>
             <div class="block--share__wrapper">
             
-<a href="#"  class="button-nds button--share button--share--twitter" >
+<a href="#"  class="button-nds button--share button--share--twitter" aria-label="Share on Twitter" >
     
 
-<i class="icon-nds icon--default fab fa- "></i>
+<i class="icon-nds icon--default fab fa-twitter "></i>
 </a>        </div>
             <div class="block--share__wrapper">
             
-<a href="#"  class="button-nds button--share button--share--linkedin-in" >
+<a href="#"  class="button-nds button--share button--share--linkedin" aria-label="Share on Linkedin" >
     
 
-<i class="icon-nds icon--default fab fa- "></i>
+<i class="icon-nds icon--default fab fa-linkedin-in "></i>
 </a>        </div>
     </div>    </div>            
                 </div>
@@ -2458,24 +2483,24 @@ type="text" id="text-example" placeholder="Enter text here...">
 <div class="block-nds block--share ">
             <div class="block--share__wrapper">
             
-<a href="#"  class="button-nds button--share button--share--facebook-f" >
+<a href="#"  class="button-nds button--share button--share--facebook" aria-label="Share on Facebook" >
     
 
-<i class="icon-nds icon--default fab fa- "></i>
+<i class="icon-nds icon--default fab fa-facebook-f "></i>
 </a>        </div>
             <div class="block--share__wrapper">
             
-<a href="#"  class="button-nds button--share button--share--twitter" >
+<a href="#"  class="button-nds button--share button--share--twitter" aria-label="Share on Twitter" >
     
 
-<i class="icon-nds icon--default fab fa- "></i>
+<i class="icon-nds icon--default fab fa-twitter "></i>
 </a>        </div>
             <div class="block--share__wrapper">
             
-<a href="#"  class="button-nds button--share button--share--linkedin-in" >
+<a href="#"  class="button-nds button--share button--share--linkedin" aria-label="Share on Linkedin" >
     
 
-<i class="icon-nds icon--default fab fa- "></i>
+<i class="icon-nds icon--default fab fa-linkedin-in "></i>
 </a>        </div>
     </div>    </div>            
                 </pre>
@@ -2493,6 +2518,11 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Hero Block</h4>
+        <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a Parallax effect courtest of the Materialize library.</p>
+        <p>When selecting imagery for the hero, it is recommended to choose images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
+        <p>The Hero Block pattern optionally includes the abiliity to add breadcrumbs to the top.</p>
+        <h5>Pattern Usage</h5>
+        <p>The Hero Block pattern requires users to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -2508,9 +2538,9 @@ type="text" id="text-example" placeholder="Enter text here...">
 <img class="image-nds image--default " src="../assets/michael-longmire-L9EV3OogLh0-unsplash.jpg" alt=""
                         />    
                             </div>
-            <div class="block--hero__content__breadcrumbs row">
-                <div class="col-xl-12">
-                            
+                            <div class="block--hero__content__breadcrumbs row">
+                    <div class="col-xl-12">
+                                
 
 <div class="navigation-nds navigation--breadcrumbs ">
     <p>
@@ -2526,82 +2556,49 @@ type="text" id="text-example" placeholder="Enter text here...">
                 &ensp;
                                 <a href="#">Level 3</a>                        </p>
 </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>            
-                </div>
-                        <div class="component--snippet__block__code__snippet">
-                <pre>
-                                    
-
-<div id="block--hero" class="block-nds block--hero d-block">
-    <div class="block--hero__content">
-        <div class="parallax-container ">
-            <div class="parallax ">
-                                            
-<img class="image-nds image--default " src="../assets/michael-longmire-L9EV3OogLh0-unsplash.jpg" alt=""
-                        />    
-                            </div>
-            <div class="block--hero__content__breadcrumbs row">
-                <div class="col-xl-12">
-                            
-
-<div class="navigation-nds navigation--breadcrumbs ">
-    <p>
-                    <a href="#">Level 1</a>                            &ensp;
-                
-
-<i class="icon-nds icon--default fal fa-chevron-right "></i>
-                &ensp;
-                                <a href="#">Level 2</a>                            &ensp;
-                
-
-<i class="icon-nds icon--default fal fa-chevron-right "></i>
-                &ensp;
-                                <a href="#">Level 3</a>                        </p>
-</div>
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>            
-                </pre>
-            </div>
-        </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        
-<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
     
-
-<i class="icon-nds icon--default fal fa-clipboard-list "></i>
-            <span class="button--icon__text">Copy to Clipboard</span>
-    </button>    </div>
-</div>
-        <h4>Mission Statement Block</h4>
-        
-<div class="component-nds component--snippet  ">
-    <div class="component--snippet__block">
-        <div class="component--snippet__block__code">
-                            <div class="component--snippet__block__code__rendered">
-                                    
-<div id="mission" class="block-nds block--mission-statement ">
-    <p class="block--mission-statement__header">Mission</p>
-    <h1 class="block--mission-statement__text">Sample Mission Statement Text</h1>
-</div>
-            
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>            
                 </div>
                         <div class="component--snippet__block__code__snippet">
                 <pre>
                                     
-<div id="mission" class="block-nds block--mission-statement ">
-    <p class="block--mission-statement__header">Mission</p>
-    <h1 class="block--mission-statement__text">Sample Mission Statement Text</h1>
+
+<div id="block--hero" class="block-nds block--hero d-block">
+    <div class="block--hero__content">
+        <div class="parallax-container ">
+            <div class="parallax ">
+                                            
+<img class="image-nds image--default " src="../assets/michael-longmire-L9EV3OogLh0-unsplash.jpg" alt=""
+                        />    
+                            </div>
+                            <div class="block--hero__content__breadcrumbs row">
+                    <div class="col-xl-12">
+                                
+
+<div class="navigation-nds navigation--breadcrumbs ">
+    <p>
+                    <a href="#">Level 1</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fal fa-chevron-right "></i>
+                &ensp;
+                                <a href="#">Level 2</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fal fa-chevron-right "></i>
+                &ensp;
+                                <a href="#">Level 3</a>                        </p>
 </div>
-            
+    
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div>            
                 </pre>
             </div>
         </div>
@@ -2617,6 +2614,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Share Block</h4>
+        <p>The Share Block component is a collection</p>
         
 <div class="component-nds component--snippet component--snippet--block-share ">
     <div class="component--snippet__block">

@@ -21,9 +21,10 @@
         <h3>Buttons</h3>
 
         <h4>Default Button</h4>
-        <p>There are three button styles for each Color Theme option: Primary, Secondary, and Tertiary.</p>
+        <p>There are three button styles for each Color Theme option: Primary, Secondary, and Tertiary. In general, buttons are used for actions that occur on the page, while links take users from one page to another. Depending on the importance of a link, you may decide to style it as a button to make it stand out more.</p>
         <h5>Pattern Usage</h5>
-        <p>To use one of these styles, pass the "button_default_type" parameter the desired style ("primary", "secondary" or "tertiary").</p>
+        <p>The Default Button pattern supports both buttons and links. Links are created automatically if the button_default_href attribute is passed. If omitted, the resultant output will be a button element.</p>
+        <p>To use one of the styles below, pass the "button_default_type" parameter the desired style ("primary", "secondary" or "tertiary").</p>
         <p>These button styles can also be applied to other button components by passing the desired classes (i.e. button--primary) to the pattern. See below for examples of using various button styles on other button components.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
@@ -409,6 +410,7 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>Links</h3>
+        <p>Links are used to take website users from page to page. NDS uses a bottom-border instead of an underline to make links look more elegant.</p>
         <h4>Default Link</h4>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}

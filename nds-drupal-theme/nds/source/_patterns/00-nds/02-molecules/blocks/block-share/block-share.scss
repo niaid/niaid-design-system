@@ -4,16 +4,16 @@
     padding: 0;
     background: transparent;
     margin: 0;
-    margin-right: .5rem;
     border: 0;
     position: absolute;
+    top: 1rem;
     right: 0;
     &__wrapper {
         width: 100%;
         .button--share {
             height: 1.75rem;
             width: 1.75rem;
-            margin: 0 .5rem .75rem 0;
+            margin: 0 0 .75rem 0;
         }
     }
 }

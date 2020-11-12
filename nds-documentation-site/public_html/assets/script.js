@@ -305,38 +305,6 @@
 })(jQuery);
 
 (function ($) {
-  function initNavigationLocal() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.navigation--local').length) {
-      $('.navigation--local__group__label', context).keypress(function (e) {
-        if (e.which == 13) {
-          $(this).click();
-        }
-      });
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationLocal = {
-        attach: function attach(context) {
-          $(".page", context).once('nds-local-navigation').each(function () {
-            initNavigationLocal(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationLocal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
   function initNavigationDrawer() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     var wWidth = $(window).width();
@@ -395,6 +363,38 @@
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationDrawer();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initNavigationLocal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.navigation--local').length) {
+      $('.navigation--local__group__label', context).keypress(function (e) {
+        if (e.which == 13) {
+          $(this).click();
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationLocal = {
+        attach: function attach(context) {
+          $(".page", context).once('nds-local-navigation').each(function () {
+            initNavigationLocal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationLocal();
     });
   }
 })(jQuery);

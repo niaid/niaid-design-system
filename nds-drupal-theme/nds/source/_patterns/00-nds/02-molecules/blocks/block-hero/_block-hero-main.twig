@@ -20,6 +20,7 @@
 {% set block_hero_blur = block_hero_blur|default() %}
 {% set block_hero_width = block_hero_width|default() %}
 {% set block_hero_image = block("block_hero_image") %}
+{% set block_hero_breadcrumbs = block("block_hero_breadcrumbs") %}
 
 <div id="block--hero" class="block-nds block--hero {{ block_hero_classes }}">
     <div class="block--hero__content">
@@ -29,11 +30,13 @@
                     {{ block_hero_image|raw }}
                 {% endif %}
             </div>
-            <div class="block--hero__content__breadcrumbs row">
-                <div class="col-xl-12">
-                    {% block block_hero_breadcrumbs %}{% endblock %}
+            {% if block_hero_breadcrumbs is not empty %}
+                <div class="block--hero__content__breadcrumbs row">
+                    <div class="col-xl-12">
+                        {{ block_hero_breadcrumbs|raw }}
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
     </div>
 </div>

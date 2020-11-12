@@ -34,6 +34,21 @@
         {% endembed %}
 
         <h4>Alert Block</h4>
+        <p>Alerts are used to display important, need to know information to site users. NDS offers for alert severity blocks. Alerts are for high priority only and must be for immediate notification. Only one alert can show at any time.</p>
+        <p>Examples of Alerts include:</p>
+        <ul>
+            <li>System outages</li>
+            <li>Water outages/building closures</li>
+            <li>Active shooter</li>
+            <li>Day of system outage</li>
+        </ul>
+        <p>Alert severity standards are defined below:</p>
+        <ul>
+            <li>Severity One (Red): </li>
+            <li>Severity Two (Orange): </li>
+            <li>Severity Three (Yellow): </li>
+            <li>Severity Four (Green): </li>
+        </ul>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-alert/demo/block-alert.twig" %}
@@ -41,6 +56,13 @@
         {% endembed %}
 
         <h4>Status Message Block</h4>
+        <p>Status messages are used to convery important information to users. There are four types of status messages - Success, Information, Warning, and Error:
+        <ul>
+            <li>Success - Used to indicate a user has completed an important step or call to action.</li>
+            <li>Information - Used to call out an important snippet of information a user could find useful at-a-glance.</li>
+            <li>Warning - Used to slow a reader down if skimming through the content. Indicates the user may need to take action before moving on.</li>
+            <li>Error - Used in rare cases where a user should stop reading or moving forward and take additional action.</li>
+        </ul>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-status-message/demo/block-status-message.twig" %}
@@ -48,6 +70,7 @@
         {% endembed %}
 
         <h4>Header Block</h4>
+        <p>The Header Block component provides users with the ability to optionally include components above and below the main heading (h1). A typical use case for this pattern is including breadcrumbs and/or a subheading for the page.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-header/demo/block-header.twig" %}
@@ -55,20 +78,19 @@
         {% endembed %}
 
         <h4>Hero Block</h4>
+        <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a Parallax effect courtest of the Materialize library.</p>
+        <p>When selecting imagery for the hero, it is recommended to choose images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
+        <p>The Hero Block pattern optionally includes the abiliity to add breadcrumbs to the top.</p>
+        <h5>Pattern Usage</h5>
+        <p>The Hero Block pattern requires users to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-hero/demo/block-hero.twig" %}
             {% endblock %}
         {% endembed %}
 
-        <h4>Mission Statement Block</h4>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
-            {% block component_snippet_code %}
-                {% include "@nds/02-molecules/blocks/block-mission-statement/demo/block-mission-statement.twig" %}
-            {% endblock %}
-        {% endembed %}
-
         <h4>Share Block</h4>
+        <p>The Share Block component is a collection</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_classes": "component--snippet--block-share"
