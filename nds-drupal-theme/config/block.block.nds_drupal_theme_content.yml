@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - classy
+id: nds_drupal_theme_page_content
+theme: nds_drupal_theme
+region: content
+weight: 0
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
