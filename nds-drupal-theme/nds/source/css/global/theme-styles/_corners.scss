@@ -39,6 +39,13 @@
             .select2-container {
                 .select2-selection  {
                     border-radius: $corner-radius;
+                    &.select2-selection--multiple {
+                        .select2-selection__rendered {
+                            .select2-selection__choice {
+                                border-radius: $corner-radius * .75;
+                            }
+                        }
+                    }
                 }
                 .select2-selection__choice {
                     border-radius: $corner-radius * .75;
@@ -156,17 +163,38 @@
     }
     .input-nds {
         border-radius: 100rem;
+        &.input--text {
+            padding: .5rem 1.5rem;
+        }
         &.input--select {
             .select2-container {
                 .select2-selection  {
-                    border-radius: $corner-radius;
+                    padding: .625rem 4rem .625rem 1.5rem;
+                    border-radius: 100rem;
+                    &.select2-selection--multiple {
+                        .select2-selection__rendered {
+                            .select2-selection__choice {
+                                border-radius: 100rem;
+                            }
+                        }
+                    }
                 }
                 .select2-selection__choice {
-                    border-radius: $corner-radius * .75;
+                    border-radius: 100rem;
                 }
                 &.selection-made {
+                    .select2-selection {
+                        &.select2-selection--single {
+                            padding: .25rem 4rem .25rem .25rem;
+                        }
+                    }
                     .select2-selection__rendered {
-                        border-radius: $corner-radius * .75;
+                        border-radius: 100rem;
+                    }
+                }
+                &.selection-made-multi {
+                    .select2-selection  {
+                        padding: .25rem 4rem .25rem .25rem;
                     }
                 }
             }
@@ -177,6 +205,14 @@
                     border-radius: $corner-radius;
                 }
             }
+        }
+    }
+    .input--text--icon {
+        .icon--default {
+            left: 1.25rem;
+        }
+        .input--text {
+            padding-left: 3rem;
         }
     }
     table {

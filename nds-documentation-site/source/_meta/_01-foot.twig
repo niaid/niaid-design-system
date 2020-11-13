@@ -3,6 +3,8 @@
             {{ patternLabFoot | raw }}
         {% endif %}
 
+        <script src="{{ jsPath }}custom/stickybits.min.js"></script>
+
         {% if jsIncludes.jquery %}<script src="{{ jsPath }}libraries/jquery/jquery.min.js"></script>{% endif %}
         {% if jsIncludes.select2 %}<script src="{{ jsPath }}libraries/select2/select2.full.min.js"></script>{% endif %}
         {% if jsIncludes.materialize %}<script src="{{ jsPath }}libraries/materialize/materialize.min.js"></script>{% endif %}

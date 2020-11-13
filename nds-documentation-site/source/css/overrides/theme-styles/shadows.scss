@@ -17,4 +17,9 @@
             @include md-0dp;
         }
     }
+    .fixed-left {
+        .layouts--main__first {
+            border-right: 0;
+        }
+    }
 }
