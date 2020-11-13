@@ -152,7 +152,37 @@ $(document).ready(function () {
       initComponentSnippet();
     });
   }
-})(jQuery);
+})(jQuery); // Functionality for Sticky Local Nav, NOT IN USE
+// (function($) {
+//     function initComponentStickybits(context = document) {
+//         $(window).ready(function() {
+//             stickybits(".component--accordion", { useStickyClasses: true, stickyBitStickyOffset: 24 });
+//             const stickybitsInstancetoBeUpdated = stickybits(".component--accordion");
+//             window.addEventListener('resize', function() {
+//                 console.log('resize');
+//                 stickybitsInstancetoBeUpdated.update({ useStickyClasses: true, stickyBitStickyOffset: 24 });
+//             });
+//         });
+//     }
+//     if (typeof Drupal !== 'undefined') {
+//         // Define Drupal behavior.
+//         (function($, Drupal) {
+//             Drupal.behaviors.initComponentStickybits = {
+//                 attach: function(context) {
+//                     $('body', context).once('nds-component-stickybits').each(function() {
+//                         initComponentStickybits(context);
+//                     });
+//                 },
+//             };
+//         })(jQuery, Drupal);
+//     } else {
+//         // If Drupal isn't loaded, add JS for Pattern Lab.
+//         $(document).ready(function() {
+//             initComponentStickybits();
+//         });
+//     }
+// })(jQuery);
+
 
 (function ($) {
   function init_style_controls() {
@@ -245,37 +275,7 @@ $(document).ready(function () {
       }
     });
   }
-})(jQuery); // Functionality for Sticky Local Nav, NOT IN USE
-// (function($) {
-//     function initComponentStickybits(context = document) {
-//         $(window).ready(function() {
-//             stickybits(".component--accordion", { useStickyClasses: true, stickyBitStickyOffset: 24 });
-//             const stickybitsInstancetoBeUpdated = stickybits(".component--accordion");
-//             window.addEventListener('resize', function() {
-//                 console.log('resize');
-//                 stickybitsInstancetoBeUpdated.update({ useStickyClasses: true, stickyBitStickyOffset: 24 });
-//             });
-//         });
-//     }
-//     if (typeof Drupal !== 'undefined') {
-//         // Define Drupal behavior.
-//         (function($, Drupal) {
-//             Drupal.behaviors.initComponentStickybits = {
-//                 attach: function(context) {
-//                     $('body', context).once('nds-component-stickybits').each(function() {
-//                         initComponentStickybits(context);
-//                     });
-//                 },
-//             };
-//         })(jQuery, Drupal);
-//     } else {
-//         // If Drupal isn't loaded, add JS for Pattern Lab.
-//         $(document).ready(function() {
-//             initComponentStickybits();
-//         });
-//     }
-// })(jQuery);
-
+})(jQuery);
 
 (function ($) {
   function init_build_controls(context) {
@@ -969,6 +969,101 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
+  function initNavigationLocal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.navigation--local').length) {
+      $('.navigation--local__group__label', context).keypress(function (e) {
+        if (e.which == 13) {
+          $(this).click();
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationLocal = {
+        attach: function attach(context) {
+          $(".page", context).once('nds-local-navigation').each(function () {
+            initNavigationLocal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationLocal();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initNavigationDrawer() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var wWidth = $(window).width();
+    $("#global-mobile-menu").on('click', function () {
+      $('#main-navigation-mobile').addClass('drawer--open');
+      $('#main-navigation-mobile').siblings('.navigation--drawer--overlay').show();
+      $('.navigation--drawer__top__button-close').focus();
+      $('#main-navigation-mobile').find('a, button').each(function () {
+        $(this).attr('tabindex', '0');
+      });
+    });
+    $('.navigation--drawer--overlay').on('click', function () {
+      $(this).hide();
+      closeMenu();
+    });
+    $('.navigation--drawer__top__button-close').on('click', function () {
+      closeMenu();
+    });
+    $(window).resize(function () {
+      if (wWidth != $(this).width()) {
+        wWidth = $(this).width();
+        closeMenu();
+      }
+    }); // 508 Compliance Focus Helpers
+
+    $('.skip-to--top').on('focus', function () {
+      $('.navigation--drawer__top__button-close').focus();
+    });
+    $('.skip-to--back').on('focus', function () {
+      var focusable = $(".navigation--drawer__inner").find("a:visible, button:visible");
+      $(focusable[focusable.length - 1]).focus();
+    });
+  }
+
+  function closeMenu() {
+    $("#global-mobile-menu").focus();
+    $('#main-navigation-mobile').removeClass('drawer--open');
+    $('#main-navigation-mobile').siblings('.navigation--drawer--overlay').hide();
+    $('#main-navigation-mobile').find('a, button').each(function () {
+      $(this).attr('tabindex', '-1');
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationDrawer = {
+        attach: function attach(context) {
+          $('body', context).once('nds-navigation-drawer').each(function () {
+            initNavigationDrawer(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationDrawer();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initComponentLightbox() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -1045,101 +1140,6 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentModal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initNavigationDrawer() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var wWidth = $(window).width();
-    $("#global-mobile-menu").on('click', function () {
-      $('#main-navigation-mobile').addClass('drawer--open');
-      $('#main-navigation-mobile').siblings('.navigation--drawer--overlay').show();
-      $('.navigation--drawer__top__button-close').focus();
-      $('#main-navigation-mobile').find('a, button').each(function () {
-        $(this).attr('tabindex', '0');
-      });
-    });
-    $('.navigation--drawer--overlay').on('click', function () {
-      $(this).hide();
-      closeMenu();
-    });
-    $('.navigation--drawer__top__button-close').on('click', function () {
-      closeMenu();
-    });
-    $(window).resize(function () {
-      if (wWidth != $(this).width()) {
-        wWidth = $(this).width();
-        closeMenu();
-      }
-    }); // 508 Compliance Focus Helpers
-
-    $('.skip-to--top').on('focus', function () {
-      $('.navigation--drawer__top__button-close').focus();
-    });
-    $('.skip-to--back').on('focus', function () {
-      var focusable = $(".navigation--drawer__inner").find("a:visible, button:visible");
-      $(focusable[focusable.length - 1]).focus();
-    });
-  }
-
-  function closeMenu() {
-    $("#global-mobile-menu").focus();
-    $('#main-navigation-mobile').removeClass('drawer--open');
-    $('#main-navigation-mobile').siblings('.navigation--drawer--overlay').hide();
-    $('#main-navigation-mobile').find('a, button').each(function () {
-      $(this).attr('tabindex', '-1');
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationDrawer = {
-        attach: function attach(context) {
-          $('body', context).once('nds-navigation-drawer').each(function () {
-            initNavigationDrawer(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationDrawer();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initNavigationLocal() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.navigation--local').length) {
-      $('.navigation--local__group__label', context).keypress(function (e) {
-        if (e.which == 13) {
-          $(this).click();
-        }
-      });
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationLocal = {
-        attach: function attach(context) {
-          $(".page", context).once('nds-local-navigation').each(function () {
-            initNavigationLocal(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationLocal();
     });
   }
 })(jQuery);
