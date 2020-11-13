@@ -1,32 +1,34 @@
 (function($) {
     function initComponentModal(context = document) {
         if ($('.component--modal').length) {
-            const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-            const modal = document.querySelector('#getStartedModal');
-            const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
-            const focusableContent = modal.querySelectorAll(focusableElements);
-            const lastFocusableElement = focusableContent[focusableContent.length - 1];
+            let focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
-            document.addEventListener('keydown', function(e) {
-                let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-                if (!isTabPressed) {
-                    return;
-                }
-                if (e.shiftKey) {
-                    if (document.activeElement === firstFocusableElement) {
-                        lastFocusableElement.focus();
-                        e.preventDefault();
+            $('.component--modal').each(function() {
+                let firstFocusableElement = $(this).find(focusableElements)[0];
+                let focusableContent = $(this).find(focusableElements);
+                let lastFocusableElement = focusableContent[focusableContent.length - 1];
+
+                document.addEventListener('keydown', function(e) {
+                    let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+                    if (!isTabPressed) {
+                        return;
                     }
-                }
-                else {
-                    if (document.activeElement === lastFocusableElement) {
-                        firstFocusableElement.focus();
-                        e.preventDefault();
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusableElement) {
+                            lastFocusableElement.focus();
+                            e.preventDefault();
+                        }
                     }
-                }
+                    else {
+                        if (document.activeElement === lastFocusableElement) {
+                            firstFocusableElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                });
+
+                firstFocusableElement.focus();
             });
-
-            firstFocusableElement.focus();
         }
     }
 

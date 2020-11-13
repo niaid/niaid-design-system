@@ -805,6 +805,9 @@
     </button>    </div>
 </div>
         <h4>Floating Button</h4>
+        <p>In some instances, you may want to have a persistent button available to users at all times. For example, you may want a "Back to Top" button that returns users to the top of the page, or the color palette button on this site the allows for theme customizations. For these purposes, NDS provides the Floating Button pattern, which is fixed at the lower right of the screen. In order to provide more clarity about its function, the Floating Button expands on hover and focus to reveal button text.</p>
+        <h5>Pattern Usage</h5>
+        <p>The width of the Floating Button on hover and focus depends on the width of the text. Out of the box, the Floating Button pattern's width is configured to work for "Back to Top" text. You may change this text, but will also likely need to change the default width and the width on hover and focus.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -2614,7 +2617,9 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Share Block</h4>
-        <p>The Share Block component is a collection</p>
+        <p>The Share Block component is a collection of Share Buttons for various social media platforms.</p>
+        <h5>Pattern Usage</h5>
+        <p>The Share Block component uses a loop to render the Share Buttons. Pass data to the "block_share_data" parameter to generate each button.</p>
         
 <div class="component-nds component--snippet component--snippet--block-share ">
     <div class="component--snippet__block">
@@ -2686,6 +2691,7 @@ type="text" id="text-example" placeholder="Enter text here...">
     </button>    </div>
 </div>
         <h4>Was This Page Helpful? Block</h4>
+        <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in functionality, meaning users will need to add their own functions and input handling.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -2955,19 +2961,27 @@ type="text" id="text-example" placeholder="Enter text here...">
                             <div class="component--snippet__block__code__rendered">
                                     
 <div class="component--modal--trigger " data-toggle="modal" data-target="#testModal">
-    </div>
+            
+<button class="button-nds waves-effect waves-light button--secondary my-3" role="button" >Toggle Modal Window</button>    </div>
 
 <div class="component-nds component--modal modal " id="testModal" tabindex="-1" role="dialog" aria-labelledby="testModal" aria-hidden="true">
     <div class="component--modal__wrapper" role="document">
         <div class="component--modal__wrapper__content">
             <div class="component--modal__wrapper__content__header">
+                                    Modal Title
                                 <button type="button" class="component--modal__wrapper__content__header__close" data-dismiss="modal" aria-label="Close">
                     
 
 <i class="icon-nds icon--default far fa-times "></i>
                 </button>
             </div>
-                                </div>
+                            <div class="component--modal__wrapper__content__body">
+                    Modal Content
+                </div>
+                                        <div class="component--modal__wrapper__content__footer">
+                    Modal Footer
+                </div>
+                    </div>
     </div>
 </div>            
                 </div>
@@ -2975,19 +2989,27 @@ type="text" id="text-example" placeholder="Enter text here...">
                 <pre>
                                     
 <div class="component--modal--trigger " data-toggle="modal" data-target="#testModal">
-    </div>
+            
+<button class="button-nds waves-effect waves-light button--secondary my-3" role="button" >Toggle Modal Window</button>    </div>
 
 <div class="component-nds component--modal modal " id="testModal" tabindex="-1" role="dialog" aria-labelledby="testModal" aria-hidden="true">
     <div class="component--modal__wrapper" role="document">
         <div class="component--modal__wrapper__content">
             <div class="component--modal__wrapper__content__header">
+                                    Modal Title
                                 <button type="button" class="component--modal__wrapper__content__header__close" data-dismiss="modal" aria-label="Close">
                     
 
 <i class="icon-nds icon--default far fa-times "></i>
                 </button>
             </div>
-                                </div>
+                            <div class="component--modal__wrapper__content__body">
+                    Modal Content
+                </div>
+                                        <div class="component--modal__wrapper__content__footer">
+                    Modal Footer
+                </div>
+                    </div>
     </div>
 </div>            
                 </pre>

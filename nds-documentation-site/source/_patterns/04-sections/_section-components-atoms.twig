@@ -123,6 +123,9 @@
         {% endembed %}
 
         <h4>Floating Button</h4>
+        <p>In some instances, you may want to have a persistent button available to users at all times. For example, you may want a "Back to Top" button that returns users to the top of the page, or the color palette button on this site the allows for theme customizations. For these purposes, NDS provides the Floating Button pattern, which is fixed at the lower right of the screen. In order to provide more clarity about its function, the Floating Button expands on hover and focus to reveal button text.</p>
+        <h5>Pattern Usage</h5>
+        <p>The width of the Floating Button on hover and focus depends on the width of the text. Out of the box, the Floating Button pattern's width is configured to work for "Back to Top" text. You may change this text, but will also likely need to change the default width and the width on hover and focus.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/buttons/button-floating/demo/_button-floating.twig" %}

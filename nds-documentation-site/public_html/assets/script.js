@@ -258,30 +258,31 @@
 
     if ($('.component--modal').length) {
       var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-      var modal = document.querySelector('#getStartedModal');
-      var firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
-      var focusableContent = modal.querySelectorAll(focusableElements);
-      var lastFocusableElement = focusableContent[focusableContent.length - 1];
-      document.addEventListener('keydown', function (e) {
-        var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+      $('.component--modal').each(function () {
+        var firstFocusableElement = $(this).find(focusableElements)[0];
+        var focusableContent = $(this).find(focusableElements);
+        var lastFocusableElement = focusableContent[focusableContent.length - 1];
+        document.addEventListener('keydown', function (e) {
+          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
 
-        if (!isTabPressed) {
-          return;
-        }
+          if (!isTabPressed) {
+            return;
+          }
 
-        if (e.shiftKey) {
-          if (document.activeElement === firstFocusableElement) {
-            lastFocusableElement.focus();
-            e.preventDefault();
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
           }
-        } else {
-          if (document.activeElement === lastFocusableElement) {
-            firstFocusableElement.focus();
-            e.preventDefault();
-          }
-        }
+        });
+        firstFocusableElement.focus();
       });
-      firstFocusableElement.focus();
     }
   }
 

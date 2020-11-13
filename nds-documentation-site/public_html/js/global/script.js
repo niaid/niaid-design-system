@@ -941,6 +941,34 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.parallax').length) {
+      $('.parallax').parallax();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initComponentLightbox() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -974,30 +1002,31 @@ $(document).ready(function () {
 
     if ($('.component--modal').length) {
       var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-      var modal = document.querySelector('#getStartedModal');
-      var firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
-      var focusableContent = modal.querySelectorAll(focusableElements);
-      var lastFocusableElement = focusableContent[focusableContent.length - 1];
-      document.addEventListener('keydown', function (e) {
-        var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+      $('.component--modal').each(function () {
+        var firstFocusableElement = $(this).find(focusableElements)[0];
+        var focusableContent = $(this).find(focusableElements);
+        var lastFocusableElement = focusableContent[focusableContent.length - 1];
+        document.addEventListener('keydown', function (e) {
+          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
 
-        if (!isTabPressed) {
-          return;
-        }
+          if (!isTabPressed) {
+            return;
+          }
 
-        if (e.shiftKey) {
-          if (document.activeElement === firstFocusableElement) {
-            lastFocusableElement.focus();
-            e.preventDefault();
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
           }
-        } else {
-          if (document.activeElement === lastFocusableElement) {
-            firstFocusableElement.focus();
-            e.preventDefault();
-          }
-        }
+        });
+        firstFocusableElement.focus();
       });
-      firstFocusableElement.focus();
     }
   }
 
@@ -1016,34 +1045,6 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentModal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initBlockHero() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.parallax').length) {
-      $('.parallax').parallax();
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
-        attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initBlockHero();
     });
   }
 })(jQuery);
