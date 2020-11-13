@@ -90,7 +90,9 @@
         {% endembed %}
 
         <h4>Share Block</h4>
-        <p>The Share Block component is a collection</p>
+        <p>The Share Block component is a collection of Share Buttons for various social media platforms.</p>
+        <h5>Pattern Usage</h5>
+        <p>The Share Block component uses a loop to render the Share Buttons. Pass data to the "block_share_data" parameter to generate each button.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_classes": "component--snippet--block-share"
@@ -102,6 +104,7 @@
         {% endembed %}
 
         <h4>Was This Page Helpful? Block</h4>
+        <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in functionality, meaning users will need to add their own functions and input handling.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-wtph/demo/block-wtph.twig" %}

@@ -18,15 +18,15 @@
                     @include md-2dp;
                     @extend .hoverable;
                     position: absolute;
-                    height: 4rem;
-                    width: 4rem;
+                    height: 3rem;
+                    width: 3rem;
                     border-radius: 100% !important;
                     padding: 0;
                     color: $status-error !important;
                     background: $white !important;
                     border: .0625rem solid transparent !important;
-                    right: -2rem;
-                    top: -2rem;
+                    right: -1.5rem;
+                    top: -1.5rem;
                     &:hover,
                     &:focus,
                     &:active {

@@ -56,4 +56,10 @@
             color: $type-body;
         }
     }
+    .component--modal__wrapper__content__header__close {
+        height: 4rem;
+        width: 4rem;
+        right: -2rem;
+        top: -2rem;
+    }
 }
