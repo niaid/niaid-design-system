@@ -1,7 +1,12 @@
 {% set input_group_date_picker_classes = input_group_date_picker_classes|default() %}
 {% set input_group_date_picker_id = input_group_date_picker_id|default() %}
 {% set input_group_date_picker_label = input_group_date_picker_label|default() %}
+{% set input_group_date_picker_label_classes = input_group_date_picker_label_classes|default() %}
+{% set input_group_date_picker_tooltip = input_group_date_picker_tooltip|default() %}
 {% set input_group_date_picker_placeholder = input_group_date_picker_placeholder|default() %}
+{% set input_group_date_picker_name = input_group_date_picker_name|default() %}
+{% set input_group_date_picker_value = input_group_date_picker_value|default() %}
+{% set input_group_date_picker_tabindex = input_group_date_picker_tabindex|default() %}
 {% set input_group_date_picker_disabled = input_group_date_picker_disabled|default() %}
 {% set input_group_date_picker_readonly = input_group_date_picker_readonly|default() %}
 {% set input_group_date_picker_required = input_group_date_picker_required|default() %}
@@ -10,16 +15,21 @@
     {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
         {
             "input_label_id": input_group_date_picker_id,
-            "input_label_text": input_group_date_picker_label
+            "input_label_classes": input_group_date_picker_label_classes,
+            "input_label_text": input_group_date_picker_label,
+            "input_label_tooltip": input_group_date_picker_tooltip
         }
     %}
     {% include "@nds/01-atoms/input/input-date-picker/_input-date-picker-main.twig" with
         {
-            "input_group_date_picker_id": input_group_date_picker_id,
-            "input_group_date_picker_placeholder": input_group_date_picker_placeholder,
-            "input_group_date_picker_disabled": input_group_date_picker_disabled,
-            "input_group_date_picker_readonly": input_group_date_picker_readonly,
-            "input_group_date_picker_required": input_group_date_picker_required
+            "input_date_picker_id": input_group_date_picker_id,
+            "input_date_picker_placeholder": input_group_date_picker_placeholder,
+            "input_date_picker_name": input_group_date_picker_name,
+            "input_date_picker_value": input_group_date_picker_value,
+            "input_date_picker_tabindex": input_group_date_picker_tabindex,
+            "input_date_picker_disabled": input_group_date_picker_disabled,
+            "input_date_picker_readonly": input_group_date_picker_readonly,
+            "input_date_picker_required": input_group_date_picker_required
         }
     %}
 </div>

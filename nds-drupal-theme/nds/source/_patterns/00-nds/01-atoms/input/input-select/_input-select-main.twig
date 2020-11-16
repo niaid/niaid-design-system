@@ -3,7 +3,7 @@
 {% set input_select_icon = input_select_icon|default() %}
 {% set input_select_label = input_select_label|default() %}
 {% set input_select_placeholder = input_select_placeholder|default() %}
-{% set input_select_selected_at_all_times = input_select_selected_at_all_times|default(false) %}
+{% set input_select_always_selected = input_select_always_selected|default(false) %}
 {% set input_select_multiple = input_select_multiple|default(false) %}
 
 <div class="input-nds input--select {{ input_select_classes }}">
@@ -14,5 +14,5 @@
             "input_label_text": input_select_label
         }
     %}
-    <select nds-select="true" id="{{ input_select_id }}" class="input--select__field" data-placeholder="{{ input_select_placeholder }}"{% if input_select_multiple %} multiple=""{% endif %}{% if input_select_selected_at_all_times == "true" %} data-select-all-times="true"{% endif %}>{% block input_select_input %}{% endblock %}</select>
+    <select nds-select="true" id="{{ input_select_id }}" class="input--select__field" data-placeholder="{{ input_select_placeholder }}"{% if input_select_multiple %} multiple=""{% endif %}{% if input_select_always_selected == "true" %} data-select-all-times="true"{% endif %}>{% block input_select_input %}{% endblock %}</select>
 </div>

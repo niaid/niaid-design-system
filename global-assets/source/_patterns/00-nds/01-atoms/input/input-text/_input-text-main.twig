@@ -13,7 +13,7 @@
 {% set input_text_validation_message = input_text_validation_message|default() %}
 
 {% if input_text_icon is not empty %}<div class="input--text--icon">{% endif %}
-<input id="{{ input_text_id }}" class="input-nds input--text {{ input_text_classes }}"
+<input class="input-nds input--text {{ input_text_classes }}"
     {% include "@nds/01-atoms/input/input-attributes/_input-attributes-main.twig" with
         {
             "input_attributes_id": input_text_id,
@@ -21,7 +21,6 @@
             "input_attributes_placeholder": input_text_placeholder,
             "input_attributes_type": "text",
             "input_attributes_value": input_text_value,
-            "input_attributes_hint": input_text_title,
             "input_attributes_tabindex": input_text_tabindex,
             "input_attributes_disabled": input_text_disabled,
             "input_attributes_readonly": input_text_readonly,
@@ -37,6 +36,3 @@
         }
     %}
 </div>{% endif %}
-{% if input_text_validation_message is not empty %}
-    <small class="c-required"></small><div class="invalid-feedback">{{ input_text_validation_message }}</div>
-{% endif %}

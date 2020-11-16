@@ -1,16 +1,16 @@
-{% set input_group_text_id = input_group_text_id|default() %}
 {% set input_group_text_classes = input_group_text_classes|default() %}
-{% set input_group_text_name = input_group_text_name|default() %}
-{% set input_group_text_placeholder = input_group_text_placeholder|default() %}
-{% set input_group_text_value = input_group_text_value|default() %}
+{% set input_group_text_id = input_group_text_id|default() %}
 {% set input_group_text_label = input_group_text_label|default() %}
+{% set input_group_text_label_classes = input_group_text_label_classes|default() %}
+{% set input_group_text_tooltip = input_group_text_tooltip|default() %}
+{% set input_group_text_placeholder = input_group_text_placeholder|default() %}
+{% set input_group_text_name = input_group_text_name|default() %}
+{% set input_group_text_value = input_group_text_value|default() %}
 {% set input_group_text_tabindex = input_group_text_tabindex|default() %}
-{% set input_group_text_icon = input_group_text_icon|default() %}
 {% set input_group_text_disabled = input_group_text_disabled|default() %}
 {% set input_group_text_readonly = input_group_text_readonly|default() %}
 {% set input_group_text_required = input_group_text_required|default() %}
-{% set input_group_text_tooltip = input_group_text_tooltip|default() %}
-{% set input_group_text_label_classes = input_group_text_label_classes|default() %}
+{% set input_group_text_icon = input_group_text_icon|default() %}
 
 <div class="input-group-nds input-group--text {{ input_group_text_classes }}">
     {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with

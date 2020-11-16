@@ -26,6 +26,14 @@
 .datepicker {
     border: 0;
     padding: 0;
+    background-color: transparent;
+    &:before {
+        display: none;
+    }
+    &:after {
+        border-bottom: 6px solid $type-heading;
+        left: 20px;
+    }
     th,
     td {
         padding: .25rem .65rem;
