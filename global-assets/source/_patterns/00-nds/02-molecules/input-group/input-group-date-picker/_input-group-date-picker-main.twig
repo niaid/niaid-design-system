@@ -1,0 +1,26 @@
+{% set input_group_date_picker_classes = input_group_date_picker_classes|default() %}
+{% set input_group_date_picker_id = input_group_date_picker_id|default() %}
+{% set input_group_date_picker_label = input_group_date_picker_label|default() %}
+{% set input_group_date_picker_placeholder = input_group_date_picker_placeholder|default() %}
+{% set input_group_date_picker_disabled = input_group_date_picker_disabled|default() %}
+{% set input_group_date_picker_readonly = input_group_date_picker_readonly|default() %}
+{% set input_group_date_picker_required = input_group_date_picker_required|default() %}
+
+<div class="input-nds input-group--date-picker {{ input_group_date_picker_classes }}">
+    {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
+        {
+            "input_label_id": input_group_date_picker_id,
+            "input_label_classes": "input--select__label",
+            "input_label_text": input_group_date_picker_label
+        }
+    %}
+    {% include "@nds/01-atoms/input/input-date-picker/_input-date-picker-main.twig" with
+        {
+            "input_group_date_picker_id": input_group_date_picker_id,
+            "input_group_date_picker_placeholder": input_group_date_picker_placeholder,
+            "input_group_date_picker_disabled": input_group_date_picker_disabled,
+            "input_group_date_picker_readonly": input_group_date_picker_readonly,
+            "input_group_date_picker_required": input_group_date_picker_required
+        }
+    %}
+</div>

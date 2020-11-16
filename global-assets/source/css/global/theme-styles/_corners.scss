@@ -58,10 +58,8 @@
             }
         }
         &.input--date-picker {
-            .input--date-picker__form {
-                &__field {
-                    border-radius: $corner-radius;
-                }
+            .input--date-picker__field {
+                border-radius: $corner-radius;
             }
         }
     }
@@ -148,6 +146,7 @@
 
 .style--corners--rounded {
     $corner-radius: 1rem;
+    $corner-radius-full: 100rem;
     /* Atoms */
     .button-nds,
     button {
@@ -162,7 +161,7 @@
         }
     }
     .input-nds {
-        border-radius: 100rem;
+        border-radius: $corner-radius-full;
         &.input--text {
             padding: .5rem 1.5rem;
         }
@@ -170,17 +169,17 @@
             .select2-container {
                 .select2-selection  {
                     padding: .625rem 4rem .625rem 1.5rem;
-                    border-radius: 100rem;
+                    border-radius: $corner-radius-full;
                     &.select2-selection--multiple {
                         .select2-selection__rendered {
                             .select2-selection__choice {
-                                border-radius: 100rem;
+                                border-radius: $corner-radius-full;
                             }
                         }
                     }
                 }
                 .select2-selection__choice {
-                    border-radius: 100rem;
+                    border-radius: $corner-radius-full;
                 }
                 &.selection-made {
                     .select2-selection {
@@ -189,7 +188,7 @@
                         }
                     }
                     .select2-selection__rendered {
-                        border-radius: 100rem;
+                        border-radius: $corner-radius-full;
                     }
                 }
                 &.selection-made-multi {
@@ -200,10 +199,8 @@
             }
         }
         &.input--date-picker {
-            .input--date-picker__form {
-                &__field {
-                    border-radius: $corner-radius;
-                }
+            .input--date-picker__field {
+                border-radius: $corner-radius-full;
             }
         }
     }
@@ -262,19 +259,19 @@
     }
     .form-nds {
         .form-text {
-            border-top-left-radius: 100rem;
-            border-bottom-left-radius: 100rem;
+            border-top-left-radius: $corner-radius-full;
+            border-bottom-left-radius: $corner-radius-full;
         }
         .form-submit {
             border-top-left-radius: 0 !important;
-            border-top-right-radius: 100rem !important;
+            border-top-right-radius: $corner-radius-full !important;
             border-bottom-left-radius: 0 !important;
-            border-bottom-right-radius: 100rem !important;
+            border-bottom-right-radius: $corner-radius-full !important;
         }
         &.form--search {
             .input--text {
-                border-top-left-radius: 100rem !important;
-                border-bottom-left-radius: 100rem !important;
+                border-top-left-radius: $corner-radius-full !important;
+                border-bottom-left-radius: $corner-radius-full !important;
             }
         }
     }
