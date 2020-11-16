@@ -121,6 +121,23 @@
             }
         }
     }
+    .datepicker {
+        tbody {
+            .day,
+            .month,
+            .year,
+            .decade {
+                &.active,
+                &.focused {
+                    background-color: $color-theme-2-1-1 !important;
+                    &:hover,
+                    &:focus {
+                        background-color: $color-theme-2-1-1 !important;
+                    }
+                }
+            }
+        }
+    }
     .text-nds {
         &.text--blockquote {
             border-left: .125rem solid $color-theme-2-accent;
@@ -364,6 +381,23 @@
             input:checked~label {
                 &:before {
                     background: $color-theme-3-1-1 !important;
+                }
+            }
+        }
+    }
+    .datepicker {
+        tbody {
+            .day,
+            .month,
+            .year,
+            .decade {
+                &.active,
+                &.focused {
+                    background-color: $color-theme-3-1-1 !important;
+                    &:hover,
+                    &:focus {
+                        background-color: $color-theme-3-1-1 !important;
+                    }
                 }
             }
         }

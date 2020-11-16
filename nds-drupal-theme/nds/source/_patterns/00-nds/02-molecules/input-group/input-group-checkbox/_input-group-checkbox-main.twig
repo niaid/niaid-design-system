@@ -1,9 +1,17 @@
-{% set input_group_checkbox_id = input_group_checkbox_id|default() %}
 {% set input_group_checkbox_classes = input_group_checkbox_classes|default() %}
+{% set input_group_checkbox_id = input_group_checkbox_id|default() %}
 {% set input_group_checkbox_label = input_group_checkbox_label|default() %}
+{% set input_group_checkbox_label_classes = input_group_checkbox_label_classes|default() %}
 {% set input_group_checkbox_tooltip = input_group_checkbox_tooltip|default() %}
 
-<div id="{{ input_group_checkbox_id }}" role="checkboxgroup" aria-labelledby="label_{{ input_group_checkbox_id }}" class="input-group-nds input-group--checkbox {{ input_group_checkbox_classes }}">
-    <p class="input-group--checkbox__label" id="label_{{ input_group_checkbox_id }}">{{ input_group_checkbox_label }}</p>
+<div id="{{ input_group_checkbox_id }}" class="input-group-nds input-group--checkbox {{ input_group_checkbox_classes }}" role="checkboxgroup">
+    {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
+        {
+            "input_label_id": input_group_checkbox_id,
+            "input_label_classes": input_group_checkbox_label_classes,
+            "input_label_text": input_group_checkbox_label,
+            "input_label_tooltip": input_group_checkbox_tooltip
+        }
+    %}
     {% block input_checkbox_options %}{% endblock %}
 </div>

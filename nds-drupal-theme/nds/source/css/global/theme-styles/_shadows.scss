@@ -78,13 +78,13 @@
         &.input--text {
             @include md-2dp;
             @extend .hoverable;
-            border: 0.0625rem solid transparent !important;
-            &:hover,
-            &:focus {
-                border: 0.0625rem solid transparent !important;
-                & + .icon--default {
-                    color: $type-body;
-                }
+            border: 0.0625rem solid transparent;
+        }
+        &.input--date-picker {
+            .input--date-picker__field {
+                @include md-2dp;
+                @extend .hoverable;
+                border: 0.0625rem solid transparent;
             }
         }
     }

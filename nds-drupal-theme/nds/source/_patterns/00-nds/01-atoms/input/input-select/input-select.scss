@@ -1,16 +1,5 @@
 .input--select {
-    margin: 1rem 0;
-    display: inline-block;
     width: 100%;
-    &--stacked {
-        margin: 1rem 0;
-        display: block;
-    }
-    &__label {
-        display: block;
-        margin-bottom: 0;
-        font-size: 1rem;
-    }
     .select2-container {
         width: 100% !important;
         .select2-selection  {

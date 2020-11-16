@@ -1,33 +1,39 @@
 .input--date-picker {
     position: relative;
-    &__form {
-        position: relative;
-        &__field {
-            border-radius: 0;
-            padding: .5rem 3rem .5rem 1rem;
-            width: 100%;
-            border: 0.0625rem solid $input-border;
-            &:focus {
-                border: 0.0625rem solid $type-link;
-                outline: 0;
-                box-shadow: 0 0 0 0.0625rem $type-link;
-                & + .icon--default {
+    &__field {
+        padding: .5rem 3rem .5rem 1rem;
+        width: 100%;
+        border: 0.0625rem solid $input-border;
+        &:focus {
+            border: 0.0625rem solid $type-link;
+            outline: 0;
+            box-shadow: 0 0 0 0.0625rem $type-link;
+            & + .input--date-picker__wrapper {
+                .icon--default {
                     color: $type-link;
                 }
             }
         }
-        &__wrapper {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    }
+    &__wrapper {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 
 .datepicker {
     border: 0;
     padding: 0;
+    background-color: transparent;
+    &:before {
+        display: none;
+    }
+    &:after {
+        border-bottom: 6px solid $type-heading;
+        left: 20px;
+    }
     th,
     td {
         padding: .25rem .65rem;

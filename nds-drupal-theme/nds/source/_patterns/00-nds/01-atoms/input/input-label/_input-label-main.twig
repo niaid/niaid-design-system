@@ -6,6 +6,13 @@
 
 <label class="input-nds input--label {{ input_label_classes }}" for="{{ input_label_id }}" title="{{ input_label_text }}">{{ input_label_text }}
     {% if input_label_tooltip is not empty %}
-        <a href="#" data-toggle="tooltip" data-placement="top" title="{{ input_label_tooltip }}"><i class=" hint-info fa"></i></a>
+        <a class="input--label__tooltip" href="#" type="button" data-toggle="tooltip" data-placement="right" title="{{ input_label_tooltip }}">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+                {
+                    "icon_default_type": "info-circle",
+                    "icon_default_weight": "l"
+                }
+            %}
+        </a>
     {% endif %}
 </label>
