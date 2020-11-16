@@ -212,6 +212,17 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>Input Groups</h3>
+        <p>Receiving data is a key interaction point for users of websites. NDS has several types of input components to help get information from users.</p>
+
+        <h4>Text Field Group</h4>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text.twig" %}
+                {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text-icon.twig" %}
+                {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text-tooltip.twig" %}
+            {% endblock %}
+        {% endembed %}
+
         <h4>Checkbox Group</h4>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
@@ -226,10 +237,11 @@
             {% endblock %}
         {% endembed %}
 
-        <h4>Text Field Group</h4>
+        <h4>Select Field Group</h4>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text.twig" %}
+                {% include "@nds/02-molecules/input-group/input-group-select/demo/input-group-select.twig" %}
+                {% include "@nds/02-molecules/input-group/input-group-select/demo/input-group-multiselect.twig" %}
             {% endblock %}
         {% endembed %}
 

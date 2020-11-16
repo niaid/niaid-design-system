@@ -1,0 +1,32 @@
+{% set input_group_select_classes = input_group_select_classes|default() %}
+{% set input_group_select_id = input_group_select_id|default() %}
+{% set input_group_select_placeholder = input_group_select_placeholder|default() %}
+{% set input_group_select_label = input_group_select_label|default() %}
+{% set input_group_select_tooltip = input_group_select_tooltip|default() %}
+{% set input_group_select_selected_at_all_times = input_group_select_selected_at_all_times|default(false) %}
+{% set input_group_select_multiple = input_group_select_multiple|default(false) %}
+{% set input_group_select_label_classes = input_group_select_label_classes|default() %}
+{% set input_group_select_options = block('input_group_select_options') %}
+
+<div class="input-group-nds input-group--select {{ input_group_select_classes }}">
+    {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
+        {
+            "input_label_id": input_group_text_id,
+            "input_label_classes": input_group_select_label_classes,
+            "input_label_text": input_group_select_label,
+            "input_label_tooltip": input_group_select_tooltip
+        }
+    %}
+    {% embed "@nds/01-atoms/input/input-select/_input-select-main.twig" with
+        {
+            "input_select_id": input_group_select_id,
+            "input_select_placeholder": input_group_select_placeholder,
+            "input_select_multiple": input_group_select_multiple,
+            "input_select_selected_at_all_times": input_group_select_selected_at_all_times
+        }
+    %}
+        {% block input_select_input %}
+            {{ input_group_select_options|raw }}
+        {% endblock %}
+    {% endembed %}
+</div>

@@ -1,8 +1,7 @@
 {% embed "@nds/02-molecules/input-group/input-group-radio/_input-group-radio-main.twig" with
     {
-        "input_group_radio_id": "console-select",
-        "input_group_radio_label": "Choose the Platform You Own",
-        "input_group_radio_tooltip": ""
+        "input_group_radio_id": "input-group-radio",
+        "input_group_radio_label": "Choose the Platform You Own"
     }
 %}
     {% block input_radio_options %}
@@ -11,8 +10,7 @@
                 "input_radio_name": "console-select",
                 "input_radio_id": "xbox",
                 "input_radio_value": "xbox",
-                "input_radio_label": "Xbox",
-                "input_radio_required": "yes"
+                "input_radio_label": "Xbox"
             }
         %}
         {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
