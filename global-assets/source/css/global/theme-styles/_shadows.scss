@@ -88,6 +88,11 @@
             }
         }
     }
+    .media-nds {
+        &.media--audio {
+            @include md-2dp;
+        }
+    }
     table {
         @include md-1dp;
         border: 0;
