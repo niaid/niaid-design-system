@@ -97,6 +97,14 @@
         @include md-1dp;
         border: 0;
     }
+    .text-nds {
+        &.text--chip {
+            &:hover,
+            &:focus {
+                @include md-2dp;
+            }
+        }
+    }
     /* Molecules */
     .block-nds {
         @include md-2dp;
