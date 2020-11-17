@@ -159,9 +159,9 @@
     /* Atoms */
     .button-nds,
     button {
-        border-radius: 350px;
+        border-radius: $corner-radius-full;
         &.button--floating {
-            border-radius: 350px;
+            border-radius: $corner-radius-full;
         }
     }
     .image--embedded {
@@ -267,6 +267,15 @@
         }
     }
     .component-nds {
+        &.component--accordion {
+            .component--accordion__card {
+                &__header {
+                    &__button {
+                        border-radius: $corner-radius;
+                    }
+                }
+            }
+        }
         &.component--media {
             img {
                 border-radius: $corner-radius;

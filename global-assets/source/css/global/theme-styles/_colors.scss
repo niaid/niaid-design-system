@@ -182,6 +182,29 @@
             }
         }
     }
+    .component-nds {
+        &.component--accordion {
+            .component--accordion__card {
+                &__header {
+                    &__button {
+                        background: $white;
+                        border: .0625rem solid $type-link;
+                        &:after {
+                            color: $color-theme-2-1-1;
+                        }
+                        &:hover,
+                        &:focus {
+                            background: $type-link;
+                            border: .0625rem solid $type-link;
+                            &:after {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     .navigation-nds {
         &.navigation--primary {
             background: $color-theme-2-3-1;
@@ -450,6 +473,29 @@
         &.block--mission-statement {
             .block--mission-statement__header {
                 background: $color-theme-3-3-1;
+            }
+        }
+    }
+    .component-nds {
+        &.component--accordion {
+            .component--accordion__card {
+                &__header {
+                    &__button {
+                        background: $white;
+                        border: .0625rem solid $type-link;
+                        &:after {
+                            color: $color-theme-3-1-1;
+                        }
+                        &:hover,
+                        &:focus {
+                            background: $type-link;
+                            border: .0625rem solid $type-link;
+                            &:after {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
