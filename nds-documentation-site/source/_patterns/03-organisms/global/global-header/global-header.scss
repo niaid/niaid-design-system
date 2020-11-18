@@ -1,6 +1,5 @@
 .global--header {
     &__button {
-        padding: 1rem 1.25rem;
         display: block;
         @include media-breakpoint-up(md) {
             display: block;

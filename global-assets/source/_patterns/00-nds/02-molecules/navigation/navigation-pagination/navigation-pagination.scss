@@ -15,7 +15,12 @@
                 a {
                     @extend .button-nds;
                     @extend .button--secondary;
-                    padding: 1rem 1.4rem;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0;
+                    height: 3rem;
+                    width: 3rem;
                     &:visited {
                         color: $white;
                     }
@@ -24,6 +29,13 @@
                     a {
                         background: $color-theme-1-1-1;
                         color: $white;
+                    }
+                }
+                &.pager__item--next,
+                &.pager__item--last {
+                    a {
+                        padding: 0 1.25rem;
+                        width: auto;
                     }
                 }
             }

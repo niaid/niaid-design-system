@@ -8,6 +8,12 @@
             &__rendered {
                 padding: 1rem;
                 border-bottom: 0.0625rem solid $input-border;
+                & > *:first-child {
+                    margin-top: 0;
+                }
+                & > *:last-child {
+                    margin-bottom: 0;
+                }
             }
             &__snippet {
                 overflow: hidden;

@@ -5,6 +5,7 @@
         @extend .modal-dialog;
         margin: 3rem auto;
         &__content {
+            border-radius: 0;
             cursor: default;
             @extend .modal-content;
             &__header {

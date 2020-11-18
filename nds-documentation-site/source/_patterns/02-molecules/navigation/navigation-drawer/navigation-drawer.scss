@@ -13,19 +13,9 @@
                     cursor: pointer;
                     height: 2.5rem;
                     width: 2.5rem;
-                    background: $white;
                     padding: 0;
-                    @include md-1dp;
-                    @extend .hoverable;
-                    border-radius: $border-radius;
-                    border: 0.0625rem solid $white;
-                    background: $white !important;
-                    &:hover,
-                    &:focus {
-                        border: 0.0625rem solid $white !important;
-                    }
+                    border-radius: 0;
                     &:after {
-                        color: $black;
                         @include fa-icon;
                         @extend .fal;
                         content: fa-content($fa-var-chevron-right);

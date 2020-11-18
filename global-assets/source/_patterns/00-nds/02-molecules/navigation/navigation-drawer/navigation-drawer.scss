@@ -13,7 +13,12 @@
     &__top {
         padding: 1rem 2rem;
         &__button-close {
-            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3rem;
+            width: 3rem;
+            padding: 0;
         }
     }
     &__inner {

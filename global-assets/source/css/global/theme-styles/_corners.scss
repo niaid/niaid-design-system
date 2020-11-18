@@ -114,6 +114,13 @@
                 border-radius: $corner-radius;
             }
         }
+        &.component--modal {
+            .component--modal__wrapper {
+                &__content {
+                    border-radius: $corner-radius;
+                }
+            }
+        }
     }
     .form-nds {
         .form-text {
@@ -141,6 +148,10 @@
                 &:active {
                     border-radius: 0;
                 }
+            }
+            .dropdown-menu {
+                border-bottom-left-radius: $corner-radius;
+                border-bottom-right-radius: $corner-radius;
             }
         }
     }
@@ -281,6 +292,13 @@
                 border-radius: $corner-radius;
             }
         }
+        &.component--modal {
+            .component--modal__wrapper {
+                &__content {
+                    border-radius: $corner-radius;
+                }
+            }
+        }
     }
     .form-nds {
         .form-text {
@@ -308,6 +326,10 @@
                 &:active {
                     border-radius: 0;
                 }
+            }
+            .dropdown-menu {
+                border-bottom-left-radius: $corner-radius;
+                border-bottom-right-radius: $corner-radius;
             }
         }
         &.navigation--local {
