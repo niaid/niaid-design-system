@@ -40,6 +40,11 @@
         bottom: auto;
         right: auto;
     }
+    .view--listing {
+        h2 {
+            margin-top: 0;
+        }
+    }
     &.component--snippet--icon-default {
         .component--snippet__block {
             .icon--default {

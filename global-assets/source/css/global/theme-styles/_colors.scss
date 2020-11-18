@@ -288,7 +288,7 @@
         }
         &.global--footer {
             border-top: .25rem solid $color-theme-2-accent;
-            &__content {
+            .global--footer__content {
                 &__info {
                     &__section {
                         .link--carot {
@@ -593,7 +593,7 @@
         }
         &.global--footer {
             border-top: .25rem solid $color-theme-3-accent;
-            &__content {
+            .global--footer__content {
                 &__info {
                     &__section {
                         .link--carot {

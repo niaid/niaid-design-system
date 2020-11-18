@@ -17,102 +17,6 @@
     @include media-breakpoint-up(xl) {
         padding: 0 4rem;
     }
-    &__prefooter {
-        padding: 0;
-        @include media-breakpoint-up(md) {
-            padding: 1rem 0;
-        }
-        @include media-breakpoint-up(lg) {
-            padding: 0;
-        }
-        @include media-breakpoint-up(xl) {
-            padding: 1rem 0;
-        }
-        &__list {
-            max-width: 950px;
-            margin: 0 auto;
-            list-style: none;
-            padding: 0;
-            width: 100%;
-            display: block;
-            @include media-breakpoint-up(md) {
-                display: flex;
-                justify-content: space-between;
-            }
-            @include media-breakpoint-up(lg) {
-                display: block;
-            }
-            @include media-breakpoint-up(xl) {
-                display: flex;
-                justify-content: space-between;
-            }
-            li {
-                text-align: center;
-                text-transform: uppercase;
-                padding: 1rem;
-                display: block;
-                border-bottom: 0.0625rem solid #D8D8D8;
-                &.spacer {
-                    display: none;
-                }
-                &:last-child {
-                    border-bottom: 0;
-                }
-                @include media-breakpoint-up(md) {
-                    display: flex;
-                    border-bottom: 0;
-                    padding: .5rem 0;
-                    &.spacer {
-                        display: flex;
-                        border-right: 0.0625rem solid #D8D8D8;
-                    }
-                    &:first-child {
-                        padding-left: 1rem;
-                    }
-                    &:last-child {
-                        padding-right: 1rem;
-                    }
-                }
-                @include media-breakpoint-up(lg) {
-                    padding: 1rem 0;
-                    display: block;
-                    border-bottom: 0.0625rem solid #D8D8D8;
-                    &.spacer {
-                        display: none;
-                    }
-                    &:first-child {
-                        padding-left: 0;
-                    }
-                    &:last-child {
-                        padding-right: 0;
-                        border-bottom: 0;
-                    }
-                }
-                @include media-breakpoint-up(xl) {
-                    display: flex;
-                    border-bottom: 0;
-                    padding: .5rem 0;
-                    &.spacer {
-                        display: flex;
-                        border-right: 0.0625rem solid #D8D8D8;
-                    }
-                    &:first-child {
-                        padding-left: 1rem;
-                    }
-                    &:last-child {
-                        padding-right: 1rem;
-                    }
-                }
-                a {
-                    border-bottom: 0.0625rem solid transparent;
-                    &:hover,
-                    &:focus {
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
-    }
     &__content {
         margin: 0;
         padding: 2rem;
@@ -162,12 +66,12 @@
                 .link--carot {
                     &:after {
                         color: $color-theme-1-accent;
-                        content: " \f054";
-                        font-family: "Font Awesome 5 Pro";
-                        font-weight: 300;
+                        @include fa-icon;
+                        @extend .fal;
+                        content: fa-content($fa-var-chevron-right);
                         font-size: 0.8rem;
                         padding-left: .25rem;
-                        border-bottom: 3px solid $footer-background;
+                        border-bottom: .25rem solid $footer-background;
                     }
                 }
             }

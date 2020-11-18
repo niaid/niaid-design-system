@@ -6,7 +6,9 @@
 
 <div class="view-nds view--listing {{ view_listing_classes }}">
     {% block view_listing_heading %}
-        <h2 class="view--listing__heading">{{ view_listing_heading }}</h2>
+        {% if view_listing_heading is not empty %}
+            <h2 class="view--listing__heading">{{ view_listing_heading }}</h2>
+        {% endif %}
     {% endblock %}
     <div class="view--listing__blocks">
         {% block view_listing_content %}

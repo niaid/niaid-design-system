@@ -1,4 +1,22 @@
 .style--corners--semirounded, .style--corners--rounded {
+    .input--checkbox {
+        .input--label {
+            &:before {
+                border-radius: $border-radius-semi;
+            }
+        }
+    }
+    .block-facet--checkbox {
+        ul {
+            .facet-item {
+                label {
+                    &:before {
+                        border-radius: $border-radius-semi;
+                    }
+                }
+            }
+        }
+    }
     .global--footer {
         &__prefooter {
             position: relative;
