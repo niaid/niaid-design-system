@@ -24,7 +24,7 @@
         background: #fff1d2;
         &:before {
             color: $white;
-            background: #fdb81e;
+            background: $status-warning;
             content: fa-content($fa-var-exclamation-triangle);
         }
     }
@@ -32,7 +32,7 @@
         background: #d4eeff;
         &:before {
             color: $white;
-            background: #449be2;
+            background: $status-information;
             content: fa-content($fa-var-info-circle);
         }
     }

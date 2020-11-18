@@ -10,9 +10,6 @@ button {
         background: $color-theme-1-1-2;
         border: 0.0625rem solid $color-theme-1-1-2;
     }
-    & + .ext-link-icon {
-        display: none;
-    }
     &.button--secondary {
         color: $color-theme-1-1-1;
         background: transparent;
@@ -31,6 +28,9 @@ button {
             background: $color-theme-1-2-2;
             border: 0.0625rem solid $color-theme-1-2-2;
         }
+    }
+    & + .ext-link-icon {
+        display: none;
     }
 }
 

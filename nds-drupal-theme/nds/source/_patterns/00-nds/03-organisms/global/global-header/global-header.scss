@@ -9,7 +9,12 @@
         border-bottom: 0;
     }
     &__button {
-        padding: 1rem 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        width: 3rem;
+        padding: 0;
         @include media-breakpoint-up('md') {
             display: none;
         }

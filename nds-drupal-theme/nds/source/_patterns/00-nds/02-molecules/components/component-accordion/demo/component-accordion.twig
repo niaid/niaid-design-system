@@ -4,41 +4,34 @@
     }
 %}
     {% block component_accordion_content %}
-        <div class="block--accordion-card card">	
-            <div class="block--accordion-card__header card-header" id="headingOne">	
-                <h3 class="mb-0">
-                    <button aria-controls="collapseOne" aria-expanded="false" class="block--accordion-card__header__button btn btn-link" data-target="#collapseOne" data-toggle="collapse" type="button">Q: Does a vaccine or antibody 
-                    against SARS-CoV-2 or COVID-19 already exist?</button>
+        <div class="component--accordion__card">	
+            <div class="component--accordion__card__header" id="headingOne">	
+                <h3>
+                    <button class="component--accordion__card__header__button" aria-controls="collapseOne" aria-expanded="false" data-target="#collapseOne" data-toggle="collapse" type="button">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
                 </h3>	
             </div>	
-            <div aria-labelledby="headingOne" class="block--accordion-card__body collapse" id="collapseOne" data-parent="#accordion1">
-                <div class="card-body">
-                    <p>A: There is no licensed vaccine or antibody against severe acute respiratory syndrome coronavirus type 2 (SARS-CoV-2), which is the virus that causes coronavirus disease 2019 (COVID-19). Scientists are working very hard to develop a vaccine and an antibody and do the research to determine whether they are safe and effective against SARS-CoV-2.</p>	
-                </div>	
+            <div aria-labelledby="headingOne" class="component--accordion__card__body collapse" id="collapseOne" data-parent="#accordion1">
+                <p>A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
             </div>	
         </div>
-        <div class="block--accordion-card card">	
-            <div class="block--accordion-card__header card-header" id="headingSix">	
-                <h3 class="mb-0">
-                    <button aria-controls="collapseSix" aria-expanded="false" class="block--accordion-card__header__button btn btn-link" data-target="#collapseSix" data-toggle="collapse" type="button">Q: Will study participants be given SARS-CoV-2 or COVID-19 as part of the study?</button>
+        <div class="component--accordion__card">	
+            <div class="component--accordion__card__header" id="headingTwo">	
+                <h3>
+                    <button class="component--accordion__card__header__button" aria-controls="collapseTwo" aria-expanded="false" data-target="#collapseTwo" data-toggle="collapse" type="button">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
                 </h3>	
             </div>	
-            <div aria-labelledby="headingSix" class="block--accordion-card__body collapse" id="collapseSix" data-parent="#accordion1">
-                <div class="card-body">
-                    <p>A: No. That type of study design is known as a challenge study. Instead, we are using a design known as “randomized, blinded, placebo-controlled” studies. We will enroll people who are more likely to be exposed to SARS-CoV-2 infection and COVID-19 illness. Some participants will get the vaccine, and some will get a placebo, which is a sterile saline solution that does not have any vaccine in it. We expect that some people will be exposed to the virus in their everyday lives, and may become sick. We will compare the 2 groups to see if there are fewer people who get sick in the vaccine group than in the placebo group. This is how we will know if the vaccine works.</p>	
-                </div>	
+            <div aria-labelledby="headingTwo" class="component--accordion__card__body collapse" id="collapseTwo" data-parent="#accordion1">
+                <p>A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
             </div>	
         </div>
-        <div class="block--accordion-card card">	
-            <div class="block--accordion-card__header card-header" id="headingTwo">	
-                <h3 class="mb-0">	
-                    <button aria-controls="collapseTwo" aria-expanded="false" class="block--accordion-card__header__button btn btn-link" data-target="#collapseTwo" data-toggle="collapse" type="button">Q: Is joining a COVID-19 vaccine or antibody study like being a guinea pig?</button>
-                </h3>
-            </div>
-            <div aria-labelledby="headingTwo" class="block--accordion-card__body collapse" id="collapseTwo" data-parent="#accordion1">
-                <div class="card-body">
-                    <p>A: Unlike guinea pigs, people can say yes or no about joining a study. All study volunteers must go through a process called <em>informed consent</em> that ensures they understand all of the risks and benefits of being in a study, and those volunteers are reminded that they may leave a study at any time without losing any of their rights or benefits. The COVID-19 Prevention Network (CoVPN) takes great care to make sure people understand the study fully before they decide whether or not to join. All CoVPN studies follow US federal regulations on research, as well as international ethical standards and any country-specific requirements for the countries where our research is conducted.</p>	
-                </div>	
+        <div class="component--accordion__card">	
+            <div class="component--accordion__card__header" id="headingThree">	
+                <h3>
+                    <button class="component--accordion__card__header__button" aria-controls="collapseThree" aria-expanded="false" data-target="#collapseThree" data-toggle="collapse" type="button">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
+                </h3>	
+            </div>	
+            <div aria-labelledby="headingThree" class="component--accordion__card__body collapse" id="collapseThree" data-parent="#accordion1">
+                <p>A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
             </div>	
         </div>
     {% endblock %}

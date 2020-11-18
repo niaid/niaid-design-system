@@ -145,6 +145,13 @@
         &.text--image-credit-caption {
             border-left: 0.125rem solid $color-theme-2-accent;
         }
+        &.text--chip {
+            &:hover,
+            &:focus {
+                border: .0625rem solid $color-theme-2-2-1;
+                background: $color-theme-2-2-1;
+            }
+        }
     }
     .layouts--tabs {
         &__tab {
@@ -172,6 +179,29 @@
         &.block--mission-statement {
             .block--mission-statement__header {
                 background: $color-theme-2-3-1;
+            }
+        }
+    }
+    .component-nds {
+        &.component--accordion {
+            .component--accordion__card {
+                &__header {
+                    &__button {
+                        background: $white;
+                        border: .0625rem solid $type-link;
+                        &:after {
+                            color: $color-theme-2-1-1;
+                        }
+                        &:hover,
+                        &:focus {
+                            background: $type-link;
+                            border: .0625rem solid $type-link;
+                            &:after {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -409,6 +439,13 @@
         &.text--image-credit-caption {
             border-left: 0.125rem solid $color-theme-3-accent;
         }
+        &.text--chip {
+            &:hover,
+            &:focus {
+                border: .0625rem solid $color-theme-3-2-1;
+                background: $color-theme-3-2-1;
+            }
+        }
     }
     .layouts--tabs {
         &__tab {
@@ -436,6 +473,29 @@
         &.block--mission-statement {
             .block--mission-statement__header {
                 background: $color-theme-3-3-1;
+            }
+        }
+    }
+    .component-nds {
+        &.component--accordion {
+            .component--accordion__card {
+                &__header {
+                    &__button {
+                        background: $white;
+                        border: .0625rem solid $type-link;
+                        &:after {
+                            color: $color-theme-3-1-1;
+                        }
+                        &:hover,
+                        &:focus {
+                            background: $type-link;
+                            border: .0625rem solid $type-link;
+                            &:after {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -1,11 +1,13 @@
 .global--header {
+    position: relative;
+    z-index: 160;
     background: $page-background;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 0.0625rem solid $type-body;
-    @include media-breakpoint-up('md') {
+    @include media-breakpoint-up('lg') {
         border-bottom: 0;
     }
     &__button {
