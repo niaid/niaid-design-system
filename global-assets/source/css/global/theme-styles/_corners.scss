@@ -109,8 +109,8 @@
         &.block--hero {
             border-radius: 0;
         }
-        &.block--featured-content {
-            .block--featured-content__image {
+        &.block--featured-content-card {
+            .block--featured-content-card__image {
                 img {
                     border-top-left-radius: $corner-radius * .75;
                     border-top-right-radius: $corner-radius * .75;
@@ -278,8 +278,8 @@
         &.block--hero {
             border-radius: 0;
         }
-        &.block--featured-content {
-            .block--featured-content__image {
+        &.block--featured-content-card {
+            .block--featured-content-card__image {
                 img {
                     border-top-left-radius: $corner-radius * .75;
                     border-top-right-radius: $corner-radius * .75;

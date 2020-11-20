@@ -16,10 +16,10 @@
                 }
             }
         }
-        .block--featured-content {
+        .block--featured-content-card {
             margin: 0;
             @include media-breakpoint-down(md) {
-                .block--featured-content__image {
+                .block--featured-content-card__image {
                     height: auto;
                 }
             }
