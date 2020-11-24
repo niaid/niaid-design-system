@@ -1,0 +1,26 @@
+{
+    "pageID": "migration-guide",
+    "prodBuild": "true",
+    "title": "Migration Guide | NIAID Design System",
+    "cssPath": "../css/",
+    "jsPath": "../js/",
+    "imagePath": "../assets/",
+    "jsIncludes": {
+        "jquery": true,
+        "select2": false,
+        "materialize": true,
+        "bootstrap": true,
+        "matchMedia": true,
+        "dataTables": false,
+        "dateTimePicker": false
+    },
+    "link": {
+        "index": "/",
+        "design": "/design/index.html",
+        "development": "/development/index.html",
+        "components": "/components/index.html",
+        "themeBuilder": "/builder/index.html",
+        "getStarted": "/getting-started/index.html",
+        "migrationGuide": "/migration-guide"
+    }
+}

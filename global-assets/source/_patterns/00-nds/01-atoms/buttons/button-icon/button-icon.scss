@@ -1,7 +1,12 @@
 .button--icon {
     @extend .button--primary;
     &__text {
-        padding-left: .25rem;
+        &.icon--left {
+            padding-left: .4rem;
+        }
+        &.icon--right {
+            padding-right: .4rem;
+        }
     }
     &.button--secondary {
         color: $color-theme-1-1-1;

@@ -1,0 +1,147 @@
+{% include "@molecules/components/component-style-controls/_component-style-controls-main.twig" %}
+
+{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+    {
+        "layouts_site_id": "migration-guide"
+    }
+%}
+    {% block header %}
+        {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
+        {% include "@organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "Design System"
+            }
+        %}
+    {% endblock %}
+    {% block global_navigation %}
+        {% include "@molecules/navigation/navigation-primary/_navigation-primary-main.twig" %}
+        {% include "@molecules/navigation/navigation-drawer/_navigation-drawer-main.twig" with
+            {
+                "navigation_drawer_id": "main-navigation-mobile"
+            }
+        %}
+        {% include "@nds/01-atoms/buttons/button-floating/_button-floating-main.twig" with
+            {
+                "button_floating_id": "custom-styles-toggle",
+                "button_floating_icon": "palette",
+                "button_floating_text": "Customize Page Theme"
+            }
+        %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@atoms/layouts/layouts-main/_layouts-main-main.twig" with
+            {
+                "layouts_main_id": 'main',
+                "layouts_main_left": columns.left,
+                "layouts_main_main": columns.main,
+                "layouts_main_right": columns.right
+            }
+        %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" with
+                    {
+                        "layouts_body_vertical_padding": "no"
+                    }
+                %}
+                    {% block body_content %}
+                        <h1 id="main-content">Migration Guide</h1>
+                        
+                        <p><strong>Updated:</strong> November 23, 2020</p>
+
+                        <h2>Overview</h2>
+                        <p>This page will explain how pre-existing websites can leverage NDS to become compliant with NIAID's policies and branding. If you are looking to build a new site from scratch, be sure to check out the <a href="{{ link.getStarted }}">Getting Started</a> page for more information.</p>
+
+                        <hr>
+
+                        <h2>Starting the Migration Process</h2>
+
+                        <p>The first step in migrating your pre-existing site to NDS is to include the global CSS and JS files in your site. Download these files below:</p>
+                        
+                        {% include "@molecules/blocks/block-files/_block-files-main.twig" %}
+
+                        <p>Depending on the architecture of your application, where you actually add these files may vary. With vanilla HTML, the CSS file should be linked two from the &lt;head&gt; of the HTML document, and the JS file should be linked to just above the closing &lt;/body&gt; tag.</p>
+
+                        <h2>Adding the Header &amp; Footer</h2>
+
+                        <p>The two most important components to have for NIAID brand compliance is the Header and Footer. The raw HTML markup for these two components are found below, and can be copied directly into your project regardless of the front end architecture. NDS may also offer these patterns as React, Angular, or Vue components in the future.</p>
+
+                        <h3>Header Component</h3>
+                        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+                            {
+                                "component_snippet_show_rendered": "no"
+                            }
+                        %}
+                            {% block component_snippet_code %}
+                                {% include "@nds/03-organisms/global/global-header/demo/global-header.twig" %}
+                            {% endblock %}
+                        {% endembed %}
+
+                        <h3>Footer Component</h3>
+                        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+                            {
+                                "component_snippet_show_rendered": "no"
+                            }
+                        %}
+                            {% block component_snippet_code %}
+                                {% include "@nds/03-organisms/global/global-footer/demo/global-footer.twig" %}
+                            {% endblock %}
+                        {% endembed %}
+
+                        <h2>Choosing Theme Styles</h2>
+
+                        <p>There are four theme dimensions that you can customize after adding the NDS CSS stylesheet to your website: Fonts, Body Fonts, Colors, Shadows, and Corners. The following sections describe your options for each and how to apply your choices to your website.</p>
+
+                        <h3 id="developing-with-typography">Developing with Typography</h3>
+                        <p>NDS users can select font families for the headings and body of a page. For the headings, there are four available fonts to choose from - Public Sans, Roboto, Martel, and Merriweather. To apply one of these fonts to your headings, add the appropriate class to the &lt;body&gt; tag:</p>
+                        <ul>
+                            <li>Public Sans: <code>style--headings--public-sans</code></li>
+                            <li>Roboto: <code>style--headings--roboto</code></li>
+                            <li>Martel: <code>style--headings--martel</code></li>
+                            <li>Merriweather: <code>style--headings--merriweather</code></li>
+                        </ul>
+                        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body, add the appropriate class to the &lt;body&gt; tag:</p>
+                        <ul>
+                            <li>Public Sans: <code>style--body--public-sans</code></li>
+                            <li>Roboto: <code>style--body--roboto</code></li>
+                        </ul>
+
+                        <p>You may download any of these font families below:</p>
+                        {% include "@molecules/blocks/block-fonts/_block-fonts-main.twig" %}
+
+                        <h3 id="developing-with-colors">Developing with Colors</h3>
+                        <p>Currently, NDS users have three color palette options to choose from, however, more may be available in the future. Add the corresponding body class for your desired palette:</p>
+                        {% include "@organisms/views/view-swatches/_view-swatches-main.twig" %}
+                        <h3 id="developing-with-shadows">Developing with Shadows</h3>
+                        <p>NDS supports both the Flat and Material Design visual style. By default, NDS is configured in Flat design. If Material Design is desired, add the following class to the body:</p>
+                        <code>style--shadows</code> 
+                        <h3 id="developing-with-corners">Developing with Corners</h3>
+                        <p>There are three corner styles available with NDS: Sharp, Semi-Rounded, Fully-Rounded. To apply one of these corner styles to your site, add the appropriate body class:</p>
+                        <ul>
+                            <li>Sharp: <code>style--corners--straight</code></li>
+                            <li>Semi-Rounded: <code>style--corners--semirounded</code></li>
+                            <li>Fully-Rounded: <code>style--corners--rounded</code></li>
+                        </ul>
+
+                        <h2>Adding Additional NDS Components</h2>
+                        <p>After you include the CSS and JS files in your project, and have added the Header and Footer, you may want to leverage other NDS components as well. Check out the <a href="{{ links.components }}">Components</a> page for HTML code snippets for NDS patterns, as well as detailed information on how to use them.</p>
+                        
+                        <hr class="my-4">
+
+                        {% include "@molecules/blocks/block-directions/_block-directions-main.twig" with
+                            {
+                                "block_directions_prev_text": "Getting Started",
+                                "block_directions_prev_href": links.getStarted,
+                                "block_directions_next_text": "Development",
+                                "block_directions_next_href": links.development
+                            }
+                        %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% embed "@nds/03-organisms/global/global-footer/_global-footer-main.twig" %}
+    {% endembed %}
+{% endblock %}
+{% endembed %}

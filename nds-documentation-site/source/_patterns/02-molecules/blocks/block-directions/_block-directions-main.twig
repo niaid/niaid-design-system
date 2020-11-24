@@ -1,0 +1,35 @@
+{% set block_directions_classes = block_directions_classes|default() %}
+{% set block_directions_prev_text = block_directions_prev_text|default() %}
+{% set block_directions_prev_href = block_directions_prev_href|default() %}
+{% set block_directions_next_text = block_directions_next_text|default() %}
+{% set block_directions_next_href = block_directions_next_href|default() %}
+
+<div class="block-nds block--directions {{ block_directions_classes }}">
+    {% if block_directions_prev_text is not empty %}
+        <div class="block--directions__prev">
+            <span>Previous</span><br>
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_classes": "button--secondary",
+                    "button_icon_icon": "chevron-left",
+                    "button_icon_href": block_directions_prev_href,
+                    "button_icon_text": block_directions_prev_text
+                }
+            %}
+        </div>
+    {% endif %}
+    {% if block_directions_next_text is not empty %}
+        <div class="block--directions__next">
+            <span>Up Next</span><br>
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_classes": "button--secondary",
+                    "button_icon_icon": "chevron-right",
+                    "button_icon_icon_position": "right",
+                    "button_icon_href": block_directions_next_href,
+                    "button_icon_text": block_directions_next_text
+                }
+            %}
+        </div>
+    {% endif %}
+</div>

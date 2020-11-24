@@ -1,0 +1,12 @@
+#migration-guide {
+    .component--snippet {
+        &__block {
+            &__code {
+                &__snippet {
+                    max-height: 20rem;
+                    overflow-y: auto;
+                }
+            }
+        }
+    }
+}

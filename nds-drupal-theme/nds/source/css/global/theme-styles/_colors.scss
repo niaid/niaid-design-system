@@ -169,8 +169,8 @@
                 border-left: .25rem solid $color-theme-2-accent;
             }
         }
-        &.block--featured-content {
-            .block--featured-content__text {
+        &.block--featured-content-card {
+            .block--featured-content-card__text {
                 &__featured {
                     color: $color-theme-2-2-1;
                 }
@@ -474,8 +474,8 @@
                 border-left: .25rem solid $color-theme-3-accent;
             }
         }
-        &.block--featured-content {
-            .block--featured-content__text {
+        &.block--featured-content-card {
+            .block--featured-content-card__text {
                 &__featured {
                     color: $color-theme-3-3-1;
                 }

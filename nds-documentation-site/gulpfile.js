@@ -176,6 +176,10 @@ function buildNDSDocumentationSite() {
         {
             "page_name": "components",
             "target_dest": "./public_html/components"
+        },
+        {
+            "page_name": "migration-guide",
+            "target_dest": "./public_html/migration-guide"
         }
     ];
 

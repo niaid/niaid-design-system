@@ -6,8 +6,8 @@
 {% set block_featured_content_card_description = block_featured_content_card_description|default() %}
 {% set block_featured_content_card_featured = block_featured_content_card_featured|default() %}
 
-<div class="block-nds block--featured-content {{ block_featured_content_card_classes }}">
-    <div class="block--featured-content__image">
+<div class="block-nds block--featured-content-card {{ block_featured_content_card_classes }}">
+    <div class="block--featured-content-card__image">
         {% block featured_content_card_image %}
             {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
                 {
@@ -17,20 +17,20 @@
             %}
         {% endblock %}
     </div>
-    <div class="block--featured-content__text">
+    <div class="block--featured-content-card__text">
         {% block featured_content_card_content %}
             {% if block_featured_content_card_title is not empty %}
                 {% if block_featured_content_card_featured is not empty %}
-                    <span class="block--featured-content__text__featured">{{ block_featured_content_card_featured }}</span>
+                    <span class="block--featured-content-card__text__featured">{{ block_featured_content_card_featured }}</span>
                 {% endif %}
-                <h2 class="block--featured-content__text__title">
+                <h2 class="block--featured-content-card__text__title">
                     {% if block_featured_content_card_title_link is not empty %}<a href="{{ block_featured_content_card_title_link }}">{% endif %}
                     {{ block_featured_content_card_title }}
                     {% if block_featured_content_card_title_link is not empty %}</a>{% endif %}
                 </h2>
             {% endif %}
             {% if block_featured_content_card_description is not empty %}
-                <p class="block--featured-content__text__description">{{ block_featured_content_card_description }}</p>
+                <p class="block--featured-content-card__text__description">{{ block_featured_content_card_description }}</p>
             {% endif %}
         {% endblock %}
     </div>

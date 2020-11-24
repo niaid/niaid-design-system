@@ -123,17 +123,17 @@
         <span class="global--header__version">v 1.0.0</span>
         
 <a href="/getting-started/index.html" class="button-nds button--icon waves-effect waves-light global--header__download-button" >
-    
+            
 
 <i class="icon-nds icon--default fal fa-download "></i>
-            <span class="button--icon__text">Download NDS</span>
-    </a>    </div>
+                <span class="button--icon__text icon--left">Download NDS</span>
+        </a>    </div>
     
 <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary" >
-    
+            
 
 <i class="icon-nds icon--default fal fa-bars "></i>
-    </button></div>                
+            </button></div>                
 <nav id="main-navigation" class="navigation-nds navigation--primary ">
             <div class="navigation--primary__inner">
             <div class="navigation--primary__inner__item">
@@ -187,10 +187,10 @@
         <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
         
 <button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary" >
-    
+            
 
 <i class="icon-nds icon--default fal fa-arrow-to-left "></i>
-    </button>    </div>
+            </button>    </div>
             <div class="navigation--drawer__inner">
             <div class="navigation--drawer__inner__section">
                 <a tabindex="-1" href="/">Home</a>
@@ -245,11 +245,11 @@
             <div class="navigation--drawer__inner__download">
                  
 <a href="/getting-started/index.html" class="button-nds button--icon waves-effect waves-light " >
-    
+            
 
 <i class="icon-nds icon--default fal fa-download "></i>
-            <span class="button--icon__text">Download NDS</span>
-    </a>            </div>
+                <span class="button--icon__text icon--left">Download NDS</span>
+        </a>            </div>
         </div>
         <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
     </div>
@@ -599,10 +599,10 @@
         <p>This section describes what these libraries are and how they factor into development with NDS.</p>
         <h3>Bootstrap 4</h3>
         
-<span class="text-nds text--badge ">Version: 4.5.2</span>        <p><a href="https://getbootstrap.com/">Bootstrap</a> is a front-end library that provides stylesheets and functional components designed to accelerate web development. While NDS relies on Bootstrap primarily for its grid system, other functional components, such as dropdowns and modals, are also leveraged.</p>
+<span class="text-nds text--badge ">Version: 4.5.2</span>        <p><a href="https://getbootstrap.com/">Bootstrap</a> is a front end library that provides stylesheets and functional components designed to accelerate web development. While NDS relies on Bootstrap primarily for its grid system, other functional components, such as dropdowns and modals, are also leveraged.</p>
         <h3>Materialize</h3>
         
-<span class="text-nds text--badge ">Version: 1.0.0</span>        <p><a href="https://materializecss.com/">Materialize</a> is a front-end library that has converted guidance from Google's Material Design documentation into code. The main utility of this library that is leveraged in NDS is the Parallax effect for hero images. Other capabilities may be used for custom needs as well.</p>
+<span class="text-nds text--badge ">Version: 1.0.0</span>        <p><a href="https://materializecss.com/">Materialize</a> is a front end library that has converted guidance from Google's Material Design documentation into code. The main utility of this library that is leveraged in NDS is the Parallax effect for hero images. Other capabilities may be used for custom needs as well.</p>
         <h3>DataTables</h3>
         
 <span class="text-nds text--badge ">Version: 1.10.20</span>        <p>Tables can be tricky on the web for accessibility and responsive reasons. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables and improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initizlaize the responsive functionality of DataTables.</p>
@@ -615,21 +615,64 @@
     </div>                        
 <div id="section-themes" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Theme Options</h2>
-        <p>NDS comes preconfigured with a set of theming options including heading and body font family, color palettes, and corner radius. For the complete set of options, visit the <a href="/builder/index.html">Theme Builder</a>. NDS applies these styles through the use of classes applied to the body HTML tag.</p>
+        <p>NDS comes preconfigured with a set of theming options including heading and body font family, color palettes, and corner radius. For the complete set of options, visit the <a href="/builder/index.html">Theme Builder</a>. NDS applies these styles through the use of classes applied to the &lt;body&gt; HTML tag.</p>
         <h3 id="developing-with-typography">Developing with Typography</h3>
         <p>NDS users can select font families for the headings and body of a page. For the headings, there are four available fonts to choose from - Public Sans, Roboto, Martel, and Merriweather. To apply one of these fonts to your headings, add the appropriate body class:</p>
         <ul>
-            <li>Public Sans (Default): <code>style--headings--public-sans</code></li>
+            <li>Public Sans: <code>style--headings--public-sans</code></li>
             <li>Roboto: <code>style--headings--roboto</code></li>
             <li>Martel: <code>style--headings--martel</code></li>
             <li>Merriweather: <code>style--headings--merriweather</code></li>
         </ul>
-        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body, add the appropriate body class:
+        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body, add the appropriate body class:</p>
         <ul>
-            <li>Public Sans (Default): <code>style--body--public-sans</code></li>
+            <li>Public Sans: <code>style--body--public-sans</code></li>
             <li>Roboto: <code>style--body--roboto</code></li>
         </ul>
-        <h3 id="developing-with-colors">Developing with Colors</h3>
+        <p>You may download any of these font families below:</p>
+        
+<div class="block--fonts container-fluid ">
+    <div class="row">
+        <div class="col-md-6">
+            
+<a href="../../assets/public-sans.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fal fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Public Sans</span>
+        </a>            <span class="block--fonts__credit">Provided by USWDS</span>
+        </div>
+        <div class="col-md-6">
+            
+<a href="../../assets/roboto.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fal fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Roboto</span>
+        </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            
+<a href="../../assets/martel.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fal fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Martel</span>
+        </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
+        </div>
+        <div class="col-md-6">
+            
+<a href="../../assets/merriweather.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fal fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Merriweather</span>
+        </a>            <span class="block--fonts__credit">Provided by USWDS</span>
+        </div>
+    </div>
+</div>        <h3 id="developing-with-colors">Developing with Colors</h3>
         <p>Currently, NDS users have three color palette options to choose from, however, more may be available in the future. Add the corresponding body class for your desired palette:</p>
         
 <div class="view-nds view--swatches container-fluid ">
@@ -760,7 +803,7 @@
         <p>There are three corner styles available with NDS: Sharp, Semi-Rounded, Fully-Rounded. To apply one of these corner styles to your site, add the appropriate body class:</p>
         <ul>
             <li>Sharp: <code>style--corners--straight</code></li>
-            <li>Semi-Rounded (Default): <code>style--corners--semirounded</code></li>
+            <li>Semi-Rounded: <code>style--corners--semirounded</code></li>
             <li>Fully-Rounded: <code>style--corners--rounded</code></li>
         </ul>
     </div>                    </div>            

@@ -5,20 +5,22 @@
 %}
     {% block component_scrollspy_section_content %}
         <h2>Theme Options</h2>
-        <p>NDS comes preconfigured with a set of theming options including heading and body font family, color palettes, and corner radius. For the complete set of options, visit the <a href="{{ link.themeBuilder }}">Theme Builder</a>. NDS applies these styles through the use of classes applied to the body HTML tag.</p>
+        <p>NDS comes preconfigured with a set of theming options including heading and body font family, color palettes, and corner radius. For the complete set of options, visit the <a href="{{ link.themeBuilder }}">Theme Builder</a>. NDS applies these styles through the use of classes applied to the &lt;body&gt; HTML tag.</p>
         <h3 id="developing-with-typography">Developing with Typography</h3>
         <p>NDS users can select font families for the headings and body of a page. For the headings, there are four available fonts to choose from - Public Sans, Roboto, Martel, and Merriweather. To apply one of these fonts to your headings, add the appropriate body class:</p>
         <ul>
-            <li>Public Sans (Default): <code>style--headings--public-sans</code></li>
+            <li>Public Sans: <code>style--headings--public-sans</code></li>
             <li>Roboto: <code>style--headings--roboto</code></li>
             <li>Martel: <code>style--headings--martel</code></li>
             <li>Merriweather: <code>style--headings--merriweather</code></li>
         </ul>
-        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body, add the appropriate body class:
+        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body, add the appropriate body class:</p>
         <ul>
-            <li>Public Sans (Default): <code>style--body--public-sans</code></li>
+            <li>Public Sans: <code>style--body--public-sans</code></li>
             <li>Roboto: <code>style--body--roboto</code></li>
         </ul>
+        <p>You may download any of these font families below:</p>
+        {% include "@molecules/blocks/block-fonts/_block-fonts-main.twig" %}
         <h3 id="developing-with-colors">Developing with Colors</h3>
         <p>Currently, NDS users have three color palette options to choose from, however, more may be available in the future. Add the corresponding body class for your desired palette:</p>
         {% include "@organisms/views/view-swatches/_view-swatches-main.twig" %}
@@ -29,7 +31,7 @@
         <p>There are three corner styles available with NDS: Sharp, Semi-Rounded, Fully-Rounded. To apply one of these corner styles to your site, add the appropriate body class:</p>
         <ul>
             <li>Sharp: <code>style--corners--straight</code></li>
-            <li>Semi-Rounded (Default): <code>style--corners--semirounded</code></li>
+            <li>Semi-Rounded: <code>style--corners--semirounded</code></li>
             <li>Fully-Rounded: <code>style--corners--rounded</code></li>
         </ul>
     {% endblock %}

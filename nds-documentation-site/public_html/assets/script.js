@@ -1,64 +1,6 @@
 "use strict";
 
 (function ($) {
-  function initTableDefault() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    /* KEY
-        Sorting: Add data-tablesort="true" to the <table> tag.
-        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
-    */
-    $("table").each(function () {
-      if ($(this).attr('nds-datatable') == 'true') {
-        var defaultConfigs = {
-          "responsive": true,
-          "paging": false,
-          "info": false,
-          "autoWidth": false,
-          "searching": false
-        };
-
-        if (!($(this).attr('data-tablesort') == "true")) {
-          defaultConfigs['ordering'] = false;
-        } else {
-          // Determine Column Type
-          var columns = [];
-          $(this).find('thead').find('th').each(function (i) {
-            if ($(this).attr('data-column-num') == "true") {
-              columns.push({
-                "type": "natural",
-                "targets": i
-              });
-            }
-          });
-          defaultConfigs['columnDefs'] = columns;
-        }
-
-        $(this).dataTable(defaultConfigs);
-      }
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initTableDefault = {
-        attach: function attach(context) {
-          $("body", context).once('nds-table-default').each(function () {
-            initTableDefault(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initTableDefault();
-    });
-  }
-})(jQuery);
-
-(function ($) {
   function initInputNDS() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $(function () {
@@ -177,21 +119,39 @@
 })(jQuery);
 
 (function ($) {
-  function initBlockHero() {
+  function initLinkExternal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('a:not(:has(img))').each(function () {
+      if ($(this).text()) {
+        var url = $(this).attr('href');
+        var hostName = this.hostname;
 
-    if ($('.parallax').length) {
-      $('.parallax').parallax();
-    }
+        if (url && hostName !== location.hostname) {
+          url = url.toLowerCase();
+
+          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+            $(this).attr('target', '_blank');
+            $(this).after('<a aria-label="Read More about External Link policy" class="ext-link-icon" href="#"></a>');
+          }
+        }
+      }
+    });
+  }
+
+  function initLinkExternalMailto() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('a[href^="mailto:"]').each(function () {
+      $(this).addClass('link--external--mail');
+    });
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
+      Drupal.behaviors.initLinkExternal = {
         attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
+          $('body', context).once('nds-link-external').each(function () {
+            initLinkExternal(context);
           });
         }
       };
@@ -199,7 +159,66 @@
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initBlockHero();
+      initLinkExternal();
+      initLinkExternalMailto();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initTableDefault() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    /* KEY
+        Sorting: Add data-tablesort="true" to the <table> tag.
+        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
+    */
+    $("table").each(function () {
+      if ($(this).attr('nds-datatable') == 'true') {
+        var defaultConfigs = {
+          "responsive": true,
+          "paging": false,
+          "info": false,
+          "autoWidth": false,
+          "searching": false
+        };
+
+        if (!($(this).attr('data-tablesort') == "true")) {
+          defaultConfigs['ordering'] = false;
+        } else {
+          // Determine Column Type
+          var columns = [];
+          $(this).find('thead').find('th').each(function (i) {
+            if ($(this).attr('data-column-num') == "true") {
+              columns.push({
+                "type": "natural",
+                "targets": i
+              });
+            }
+          });
+          defaultConfigs['columnDefs'] = columns;
+        }
+
+        $(this).dataTable(defaultConfigs);
+      }
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initTableDefault = {
+        attach: function attach(context) {
+          $("body", context).once('nds-table-default').each(function () {
+            initTableDefault(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initTableDefault();
     });
   }
 })(jQuery);
@@ -286,39 +305,21 @@
 })(jQuery);
 
 (function ($) {
-  function initLinkExternal() {
+  function initBlockHero() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('a:not(:has(img))').each(function () {
-      if ($(this).text()) {
-        var url = $(this).attr('href');
-        var hostName = this.hostname;
 
-        if (url && hostName !== location.hostname) {
-          url = url.toLowerCase();
-
-          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-            $(this).attr('target', '_blank');
-            $(this).after('<a aria-label="Read More about External Link policy" class="ext-link-icon" href="#"></a>');
-          }
-        }
-      }
-    });
-  }
-
-  function initLinkExternalMailto() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('a[href^="mailto:"]').each(function () {
-      $(this).addClass('link--external--mail');
-    });
+    if ($('.parallax').length) {
+      $('.parallax').parallax();
+    }
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initLinkExternal = {
+      Drupal.behaviors.initBlockHero = {
         attach: function attach(context) {
-          $('body', context).once('nds-link-external').each(function () {
-            initLinkExternal(context);
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
           });
         }
       };
@@ -326,8 +327,7 @@
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initLinkExternal();
-      initLinkExternalMailto();
+      initBlockHero();
     });
   }
 })(jQuery);

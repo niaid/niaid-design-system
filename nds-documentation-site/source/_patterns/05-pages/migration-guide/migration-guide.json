@@ -1,0 +1,13 @@
+{
+    "link": {
+        "index": "/public/patterns/05-pages-index-index/05-pages-index-index.html",
+        "design": "/public/patterns/05-pages-design-design/05-pages-design-design.html",
+        "development": "/public/patterns/05-pages-development-development/05-pages-development-development.html",
+        "components": "/public/patterns/05-pages-components-components/05-pages-components-components.html",
+        "themeBuilder": "/public/patterns/05-pages-builder-builder/05-pages-builder-builder.html",
+        "getStarted": "/public/patterns/05-pages-getting-started-getting-started/05-pages-getting-started-getting-started.html"
+    },
+    "columns": {
+        "main": 8
+    }
+}
