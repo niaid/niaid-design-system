@@ -46,7 +46,7 @@
                     {% block body_content %}
                         <h1 id="main-content">Migration Guide</h1>
                         
-                        <p><strong>Updated:</strong> November 23, 2020</p>
+                        <p><strong>Updated:</strong> November 24, 2020</p>
 
                         <h2>Overview</h2>
                         <p>This page will explain how pre-existing websites can leverage NDS to become compliant with NIAID's policies and branding. If you are looking to build a new site from scratch, be sure to check out the <a href="{{ link.getStarted }}">Getting Started</a> page for more information.</p>
@@ -130,9 +130,9 @@
                         {% include "@molecules/blocks/block-directions/_block-directions-main.twig" with
                             {
                                 "block_directions_prev_text": "Getting Started",
-                                "block_directions_prev_href": links.getStarted,
+                                "block_directions_prev_href": link.getStarted,
                                 "block_directions_next_text": "Development",
-                                "block_directions_next_href": links.development
+                                "block_directions_next_href": link.development
                             }
                         %}
                     {% endblock %}

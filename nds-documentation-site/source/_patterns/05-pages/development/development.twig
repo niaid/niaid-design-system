@@ -110,6 +110,15 @@
                         {% include "@sections/_section-gulp.twig" %}
                         {% include "@sections/_section-libraries.twig" %}
                         {% include "@sections/_section-themes.twig" %}
+                        <hr class="my-4">
+                        {% include "@molecules/blocks/block-directions/_block-directions-main.twig" with
+                            {
+                                "block_directions_prev_text": "Design",
+                                "block_directions_prev_href": link.design,
+                                "block_directions_next_text": "Components",
+                                "block_directions_next_href": link.components
+                            }
+                        %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}

@@ -103,6 +103,15 @@
                         {% include "@sections/_section-layout.twig" %}
                         {% include "@sections/_section-shadows.twig" %}
                         {% include "@sections/_section-corners.twig" %}
+                        <hr class="my-4">
+                        {% include "@molecules/blocks/block-directions/_block-directions-main.twig" with
+                            {
+                                "block_directions_prev_text": "Getting Started",
+                                "block_directions_prev_href": link.getStarted,
+                                "block_directions_next_text": "Development",
+                                "block_directions_next_href": link.development
+                            }
+                        %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
