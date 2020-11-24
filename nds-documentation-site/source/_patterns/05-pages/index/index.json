@@ -1,4 +1,5 @@
 {
+    "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans style--hero",
     "link": {
         "index": "/public/patterns/05-pages-index-index/05-pages-index-index.html",
         "design": "/public/patterns/05-pages-design-design/05-pages-design-design.html",

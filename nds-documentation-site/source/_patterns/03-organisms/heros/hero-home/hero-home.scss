@@ -12,7 +12,7 @@
         min-width: 100%;
     }
     &__content {
-        padding: 6rem 4rem;
+        padding: 4rem 4rem 8rem 4rem;
         text-align: center;
         z-index: 1;
         img {
@@ -30,7 +30,7 @@
             font-size: 1.25rem;
             font-weight: $font-weight-light;
             color: $white;
-            margin: 2.5rem 0 2.75rem 0;
+            margin: 1.5rem 0 1.75rem 0;
         }
         &__buttons {
             margin: 0 auto;
