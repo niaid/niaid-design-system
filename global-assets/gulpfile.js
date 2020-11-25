@@ -14,6 +14,7 @@ const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 const babel = require('gulp-babel');
+const replace = require('gulp-replace');
 
 // copyFonts - Copy Font Awesome from node_modules into project.
 function copyFonts() {
@@ -140,6 +141,10 @@ function buildDist() {
     gulp.src('./source/css/libraries/*.css')
         .pipe(gulp.dest('./public_html/css/libraries'));
     console.log("Finished Copying CSS");
+    // Fix USWDS Image Paths
+    gulp.src('./public_html/css/libraries/uswds/uswds-banner.min.css')
+        .pipe(replace('../img/', '../images/global/uswds/'))
+        .pipe(gulp.dest('./public_html/css/libraries/uswds/'));
 
     // Copy JS
     console.log("Starting Copy of JS");

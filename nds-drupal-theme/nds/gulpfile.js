@@ -14,6 +14,7 @@ const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 const babel = require('gulp-babel');
+const replace = require('gulp-replace');
 
 // copyFonts - Copy Font Awesome from node_modules into project.
 function copyFonts() {
