@@ -122,6 +122,7 @@
         <h3>Components</h3>
         <p>Component are similar to Block patterns but tend to have enhanced functionality (JavaScript).</p>
         <h4>Accordion Component</h4>
+        <p>Accordions are web components that separate a large amount of content into toggleable sections, thereby reducing the overall page length and allowing the user to focus on individual pieces of content at a time.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-accordion/demo/component-accordion.twig" %}
@@ -129,6 +130,14 @@
         {% endembed %}
 
         <h4>Branding Component</h4>
+        <p>The NDS Branding component makes it easy to comply with NIAID's Digital Policy surrounding web property identification.</p>
+        <h5>Pattern Usage</h5>
+        <p>Add your product identity using one or both of the following parameters:</p>
+        <ul>
+            <li>component_branding_identity_top</li>
+            <li>component_branding_identity_bottom/li>
+        </ul>
+        <p>If only one of these parameters is used, your product identity will be centered on one line (unless it exceeds a certain width).</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-branding/demo/component-branding.twig" %}
@@ -146,6 +155,7 @@
         {% endembed %}
 
         <h4>Media Component</h4>
+        <p>The Media component makes it easy to include credits and captions to your images. Additionally, you can control the float (left or right placement) of your images.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-media/demo/component-media.twig" %}
@@ -176,6 +186,7 @@
         {% endembed %}
 
         <h4>Breadcrumbs</h4>
+        <p>Breadcrumbs are used to help users identify indicate where they are within the site.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/demo/navigation-breadcrumbs.twig" %}
@@ -183,6 +194,7 @@
         {% endembed %}
 
         <h4>Pagination</h4>
+        <p>Pagination helps separate long lists of content, such as search results, into separate pages to improve content readability and findability.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-pagination/demo/navigation-pagination.twig" %}
