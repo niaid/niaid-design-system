@@ -67,7 +67,7 @@
                     &:after {
                         color: $color-theme-1-accent;
                         @include fa-icon;
-                        @extend .fal;
+                        @extend .far;
                         content: fa-content($fa-var-chevron-right);
                         font-size: 0.8rem;
                         padding-left: .25rem;

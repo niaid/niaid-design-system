@@ -7,6 +7,8 @@
 {% set input_date_picker_disabled = input_date_picker_disabled|default() %}
 {% set input_date_picker_readonly = input_date_picker_readonly|default() %}
 {% set input_date_picker_required = input_date_picker_required|default() %}
+{% set input_date_picker_icon = input_date_picker_icon|default('calendar') %}
+{% set input_date_picker_icon_weight = input_date_picker_icon_weight|default('r') %}
 
 <div class="input-nds input--date-picker {{ input_date_picker_classes }}">
     <input class="input--date-picker__field" nds-date-picker="true"
@@ -27,8 +29,8 @@
     <div class="input--date-picker__wrapper">
         {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
             {
-                "icon_default_type": "calendar",
-                "icon_default_weight": "l"
+                "icon_default_type": input_date_picker_icon,
+                "icon_default_weight": input_date_picker_icon_weight
             }
         %}
     </div>

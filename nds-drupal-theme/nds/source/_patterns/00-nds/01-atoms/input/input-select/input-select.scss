@@ -19,7 +19,7 @@
             }
             &:after {
                 @include fa-icon;
-                @extend .fal;
+                @extend .far;
                 cursor: pointer;
                 content: fa-content($fa-var-chevron-right);
                 font-weight: 900;
@@ -79,7 +79,7 @@
                             transform: translateY(-50%)!important;
                             right: 0;
                             @include fa-icon;
-                            @extend .fal;
+                            @extend .far;
                             font-size: initial !important;
                             &:hover,
                             &:focus {
@@ -132,7 +132,7 @@
                 transform: translateY(-50%) !important;
                 right: 5rem !important;
                 @include fa-icon;
-                @extend .fal;
+                @extend .far;
                 font-size: initial !important;
                 &:hover,
                 &:focus {
@@ -169,7 +169,7 @@
                 padding-left: 2.4rem !important;
                 &:before {
                     @include fa-icon;
-                    @extend .fal;
+                    @extend .far;
                     content: fa-content($fa-var-filter);
                     color: $type-body;
                     font-weight: 900;

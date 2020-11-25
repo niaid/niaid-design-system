@@ -2,6 +2,8 @@
 {% set input_label_classes = input_label_classes|default() %}
 {% set input_label_text = input_label_text|default() %}
 {% set input_label_tooltip = input_label_tooltip|default() %}
+{% set input_label_tooltip_icon = input_label_tooltip_icon|default('info-circle') %}
+{% set input_label_tooltip_icon_weight = input_label_tooltip_icon_weight|default('r') %}
 
 
 <label class="input-nds input--label {{ input_label_classes }}" for="{{ input_label_id }}" title="{{ input_label_text }}">{{ input_label_text }}
@@ -9,8 +11,8 @@
         <a class="input--label__tooltip" href="#" type="button" data-toggle="tooltip" data-placement="right" title="{{ input_label_tooltip }}">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
                 {
-                    "icon_default_type": "info-circle",
-                    "icon_default_weight": "l"
+                    "icon_default_type": input_label_tooltip_icon,
+                    "icon_default_weight": input_label_tooltip_icon_weight
                 }
             %}
         </a>

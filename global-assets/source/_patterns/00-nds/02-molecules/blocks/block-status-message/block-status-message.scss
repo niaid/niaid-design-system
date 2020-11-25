@@ -6,7 +6,7 @@
     &:before {
         border: 0.0625rem solid $type-link-underline;
         @include fa-icon;
-        @extend .fal;
+        @extend .far;
         height: 3rem;
         width: 3rem;
         border-radius: 100%;

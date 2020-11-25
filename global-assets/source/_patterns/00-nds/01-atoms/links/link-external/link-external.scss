@@ -17,7 +17,7 @@
     margin-right: 1.5rem;
     &:after {
         @include fa-icon;
-        @extend .fal;
+        @extend .far;
         content: fa-content($fa-var-envelope) !important;
         position: absolute;
         bottom: 0;

@@ -501,7 +501,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:b
   display: flex;
   justify-content: center;
   align-items: center;
-  @extend .fal;
+  @extend .far;
   content: fa-content($fa-var-chevron-left);
   background-color: $white;
 }

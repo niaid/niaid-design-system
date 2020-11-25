@@ -44,7 +44,7 @@
             &__button {
                 &__arrow {
                     @include fa-icon;
-                    @extend .fal;
+                    @extend .far;
                     border: 0;
                     cursor: pointer;
                     color: $color-theme-1-1-1;

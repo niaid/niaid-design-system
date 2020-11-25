@@ -59,7 +59,7 @@
                 }
                 &:after {
                     @extend %fa-icon;
-                    @extend .fal;
+                    @extend .far;
                     color: $white;
                     content: fa-content($fa-var-check);
                     display: block;

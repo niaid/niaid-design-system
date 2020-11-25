@@ -2,6 +2,7 @@
 {% set button_floating_id = button_floating_id|default() %}
 {% set button_floating_text = button_floating_text|default() %}
 {% set button_floating_icon = button_floating_icon|default() %}
+{% set button_floating_icon_weight = button_floating_icon_weight|default('r') %}
 {% set button_floating_aria_label = button_floating_aria_label|default() %}
 
 <button id="{{ button_floating_id }}" class="button-nds button--floating {{ button_floating_classes }}" aria-label="{{ button_floating_aria_label }}">
@@ -9,7 +10,7 @@
         {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
             {
                 "icon_default_type": button_floating_icon,
-                "icon_default_weight": "r"
+                "icon_default_weight": button_floating_icon_weight
             }
         %}
     </div>

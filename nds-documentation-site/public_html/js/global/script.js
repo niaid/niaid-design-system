@@ -7,29 +7,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 $(document).ready(function () {
-  $('a:not(:has(img))').each(function () {
-    var varText = $(this).text();
-
-    if (varText) {
-      // Get URL and verify it exists
-      var url = $(this).attr('href');
-      var hostName = this.hostname;
-
-      if (url && hostName !== location.hostname) {
-        url = url.toLowerCase();
-
-        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-          $(this).attr('target', '_blank');
-          $(this).after('<a title="Link is External" aria-label="Link is External" class="ext-link-icon" href="' + url + '"></a>');
-        }
-      }
-    }
-  });
-  $('a[href^="mailto:"]').each(function () {
-    $(this).addClass('link--external--mail');
-  });
-});
-$(document).ready(function () {
   var mql = window.matchMedia('all and (min-width: 992px)');
   var wWidth = $(window).width();
   $('.fixed-left').each(function () {
@@ -73,6 +50,30 @@ $(document).ready(function () {
     });
   }
 })(jQuery);
+
+$(document).ready(function () {
+  $('a:not(:has(img))').each(function () {
+    var varText = $(this).text();
+
+    if (varText) {
+      // Get URL and verify it exists
+      var url = $(this).attr('href');
+      var hostName = this.hostname;
+
+      if (url && hostName !== location.hostname) {
+        url = url.toLowerCase();
+
+        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+          $(this).attr('target', '_blank');
+          $(this).after('<a title="Link is External" aria-label="Link is External" class="ext-link-icon" href="' + url + '"></a>');
+        }
+      }
+    }
+  });
+  $('a[href^="mailto:"]').each(function () {
+    $(this).addClass('link--external--mail');
+  });
+});
 
 (function ($) {
   function initComponentScrollspySection() {

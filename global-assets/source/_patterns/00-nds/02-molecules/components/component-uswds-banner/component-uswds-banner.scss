@@ -22,7 +22,7 @@
         }
         &:after {
             @include fa-icon;
-            @extend .fal;
+            @extend .far;
             content: fa-content($fa-var-chevron-right) !important;
             color: $white;
             -webkit-mask: none;
