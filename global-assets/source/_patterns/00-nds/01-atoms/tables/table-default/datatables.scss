@@ -496,12 +496,11 @@ table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:b
   box-sizing: content-box;
   text-align: center;
   text-indent: 0 !important;
-  line-height: 1rem;
-  @include fa-icon;
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  @extend .far;
+  @extend %fa-icon;
+  @extend .fas;
   content: fa-content($fa-var-chevron-left);
   background-color: $white;
 }

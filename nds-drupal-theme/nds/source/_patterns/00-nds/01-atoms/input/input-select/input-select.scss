@@ -18,8 +18,8 @@
                 padding: 0;
             }
             &:after {
-                @include fa-icon;
-                @extend .far;
+                @extend %fa-icon;
+                @extend .fas;
                 cursor: pointer;
                 content: fa-content($fa-var-chevron-right);
                 font-weight: 900;
@@ -78,8 +78,8 @@
                             top: 50%!important;
                             transform: translateY(-50%)!important;
                             right: 0;
-                            @include fa-icon;
-                            @extend .far;
+                            @extend %fa-icon;
+                            @extend .fas;
                             font-size: initial !important;
                             &:hover,
                             &:focus {
@@ -131,8 +131,8 @@
                 top: 50% !important;
                 transform: translateY(-50%) !important;
                 right: 5rem !important;
-                @include fa-icon;
-                @extend .far;
+                @extend %fa-icon;
+                @extend .fas;
                 font-size: initial !important;
                 &:hover,
                 &:focus {
@@ -168,8 +168,8 @@
             .select2-selection {
                 padding-left: 2.4rem !important;
                 &:before {
-                    @include fa-icon;
-                    @extend .far;
+                    @extend %fa-icon;
+                    @extend .fas;
                     content: fa-content($fa-var-filter);
                     color: $type-body;
                     font-weight: 900;

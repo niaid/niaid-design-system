@@ -3,10 +3,8 @@
     position: relative;
     margin-top: 3rem;
     background: $white;
-    &:before {
+    &__icon {
         border: 0.0625rem solid $type-link-underline;
-        @include fa-icon;
-        @extend .far;
         height: 3rem;
         width: 3rem;
         border-radius: 100%;
@@ -22,34 +20,30 @@
     }
     &.message--warning {
         background: #fff1d2;
-        &:before {
+        .block--status-message__icon {
             color: $white;
             background: $status-warning;
-            content: fa-content($fa-var-exclamation-triangle);
         }
     }
     &.message--information {
         background: #d4eeff;
-        &:before {
+        .block--status-message__icon {
             color: $white;
             background: $status-information;
-            content: fa-content($fa-var-info-circle);
         }
     }
     &.message--success {
         background: #e7f4e4;
-        &:before {
+        .block--status-message__icon {
             color: $white;
             background: $status-success;
-            content: fa-content($fa-var-check);
         }
     }
     &.message--error {
         background: #f9dede;
-        &:before {
+        .block--status-message__icon {
             color: $white;
             background: $status-error;
-            content: fa-content($fa-var-times);
         }
     }
     a,

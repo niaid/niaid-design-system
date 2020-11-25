@@ -66,8 +66,8 @@
                 .link--carot {
                     &:after {
                         color: $color-theme-1-accent;
-                        @include fa-icon;
-                        @extend .far;
+                        @extend %fa-icon;
+                        @extend .fas;
                         content: fa-content($fa-var-chevron-right);
                         font-size: 0.8rem;
                         padding-left: .25rem;

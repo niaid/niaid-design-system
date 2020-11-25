@@ -43,8 +43,8 @@
             }
             &__button {
                 &__arrow {
-                    @include fa-icon;
-                    @extend .far;
+                    @extend %fa-icon;
+                    @extend .fas;
                     border: 0;
                     cursor: pointer;
                     color: $color-theme-1-1-1;

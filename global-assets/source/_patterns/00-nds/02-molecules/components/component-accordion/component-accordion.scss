@@ -26,8 +26,8 @@
                 white-space: normal;
                 position: relative;
                 &:after {
-                    @include fa-icon;
-                    @extend .far;
+                    @extend %fa-icon;
+                    @extend .fas;
                     position: absolute;
                     margin-right: 1rem;
                     right: 0;
