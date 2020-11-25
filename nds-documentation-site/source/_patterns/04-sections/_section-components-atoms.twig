@@ -26,6 +26,12 @@
         <p>The Default Button pattern supports both buttons and links. Links are created automatically if the button_default_href attribute is passed. If omitted, the resultant output will be a button element.</p>
         <p>To use one of the styles below, pass the "button_default_type" parameter the desired style ("primary", "secondary" or "tertiary").</p>
         <p>These button styles can also be applied to other button components by passing the desired classes (i.e. button--primary) to the pattern. See below for examples of using various button styles on other button components.</p>
+        {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
+            {
+                "text_uswds_component_name": "Buttons",
+                "text_uswds_href": "https://designsystem.digital.gov/components/button/"
+            }
+        %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 <div class="container-fluid">
@@ -409,6 +415,12 @@
     {% block component_scrollspy_section_content %}
         <h3>Tables</h3>
         <p>Tables can be tricky on the web for accessibility and responsive reasons. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables to and improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initialize the responsive functionality of Datatables.</p>
+        {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
+            {
+                "text_uswds_component_name": "Tables",
+                "text_uswds_href": "https://designsystem.digital.gov/components/table/"
+            }
+        %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/tables/table-default/demo/table-default.twig" %}
@@ -425,7 +437,7 @@
     {% block component_scrollspy_section_content %}
         <h3>Text</h3>
         <h4>Blockquote</h4>
-        <p>Blockquotes are useful ways to separate quotes from the rest of the body text, adding visual interest to pages.</p>
+        <p>Blockquotes are useful to separate quotes from the rest of the body text, adding visual interest to pages and highlighting the quote.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/text/text-blockquote/demo/text-blockquote.twig" %}

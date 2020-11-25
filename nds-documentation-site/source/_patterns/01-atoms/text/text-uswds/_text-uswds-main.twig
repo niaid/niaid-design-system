@@ -1,0 +1,13 @@
+{% set text_uswds_classes = text_uswds_classes|default() %}
+{% set text_uswds_href = text_uswds_href|default() %}
+{% set text_uswds_component_name = text_uswds_component_name|default() %}
+
+<p class="text-nds text--uswds {{ text_uswds_classes }}">
+    {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
+        {
+            "image_default_src": 'uswds-logo.svg',
+            "image_default_alt": 'USWDS Logo'
+        }
+    %}
+    <a href="{{ text_uswds_href }}">Read more guidance about <strong>{{ text_uswds_component_name }}</strong> from the U.S Web Design System</a>
+</p>
