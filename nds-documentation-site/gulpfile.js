@@ -92,7 +92,7 @@ function compilePatternLab(cb) {
 // copyGlobalSass - Copy CSS into NDS Documentation
 function copyGlobalSass() {
     console.log("Transferring Assets from Global SASS...");
-    gulp.src('../global-assets/source/css/style.scss').pipe(gulp.dest('./source/css/'));
+    // gulp.src('../global-assets/source/css/style.scss').pipe(gulp.dest('./source/css/'));
     gulp.src('../global-assets/source/css/libraries/**/*').pipe(gulp.dest('./source/css/libraries/'));
     return gulp.src('../global-assets/source/css/global/**/*').pipe(gulp.dest('./source/css/global/'));
 }
