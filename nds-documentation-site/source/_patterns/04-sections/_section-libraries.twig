@@ -8,6 +8,7 @@
         <p>NDS uses the following libraries in various capacities:</p>
         <ul>
             <li><a href="https://getbootstrap.com/">Bootstrap 4</a></li>
+            <li><a href="https://fontawesome.com/">Font Awesome</a></li>
             <li><a href="https://materializecss.com/">Materialize</a></li>
             <li><a href="https://datatables.net/">DataTables</a></li>
             <li><a href="https://select2.org/">Select2</a></li>
@@ -21,6 +22,15 @@
             }
         %}
         <p><a href="https://getbootstrap.com/">Bootstrap</a> is a front end library that provides stylesheets and functional components designed to accelerate web development. While NDS relies on Bootstrap primarily for its grid system, other functional components, such as dropdowns and modals, are also leveraged.</p>
+        
+        <h3>Font Awesome</h3>
+        {% include "@nds/01-atoms/text/text-badge/_text-badge-main.twig" with
+            {
+                "text_badge_text": "Version: 5.15.1"
+            }
+        %}
+        <p><a href="https://fontawesome.com/">Font Awesome</a> is the NIAID Design System's official icon vendor. NDS provides the infrastructure to use the Free version of Font Awesome icons out of the box. If you have a need for extended support or would like to request access to Font Awesome Pro, please use the <a href="https://ecollab.niaid.nih.gov/sites/portalprojects/Lists/Box/NewForm2.aspx">Web Request Form</a> to submit a request.</p>
+
         <h3>Materialize</h3>
         {% include "@nds/01-atoms/text/text-badge/_text-badge-main.twig" with
             {

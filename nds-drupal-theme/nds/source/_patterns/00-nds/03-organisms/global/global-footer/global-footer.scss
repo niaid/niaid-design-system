@@ -38,11 +38,11 @@
         &__info {
             padding: 0;
             a {
-                border-bottom: 0.0625rem solid $white;
+                border-bottom-color: $white;
                 &:hover,
                 &:focus {
                     color: $white;
-                    border-bottom: 0.0625rem solid transparent;
+                    border-bottom-color: transparent;
                 }
                 &:visited {
                     color: $white;

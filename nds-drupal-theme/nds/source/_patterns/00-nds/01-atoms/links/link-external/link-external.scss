@@ -9,6 +9,7 @@
         @extend .fas;
         content: fa-content($fa-var-external-link-alt) !important;
         font-size: 0.7rem;
+        margin-left: .25rem;
     }
 }
 

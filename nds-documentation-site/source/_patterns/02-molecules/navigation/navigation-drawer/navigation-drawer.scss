@@ -16,8 +16,8 @@
                     padding: 0;
                     border-radius: 0;
                     &:after {
-                        @include fa-icon;
-                        @extend .far;
+                        @extend %fa-icon;
+                        @extend .fal;
                         content: fa-content($fa-var-chevron-right);
                     }
                     &[aria-expanded="true"] {
