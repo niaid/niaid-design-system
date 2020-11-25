@@ -26,6 +26,7 @@
         "development": "/development/",
         "components": "/components/",
         "themeBuilder": "/builder/",
-        "getStarted": "/getting-started/"
+        "getStarted": "/getting-started/",
+        "migrationGuide": "/migration-guide/"
     }
 }
