@@ -64,8 +64,6 @@ function nds_drupal_theme_form_system_theme_settings_alter(&$form, &$form_state)
       '#options' => [
         'roboto' => 'Roboto', 
         'public-sans' => 'Public Sans', 
-        'merriweather' => 'Merriweather',
-        'martel' => 'Martel', 
       ],
       '#default_value'  => theme_get_setting('font_body'),
     ];
