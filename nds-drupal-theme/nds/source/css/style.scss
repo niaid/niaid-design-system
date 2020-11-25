@@ -5,11 +5,10 @@
 
 // FONT AWESOME
 $fa-font-path: '../webfonts/font-awesome';
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome";
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/brands";
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/light";
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/regular";
-@import "../../node_modules/@fortawesome/fontawesome-pro/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
 
 // VARIABLES
 @import "global/variables.scss";

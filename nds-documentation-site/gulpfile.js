@@ -299,7 +299,6 @@ function buildDist() {
     gulp.src('../global-assets/core/**/*').pipe(gulp.dest('../global-assets/dist/core'));
     gulp.src('../global-assets/package.json').pipe(gulp.dest('../global-assets/dist/'));
     gulp.src('../global-assets/composer.json').pipe(gulp.dest('../global-assets/dist/'));
-    gulp.src('../global-assets/.npmrc').pipe(gulp.dest('../global-assets/dist/'));
     gulp.src('../global-assets/LICENSE').pipe(gulp.dest('../global-assets/dist/'));
     gulp.src('../global-assets/Readme.md').pipe(gulp.dest('../global-assets/dist/'));
     return gulp.src('../global-assets/gulpfile.js').pipe(gulp.dest('../global-assets/dist/'));
