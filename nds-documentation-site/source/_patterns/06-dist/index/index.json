@@ -13,7 +13,7 @@
         "dataTables": true,
         "dateTimePicker": true
     },
-    "link": {
+    "links": {
         "index": "/",
         "design": "/design/",
         "development": "/development/",

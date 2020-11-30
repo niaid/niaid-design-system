@@ -10,10 +10,10 @@
                     Getting Started
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ link.getStarted }}">Overview</a>
-                    <a class="dropdown-item" href="{{ link.getStarted ~ '#section-static-website' }}">Building a Static Site</a>
-                    <a class="dropdown-item" href="{{ link.getStarted ~ '#section-drupal-website' }}">Building a Drupal Site</a>
-                    <a class="dropdown-item" href="{{ link.getStarted ~ '#section-resources' }}">Resources</a>
+                    <a class="dropdown-item" href="{{ links.getStarted }}">Overview</a>
+                    <a class="dropdown-item" href="{{ links.getStarted ~ '#section-static-website' }}">Building a Static Site</a>
+                    <a class="dropdown-item" href="{{ links.getStarted ~ '#section-drupal-website' }}">Building a Drupal Site</a>
+                    <a class="dropdown-item" href="{{ links.getStarted ~ '#section-resources' }}">Resources</a>
                 </div>
             </div>
             <div class="navigation--primary__inner__item">
@@ -21,14 +21,14 @@
                     Design
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ link.design }}">Overview</a>
-                    <a class="dropdown-item" href="{{ link.design ~ '#section-typography' }}">Typography</a>
-                    <a class="dropdown-item" href="{{ link.design ~ '#section-icons' }}">Icons</a>
-                    <a class="dropdown-item" href="{{ link.design ~ '#section-colors' }}">Colors</a>
-                    <a class="dropdown-item" href="{{ link.design ~ '#section-forms' }}">Forms &amp; Input</a>
-                    <a class="dropdown-item" href="{{ link.design ~ '#section-layout' }}">Layout &amp; Spacing</a>
-                    <a class="dropdown-item" href="{{ link.design ~ '#section-shadows' }}">Shadows</a>
-                    <a class="dropdown-item" href="{{ link.design ~ '#section-corners' }}">Corners</a>
+                    <a class="dropdown-item" href="{{ links.design }}">Overview</a>
+                    <a class="dropdown-item" href="{{ links.design ~ '#section-typography' }}">Typography</a>
+                    <a class="dropdown-item" href="{{ links.design ~ '#section-icons' }}">Icons</a>
+                    <a class="dropdown-item" href="{{ links.design ~ '#section-colors' }}">Colors</a>
+                    <a class="dropdown-item" href="{{ links.design ~ '#section-forms' }}">Forms &amp; Input</a>
+                    <a class="dropdown-item" href="{{ links.design ~ '#section-layout' }}">Layout &amp; Spacing</a>
+                    <a class="dropdown-item" href="{{ links.design ~ '#section-shadows' }}">Shadows</a>
+                    <a class="dropdown-item" href="{{ links.design ~ '#section-corners' }}">Corners</a>
                 </div>
             </div>
             <div class="navigation--primary__inner__item">
@@ -36,18 +36,18 @@
                     Development
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ link.development }}">Overview</a>
-                    <a class="dropdown-item" href="{{ link.development ~ '#section-atomic-design' }}">Atomic Design</a>
-                    <a class="dropdown-item" href="{{ link.development ~ '#section-libraries' }}">Libraries</a>
-                    <a class="dropdown-item" href="{{ link.development ~ '#section-technologies' }}">Technologies &amp; Frameworks</a>
-                    <a class="dropdown-item" href="{{ link.development ~ '#section-themes' }}">Themes</a>
+                    <a class="dropdown-item" href="{{ links.development }}">Overview</a>
+                    <a class="dropdown-item" href="{{ links.development ~ '#section-atomic-design' }}">Atomic Design</a>
+                    <a class="dropdown-item" href="{{ links.development ~ '#section-libraries' }}">Libraries</a>
+                    <a class="dropdown-item" href="{{ links.development ~ '#section-technologies' }}">Technologies &amp; Frameworks</a>
+                    <a class="dropdown-item" href="{{ links.development ~ '#section-themes' }}">Themes</a>
                 </div>
             </div>
             <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "components" ? "active" : "" }}" href="{{ link.components }}">Components</a>
+                <a class="{{ navigationPrimaryActiveLink == "components" ? "active" : "" }}" href="{{ links.components }}">Components</a>
             </div>
             <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "builder" ? "active" : "" }}" href="{{ link.themeBuilder }}">Theme Builder</a>
+                <a class="{{ navigationPrimaryActiveLink == "builder" ? "active" : "" }}" href="{{ links.themeBuilder }}">Theme Builder</a>
             </div>
         </div>
     {% endblock %}

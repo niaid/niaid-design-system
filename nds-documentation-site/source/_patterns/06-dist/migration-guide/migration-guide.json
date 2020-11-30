@@ -14,7 +14,7 @@
         "dataTables": false,
         "dateTimePicker": false
     },
-    "link": {
+    "links": {
         "index": "/",
         "design": "/design/",
         "development": "/development/",

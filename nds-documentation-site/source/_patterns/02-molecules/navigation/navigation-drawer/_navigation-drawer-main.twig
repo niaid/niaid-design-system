@@ -21,55 +21,55 @@
             </div>
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navGettingStarted">
-                    <a href="{{ link.getStarted }}">Getting Started</a>
+                    <a href="{{ links.getStarted }}">Getting Started</a>
                     <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" tabindex="-1"></button>
                 </div>
                 <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseOne" class="collapse" aria-labelledby="navGettingStarted" data-parent="#{{ navigation_drawer_id }}">
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.getStarted }}">Overview</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.getStarted ~ '#section-static-website' }}">Building a Static Site</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.getStarted ~ '#section-drupal-website' }}">Building a Drupal Site</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.getStarted ~ '#section-resources' }}">Resources</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.getStarted }}">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.getStarted ~ '#section-static-website' }}">Building a Static Site</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.getStarted ~ '#section-drupal-website' }}">Building a Drupal Site</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.getStarted ~ '#section-resources' }}">Resources</a>
                 </div>
             </div>
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navDesign">
-                    <a href="{{ link.design }}">Design</a>
+                    <a href="{{ links.design }}">Design</a>
                     <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" tabindex="-1"></button>
                 </div>
                 <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseTwo" class="collapse" aria-labelledby="navDesign" data-parent="#{{ navigation_drawer_id }}">
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.design }}">Overview</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.design ~ '#section-typography' }}">Typography</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.design ~ '#section-icons' }}">Icons</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.design ~ '#section-colors' }}">Colors</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.design ~ '#section-forms' }}">Forms &amp; Input</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.design ~ '#section-layout' }}">Layout &amp; Spacing</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.design ~ '#section-shadows' }}">Shadows</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.design ~ '#section-corners' }}">Corners</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.design }}">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.design ~ '#section-typography' }}">Typography</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.design ~ '#section-icons' }}">Icons</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.design ~ '#section-colors' }}">Colors</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.design ~ '#section-forms' }}">Forms &amp; Input</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.design ~ '#section-layout' }}">Layout &amp; Spacing</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.design ~ '#section-shadows' }}">Shadows</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.design ~ '#section-corners' }}">Corners</a>
                 </div>
             </div>
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navDevelopment">
-                    <a href="{{ link.development }}">Development</a>
+                    <a href="{{ links.development }}">Development</a>
                     <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" tabindex="-1"></button>
                 </div>
                 <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseThree" class="collapse" aria-labelledby="navDevelopment" data-parent="#{{ navigation_drawer_id }}">
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.development }}">Overview</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.development ~ '#section-atomic-design' }}">Atomic Design</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.development ~ '#section-libraries' }}">Libraries</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.development ~ '#section-technologies' }}">Technologies &amp; Frameworks</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ link.development ~ '#section-themes' }}">Themes</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.development }}">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.development ~ '#section-atomic-design' }}">Atomic Design</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.development ~ '#section-libraries' }}">Libraries</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.development ~ '#section-technologies' }}">Technologies &amp; Frameworks</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="{{ links.development ~ '#section-themes' }}">Themes</a>
                 </div>
             </div>
             <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" class="{{ navigationPrimaryActiveLink == "components" ? "active" : "" }}" href="{{ link.components }}">Components</a>
+                <a tabindex="-1" class="{{ navigationPrimaryActiveLink == "components" ? "active" : "" }}" href="{{ links.components }}">Components</a>
             </div>
             <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" class="{{ navigationPrimaryActiveLink == "builder" ? "active" : "" }}" href="{{ link.themeBuilder }}">Theme Builder</a>
+                <a tabindex="-1" class="{{ navigationPrimaryActiveLink == "builder" ? "active" : "" }}" href="{{ links.themeBuilder }}">Theme Builder</a>
             </div>
             <div class="navigation--drawer__inner__download">
                  {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                     {
-                        "button_icon_href": link.getStarted,
+                        "button_icon_href": links.getStarted,
                         "button_icon_icon": "download",
                         "button_icon_icon_weight": "l",
                         "button_icon_text": "Download NDS"

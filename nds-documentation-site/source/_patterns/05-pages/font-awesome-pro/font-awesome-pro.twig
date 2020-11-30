@@ -1,0 +1,69 @@
+{% include "@molecules/components/component-style-controls/_component-style-controls-main.twig" %}
+
+{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+    {
+        "layouts_site_id": "font-awesome-pro"
+    }
+%}
+    {% block header %}
+        {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
+        {% include "@organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "Design System"
+            }
+        %}
+    {% endblock %}
+    {% block global_navigation %}
+        {% include "@molecules/navigation/navigation-primary/_navigation-primary-main.twig" %}
+        {% include "@molecules/navigation/navigation-drawer/_navigation-drawer-main.twig" with
+            {
+                "navigation_drawer_id": "main-navigation-mobile"
+            }
+        %}
+        {% include "@nds/01-atoms/buttons/button-floating/_button-floating-main.twig" with
+            {
+                "button_floating_id": "custom-styles-toggle",
+                "button_floating_icon": "palette",
+                "button_floating_icon_weight": "l",
+                "button_floating_text": "Customize Page Theme"
+            }
+        %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@atoms/layouts/layouts-main/_layouts-main-main.twig" with
+            {
+                "layouts_main_id": 'main',
+                "layouts_main_left": columns.left,
+                "layouts_main_main": columns.main,
+                "layouts_main_right": columns.right
+            }
+        %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" with
+                    {
+                        "layouts_body_vertical_padding": "no"
+                    }
+                %}
+                    {% block body_content %}
+                        <h1 id="main-content">Using Font Awesome Pro with the NIAID Design System</h1>
+                        
+                        <p><strong>Updated:</strong> November 30, 2020</p>
+
+                        <h2>Overview</h2>
+                        <p>This page will explain how pre-existing websites can leverage the NIAID Design System (NDS) to become compliant with NIAID's policies and branding. If you are looking to build a new site from scratch, be sure to check out the <a href="{{ links.getStarted }}">Getting Started</a> page for more information.</p>
+
+                        <hr>
+
+                        <h2>Starting the Migration Process</h2>
+
+                        
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% embed "@nds/03-organisms/global/global-footer/_global-footer-main.twig" %}
+    {% endembed %}
+{% endblock %}
+{% endembed %}
