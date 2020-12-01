@@ -289,13 +289,9 @@
         &.global--footer {
             border-top: .25rem solid $color-theme-2-accent;
             .global--footer__content {
-                &__info {
-                    &__section {
-                        .link--carot {
-                            &:after {
-                                color: $color-theme-2-accent;
-                            }
-                        }
+                .link--carot {
+                    &:after {
+                        color: $color-theme-2-accent;
                     }
                 }
             }
@@ -594,13 +590,9 @@
         &.global--footer {
             border-top: .25rem solid $color-theme-3-accent;
             .global--footer__content {
-                &__info {
-                    &__section {
-                        .link--carot {
-                            &:after {
-                                color: $color-theme-3-accent;
-                            }
-                        }
+                .link--carot {
+                    &:after {
+                        color: $color-theme-3-accent;
                     }
                 }
             }
