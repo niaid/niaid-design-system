@@ -12,10 +12,17 @@
             width: 0;
         }
     }
+    &--left,
+    &--right {
+        @include media-breakpoint-up(md) {
+            max-width: 50%;
+        }
+    }
     &--left {
         float: left;
         clear: right;
         margin-right: 2rem;
+        max-width: 50%;
     }
     &--right {
         float: right;

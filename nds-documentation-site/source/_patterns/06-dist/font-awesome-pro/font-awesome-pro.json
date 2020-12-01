@@ -1,0 +1,27 @@
+{
+    "pageID": "font-awesome-pro",
+    "prodBuild": "true",
+    "title": "Using Font Awesome Pro with NDS (NPM) | NIAID Design System",
+    "cssPath": "../css/",
+    "jsPath": "../js/",
+    "imagePath": "../assets/",
+    "jsIncludes": {
+        "jquery": true,
+        "select2": true,
+        "materialize": true,
+        "bootstrap": true,
+        "matchMedia": true,
+        "dataTables": false,
+        "dateTimePicker": false
+    },
+    "links": {
+        "index": "/",
+        "design": "/design/",
+        "development": "/development/",
+        "components": "/components/",
+        "themeBuilder": "/builder/",
+        "getStarted": "/getting-started/",
+        "migrationGuide": "/migration-guide/",
+        "fontAwesomePro": "/font-awesome-pro-nds-npm/"
+    }
+}

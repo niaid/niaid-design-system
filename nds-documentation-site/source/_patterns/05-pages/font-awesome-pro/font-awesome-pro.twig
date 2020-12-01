@@ -45,18 +45,106 @@
                     }
                 %}
                     {% block body_content %}
-                        <h1 id="main-content">Using Font Awesome Pro with the NIAID Design System</h1>
+                        <h1 id="main-content">Using Font Awesome Pro with NDS (NPM)</h1>
                         
                         <p><strong>Updated:</strong> November 30, 2020</p>
 
                         <h2>Overview</h2>
-                        <p>This page will explain how pre-existing websites can leverage the NIAID Design System (NDS) to become compliant with NIAID's policies and branding. If you are looking to build a new site from scratch, be sure to check out the <a href="{{ links.getStarted }}">Getting Started</a> page for more information.</p>
+                        <p>NIAID Design System users automatically have access to the free version of <a href="https://fontawesome.com/">Font Awesome</a>, the official icon library of NDS. If you have been granted access to the paid <a href="https://fontawesome.com/pro">Font Awesome Pro</a> version by OCGR, or are planning to purchase and incorporate Pro into your NDS site yourself, this guide will detail the steps involved using the NPM approach.</p>
 
                         <hr>
 
-                        <h2>Starting the Migration Process</h2>
+                        <h2>Obtaining Your License Key</h2>
 
+                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                            {
+                                "component_media_src": 'font-awesome-pro/fa-account-details.png',
+                                "component_media_alt": 'See caption for details',
+                                "component_media_credit": 'NIAID',
+                                "component_media_caption": 'Find your account details below your personal information on the Font Awesome website.',
+                                "component_media_lightbox": "yes",
+                                "component_media_float": "right"
+                            }
+                        %}
+
+                        <p>The first step in integrating Font Awesome Pro into your site is adding a license file containing your Pro account license key.</p>
+                        <ol>
+                            <li>Login to your Font Awesome account.</li>
+                            <li>Click on the profile icon in the top right of the site.</li>
+                            <li>Select "Account Details" below your personal information.</li>
+                        </ol>
+
+                        <p>Your license key will be under a section named "Pro npm Package Token."</p>
+
+                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                            {
+                                "component_media_src": 'font-awesome-pro/package-token.png',
+                                "component_media_alt": 'See caption for details',
+                                "component_media_credit": 'NIAID',
+                                "component_media_caption": 'The location of your Font Awesome license key.',
+                                "component_media_lightbox": "yes"
+                            }
+                        %}
+
+                        <h2>Creating a License File</h2>
+
+                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                            {
+                                "component_media_src": 'font-awesome-pro/npmrc.png',
+                                "component_media_alt": 'See caption for details',
+                                "component_media_credit": 'NIAID',
+                                "component_media_caption": 'The location to place your .npmrc file.',
+                                "component_media_lightbox": "yes",
+                                "component_media_float": "right"
+                            }
+                        %}
+
+                        <ol>
+                            <li>Open your project repository in your preferred code editor.</li>
+                            <li>Create a new file named <strong>.npmrc</strong> in the same folder where your package.json file resides.<li>
+                            <li>Paste the following code in this new .npmrc file:</li>
+                        </ol>
+
+                        <code>
+                            @fortawesome:registry=https://npm.fontawesome.com/
+                            //npm.fontawesome.com/:_authToken=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+                        </code>
+
+                        <p>Replace "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" with your license key.</p>
+
+                        <h2>Installing Font Awesome Pro with NPM</h2>
+
+                        <p>With your .npmrc file created, run the following command to install the Font Awesome Pro Node module:</p>
+
+                        <code>
+                            npm install --save @fortawesome/fontawesome-pro
+                        </code>
+
+                        <p>The installed Node module is named @fortawesome.</p>
+
+                        <h2>Copying Webfonts &amp; Modifying the SCSS File</h2>
+
+                        <p>Now that the Font Awesome Pro Node module is installed, you can utilize the accompanying font files in your SCSS.</p>
                         
+                        <p>To start, copy the files in the @fortawesome/fontawesome-pro/webfonts folder from within the Node module and paste the files inside your source/webfonts/ directory under font-awesome/. You may hit "Replace" if you receive a notification about duplicate Font files.</p>
+
+                        <p>Navigate to the style.scss file in source/css/. Add the following line below the Font Awesome import statements starting on line 6:</p>
+
+                        <code>
+                            @import "../../node_modules/@fortawesome/fontawesome-pro/scss/light";
+                        </code>
+
+                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                            {
+                                "component_media_src": 'font-awesome-pro/scss.png',
+                                "component_media_alt": 'See caption for details',
+                                "component_media_credit": 'NIAID',
+                                "component_media_caption": 'The style.scss file after adding the previous code.',
+                                "component_media_lightbox": "yes"
+                            }
+                        %}
+
+                        <p>You are now set up to use Font Awesome Pro with NDS. With Font Awesome Pro, you can access more Regular icons as well as the full set of Light and Duotone icons. If you would like more information on using Font Awesome with NPM, visit <a href="https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers">Font Awesome NPM Documentation</a>.</p>
                     {% endblock %}
                 {% endembed %}
             {% endblock %}

@@ -247,14 +247,29 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>Icons</h3>
-        <p>NDS uses the Font Awesome library for all icons (with the exception of third-party applications and companies). Icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). Specify the icon weight (thickness) by adding the following class corresponding to your needs:</p>
+        <p>NDS uses the Font Awesome library for all icons (with the exception of third-party applications and companies). In Font Awesome, icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:</p>
+
         <ul>
-            <li>fa/far - Regular</li>
-            <li>fal - Light</li>
-            <li>fas - Solid</li>
-            <li>fab - Brands (i.e. Facebook, Twitter, Linkedin, etc.)</li>
+            <li>Solid - fas</li>
+            <li>Brands - fab</li>
+            <li>Regular - fa/far</li>
         </ul>
-        <p>Visit the <a href="https://fontawesome.com/icons?d=gallery">Font Awesome Library</a> to view all supported icons.</p>
+
+        <p>If you have access to Font Awesome Pro, a "Light" icon style (fal) and a Duotone iocn style (fad) are also supported.</p>
+
+        <p>NDS makes using Font Awesome icons easy through its icon-default pattern. This pattern has two key parameters: icon_default_type, and iicon_default_weight. For the icon_default_type, simply pass the name of the icon (without the fa-). For weight, pass only the letter corresponding to the desired icon weight:</p>
+
+        <ul>
+            <li>Solid - s</li>
+            <li>Brands - b</li>
+            <li>Regular - r</li>
+            <li>Light - l</li>
+            <li>Duotone - d</li>
+        </ul>
+
+        <p>Visit the <a href="https://fontawesome.com/icons?d=gallery">Font Awesome Library</a> to view the full Font Awesome icon library.</p>
+
+        <p>OCGR has a Font Awesome Pro license that may be used under certain circumstances. If you have a need for Font Awesome Pro, please contact OCGR and request access. If you have already received access and are looking for documentation on upgrading from Font Awesome Free, please see our <a href="{{ links.fontAwesomePro }}">Using Font Awesome Pro with NDS (NPM) guide.</a></p>
 
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with { "component_snippet_classes": "component--snippet--icon-default" } %}
             {% block component_snippet_code %}

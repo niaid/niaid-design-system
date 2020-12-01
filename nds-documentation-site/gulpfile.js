@@ -181,6 +181,10 @@ function buildNDSDocumentationSite() {
         {
             "page_name": "migration-guide",
             "target_dest": "./public_html/migration-guide"
+        },
+        {
+            "page_name": "font-awesome-pro",
+            "target_dest": "./public_html/font-awesome-pro-nds-npm"
         }
     ];
 
