@@ -1,4 +1,5 @@
 {
+    "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans style--hero",
     "prodBuild": "true",
     "title": "NIAID Design System",
     "cssPath": "./css/",

@@ -65,7 +65,7 @@
 </div>    </div>
 </div>
 
-<div class="page" id="migration-guide">
+<div class="page" id="font-awesome-pro">
             
 <section class="component-nds component--uswds-banner usa-banner " aria-label="Official government website">
   <div class="usa-accordion">
@@ -270,387 +270,153 @@
                 <div class="layouts--main__column layouts--main__second col-lg-9">
                             
 <div class="layouts-nds layouts--body layouts--body--no-vertical-padding">
-                            <h1 id="main-content">Migration Guide</h1>
+                            <h1 id="main-content">Using Font Awesome Pro with NDS (NPM)</h1>
                         
-                        <p><strong>Updated:</strong> November 24, 2020</p>
+                        <p><strong>Updated:</strong> November 30, 2020</p>
 
                         <h2>Overview</h2>
-                        <p>This page will explain how pre-existing websites can leverage the NIAID Design System (NDS) to become compliant with NIAID's policies and branding. If you are looking to build a new site from scratch, be sure to check out the <a href="/getting-started/">Getting Started</a> page for more information.</p>
+                        <p>NIAID Design System users automatically have access to the free version of <a href="https://fontawesome.com/">Font Awesome</a>, the official icon library of NDS. If you have been granted access to the paid <a href="https://fontawesome.com/pro">Font Awesome Pro</a> version by OCGR, or are planning to purchase and incorporate Pro into your NDS site yourself, this guide will detail the steps involved using the NPM approach.</p>
 
                         <hr>
 
-                        <h2>Starting the Migration Process</h2>
+                        <h2>Obtaining Your License Key</h2>
 
-                        <p>The first step in migrating your pre-existing site to NDS is to include the global CSS and JS files in your site. Download these files below:</p>
                         
-                        
-<div class="block--files ">
-    <div class="row">
-        <div class="block--files__col col-12 col-sm-6">
-            
-<a href="../../assets/script-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
-            
-
-<i class="icon-nds icon--default fab fa-js "></i>
-                <span class="button--icon__text icon--left">Download NDS Global JS</span>
-        </a>        </div>
-        <div class="block--files__col col-12 col-sm-6">
-            
-<a href="../../assets/style.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
-            
-
-<i class="icon-nds icon--default fab fa-css3 "></i>
-                <span class="button--icon__text icon--left">Download NDS Global CSS</span>
-        </a>        </div>
-    </div>
-</div>
-                        <p>Depending on the architecture of your application, where you actually add these files may vary. With vanilla HTML, the CSS file should be linked to from the &lt;head&gt; of the HTML document, and the JS file should be linked to just above the closing &lt;/body&gt; tag.</p>
-
-                        <h2>Adding the Header &amp; Footer</h2>
-
-                        <p>The two most important components for NIAID brand compliance is the Header and Footer. The raw HTML markup for these two components are found below and can be copied directly into your project regardless of the front-end architecture. NDS may also offer these patterns as React, Angular, or Vue components in the future.</p>
-
-                        <h3>Header Component</h3>
-                        
-<div class="component-nds component--snippet  no-render">
-    <div class="component--snippet__block">
-        <div class="component--snippet__block__code">
-                        <div class="component--snippet__block__code__snippet">
-                <pre>
-                                                    
-<div class="global-nds global--header ">
-            
-<button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary" >
-            
-
-<i class="icon-nds icon--default fas fa-bars "></i>
-            </button>        
-<a href="/" class="component-nds component--branding ">
     
-<img class="image-nds image--default component--branding__logo--desktop" src="../assets/global/niaid/logo-niaid.svg" alt="NIAID Logo" />    
-<img class="image-nds image--default component--branding__logo--mobile" src="../assets/global/niaid/logo-niaid-mobile.svg" alt="NIAID Logo" />    <div class="component--branding__vertical-bar"></div>
     
-<div class="component-nds component--product-identity ">
-    <div class="component--product-identity__top"></div>
-    <div class="component--product-identity__bottom"></div>
-</div></a>        
-<div class="form-nds form--search ">
-            <form id="" class="form--search__form">
-            
-<div class="input--text--icon"><input class="input-nds input--text "
-    
- id="search-sample-field" type="text" name="search-sample-field" placeholder="Searching for something...">
-    
-
-<i class="icon-nds icon--default fas fa-search "></i>
-</div>            <input class="form-submit" type="submit" value="Search">
-        </form>
-    </div>        
-<button id="global-header-search--open" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary" >
-            
-
-<i class="icon-nds icon--default fas fa-search "></i>
-            </button>    </div>                            
-                </pre>
-            </div>
-        </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        
-<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
-            
-
-<i class="icon-nds icon--default fas fa-clipboard-list "></i>
-                <span class="button--icon__text icon--left">Copy to Clipboard</span>
-        </button>    </div>
-</div>
-                        <h3>Footer Component</h3>
-                        
-<div class="component-nds component--snippet  no-render">
-    <div class="component--snippet__block">
-        <div class="component--snippet__block__code">
-                        <div class="component--snippet__block__code__snippet">
-                <pre>
-                                                    
-
-<footer id="footer" class="global-nds global--footer container-fluid ">
-        <div class="global--footer__content row">
-        <div class="global--footer__content__logo col-md-4">
+<div class="component-nds component--media  component--media--right">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/font-awesome-pro/fa-account-details.png" alt="See caption for details" />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
                             
-<a class="image-nds image--logo " href="/">
-  <img class="image--logo__image" src="../assets/global/niaid/logo-niaid-white.svg" alt="NIAID Logo"/>
-</a>                    </div>
-        <div class="global--footer__content__info col-md-8">
-              
-                <div class="row">
-                    <div class="global--footer__content__info__section col-md-6">
-                        <h4>Website Policies &amp; Notices</h4>
-                        <ul class="global--footer__content__list">
-                            <li><a class="link--carot" href="#">Freedom of Information (FOIA)</a></li>
-                            <li><a class="link--carot" href="#">Privacy Policy</a></li>
-                            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
-                        </ul>
-                    </div>
-                    <div class="global--footer__content__info__section col-md-6">
-                        <h4>Related Government Websites</h4>
-                        <ul class="global--footer__content__list">
-                            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
-                            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
-                            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
-                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
-                        </ul>
-                    </div>
-                </div>
-                    </div>
-    </div>
-      
-        <div class="global--footer__tagline">
-            <p>
-                
-
-<i class="icon-nds icon--default fas fa-bolt "></i>
-                <span>Powered by the NIAID Design System</span>
-            </p>
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">Find your account details below your personal information on the Font Awesome website.</p>
         </div>
-    </footer>                            
-                </pre>
-            </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
         </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        
-<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
-            
-
-<i class="icon-nds icon--default fas fa-clipboard-list "></i>
-                <span class="button--icon__text icon--left">Copy to Clipboard</span>
-        </button>    </div>
-</div>
-                        <h2>Choosing Theme Styles</h2>
-
-                        <p>There are four theme dimensions that you can customize after adding the NDS CSS stylesheet to your website: Fonts, Body Fonts, Colors, Shadows, and Corners. The following sections describe your options for each and how to apply your choices to your website.</p>
-
-                        <h3 id="developing-with-typography">Developing with Typography</h3>
-                        <p>NDS users can select font families for the headings and body of a page. For the headings, there are four available fonts to choose from - Public Sans, Roboto, Martel, and Merriweather. To apply one of these fonts to your headings, add the appropriate class to the &lt;body&gt; tag:</p>
-                        <ul>
-                            <li>Public Sans: <code>style--headings--public-sans</code></li>
-                            <li>Roboto: <code>style--headings--roboto</code></li>
-                            <li>Martel: <code>style--headings--martel</code></li>
-                            <li>Merriweather: <code>style--headings--merriweather</code></li>
-                        </ul>
-                        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body, add the appropriate class to the &lt;body&gt; tag:</p>
-                        <ul>
-                            <li>Public Sans: <code>style--body--public-sans</code></li>
-                            <li>Roboto: <code>style--body--roboto</code></li>
-                        </ul>
-
-                        <p>You may download any of these font families below:</p>
-                        
-<div class="block--fonts container-fluid ">
-    <div class="row">
-        <div class="col-md-6">
-            
-<a href="../../assets/public-sans.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
-            
-
-<i class="icon-nds icon--default fas fa-file-archive "></i>
-                <span class="button--icon__text icon--left">Download Public Sans</span>
-        </a>            <span class="block--fonts__credit">Provided by USWDS</span>
-        </div>
-        <div class="col-md-6">
-            
-<a href="../../assets/roboto.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
-            
-
-<i class="icon-nds icon--default fas fa-file-archive "></i>
-                <span class="button--icon__text icon--left">Download Roboto</span>
-        </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            
-<a href="../../assets/martel.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
-            
-
-<i class="icon-nds icon--default fas fa-file-archive "></i>
-                <span class="button--icon__text icon--left">Download Martel</span>
-        </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
-        </div>
-        <div class="col-md-6">
-            
-<a href="../../assets/merriweather.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
-            
-
-<i class="icon-nds icon--default fas fa-file-archive "></i>
-                <span class="button--icon__text icon--left">Download Merriweather</span>
-        </a>            <span class="block--fonts__credit">Provided by USWDS</span>
-        </div>
+    </div>                    </div>
     </div>
 </div>
-                        <h3 id="developing-with-colors">Developing with Colors</h3>
-                        <p>Currently, NDS users have three color palette options to choose from. However, more palettes may be available in the future. Add the corresponding body class for your desired palette:</p>
-                        
-<div class="view-nds view--swatches container-fluid ">
-    <h4>Theme 1 (Default):</h4>
-            <code>style--colors--theme-1</code>
-        <div class="row">
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #157B8D"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Primary Button</div>
-        <div class="block--swatch__text__hex">#157B8D</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #497951"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Secondary Button</div>
-        <div class="block--swatch__text__hex">#497951</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #262626"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Navigation</div>
-        <div class="block--swatch__text__hex">#262626</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #75C3AC"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Accent</div>
-        <div class="block--swatch__text__hex">#75C3AC</div>
-    </div>
-</div>        </div>
-    </div>
-    <h4>Theme 2:</h4>
-            <code>style--colors--theme-2</code>
-        <div class="row">
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #586FAB"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Primary Button</div>
-        <div class="block--swatch__text__hex">#586FAB</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #247BA0"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Secondary Button</div>
-        <div class="block--swatch__text__hex">#247BA0</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #244D56"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Navigation</div>
-        <div class="block--swatch__text__hex">#244D56</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #FAB952"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Accent</div>
-        <div class="block--swatch__text__hex">#FAB952</div>
-    </div>
-</div>        </div>
-    </div>
-    <h4>Theme 3:</h4>
-            <code>style--colors--theme-3</code>
-        <div class="row">
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #423E63"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Primary Button</div>
-        <div class="block--swatch__text__hex">#423E63</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #69166E"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Secondary Button</div>
-        <div class="block--swatch__text__hex">#69166E</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #123B56"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Navigation</div>
-        <div class="block--swatch__text__hex">#123B56</div>
-    </div>
-</div>        </div>
-        <div class="col-md-3">
-            
-<div class="block-nds block--swatch ">
-    <div class="block--swatch__color" style="background: #D88D89"></div>
-    <div class="block--swatch__text">
-        <div class="block--swatch__text__label">Accent</div>
-        <div class="block--swatch__text__hex">#D88D89</div>
-    </div>
-</div>        </div>
-    </div>
-</div>                        <h3 id="developing-with-shadows">Developing with Shadows</h3>
-                        <p>NDS supports both the Flat and Material Design visual style. By default, NDS is configured in Flat Design. If Material Design is desired, add the following class to the body:</p>
-                        <code>style--shadows</code> 
-                        <h3 id="developing-with-corners">Developing with Corners</h3>
-                        <p>There are three corner styles available with NDS: Sharp, Semi-Rounded, and Fully-Rounded. To apply one of these corner styles to your site, add the appropriate body class:</p>
-                        <ul>
-                            <li>Sharp: <code>style--corners--straight</code></li>
-                            <li>Semi-Rounded: <code>style--corners--semirounded</code></li>
-                            <li>Fully-Rounded: <code>style--corners--rounded</code></li>
-                        </ul>
 
-                        <h2>Adding Additional NDS Components</h2>
-                        <p>After you include the CSS and JS files in your project, and have added the Header and Footer, you may want to leverage other NDS components as well. Check out the <a href="/components/">Components</a> page for HTML code snippets of NDS patterns, as well as detailed information on how to use them.</p>
-                        
-                        <hr class="my-4">
+                        <p>The first step in integrating Font Awesome Pro into your site is adding a license file containing your Pro account license key.</p>
+                        <ol>
+                            <li>Login to your Font Awesome account.</li>
+                            <li>Click on the profile icon in the top right of the site.</li>
+                            <li>Select "Account Details" below your personal information.</li>
+                        </ol>
+
+                        <p>Your license key will be under a section named "Pro npm Package Token."</p>
 
                         
-<div class="block-nds block--directions ">
-            <div class="block--directions__prev">
-            <span>Previous</span><br>
-            
-<a href="/getting-started/" class="button-nds button--icon waves-effect waves-light button--secondary" >
-            
+    
 
-<i class="icon-nds icon--default fas fa-chevron-left "></i>
-                <span class="button--icon__text icon--left">Getting Started</span>
-        </a>        </div>
-                <div class="block--directions__next">
-            <span>Up Next</span><br>
-            
-<a href="/development/" class="button-nds button--icon waves-effect waves-light button--secondary" >
-                <span class="button--icon__text icon--right">Development</span>
-                
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/font-awesome-pro/package-token.png" alt="See caption for details" />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">The location of your Font Awesome license key.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
-    </a>        </div>
-    </div>                    </div>            
+                        <h2>Creating a License File</h2>
+
+                        
+    
+    
+<div class="component-nds component--media  component--media--right">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/font-awesome-pro/npmrc.png" alt="See caption for details" />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">The location to place your .npmrc file.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+
+                        <ol>
+                            <li>Open your project repository in your preferred code editor.</li>
+                            <li>Create a new file named <strong>.npmrc</strong> in the same folder where your package.json file resides.</li>
+                            <li>Paste the following code in this new .npmrc file:</li>
+                        </ol>
+
+                        <code>
+                            @fortawesome:registry=https://npm.fontawesome.com/
+                            //npm.fontawesome.com/:_authToken=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+                        </code>
+
+                        <p>Replace "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" with your license key.</p>
+
+                        <h2>Installing Font Awesome Pro with NPM</h2>
+
+                        <p>With your .npmrc file created, run the following command to install the Font Awesome Pro Node module:</p>
+
+                        <code>
+                            npm install --save @fortawesome/fontawesome-pro
+                        </code>
+
+                        <p>The installed Node module is named @fortawesome.</p>
+
+                        <h2>Copying Webfonts &amp; Modifying the SCSS File</h2>
+
+                        <p>Now that the Font Awesome Pro Node module is installed, you can utilize the accompanying font files in your SCSS.</p>
+                        
+                        <p>To start, copy the files in the @fortawesome/fontawesome-pro/webfonts folder from within the Node module and paste the files inside your source/webfonts/ directory under font-awesome/. You may hit "Replace" if you receive a notification about duplicate Font files.</p>
+
+                        <p>Navigate to the style.scss file in source/css/. Add the following line below the Font Awesome import statements starting on line 6:</p>
+
+                        <code>
+                            @import "../../node_modules/@fortawesome/fontawesome-pro/scss/light";
+                        </code>
+
+                        
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+<img class="image-nds image--default materialboxed" src="../assets/font-awesome-pro/scss.png" alt="See caption for details" />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">The style.scss file after adding the previous code.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+
+                        <p>You are now set up to use Font Awesome Pro with NDS. With Font Awesome Pro, you can access more Regular icons as well as the full set of Light and Duotone icons. If you would like more information on using Font Awesome with NPM, visit <a href="https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers">Font Awesome NPM Documentation</a>.</p>
+                    </div>            
         </div>
         </div>        </div>
             
