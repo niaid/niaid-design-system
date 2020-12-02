@@ -9,8 +9,10 @@
         .pager__items {
             padding: 0;
             list-style: none;
+            text-align: left;
             .pager__item {
-                margin-right: .75rem;
+                padding: 0;
+                margin-right: .5rem;
                 display: inline-flex;
                 a {
                     @extend .button-nds;

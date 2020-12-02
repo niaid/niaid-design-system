@@ -2,28 +2,27 @@
     .hero-image {
         max-width: 100%;
     }
-    .view--featured-content-cards {
-        background: $page-background;
-        padding: 2rem 0;
-        @include media-breakpoint-up(lg) {
-            margin: 0 -2rem;
-        }
-        .container-fluid {
-            padding: 0;
-            @include media-breakpoint-down(md) {
-                .col-md-4 {
-                    padding-bottom: 2rem;
-                    &:last-child {
-                        padding-bottom: 0;
+    .layouts--body {
+        padding: 0 1rem 2rem 1rem;
+        .view--featured-content-cards {
+            background: $page-background;
+            .container-fluid {
+                padding: 0;
+                @include media-breakpoint-down(md) {
+                    .col-md-6 {
+                        padding-bottom: 2rem;
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
                     }
                 }
             }
-        }
-        .block--featured-content-card {
-            margin: 0;
-            @include media-breakpoint-down(md) {
-                .block--featured-content-card__image {
-                    height: auto;
+            .block--featured-content-card {
+                margin: 0;
+                @include media-breakpoint-down(md) {
+                    .block--featured-content-card__image {
+                        height: auto;
+                    }
                 }
             }
         }
