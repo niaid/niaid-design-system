@@ -46,7 +46,7 @@
                     }
                 %}
                     {% block navigation_mobile_rail_content %}
-                        {% include "@nds/02-molecules/navigation/navigation-local/_navigation-local-main.twig" with
+                        {# {% include "@nds/02-molecules/navigation/navigation-local/_navigation-local-main.twig" with
                             {
                                 "navigation_local_id": "navigation-local",
                                 "navigation_local_title_text": "Components",
@@ -112,7 +112,7 @@
                                             {
                                                 "text": "Forms",
                                                 "href": "#section-components-molecules-forms"
-                                            },
+                                            }
                                         ]
                                     },
                                     {
@@ -128,6 +128,100 @@
                                                 "href": "#section-components-organisms-views"
                                             }
                                         ]
+                                    }
+                                ]
+                            }
+                        %} #}
+                        {% include "@molecules/components/component-scrollspy-toc/_component-scrollspy-toc-main.twig" with
+                            {
+                                "component_scrollspy_toc_title": "Components",
+                                "component_scrollspy_toc_data": [
+                                    {
+                                        "href": "section-components-atoms",
+                                        "text": "Atoms"
+                                    },
+                                    {
+                                        "text": "Buttons",
+                                        "href": "section-components-atoms-buttons",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Icons",
+                                        "href": "section-components-atoms-icons",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Images",
+                                        "href": "section-components-atoms-images",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Layouts",
+                                        "href": "section-components-atoms-layouts",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Links",
+                                        "href": "section-components-atoms-links",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Media",
+                                        "href": "section-components-atoms-media",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Tables",
+                                        "href": "section-components-atoms-tables",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Text",
+                                        "href": "section-components-atoms-text",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "href": "section-components-molecules",
+                                        "text": "Molecules"
+                                    },
+                                    {
+                                        "text": "Blocks",
+                                        "href": "section-components-molecules-blocks",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Components",
+                                        "href": "section-components-molecules-components",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Navigation",
+                                        "href": "section-components-molecules-navigation",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Input Groups",
+                                        "href": "section-components-molecules-input-groups",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Forms",
+                                        "href": "section-components-molecules-forms",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "href": "section-components-organisms",
+                                        "text": "Organisms"
+                                    },
+                                    {
+                                        "text": "Global",
+                                        "href": "section-components-organisms-global",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "text": "Views",
+                                        "href": "section-components-organisms-views",
+                                        "class": "ml-3"
                                     }
                                 ]
                             }

@@ -6,6 +6,28 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+(function ($) {
+  function init_layouts_tabs(context) {
+    $('#tab--mockup').attr('tabindex', '-1');
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.layoutsTabs = {
+        attach: function attach(context) {
+          init_layouts_tabs(context);
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      init_layouts_tabs();
+    });
+  }
+})(jQuery);
+
 $(document).ready(function () {
   $('a:not(:has(img))').each(function () {
     var varText = $(this).text();
@@ -51,28 +73,6 @@ $(document).ready(function () {
     }
   });
 });
-
-(function ($) {
-  function init_layouts_tabs(context) {
-    $('#tab--mockup').attr('tabindex', '-1');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.layoutsTabs = {
-        attach: function attach(context) {
-          init_layouts_tabs(context);
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      init_layouts_tabs();
-    });
-  }
-})(jQuery);
 
 (function ($) {
   function initComponentScrollspySection() {
@@ -1049,6 +1049,45 @@ $(document).ready(function () {
     });
   }
 })(jQuery);
+
+$(document).ready(function () {
+  $(".layouts--body").find('a').each(function (e) {
+    var linktext = $.trim($(this).text());
+
+    if (linktext !== "") {
+      linktext = linktext.replace(/\//g, '-');
+      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
+      $(this).attr("data-content", "body-anchor-" + linktext);
+    }
+  });
+  $('.navigation--primary').find('a').each(function (e) {
+    var linktext = $.trim($(this).text());
+
+    if (linktext !== "") {
+      linktext = linktext.replace(/\//g, '-');
+      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
+      $(this).attr("data-nav", "header-nav-" + linktext);
+    }
+  });
+  $('.global--footer').find('a').each(function (e) {
+    var linktext = $.trim($(this).text());
+
+    if (linktext !== "") {
+      linktext = linktext.replace(/\//g, '-');
+      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
+      $(this).attr("data-nav", "footer-nav-" + linktext);
+    }
+  });
+  $('.component--accordion__card').find('button').each(function (e) {
+    var linktext = $.trim($(this).text());
+
+    if (linktext !== "") {
+      linktext = linktext.replace(/\//g, '-');
+      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
+      $(this).attr("data-content", "accordion-" + linktext);
+    }
+  });
+});
 
 (function ($) {
   function initBlockHero() {
