@@ -1,7 +1,0 @@
-{% set image_default_classes = image_default_classes|default() %}
-{% set image_default_src = image_default_src|default() %}
-{% set image_default_alt = image_default_alt|default() %}
-{% set image_default_width = image_default_width|default() %}
-{% set image_default_height = image_default_height|default() %}
-
-<img class="image-nds image--default {{ image_default_classes }}" src="{{ imagePath }}{{ image_default_src }}" alt="{{ image_default_alt }}" {% if image_default_height is not empty %} height="{{ image_default_height }}"{% endif %}{% if image_default_width is not empty %} width="{{ image_default_width }}"{% endif %}{% if image_default_title is not empty %} title="{{ image_default_title }}"{% endif %}/>

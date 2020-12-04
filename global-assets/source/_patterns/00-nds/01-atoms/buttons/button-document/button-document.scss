@@ -4,13 +4,27 @@
     height: 4rem;
     width: 4rem;
     padding: 0;
-    &__generic-wrapper {
+    &__wrapper {
         display: flex;
         position: relative;
         font-size: 1.65rem;
         height: 100%;
         align-items: center;
         justify-content: center;
+        &__icon {
+            &--word {
+                color: $icon-doc-word;
+            }
+            &--excel {
+                color: $icon-doc-excel;
+            }
+            &--powerpoint {
+                color: $icon-doc-powerpoint;
+            }
+            &--pdf {
+                color: $icon-doc-pdf;
+            }
+        }
     }
     .icon--default {
         &--application {

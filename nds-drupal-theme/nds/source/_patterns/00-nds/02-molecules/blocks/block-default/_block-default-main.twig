@@ -1,6 +1,0 @@
-{% set block_default_classes = block_default_classes|default() %}
-{% set block_default_accent = block_default_accent|default(false) %}
-
-<div class="block-nds block--default {{ block_default_classes }} {{ block_default_accent ? 'block--default--accent' : '' }}">
-    {% block block_content %}{% endblock %}
-</div>

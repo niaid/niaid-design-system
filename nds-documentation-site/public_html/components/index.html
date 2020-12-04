@@ -491,7 +491,7 @@
         </button>    </div>
 </div>
         <h4>Document Buttons</h4>
-        <p>NDS respects third-party application logos for Word, Excel, PowerPoint, and PDF.</p>
+        <p>Document icons can help users more quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.</p>
         <h5>Pattern Usage</h5>
         <p>Use the "button_document_type" parameter to choose a type as follows:</p>
         <ul>
@@ -502,6 +502,7 @@
             <li>Image - "image"</li>
             <li>Video - "video"</li>
         </ul>
+        <p>This component can also be used as a static &lt;div&gt;. To use this pattern simply as a decorative element, omit the document_button_href attribute.</p>
         
 <div class="component-nds component--snippet  ">
     <div class="component--snippet__block">
@@ -512,51 +513,63 @@
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--file-word ">
+<a class="button-nds button--document button--document--file-word " href="#">
+            <div class="button--document__wrapper">
             
 
-<img class="icon-nds icon--document doc-word" src="../assets/global/icons/document/icon-document-word.png" alt="Word"/>    </div>                        </div>
+<i class="icon-nds icon--default far fa-file-word button--document__wrapper__icon button--document__wrapper__icon--word"></i>
+        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--file-excel ">
+<a class="button-nds button--document button--document--file-excel " href="#">
+            <div class="button--document__wrapper">
             
 
-<img class="icon-nds icon--document doc-excel" src="../assets/global/icons/document/icon-document-excel.png" alt="Excel"/>    </div>                        </div>
+<i class="icon-nds icon--default far fa-file-excel button--document__wrapper__icon button--document__wrapper__icon--excel"></i>
+        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--file-ppt ">
+<a class="button-nds button--document button--document--file-ppt " href="#">
+            <div class="button--document__wrapper">
             
 
-<img class="icon-nds icon--document doc-ppt" src="../assets/global/icons/document/icon-document-powerpoint.png" alt="Powerpoint"/>    </div>                        </div>
+<i class="icon-nds icon--default far fa-file-powerpoint button--document__wrapper__icon button--document__wrapper__icon--powerpoint"></i>
+        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--file-pdf ">
+<a class="button-nds button--document button--document--file-pdf " href="#">
+            <div class="button--document__wrapper">
             
 
-<img class="icon-nds icon--document doc-pdf" src="../assets/global/icons/document/icon-document-pdf.png" alt="PDF"/>    </div>                        </div>
+<i class="icon-nds icon--default far fa-file-pdf button--document__wrapper__icon button--document__wrapper__icon--pdf"></i>
+        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--image ">
-            <div class="button--document__generic-wrapper">
+<a class="button-nds button--document button--document--image " href="#">
+            <div class="button--document__wrapper">
             
 
 <i class="icon-nds icon--default far fa-file-image "></i>
         </div>
-    </div>                        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--video ">
-            <div class="button--document__generic-wrapper">
+<a class="button-nds button--document button--document--video " href="#">
+            <div class="button--document__wrapper">
             
 
 <i class="icon-nds icon--default far fa-file-video "></i>
         </div>
-    </div>                        </div>
+    </a>                        </div>
                     </div>
                 </div>
             
@@ -568,51 +581,63 @@
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--file-word ">
+<a class="button-nds button--document button--document--file-word " href="#">
+            <div class="button--document__wrapper">
             
 
-<img class="icon-nds icon--document doc-word" src="../assets/global/icons/document/icon-document-word.png" alt="Word"/>    </div>                        </div>
+<i class="icon-nds icon--default far fa-file-word button--document__wrapper__icon button--document__wrapper__icon--word"></i>
+        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--file-excel ">
+<a class="button-nds button--document button--document--file-excel " href="#">
+            <div class="button--document__wrapper">
             
 
-<img class="icon-nds icon--document doc-excel" src="../assets/global/icons/document/icon-document-excel.png" alt="Excel"/>    </div>                        </div>
+<i class="icon-nds icon--default far fa-file-excel button--document__wrapper__icon button--document__wrapper__icon--excel"></i>
+        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--file-ppt ">
+<a class="button-nds button--document button--document--file-ppt " href="#">
+            <div class="button--document__wrapper">
             
 
-<img class="icon-nds icon--document doc-ppt" src="../assets/global/icons/document/icon-document-powerpoint.png" alt="Powerpoint"/>    </div>                        </div>
+<i class="icon-nds icon--default far fa-file-powerpoint button--document__wrapper__icon button--document__wrapper__icon--powerpoint"></i>
+        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--file-pdf ">
+<a class="button-nds button--document button--document--file-pdf " href="#">
+            <div class="button--document__wrapper">
             
 
-<img class="icon-nds icon--document doc-pdf" src="../assets/global/icons/document/icon-document-pdf.png" alt="PDF"/>    </div>                        </div>
+<i class="icon-nds icon--default far fa-file-pdf button--document__wrapper__icon button--document__wrapper__icon--pdf"></i>
+        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--image ">
-            <div class="button--document__generic-wrapper">
+<a class="button-nds button--document button--document--image " href="#">
+            <div class="button--document__wrapper">
             
 
 <i class="icon-nds icon--default far fa-file-image "></i>
         </div>
-    </div>                        </div>
+    </a>                        </div>
                         <div class="col-md">
                             
 
-<div class="button-nds button--document button--document--video ">
-            <div class="button--document__generic-wrapper">
+<a class="button-nds button--document button--document--video " href="#">
+            <div class="button--document__wrapper">
             
 
 <i class="icon-nds icon--default far fa-file-video "></i>
         </div>
-    </div>                        </div>
+    </a>                        </div>
                     </div>
                 </div>
             
@@ -769,19 +794,19 @@
                             
 <button class="button-nds button--image ">
     
-<img class="image-nds image--default " src="../assets/global/icons/document/icon-document-excel.png" alt="Excel" />            <span class="button--image__text">Export</span>
+<img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" />            <span class="button--image__text">Follow Jane</span>
     </button>                        </div>
                         <div class="col-md">
                             
 <button class="button-nds button--image button--secondary">
     
-<img class="image-nds image--default " src="../assets/global/icons/document/icon-document-excel.png" alt="Excel" />            <span class="button--image__text">Export</span>
+<img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" />            <span class="button--image__text">Follow Jane</span>
     </button>                        </div>
                         <div class="col-md">
                             
 <button class="button-nds button--image button--tertiary">
     
-<img class="image-nds image--default " src="../assets/global/icons/document/icon-document-excel.png" alt="Excel" />            <span class="button--image__text">Export</span>
+<img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" />            <span class="button--image__text">Follow Jane</span>
     </button>                        </div>
                     </div>
                 </div>
@@ -795,19 +820,19 @@
                             
 <button class="button-nds button--image ">
     
-<img class="image-nds image--default " src="../assets/global/icons/document/icon-document-excel.png" alt="Excel" />            <span class="button--image__text">Export</span>
+<img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" />            <span class="button--image__text">Follow Jane</span>
     </button>                        </div>
                         <div class="col-md">
                             
 <button class="button-nds button--image button--secondary">
     
-<img class="image-nds image--default " src="../assets/global/icons/document/icon-document-excel.png" alt="Excel" />            <span class="button--image__text">Export</span>
+<img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" />            <span class="button--image__text">Follow Jane</span>
     </button>                        </div>
                         <div class="col-md">
                             
 <button class="button-nds button--image button--tertiary">
     
-<img class="image-nds image--default " src="../assets/global/icons/document/icon-document-excel.png" alt="Excel" />            <span class="button--image__text">Export</span>
+<img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" />            <span class="button--image__text">Follow Jane</span>
     </button>                        </div>
                     </div>
                 </div>

@@ -19,41 +19,49 @@
 {% set button_document_href = button_document_href|default() %}
 {% set button_document_icon_weight = button_document_icon_weight|default('r') %}
 
-<{{ button_document_href != "" ? 'a' : 'div' }} class="button-nds button--document {% if button_document_type is not empty %}button--document--{{ button_document_type }}{% endif %} {{ button_document_classes }}">
+<{{ button_document_href != "" ? 'a' : 'div' }} class="button-nds button--document {% if button_document_type is not empty %}button--document--{{ button_document_type }}{% endif %} {{ button_document_classes }}"{% if button_document_href is not empty %} href="{{ button_document_href }}"{% endif %}>
     {% if button_document_type == "file-word" %}
-        {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
-            {
-                "icon_document_src": "icon-document-word.png",
-                "icon_document_alt": "Word",
-                "icon_document_classes": "doc-word" 
-            }
-        %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "button--document__wrapper__icon button--document__wrapper__icon--word",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-word"
+                }
+            %}
+        </div>
     {% elseif button_document_type == "file-excel" %}
-        {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
-            {
-                "icon_document_src": "icon-document-excel.png",
-                "icon_document_alt": "Excel",
-                "icon_document_classes": "doc-excel" 
-            }
-        %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "button--document__wrapper__icon button--document__wrapper__icon--excel",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-excel"
+                }
+            %}
+        </div>
     {% elseif button_document_type == "file-ppt" %}
-        {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
-            {
-                "icon_document_src": "icon-document-powerpoint.png",
-                "icon_document_alt": "Powerpoint",
-                "icon_document_classes": "doc-ppt" 
-            }
-        %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "button--document__wrapper__icon button--document__wrapper__icon--powerpoint",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-powerpoint"
+                }
+            %}
+        </div>
     {% elseif button_document_type == "file-pdf" %}
-        {% include "@nds/01-atoms/icons/icon-document/_icon-document-main.twig" with 
-            {
-                "icon_document_src": "icon-document-pdf.png",
-                "icon_document_alt": "PDF",
-                "icon_document_classes": "doc-pdf" 
-            }
-        %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "button--document__wrapper__icon button--document__wrapper__icon--pdf",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-pdf"
+                }
+            %}
+        </div>
     {% elseif button_document_type == "video" %}
-        <div class="button--document__generic-wrapper">
+        <div class="button--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {
                     "icon_default_classes": "",
@@ -63,7 +71,7 @@
             %}
         </div>
     {% elseif button_document_type == "image" %}
-        <div class="button--document__generic-wrapper">
+        <div class="button--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {
                     "icon_default_classes": "",
@@ -73,7 +81,7 @@
             %}
         </div>
     {% elseif button_document_type == "application" %}
-        <div class="button--document__generic-wrapper">
+        <div class="button--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {
                     "icon_default_classes": "icon--default--application",
@@ -83,7 +91,7 @@
             %}
         </div>
     {% elseif button_document_type == "link" %}
-        <div class="button--document__generic-wrapper">
+        <div class="button--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {
                     "icon_default_classes": "",
@@ -93,7 +101,7 @@
             %}
         </div>
     {% else %}
-        <div class="button--document__generic-wrapper">
+        <div class="button--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {
                     "icon_default_classes": "",

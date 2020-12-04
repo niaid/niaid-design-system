@@ -1,8 +1,0 @@
-{% set text_blockquote_classes = text_blockquote_classes|default() %}
-{% set text_blockquote_text = text_blockquote_text|default() %}
-
-<blockquote class="text-nds text--blockquote {{ text_blockquote_classes }}">
-  {% block blockquote_content %}
-    <p>{{ text_blockquote_text }}</p>
-  {% endblock %}
-</blockquote>
