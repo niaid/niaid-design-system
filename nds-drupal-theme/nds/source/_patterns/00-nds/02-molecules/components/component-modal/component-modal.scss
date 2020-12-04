@@ -1,0 +1,54 @@
+.component--modal {
+    cursor: pointer;
+    background: rgba(0, 0, 0, .7);
+    &__wrapper {
+        @extend .modal-dialog;
+        margin: 3rem auto;
+        &__content {
+            border-radius: 0;
+            cursor: default;
+            @extend .modal-content;
+            &__header {
+                @extend .modal-header;
+                padding: 1.5rem;
+                position: relative;
+                * {
+                    margin: 0;
+                }
+                &__close {
+                    @include md-2dp;
+                    @extend .hoverable;
+                    position: absolute;
+                    height: 3rem;
+                    width: 3rem;
+                    border-radius: 100% !important;
+                    padding: 0;
+                    color: $status-error !important;
+                    background: $white !important;
+                    border: .0625rem solid transparent !important;
+                    right: -1.5rem;
+                    top: -1.5rem;
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        border: .0625rem solid $status-error !important;
+                        background: $status-error !important;
+                        color: $white !important;
+                    }
+                }
+            }
+            &__body {
+                padding: 1rem 2rem;
+                img {
+                    max-width: 100%;
+                }
+            }
+            &__footer {
+                @extend .modal-footer;
+                display: block;
+                align-items: stretch;
+                justify-content: flex-start;
+            }
+        }
+    }
+}

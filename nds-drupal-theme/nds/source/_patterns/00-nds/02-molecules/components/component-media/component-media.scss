@@ -1,0 +1,37 @@
+.component--media {
+    margin: 2rem 0;
+    width: 100%;
+    max-width: 100%;
+    .image--default {
+        width: 100%;
+    }
+    .component--media__text {
+        display: flex;
+        &__content-wrapper {
+            flex-grow: 1;
+            width: 0;
+        }
+    }
+    &--left,
+    &--right {
+        @include media-breakpoint-up(md) {
+            max-width: 50%;
+        }
+    }
+    &--left {
+        float: left;
+        clear: right;
+        margin-right: 2rem;
+        max-width: 50%;
+    }
+    &--right {
+        float: right;
+        clear: left;
+        margin-left: 2rem;
+    }
+    /* Drupal Overrides */
+    .field--name-field-media-caption,
+    .field--name-field-media-credit {
+        display: none;
+    }
+}

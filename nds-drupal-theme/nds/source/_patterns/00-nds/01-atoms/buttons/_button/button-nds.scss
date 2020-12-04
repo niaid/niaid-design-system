@@ -1,0 +1,32 @@
+.button-nds,
+button {
+    cursor: pointer;
+    font-weight: $font-weight-regular;
+    text-decoration: none;
+    border: 0;
+    padding: 1rem 2rem;
+    line-height: initial;
+    border-radius: 0;
+    &:visited {
+        color: $white;
+        &:hover,
+        &:focus {
+            color: $white;
+        }
+    }
+}
+
+.disabled,
+button:disabled,
+button[disabled] {
+    @extend .btn;
+    background: $input-border !important;
+    color: $type-heading !important;
+    border-color: transparent !important;
+    cursor: not-allowed !important;
+    &:hover,
+    &:focus {
+        background: $input-border !important;
+        color: $type-heading !important;
+    }
+}

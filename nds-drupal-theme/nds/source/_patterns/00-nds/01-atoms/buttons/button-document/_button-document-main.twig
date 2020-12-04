@@ -1,0 +1,114 @@
+{#
+    ---
+    title: Document Button
+    ---
+
+    Type: Atoms -> Button
+
+    Description: A button that contains an image or icon of a document type.
+
+    Parameters:
+        button_document_classes - Classes used to style the button.
+        button_document_type - The type of document to display. Options: file-word, file-excel, file-powerpoint, file-pdf, image, video
+
+    Last Updated: December 19, 2018
+#}
+
+{% set button_document_classes = button_document_classes|default() %}
+{% set button_document_type = button_document_type|default() %}
+{% set button_document_href = button_document_href|default() %}
+{% set button_document_icon_weight = button_document_icon_weight|default('r') %}
+
+<{{ button_document_href != "" ? 'a' : 'div' }} class="button-nds button--document {% if button_document_type is not empty %}button--document--{{ button_document_type }}{% endif %} {{ button_document_classes }}"{% if button_document_href is not empty %} href="{{ button_document_href }}"{% endif %}>
+    {% if button_document_type == "file-word" %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "button--document__wrapper__icon button--document__wrapper__icon--word",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-word"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "file-excel" %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "button--document__wrapper__icon button--document__wrapper__icon--excel",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-excel"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "file-ppt" %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "button--document__wrapper__icon button--document__wrapper__icon--powerpoint",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-powerpoint"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "file-pdf" %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "button--document__wrapper__icon button--document__wrapper__icon--pdf",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-pdf"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "video" %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-video"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "image" %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-image"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "application" %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "icon--default--application",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "desktop-alt"
+                }
+            %}
+        </div>
+    {% elseif button_document_type == "link" %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "external-link-square"
+                }
+            %}
+        </div>
+    {% else %}
+        <div class="button--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": button_document_icon_weight,
+                    "icon_default_type": "file-alt"
+                }
+            %}
+        </div>
+    {% endif %}
+</{{ button_document_href != "" ? 'a' : 'div' }}>

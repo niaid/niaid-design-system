@@ -1,0 +1,60 @@
+.block--status-message {
+    padding-top: 2rem;
+    position: relative;
+    margin-top: 3rem;
+    background: $white;
+    &__icon {
+        border: 0.0625rem solid $type-link-underline;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 100%;
+        background: $white;
+        color: $body-color;
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &.message--warning {
+        background: #fff1d2;
+        .block--status-message__icon {
+            color: $white;
+            background: $status-warning;
+        }
+    }
+    &.message--information {
+        background: #d4eeff;
+        .block--status-message__icon {
+            color: $white;
+            background: $status-information;
+        }
+    }
+    &.message--success {
+        background: #e7f4e4;
+        .block--status-message__icon {
+            color: $white;
+            background: $status-success;
+        }
+    }
+    &.message--error {
+        background: #f9dede;
+        .block--status-message__icon {
+            color: $white;
+            background: $status-error;
+        }
+    }
+    a,
+    p,
+    ol,
+    ul {
+        max-width: none;
+    }
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

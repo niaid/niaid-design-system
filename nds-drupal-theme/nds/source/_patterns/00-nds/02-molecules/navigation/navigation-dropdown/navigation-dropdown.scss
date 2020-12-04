@@ -1,0 +1,23 @@
+.navigation--dropdown {
+    &__text {
+        &__button {
+            padding: .75rem 1.5rem;
+        }
+    }
+    &__menu {
+        position: absolute;
+        z-index: 1000;
+        width: 12rem;
+        color: $white;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            li {
+                padding: .5rem 1.5rem;
+                margin: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.input--checkbox {
+    position: relative;
+    margin: .5rem 0;
+    &:first-child {
+        margin-top: 1rem;
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+    }
+    .input--label {
+        cursor: pointer;
+        padding-left: 2rem;
+        position: relative;
+        margin: 0;
+        &:before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            height: 1.5rem;
+            width: 1.5rem;
+            background: $white;
+            border: 0.0625rem solid $input-border;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+    input:checked~label {
+        &:before {
+            background: $color-theme-1-1-1;
+            border: 0;
+        }
+        &:after {
+            @extend %fa-icon;
+            @extend .fas;
+            color: $white;
+            content: fa-content($fa-var-check);
+            display: block;
+            left: .3rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

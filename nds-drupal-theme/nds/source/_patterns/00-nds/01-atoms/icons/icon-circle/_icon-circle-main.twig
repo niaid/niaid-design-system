@@ -1,0 +1,12 @@
+{% set icon_circle_classes = icon_circle_classes|default() %}
+{% set icon_circle_icon = icon_circle_icon|default() %}
+{% set icon_circle_icon_weight = icon_circle_icon_weight|default('s') %}
+
+<div class="icon-nds icon--circle {{ icon_circle_classes }}">
+    {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+        {
+            "icon_default_type": icon_circle_icon,
+            "icon_default_weight": icon_circle_icon_weight
+        }
+    %}
+</div>

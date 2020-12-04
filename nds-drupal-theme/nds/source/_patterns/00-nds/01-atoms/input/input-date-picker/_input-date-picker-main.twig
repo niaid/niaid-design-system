@@ -1,0 +1,37 @@
+{% set input_date_picker_classes = input_date_picker_classes|default() %}
+{% set input_date_picker_id = input_date_picker_id|default() %}
+{% set input_date_picker_placeholder = input_date_picker_placeholder|default('MM/DD/YYYY') %}
+{% set input_date_picker_name = input_date_picker_name|default() %}
+{% set input_date_picker_value = input_date_picker_value|default() %}
+{% set input_date_picker_tabindex = input_date_picker_tabindex|default() %}
+{% set input_date_picker_disabled = input_date_picker_disabled|default() %}
+{% set input_date_picker_readonly = input_date_picker_readonly|default() %}
+{% set input_date_picker_required = input_date_picker_required|default() %}
+{% set input_date_picker_icon = input_date_picker_icon|default('calendar') %}
+{% set input_date_picker_icon_weight = input_date_picker_icon_weight|default('s') %}
+
+<div class="input-nds input--date-picker {{ input_date_picker_classes }}">
+    <input class="input--date-picker__field" nds-date-picker="true"
+        {% include "@nds/01-atoms/input/input-attributes/_input-attributes-main.twig" with
+            {
+                "input_attributes_id": input_date_picker_id,
+                "input_attributes_name": input_date_picker_name,
+                "input_attributes_placeholder": input_date_picker_placeholder,
+                "input_attributes_type": "text",
+                "input_attributes_value": input_date_picker_value,
+                "input_attributes_tabindex": input_date_picker_tabindex,
+                "input_attributes_disabled": input_date_picker_disabled,
+                "input_attributes_readonly": input_date_picker_readonly,
+                "input_attributes_required": input_date_picker_required
+            }
+        %}
+    >
+    <div class="input--date-picker__wrapper">
+        {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+            {
+                "icon_default_type": input_date_picker_icon,
+                "icon_default_weight": input_date_picker_icon_weight
+            }
+        %}
+    </div>
+</div>

@@ -1,0 +1,6 @@
+{% set navigation_primary_classes = navigation_primary_classes|default() %}
+{% set navigation_primary_id = navigation_primary_id|default() %}
+
+<nav id="{{ navigation_primary_id }}" class="navigation-nds navigation--primary {{ navigation_primary_classes }}">
+    {% block navigation_primary_content %}{% endblock %}
+</nav>

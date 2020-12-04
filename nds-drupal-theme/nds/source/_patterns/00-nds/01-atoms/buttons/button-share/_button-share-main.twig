@@ -1,0 +1,16 @@
+{% set button_share_classes = button_share_classes|default() %}
+{% set button_share_icon = button_share_icon|default() %}
+{% set button_share_href = button_share_href|default() %}
+{% set button_share_icon_weight = button_share_icon_weight|default('s') %}
+{% set button_share_aria_label = button_share_aria_label|default() %}
+{% set button_share_tabindex = button_share_tabindex|default() %}
+{% set button_share_attributes = button_share_attributes|default() %}
+
+<a href="{{ button_share_href }}" {% if button_share_id is not empty %} id="{{ button_share_id }}"{% endif %} class="button-nds button--share {{ button_share_classes }}"{% if button_share_aria_label is not empty %} aria-label="{{ button_share_aria_label }}"{% endif %}{% if button_share_tabindex is not empty %} tabindex="{{ button_share_tabindex }}"{% endif %} {{ button_share_attributes }}>
+    {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+        {
+            "icon_default_type": button_share_icon,
+            "icon_default_weight": button_share_icon_weight
+        }
+    %}
+</a>

@@ -1,0 +1,18 @@
+{% embed "@nds/02-molecules/input-group/input-group-select/_input-group-select-main.twig" with
+    {
+        "input_group_select_id": "input-group-multiselect",
+        "input_group_select_label": "Multiselect Field",
+        "input_group_select_placeholder": "Select Multiple Fruits...",
+        "input_group_select_multiple": true
+    }
+%}
+    {% block input_group_select_options %}
+        <option value=""></option>
+        <option value="Apple">Apple</option>
+        <option value="Banana">Banana</option>
+        <option value="Cherry">Cherry</option>
+        <option value="Date">Date</option>
+        <option value="Fig">Fig</option>
+        <option value="Guava">Guava</option>
+    {% endblock %}
+{% endembed %}

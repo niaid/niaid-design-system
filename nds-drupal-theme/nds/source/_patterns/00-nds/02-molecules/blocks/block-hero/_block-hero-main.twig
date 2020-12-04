@@ -1,0 +1,42 @@
+{#
+    ---
+    title: Hero Block
+    ---
+
+    Type: Molecules -> Blocks
+
+    Description: Hero block that uses parallax scrolling.
+
+    Parameters:
+        block_hero_img_src - The path to the image file used in the hero.
+        block_hero_img_alt - The accompanying alt text for the hero image.
+        block_hero_overlay_color - The overlay color that masks the hero image.
+
+    Last Updated: December 5, 2018
+#}
+
+{% set block_hero_classes = block_hero_classes|default() %}
+{% set block_hero_overlay_color = block_hero_overlay_color|default() %}
+{% set block_hero_blur = block_hero_blur|default() %}
+{% set block_hero_width = block_hero_width|default() %}
+{% set block_hero_image = block("block_hero_image") %}
+{% set block_hero_breadcrumbs = block("block_hero_breadcrumbs") %}
+
+<div id="block--hero" class="block-nds block--hero {{ block_hero_classes }}">
+    <div class="block--hero__content">
+        <div class="parallax-container {{ block_hero_overlay_color }}">
+            <div class="parallax {{ block_hero_blur }}">
+                {% if block_hero_image|trim is not empty %}
+                    {{ block_hero_image|raw }}
+                {% endif %}
+            </div>
+            {% if block_hero_breadcrumbs is not empty %}
+                <div class="block--hero__content__breadcrumbs row">
+                    <div class="col-xl-12">
+                        {{ block_hero_breadcrumbs|raw }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

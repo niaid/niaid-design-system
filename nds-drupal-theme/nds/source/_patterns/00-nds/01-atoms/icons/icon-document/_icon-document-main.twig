@@ -1,0 +1,22 @@
+{#
+    ---
+    title: Document Icon
+    ---
+
+    Type: Atoms -> Icon
+
+    Description: A special pattern specifically created for displaying document icons, such as Word, PowerPoint, Excel, and PDF.
+
+    Parameters:
+        icon_document_classes - Classes used to style the icon.
+        icon_document_src - Source path to the document icon.
+        icon_document_alt - The accompanying alt text for the document icon.
+
+    Last Updated: December 21, 2018
+#}
+
+{% set icon_document_classes = icon_document_classes|default() %}
+{% set icon_document_src = icon_document_src|default() %}
+{% set icon_document_alt = icon_document_alt|default() %}
+
+<img class="icon-nds icon--document {{ icon_document_classes }}" src="{{ imagePath }}global/icons/document/{{ icon_document_src }}" alt="{{ icon_document_alt }}"/>

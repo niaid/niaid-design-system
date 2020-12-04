@@ -1,0 +1,38 @@
+.block--default {
+    margin: 1rem 0;
+    display: inline-block;
+    width: 100%;
+    flex-wrap: wrap;
+    background: $white;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0;
+    }
+    p {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+    .button--primary,
+    .button--secondary,
+    .button--tertiary,
+    button {
+        margin: 1rem 0 0 0;
+        display: inline-flex;
+    }
+    &--search-result {
+        h2 {
+            font-size: 1.5rem;
+        }
+        &__last-reviewed {
+            margin-top: 1rem !important;
+        }
+    }
+    &.block--default--accent {
+        border-left: .25rem solid $color-theme-1-accent;
+    }
+}

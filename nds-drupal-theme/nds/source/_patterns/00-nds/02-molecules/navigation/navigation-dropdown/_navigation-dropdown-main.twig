@@ -1,0 +1,17 @@
+{% set navigation_dropdown_classes = navigation_dropdown_classes|default() %}
+{% set navigation_dropdown_parent = navigation_dropdown_parent|default() %}
+{% set navigation_dropdown_text = navigation_dropdown_text|default() %}
+{% set navigation_dropdown_id = navigation_dropdown_text|lower|replace({' ': ''}) %}
+
+<div class="navigation-nds navigation--dropdown {{ navigation_dropdown_classes }}">
+    <div class="navigation--dropdown__text">
+        <button class="navigation--dropdown__text__button button--secondary" data-toggle="collapse" href="#{{ navigation_dropdown_id }}" role="button" aria-expanded="false" aria-controls="{{ navigation_dropdown_id }}">{{ navigation_dropdown_text }}</button>
+    </div>
+    <div id="{{ navigation_dropdown_id }}" class="navigation--dropdown__menu collapse" data-parent="#{{ navigation_dropdown_parent }}">
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+        </ul> 
+    </div>
+</div>

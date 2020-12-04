@@ -56,11 +56,11 @@
             let cookieName = "NDS_DOC_SITE_PROP--shadows";
             if ($(this).val() == "shadows") {
                 $('body').addClass("style--shadows");
-                $.cookie(cookieName, Math.floor(Date.now() / 1000), { expires: 30, path: '/' });
+                $.cookie(cookieName, true, { expires: 30, path: '/' });
             }
             else {
                 $('body').removeClass("style--shadows");
-                $.removeCookie(cookieName);
+                $.removeCookie(cookieName, { path: '/' });
             }
         });
         $('#corners').on('change', function() {
@@ -73,7 +73,7 @@
             $('body').addClass("style--" + property + "--" + propertyValue);
 
             let cookieName = "NDS_DOC_SITE_PROP--" + property;
-            $.cookie(cookieName, propertyValue, Math.floor(Date.now() / 1000), { expires: 30, path: '/' });
+            $.cookie(cookieName, propertyValue, { expires: 30, path: '/' });
 
             return updateState(state, { [property]: propertyValue });
         }
@@ -88,7 +88,7 @@
             // Shadows:
             if ($.cookie("NDS_DOC_SITE_PROP--shadows")) {
                 $('body').addClass("style--shadows");
-                $.cookie("NDS_DOC_SITE_PROP--shadows", true, Math.floor(Date.now() / 1000), { expires: 30, path: '/' });
+                $.cookie("NDS_DOC_SITE_PROP--shadows", true, { expires: 30, path: '/' });
                 $('#shadows option[value="shadows"]').prop('selected', true);
             }
 

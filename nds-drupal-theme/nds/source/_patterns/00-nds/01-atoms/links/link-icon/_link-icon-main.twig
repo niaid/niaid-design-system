@@ -1,0 +1,32 @@
+{% set link_icon_classes = link_icon_classes|default() %}
+{% set link_icon_href = link_icon_href|default() %}
+{% set link_icon_text = link_icon_text|default() %}
+{% set link_icon_sr_text = link_icon_sr_text|default() %}
+{% set link_icon_position = link_icon_position|default('left') %}
+{% set link_icon_type = link_icon_type|default() %}
+{% set link_icon_weight = link_icon_weight|default() %}
+{% set link_icon_icon_classes = link_icon_icon_classes|default() %}
+
+<a class="link-nds link--icon {{ link_icon_classes }}" href="{{ link_icon_href }}" aria-label="{{ link_icon_text }}" data-content="body-anchor-{{ link_icon_text|lower|replace({' ': '-'}) }}">
+    {% if link_icon_position == "left" %}
+        {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+            {
+                "icon_default_type": link_icon_type,
+                "icon_default_weight": link_icon_weight,
+                "icon_default_sr_text": link_icon_sr_text,
+                "icon_default_classes": "link--icon--left " ~ link_icon_icon_classes
+            }
+        %}
+    {% endif %}
+    <span class="link--icon__text">{{ link_icon_text }}</span>
+    {% if link_icon_position == "right" %}
+        {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+            {
+                "icon_default_type": link_icon_type,
+                "icon_default_weight": link_icon_weight,
+                "icon_default_sr_text": link_icon_sr_text,
+                "icon_default_classes": "link--icon--right " ~ link_icon_icon_classes
+            }
+        %}
+    {% endif %}
+</a>

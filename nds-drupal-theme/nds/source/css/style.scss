@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+// BOOTSTRAP
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// FONT AWESOME
+$fa-font-path: '../webfonts/font-awesome';
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+
+// VARIABLES
+@import "global/variables.scss";
+@import "overrides/variables.scss";
+@import "global/mixins.scss";
+@import "overrides/mixins.scss";
+
+// MATERIALZE
+@import "global/reset/reset-materialize.scss";
+@import "../../node_modules/materialize-css/sass/components/waves";
+@import "../../node_modules/materialize-css/sass/components/pulse";
+@import "../../node_modules/materialize-css/sass/components/materialbox";
+@import "../../node_modules/materialize-css/sass/components/table_of_contents";
+
+// GLOBAL
+@import "global/base/global.scss";
+@import "overrides/base/global.scss";
+//
+@import "global/base/headings.scss";
+@import "overrides/base/headings.scss";
+//
+@import "global/base/type.scss";
+@import "overrides/base/type.scss";
+//
+@import "global/fonts/_fonts.scss";
+@import "overrides/fonts/*.scss";
+//
+@import "global/material/*.scss";
+@import "overrides/material/*.scss";
+//
+@import "global/drupal/*.scss";
+@import "overrides/drupal/*.scss";
+
+// PATTERN SPECFIC STYLES (Base Styles)
+@import "../_patterns/**/*.scss";
+
+// Theme Style Overrides
+@import "global/theme-styles/**/*.scss";
+@import "overrides/theme-styles/**/*.scss";

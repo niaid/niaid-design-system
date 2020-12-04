@@ -1,0 +1,27 @@
+.input--text {
+    padding: .5rem 1rem;
+    width: 100%;
+    border: 0.0625rem solid $input-border;
+    &:focus {
+        border: 0.0625rem solid $type-link;
+        outline: 0;
+        box-shadow: 0 0 0 0.0625rem $type-link;
+        & + .icon--default {
+            color: $type-link;
+        }
+    }
+}
+
+.input--text--icon {
+    position: relative;
+    .icon--default {
+        position: absolute;
+        left: 1rem;
+        color: $type-body;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .input--text {
+        padding-left: 2.75rem;
+    }
+}

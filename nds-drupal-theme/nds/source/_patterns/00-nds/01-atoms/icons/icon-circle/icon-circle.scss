@@ -1,0 +1,13 @@
+.icon--circle {
+    background: $white;
+    height: 3rem;
+    border: 0.0625rem solid $input-border;
+    width: 3rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+        color: $type-body;
+    }
+}

@@ -1,0 +1,43 @@
+.button--floating {
+    @extend .button--primary;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    height: 4rem;
+    width: 3.95rem;
+    z-index: 999;
+    padding: 0;
+    overflow: hidden;
+    transition: .3s ease-in-out !important;
+    &__icon {
+        float: left;
+        width: 3.85rem;
+        font-size: 1.5rem;
+    }
+    &__text {
+        position: absolute;
+        display: block;
+        overflow: hidden;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 3rem;
+        width: 0;
+    }
+    &:hover,
+    &:focus {
+        width: 11.25rem;
+        .button--floating__text {
+            width: 8rem;
+        }
+    }
+    &.button--secondary {
+        color: $color-theme-1-1-1;
+        background: transparent;
+        &:hover,
+        &:focus {
+            background: $color-theme-1-1-1;
+            color: $white;
+            border: 0.0625rem solid $color-theme-1-1-1;
+        }
+    }
+}

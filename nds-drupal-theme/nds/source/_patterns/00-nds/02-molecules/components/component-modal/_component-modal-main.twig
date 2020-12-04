@@ -1,0 +1,40 @@
+{% set component_modal_trigger_classes = component_modal_trigger_classes|default() %}
+{% set component_modal_id = component_modal_id|default() %}
+{% set component_modal_classes = component_modal_classes|default() %}
+{% set component_modal_header = block("component_modal_header") %}
+{% set component_modal_content = block("component_modal_content") %}
+{% set component_modal_footer = block("component_modal_footer") %}
+
+<div class="component--modal--trigger {{ component_modal_trigger_classes }}" data-toggle="modal" data-target="#{{ component_modal_id }}">
+    {% block component_modal_trigger %}{% endblock %}
+</div>
+
+<div class="component-nds component--modal modal {{ component_modal_classes }}" id="{{ component_modal_id }}" tabindex="-1" role="dialog" aria-labelledby="{{ component_modal_id }}" aria-hidden="true">
+    <div class="component--modal__wrapper" role="document">
+        <div class="component--modal__wrapper__content">
+            <div class="component--modal__wrapper__content__header">
+                {% if component_modal_header|trim is not empty %}
+                    {{ component_modal_header|raw }}
+                {% endif %}
+                <button type="button" class="component--modal__wrapper__content__header__close" data-dismiss="modal" aria-label="Close">
+                    {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+                        {
+                            "icon_default_type": "times",
+                            "icon_default_weight": "s"
+                        }
+                    %}
+                </button>
+            </div>
+            {% if component_modal_content|trim is not empty %}
+                <div class="component--modal__wrapper__content__body">
+                    {{ component_modal_content|raw }}
+                </div>
+            {% endif %}
+            {% if component_modal_footer|trim is not empty %}
+                <div class="component--modal__wrapper__content__footer">
+                    {{ component_modal_footer|raw }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

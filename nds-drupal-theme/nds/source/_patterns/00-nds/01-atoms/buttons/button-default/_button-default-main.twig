@@ -1,0 +1,8 @@
+{% set button_default_classes = button_default_classes|default() %}
+{% set button_default_id = button_default_id|default() %}
+{% set button_default_type = button_default_type|default() %}
+{% set button_default_label = button_default_label|default() %}
+{% set button_default_href = button_default_href|default() %}
+{% set button_default_attributes = button_default_attributes|default() %}
+
+<{{ button_default_href != "" ? 'a' : 'button' }} class="button-nds waves-effect waves-light button--{{ button_default_type }} {{ button_default_classes }}"{% if button_default_id is not empty %} id="{{ button_default_id }}"{% endif %}{% if button_default_href is not empty %} href="{{ button_default_href }}"{% endif %} role="button" {{ button_default_attributes }}>{{ button_default_label }}</{{ button_default_href != "" ? 'a' : 'button' }}>

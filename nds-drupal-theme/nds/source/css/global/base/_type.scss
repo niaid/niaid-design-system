@@ -1,0 +1,44 @@
+a {
+    color: $type-link;
+    border-bottom: 0.0625rem solid $type-link-underline;
+    &:hover,
+    &:focus {
+        color: $type-link;
+        text-decoration: none;
+        border-bottom: 0.0625rem solid transparent;
+    }
+    &:visited {
+        color: $type-link-visited;
+        &:hover,
+        &:focus {
+            color: $type-link-visited;
+        }
+    }
+}
+
+p,
+ul,
+ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: $layout-type-max-width;
+}
+
+ul {
+    list-style-type: circle;
+    li {
+        margin-bottom: .25em;
+        >ul {
+            margin-top: 0;
+        }
+    }
+}
+
+code {
+    border-radius: $border-radius;
+    color: $type-link;
+    display: inline-flex;
+    padding: .5rem;
+    background: $page-background-alternate;
+    margin-bottom: .5rem;
+}

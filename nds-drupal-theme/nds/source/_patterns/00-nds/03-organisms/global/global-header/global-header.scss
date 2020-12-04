@@ -1,0 +1,31 @@
+.global--header {
+    position: relative;
+    z-index: 160;
+    background: $page-background;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.0625rem solid $type-body;
+    @include media-breakpoint-up('lg') {
+        border-bottom: 0;
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+        width: 3rem;
+        padding: 0;
+        @include media-breakpoint-up('md') {
+            display: none;
+        }
+    }
+    .form--search {
+        @include media-breakpoint-up(md) {
+            .input--text {
+                min-width: 18rem;
+            }
+        }
+    }
+}
