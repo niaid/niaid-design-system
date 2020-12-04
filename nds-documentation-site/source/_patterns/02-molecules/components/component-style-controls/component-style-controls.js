@@ -37,8 +37,11 @@
             "headings": "public-sans",
             "body": "public-sans",
             "colors": "theme-1",
+            "shadows": "false",
             "corners": "semirounded"
         }
+
+        state = initStyleChoices(state);
 
         $('#text-heading').on('change', function() {
             state = updateProperty($(this), "headings", state);
@@ -50,11 +53,14 @@
             state = updateProperty($(this), "colors", state);
         });
         $('#shadows').on('change', function() {
+            let cookieName = "NDS_DOC_SITE_PROP--shadows";
             if ($(this).val() == "shadows") {
                 $('body').addClass("style--shadows");
+                $.cookie(cookieName, Math.floor(Date.now() / 1000), { expires: 30, path: '/' });
             }
             else {
                 $('body').removeClass("style--shadows");
+                $.removeCookie(cookieName);
             }
         });
         $('#corners').on('change', function() {
@@ -65,11 +71,54 @@
             var propertyValue = $field.val();
             $('body').removeClass("style--" + property + "--" + state[property]);
             $('body').addClass("style--" + property + "--" + propertyValue);
+
+            let cookieName = "NDS_DOC_SITE_PROP--" + property;
+            $.cookie(cookieName, propertyValue, Math.floor(Date.now() / 1000), { expires: 30, path: '/' });
+
             return updateState(state, { [property]: propertyValue });
         }
 
         function updateState(oldState, newValue) {
             return {...oldState, ...newValue };
+        }
+
+        function initStyleChoices(state) {
+            let tempState = state;
+
+            // Shadows:
+            if ($.cookie("NDS_DOC_SITE_PROP--shadows")) {
+                $('body').addClass("style--shadows");
+                $.cookie("NDS_DOC_SITE_PROP--shadows", true, Math.floor(Date.now() / 1000), { expires: 30, path: '/' });
+                $('#shadows option[value="shadows"]').prop('selected', true);
+            }
+
+            // All other styles:
+            for (let key in tempState) {
+                let cookieName = "NDS_DOC_SITE_PROP--" + key;
+                if ($.cookie(cookieName)) {
+                    switch(key) {
+                        case 'headings':
+                            $('#text-heading option[value=' +  $.cookie(cookieName) + ']').prop('selected', true);
+                            tempState = updateProperty($('#text-heading'), key, tempState);
+                            break;
+                        case 'body':
+                            $('#text-body option[value=' +  $.cookie(cookieName) + ']').prop('selected', true);
+                            tempState = updateProperty($('#text-body'), key, tempState);
+                            break;
+                        case 'colors':
+                            $('#color-select option[value=' +  $.cookie(cookieName) + ']').prop('selected', true);
+                            tempState = updateProperty($('#color-select'), key, tempState);
+                            break;
+                        case 'corners':
+                            $('#corners option[value=' +  $.cookie(cookieName) + ']').prop('selected', true);
+                            tempState = updateProperty($('#corners'), key, tempState);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            return tempState;
         }
     }
 

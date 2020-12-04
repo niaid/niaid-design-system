@@ -66,42 +66,6 @@
         {% endblock %}
     {% endembed %}
     {% block footer %}
-        {% embed "@nds/03-organisms/global/global-footer/_global-footer-main.twig" %}
-            {% block footer_content %}
-                {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
-                    {% block block_content %}
-                        <h4>Footer Column 1</h4>
-                        <h5><a href="#">5601 Fishers Lane</a></h5>
-                        <p>5601 Fishers Lane, Rockville, MD 20852</p>
-                        <h5><a href="#">NIH Main Campus</a></h5>
-                        <p>9000 Rockville Pike, Bethesda, MD 20892</p>
-                        <h5><a href="#">Rocky Mountain Laboratories (RML)</a></h5>
-                        <p>903 S 4th St, Hamilton, MT 59840</p>
-                    {% endblock %}
-                {% endembed %}
-                {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
-                    {% block block_content %}
-                        <h4>Footer Column 2</h4>
-                        <h5><a href="#">5601 Fishers Lane</a></h5>
-                        <p>5601 Fishers Lane, Rockville, MD 20852</p>
-                        <h5><a href="#">NIH Main Campus</a></h5>
-                        <p>9000 Rockville Pike, Bethesda, MD 20892</p>
-                        <h5><a href="#">Rocky Mountain Laboratories (RML)</a></h5>
-                        <p>903 S 4th St, Hamilton, MT 59840</p>
-                    {% endblock %}
-                {% endembed %}
-                {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
-                    {% block block_content %}
-                        <h4>Footer Column 3</h4>
-                        <h5><a href="#">5601 Fishers Lane</a></h5>
-                        <p>5601 Fishers Lane, Rockville, MD 20852</p>
-                        <h5><a href="#">NIH Main Campus</a></h5>
-                        <p>9000 Rockville Pike, Bethesda, MD 20892</p>
-                        <h5><a href="#">Rocky Mountain Laboratories (RML)</a></h5>
-                        <p>903 S 4th St, Hamilton, MT 59840</p>
-                    {% endblock %}
-                {% endembed %}
-            {% endblock %}
-        {% endembed %}
+        {% include "@nds/03-organisms/global/global-footer/demo/global-footer.twig" %}
     {% endblock %}
 </div>

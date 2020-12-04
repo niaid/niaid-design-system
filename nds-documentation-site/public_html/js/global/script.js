@@ -7,6 +7,29 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 $(document).ready(function () {
+  $('a:not(:has(img))').each(function () {
+    var varText = $(this).text();
+
+    if (varText) {
+      // Get URL and verify it exists
+      var url = $(this).attr('href');
+      var hostName = this.hostname;
+
+      if (url && hostName !== location.hostname) {
+        url = url.toLowerCase();
+
+        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+          $(this).attr('target', '_blank');
+          $(this).after('<a title="Link is External" aria-label="Link is External" class="ext-link-icon" href="' + url + '"></a>');
+        }
+      }
+    }
+  });
+  $('a[href^="mailto:"]').each(function () {
+    $(this).addClass('link--external--mail');
+  });
+});
+$(document).ready(function () {
   var mql = window.matchMedia('all and (min-width: 992px)');
   var wWidth = $(window).width();
   $('.fixed-left').each(function () {
@@ -50,30 +73,6 @@ $(document).ready(function () {
     });
   }
 })(jQuery);
-
-$(document).ready(function () {
-  $('a:not(:has(img))').each(function () {
-    var varText = $(this).text();
-
-    if (varText) {
-      // Get URL and verify it exists
-      var url = $(this).attr('href');
-      var hostName = this.hostname;
-
-      if (url && hostName !== location.hostname) {
-        url = url.toLowerCase();
-
-        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-          $(this).attr('target', '_blank');
-          $(this).after('<a title="Link is External" aria-label="Link is External" class="ext-link-icon" href="' + url + '"></a>');
-        }
-      }
-    }
-  });
-  $('a[href^="mailto:"]').each(function () {
-    $(this).addClass('link--external--mail');
-  });
-});
 
 (function ($) {
   function initComponentScrollspySection() {
@@ -245,8 +244,10 @@ $(document).ready(function () {
       "headings": "public-sans",
       "body": "public-sans",
       "colors": "theme-1",
+      "shadows": "false",
       "corners": "semirounded"
     };
+    state = initStyleChoices(state);
     $('#text-heading').on('change', function () {
       state = updateProperty($(this), "headings", state);
     });
@@ -257,10 +258,17 @@ $(document).ready(function () {
       state = updateProperty($(this), "colors", state);
     });
     $('#shadows').on('change', function () {
+      var cookieName = "NDS_DOC_SITE_PROP--shadows";
+
       if ($(this).val() == "shadows") {
         $('body').addClass("style--shadows");
+        $.cookie(cookieName, Math.floor(Date.now() / 1000), {
+          expires: 30,
+          path: '/'
+        });
       } else {
         $('body').removeClass("style--shadows");
+        $.removeCookie(cookieName);
       }
     });
     $('#corners').on('change', function () {
@@ -271,11 +279,63 @@ $(document).ready(function () {
       var propertyValue = $field.val();
       $('body').removeClass("style--" + property + "--" + state[property]);
       $('body').addClass("style--" + property + "--" + propertyValue);
+      var cookieName = "NDS_DOC_SITE_PROP--" + property;
+      $.cookie(cookieName, propertyValue, Math.floor(Date.now() / 1000), {
+        expires: 30,
+        path: '/'
+      });
       return updateState(state, _defineProperty({}, property, propertyValue));
     }
 
     function updateState(oldState, newValue) {
       return _objectSpread({}, oldState, {}, newValue);
+    }
+
+    function initStyleChoices(state) {
+      var tempState = state; // Shadows:
+
+      if ($.cookie("NDS_DOC_SITE_PROP--shadows")) {
+        $('body').addClass("style--shadows");
+        $.cookie("NDS_DOC_SITE_PROP--shadows", true, Math.floor(Date.now() / 1000), {
+          expires: 30,
+          path: '/'
+        });
+        $('#shadows option[value="shadows"]').prop('selected', true);
+      } // All other styles:
+
+
+      for (var key in tempState) {
+        var cookieName = "NDS_DOC_SITE_PROP--" + key;
+
+        if ($.cookie(cookieName)) {
+          switch (key) {
+            case 'headings':
+              $('#text-heading option[value=' + $.cookie(cookieName) + ']').prop('selected', true);
+              tempState = updateProperty($('#text-heading'), key, tempState);
+              break;
+
+            case 'body':
+              $('#text-body option[value=' + $.cookie(cookieName) + ']').prop('selected', true);
+              tempState = updateProperty($('#text-body'), key, tempState);
+              break;
+
+            case 'colors':
+              $('#color-select option[value=' + $.cookie(cookieName) + ']').prop('selected', true);
+              tempState = updateProperty($('#color-select'), key, tempState);
+              break;
+
+            case 'corners':
+              $('#corners option[value=' + $.cookie(cookieName) + ']').prop('selected', true);
+              tempState = updateProperty($('#corners'), key, tempState);
+              break;
+
+            default:
+              break;
+          }
+        }
+      }
+
+      return tempState;
     }
   }
 
