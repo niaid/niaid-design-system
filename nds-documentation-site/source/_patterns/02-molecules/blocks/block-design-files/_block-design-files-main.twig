@@ -1,28 +1,27 @@
 {% set block_design_files_classes = block_design_files_classes|default() %}
 
 <div class="block--design-files {{ block_design_files_classes }}">
-    {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
+    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
         {
-            "button_image_classes": "button--secondary",
-            "button_image_src": "icon_sketch.png",
-            "button_image_alt": "Sketch",
-            "button_image_text": "Download Sketch File"
+            "button_icon_classes": "button--secondary",
+            "button_icon_icon": "sketch",
+            "button_icon_icon_weight": "b",
+            "button_icon_text": "Download Sketch File"
         }
     %}
-    {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
+    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
         {
-            "button_image_classes": "button--secondary",
-            "button_image_src": "icon_figma.png",
-            "button_image_alt": "Figma",
-            "button_image_text": "Download Figma File"
+            "button_icon_classes": "button--secondary",
+            "button_icon_icon": "figma",
+            "button_icon_icon_weight": "b",
+            "button_icon_text": "Download Figma File"
         }
     %}
-    {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
+    {# {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
         {
-            "button_image_classes": "button--secondary",
-            "button_image_src": "icon_illustrator.png",
-            "button_image_alt": "Illustrator",
-            "button_image_text": "Download Illustrator File"
+            "button_icon_classes": "button--secondary",
+            "button_icon_icon": "sketch",
+            "button_icon_text": "Download Illustrator File"
         }
-    %}
+    %} #}
 </div>

@@ -29,4 +29,15 @@
             border-right: 0;
         }
     }
+    .global-nds {
+        &.global--header {
+            @include md-8dp;
+            @include media-breakpoint-up('md') {
+                @include md-8dp;
+            }
+            @media only screen and (min-width: $mobile-breakpoint) {
+                @include md-0dp;
+            }
+        }
+    }
 }

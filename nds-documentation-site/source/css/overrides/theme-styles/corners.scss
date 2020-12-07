@@ -31,6 +31,11 @@
 
 .style--corners--rounded {
     $corner-radius: 1rem;
+    .block--fonts {
+        .button--icon {
+            border-radius: $corner-radius;
+        }
+    }
     .block--swatch {
         &__color {
             border-radius: $corner-radius * 3 / 4;
