@@ -31,7 +31,9 @@
 
 .style--corners--rounded {
     $corner-radius: 1rem;
-    .block--fonts {
+    .button--jump-links,
+    .block--fonts,
+    .block--files {
         .button--icon {
             border-radius: $corner-radius;
         }
