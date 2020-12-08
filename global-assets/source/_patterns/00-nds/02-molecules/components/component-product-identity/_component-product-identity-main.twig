@@ -2,7 +2,12 @@
 {% set component_product_identity_top = component_product_identity_top|default() %}
 {% set component_product_identity_bottom = component_product_identity_bottom|default() %}
 
-<div class="component-nds component--product-identity {{ component_product_identity_classes }}">
+{% set component_product_identity_additional_classes = "" %}
+{% if component_product_identity_top is not empty and component_product_identity_bottom is not empty %}
+    {% set component_product_identity_additional_classes = "both-top-bottom" %}
+{% endif %}
+
+<div class="component-nds component--product-identity {{ component_product_identity_classes }} {{ component_product_identity_additional_classes }}">
     <div class="component--product-identity__top">{{ component_product_identity_top }}</div>
     <div class="component--product-identity__bottom">{{ component_product_identity_bottom }}</div>
 </div>

@@ -19,28 +19,28 @@
         align-items: center;
     }
     &.message--warning {
-        background: #fff1d2;
+        background: #FFF1D2;
         .block--status-message__icon {
             color: $white;
             background: $status-warning;
         }
     }
     &.message--information {
-        background: #d4eeff;
+        background: #D4EEFF;
         .block--status-message__icon {
             color: $white;
             background: $status-information;
         }
     }
     &.message--success {
-        background: #e7f4e4;
+        background: #E7F4E4;
         .block--status-message__icon {
             color: $white;
             background: $status-success;
         }
     }
     &.message--error {
-        background: #f9dede;
+        background: #F9DEDE;
         .block--status-message__icon {
             color: $white;
             background: $status-error;
