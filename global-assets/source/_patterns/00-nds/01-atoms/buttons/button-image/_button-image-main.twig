@@ -3,8 +3,9 @@
 {% set button_image_text = button_image_text|default() %}
 {% set button_image_src = button_image_src|default() %}
 {% set button_image_alt = button_image_alt|default() %}
+{% set button_image_attributes = button_image_attributes|default() %}
 
-<{{ button_image_href != "" ? 'a' : 'button' }} class="button-nds button--image {{ button_image_classes }}">
+<{{ button_image_href != "" ? 'a' : 'button' }} {% if button_image_href != "" %} href="{{ button_image_href }}"{% endif %}class="button-nds button--image {{ button_image_classes }}" {{ button_image_attributes }}>
     {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
         {
             "image_default_src": button_image_src,

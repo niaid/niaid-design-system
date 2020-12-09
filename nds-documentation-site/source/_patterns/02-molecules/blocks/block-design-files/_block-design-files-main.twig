@@ -4,17 +4,21 @@
     {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
         {
             "button_image_classes": "button--secondary",
+            "button_image_href": assetsPath ~ 'NDS-Sketch.sketch',
             "button_image_src": "sketch.svg",
             "button_image_alt": "Sketch Icon",
-            "button_image_text": "Download Sketch File"
+            "button_image_text": "Download Sketch File",
+            "button_image_attributes": "download"
         }
     %}
     {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
         {
             "button_image_classes": "button--secondary",
+            "button_image_href": assetsPath ~ 'NDS-Figma.fig',
             "button_image_src": "figma.svg",
             "button_image_alt": "Figma Icon",
-            "button_image_text": "Download Figma File"
+            "button_image_text": "Download Figma File",
+            "button_image_attributes": "download"
         }
     %}
     {# {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
