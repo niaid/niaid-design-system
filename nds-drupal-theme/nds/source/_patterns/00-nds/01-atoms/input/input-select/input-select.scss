@@ -13,9 +13,12 @@
             }
             &__rendered {
                 display: inline-flex;
-                color: $input-placeholder;
                 line-height: initial;
                 padding: 0;
+                color: $input-placeholder;
+                .select2-selection__placeholder {
+                    color: $input-placeholder;
+                }
             }
             &:after {
                 @extend %fa-icon;
@@ -55,10 +58,23 @@
                         .select2-search__field {
                             margin: 0;
                             font-size: 1rem;
+                            color: $type-body;
                             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
                                 line-height: 0;
                                 font-size: .8rem;
                             }
+                        }
+                        ::-webkit-input-placeholder {
+                            color:$input-placeholder !important;
+                        }
+                        ::-moz-placeholder {
+                            color:$input-placeholder !important;
+                        }
+                        ::-ms-placeholder {
+                            color:$input-placeholder !important;
+                        }
+                        ::placeholder {
+                            color:$input-placeholder !important;
                         }
                     }
                     .select2-selection__choice {

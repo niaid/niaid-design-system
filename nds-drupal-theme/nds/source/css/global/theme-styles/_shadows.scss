@@ -236,6 +236,11 @@
                 }
             }
         }
+        &.navigation--mobile-rail {
+            .navigation--mobile-rail__button {
+                border-bottom: 0;
+            }
+        }
     }
     /* Organisms */
     .global-nds {

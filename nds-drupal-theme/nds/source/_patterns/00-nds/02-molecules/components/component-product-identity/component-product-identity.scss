@@ -7,11 +7,21 @@
     }
     &__top,
     &__bottom {
+        color: $type-heading;
+        font-size: 1.25rem;
         &.bold {
             font-weight: $font-weight-bold !important;
         }
         &.italics {
             font-style: italic !important;
+        }
+    }
+    &.both-top-bottom {
+        .component--product-identity {
+            &__top,
+            &__bottom {
+                font-size: 1rem;
+            }
         }
     }
 }

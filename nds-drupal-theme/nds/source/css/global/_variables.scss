@@ -6,12 +6,6 @@ $white: #fff;
 $black: #000;
 $niaid-blue: #20558a;
 
-/**** COLORS > STATUS ****/
-$status-error: #C9191C;
-$status-success: #078A00;
-$status-information: #449be2;
-$status-warning: #fdb81e;
-
 /**** COLORS > LAYOUT ****/
 $page-background: #FDFDFD;
 $page-background-alternate: #F5F6FA;
@@ -23,10 +17,23 @@ $type-link: #246CD3;
 $type-link-underline: #777777;
 $type-link-visited: #6F57B5;
 
+/**** COLORS > DOCUMENT ICONS ****/
 $icon-doc-word: #2C5897;
 $icon-doc-excel: #1D6F42;
 $icon-doc-powerpoint: #D04423;
 $icon-doc-pdf: #F40F02;
+
+/**** COLORS > ALERT SEVERITY ****/
+$alert-severity-1: #BE2C2C;
+$alert-severity-2: #FF8C00;
+$alert-severity-3: #FFFF00;
+$alert-severity-4: #008000;
+
+/**** COLORS > STATUS ****/
+$status-error: #C9191C;
+$status-success: #078A00;
+$status-information: #449BE2;
+$status-warning: #FDB81E;
 
 /**** COLORS > INPUT ****/
 $input-border: #888888;
@@ -79,7 +86,7 @@ $theme: (
             2: #17526B
         ),
         3: (
-            1: #244d56,
+            1: #244D56,
             2: #173339
         ),
         4: (

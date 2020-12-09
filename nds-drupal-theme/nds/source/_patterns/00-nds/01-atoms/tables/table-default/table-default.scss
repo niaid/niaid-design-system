@@ -8,6 +8,7 @@ table {
     background: $white;
     overflow: hidden;
     tr {
+        background: $white;
         display: table-row;
         vertical-align: inherit;
         border-color: inherit;
@@ -34,7 +35,9 @@ table {
         border-color: inherit;
         border-collapse: separate;
         border-radius: 0 0 0 0;
-        background: $type-body;
+        tr {
+            background: $type-body;
+        }
     }
     thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
         border-radius: 0 0 0 0;

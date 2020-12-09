@@ -24,13 +24,18 @@
         margin: 0 auto;
         padding: 2rem;
         .link--carot {
+            border-bottom: .0625rem solid transparent;
+            &:hover,
+            &:focus {
+                border-bottom: .0625rem solid $white;
+            }
             &:after {
                 color: $color-theme-1-accent;
                 @extend %fa-icon;
                 @extend .fas;
                 content: fa-content($fa-var-chevron-right);
                 font-size: 0.8rem;
-                padding-left: .25rem;
+                padding-left: .5rem;
                 border-bottom: .25rem solid $footer-background;
             }
         }

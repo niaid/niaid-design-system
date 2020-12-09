@@ -119,6 +119,53 @@
 })(jQuery);
 
 (function ($) {
+  function initLinkExternal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('a:not(:has(img))').each(function () {
+      if ($(this).text()) {
+        var url = $(this).attr('href');
+        var hostName = this.hostname;
+
+        if (url && hostName !== location.hostname) {
+          url = url.toLowerCase();
+
+          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+            $(this).attr('target', '_blank');
+            $(this).after('<a aria-label="Read More about External Link policy" class="ext-link-icon" href="#"></a>');
+          }
+        }
+      }
+    });
+  }
+
+  function initLinkExternalMailto() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('a[href^="mailto:"]').each(function () {
+      $(this).addClass('link--external--mail');
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initLinkExternal = {
+        attach: function attach(context) {
+          $('body', context).once('nds-link-external').each(function () {
+            initLinkExternal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initLinkExternal();
+      initLinkExternalMailto();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initTableDefault() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -176,52 +223,44 @@
   }
 })(jQuery);
 
-(function ($) {
-  function initLinkExternal() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('a:not(:has(img))').each(function () {
-      if ($(this).text()) {
-        var url = $(this).attr('href');
-        var hostName = this.hostname;
+$(document).ready(function () {
+  $(".layouts--body").find('a').each(function (e) {
+    var linktext = $.trim($(this).text());
 
-        if (url && hostName !== location.hostname) {
-          url = url.toLowerCase();
+    if (linktext !== "") {
+      linktext = linktext.replace(/\//g, '-');
+      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
+      $(this).attr("data-content", "body-anchor-" + linktext);
+    }
+  });
+  $('.navigation--primary').find('a').each(function (e) {
+    var linktext = $.trim($(this).text());
 
-          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-            $(this).attr('target', '_blank');
-            $(this).after('<a aria-label="Read More about External Link policy" class="ext-link-icon" href="#"></a>');
-          }
-        }
-      }
-    });
-  }
+    if (linktext !== "") {
+      linktext = linktext.replace(/\//g, '-');
+      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
+      $(this).attr("data-nav", "header-nav-" + linktext);
+    }
+  });
+  $('.global--footer').find('a').each(function (e) {
+    var linktext = $.trim($(this).text());
 
-  function initLinkExternalMailto() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('a[href^="mailto:"]').each(function () {
-      $(this).addClass('link--external--mail');
-    });
-  }
+    if (linktext !== "") {
+      linktext = linktext.replace(/\//g, '-');
+      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
+      $(this).attr("data-nav", "footer-nav-" + linktext);
+    }
+  });
+  $('.component--accordion__card').find('button').each(function (e) {
+    var linktext = $.trim($(this).text());
 
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initLinkExternal = {
-        attach: function attach(context) {
-          $('body', context).once('nds-link-external').each(function () {
-            initLinkExternal(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initLinkExternal();
-      initLinkExternalMailto();
-    });
-  }
-})(jQuery);
+    if (linktext !== "") {
+      linktext = linktext.replace(/\//g, '-');
+      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
+      $(this).attr("data-content", "accordion-" + linktext);
+    }
+  });
+});
 
 (function ($) {
   function initBlockHero() {
@@ -426,42 +465,3 @@
     });
   }
 })(jQuery);
-
-$(document).ready(function () {
-  $(".layouts--body").find('a').each(function (e) {
-    var linktext = $.trim($(this).text());
-
-    if (linktext !== "") {
-      linktext = linktext.replace(/\//g, '-');
-      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-      $(this).attr("data-content", "body-anchor-" + linktext);
-    }
-  });
-  $('.navigation--primary').find('a').each(function (e) {
-    var linktext = $.trim($(this).text());
-
-    if (linktext !== "") {
-      linktext = linktext.replace(/\//g, '-');
-      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-      $(this).attr("data-nav", "header-nav-" + linktext);
-    }
-  });
-  $('.global--footer').find('a').each(function (e) {
-    var linktext = $.trim($(this).text());
-
-    if (linktext !== "") {
-      linktext = linktext.replace(/\//g, '-');
-      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-      $(this).attr("data-nav", "footer-nav-" + linktext);
-    }
-  });
-  $('.component--accordion__card').find('button').each(function (e) {
-    var linktext = $.trim($(this).text());
-
-    if (linktext !== "") {
-      linktext = linktext.replace(/\//g, '-');
-      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-      $(this).attr("data-content", "accordion-" + linktext);
-    }
-  });
-});
