@@ -1,8 +1,8 @@
 .button--floating {
     @extend .button--primary;
     position: fixed;
-    bottom: 3rem;
-    right: 3rem;
+    bottom: 2rem;
+    right: 2rem;
     height: 4rem;
     width: 3.95rem;
     z-index: 999;
@@ -38,6 +38,16 @@
             background: $color-theme-1-1-1;
             color: $white;
             border: 0.0625rem solid $color-theme-1-1-1;
+        }
+    }
+    &.button--negative {
+        color: $status-error;
+        background: transparent;
+        &:hover,
+        &:focus {
+            background: $status-error;
+            color: $white;
+            border: 0.0625rem solid $status-error;
         }
     }
 }

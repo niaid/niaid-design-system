@@ -16,4 +16,14 @@
             border: 0.0625rem solid $color-theme-1-1-1;
         }
     }
+    &.button--negative {
+        color: $status-error;
+        background: transparent;
+        &:hover,
+        &:focus {
+            background: $status-error;
+            color: $white;
+            border: 0.0625rem solid $status-error;
+        }
+    }
 }

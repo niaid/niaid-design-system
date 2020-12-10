@@ -29,6 +29,15 @@ button {
             border: 0.0625rem solid $color-theme-1-2-2;
         }
     }
+    &.button--negative {
+        color: $status-error;
+        background: transparent;
+        &:hover,
+        &:focus {
+            background: $status-error;
+            color: $white;
+        }
+    }
     & + .ext-link-icon {
         display: none;
     }
@@ -58,5 +67,19 @@ button {
         color: $white;
         background: $color-theme-1-2-2;
         border: 0.0625rem solid $color-theme-1-2-2;
+    }
+}
+
+.button--negative {
+    border: 0.0625rem solid $status-error;
+    color: $status-error;
+    &:hover,
+    &:focus {
+        background: $status-error;
+        color: $white;
+        border: 0.0625rem solid $status-error;
+    }
+    &:visited {
+        color: $status-error;
     }
 }

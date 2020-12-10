@@ -45,11 +45,25 @@
                 border: 0.0625rem solid $color-theme-1-2-1;
             }
         }
+        &.button--negative {
+            background: $white;
+            border: 0.0625rem solid $white;
+            &:hover,
+            &:focus {
+                background: $white;
+                border: .0625rem solid $white;
+                color: $status-error;
+            }
+            &:active {
+                background-color: $white !important;
+            }
+        }
         &.button--floating,
         &.button--image,
         &.button--icon,
         &.button--external {
-            &.button--secondary {
+            &.button--secondary,
+            &.button--negative {
                 background: $white;
             }
         }
@@ -286,6 +300,15 @@
                 border: 0.0625rem solid $color-theme-2-2-1;
             }
         }
+        .button--negative {
+            border: 0.0625rem solid $white;
+            &:hover,
+            &:focus {
+                background: $white;
+                color: $status-error;
+                border: 0.0625rem solid $white;
+            }
+        }
         .button--floating,
         .button--image,
         .button--icon,
@@ -295,6 +318,14 @@
                 &:focus {
                     background: $white;
                     color: $color-theme-2-1-1;
+                    border: 0.0625rem solid $white;
+                }
+            }
+            &.button--negative {
+                &:hover,
+                &:focus {
+                    background: $white;
+                    color: $status-error;
                     border: 0.0625rem solid $white;
                 }
             }
@@ -363,6 +394,15 @@
                 border: 0.0625rem solid $color-theme-3-2-1;
             }
         }
+        .button--negative {
+            border: 0.0625rem solid $white;
+            &:hover,
+            &:focus {
+                background: $white;
+                color: $status-error;
+                border: 0.0625rem solid $white;
+            }
+        }
         .button--floating,
         .button--image,
         .button--icon,
@@ -372,6 +412,14 @@
                 &:focus {
                     background: $white;
                     color: $color-theme-3-1-1;
+                    border: 0.0625rem solid $white;
+                }
+            }
+            &.button--negative {
+                &:hover,
+                &:focus {
+                    background: $white;
+                    color: $status-error;
                     border: 0.0625rem solid $white;
                 }
             }
