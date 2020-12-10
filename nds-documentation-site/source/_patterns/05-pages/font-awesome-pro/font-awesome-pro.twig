@@ -39,11 +39,7 @@
             }
         %}
             {% block main_column %}
-                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" with
-                    {
-                        "layouts_body_vertical_padding": "no"
-                    }
-                %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
                         <h1 id="main-content">Using Font Awesome Pro with NDS (NPM)</h1>
                         

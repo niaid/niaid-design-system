@@ -14,7 +14,7 @@ $page-background-alternate: #F5F6FA;
 $type-heading: #2F2F2F;
 $type-body: #404B56;
 $type-link: #246CD3;
-$type-link-underline: #777777;
+$type-link-underline: #717171;
 $type-link-visited: #6F57B5;
 
 /**** COLORS > DOCUMENT ICONS ****/
@@ -30,13 +30,13 @@ $alert-severity-3: #FFFF00;
 $alert-severity-4: #008000;
 
 /**** COLORS > STATUS ****/
-$status-error: #C9191C;
+$status-error: #BE2C2C;
 $status-success: #078A00;
 $status-information: #449BE2;
 $status-warning: #FDB81E;
 
 /**** COLORS > INPUT ****/
-$input-border: #888888;
+$input-border: #717171;
 $input-placeholder: #9AA6B5;
 
 /**** BORDER RADIUS ****/
@@ -95,19 +95,19 @@ $theme: (
     ),
     3: (
         1: (
+            1: #14675A,
+            2: #0D443C
+        ),
+        2: (
             1: #423E63,
             2: #2A2840
         ),
-        2: (
-            1: #69166E,
-            2: #531157
-        ),
         3: (
             1: #123B56,
-            2: #20558A
+            2: #0D2E44
         ),
         4: (
-            1: #D88D89
+            1: #79A9D1
         )
     )
 );

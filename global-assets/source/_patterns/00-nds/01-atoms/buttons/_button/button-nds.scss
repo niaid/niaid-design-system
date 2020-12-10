@@ -19,14 +19,15 @@ button {
 .disabled,
 button:disabled,
 button[disabled] {
-    @extend .btn;
-    background: $input-border !important;
-    color: $type-heading !important;
+    @extend .button-nds;
+    background: $page-background-alternate !important;
+    color: $type-body !important;
     border-color: transparent !important;
     cursor: not-allowed !important;
+    opacity: 1;
     &:hover,
     &:focus {
-        background: $input-border !important;
-        color: $type-heading !important;
+        background: $page-background-alternate !important;
+        color: $type-body !important;
     }
 }
