@@ -60,15 +60,3 @@ button {
         border: 0.0625rem solid $color-theme-1-2-2;
     }
 }
-
-.button--negative {
-    border: 0.0625rem solid $status-error;
-    color: $status-error;
-    &:hover,
-    &:focus,
-    &:active {
-        color: $white;
-        background: $status-error;
-        border: 0.0625rem solid $status-error;
-    }
-}
