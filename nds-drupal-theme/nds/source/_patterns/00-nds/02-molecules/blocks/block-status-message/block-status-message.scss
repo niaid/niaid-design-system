@@ -1,46 +1,54 @@
 .block--status-message {
-    padding-top: 2rem;
     position: relative;
-    margin-top: 3rem;
     background: $white;
+    border: 0;
+    padding: 1rem 1rem 1rem 2.5rem;
+    margin: 1rem 0 1rem 1.25rem;
     &__icon {
-        border: 0.0625rem solid $type-link-underline;
-        height: 3rem;
-        width: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.5rem;
+        width: 2.5rem;
         border-radius: 100%;
-        background: $white;
         color: $body-color;
         position: absolute;
-        top: 0;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        font-size: 1.25rem;
+    }
+    &__content {
+        & > *:first-child {
+            margin-top: 0;
+        }
+        & > *:last-child {
+            margin-bottom: 0;
+        }
     }
     &.message--warning {
-        background: #FFF1D2;
+        background: #FFF8E6;
         .block--status-message__icon {
-            color: $white;
+            color: $type-heading;
             background: $status-warning;
         }
     }
     &.message--information {
-        background: #D4EEFF;
+        background: #ECEFFC;
         .block--status-message__icon {
             color: $white;
             background: $status-information;
         }
     }
     &.message--success {
-        background: #E7F4E4;
+        background: #E7F2EF;
         .block--status-message__icon {
             color: $white;
             background: $status-success;
         }
     }
     &.message--error {
-        background: #F9DEDE;
+        background: #FAEAEC;
         .block--status-message__icon {
             color: $white;
             background: $status-error;
