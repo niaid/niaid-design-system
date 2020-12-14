@@ -24,7 +24,7 @@
         <p>There are three button styles for each Color Theme option: Primary, Secondary, and Tertiary. In general, buttons are used for actions that occur on the page, while links take users from one page to another. Depending on the importance of a link, you may decide to style it as a button to make it stand out more.</p>
         <h5>Pattern Usage</h5>
         <p>The Default Button pattern supports both buttons and links. Links are created automatically if the button_default_href attribute is passed. If omitted, the resultant output will be a button element.</p>
-        <p>To use one of the styles below, pass the "button_default_type" parameter the desired style ("primary", "secondary" or "tertiary").</p>
+        <p>To use one of the styles below, pass the "button_default_type" parameter the desired style ("primary", "secondary", "tertiary", or "negative").</p>
         <p>These button styles can also be applied to other button components by passing the desired classes (i.e. button--primary) to the pattern. See below for examples of using various button styles on other button components.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
@@ -494,6 +494,14 @@
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/text/text-image-credit-caption/demo/text-image-credit-caption.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Search Results</h4>
+        <p>When displaying a set of search results, it is a best practice to include the number of overall results returned. The Search Results component provides a display for this purpose. Place this component directly above the listing of search results.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/text/text-search-results/demo/text-search-results.twig" %}
             {% endblock %}
         {% endembed %}
     {% endblock %}

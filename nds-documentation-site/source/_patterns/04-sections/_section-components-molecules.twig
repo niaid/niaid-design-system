@@ -26,6 +26,14 @@
             {% endblock %}
         {% endembed %}
 
+        <h4>Search Result</h4>
+        <p>Created directly by the Default Block component, the Search Result pattern can be used to display a set of results returned by your search engine.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+            {% endblock %}
+        {% endembed %}
+
         <h4>Featured Content Card</h4>
         <p>Featured Content Cards are useful blocks designed to highlight your most important content. Each feature includes a title, an image, and a short description of the content.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with

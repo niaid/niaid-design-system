@@ -2,9 +2,9 @@
 
 /**** COLORS ****/
 /**** COLORS > GLOBAL ****/
-$white: #fff;
+$white: #FFF;
 $black: #000;
-$niaid-blue: #20558a;
+$niaid-blue: #20558A;
 
 /**** COLORS > LAYOUT ****/
 $page-background: #FDFDFD;
@@ -23,6 +23,9 @@ $icon-doc-excel: #1D6F42;
 $icon-doc-powerpoint: #D04423;
 $icon-doc-pdf: #F40F02;
 
+/**** COLORS > MEDIA ****/
+$media-audio-background: #F1F3F4;
+
 /**** COLORS > ALERT SEVERITY ****/
 $alert-severity-1: #D23342;
 $alert-severity-2: #FFC10A;
@@ -31,13 +34,26 @@ $alert-severity-4: #17805F;
 
 /**** COLORS > STATUS ****/
 $status-error: #D23342;
+$status-error-background: #FAEAEC;
 $status-success: #17805F;
+$status-success-background: #E7F2EF;
 $status-information: #4865E3;
+$status-information-background: #ECEFFC;
 $status-warning: #FFC10A;
+$status-warning-background: #FFF8E6;
 
 /**** COLORS > INPUT ****/
 $input-border: #717171;
 $input-placeholder: #9AA6B5;
+
+/**** COLORS > BRANDS ****/
+$brands-facebook: #3B5998;
+$brands-twitter: #00ACEE;
+$brands-linkedin: #0E76A8;
+$brands-youtube: #FF0000;
+$brands-pinterest: #C92228;
+$brands-flickr: #FF0084;
+$brands-google-plus: #D34836;
 
 /**** BORDER RADIUS ****/
 $border-radius-semi: .3125rem;

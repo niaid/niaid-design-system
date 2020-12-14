@@ -7,7 +7,7 @@
         <h2>Forms &amp; Input</h2>
         <p>Form controls and inputs are an essential mechanism for websites and applications to get user-provided information. From "Was This Page Helpful?" forms to Contact Us pages, form fields and inputs add a layer of interactivity to digital platforms. Form fields can be difficult to get right due to stringent accessibility laws such as <a href="https://www.ada.gov/508/">Section 508 under the Americans with Disabilities Act (ADA).</a> NDS ensures form fields are compliant and elegant by ensuring visible focus states and color contrast meet the guidelines.</p>
         <h3>Buttons</h3>
-        <p>NDS supports three main button styles: Primary, Secondary, and Tertiary. These three styles are shown below, along with a sample disabled button.</p>
+        <p>NDS supports four main button styles: Primary, Secondary, Tertiary, and Negative. These four styles are shown below:</p>
         <div class="container container--button">
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -37,9 +37,8 @@
                 <div class="col-12 col-md-6">
                     {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
                         {
-                            "button_default_type": "primary",
-                            "button_default_label": "Disabled Button",
-                            "button_default_classes": "disabled"
+                            "button_default_type": "negative",
+                            "button_default_label": "Negative Button"
                         }
                     %}
                 </div>

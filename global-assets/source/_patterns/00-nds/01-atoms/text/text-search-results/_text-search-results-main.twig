@@ -1,0 +1,11 @@
+{% set text_search_results_classes = text_search_results_classes|default() %}
+{% set text_search_results_title_text = text_search_results_title_text|default('Results') %}
+{% set text_search_results_title_level = text_search_results_title_level|default('2') %}
+{% set text_search_results_title_number = text_search_results_title_number|default() %}
+
+<div class="text-nds text--search-results {{ text_search_results_classes }}">
+    <h{{ text_search_results_title_level }} class="text--search-results__title">
+        <span class="text--search-results__title__number">{{ text_search_results_title_number }}</span>
+        <span class="text--search-results__title__text">{{ text_search_results_title_text }}</span>
+    </h{{ text_search_results_title_level }}>
+</div>

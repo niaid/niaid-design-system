@@ -27,28 +27,28 @@
         }
     }
     &.message--warning {
-        background: #FFF8E6;
+        background: $status-warning-background;
         .block--status-message__icon {
             color: $type-heading;
             background: $status-warning;
         }
     }
     &.message--information {
-        background: #ECEFFC;
+        background: $status-information-background;
         .block--status-message__icon {
             color: $white;
             background: $status-information;
         }
     }
     &.message--success {
-        background: #E7F2EF;
+        background: $status-success-background;
         .block--status-message__icon {
             color: $white;
             background: $status-success;
         }
     }
     &.message--error {
-        background: #FAEAEC;
+        background: $status-error-background;
         .block--status-message__icon {
             color: $white;
             background: $status-error;

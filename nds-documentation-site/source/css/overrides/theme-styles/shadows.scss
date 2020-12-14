@@ -20,6 +20,9 @@
     }
 
     .block-nds {
+        &.block--palette {
+            background: transparent;
+        }
         &.block--full-palette {
             @include md-0dp;
         }

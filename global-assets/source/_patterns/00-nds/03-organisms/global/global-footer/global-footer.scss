@@ -65,7 +65,8 @@
         }
     }
     &__tagline {
-        display: flex;
+        display: none;
+        // display: flex;
         justify-content: center;
         align-items: center;
         font-size: .8rem;

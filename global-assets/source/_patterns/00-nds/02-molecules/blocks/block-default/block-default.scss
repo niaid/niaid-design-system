@@ -4,18 +4,14 @@
     width: 100%;
     flex-wrap: wrap;
     background: $white;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    ul, li, p {
+        max-width: none;
+    }
+    & > *:first-child {
         margin-top: 0;
     }
-    p {
-        margin: 0;
-        padding: 0;
-        max-width: none;
+    & > *:last-child {
+        margin-bottom: 0;
     }
     .button--primary,
     .button--secondary,
@@ -24,14 +20,6 @@
     button {
         margin: 1rem 0 0 0;
         display: inline-flex;
-    }
-    &--search-result {
-        h2 {
-            font-size: 1.5rem;
-        }
-        &__last-reviewed {
-            margin-top: 1rem !important;
-        }
     }
     &.block--default--accent {
         border-left: .25rem solid $color-theme-1-accent;

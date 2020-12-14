@@ -15,33 +15,32 @@
                     {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
                         {
                             "global_color_indicator_title": "Heading Color",
-                            "global_color_indicator_hex": "#2F2F2F"
+                            "global_color_indicator_hex": colors.global.type_heading
                         }
                     %}
                     {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
                         {
                             "global_color_indicator_title": "Body Color",
-                            "global_color_indicator_hex": "#404B56"
+                            "global_color_indicator_hex": colors.global.type_body
                         }
                     %}
                     {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
                         {
                             "global_color_indicator_title": "Link Color",
-                            "global_color_indicator_hex": "#246CD3"
+                            "global_color_indicator_hex": colors.global.type_link
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_title": "Visited Link Color",
+                            "global_color_indicator_hex": colors.global.type_link_visited
                         }
                     %}
                     {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
                         {
                             "global_color_indicator_classes": "global--color-indicator--bg",
                             "global_color_indicator_title": "Page Background",
-                            "global_color_indicator_hex": "#FDFDFD"
-                        }
-                    %}
-                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
-                        {
-                            "global_color_indicator_classes": "global--color-indicator--bg",
-                            "global_color_indicator_title": "Alternate Background",
-                            "global_color_indicator_hex": "#F5F6FA"
+                            "global_color_indicator_hex": colors.global.page_background
                         }
                     %}
                 </div>
@@ -49,25 +48,32 @@
                     {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
                         {
                             "global_color_indicator_title": "Input Border",
-                            "global_color_indicator_hex": "#888888"
+                            "global_color_indicator_hex": colors.global.input_border
                         }
                     %}
                     {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
                         {
                             "global_color_indicator_title": "Success Color",
-                            "global_color_indicator_hex": "#078A00"
+                            "global_color_indicator_hex": colors.global.status_success
                         }
                     %}
                     {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
                         {
                             "global_color_indicator_title": "Error Color",
-                            "global_color_indicator_hex": "#C9191C"
+                            "global_color_indicator_hex": colors.global.status_error
                         }
                     %}
                     {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
                         {
                             "global_color_indicator_title": "NIAID Blue",
-                            "global_color_indicator_hex": "#20558A"
+                            "global_color_indicator_hex": colors.global.niaid_blue
+                        }
+                    %}
+                    {% include "@atoms/global/global-color-indicator/_global-color-indicator-main.twig" with
+                        {
+                            "global_color_indicator_classes": "global--color-indicator--bg",
+                            "global_color_indicator_title": "Alternate Background",
+                            "global_color_indicator_hex": colors.global.page_background_alternate
                         }
                     %}
                 </div>
