@@ -7,6 +7,14 @@
     &__label {
         margin-bottom: .5rem;
     }
+    &__wrapper {
+        display: flex;
+        margin: 0 -.5rem;
+        &__clear,
+        .text--chip {
+            margin: 0 .5rem;
+        }
+    }
     .ext-link-icon {
         display: none !important;
     }
