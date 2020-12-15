@@ -145,18 +145,10 @@
         &.block--callout {
             background: $white;
         } 
-        &.block--header {
-            @include md-0dp;
-            background: transparent;
-        }
-        &.block--inputs {
-            @include md-0dp;
-            background: transparent;
-        }
-        &.block--colors {
-            @include md-0dp;
-            background: transparent;
-        }
+        &.block--header,
+        &.block--inputs,
+        &.block--colors,
+        &.block--search-chips,
         &.block--share {
             @include md-0dp;
             background: transparent;

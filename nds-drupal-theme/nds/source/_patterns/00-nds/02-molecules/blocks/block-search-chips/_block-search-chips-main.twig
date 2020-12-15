@@ -1,26 +1,28 @@
 {% set block_search_chips_classes = block_search_chips_classes|default() %}
-{% set block_search_chips_cards = block_search_chips_cards|default() %}
+{% set block_search_chips_data = block_search_chips_data|default() %}
 {% set block_search_chips_clear = block_search_chips_clear|default() %}
 
 <div class="block-nds block--search-chips {{ block_search_chips_classes }}">
-    <div class="block--chip__label">Showing results filtered by:</div>
-    {% if block_search_chips_clear is not empty %}
-        {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
-            {
-                "button_default_classes": "block--chip__clear-button",
-                "button_default_type": "secondary",
-                "button_default_label": "Clear All",
-                "button_default_href": block_search_chips_clear,
-                "button_default_attributes": 'aria-label="Clear all facets"'
-            }
-        %}
-    {% endif %}
-    {% for card in block_search_chips_cards %}
-        {% include "@nds/01-atoms/text/text-chip/_text-chip-main.twig" with
-            {
-                "text_chip_text": card.text,
-                "text_chip_href": card.url
-            }
-        %}
-    {% endfor %}
+    <div class="block--search-chips__label">Showing results filtered by:</div>
+    <div class="block--search-chips__wrapper">
+        {% if block_search_chips_clear is not empty %}
+            {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_classes": "block--search-chips__wrapper__clear",
+                    "button_default_type": "secondary",
+                    "button_default_label": "Clear All",
+                    "button_default_href": block_search_chips_clear,
+                    "button_default_attributes": 'aria-label="Clear All Facets"'
+                }
+            %}
+        {% endif %}
+        {% for card in block_search_chips_data %}
+            {% include "@nds/01-atoms/text/text-chip/_text-chip-main.twig" with
+                {
+                    "text_chip_text": card.text,
+                    "text_chip_href": card.url
+                }
+            %}
+        {% endfor %}
+    </div>
 </div>

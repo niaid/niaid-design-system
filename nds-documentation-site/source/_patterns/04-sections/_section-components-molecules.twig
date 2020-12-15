@@ -34,6 +34,14 @@
             {% endblock %}
         {% endembed %}
 
+        <h4>Search Chips</h4>
+        <p>Use this component in tandem with the Filters Component to display the selected filters. Place this component under the search bar.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/blocks/block-search-chips/demo/block-search-chips.twig" %}
+            {% endblock %}
+        {% endembed %}
+
         <h4>Featured Content Card</h4>
         <p>Featured Content Cards are useful blocks designed to highlight your most important content. Each feature includes a title, an image, and a short description of the content.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with

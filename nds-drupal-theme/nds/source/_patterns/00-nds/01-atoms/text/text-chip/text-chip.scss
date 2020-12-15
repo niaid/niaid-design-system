@@ -8,6 +8,9 @@
         color: $white;
         border-bottom: 0;
         margin-left: .5rem;
+        &:visited {
+            color: $white;
+        }
     }
     &:hover,
     &:focus {
