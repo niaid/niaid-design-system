@@ -185,6 +185,10 @@ function buildNDSDocumentationSite() {
         {
             "page_name": "font-awesome-pro",
             "target_dest": "./public_html/font-awesome-pro-nds-npm"
+        },
+        {
+            "page_name": "about",
+            "target_dest": "./public_html/about-nds"
         }
     ];
 

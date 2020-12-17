@@ -28,6 +28,7 @@
         "themeBuilder": "/builder/",
         "getStarted": "/getting-started/",
         "migrationGuide": "/migration-guide/",
-        "fontAwesomePro": "/font-awesome-pro-nds-npm/"
+        "fontAwesomePro": "/font-awesome-pro-nds-npm/",
+        "about": "/about-nds/"
     }
 }

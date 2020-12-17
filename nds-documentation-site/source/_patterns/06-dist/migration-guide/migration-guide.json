@@ -21,6 +21,7 @@
         "components": "/components/",
         "themeBuilder": "/builder/",
         "getStarted": "/getting-started/",
-        "migrationGuide": "/migration-guide/"
+        "migrationGuide": "/migration-guide/",
+        "about": "/about-nds/"
     }
 }

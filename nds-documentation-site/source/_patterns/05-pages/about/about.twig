@@ -1,0 +1,57 @@
+{% include "@molecules/components/component-style-controls/_component-style-controls-main.twig" %}
+
+{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+    {
+        "layouts_site_id": "about"
+    }
+%}
+    {% block header %}
+        {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
+        {% include "@organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "Design System"
+            }
+        %}
+    {% endblock %}
+    {% block global_navigation %}
+        {% include "@molecules/navigation/navigation-primary/_navigation-primary-main.twig" %}
+        {% include "@molecules/navigation/navigation-drawer/_navigation-drawer-main.twig" with
+            {
+                "navigation_drawer_id": "main-navigation-mobile"
+            }
+        %}
+        {% include "@nds/01-atoms/buttons/button-floating/_button-floating-main.twig" with
+            {
+                "button_floating_id": "custom-styles-toggle",
+                "button_floating_icon": "palette",
+                "button_floating_icon_weight": "l",
+                "button_floating_text": "Customize Page Theme"
+            }
+        %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@atoms/layouts/layouts-main/_layouts-main-main.twig" with
+            {
+                "layouts_main_id": 'main',
+                "layouts_main_left": columns.left,
+                "layouts_main_main": columns.main,
+                "layouts_main_right": columns.right
+            }
+        %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                    {% block body_content %}
+                        <h1 id="main-content">About NDS</h1>
+                        
+                        <p>The NIAID Design System (NDS) includes design guidance on everything from typography and colors to image use and accessibility to help NIAID websites and digital properties meet Federal, HHS, NIH, and NIAID policies. The visual style of NDS is programmatically built on the principle of Atomic Design, powered by a framework called Pattern Lab. For more information about the development side of NDS, visit the Development page.</p>
+
+                        <p>The overall goal of a design system is to bring consistency to digital properties within an organization. Design systems achieve this by standardizing a visual style, such as fonts and colors, and by providing guidance for how this visual style should be applied to website and application design. Furthermore, design systems translate this visual style into functional code snippets, called components or patterns, that developers can use to build websites and applications. When patterns are updated, all digital properties relying on them will update as well ensuring that the look and feel remains unified as the visual style evolves.</p>
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% include "@organisms/global/global-footer/_global-footer-main.twig" %}
+    {% endblock %}
+{% endembed %}
