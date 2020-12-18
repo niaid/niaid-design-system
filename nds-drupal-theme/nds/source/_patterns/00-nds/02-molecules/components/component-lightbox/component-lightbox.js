@@ -1,7 +1,8 @@
 (function($) {
     function initComponentLightbox(context = document) {
         if ($('.materialboxed').length) {
-            $('.materialboxed').materialbox();
+            var elems = document.querySelectorAll('.materialboxed');
+            var instances = M.Materialbox.init(elems);
         }
     }
 

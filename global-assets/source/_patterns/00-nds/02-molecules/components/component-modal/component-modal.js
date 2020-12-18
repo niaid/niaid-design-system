@@ -3,11 +3,12 @@
         if ($('.component--modal').length) {
             let focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
-            $('.component--modal').each(function() {
-                let firstFocusableElement = $(this).find(focusableElements)[0];
-                let focusableContent = $(this).find(focusableElements);
+            var modalsList = document.getElementsByClassName("component--modal");
+            for (var i = 0; i < modalsList.length; i++) {
+                let firstFocusableElement = modalsList[i].querySelectorAll(focusableElements)[0];
+                let focusableContent = modalsList[i].querySelectorAll(focusableElements);
                 let lastFocusableElement = focusableContent[focusableContent.length - 1];
-
+             
                 document.addEventListener('keydown', function(e) {
                     let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
                     if (!isTabPressed) {
@@ -26,9 +27,8 @@
                         }
                     }
                 });
-
                 firstFocusableElement.focus();
-            });
+            }
         }
     }
 

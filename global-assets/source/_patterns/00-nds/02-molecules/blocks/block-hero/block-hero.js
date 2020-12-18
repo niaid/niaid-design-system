@@ -1,7 +1,8 @@
 (function($) {
     function initBlockHero(context = document) {
         if ($('.parallax').length) {
-            $('.parallax').parallax();
+            var elems = document.querySelectorAll('.parallax');
+            var instances = M.Parallax.init(elems);
         }
     }
 
