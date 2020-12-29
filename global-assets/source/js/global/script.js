@@ -57,6 +57,68 @@
 })(jQuery);
 
 (function ($) {
+  function initInputSelect() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('select').each(function () {
+      if ($(this).attr('nds-select') == 'true') {
+        $(this).select2({
+          minimumResultsForSearch: 10
+        });
+
+        if ($(this).val() != "") {
+          $(this).siblings('.select2-container').addClass('no-clear selection-made');
+        }
+      }
+    });
+    $('select').change(function (e, p) {
+      if ($(this).attr('nds-select') == 'true') {
+        if (!e.target.multiple) {
+          $(this).siblings('.select2-container').addClass('selection-made');
+
+          if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
+            $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
+          }
+        } else {
+          $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
+        }
+      }
+    }); // Listener to Add Accessibility Compliance to Open Modals
+
+    $('select').on('select2:open', function (e) {
+      $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
+      $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
+    });
+    $(document).on('click', '.single-clear', function (e) {
+      e.stopPropagation();
+      var $selectField = $(this).parent().siblings('select');
+      $selectField.prop('selectedIndex', 0);
+      var placeholder = $selectField.attr("data-placeholder");
+      $(this).parent().removeClass('selection-made');
+      $(this).siblings('.selection').find('.select2-selection__rendered').text(placeholder);
+      $(this).remove();
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputSelect = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-select').each(function () {
+            initInputSelect(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputSelect();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initLinkExternal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $('a:not(:has(img))').each(function () {
@@ -164,52 +226,44 @@
 $(document).ready(function () {
   for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
     var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+  }
 
-    for (var j = 0; j < bodyAnchorLinks.length; j++) {
-      var linkText = bodyAnchorLinks[j].textContent.trim();
+  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+
+    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+  }
+
+  function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+    for (var i = 0; i < els.length; i++) {
+      var linkText = els[i].textContent.trim();
 
       if (linkText !== "") {
         linkText = linkText.replace(/\//g, '-');
         linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-        bodyAnchorLinks[j].setAttribute('data-content', "body-anchor-" + linkText);
+        els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
       }
     }
   }
-
-  $('.navigation--primary').find('a').each(function (e) {
-    var linktext = $.trim($(this).text());
-
-    if (linktext !== "") {
-      linktext = linktext.replace(/\//g, '-');
-      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-      $(this).attr("data-nav", "header-nav-" + linktext);
-    }
-  });
-  $('.global--footer').find('a').each(function (e) {
-    var linktext = $.trim($(this).text());
-
-    if (linktext !== "") {
-      linktext = linktext.replace(/\//g, '-');
-      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-      $(this).attr("data-nav", "footer-nav-" + linktext);
-    }
-  });
-  $('.component--accordion__card').find('button').each(function (e) {
-    var linktext = $.trim($(this).text());
-
-    if (linktext !== "") {
-      linktext = linktext.replace(/\//g, '-');
-      linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-      $(this).attr("data-content", "accordion-" + linktext);
-    }
-  });
 });
 
 (function ($) {
   function initBlockHero() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-    if ($('.parallax').length) {
+    if (document.querySelectorAll('.parallax').length) {
       var elems = document.querySelectorAll('.parallax');
       var instances = M.Parallax.init(elems);
     }
@@ -235,39 +289,10 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
-  function initComponentLightbox() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentLightbox = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-lightbox').each(function () {
-            initComponentLightbox(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentLightbox();
-    });
-  }
-})(jQuery);
-
-(function ($) {
   function initComponentModal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-    if ($('.component--modal').length) {
+    if (document.querySelectorAll('.component--modal').length) {
       var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
       var modalsList = document.getElementsByClassName("component--modal");
 
@@ -323,47 +348,83 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
+  function initComponentLightbox() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentLightbox = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-lightbox').each(function () {
+            initComponentLightbox(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentLightbox();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initNavigationDrawer() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var wWidth = $(window).width();
-    $("#global-mobile-menu").on('click', function () {
-      $('#main-navigation-mobile').addClass('drawer--open');
-      $('#main-navigation-mobile').siblings('.navigation--drawer--overlay').show();
-      $('.navigation--drawer__top__button-close').focus();
-      $('#main-navigation-mobile').find('a, button').each(function () {
-        $(this).attr('tabindex', '0');
-      });
+    var wWidth = windowWidth();
+    document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
+      document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
+      var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+      overlay.style.display = 'block';
+      document.querySelector('.navigation--drawer__top__button-close').focus();
+      var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+      for (var i = 0; i < tabElements.length; i++) {
+        tabElements[i].setAttribute('tabindex', '0');
+      }
     });
-    $('.navigation--drawer--overlay').on('click', function () {
-      $(this).hide();
+    document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
       closeMenu();
     });
-    $('.navigation--drawer__top__button-close').on('click', function () {
+    document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
       closeMenu();
     });
-    $(window).resize(function () {
-      if (wWidth != $(this).width()) {
-        wWidth = $(this).width();
+
+    window.onresize = function (e) {
+      if (wWidth != windowWidth()) {
+        wWidth = windowWidth();
         closeMenu();
       }
-    }); // 508 Compliance Focus Helpers
+    }; // 508 Compliance Focus Helpers
 
-    $('.skip-to--top').on('focus', function () {
-      $('.navigation--drawer__top__button-close').focus();
+
+    document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
+      document.querySelector('.navigation--drawer__top__button-close').focus();
     });
-    $('.skip-to--back').on('focus', function () {
-      var focusable = $(".navigation--drawer__inner").find("a:visible, button:visible");
-      $(focusable[focusable.length - 1]).focus();
+    document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
+      var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
+      tabElements[tabElements.length - 1].focus();
     });
   }
 
   function closeMenu() {
-    $("#global-mobile-menu").focus();
-    $('#main-navigation-mobile').removeClass('drawer--open');
-    $('#main-navigation-mobile').siblings('.navigation--drawer--overlay').hide();
-    $('#main-navigation-mobile').find('a, button').each(function () {
-      $(this).attr('tabindex', '-1');
-    });
+    document.querySelector('#global-mobile-menu').focus();
+    document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
+    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+    overlay.style.display = 'none';
+    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+    for (var i = 0; i < tabElements.length; i++) {
+      tabElements[i].setAttribute('tabindex', '-1');
+    }
   }
 
   if (typeof Drupal !== 'undefined') {
@@ -389,12 +450,16 @@ $(document).ready(function () {
   function initNavigationLocal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-    if ($('.navigation--local').length) {
-      $('.navigation--local__group__label', context).keypress(function (e) {
-        if (e.which == 13) {
-          $(this).click();
-        }
-      });
+    if (document.querySelectorAll('.navigation--local').length) {
+      var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
+
+      for (var i = 0; i < localNavigationItems.length; i++) {
+        localNavigationItems[i].addEventListener("keydown", function (event) {
+          if (event.isComposing || event.keyCode === 13) {
+            this.click();
+          }
+        });
+      }
     }
   }
 
@@ -413,68 +478,6 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationLocal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initInputSelect() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('select').each(function () {
-      if ($(this).attr('nds-select') == 'true') {
-        $(this).select2({
-          minimumResultsForSearch: 10
-        });
-
-        if ($(this).val() != "") {
-          $(this).siblings('.select2-container').addClass('no-clear selection-made');
-        }
-      }
-    });
-    $('select').change(function (e, p) {
-      if ($(this).attr('nds-select') == 'true') {
-        if (!e.target.multiple) {
-          $(this).siblings('.select2-container').addClass('selection-made');
-
-          if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
-            $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
-          }
-        } else {
-          $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
-        }
-      }
-    }); // Listener to Add Accessibility Compliance to Open Modals
-
-    $('select').on('select2:open', function (e) {
-      $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
-      $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
-    });
-    $(document).on('click', '.single-clear', function (e) {
-      e.stopPropagation();
-      var $selectField = $(this).parent().siblings('select');
-      $selectField.prop('selectedIndex', 0);
-      var placeholder = $selectField.attr("data-placeholder");
-      $(this).parent().removeClass('selection-made');
-      $(this).siblings('.selection').find('.select2-selection__rendered').text(placeholder);
-      $(this).remove();
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputSelect = {
-        attach: function attach(context) {
-          $('body', context).once('nds-input-select').each(function () {
-            initInputSelect(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputSelect();
     });
   }
 })(jQuery);

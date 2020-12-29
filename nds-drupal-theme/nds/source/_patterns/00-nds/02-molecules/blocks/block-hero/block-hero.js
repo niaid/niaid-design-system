@@ -1,6 +1,6 @@
 (function($) {
     function initBlockHero(context = document) {
-        if ($('.parallax').length) {
+        if (document.querySelectorAll('.parallax').length) {
             var elems = document.querySelectorAll('.parallax');
             var instances = M.Parallax.init(elems);
         }

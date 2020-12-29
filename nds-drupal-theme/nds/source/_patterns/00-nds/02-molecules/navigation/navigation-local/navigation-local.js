@@ -1,11 +1,14 @@
 (function($) {
     function initNavigationLocal(context = document) {
-        if ($('.navigation--local').length) {
-            $('.navigation--local__group__label', context).keypress(function(e) {
-                if (e.which == 13) {
-                    $(this).click();
-                }
-            });
+        if (document.querySelectorAll('.navigation--local').length) {
+            var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
+            for (var i = 0; i < localNavigationItems.length; i++) {
+                localNavigationItems[i].addEventListener("keydown", function(event) {
+                    if (event.isComposing || event.keyCode === 13) {
+                        this.click();
+                    }
+                });
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 (function($) {
     function initComponentModal(context = document) {
-        if ($('.component--modal').length) {
+        if (document.querySelectorAll('.component--modal').length) {
             let focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
             var modalsList = document.getElementsByClassName("component--modal");

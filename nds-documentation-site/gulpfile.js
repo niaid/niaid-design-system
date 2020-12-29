@@ -42,7 +42,7 @@ function compileSass() {
 
 // compileJS - Compile JS for NDS Documentation
 // This logic replaces any scripts on build in the 00-nds folder with scripts of the same name in the custom directories (01-atoms, etc.).
-var includedJS = [];
+var includedJS = ['./source/js/utilities/utilities.js'];
 gulp.task('computeIncludedJSFiles', function() {
     var overridesJS = [];
     return gulp.src('./source/_patterns/**/*.js').pipe(tap(function(file, t) {

@@ -1,0 +1,73 @@
+/* This Pattern relies on Drupal markup for facets using the Facets Module */
+
+.block-facet--checkbox {
+    @extend .block-nds;
+    border: 0;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 0;
+        font-size: 1.65rem;
+    }
+    .facets-widget-checkbox {
+        & > *:first-child {
+            margin-top: 0;
+        }
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+        .facet-item {
+            input {
+                position: absolute;
+                opacity: 0;
+                height: 0;
+                width: 0;
+            }
+            label {
+                cursor: pointer;
+                padding-left: 2.5rem;
+                position: relative;
+                margin: 0;
+                &:before {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    background: $white;
+                    border: 0.0625rem solid $input-border;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+            }
+            input:checked~label {
+                &:before {
+                    background: $color-theme-1-1-1;
+                    border: 0;
+                }
+                &:after {
+                    @extend %fa-icon;
+                    @extend .fas;
+                    color: $white;
+                    content: fa-content($fa-var-check);
+                    display: block;
+                    left: .3rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
