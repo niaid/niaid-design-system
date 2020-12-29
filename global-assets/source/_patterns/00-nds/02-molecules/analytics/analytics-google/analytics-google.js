@@ -1,39 +1,32 @@
 $(document).ready(function() {
-
     for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
         let bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-        for (var j = 0; j < bodyAnchorLinks.length; j++) {
-            var linkText = bodyAnchorLinks[j].textContent.trim();
+        setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+    }
+    
+    for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+        let navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+        setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+    }
+
+    for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+        let navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+        setDataAttributes(navigationLinks, 'data-nav', 'footer-nav-');
+    }
+
+    for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+        let navigationLinks = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+        setDataAttributes(navigationLinks, 'data-content', 'accordion-');
+    }
+
+    function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+        for (var i = 0; i < els.length; i++) {
+            var linkText = els[i].textContent.trim();
             if (linkText !== "") {
                 linkText = linkText.replace(/\//g, '-');
                 linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-                bodyAnchorLinks[j].setAttribute('data-content', "body-anchor-" + linkText);
+                els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
             }
         }
     }
-
-    $('.navigation--primary').find('a').each(function(e) {
-        var linktext = $.trim($(this).text());
-        if (linktext !== "") {
-            linktext = linktext.replace(/\//g, '-');
-            linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-            $(this).attr("data-nav", "header-nav-" + linktext);
-        }
-    });
-    $('.global--footer').find('a').each(function(e) {
-        var linktext = $.trim($(this).text());
-        if (linktext !== "") {
-            linktext = linktext.replace(/\//g, '-');
-            linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-            $(this).attr("data-nav", "footer-nav-" + linktext);
-        }
-    });
-    $('.component--accordion__card').find('button').each(function(e) {
-        var linktext = $.trim($(this).text());
-        if (linktext !== "") {
-            linktext = linktext.replace(/\//g, '-');
-            linktext = linktext.replace(/\s+/g, '-').toLowerCase();
-            $(this).attr("data-content", "accordion-" + linktext);
-        }
-    });
 });
