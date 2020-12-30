@@ -2,6 +2,7 @@
     @extend .button--primary;
     display: flex;
     align-items: center;
+    padding: 1rem 1.25rem;
     &__text {
         padding-left: .75rem;
     }

@@ -13,8 +13,10 @@
                 font-weight: $font-weight-regular;
                 padding-left: 0;
                 margin-left: 1rem;
+                border-bottom: 0.0625rem solid transparent;
                 &:hover,
                 &:focus {
+                    border-bottom: 0.0625rem solid $type-link-underline;
                     color: $type-link;
                     padding-left: 0;
                     border-left: 0;

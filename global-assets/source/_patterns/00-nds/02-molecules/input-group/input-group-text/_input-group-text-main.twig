@@ -11,6 +11,7 @@
 {% set input_group_text_readonly = input_group_text_readonly|default() %}
 {% set input_group_text_required = input_group_text_required|default() %}
 {% set input_group_text_icon = input_group_text_icon|default() %}
+{% set input_group_text_icon_weight = input_group_text_icon_weight|default('s') %}
 
 <div class="input-group-nds input-group--text {{ input_group_text_classes }}">
     {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
@@ -29,6 +30,7 @@
             "input_text_value": input_group_text_value,
             "input_text_title": input_group_text_label,
             "input_text_icon": input_group_text_icon,
+            "input_text_icon_weight": input_group_text_icon_weight,
             "input_text_tabindex": input_group_text_tabindex,
             "input_text_disabled": input_group_text_disabled,
             "input_text_readonly": input_group_text_readonly,

@@ -4,9 +4,6 @@
     width: 100%;
     flex-wrap: wrap;
     background: $white;
-    ul, li, p {
-        max-width: none;
-    }
     & > *:first-child {
         margin-top: 0;
     }
@@ -20,6 +17,16 @@
     button {
         margin: 1rem 0 0 0;
         display: inline-flex;
+    }
+    ul, li, p {
+        max-width: none;
+        & + .button--primary,
+        & + .button--secondary,
+        & + .button--tertiary,
+        & + .button--negative,
+        & + button {
+            margin: 0;
+        }
     }
     &.block--default--accent {
         border-left: .25rem solid $color-theme-1-accent;
