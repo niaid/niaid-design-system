@@ -19,9 +19,9 @@
     h4,
     h5,
     h6 {
-        font-family: "Roboto", sans-serif;
+        font-family: "Roboto", "Public Sans", sans-serif;
         a {
-            font-family: "Roboto", sans-serif;
+            font-family: "Roboto", "Public Sans", sans-serif;
         }
     }
 }
@@ -33,10 +33,14 @@
     h4,
     h5,
     h6 {
+        font-weight: $font-weight-light;
         font-family: "Merriweather", "Martel", serif;
         a {
             font-family: "Merriweather", "Martel", serif;
         }
+    }
+    h5 {
+        font-weight: $font-weight-bold;
     }
 }
 

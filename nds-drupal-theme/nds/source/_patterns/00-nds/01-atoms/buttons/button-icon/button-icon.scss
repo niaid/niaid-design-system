@@ -1,5 +1,6 @@
 .button--icon {
     @extend .button--primary;
+    padding: 1rem 1.25rem;
     &__text {
         &.icon--left {
             padding-left: .4rem;

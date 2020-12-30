@@ -1,5 +1,6 @@
 .button--external {
     @extend .button--primary;
+    padding: 1rem 1.25rem;
     .icon--default {
         margin-left: .5rem;
     }
