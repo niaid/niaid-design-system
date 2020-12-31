@@ -436,6 +436,18 @@
     {% block component_scrollspy_section_content %}
         <h3>Tables</h3>
         <p>Tables can be tricky on the web for accessibility and responsive reasons. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables to and improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initialize the responsive functionality of Datatables.</p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_data": [
+                    {
+                        "text": "DataTables"
+                    },
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %}
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
                 "text_uswds_component_name": "Tables",

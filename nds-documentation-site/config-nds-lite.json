@@ -1,0 +1,7 @@
+[
+    "../global-assets/source/js/utilities/utilities.js",
+    "../global-assets/source/_patterns/00-nds/01-atoms/links/link-external/link-external.js",
+    "../global-assets/source/_patterns/00-nds/02-molecules/analytics/analytics-google/analytics-google.js",
+    "../global-assets/source/_patterns/00-nds/02-molecules/navigation/navigation-drawer/navigation-drawer.js",
+    "../global-assets/source/_patterns/00-nds/02-molecules/navigation/navigation-local/navigation-local.js"
+]

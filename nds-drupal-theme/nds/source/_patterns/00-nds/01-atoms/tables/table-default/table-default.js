@@ -1,3 +1,7 @@
+// Dependencies
+//  - DataTables
+//  - jQuery
+
 (function($) {
     function initTableDefault(context = document) {
 

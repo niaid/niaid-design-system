@@ -1,0 +1,13 @@
+{% set block_dependencies_classes = block_dependencies_classes|default() %}
+{% set block_dependencies_data = block_dependencies_data|default() %}
+
+<div class="block-nds block--dependencies {{ block_dependencies_classes }}">
+    <div class="block--dependencies__label">Dependencies:</div>
+    {% for badge in block_dependencies_data %}
+        {% include "@nds/01-atoms/text/text-badge/_text-badge-main.twig" with
+            {
+                "text_badge_text": badge.text
+            }
+        %}
+    {% endfor %}
+</div>

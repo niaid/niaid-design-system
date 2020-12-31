@@ -1,3 +1,7 @@
+// Dependencies
+//  - Bootstrap Datepicker
+//  - jQuery
+
 (function($) {
     function initInputDatePicker(context = document) {
         $('.input--date-picker').each(function() {

@@ -1,3 +1,7 @@
+// Dependencies
+//  - Select2
+//  - jQuery
+
 (function($) {
     function initInputSelect(context = document) {
         $('select').each(function() {

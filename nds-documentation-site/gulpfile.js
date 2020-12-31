@@ -18,6 +18,7 @@ const cache = require('gulp-cache');
 const zip = require('gulp-zip');
 const del = require('del');
 const replace = require('gulp-replace');
+let ndsLiteFiles = require('./config-nds-lite.json')
 
 // compileSass - Compile CSS for NDS Documentation
 function compileSass() {
@@ -148,7 +149,7 @@ gulp.task('serveProject', function() {
 gulp.task('default', gulp.series(copyFonts, copyGlobalImages, copyGlobalSass, copyGlobalJS, cleanNDS, copyGlobalPatterns, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
 // GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, zipAssets));
+gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compileNDSLite, compilePatternLab, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, zipAssets));
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
@@ -340,4 +341,19 @@ function zipAssets() {
     return gulp.src('../global-assets/dist/**', {dot: true})
         .pipe(zip('nds.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
+}
+
+gulp.task('compileNDSLite', gulp.series(compileNDSLite));
+
+// compileNDSLite - Reads files from config-nds-lite.json and builds nds-lite.min.js
+function compileNDSLite() {
+    console.log(ndsLiteFiles);
+    return gulp.src(ndsLiteFiles, {base: './'})
+        .pipe(concat('nds-lite.js'))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(minify())
+        .pipe(sourcemaps.write('../global-assets/dist/source/js/global/'))
+        .pipe(gulp.dest('../global-assets/dist/source/js/global/'));
 }
