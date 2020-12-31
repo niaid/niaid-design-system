@@ -303,9 +303,9 @@
                     <li class="component--scrollspy-toc__list__item"><a href="#section-components-molecules">Molecules</a></li>
                     <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-components-molecules-blocks">Blocks</a></li>
                     <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-components-molecules-components">Components</a></li>
-                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-components-molecules-navigation">Navigation</a></li>
                     <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-components-molecules-input-groups">Input Groups</a></li>
                     <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-components-molecules-forms">Forms</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-components-molecules-navigation">Navigation</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-components-organisms">Organisms</a></li>
                     <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-components-organisms-global">Global</a></li>
                     <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-components-organisms-views">Views</a></li>
@@ -2789,347 +2789,6 @@
         </button>    </div>
 </div>    </div><hr>
 
-<div id="section-components-molecules-navigation" class="component-nds component--scrollspy-section scrollspy section ">
-            <h3>Navigation</h3>
-        <p>Navigation elements are crucial to any website as they allow users to move between site pages. NDS offers several patterns to make navigation easy and policy-compliant.</p>
-        <h4>Primary Navigation</h4>
-        <p>Primary navigation is used to move between the major sections of your website. NDS recommends including primary navigation directly below the header of your site for easiest access.</p>
-        <h5>Pattern Usage</h5>
-        <p>Although it is possible to use the NDS out of the box component for Priary Navigation, it is likely you will need to replicate the pattern for your particular site due to the unique nature of different websites. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes to the component without altering the original NDS component.</p>
-        
-<div class="component-nds component--snippet  ">
-    <div class="component--snippet__block">
-        <div class="component--snippet__block__code">
-                            <div class="component--snippet__block__code__rendered">
-                                    
-<nav id="main-navigation" class="navigation-nds navigation--primary ">
-            <div class="navigation--primary__inner">
-            <div class="navigation--primary__inner__item">
-                <a class="" href="#">Section 1</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 2
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 3
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="" href="#">Section 4</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="" href="#">Section 5</a>
-            </div>
-        </div>
-    </nav>            
-                </div>
-                        <div class="component--snippet__block__code__snippet">
-                <pre>
-                                    
-<nav id="main-navigation" class="navigation-nds navigation--primary ">
-            <div class="navigation--primary__inner">
-            <div class="navigation--primary__inner__item">
-                <a class="" href="#">Section 1</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 2
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 3
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="" href="#">Section 4</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="" href="#">Section 5</a>
-            </div>
-        </div>
-    </nav>            
-                </pre>
-            </div>
-        </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        
-<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
-            
-
-<i class="icon-nds icon--default fas fa-clipboard-list "></i>
-                <span class="button--icon__text icon--left">Copy to Clipboard</span>
-        </button>    </div>
-</div>
-        <h4>Breadcrumbs</h4>
-        <p>Breadcrumbs are used to help users identify where they are within the menu sytem of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
-        
-<p class="text-nds text--uswds ">
-    
-<img class="image-nds image--default " src="../assets/uswds-logo.svg" alt="USWDS Logo" />    <a href="https://designsystem.digital.gov/components/breadcrumb/">Read more guidance about <strong>Breadcrumbs</strong> from the U.S. Web Design System</a>
-</p>        
-<div class="component-nds component--snippet  ">
-    <div class="component--snippet__block">
-        <div class="component--snippet__block__code">
-                            <div class="component--snippet__block__code__rendered">
-                                    
-
-<div class="navigation-nds navigation--breadcrumbs ">
-    <p>
-                    <a href="#">Level 1</a>                            &ensp;
-                
-
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
-                &ensp;
-                                <a href="#">Level 2</a>                            &ensp;
-                
-
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
-                &ensp;
-                                <a href="#">Level 3</a>                        </p>
-</div>            
-                </div>
-                        <div class="component--snippet__block__code__snippet">
-                <pre>
-                                    
-
-<div class="navigation-nds navigation--breadcrumbs ">
-    <p>
-                    <a href="#">Level 1</a>                            &ensp;
-                
-
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
-                &ensp;
-                                <a href="#">Level 2</a>                            &ensp;
-                
-
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
-                &ensp;
-                                <a href="#">Level 3</a>                        </p>
-</div>            
-                </pre>
-            </div>
-        </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        
-<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
-            
-
-<i class="icon-nds icon--default fas fa-clipboard-list "></i>
-                <span class="button--icon__text icon--left">Copy to Clipboard</span>
-        </button>    </div>
-</div>
-        <h4>Pagination</h4>
-        <p>Pagination helps separate long lists of content, such as search results, into separate pages to improve content readability and findability. Pagination is typically found below the content listing.</p>
-        
-<div class="component-nds component--snippet  ">
-    <div class="component--snippet__block">
-        <div class="component--snippet__block__code">
-                            <div class="component--snippet__block__code__rendered">
-                                    
-
-<div class="navigation-nds navigation--pagination ">
-            <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
-            <a>
-                <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
-            </a>
-            <ul class="pager__items js-pager__items">
-                <li class="pager__item is-active">
-                    <a href="#" title="Current page"><span class="visually-hidden">Current page</span>1</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 2"><span class="visually-hidden">Page</span>2</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 3"><span class="visually-hidden">Page</span>3</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 4"><span class="visually-hidden">Page</span>4</a>
-                </li>
-                <li class="pager__item pager__item--next">
-                    <a href="#" title="Go to next page" rel="next"><span class="visually-hidden">Next page</span><span aria-hidden="true">››</span></a>
-                </li>
-                <li class="pager__item pager__item--last">
-                    <a href="#" title="Go to last page"><span class="visually-hidden">Last page</span><span aria-hidden="true">Last »</span></a>
-                </li>
-            </ul>
-        </nav>
-    </div>            
-                </div>
-                        <div class="component--snippet__block__code__snippet">
-                <pre>
-                                    
-
-<div class="navigation-nds navigation--pagination ">
-            <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
-            <a>
-                <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
-            </a>
-            <ul class="pager__items js-pager__items">
-                <li class="pager__item is-active">
-                    <a href="#" title="Current page"><span class="visually-hidden">Current page</span>1</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 2"><span class="visually-hidden">Page</span>2</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 3"><span class="visually-hidden">Page</span>3</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 4"><span class="visually-hidden">Page</span>4</a>
-                </li>
-                <li class="pager__item pager__item--next">
-                    <a href="#" title="Go to next page" rel="next"><span class="visually-hidden">Next page</span><span aria-hidden="true">››</span></a>
-                </li>
-                <li class="pager__item pager__item--last">
-                    <a href="#" title="Go to last page"><span class="visually-hidden">Last page</span><span aria-hidden="true">Last »</span></a>
-                </li>
-            </ul>
-        </nav>
-    </div>            
-                </pre>
-            </div>
-        </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        
-<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
-            
-
-<i class="icon-nds icon--default fas fa-clipboard-list "></i>
-                <span class="button--icon__text icon--left">Copy to Clipboard</span>
-        </button>    </div>
-</div>
-        <h4>Side Drawer (Mobile Menu)</h4>
-        <p>When viewing websites on mobile devices, the site navigation often changes to accommodate the smaller screen size. NDS offers a "drawer" style slide out menu where menu links can be added. NDS has pre-made JavaScript functionality that toggles the drawer open and closed on click of a button with an ID of "global-mobile-menu."</p>
-        
-<div class="component-nds component--snippet  no-render">
-    <div class="component--snippet__block">
-        <div class="component--snippet__block__code">
-                        <div class="component--snippet__block__code__snippet">
-                <pre>
-                                    
-<div id="side-drawer" class="navigation-nds navigation--drawer ">
-    <div class="navigation--drawer__top">
-        <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
-        
-<button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary" >
-            
-
-<i class="icon-nds icon--default fas fa-arrow-left "></i>
-            </button>    </div>
-            <div class="navigation--drawer__inner">
-            <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" href="/">Home</a>
-            </div>
-            <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" href="#">Link 1</a>
-            </div>
-            <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" href="#">Link 2</a>
-            </div>
-            <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" href="#">Link 3</a>
-            </div>
-        </div>
-        <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
-    </div>
-<div class="navigation--drawer--overlay" tabindex="0"></div>            
-                </pre>
-            </div>
-        </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        
-<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
-            
-
-<i class="icon-nds icon--default fas fa-clipboard-list "></i>
-                <span class="button--icon__text icon--left">Copy to Clipboard</span>
-        </button>    </div>
-</div>
-        <h4>Mobile Rail</h4>
-        <p>This simple component helps transition your site from a desktop layout to mobile by collapsing the local navigation (or whatever is wrapped) into a dropdown.</p>
-        
-<div class="component-nds component--snippet  ">
-    <div class="component--snippet__block">
-        <div class="component--snippet__block__code">
-                            <div class="component--snippet__block__code__rendered">
-                                    
-<div class="navigation-nds navigation--mobile-rail ">
-    
-<div class="component-nds component--accordion " id="navigation--mobile-rail">
-                <div id="navigation--mobile-rail__button">
-                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Left Rail</button>
-            </div>
-            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
-                                            <p>Left Rail Content</p>
-    
-                            </div>
-        </div></div>            
-                </div>
-                        <div class="component--snippet__block__code__snippet">
-                <pre>
-                                    
-<div class="navigation-nds navigation--mobile-rail ">
-    
-<div class="component-nds component--accordion " id="navigation--mobile-rail">
-                <div id="navigation--mobile-rail__button">
-                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Left Rail</button>
-            </div>
-            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
-                                            <p>Left Rail Content</p>
-    
-                            </div>
-        </div></div>            
-                </pre>
-            </div>
-        </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        
-<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
-            
-
-<i class="icon-nds icon--default fas fa-clipboard-list "></i>
-                <span class="button--icon__text icon--left">Copy to Clipboard</span>
-        </button>    </div>
-</div>    </div><hr>
-
 <div id="section-components-molecules-input-groups" class="component-nds component--scrollspy-section scrollspy section ">
             <h3>Input Groups</h3>
         <p>Receiving data is a key interaction point for users of websites. NDS has several types of input components to help get information from users.</p>
@@ -3721,6 +3380,347 @@
         </ul>
     </div>
 </div>            
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="component--snippet__button">
+        <div class="component--snippet__button__copied">Copied</div>
+        
+<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
+            
+
+<i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                <span class="button--icon__text icon--left">Copy to Clipboard</span>
+        </button>    </div>
+</div>    </div><hr>
+
+<div id="section-components-molecules-navigation" class="component-nds component--scrollspy-section scrollspy section ">
+            <h3>Navigation</h3>
+        <p>Navigation elements are crucial to any website as they allow users to move between site pages. NDS offers several patterns to make navigation easy and policy-compliant.</p>
+        <h4>Primary Navigation</h4>
+        <p>Primary navigation is used to move between the major sections of your website. NDS recommends including primary navigation directly below the header of your site for easiest access.</p>
+        <h5>Pattern Usage</h5>
+        <p>Although it is possible to use the NDS out of the box component for Priary Navigation, it is likely you will need to replicate the pattern for your particular site due to the unique nature of different websites. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes to the component without altering the original NDS component.</p>
+        
+<div class="component-nds component--snippet  ">
+    <div class="component--snippet__block">
+        <div class="component--snippet__block__code">
+                            <div class="component--snippet__block__code__rendered">
+                                    
+<nav id="main-navigation" class="navigation-nds navigation--primary ">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <a class="" href="#">Section 1</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Section 2
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Item A</a>
+                    <a class="dropdown-item" href="#">Item B</a>
+                    <a class="dropdown-item" href="#">Item C</a>
+                    <a class="dropdown-item" href="#">Item D</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Section 3
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Item A</a>
+                    <a class="dropdown-item" href="#">Item B</a>
+                    <a class="dropdown-item" href="#">Item C</a>
+                    <a class="dropdown-item" href="#">Item D</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="#">Section 4</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="#">Section 5</a>
+            </div>
+        </div>
+    </nav>            
+                </div>
+                        <div class="component--snippet__block__code__snippet">
+                <pre>
+                                    
+<nav id="main-navigation" class="navigation-nds navigation--primary ">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <a class="" href="#">Section 1</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Section 2
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Item A</a>
+                    <a class="dropdown-item" href="#">Item B</a>
+                    <a class="dropdown-item" href="#">Item C</a>
+                    <a class="dropdown-item" href="#">Item D</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Section 3
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Item A</a>
+                    <a class="dropdown-item" href="#">Item B</a>
+                    <a class="dropdown-item" href="#">Item C</a>
+                    <a class="dropdown-item" href="#">Item D</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="#">Section 4</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="#">Section 5</a>
+            </div>
+        </div>
+    </nav>            
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="component--snippet__button">
+        <div class="component--snippet__button__copied">Copied</div>
+        
+<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
+            
+
+<i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                <span class="button--icon__text icon--left">Copy to Clipboard</span>
+        </button>    </div>
+</div>
+        <h4>Breadcrumbs</h4>
+        <p>Breadcrumbs are used to help users identify where they are within the menu sytem of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
+        
+<p class="text-nds text--uswds ">
+    
+<img class="image-nds image--default " src="../assets/uswds-logo.svg" alt="USWDS Logo" />    <a href="https://designsystem.digital.gov/components/breadcrumb/">Read more guidance about <strong>Breadcrumbs</strong> from the U.S. Web Design System</a>
+</p>        
+<div class="component-nds component--snippet  ">
+    <div class="component--snippet__block">
+        <div class="component--snippet__block__code">
+                            <div class="component--snippet__block__code__rendered">
+                                    
+
+<div class="navigation-nds navigation--breadcrumbs ">
+    <p>
+                    <a href="#">Level 1</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fas fa-chevron-right "></i>
+                &ensp;
+                                <a href="#">Level 2</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fas fa-chevron-right "></i>
+                &ensp;
+                                <a href="#">Level 3</a>                        </p>
+</div>            
+                </div>
+                        <div class="component--snippet__block__code__snippet">
+                <pre>
+                                    
+
+<div class="navigation-nds navigation--breadcrumbs ">
+    <p>
+                    <a href="#">Level 1</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fas fa-chevron-right "></i>
+                &ensp;
+                                <a href="#">Level 2</a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fas fa-chevron-right "></i>
+                &ensp;
+                                <a href="#">Level 3</a>                        </p>
+</div>            
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="component--snippet__button">
+        <div class="component--snippet__button__copied">Copied</div>
+        
+<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
+            
+
+<i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                <span class="button--icon__text icon--left">Copy to Clipboard</span>
+        </button>    </div>
+</div>
+        <h4>Pagination</h4>
+        <p>Pagination helps separate long lists of content, such as search results, into separate pages to improve content readability and findability. Pagination is typically found below the content listing.</p>
+        
+<div class="component-nds component--snippet  ">
+    <div class="component--snippet__block">
+        <div class="component--snippet__block__code">
+                            <div class="component--snippet__block__code__rendered">
+                                    
+
+<div class="navigation-nds navigation--pagination ">
+            <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+            <a>
+                <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+            </a>
+            <ul class="pager__items js-pager__items">
+                <li class="pager__item is-active">
+                    <a href="#" title="Current page"><span class="visually-hidden">Current page</span>1</a>
+                </li>
+                <li class="pager__item">
+                    <a href="#" title="Go to page 2"><span class="visually-hidden">Page</span>2</a>
+                </li>
+                <li class="pager__item">
+                    <a href="#" title="Go to page 3"><span class="visually-hidden">Page</span>3</a>
+                </li>
+                <li class="pager__item">
+                    <a href="#" title="Go to page 4"><span class="visually-hidden">Page</span>4</a>
+                </li>
+                <li class="pager__item pager__item--next">
+                    <a href="#" title="Go to next page" rel="next"><span class="visually-hidden">Next page</span><span aria-hidden="true">››</span></a>
+                </li>
+                <li class="pager__item pager__item--last">
+                    <a href="#" title="Go to last page"><span class="visually-hidden">Last page</span><span aria-hidden="true">Last »</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>            
+                </div>
+                        <div class="component--snippet__block__code__snippet">
+                <pre>
+                                    
+
+<div class="navigation-nds navigation--pagination ">
+            <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+            <a>
+                <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+            </a>
+            <ul class="pager__items js-pager__items">
+                <li class="pager__item is-active">
+                    <a href="#" title="Current page"><span class="visually-hidden">Current page</span>1</a>
+                </li>
+                <li class="pager__item">
+                    <a href="#" title="Go to page 2"><span class="visually-hidden">Page</span>2</a>
+                </li>
+                <li class="pager__item">
+                    <a href="#" title="Go to page 3"><span class="visually-hidden">Page</span>3</a>
+                </li>
+                <li class="pager__item">
+                    <a href="#" title="Go to page 4"><span class="visually-hidden">Page</span>4</a>
+                </li>
+                <li class="pager__item pager__item--next">
+                    <a href="#" title="Go to next page" rel="next"><span class="visually-hidden">Next page</span><span aria-hidden="true">››</span></a>
+                </li>
+                <li class="pager__item pager__item--last">
+                    <a href="#" title="Go to last page"><span class="visually-hidden">Last page</span><span aria-hidden="true">Last »</span></a>
+                </li>
+            </ul>
+        </nav>
+    </div>            
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="component--snippet__button">
+        <div class="component--snippet__button__copied">Copied</div>
+        
+<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
+            
+
+<i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                <span class="button--icon__text icon--left">Copy to Clipboard</span>
+        </button>    </div>
+</div>
+        <h4>Side Drawer (Mobile Menu)</h4>
+        <p>When viewing websites on mobile devices, the site navigation often changes to accommodate the smaller screen size. NDS offers a "drawer" style slide out menu where menu links can be added. NDS has pre-made JavaScript functionality that toggles the drawer open and closed on click of a button with an ID of "global-mobile-menu."</p>
+        
+<div class="component-nds component--snippet  no-render">
+    <div class="component--snippet__block">
+        <div class="component--snippet__block__code">
+                        <div class="component--snippet__block__code__snippet">
+                <pre>
+                                    
+<div id="side-drawer" class="navigation-nds navigation--drawer ">
+    <div class="navigation--drawer__top">
+        <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
+        
+<button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary" >
+            
+
+<i class="icon-nds icon--default fas fa-arrow-left "></i>
+            </button>    </div>
+            <div class="navigation--drawer__inner">
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="/">Home</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 1</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 2</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
+    </div>
+<div class="navigation--drawer--overlay" tabindex="0"></div>            
+                </pre>
+            </div>
+        </div>
+    </div>
+    <div class="component--snippet__button">
+        <div class="component--snippet__button__copied">Copied</div>
+        
+<button class="button-nds button--icon waves-effect waves-light component--snippet__button__copy" >
+            
+
+<i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                <span class="button--icon__text icon--left">Copy to Clipboard</span>
+        </button>    </div>
+</div>
+        <h4>Mobile Rail</h4>
+        <p>This simple component helps transition your site from a desktop layout to mobile by collapsing the local navigation (or whatever is wrapped) into a dropdown.</p>
+        
+<div class="component-nds component--snippet  ">
+    <div class="component--snippet__block">
+        <div class="component--snippet__block__code">
+                            <div class="component--snippet__block__code__rendered">
+                                    
+<div class="navigation-nds navigation--mobile-rail ">
+    
+<div class="component-nds component--accordion " id="navigation--mobile-rail">
+                <div id="navigation--mobile-rail__button">
+                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Left Rail</button>
+            </div>
+            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
+                                            <p>Left Rail Content</p>
+    
+                            </div>
+        </div></div>            
+                </div>
+                        <div class="component--snippet__block__code__snippet">
+                <pre>
+                                    
+<div class="navigation-nds navigation--mobile-rail ">
+    
+<div class="component-nds component--accordion " id="navigation--mobile-rail">
+                <div id="navigation--mobile-rail__button">
+                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Left Rail</button>
+            </div>
+            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
+                                            <p>Left Rail Content</p>
+    
+                            </div>
+        </div></div>            
                 </pre>
             </div>
         </div>

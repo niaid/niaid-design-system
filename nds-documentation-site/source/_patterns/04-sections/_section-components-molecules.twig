@@ -207,72 +207,6 @@
 <hr>
 {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
     {
-        "component_scrollspy_section_id": "section-components-molecules-navigation"
-    }
-%}
-    {% block component_scrollspy_section_content %}
-        <h3>Navigation</h3>
-        <p>Navigation elements are crucial to any website as they allow users to move between site pages. NDS offers several patterns to make navigation easy and policy-compliant.</p>
-        <h4>Primary Navigation</h4>
-        <p>Primary navigation is used to move between the major sections of your website. NDS recommends including primary navigation directly below the header of your site for easiest access.</p>
-        <h5>Pattern Usage</h5>
-        <p>Although it is possible to use the NDS out of the box component for Priary Navigation, it is likely you will need to replicate the pattern for your particular site due to the unique nature of different websites. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes to the component without altering the original NDS component.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
-            {% block component_snippet_code %}
-                {% include "@nds/02-molecules/navigation/navigation-primary/demo/navigation-primary.twig" %}
-            {% endblock %}
-        {% endembed %}
-
-        <h4>Breadcrumbs</h4>
-        <p>Breadcrumbs are used to help users identify where they are within the menu sytem of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
-        {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
-            {
-                "text_uswds_component_name": "Breadcrumbs",
-                "text_uswds_href": "https://designsystem.digital.gov/components/breadcrumb/"
-            }
-        %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
-            {% block component_snippet_code %}
-                {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/demo/navigation-breadcrumbs.twig" %}
-            {% endblock %}
-        {% endembed %}
-
-        <h4>Pagination</h4>
-        <p>Pagination helps separate long lists of content, such as search results, into separate pages to improve content readability and findability. Pagination is typically found below the content listing.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
-            {% block component_snippet_code %}
-                {% include "@nds/02-molecules/navigation/navigation-pagination/demo/navigation-pagination.twig" %}
-            {% endblock %}
-        {% endembed %}
-
-        <h4>Side Drawer (Mobile Menu)</h4>
-        <p>When viewing websites on mobile devices, the site navigation often changes to accommodate the smaller screen size. NDS offers a "drawer" style slide out menu where menu links can be added. NDS has pre-made JavaScript functionality that toggles the drawer open and closed on click of a button with an ID of "global-mobile-menu."</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
-            {
-                "component_snippet_show_rendered": "no"
-            }
-        %}
-            {% block component_snippet_code %}
-                {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" with
-                    {
-                        "navigation_drawer_id": "side-drawer"
-                    }
-                %}
-            {% endblock %}
-        {% endembed %}
-
-        <h4>Mobile Rail</h4>
-        <p>This simple component helps transition your site from a desktop layout to mobile by collapsing the local navigation (or whatever is wrapped) into a dropdown.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
-            {% block component_snippet_code %}
-                {% include "@nds/02-molecules/navigation/navigation-mobile-rail/demo/navigation-mobile-rail.twig" %}
-            {% endblock %}
-        {% endembed %}
-    {% endblock %}
-{% endembed %}
-<hr>
-{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
-    {
         "component_scrollspy_section_id": "section-components-molecules-input-groups"
     }
 %}
@@ -347,6 +281,72 @@
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/forms/form-facet/demo/form-facet.twig" %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}
+<hr>
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-components-molecules-navigation"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h3>Navigation</h3>
+        <p>Navigation elements are crucial to any website as they allow users to move between site pages. NDS offers several patterns to make navigation easy and policy-compliant.</p>
+        <h4>Primary Navigation</h4>
+        <p>Primary navigation is used to move between the major sections of your website. NDS recommends including primary navigation directly below the header of your site for easiest access.</p>
+        <h5>Pattern Usage</h5>
+        <p>Although it is possible to use the NDS out of the box component for Priary Navigation, it is likely you will need to replicate the pattern for your particular site due to the unique nature of different websites. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes to the component without altering the original NDS component.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-primary/demo/navigation-primary.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Breadcrumbs</h4>
+        <p>Breadcrumbs are used to help users identify where they are within the menu sytem of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
+        {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
+            {
+                "text_uswds_component_name": "Breadcrumbs",
+                "text_uswds_href": "https://designsystem.digital.gov/components/breadcrumb/"
+            }
+        %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/demo/navigation-breadcrumbs.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Pagination</h4>
+        <p>Pagination helps separate long lists of content, such as search results, into separate pages to improve content readability and findability. Pagination is typically found below the content listing.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-pagination/demo/navigation-pagination.twig" %}
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Side Drawer (Mobile Menu)</h4>
+        <p>When viewing websites on mobile devices, the site navigation often changes to accommodate the smaller screen size. NDS offers a "drawer" style slide out menu where menu links can be added. NDS has pre-made JavaScript functionality that toggles the drawer open and closed on click of a button with an ID of "global-mobile-menu."</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_show_rendered": "no"
+            }
+        %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" with
+                    {
+                        "navigation_drawer_id": "side-drawer"
+                    }
+                %}
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Mobile Rail</h4>
+        <p>This simple component helps transition your site from a desktop layout to mobile by collapsing the local navigation (or whatever is wrapped) into a dropdown.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-mobile-rail/demo/navigation-mobile-rail.twig" %}
             {% endblock %}
         {% endembed %}
     {% endblock %}

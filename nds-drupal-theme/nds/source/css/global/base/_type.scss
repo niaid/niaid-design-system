@@ -38,7 +38,8 @@ code {
     border-radius: $border-radius;
     color: $type-link;
     display: inline-flex;
-    padding: .5rem;
+    padding: .75rem;
     background: $page-background-alternate;
     margin-bottom: .5rem;
+    line-height: initial;
 }
