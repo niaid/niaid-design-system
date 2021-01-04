@@ -1,0 +1,35 @@
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-dynamic-website"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h2>Building a Dynamic Site</h2>
+        <p>NDS supports the creation of Dynamic sites by providing component code snippets and asset files to include in your project. Component code snippets can be found on the <a href="{{ links.components }}">Components page</a>. To use these components, simply copy the markup of the desired pattern, and include the main NDS CSS and JS files:</p>
+        {% include "@molecules/blocks/block-files/_block-files-main.twig" %}
+
+        <p><strong>Important Note:</strong> The main NDS JS file (nds-min.js) relies on jQuery and includes a number of initilizations for third-party libraries that also depend on jQuery to function (i.e. Select2, Bootstrap Datepicker). Using jQuery with front-end frameworks such as Vue, React, and Angular can be dangerous since both technologies perform DOM manipulation. NDS offers an extremely lightweight JS file (nds-lite.js) that does not include jQuery or third-party integrations. This JS file performs the following functions:</p>
+        <ul>
+            <li>Adds external link icons and envelope icons to applicable links.</li>
+            <li>Adds data attributes to elements for Google Analytics tracking.</li>
+            <li>Opens and closes the mobile side drawer menu on header button click.</li>
+            <li>Adds keyboard support for the local navigation pattern.</li>
+        </ul>
+        <div class="block--files">
+            <div class="row">
+                <div class="block--files__col col-12 col-sm-6">
+                    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                        {
+                            "button_icon_classes": "button--secondary",
+                            "button_icon_icon": "js",
+                            "button_icon_icon_weight": "b",
+                            "button_icon_href": assetsPath ~ "nds-lite-min.js",
+                            "button_icon_text": "Download NDS Lite JS",
+                            "button_icon_attributes": "download"
+                        }
+                    %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}

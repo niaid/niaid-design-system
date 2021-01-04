@@ -292,7 +292,12 @@
     <hr>
     <ul class="component--scrollspy-toc__list section table-of-contents">
                     <li class="component--scrollspy-toc__list__item"><a href="#section-overview">Overview</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-choose-type">Choose Your Website Type</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-choose-type-static">Static Site</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-choose-type-dynamic">Dynamic Site</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-choose-type-drupal">Drupal-Based Site</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-static-website">Building a Static Site</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-dynamic-website">Building a Dynamic Site</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-drupal-website">Building a Drupal Site</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-working-with-nds">Working with NDS</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-resources">Resources</a></li>
@@ -308,58 +313,83 @@
 <div id="section-overview" class="component-nds component--scrollspy-section scrollspy section ">
             <h1 id="main-content">Getting Started</h1>
         <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project. If you are interested in adding NDS to an existing website, please view our <a href="/migration-guide/">Migration Guide</a> for more information.</p>
-        <p><a href="/components/">NDS components</a> can be used simply by including the global NDS CSS and JS files in your website. If you wish to use NDS components without making a Drupal or Static site (as outlined below), download and reference the global NDS CSS and JS files here:</p>
-        
-<div class="block--files ">
-    <div class="row">
-        <div class="block--files__col col-12 col-sm-6">
-            
-<a href="../../assets/nds-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
-            
-
-<i class="icon-nds icon--default fab fa-js "></i>
-                <span class="button--icon__text icon--left">Download NDS Global JS</span>
-        </a>        </div>
-        <div class="block--files__col col-12 col-sm-6">
-            
-<a href="../../assets/nds-min.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
-            
-
-<i class="icon-nds icon--default fab fa-css3 "></i>
-                <span class="button--icon__text icon--left">Download NDS Global CSS</span>
-        </a>        </div>
+        <hr>
+    </div>                        
+<div id="section-choose-type" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Choosing Your Website Type</h2>
+        <p>The NIAID Design System can be used in projects of any variety. NDS specifically caters to three main types of sites: <strong>Static</strong>, <strong>Dynamic</strong>, and <strong>Drupal-Based</strong>. The first step in getting started with NDS is deciding which type of website you want to build:</p>
     </div>
-</div>        <h2>Prerequisites</h2>
-        <p>You’ll need several application packages to work with the NIAID Design System. You can download and install the necessary packages below:</p>
-        <ul>
-            <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
-            <li><a href="https://www.npmjs.com/get-npm">NPM</a></li>
-            <li><a href="https://www.php.net/downloads">PHP</a></li>
-            <li><a href="https://getcomposer.org/download/">Composer</a></li>
-        </ul>
-        <h2 class="question">What Type of Website Are You Building?</h2>
-        <div class="button--jump-links container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    
+
+<div id="section-choose-type-static" class="component-nds component--scrollspy-section scrollspy section ">
+            <h3>Static Sites</h3>
+        <p>Static sites are very simple websites that are composed of HTML, CSS, and JavaScript. Generally, the page structure and content of static sites are managed directly within the HTML. This means that content changes require code changes to the source files. Static sites are great for small websites consisting of a few pages, but are not optimal for large sites with complex architectures. As the name suggests, static sites are best suited for websites whose content does not change frequently. NDS has developed a static website builder based on Pattern Lab that can quickly create small websites.</p>
+        
+<a class="link-nds link--icon " href="#section-static-website" aria-label="Build a Static Site" data-content="body-anchor-build-a-static-site">
+        <span class="link--icon__text">Build a Static Site</span>
+            
+
+<i class="icon-nds icon--default fal fa-chevron-right link--icon--right "></i>
+    </a>    </div>
+
+<div id="section-choose-type-dynamic" class="component-nds component--scrollspy-section scrollspy section ">
+            <h3>Dynamic Sites</h3>
+        <p>Dynamic sites are typically built with modern front-end frameworks such as Vue, React, or Angular, and rely on data services to manage and deliver content. The front-end framework is responisble for receiving the content from another source and rendering the website's interface with this content. Perhaps the biggest advantage of Dynamic sites is that content changes can be made without having to modify the source code. If you are building a Dynamic site, you may leverage <a href="/components/">NDS components</a> simply by including the global NDS CSS and JS files in your website.</p>
+        
+<a class="link-nds link--icon " href="#section-dynamic-website" aria-label="Build a Dynamic Site" data-content="body-anchor-build-a-dynamic-site">
+        <span class="link--icon__text">Build a Dynamic Site</span>
+            
+
+<i class="icon-nds icon--default fal fa-chevron-right link--icon--right "></i>
+    </a>    </div>
+
+<div id="section-choose-type-drupal" class="component-nds component--scrollspy-section scrollspy section ">
+            <h3>Drupal-Based Sites</h3>
+        <p><a href="https://www.drupal.org/">Drupal</a> is a Content Management System (CMS) that provides an intuitive way to write and maintain website content. While there are other CMS platforms, NDS has specifically focused on providing support for Drupal, due its use of the Pattern Lab technology. A Drupal-Based site is the most complex form of website covered by NDS, and typically requires intensive development resources and time to create. Drupal-Based sites are ideal for large, complex websites with rapidly changing content.</p>
+        
+<a class="link-nds link--icon " href="#section-drupal-website" aria-label="Build a Drupal-Based Site" data-content="body-anchor-build-a-drupal-based-site">
+        <span class="link--icon__text">Build a Drupal-Based Site</span>
+            
+
+<i class="icon-nds icon--default fal fa-chevron-right link--icon--right "></i>
+    </a>    </div>
+<h3 class="question">What Type of Website Are You Building?</h3>
+<div class="button--jump-links container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            
 <a href="#section-static-website" class="button-nds button--icon waves-effect waves-light button--secondary" >
             
 
-<i class="icon-nds icon--default fas fa-sitemap "></i>
-                <span class="button--icon__text icon--left">Static Website (Pattern Lab)</span>
-        </a>                </div>
-                <div class="col-md-6">
-                    
+<i class="icon-nds icon--default fab fa-html5 "></i>
+                <span class="button--icon__text icon--left">Static Site</span>
+        </a>        </div>
+        <div class="col-md-4">
+            
+<a href="#section-dynamic-website" class="button-nds button--icon waves-effect waves-light button--secondary" >
+            
+
+<i class="icon-nds icon--default fab fa-vuejs "></i>
+                <span class="button--icon__text icon--left">Dynamic Site</span>
+        </a>        </div>
+        <div class="col-md-4">
+            
 <a href="#section-drupal-website" class="button-nds button--icon waves-effect waves-light button--secondary" >
             
 
 <i class="icon-nds icon--default fab fa-drupal "></i>
-                <span class="button--icon__text icon--left">Drupal Website</span>
-        </a>                </div>
-            </div>
-        </div>
-        <hr>
-    </div>                        
+                <span class="button--icon__text icon--left">Drupal-Based Site</span>
+        </a>        </div>
+    </div>
+</div>
+
+<h2>Prerequisites</h2>
+<p>You’ll need several application packages to work with the NIAID Design System. You can download and install the necessary packages below:</p>
+<ul>
+    <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+    <li><a href="https://www.npmjs.com/get-npm">NPM</a></li>
+    <li><a href="https://www.php.net/downloads">PHP</a></li>
+    <li><a href="https://getcomposer.org/download/">Composer</a></li>
+</ul>                        
 <div id="section-static-website" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Building a Static Website</h2>
         <p>With NDS, building a static website is incredibly quick and easy. While you may use any framework, NDS encourages the use of Pattern Lab for its Atomic Design benefits and organizational advantages. The following steps will detail how to create a Pattern Lab instance to manage your static website.</p>
@@ -487,6 +517,50 @@
         <p>After running the buildProd command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
         <h3>Updating NDS</h3>
         <p>TODO</p>
+    </div>                        
+<div id="section-dynamic-website" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Building a Dynamic Site</h2>
+        <p>NDS supports the creation of Dynamic sites by providing component code snippets and asset files to include in your project. Component code snippets can be found on the <a href="/components/">Components page</a>. To use these components, simply copy the markup of the desired pattern, and include the main NDS CSS and JS files:</p>
+        
+<div class="block--files ">
+    <div class="row">
+        <div class="block--files__col col-12 col-sm-6">
+            
+<a href="../../assets/nds-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-js "></i>
+                <span class="button--icon__text icon--left">Download NDS Global JS</span>
+        </a>        </div>
+        <div class="block--files__col col-12 col-sm-6">
+            
+<a href="../../assets/nds-min.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-css3 "></i>
+                <span class="button--icon__text icon--left">Download NDS Global CSS</span>
+        </a>        </div>
+    </div>
+</div>
+        <p><strong>Important Note:</strong> The main NDS JS file (nds-min.js) relies on jQuery and includes a number of initilizations for third-party libraries that also depend on jQuery to function (i.e. Select2, Bootstrap Datepicker). Using jQuery with front-end frameworks such as Vue, React, and Angular can be dangerous since both technologies perform DOM manipulation. NDS offers an extremely lightweight JS file (nds-lite.js) that does not include jQuery or third-party integrations. This JS file performs the following functions:</p>
+        <ul>
+            <li>Adds external link icons and envelope icons to applicable links.</li>
+            <li>Adds data attributes to elements for Google Analytics tracking.</li>
+            <li>Opens and closes the mobile side drawer menu on header button click.</li>
+            <li>Adds keyboard support for the local navigation pattern.</li>
+        </ul>
+        <div class="block--files">
+            <div class="row">
+                <div class="block--files__col col-12 col-sm-6">
+                    
+<a href="../../assets/nds-lite-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-js "></i>
+                <span class="button--icon__text icon--left">Download NDS Lite JS</span>
+        </a>                </div>
+            </div>
+        </div>
     </div>                        
 <div id="section-drupal-website" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Building a Drupal Site</h2>

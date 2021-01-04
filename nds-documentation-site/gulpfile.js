@@ -354,5 +354,6 @@ function compileNDSLite() {
         }))
         .pipe(minify())
         .pipe(sourcemaps.write('../global-assets/dist/source/js/global/'))
-        .pipe(gulp.dest('../global-assets/dist/source/js/global/', './public_html/assets/'));
+        .pipe(gulp.dest('../global-assets/dist/source/js/global/'))
+        .pipe(gulp.dest('./public_html/assets/'));
 }
