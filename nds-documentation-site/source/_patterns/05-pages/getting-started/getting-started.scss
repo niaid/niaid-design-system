@@ -7,6 +7,13 @@
     }
     .button--jump-links {
         padding: 0;
+        & > div {
+            margin-right: -.5rem;
+            margin-left: -.5rem;
+            & > div {
+                padding: 0 .5rem;
+            }
+        }
         .button--icon {
             display: block;
             text-align: center;

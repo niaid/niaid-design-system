@@ -1,0 +1,118 @@
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-choose-type"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h2>Choosing Your Website Type</h2>
+        <p>The NIAID Design System can be used in projects of any variety. NDS specifically caters to three main types of sites: <strong>Static</strong>, <strong>Dynamic</strong>, and <strong>Drupal-Based</strong>. The first step in getting started with NDS is deciding which type of website you want to build:</p>
+    {% endblock %}
+{% endembed %}
+
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-choose-type-static"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h3>Static Sites</h3>
+        <p>Static sites are very simple websites that are composed of HTML, CSS, and JavaScript. Generally, the page structure and content of static sites are managed directly within the HTML. This means that content changes require code changes to the source files. Static sites are great for small websites consisting of a few pages, but are not optimal for large sites with complex architectures. As the name suggests, static sites are best suited for websites whose content does not change frequently. NDS has developed a static website builder based on Pattern Lab that can quickly create small websites.</p>
+        {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
+            {
+                "link_icon_href": "#",
+                "link_icon_text": "Build a Static Site",
+                "link_icon_type": "chevron-right",
+                "link_icon_weight": "l",
+                "link_icon_position": "right"
+            }
+        %}
+    {% endblock %}
+{% endembed %}
+
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-choose-type-dynamic"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h3>Dynamic Sites</h3>
+        <p>Dynamic sites are typically built with modern front-end frameworks such as Vue, React, or Angular, and rely on data services to manage and deliver content. The front-end framework is responisble for receiving the content from another source and rendering the website's interface with this content. Perhaps the biggest advantage of Dynamic sites is that content changes can be made without having to modify the source code. If you are building a Dynamic site, you may leverage <a href="{{ links.components }}">NDS components</a> simply by including the global NDS CSS and JS files in your website.</p>
+        {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
+            {
+                "link_icon_href": "#",
+                "link_icon_text": "Build a Dynamic Site",
+                "link_icon_type": "chevron-right",
+                "link_icon_weight": "l",
+                "link_icon_position": "right"
+            }
+        %}
+    {% endblock %}
+{% endembed %}
+
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-choose-type-drupal"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h3>Drupal-Based Sites</h3>
+        <p><a href="https://www.drupal.org/">Drupal</a> is a Content Management System (CMS) that provides an intuitive way to write and maintain website content. While there are other CMS platforms, NDS has specifically focused on providing support for Drupal, due its use of the Pattern Lab technology. A Drupal-Based site is the most complex form of website covered by NDS, and typically requires intensive development resources and time to create. Drupal-Based sites are ideal for large, complex websites with rapidly changing content.</p>
+        {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
+            {
+                "link_icon_href": "#",
+                "link_icon_text": "Build a Drupal-Based Site",
+                "link_icon_type": "chevron-right",
+                "link_icon_weight": "l",
+                "link_icon_position": "right"
+            }
+        %}
+    {% endblock %}
+{% endembed %}
+
+<h3 class="question">What Type of Website Are You Building?</h3>
+<div class="button--jump-links container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_classes": "button--secondary",
+                    "button_icon_icon": "html5",
+                    "button_icon_icon_weight": "b",
+                    "button_icon_href": "#section-static-website",
+                    "button_icon_text": "Static Site"
+                }
+            %}
+        </div>
+        <div class="col-md-4">
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_classes": "button--secondary",
+                    "button_icon_icon": "vuejs",
+                    "button_icon_icon_weight": "b",
+                    "button_icon_href": "#section-dynamic-website",
+                    "button_icon_text": "Dynamic Site"
+                }
+            %}
+        </div>
+        <div class="col-md-4">
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_classes": "button--secondary",
+                    "button_icon_icon": "drupal",
+                    "button_icon_icon_weight": "b",
+                    "button_icon_href": "#section-drupal-website",
+                    "button_icon_text": "Drupal-Based Site"
+                }
+            %}
+        </div>
+    </div>
+</div>
+
+<h2>Prerequisites</h2>
+<p>You’ll need several application packages to work with the NIAID Design System. You can download and install the necessary packages below:</p>
+<ul>
+    <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+    <li><a href="https://www.npmjs.com/get-npm">NPM</a></li>
+    <li><a href="https://www.php.net/downloads">PHP</a></li>
+    <li><a href="https://getcomposer.org/download/">Composer</a></li>
+</ul>

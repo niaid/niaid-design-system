@@ -83,6 +83,25 @@
                                         "text": "Overview"
                                     },
                                     {
+                                        "href": "section-choose-type",
+                                        "text": "Choose Your Website Type"
+                                    },
+                                    {
+                                        "href": "section-choose-type-static",
+                                        "text": "Static Site",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "href": "section-choose-type-dynamic",
+                                        "text": "Dynamic Site",
+                                        "class": "ml-3"
+                                    },
+                                    {
+                                        "href": "section-choose-type-drupal",
+                                        "text": "Drupal-Based Site",
+                                        "class": "ml-3"
+                                    },
+                                    {
                                         "href": "section-static-website",
                                         "text": "Building a Static Site"
                                     },
@@ -108,6 +127,7 @@
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
                         {% include "@sections/_section-overview-getting-started.twig" %}
+                        {% include "@sections/_section-choose-type.twig" %}
                         {% include "@sections/_section-static-website.twig" %}
                         {% include "@sections/_section-drupal-website.twig" %}
                         {% include "@sections/_section-working-with-nds.twig" %}

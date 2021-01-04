@@ -6,42 +6,6 @@
     {% block component_scrollspy_section_content %}
         <h1 id="main-content">Getting Started</h1>
         <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project. If you are interested in adding NDS to an existing website, please view our <a href="{{ links.migrationGuide}}">Migration Guide</a> for more information.</p>
-        <p><a href="{{ links.components }}">NDS components</a> can be used simply by including the global NDS CSS and JS files in your website. If you wish to use NDS components without making a Drupal or Static site (as outlined below), download and reference the global NDS CSS and JS files here:</p>
-        {% include "@molecules/blocks/block-files/_block-files-main.twig" %}
-        <h2>Prerequisites</h2>
-        <p>You’ll need several application packages to work with the NIAID Design System. You can download and install the necessary packages below:</p>
-        <ul>
-            <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
-            <li><a href="https://www.npmjs.com/get-npm">NPM</a></li>
-            <li><a href="https://www.php.net/downloads">PHP</a></li>
-            <li><a href="https://getcomposer.org/download/">Composer</a></li>
-        </ul>
-        <h2 class="question">What Type of Website Are You Building?</h2>
-        <div class="button--jump-links container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-                        {
-                            "button_icon_classes": "button--secondary",
-                            "button_icon_icon": "sitemap",
-                            "button_icon_href": "#section-static-website",
-                            "button_icon_text": "Static Website (Pattern Lab)"
-                        }
-                    %}
-                </div>
-                <div class="col-md-6">
-                    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-                        {
-                            "button_icon_classes": "button--secondary",
-                            "button_icon_icon": "drupal",
-                            "button_icon_icon_weight": "b",
-                            "button_icon_href": "#section-drupal-website",
-                            "button_icon_text": "Drupal Website"
-                        }
-                    %}
-                </div>
-            </div>
-        </div>
         <hr>
     {% endblock %}
 {% endembed %}
