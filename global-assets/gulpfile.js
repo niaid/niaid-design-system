@@ -75,7 +75,7 @@ function compileJS() {
     console.log(includedJS);
     console.log("Compiling JS...");
     return gulp.src(includedJS, {base: './source/'})
-        .pipe(concat('script.js'))
+        .pipe(concat('nds.js'))
         .pipe(babel({
             presets: ['@babel/env']
         }))

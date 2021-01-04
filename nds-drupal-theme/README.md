@@ -50,7 +50,7 @@ DEVELOPING WITH NIAID DESIGN SYSTEM
 * CSS and JS Files 
  - The global CSS rules can be found in the css/ folder. If you need to override pattern or add some css, you should make edits in the overrides directory. Please go to source/css/overrides and create a .scss files for example drupal/drupal.scss and run gulp to see your changes. 
  - The global JS rules can be found in the JS/ folder. If you need to add project specific JS, you should make edits in the JS directory. Please go to source/JS/ and create a .js file for example project_name.js and run gulp to see your changes.
- - CSS and JS files are compiled into style.css and script-min.js respectively and the path to base files are already included in nds_drupal_theme.libraries.yml file.   
+ - CSS and JS files are compiled into style.css and nds-min.js respectively and the path to base files are already included in nds_drupal_theme.libraries.yml file.   
 
 
 DRUPAL CONFIGURATION

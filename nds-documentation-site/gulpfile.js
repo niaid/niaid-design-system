@@ -71,7 +71,7 @@ function compileJS() {
     console.log(includedJS);
     console.log("Compiling JS...");
     return gulp.src(includedJS, {base: './source/'})
-        .pipe(concat('script.js'))
+        .pipe(concat('nds.js'))
         .pipe(babel({
             presets: ['@babel/env']
         }))
@@ -266,7 +266,7 @@ function compileGlobalAssets() {
 
     // JS
     return gulp.src('../global-assets/source/_patterns/**/*.js')
-        .pipe(concat('script.js'))
+        .pipe(concat('nds.js'))
         .pipe(babel({
             presets: ['@babel/env']
         }))
@@ -355,5 +355,5 @@ function compileNDSLite() {
         }))
         .pipe(minify())
         .pipe(sourcemaps.write('../global-assets/dist/source/js/global/'))
-        .pipe(gulp.dest('../global-assets/dist/source/js/global/'));
+        .pipe(gulp.dest('../global-assets/dist/source/js/global/', './public_html/assets/'));
 }
