@@ -11,7 +11,7 @@
 
     <link rel="icon" href="{{ imagePath }}global/favicons/favicon.ico" type="image/x-icon"/>
 
-    {% if prodBuild != "true" %}<link rel="stylesheet" href="{{ cssPath }}style.css?{{ cacheBuster }}" media="all" />{% else %}<link rel="stylesheet" href="{{ cssPath }}style.css" media="all" />{% endif %}
+    {% if prodBuild != "true" %}<link rel="stylesheet" href="{{ cssPath }}nds-min.css?{{ cacheBuster }}" media="all" />{% else %}<link rel="stylesheet" href="{{ cssPath }}nds-min.css" media="all" />{% endif %}
     {% if prodBuild != "true" %}<link rel="stylesheet" href="{{ cssPath }}libraries/pattern-lab/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />{% endif %}
 
     {% if prodBuild != "true" %}

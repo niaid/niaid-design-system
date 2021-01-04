@@ -31,9 +31,9 @@ function compileSass() {
     console.log("Compiling Sass...");
     return gulp.src('source/css/style.scss')
         .pipe(sassGlob())
-        .pipe(concat('style.css'))
+        .pipe(concat('nds.css'))
         .pipe(rename({
-            basename: 'style',
+            basename: 'nds-min',
             extname: '.css'
         }))
         .pipe(sourcemaps.init())
@@ -135,7 +135,7 @@ function buildDist() {
 
     // Copy CSS
     console.log("Starting Copy of CSS");
-    gulp.src('./source/css/style.css')
+    gulp.src('./source/css/nds-min.css')
         .pipe(gulp.dest('./public_html/css'));
     gulp.src('./source/css/libraries/*.css')
         .pipe(gulp.dest('./public_html/css/libraries'));

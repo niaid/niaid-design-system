@@ -12,9 +12,9 @@
     <link rel="icon" href="{{ imagePath }}global/favicons/favicon.ico" type="image/x-icon"/>
 
     {% if prodBuild != "true" %}
-      <link rel="stylesheet" href="{{ cssPath }}style.css?{{ cacheBuster }}" media="all" />
+      <link rel="stylesheet" href="{{ cssPath }}nds-min.css?{{ cacheBuster }}" media="all" />
     {% else %}
-      <link rel="stylesheet" href="{{ cssPath }}style.css" media="all" />
+      <link rel="stylesheet" href="{{ cssPath }}nds-min.css" media="all" />
     {% endif %}
     {% if pageID == "builder" %}
       <link rel="stylesheet" href="{{ cssPath }}builder.css" media="all" />

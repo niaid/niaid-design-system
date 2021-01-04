@@ -25,9 +25,9 @@ function compileSass() {
     console.log("Compiling Sass...");
     return gulp.src('source/css/style.scss')
         .pipe(sassGlob())
-        .pipe(concat('style.css'))
+        .pipe(concat('nds.css'))
         .pipe(rename({
-            basename: 'style',
+            basename: 'nds-min',
             extname: '.css'
         }))
         .pipe(sourcemaps.init())
@@ -93,7 +93,6 @@ function compilePatternLab(cb) {
 // copyGlobalSass - Copy CSS into NDS Documentation
 function copyGlobalSass() {
     console.log("Transferring Assets from Global SASS...");
-    // gulp.src('../global-assets/source/css/style.scss').pipe(gulp.dest('./source/css/'));
     gulp.src('../global-assets/source/css/libraries/**/*').pipe(gulp.dest('./source/css/libraries/'));
     return gulp.src('../global-assets/source/css/global/**/*').pipe(gulp.dest('./source/css/global/'));
 }
@@ -206,7 +205,7 @@ function buildNDSDocumentationSite() {
 
     // Copy CSS
     console.log("Starting Copy of CSS");
-    gulp.src(['./source/css/style.css', './source/css/builder.css'])
+    gulp.src(['./source/css/nds-min.css', './source/css/builder.css'])
         .pipe(gulp.dest('./public_html/css'));
     gulp.src('./source/css/libraries/**/*')
         .pipe(gulp.dest('./public_html/css/libraries/'));
@@ -252,9 +251,9 @@ function compileGlobalAssets() {
     // SASS
     gulp.src('../global-assets/source/css/style.scss')
         .pipe(sassGlob())
-        .pipe(concat('style.css'))
+        .pipe(concat('nds.css'))
         .pipe(rename({
-            basename: 'style',
+            basename: 'nds-min',
             extname: '.css'
         }))
         .pipe(sass({
