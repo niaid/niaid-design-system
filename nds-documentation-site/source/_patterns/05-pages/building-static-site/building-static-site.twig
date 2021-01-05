@@ -1,0 +1,90 @@
+{% include "@molecules/components/component-style-controls/_component-style-controls-main.twig" %}
+
+{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+    {
+        "layouts_site_id": "building-static-site"
+    }
+%}
+    {% block header %}
+        {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
+        {% include "@organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "Design System"
+            }
+        %}
+    {% endblock %}
+    {% block global_navigation %}
+        {% include "@molecules/navigation/navigation-primary/_navigation-primary-main.twig" %}
+        {% include "@molecules/navigation/navigation-drawer/_navigation-drawer-main.twig" with
+            {
+                "navigation_drawer_id": "main-navigation-mobile"
+            }
+        %}
+        {% include "@nds/01-atoms/buttons/button-floating/_button-floating-main.twig" with
+            {
+                "button_floating_id": "custom-styles-toggle",
+                "button_floating_icon": "palette",
+                "button_floating_icon_weight": "l",
+                "button_floating_text": "Customize Page Theme"
+            }
+        %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@atoms/layouts/layouts-main/_layouts-main-main.twig" with
+            {
+                "layouts_main_id": 'main',
+                "layouts_main_classes": 'fixed-left',
+                "layouts_main_left": columns.left,
+                "layouts_main_main": columns.main,
+                "layouts_main_right": columns.right
+            }
+        %}
+            {% block left_column %}
+                {% embed "@nds/02-molecules/navigation/navigation-mobile-rail/_navigation-mobile-rail-main.twig" with
+                    {
+                        "navigation_mobile_rail_button_text": "Open Local Menu"
+                    }
+                %}
+                    {% block navigation_mobile_rail_content %}
+                        {% include "@molecules/components/component-scrollspy-toc/_component-scrollspy-toc-main.twig" with
+                            {
+                                "component_scrollspy_toc_title": "Building a Static Site",
+                                "component_scrollspy_toc_data": [
+                                    
+                                ]
+                            }
+                        %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                    {% block body_content %}
+                        {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/_navigation-breadcrumbs-main.twig" with
+                            {
+                                "navigation_breadcrumbs_data": [
+                                    {
+                                        "text": "Getting Started",
+                                        "href": links.getStarted
+                                    },
+                                    {
+                                        "text": "Building a Static Site"
+                                    }
+                                ]
+                            }
+                        %}
+                        <h1 id="main-content">Building a Static Site</h1>
+                        {% include "@sections/_section-prerequisites.twig" %}
+                        {% include "@sections/_section-static-website.twig" %}
+                        {% include "@sections/_section-working-with-nds.twig" %}
+                        {% include "@sections/_section-resources.twig" %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+            {% block right_column %}<span></span>{% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% include "@organisms/global/global-footer/_global-footer-main.twig" %}
+    {% endblock %}
+{% endembed %}
