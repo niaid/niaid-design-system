@@ -17,7 +17,7 @@
 <div class="navigation-nds navigation--breadcrumbs {{ navigation_breadcrumbs_classes }}">
     <p>
         {% for crumb in navigation_breadcrumbs_data %}
-            {% if crumb.href.routeName != '<none>' %}<a href="{{ crumb.href }}">{% endif %}{{ crumb.text }}{% if crumb.href.routeName != '<none>' %}</a>{% endif %}
+            {% if crumb.href.routeName != '<none>' and crumb.href != "" %}<a href="{{ crumb.href }}">{% endif %}<span>{{ crumb.text }}</span>{% if crumb.href.routeName != '<none>' %}</a>{% endif %}
             {% if not loop.last %}
                 &ensp;
                 {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
