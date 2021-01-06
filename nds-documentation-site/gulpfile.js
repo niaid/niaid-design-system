@@ -210,6 +210,8 @@ function buildNDSDocumentationSite() {
         .pipe(gulp.dest('./public_html/css'));
     gulp.src('./source/css/libraries/**/*')
         .pipe(gulp.dest('./public_html/css/libraries/'));
+    gulp.src('./source/css/custom/**/*')
+        .pipe(gulp.dest('./public_html/css/custom/'));
     console.log("Finished Copying CSS");
     // Fix USWDS Image Paths
     gulp.src('./public_html/css/libraries/uswds/uswds-banner.min.css')
