@@ -1,9 +1,12 @@
 (function($) {
     function initComponentSnippet(context = document) {
         $('.component--snippet__block__code__snippet').each(function() {
-            var codeSnippet = $(this).find('code').html().replace(/(\r\n|\n|\r)/gm, "");
-            $(this).find('code').empty();
-            $(this).find('code').append(process(codeSnippet));
+            var codeSnippet = escapeHtml($(this).html());
+            $(this).empty();
+            $(this).append(codeSnippet);
+            $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
+            var block = $(this).find('code');
+            Prism.highlightElement(block[0]);
         });
 
         $('.component--snippet').find('.button--icon').on('click', function() {
@@ -28,34 +31,15 @@
         textArea.remove();
     }
 
-    function process(str) {
-        var div = document.createElement('div');
-        div.innerHTML = str.trim();
-    
-        return format(div, 0).innerHTML;
-    }
-    
-    function format(node, level) {
-    
-        var indentBefore = new Array(level++ + 1).join('  '),
-            indentAfter  = new Array(level - 1).join('  '),
-            textNode;
-    
-        for (var i = 0; i < node.children.length; i++) {
-    
-            textNode = document.createTextNode('\n' + indentBefore);
-            node.insertBefore(textNode, node.children[i]);
-    
-            format(node.children[i], level);
-    
-            if (node.lastElementChild == node.children[i]) {
-                textNode = document.createTextNode('\n' + indentAfter);
-                node.appendChild(textNode);
-            }
-        }
-    
-        return node;
-    }
+    function escapeHtml(unsafe) {
+        return unsafe
+             .replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;")
+             .replace(/(^[ \t]*\n)/gm, "");
+     }
 
     if (typeof Drupal !== 'undefined') {
         // Define Drupal behavior.

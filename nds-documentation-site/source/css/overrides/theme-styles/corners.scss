@@ -6,6 +6,7 @@
         }
     }
     .component--snippet {
+        &__block__code__snippet,
         pre {
             border-radius: 0 0 $corner-radius $corner-radius;
         }
@@ -44,6 +45,7 @@
         }
     }
     .component--snippet {
+        &__block__code__snippet,
         pre {
             border-radius: 0 0 $corner-radius $corner-radius;
         }

@@ -18,7 +18,8 @@ const cache = require('gulp-cache');
 const zip = require('gulp-zip');
 const del = require('del');
 const replace = require('gulp-replace');
-let ndsLiteFiles = require('./config-nds-lite.json')
+const beautify = require('gulp-jsbeautifier');
+let ndsLiteFiles = require('./config-nds-lite.json');
 
 // compileSass - Compile CSS for NDS Documentation
 function compileSass() {
@@ -87,6 +88,9 @@ function compilePatternLab(cb) {
         cache.clearAll();
         browserSync.reload();
         cb(err);
+        gulp.src('./public/patterns/**/*.html')
+            .pipe(beautify())
+            .pipe(gulp.dest('./public/patterns/'));
     });
 }
 
