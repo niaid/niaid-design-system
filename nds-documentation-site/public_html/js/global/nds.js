@@ -99,9 +99,12 @@ $(document).ready(function () {
   function initComponentSnippet() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $('.component--snippet__block__code__snippet').each(function () {
-      var codeSnippet = $(this).find('pre').html().replace(/(\r\n|\n|\r)/gm, "");
-      $(this).find('pre').empty();
-      $(this).find('pre').text(process(codeSnippet));
+      var codeSnippet = escapeHtml($(this).html());
+      $(this).empty();
+      $(this).append(codeSnippet);
+      $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
+      var block = $(this).find('code');
+      Prism.highlightElement(block[0]);
     });
     $('.component--snippet').find('.button--icon').on('click', function () {
       var $copyText = $(this).siblings('.component--snippet__button__copied');
@@ -125,29 +128,8 @@ $(document).ready(function () {
     textArea.remove();
   }
 
-  function process(str) {
-    var div = document.createElement('div');
-    div.innerHTML = str.trim();
-    return format(div, 0).innerHTML;
-  }
-
-  function format(node, level) {
-    var indentBefore = new Array(level++ + 1).join('  '),
-        indentAfter = new Array(level - 1).join('  '),
-        textNode;
-
-    for (var i = 0; i < node.children.length; i++) {
-      textNode = document.createTextNode('\n' + indentBefore);
-      node.insertBefore(textNode, node.children[i]);
-      format(node.children[i], level);
-
-      if (node.lastElementChild == node.children[i]) {
-        textNode = document.createTextNode('\n' + indentAfter);
-        node.appendChild(textNode);
-      }
-    }
-
-    return node;
+  function escapeHtml(unsafe) {
+    return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/(^[ \t]*\n)/gm, "");
   }
 
   if (typeof Drupal !== 'undefined') {
@@ -1093,35 +1075,6 @@ function initLinkExternalMailto() {
       initTableDefault();
     });
   }
-})(jQuery);
-
-(function ($) {
-  function initBlockHero() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.parallax').length) {
-      var elems = document.querySelectorAll('.parallax');
-      var instances = M.Parallax.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
-        attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initBlockHero();
-    });
-  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -1165,6 +1118,35 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     }
   }
 }
+
+(function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.parallax').length) {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
+    });
+  }
+})(jQuery);
 
 (function ($) {
   function initComponentLightbox() {

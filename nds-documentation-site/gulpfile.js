@@ -88,9 +88,6 @@ function compilePatternLab(cb) {
         cache.clearAll();
         browserSync.reload();
         cb(err);
-        gulp.src('./public/patterns/**/*.html')
-            .pipe(beautify())
-            .pipe(gulp.dest('./public/patterns/'));
     });
 }
 
@@ -152,7 +149,7 @@ gulp.task('serveProject', function() {
 gulp.task('default', gulp.series(copyFonts, copyGlobalImages, copyGlobalSass, copyGlobalJS, cleanNDS, copyGlobalPatterns, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
 // GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compileNDSLite, compilePatternLab, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, zipAssets));
+gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compileNDSLite, compilePatternLab, formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, zipAssets));
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
@@ -344,6 +341,12 @@ function zipAssets() {
     return gulp.src('../global-assets/dist/**', {dot: true})
         .pipe(zip('nds.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
+}
+
+function formatComponents() {
+    return gulp.src('./public/patterns/06-dist-components-components/06-dist-components-components.html')
+        .pipe(beautify())
+        .pipe(gulp.dest('./public/patterns/06-dist-components-components/'));
 }
 
 gulp.task('compileNDSLite', gulp.series(compileNDSLite));
