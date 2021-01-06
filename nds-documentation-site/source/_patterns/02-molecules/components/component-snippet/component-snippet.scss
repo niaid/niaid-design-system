@@ -16,13 +16,16 @@
                 }
             }
             &__snippet {
-                overflow: hidden;
-                pre {
-                    background: $page-background-alternate;
-                    margin: -2rem 0 0 0;
-                    padding: 1rem;
-                    color: $type-link;
+                code {
+                    display: block;
                 }
+                // overflow: hidden;
+                // pre {
+                //     background: $page-background-alternate;
+                //     margin: -2rem 0 0 0;
+                //     padding: 1rem;
+                //     color: $type-link;
+                // }
             }
         }
     }

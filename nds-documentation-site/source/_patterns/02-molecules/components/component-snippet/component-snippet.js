@@ -1,9 +1,9 @@
 (function($) {
     function initComponentSnippet(context = document) {
         $('.component--snippet__block__code__snippet').each(function() {
-            var codeSnippet = $(this).find('pre').html().replace(/(\r\n|\n|\r)/gm, "");
-            $(this).find('pre').empty();
-            $(this).find('pre').text(process(codeSnippet));
+            var codeSnippet = $(this).find('code').html().replace(/(\r\n|\n|\r)/gm, "");
+            $(this).find('code').empty();
+            $(this).find('code').append(process(codeSnippet));
         });
 
         $('.component--snippet').find('.button--icon').on('click', function() {

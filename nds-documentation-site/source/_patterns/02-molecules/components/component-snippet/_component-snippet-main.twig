@@ -11,8 +11,10 @@
                 </div>
             {% endif %}
             <div class="component--snippet__block__code__snippet">
-                <pre>
-                    {{ component_snippet_code|raw }}
+                <pre class="language-markup">
+                    <code>
+                        {{ component_snippet_code|raw|trim|escape }}
+                    </code>
                 </pre>
             </div>
         </div>
