@@ -3,6 +3,7 @@
 
 <div class="block-nds block--dependencies {{ block_dependencies_classes }}">
     <div class="block--dependencies__label">Dependencies:</div>
+    <p>In order to leverage the full capabilities of this component, you must include the following libraries in addition to the NDS Global JS:</p>
     {% for badge in block_dependencies_data %}
         {% include "@nds/01-atoms/text/text-badge/_text-badge-main.twig" with
             {

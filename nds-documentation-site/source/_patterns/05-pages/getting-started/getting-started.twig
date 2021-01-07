@@ -83,6 +83,10 @@
                                         "text": "Overview"
                                     },
                                     {
+                                        "href": "section-prerequisites",
+                                        "text": "Prerequisites"
+                                    },
+                                    {
                                         "href": "section-choose-type",
                                         "text": "Choose Your Website Type"
                                     },
@@ -131,6 +135,7 @@
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
                         {% include "@sections/_section-overview-getting-started.twig" %}
+                        {% include "@sections/_section-prerequisites.twig" %}
                         {% include "@sections/_section-choose-type.twig" %}
                         {% include "@sections/_section-static-website.twig" %}
                         {% include "@sections/_section-dynamic-website.twig" %}
