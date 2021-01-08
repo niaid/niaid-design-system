@@ -32,6 +32,17 @@
             border-right: 0;
         }
     }
+    .component--snippet {
+        &__block {
+            &__pattern {
+                &__content {
+                    h5 {
+                        margin-top: 2rem;
+                    }
+                }
+            }
+        }
+    }
     .global-nds {
         &.global--header {
             @include md-8dp;

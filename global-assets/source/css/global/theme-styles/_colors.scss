@@ -105,6 +105,15 @@
             }
         }
     }
+    .icon-nds {
+        &.icon--loader {
+            .preloader-wrapper {
+                .spinner-layer {
+                    border-color: map-get(map-get(map-get($theme, 2), 2), 1);
+                }
+            }
+        }
+    }
     .input-nds {
         &.input--select {
             .select2-container {
@@ -432,6 +441,15 @@
                     background: $status-error;
                     color: $white;
                     border: 0.0625rem solid $status-error;
+                }
+            }
+        }
+    }
+    .icon-nds {
+        &.icon--loader {
+            .preloader-wrapper {
+                .spinner-layer {
+                    border-color: map-get(map-get(map-get($theme, 3), 2), 1);
                 }
             }
         }

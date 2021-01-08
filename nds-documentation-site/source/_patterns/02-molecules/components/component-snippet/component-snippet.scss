@@ -4,6 +4,7 @@
         @extend .block-nds;
         padding: 0;
         margin-bottom: 1rem;
+        overflow: hidden;
         &__code {
             &__rendered {
                 padding: 1rem;
@@ -15,29 +16,75 @@
                     margin-bottom: 0;
                 }
             }
-            &__snippet {
-                $code-background: #1E1E1E;
-                background: $code-background;
-                pre[class*=language-] {
-                    margin: 0;
+            &__wrapper {
+                position: relative;
+                &__snippet {
+                    $code-background: #1E1E1E;
                     background: $code-background;
-                    code {
-                        background: $code-background;
-                        padding: 0;
+                    pre[class*=language-] {
                         margin: 0;
-                        display: block;
+                        background: $code-background;
+                        code {
+                            background: $code-background;
+                            padding: 0;
+                            margin: 0;
+                            display: block;
+                        }
+                    }
+                }
+                &__button {
+                    position: absolute;
+                    right: .5rem;
+                    top: .5rem;
+                    text-align: right;
+                    &__copied {
+                        display: inline-block;
+                        margin-right: .5rem;
+                        opacity: 0;
+                        color: $white;
+                        transition: opacity 2s;
+                        z-index: 1;
+                        position: relative;
+                    }
+                    &__copy {
+                        padding: .5rem;
                     }
                 }
             }
         }
-    }
-    &__button {
-        text-align: right;
-        &__copied {
-            display: inline-block;
-            margin-right: .5rem;
-            opacity: 0;
-            transition: opacity 2s;
+        &__pattern {
+            &__toggle {
+                background: transparent !important;
+                border: 0 !important;
+                border-radius: 0 !important;
+                color: $type-link;
+                width: 100%;
+                text-align: left;
+                padding: 1rem;
+                i {
+                    margin-left: .5rem;
+                }
+                &:hover,
+                &:focus {
+                    color: $type-link;
+                }
+                &.open {
+                    i {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            &__content {
+                overflow: hidden;
+                height: 0;
+                padding: 0 2rem;
+                h5 {
+                    margin-top: .5rem;
+                }
+                &.open {
+                    height: auto;
+                }
+            }
         }
     }
     .button--floating {

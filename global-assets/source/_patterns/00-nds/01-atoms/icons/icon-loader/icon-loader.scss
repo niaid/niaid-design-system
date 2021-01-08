@@ -1,0 +1,7 @@
+.icon--loader {
+    .preloader-wrapper {
+        .spinner-layer {
+            border-color: map-get(map-get(map-get($theme, 1), 2), 1);
+        }
+    }
+}

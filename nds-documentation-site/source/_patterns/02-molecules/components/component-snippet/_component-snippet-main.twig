@@ -1,5 +1,6 @@
 {% set component_snippet_classes = component_snippet_classes|default() %}
 {% set component_snippet_code = block('component_snippet_code') %}
+{% set component_snippet_pattern_info = block('component_snippet_pattern_info') %}
 {% set component_snippet_show_rendered = component_snippet_show_rendered|default('yes') %}
 
 <div class="component-nds component--snippet {{ component_snippet_classes }} {% if component_snippet_show_rendered == 'no' %}no-render{% endif %}">
@@ -10,19 +11,36 @@
                     {{ component_snippet_code|raw }}
                 </div>
             {% endif %}
-            <div class="component--snippet__block__code__snippet">
-                {{ component_snippet_code|raw }}
+            <div class="component--snippet__block__code__wrapper">
+                <div class="component--snippet__block__code__wrapper__snippet">
+                    {{ component_snippet_code|raw }}
+                </div>
+                <div class="component--snippet__block__code__wrapper__button">
+                    <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
+                    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                        {
+                            "button_icon_classes": "component--snippet__block__code__wrapper__button__copy",
+                            "button_icon_icon": "clipboard-list",
+                            "button_icon_text": "Copy"
+                        }
+                    %}
+                </div>
             </div>
         </div>
-    </div>
-    <div class="component--snippet__button">
-        <div class="component--snippet__button__copied">Copied</div>
-        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-            {
-                "button_icon_classes": "component--snippet__button__copy",
-                "button_icon_icon": "clipboard-list",
-                "button_icon_text": "Copy to Clipboard"
-            }
-        %}
+        {% if component_snippet_pattern_info|trim is not empty %}
+            <div class="component--snippet__block__pattern">
+                <button class="component--snippet__block__pattern__toggle">Pattern Info
+                    {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+                        {
+                            "icon_default_type": "chevron-right",
+                            "icon_default_weight": "l"
+                        }
+                    %}
+                </button>
+                <div class="component--snippet__block__pattern__content">
+                    {{ component_snippet_pattern_info|raw }}
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>
