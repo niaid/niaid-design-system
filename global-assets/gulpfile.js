@@ -18,11 +18,7 @@ const replace = require('gulp-replace');
 
 // copyFonts - Copy Font Awesome from node_modules into project.
 function copyFonts() {
-    var fonts = {
-        fa_in: './node_modules/@fortawesome/fontawesome-free/webfonts/**'
-    }
-
-    return gulp.src([fonts.fa_in])
+    return gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*')
         .pipe(gulp.dest('./source/webfonts/font-awesome'));
 }
 

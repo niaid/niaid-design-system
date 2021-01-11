@@ -1,7 +1,8 @@
 {% set icon_loader_classes = icon_loader_classes|default() %}
+{% set icon_loader_size = icon_loader_size|default('big') %}
 
 <div class="icon-nds icon--loader {{ icon_loader_classes }}">
-    <div class="preloader-wrapper big active">
+    <div class="preloader-wrapper {{ icon_loader_size }} active">
         <div class="spinner-layer">
             <div class="circle-clipper left">
                 <div class="circle"></div>
