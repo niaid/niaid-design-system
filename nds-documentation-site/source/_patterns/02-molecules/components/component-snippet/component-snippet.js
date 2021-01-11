@@ -7,6 +7,8 @@
             $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
             var block = $(this).find('code');
             Prism.highlightElement(block[0]);
+            $('.component--snippet__block__code__wrapper').show();
+            $('.component--snippet__block__code__loader').hide();
         });
 
         $('.component--snippet').find('.button--icon').on('click', function() {

@@ -11,6 +11,13 @@
                     {{ component_snippet_code|raw }}
                 </div>
             {% endif %}
+            <div class="component--snippet__block__code__loader">
+                {% include "@nds/01-atoms/icons/icon-loader/_icon-loader-main.twig" with
+                    {
+                        "icon_loader_size": "small"
+                    }
+                %}
+            </div>
             <div class="component--snippet__block__code__wrapper">
                 <div class="component--snippet__block__code__wrapper__snippet">
                     {{ component_snippet_code|raw }}

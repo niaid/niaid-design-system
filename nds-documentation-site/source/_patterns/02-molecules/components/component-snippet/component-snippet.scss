@@ -1,4 +1,5 @@
 .component--snippet {
+    $code-background: #1E1E1E;
     margin: 1rem 0 2rem 0;
     &__block {
         @extend .block-nds;
@@ -16,10 +17,20 @@
                     margin-bottom: 0;
                 }
             }
+            &__loader {
+                background: $code-background;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 2rem 0;
+                .spinner-layer {
+                    border-color: $white !important;
+                }
+            }
             &__wrapper {
+                display: none;
                 position: relative;
                 &__snippet {
-                    $code-background: #1E1E1E;
                     background: $code-background;
                     pre[class*=language-] {
                         margin: 0;
