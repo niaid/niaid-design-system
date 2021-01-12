@@ -1,8 +1,9 @@
 {% set image_logo_classes = image_logo_classes|default() %}
+{% set image_logo_id = image_logo_id|default() %}
 {% set image_logo_src = image_logo_src|default() %}
 {% set image_logo_alt = image_logo_alt|default() %}
 {% set image_logo_href = image_logo_href|default() %}
 
-<a class="image-nds image--logo {{ image_logo_classes }}" href="{{ image_logo_href }}">
+<a class="image-nds image--logo {{ image_logo_classes }}" href="{{ image_logo_href }}"{% if image_logo_id is not empty %} id="{{ image_logo_id }}"{% endif %}>
   <img class="image--logo__image" src="{{ imagePath }}{{ image_logo_src }}" alt="{{ image_logo_alt }}"/>
 </a>

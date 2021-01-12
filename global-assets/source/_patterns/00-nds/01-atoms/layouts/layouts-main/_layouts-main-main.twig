@@ -9,23 +9,19 @@
 {% set layouts_main_main_column = block("main_column") %}
 {% set layouts_main_right_column = block("right_column") %}
 
-{% set left_additional_classes = "" %}
-{% set main_additional_classes = "" %}
-{% set right_additional_classes = "" %}
-
 <div class="layouts-nds layouts--main {{ layouts_main_classes }}"{% if layouts_main_id is not empty %} id="{{ layouts_main_id }}"{% endif %}>
     {% if layouts_main_left_column|trim is not empty %}
-        <div class="layouts--main__column layouts--main__first col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_left is not empty %}-{{ layouts_main_left }}{% endif %}{% if left_additional_classes is not empty %} {{ left_additional_classes }}{% endif %}">
+        <div class="layouts--main__column layouts--main__first col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_left is not empty %}-{{ layouts_main_left }}{% endif %}">
             {{ layouts_main_left_column|raw }}
         </div>
     {% endif %}
     {% if layouts_main_main_column is not empty %}
-        <div class="layouts--main__column layouts--main__second col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_main is not empty %}-{{ layouts_main_main }}{% endif %}{% if main_additional_classes is not empty %} {{ main_additional_classes }}{% endif %}">
+        <div class="layouts--main__column layouts--main__second col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_main is not empty %}-{{ layouts_main_main }}{% endif %}">
             {{ layouts_main_main_column|raw }}
         </div>
     {% endif %}
     {% if layouts_main_right_column is not empty %}
-        <div class="layouts--main__column layouts--main__third col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_right is not empty %}-{{ layouts_main_right }}{% endif %}{% if right_additional_classes is not empty %} {{ right_additional_classes }}{% endif %}">
+        <div class="layouts--main__column layouts--main__third col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_right is not empty %}-{{ layouts_main_right }}{% endif %}">
             {{ layouts_main_right_column|raw }}
         </div>
     {% endif %}
