@@ -162,7 +162,7 @@
                 </a>
             </div>
 
-            <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary">
+            <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary" aria-label="Open Global Menu">
 
 
                 <i class="icon-nds icon--default fal fa-bars "></i>
@@ -220,7 +220,7 @@
             <div class="navigation--drawer__top">
                 <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
 
-                <button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary">
+                <button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary" aria-label="Close Global Menu">
 
 
                     <i class="icon-nds icon--default fal fa-arrow-to-left "></i>
@@ -626,7 +626,7 @@
                                                 <li>button_external_text: Button text.</li>
                                                 <li>button_external_href: Button link destination.</li>
                                                 <li>button_external_icon: Font Awesome icon name (Default: external-link-alt).</li>
-                                                <li>button_external_icon_weight: Font Awesome icon weight (Default: s).</li>
+                                                <li>button_external_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                                                 <li>button_external_attributes: Additional button attributes.</li>
                                             </ul>
 
@@ -838,9 +838,11 @@
                                             <h5>Parameters</h5>
                                             <ul>
                                                 <li>button_document_classes: Additional document button classes.</li>
+                                                <li>button_document_id: Button ID.</li>
                                                 <li>button_document_type: Type of document button. Options: file-word, file-excel, file-ppt, file-pdf, image, video.</li>
                                                 <li>button_document_href: Button link destination.</li>
-                                                <li>button_document_icon_weight: Font Awesome icon weight (Default: r).</li>
+                                                <li>button_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>button_document_attributes: Additional button attributes.</li>
                                             </ul>
 
                                         </div>
@@ -920,8 +922,8 @@
                                                 <li>button_floating_classes: Additional document button classes.</li>
                                                 <li>button_floating_id: Button ID.</li>
                                                 <li>button_floating_text: Button text.</li>
-                                                <li>button_floating_icon: Font Awesome icon name (Default: external-link-alt).</li>
-                                                <li>button_floating_icon_weight: Font Awesome icon weight (Default: s).</li>
+                                                <li>button_floating_icon: Font Awesome icon name.</li>
+                                                <li>button_floating_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                                                 <li>button_floating_aria_label: Button aria-label.</li>
                                             </ul>
 
@@ -1034,10 +1036,32 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>button_icon_classes: Additional button classes.</li>
+                                                <li>button_icon_id: Button ID.</li>
+                                                <li>button_icon_icon: Font Awesome icon name.</li>
+                                                <li>button_icon_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>button_icon_icon_position: The side of the button text the icon should appear. Options: "left" (Default) or "right"</li>
+                                                <li>button_icon_text: Button text.</li>
+                                                <li>button_icon_attributes: Additional button attributes.</li>
+                                                <li>button_icon_aria_label: Button aria-label.</li>
+                                                <li>button_icon_href: Button link destination.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Button with Image</h4>
-                            <p>This component allows for an image to be included inside a button.</p>
+                            <p>This component allows for an small image, such as a user picture, to be included inside a button.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -1127,6 +1151,26 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>button_image_classes: Additional button classes.</li>
+                                                <li>button_image_id: Button ID.</li>
+                                                <li>button_image_href: Button link destination.</li>
+                                                <li>button_image_text: Button text.</li>
+                                                <li>button_image_src: The path to the image.</li>
+                                                <li>button_image_alt: Alt text to describe the image.</li>
+                                                <li>button_image_attributes: Additional button attributes.</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -1246,6 +1290,27 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>button_share_classes: Additional button classes.</li>
+                                                <li>button_share_id: Button ID.</li>
+                                                <li>button_share_icon: Font Awesome icon name.</li>
+                                                <li>button_share_icon_weight: Font Awesome icon weight Options: 'r', 's', 'b'(Default).</li>
+                                                <li>button_share_href: Button link destination.</li>
+                                                <li>button_share_aria_label: Button aria-label.</li>
+                                                <li>button_share_tabindex: Button tabindex.</li>
+                                                <li>button_share_attributes: Additional button attributes.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1253,7 +1318,7 @@
 
                         <div id="section-components-atoms-icons" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Icons</h3>
-                            <p>NDS uses the Font Awesome library for all icons (with the exception of third-party applications and companies). In Font Awesome, icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:</p>
+                            <p>NDS uses the <a href="https://fontawesome.com/">Font Awesome library</a> for all icons (with the exception of third-party applications and companies). In Font Awesome, icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:</p>
 
                             <ul>
                                 <li>Solid - fas</li>
@@ -1403,10 +1468,27 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>icon_circle_classes: Additional button classes.</li>
+                                                <li>icon_circle_icon: Font Awesome icon name.</li>
+                                                <li>icon_circle_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>icon_circle_attributes: Additional button attributes.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Icon Loader</h4>
-                            <p>The Icon Loader pattern can be used as visual feedback to your users that the site is processing, receiving, or transmitting information.</p>
+                            <p>The Icon Loader pattern from <a href="https://materializecss.com/preloader.html">Materialize</a> can be used as visual feedback to your users that the site is processing, receiving, or transmitting information.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -4943,7 +5025,7 @@
                                                     <div class="navigation--drawer__top">
                                                         <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
 
-                                                        <button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary">
+                                                        <button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary" aria-label="Close Global Menu">
 
 
                                                             <i class="icon-nds icon--default fas fa-arrow-left "></i>
@@ -5092,7 +5174,7 @@
 
                                                 <div class="global-nds global--header ">
 
-                                                    <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary">
+                                                    <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary" aria-label="Open Global Menu">
 
 
                                                         <i class="icon-nds icon--default fas fa-bars "></i>
@@ -5119,7 +5201,7 @@
                                                             </div> <input class="form-submit" type="submit" value="Search">
                                                         </form>
                                                     </div>
-                                                    <button id="global-header-search--open" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary">
+                                                    <button id="global-header-search--open" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary" aria-label="Open Global Search">
 
 
                                                         <i class="icon-nds icon--default fas fa-search "></i>

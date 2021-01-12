@@ -114,7 +114,7 @@
                     <li>button_external_text: Button text.</li>
                     <li>button_external_href: Button link destination.</li>
                     <li>button_external_icon: Font Awesome icon name (Default: external-link-alt).</li>
-                    <li>button_external_icon_weight: Font Awesome icon weight (Default: s).</li>
+                    <li>button_external_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                     <li>button_external_attributes: Additional button attributes.</li>
                 </ul>
             {% endblock %}
@@ -162,9 +162,11 @@
                 <h5>Parameters</h5>
                 <ul>
                     <li>button_document_classes: Additional document button classes.</li>
+                    <li>button_document_id: Button ID.</li>
                     <li>button_document_type: Type of document button. Options: file-word, file-excel, file-ppt, file-pdf, image, video.</li>
                     <li>button_document_href: Button link destination.</li>
-                    <li>button_document_icon_weight: Font Awesome icon weight (Default: r).</li>
+                    <li>button_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>button_document_attributes: Additional button attributes.</li>
                 </ul>
             {% endblock %}
         {% endembed %}
@@ -183,8 +185,8 @@
                     <li>button_floating_classes: Additional document button classes.</li>
                     <li>button_floating_id: Button ID.</li>
                     <li>button_floating_text: Button text.</li>
-                    <li>button_floating_icon: Font Awesome icon name (Default: external-link-alt).</li>
-                    <li>button_floating_icon_weight: Font Awesome icon weight (Default: s).</li>
+                    <li>button_floating_icon: Font Awesome icon name.</li>
+                    <li>button_floating_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                     <li>button_floating_aria_label: Button aria-label.</li>
                 </ul>
             {% endblock %}
@@ -225,10 +227,24 @@
                     </div>
                 </div>
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>button_icon_classes: Additional button classes.</li>
+                    <li>button_icon_id: Button ID.</li>
+                    <li>button_icon_icon: Font Awesome icon name.</li>
+                    <li>button_icon_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>button_icon_icon_position: The side of the button text the icon should appear. Options: "left" (Default) or "right"</li>
+                    <li>button_icon_text: Button text.</li>
+                    <li>button_icon_attributes: Additional button attributes.</li>
+                    <li>button_icon_aria_label: Button aria-label.</li>
+                    <li>button_icon_href: Button link destination.</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Button with Image</h4>
-        <p>This component allows for an image to be included inside a button.</p>
+        <p>This component allows for an small image, such as a user picture, to be included inside a button.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 <div class="container-fluid">
@@ -265,6 +281,18 @@
                     </div>
                 </div>
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>button_image_classes: Additional button classes.</li>
+                    <li>button_image_id: Button ID.</li>
+                    <li>button_image_href: Button link destination.</li>
+                    <li>button_image_text: Button text.</li>
+                    <li>button_image_src: The path to the image.</li>
+                    <li>button_image_alt: Alt text to describe the image.</li>
+                    <li>button_image_attributes: Additional button attributes.</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Share Buttons</h4>
@@ -288,6 +316,19 @@
                     </div>
                 </div>
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>button_share_classes: Additional button classes.</li>
+                    <li>button_share_id: Button ID.</li>
+                    <li>button_share_icon: Font Awesome icon name.</li>
+                    <li>button_share_icon_weight: Font Awesome icon weight Options: 'r', 's', 'b'(Default).</li>
+                    <li>button_share_href: Button link destination.</li>
+                    <li>button_share_aria_label: Button aria-label.</li>
+                    <li>button_share_tabindex: Button tabindex.</li>
+                    <li>button_share_attributes: Additional button attributes.</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
     {% endblock %}
 {% endembed %}
@@ -299,7 +340,7 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>Icons</h3>
-        <p>NDS uses the Font Awesome library for all icons (with the exception of third-party applications and companies). In Font Awesome, icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:</p>
+        <p>NDS uses the <a href="https://fontawesome.com/">Font Awesome library</a> for all icons (with the exception of third-party applications and companies). In Font Awesome, icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:</p>
 
         <ul>
             <li>Solid - fas</li>
@@ -335,10 +376,19 @@
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/icons/icon-circle/demo/icon-circle.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>icon_circle_classes: Additional button classes.</li>
+                    <li>icon_circle_icon: Font Awesome icon name.</li>
+                    <li>icon_circle_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>icon_circle_attributes: Additional button attributes.</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Icon Loader</h4>
-        <p>The Icon Loader pattern can be used as visual feedback to your users that the site is processing, receiving, or transmitting information.</p>
+        <p>The Icon Loader pattern from <a href="https://materializecss.com/preloader.html">Materialize</a> can be used as visual feedback to your users that the site is processing, receiving, or transmitting information.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/icons/icon-loader/demo/icon-loader.twig" %}

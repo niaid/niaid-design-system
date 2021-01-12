@@ -15,11 +15,13 @@
 #}
 
 {% set button_document_classes = button_document_classes|default() %}
+{% set button_document_id = button_document_id|default() %}
 {% set button_document_type = button_document_type|default() %}
 {% set button_document_href = button_document_href|default() %}
 {% set button_document_icon_weight = button_document_icon_weight|default('r') %}
+{% set button_document_attributes = button_document_attributes|default() %}
 
-<{{ button_document_href != "" ? 'a' : 'div' }} class="button-nds button--document {% if button_document_type is not empty %}button--document--{{ button_document_type }}{% endif %} {{ button_document_classes }}"{% if button_document_href is not empty %} href="{{ button_document_href }}"{% endif %}>
+<{{ button_document_href != "" ? 'a' : 'div' }} class="button-nds button--document {% if button_document_type is not empty %}button--document--{{ button_document_type }}{% endif %} {{ button_document_classes }}"{% if button_document_id is not empty %} id="{{ button_document_id }}"{% endif %}{% if button_document_href is not empty %} href="{{ button_document_href }}"{% endif %} {{ button_document_attributes }}>
     {% if button_document_type == "file-word" %}
         <div class="button--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
