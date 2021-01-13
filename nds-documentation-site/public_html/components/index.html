@@ -1934,13 +1934,14 @@
                             <h3>Links</h3>
                             <p>Links are used to take website users from page to page. NDS uses a bottom-border instead of an underline to make links look more elegant.</p>
                             <h4>Default Link</h4>
+                            <p>The Default Link pattern can be used to build generic links.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
 
-                                            <a class="link-nds link--default " href="#" data-content="body-anchor-ronsectetur-adipisicing-elit">Ronsectetur adipisicing elit</a>
+                                            <a class="link-nds link--default " href="#">Ronsectetur adipisicing elit</a>
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -1963,7 +1964,7 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
-                                                <a class="link-nds link--default " href="#" data-content="body-anchor-ronsectetur-adipisicing-elit">Ronsectetur adipisicing elit</a>
+                                                <a class="link-nds link--default " href="#">Ronsectetur adipisicing elit</a>
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -1977,6 +1978,23 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>link_default_classes: Additional link classes.</li>
+                                                <li>link_default_href: The link destination path.</li>
+                                                <li>link_default_text: The text of the link.</li>
+                                                <li>link_default_attributes: Additional link attributes.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>External Link</h4>
@@ -1987,7 +2005,7 @@
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
 
-                                            <a class="link-nds link--default " href="https://www.niaid.nih.gov" data-content="body-anchor-national-institute-of-allergy-and-infectious-diseases">National Institute of Allergy and Infectious Diseases</a>
+                                            <a class="link-nds link--default " href="https://www.niaid.nih.gov">National Institute of Allergy and Infectious Diseases</a>
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -2010,7 +2028,7 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
-                                                <a class="link-nds link--default " href="https://www.niaid.nih.gov" data-content="body-anchor-national-institute-of-allergy-and-infectious-diseases">National Institute of Allergy and Infectious Diseases</a>
+                                                <a class="link-nds link--default " href="https://www.niaid.nih.gov">National Institute of Allergy and Infectious Diseases</a>
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -2080,6 +2098,27 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>link_icon_classes: Additional link classes.</li>
+                                                <li>link_icon_href: The link destination path.</li>
+                                                <li>link_icon_text: The text of the link.</li>
+                                                <li>link_icon_sr_text: Text to be by screen readers only (not displayed visually).</li>
+                                                <li>link_icon_position: The side of the text the icon will appear on. Options: "left" (Default), "right".</li>
+                                                <li>link_icon_type: Font Awesome icon name.</li>
+                                                <li>link_icon_weight: Font Awesome icon weight. Options: 'r', 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>link_icon_icon_classes: Additional classes for the icon.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2087,7 +2126,7 @@
 
                         <div id="section-components-atoms-media" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Media</h3>
-                            <p>Audio and video can be effective ways to communicate with your audience, however, each comes with a variety of accessibility requirements. Please review the <a href="https://www.w3.org/WAI/media/av/">guidelines from W3C on how to make your audio and video accessible.</a></p>
+                            <p>Audio and video can be effective ways to communicate with your audience, however, each comes with a variety of accessibility requirements. Please review the <a href="https://www.w3.org/WAI/media/av/">guidelines from W3C on how to make your audio or video accessible.</a></p>
                             <h4>Audio</h4>
 
                             <div class="component-nds component--snippet  ">
@@ -2142,6 +2181,25 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>media_audio_classes: Additional media element classes.</li>
+                                                <li>media_audio_id: Media element ID.</li>
+                                                <li>media_audio_src_ogg: Path to the audio source in .ogg format.</li>
+                                                <li>media_audio_src_mp3: Path to the audio source in .mp3 format.</li>
+                                                <li>media_audio_src_wav: Path to the audio source in .wav format.</li>
+                                                <li>media_audio_attributes: Additional media attributes.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Video</h4>
@@ -2151,11 +2209,10 @@
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
 
-
                                             <video class="media-nds media--video " width="640" height="360" controls="">
                                                 <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
                                                 <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
-                                                <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg"> <img src="" width="640" height="360" alt="Big Buck Bunny" title="No video playback capabilities, please download.">
+                                                <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogv">
                                             </video>
                                         </div>
                                         <div class="component--snippet__block__code__loader">
@@ -2179,11 +2236,10 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
-
                                                 <video class="media-nds media--video " width="640" height="360" controls="">
                                                     <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
                                                     <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
-                                                    <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg"> <img src="" width="640" height="360" alt="Big Buck Bunny" title="No video playback capabilities, please download.">
+                                                    <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogv">
                                                 </video>
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
@@ -2196,6 +2252,28 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>media_video_classes: Additional media element classes.</li>
+                                                <li>media_video_id: Media element ID.</li>
+                                                <li>media_video_height: Desired height of the video.</li>
+                                                <li>media_video_width: Desired width of the video.</li>
+                                                <li>media_video_controls: HTML5 controls attribute for the video.</li>
+                                                <li>media_video_src_ogv: Path to the video source in .ogv format.</li>
+                                                <li>media_video_src_mp4: Path to the video source in .mp4 format.</li>
+                                                <li>media_video_src_webm: Path to the video source in .webm format.</li>
+                                                <li>media_video_attributes: Additional media attributes.</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -2246,6 +2324,26 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>media_video_youtube_classes: Additional media element classes.</li>
+                                                <li>media_video_youtube_id: ID for the video wrapper.</li>
+                                                <li>media_video_youtube_title: The title attribute for the video.</li>
+                                                <li>media_video_youtube_src: The embed URL from YouTube.</li>
+                                                <li>media_video_youtube_height: Desired height of the video.</li>
+                                                <li>media_video_youtube_width: Desired width of the video.</li>
+                                                <li>media_video_youtube_attributes: Additional attributes on the &lt;iframe&gt;.</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -2440,6 +2538,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>text_blockquote_classes: Additional blockquote classes.</li>
+                                                <li>text_blockquote_id: Blockquote ID.</li>
+                                                <li>text_blockquote_text: Blockquote text.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Badge</h4>
@@ -2485,6 +2599,22 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>text_badge_classes: Additional badge classes.</li>
+                                                <li>text_badge_id: Badge ID.</li>
+                                                <li>text_badge_text: Badge text.</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -2540,6 +2670,24 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>text_chip_classes: Additional chip classes.</li>
+                                                <li>text_chip_id: Chip ID.</li>
+                                                <li>text_chip_text: Chip text.</li>
+                                                <li>text_chip_href: A URL that, when navigated to, removes the chip from the filter list.</li>
+                                                <li>text_chip_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -2601,6 +2749,26 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>text_heading_icon_classes: Additional heading classes.</li>
+                                                <li>text_heading_icon_id: Heading ID.</li>
+                                                <li>text_heading_level: The heading level. Options: "1" through "6".</li>
+                                                <li>text_heading_text: The heading text.</li>
+                                                <li>text_heading_icon: Font Awesome icon name.</li>
+                                                <li>text_heading_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>text_heading_icon_position: The side of the heading text that the icon appears on. Options: "left" (Default), "right".</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -2666,6 +2834,24 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>text_image_credit_caption_classes: Additional credit and caption classes.</li>
+                                                <li>text_image_credit_caption_id: Credit and caption ID.</li>
+                                                <li>text_image_credit_caption_caption: Caption text.</li>
+                                                <li>text_image_credit_caption_credit: Credit text.</li>
+                                                <li>text_image_credit_caption_credit_label: Label for the credit. Default: "Credit:".</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Search Results</h4>
@@ -2721,6 +2907,23 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>text_search_results_classes: Additional search results display classes.</a>
+                                                <li>text_search_results_title_text: Label for the search results. Default: "Results".</a>
+                                                <li>text_search_results_title_level: The heading level for the results display. Default: "2".</a>
+                                                <li>text_search_results_title_number: A string of the number of results.</a>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>

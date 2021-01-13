@@ -3,4 +3,4 @@
 {% set link_default_text = link_default_text|default() %}
 {% set link_default_attributes = link_default_attributes|default() %}
 
-<a class="link-nds link--default {{ link_default_classes }}" href="{{ link_default_href }}" data-content="body-anchor-{{ link_default_text|lower|replace({' ': '-'}) }}" {{ link_default_attributes }}>{{ link_default_text }}</a>
+<a class="link-nds link--default {{ link_default_classes }}" href="{{ link_default_href }}" {{ link_default_attributes }}>{{ link_default_text }}</a>

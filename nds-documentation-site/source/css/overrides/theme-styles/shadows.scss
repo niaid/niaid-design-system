@@ -23,7 +23,8 @@
         &.block--palette {
             background: transparent;
         }
-        &.block--full-palette {
+        &.block--full-palette,
+        &.block--dependencies {
             @include md-0dp;
         }
     }

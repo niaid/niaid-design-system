@@ -1,16 +1,28 @@
 {% set text_heading_icon_classes = text_heading_icon_classes|default() %}
+{% set text_heading_icon_id = text_heading_icon_id|default() %}
 {% set text_heading_level = text_heading_level|default() %}
 {% set text_heading_text = text_heading_text|default() %}
 {% set text_heading_icon = text_heading_icon|default() %}
-{% set text_heading_icon_weight = text_heading_icon_weight|default() %}
+{% set text_heading_icon_weight = text_heading_icon_weight|default('s') %}
+{% set text_heading_icon_position = text_heading_icon_position|default('left') %}
 
-<h{{ text_heading_level }} class="text-nds text--heading-icon {{ text_heading_icon_classes }}">
-    {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
-        {
-            "icon_default_type": text_heading_icon,
-            "icon_default_weight": text_heading_icon_weight
-        }
-    %}
+<h{{ text_heading_level }} class="text-nds text--heading-icon {{ text_heading_icon_classes }}"{% if text_heading_icon_id is not empty %} id="{{ text_heading_icon_id }}"{% endif %}>
+    {% if text_heading_icon_position == "left" %}
+        {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+            {
+                "icon_default_type": text_heading_icon,
+                "icon_default_weight": text_heading_icon_weight
+            }
+        %}
+    {% endif %}
     {{ text_heading_text }}
+    {% if text_heading_icon_position == "right" %}
+        {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+            {
+                "icon_default_type": text_heading_icon,
+                "icon_default_weight": text_heading_icon_weight
+            }
+        %}
+    {% endif %}
 </h{{ text_heading_level }}>
 

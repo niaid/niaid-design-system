@@ -1,6 +1,7 @@
 .icon--loader {
     .preloader-wrapper {
         .spinner-layer {
+            display: flex;
             border-color: map-get(map-get(map-get($theme, 1), 2), 1);
         }
     }

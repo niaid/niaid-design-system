@@ -1,14 +1,15 @@
-{% set media_audio_id = media_audio_id|default() %}
 {% set media_audio_classes = media_audio_classes|default() %}
-{% set media_audio_ogg_src = media_audio_ogg_src|default() %}
-{% set media_audio_mp3_src = media_audio_mp3_src|default() %}
-{% set media_audio_wav_src = media_audio_wav_src|default() %}
+{% set media_audio_id = media_audio_id|default() %}
+{% set media_audio_src_ogg = media_audio_src_ogg|default() %}
+{% set media_audio_src_mp3 = media_audio_src_mp3|default() %}
+{% set media_audio_src_wav = media_audio_src_wav|default() %}
+{% set media_audio_attributes = media_audio_attributes|default() %}
 
 <div class="media-nds media--audio {{ media_audio_classes }}">
-    <audio {% if media_audio_id is not empty %} id="{{ media_audio_id }}"{% endif %} controls>
-        {% if media_audio_ogg_src is not empty %}<source src="{{ media_audio_ogg_src }}" type="audio/ogg">{% endif %}
-        {% if media_audio_mp3_src is not empty %}<source src="{{ media_audio_mp3_src }}" type="audio/mpeg">{% endif %}
-        {% if media_audio_wav_src is not empty %}<source src="{{ media_audio_wav_src }}" type="audio/wav">{% endif %}
+    <audio {% if media_audio_id is not empty %} id="{{ media_audio_id }}"{% endif %} controls {{ media_audio_attributes }}>
+        {% if media_audio_src_ogg is not empty %}<source src="{{ media_audio_src_ogg }}" type="audio/ogg">{% endif %}
+        {% if media_audio_src_mp3 is not empty %}<source src="{{ media_audio_src_mp3 }}" type="audio/mpeg">{% endif %}
+        {% if media_audio_src_wav is not empty %}<source src="{{ media_audio_src_wav }}" type="audio/wav">{% endif %}
         Your browser does not support the audio tag.
     </audio>
 </div>
