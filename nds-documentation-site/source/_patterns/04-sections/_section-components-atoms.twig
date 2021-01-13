@@ -558,9 +558,19 @@
         <h3>Links</h3>
         <p>Links are used to take website users from page to page. NDS uses a bottom-border instead of an underline to make links look more elegant.</p>
         <h4>Default Link</h4>
+        <p>The Default Link pattern can be used to build generic links.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/links/link-default/demo/link-default.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>link_default_classes: Additional link classes.</li>
+                    <li>link_default_href: The link destination path.</li>
+                    <li>link_default_text: The text of the link.</li>
+                    <li>link_default_attributes: Additional link attributes.</li>
+                </ul>
             {% endblock %}
         {% endembed %}
 
@@ -576,6 +586,19 @@
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/links/link-icon/demo/link-icon-left.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>link_icon_classes: Additional link classes.</li>
+                    <li>link_icon_href: The link destination path.</li>
+                    <li>link_icon_text: The text of the link.</li>
+                    <li>link_icon_sr_text: Text to be by screen readers only (not displayed visually).</li>
+                    <li>link_icon_position: The side of the text the icon will appear on. Options: "left" (Default), "right".</li>
+                    <li>link_icon_type: Font Awesome icon name.</li>
+                    <li>link_icon_weight: Font Awesome icon weight. Options: 'r', 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>link_icon_icon_classes: Additional classes for the icon.</li>
+                </ul>
             {% endblock %}
         {% endembed %}
     {% endblock %}
