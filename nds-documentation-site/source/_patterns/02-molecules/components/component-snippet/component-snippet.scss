@@ -121,6 +121,13 @@
             position: relative;
         }
     }
+    &.component--snippet--featured-content-card {
+        .block--featured-content-card {
+            @include media-breakpoint-up(lg) {
+                max-width: 50%;
+            }
+        }
+    }
 }
 
 .hidden-textarea {

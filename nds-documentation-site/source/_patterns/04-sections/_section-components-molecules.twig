@@ -50,7 +50,11 @@
                 "text_uswds_href": "https://designsystem.digital.gov/components/card/"
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_classes": "component--snippet--featured-content-card"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-featured-content-card/demo/block-featured-content-card.twig" %}
             {% endblock %}
