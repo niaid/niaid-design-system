@@ -1,5 +1,15 @@
 {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
     {
+        "block_status_message_type": "message--success"
+    }
+%}
+    {% block block_status_message_content %}
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
+    {% endblock %}
+{% endembed %}
+
+{% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
+    {
         "block_status_message_type": "message--information"
     }
 %}
@@ -11,16 +21,6 @@
 {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
     {
         "block_status_message_type": "message--warning"
-    }
-%}
-    {% block block_status_message_content %}
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
-    {% endblock %}
-{% endembed %}
-
-{% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
-    {
-        "block_status_message_type": "message--success"
     }
 %}
     {% block block_status_message_content %}

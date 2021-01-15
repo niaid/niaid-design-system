@@ -2939,16 +2939,18 @@
                             <p>Blocks tend to be non-functional components that are visually distinct from the normal body content.</p>
 
                             <h4>Default Block</h4>
-                            <p>The default block is a flexible pattern that can be used with almost any content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
+                            <p>The default block is a flexible pattern that can be used with almost any HTML content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
 
+
                                             <div class="block-nds block--default  ">
                                                 <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
                                             </div>
+
                                             <div class="block-nds block--default  block--default--accent">
                                                 <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
                                             </div>
@@ -2974,9 +2976,11 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
+
                                                 <div class="block-nds block--default  ">
                                                     <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
                                                 </div>
+
                                                 <div class="block-nds block--default  block--default--accent">
                                                     <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
                                                 </div>
@@ -2993,6 +2997,26 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block block_content %&#125;: The HTML content to appear in the block.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>block_default_classes: Additional block classes.</li>
+                                                <li>block_default_id: Block ID.</li>
+                                                <li>block_default_accent: Optional accent on the left of the block. Options: true, false (Default).</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Search Result</h4>
@@ -3002,6 +3026,8 @@
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
+
+
 
 
                                             <div class="block-nds block--default block--search-result  ">
@@ -3033,6 +3059,8 @@
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
 
+
+
                                                 <div class="block-nds block--default block--search-result  ">
                                                     <h2 class="block--search-result__title"><a href="#">Search Result Title</a></h2>
                                                     <p>Nunc cubilia vehicula facilisi hac volutpat sodales faucibus egestas gravida enim sociis ad quam quisque morbi id molestie gravida ullamcorper.</p>
@@ -3052,6 +3080,28 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block blocks_search_result_description %&#125;: The description of the search result.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>blocks_search_result_classes: Additional block classes.</li>
+                                                <li>blocks_search_result_id: Block ID.</li>
+                                                <li>blocks_search_result_title: Search result title.</li>
+                                                <li>blocks_search_result_href: Search result target destination URL.</li>
+                                                <li>blocks_search_result_date_last_reviewed: Optional date last reviewed of the search result content.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Search Chips</h4>
@@ -3061,6 +3111,7 @@
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
+
 
                                             <div class="block-nds block--search-chips ">
                                                 <div class="block--search-chips__label">Showing results filtered by:</div>
@@ -3101,6 +3152,7 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
+
                                                 <div class="block-nds block--search-chips ">
                                                     <div class="block--search-chips__label">Showing results filtered by:</div>
                                                     <div class="block--search-chips__wrapper">
@@ -3131,6 +3183,27 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>block_search_chips_classes: Additional block classes.</li>
+                                                <li>block_search_chips_data: An array of search chip objects. Structure: {"text": "", "url": ""}. The URL should be the link to remove the chip.</li>
+                                                <li>block_search_chips_clear: A URL hooked to the clear button that removes all search chips.</li>
+                                            </ul>
+                                            <h5>Includes</h5>
+                                            <ul>
+                                                <li>Atoms -> Buttons -> button-default</li>
+                                                <li>Atoms -> Text -> text-chip</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Featured Content Card</h4>
@@ -3144,6 +3217,7 @@
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
+
 
                                             <div class="block-nds block--featured-content-card ">
                                                 <div class="block--featured-content-card__image">
@@ -3181,6 +3255,7 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
+
                                                 <div class="block-nds block--featured-content-card ">
                                                     <div class="block--featured-content-card__image">
 
@@ -3206,6 +3281,31 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>block_featured_content_card_classes: Additional block classes.</li>
+                                                <li>block_featured_content_card_id: Block ID.</li>
+                                                <li>block_featured_content_card_src: The path to the featured image.</li>
+                                                <li>block_featured_content_card_alt: Alt text for the featured image.</li>
+                                                <li>block_featured_content_card_title: Title of the featured card.</li>
+                                                <li>block_featured_content_card_title_link: Optional URL for the linked title.</li>
+                                                <li>block_featured_content_card_description: Featured card description.</li>
+                                                <li>block_featured_content_card_featured: Optional text that appears above the title (ex. FEATURED).</li>
+                                            </ul>
+                                            <h5>Includes</h5>
+                                            <ul>
+                                                <li>Atoms -> Images -> image-default</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -3236,25 +3336,29 @@
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
 
-                                            <div class="block-nds block--alert ">
+
+                                            <div class="block-nds block--alert  severity--1">
                                                 <h1>COVID-19 is an emerging, rapidly evolving situation.</h1>
                                                 <hr>
                                                 <p>Get the latest public health information from CDC: <a href="https://www.coronavirus.gov">https://www.coronavirus.gov</a></p>
                                                 <p>Get the latest research information from NIH: <a href="https://www.nih.gov/coronavirus">https://www.nih.gov/coronavirus</a></p>
                                             </div>
-                                            <div class="block-nds block--alert severity--2">
+
+                                            <div class="block-nds block--alert  severity--2">
                                                 <h1>COVID-19 is an emerging, rapidly evolving situation.</h1>
                                                 <hr>
                                                 <p>Get the latest public health information from CDC: <a href="https://www.coronavirus.gov">https://www.coronavirus.gov</a></p>
                                                 <p>Get the latest research information from NIH: <a href="https://www.nih.gov/coronavirus">https://www.nih.gov/coronavirus</a></p>
                                             </div>
-                                            <div class="block-nds block--alert severity--3">
+
+                                            <div class="block-nds block--alert  severity--3">
                                                 <h1>COVID-19 is an emerging, rapidly evolving situation.</h1>
                                                 <hr>
                                                 <p>Get the latest public health information from CDC: <a href="https://www.coronavirus.gov">https://www.coronavirus.gov</a></p>
                                                 <p>Get the latest research information from NIH: <a href="https://www.nih.gov/coronavirus">https://www.nih.gov/coronavirus</a></p>
                                             </div>
-                                            <div class="block-nds block--alert severity--4">
+
+                                            <div class="block-nds block--alert  severity--4">
                                                 <h1>COVID-19 is an emerging, rapidly evolving situation.</h1>
                                                 <hr>
                                                 <p>Get the latest public health information from CDC: <a href="https://www.coronavirus.gov">https://www.coronavirus.gov</a></p>
@@ -3282,25 +3386,29 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
-                                                <div class="block-nds block--alert ">
+
+                                                <div class="block-nds block--alert  severity--1">
                                                     <h1>COVID-19 is an emerging, rapidly evolving situation.</h1>
                                                     <hr>
                                                     <p>Get the latest public health information from CDC: <a href="https://www.coronavirus.gov">https://www.coronavirus.gov</a></p>
                                                     <p>Get the latest research information from NIH: <a href="https://www.nih.gov/coronavirus">https://www.nih.gov/coronavirus</a></p>
                                                 </div>
-                                                <div class="block-nds block--alert severity--2">
+
+                                                <div class="block-nds block--alert  severity--2">
                                                     <h1>COVID-19 is an emerging, rapidly evolving situation.</h1>
                                                     <hr>
                                                     <p>Get the latest public health information from CDC: <a href="https://www.coronavirus.gov">https://www.coronavirus.gov</a></p>
                                                     <p>Get the latest research information from NIH: <a href="https://www.nih.gov/coronavirus">https://www.nih.gov/coronavirus</a></p>
                                                 </div>
-                                                <div class="block-nds block--alert severity--3">
+
+                                                <div class="block-nds block--alert  severity--3">
                                                     <h1>COVID-19 is an emerging, rapidly evolving situation.</h1>
                                                     <hr>
                                                     <p>Get the latest public health information from CDC: <a href="https://www.coronavirus.gov">https://www.coronavirus.gov</a></p>
                                                     <p>Get the latest research information from NIH: <a href="https://www.nih.gov/coronavirus">https://www.nih.gov/coronavirus</a></p>
                                                 </div>
-                                                <div class="block-nds block--alert severity--4">
+
+                                                <div class="block-nds block--alert  severity--4">
                                                     <h1>COVID-19 is an emerging, rapidly evolving situation.</h1>
                                                     <hr>
                                                     <p>Get the latest public health information from CDC: <a href="https://www.coronavirus.gov">https://www.coronavirus.gov</a></p>
@@ -3319,6 +3427,26 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block block_alert_content %&#125;: The alert HTML content.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>block_alert_classes: Additional alert classes.</li>
+                                                <li>block_alert_id: Alert ID.</li>
+                                                <li>block_alert_severity_level: The alert severity level. Options: "1" (Default), "2", "3", "4".</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Status Message Block</h4>
@@ -3334,6 +3462,19 @@
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
+
+
+
+                                            <div class="block-nds block--status-message message--success ">
+                                                <div class="block--status-message__icon">
+
+
+                                                    <i class="icon-nds icon--default fas fa-check "></i>
+                                                </div>
+                                                <div class="block--status-message__content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
+                                                </div>
+                                            </div>
 
 
 
@@ -3355,19 +3496,6 @@
 
 
                                                     <i class="icon-nds icon--default fas fa-exclamation-triangle "></i>
-                                                </div>
-                                                <div class="block--status-message__content">
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="block-nds block--status-message message--success ">
-                                                <div class="block--status-message__icon">
-
-
-                                                    <i class="icon-nds icon--default fas fa-check "></i>
                                                 </div>
                                                 <div class="block--status-message__content">
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
@@ -3410,6 +3538,19 @@
 
 
 
+                                                <div class="block-nds block--status-message message--success ">
+                                                    <div class="block--status-message__icon">
+
+
+                                                        <i class="icon-nds icon--default fas fa-check "></i>
+                                                    </div>
+                                                    <div class="block--status-message__content">
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
+                                                    </div>
+                                                </div>
+
+
+
                                                 <div class="block-nds block--status-message message--information ">
                                                     <div class="block--status-message__icon">
 
@@ -3428,19 +3569,6 @@
 
 
                                                         <i class="icon-nds icon--default fas fa-exclamation-triangle "></i>
-                                                    </div>
-                                                    <div class="block--status-message__content">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="block-nds block--status-message message--success ">
-                                                    <div class="block--status-message__icon">
-
-
-                                                        <i class="icon-nds icon--default fas fa-check "></i>
                                                     </div>
                                                     <div class="block--status-message__content">
                                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
@@ -3472,14 +3600,36 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block block_status_message_content %&#125;: The status message HTML content.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>block_status_message_classes: Additional status message classes.</li>
+                                                <li>block_status_message_id: Status message ID.</li>
+                                                <li>block_status_message_type: The type of status message (required). Options: "message--success", "message--information", "message--warning", "message--error".</li>
+                                            </ul>
+                                            <h5>Includes</h5>
+                                            <ul>
+                                                <li>Atoms -> Icons -> icon-default</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Hero Block</h4>
                             <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a Parallax effect courtest of the Materialize library.</p>
                             <p>When selecting imagery for the hero, it is recommended to choose images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
                             <p>The Hero Block pattern optionally includes the abiliity to add breadcrumbs to the top.</p>
-                            <h5>Pattern Usage</h5>
-                            <p>The Hero Block pattern requires users to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -3490,7 +3640,7 @@
                                             <div id="block--hero" class="block-nds block--hero d-block">
                                                 <div class="block--hero__content">
                                                     <div class="parallax-container ">
-                                                        <div class="parallax ">
+                                                        <div class="parallax">
 
                                                             <img class="image-nds image--default " src="../assets/global/sample/hero.jpg" alt="" />
                                                         </div>
@@ -3544,7 +3694,7 @@
                                                 <div id="block--hero" class="block-nds block--hero d-block">
                                                     <div class="block--hero__content">
                                                         <div class="parallax-container ">
-                                                            <div class="parallax ">
+                                                            <div class="parallax">
 
                                                                 <img class="image-nds image--default " src="../assets/global/sample/hero.jpg" alt="" />
                                                             </div>
@@ -3585,17 +3735,39 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Overview</h5>
+                                            <p>The Hero Block pattern requires users to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block block_hero_image %&#125;: The hero image, passed in as a &lt;img&gt; tag.</li>
+                                                <li>&#123;% block block_hero_breadcrumbs %&#125;: Optional block to include breadcrumbs (ex. the NDS Breadcrumb pattern).</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>block_hero_classes: Additional hero classes.</li>
+                                                <li>block_hero_id: Hero ID.</li>
+                                                <li>block_hero_overlay_color: An optional class used to apply a color to the hero overlay. This class must contain a background color with an opacity less than 1.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Share Block</h4>
                             <p>The Share Block component is a collection of Share Buttons for various social media platforms.</p>
-                            <h5>Pattern Usage</h5>
-                            <p>The Share Block component uses a loop to render the Share Buttons. Pass data to the "block_share_data" parameter to generate each button.</p>
 
                             <div class="component-nds component--snippet component--snippet--block-share ">
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
+
 
                                             <div class="block-nds block--share ">
                                                 <div class="block--share__wrapper">
@@ -3645,6 +3817,7 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
+
                                                 <div class="block-nds block--share ">
                                                     <div class="block--share__wrapper">
 
@@ -3684,15 +3857,38 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Overview</h5>
+                                            <p>The Share Block component uses a loop to render the Share Buttons. Pass data to the "block_share_data" parameter to generate each button.</p>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>block_share_classes: Additional block classes.</li>
+                                                <li>block_share_id: Block ID.</li>
+                                                <li>block_share_data: An array of share button objects. Structure: {"type": "", "icon": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform (ex. Twitter).</li>
+                                            </ul>
+                                            <h5>Includes</h5>
+                                            <ul>
+                                                <li>Atoms -> Buttons -> button-share</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <h4>Was This Page Helpful? Block</h4>
+                            <h4>Was This Page Helpful? (WTPH) Block</h4>
                             <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in functionality, meaning users will need to add their own functions and input handling.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
+
 
                                             <div class="block-nds block--wtph ">
                                                 <div class="block--wtph__inner">
@@ -3724,6 +3920,7 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
+
                                                 <div class="block-nds block--wtph ">
                                                     <div class="block--wtph__inner">
                                                         <h2 class="block--wtph__inner__title">Was This Page Helpful?</h2>
@@ -3743,6 +3940,25 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>block_wtph_classes: Additional block classes.</li>
+                                                <li>block_wtph_id: Block ID.</li>
+                                            </ul>
+                                            <h5>Includes</h5>
+                                            <ul>
+                                                <li>Atoms -> Buttons -> button-default</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -5653,14 +5869,17 @@
                                                 <h2 class="view--listing__heading">View Listing</h2>
                                                 <div class="view--listing__blocks">
 
+
                                                     <div class="block-nds block--default  ">
                                                         <h3><a href="#">View Listing Heading</a></h3>
                                                         <p>Lorem ipsum set amet dolor.</p>
                                                     </div>
+
                                                     <div class="block-nds block--default  ">
                                                         <h3><a href="#">View Listing Heading</a></h3>
                                                         <p>Lorem ipsum set amet dolor.</p>
                                                     </div>
+
                                                     <div class="block-nds block--default  ">
                                                         <h3><a href="#">View Listing Heading</a></h3>
                                                         <p>Lorem ipsum set amet dolor.</p>
@@ -5697,14 +5916,17 @@
                                                     <h2 class="view--listing__heading">View Listing</h2>
                                                     <div class="view--listing__blocks">
 
+
                                                         <div class="block-nds block--default  ">
                                                             <h3><a href="#">View Listing Heading</a></h3>
                                                             <p>Lorem ipsum set amet dolor.</p>
                                                         </div>
+
                                                         <div class="block-nds block--default  ">
                                                             <h3><a href="#">View Listing Heading</a></h3>
                                                             <p>Lorem ipsum set amet dolor.</p>
                                                         </div>
+
                                                         <div class="block-nds block--default  ">
                                                             <h3><a href="#">View Listing Heading</a></h3>
                                                             <p>Lorem ipsum set amet dolor.</p>
@@ -5743,6 +5965,7 @@
                                                     <div class="row">
                                                         <div class="col-sm-6">
 
+
                                                             <div class="block-nds block--featured-content-card ">
                                                                 <div class="block--featured-content-card__image">
 
@@ -5759,6 +5982,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
+
 
                                                             <div class="block-nds block--featured-content-card ">
                                                                 <div class="block--featured-content-card__image">
@@ -5805,6 +6029,7 @@
                                                         <div class="row">
                                                             <div class="col-sm-6">
 
+
                                                                 <div class="block-nds block--featured-content-card ">
                                                                     <div class="block--featured-content-card__image">
 
@@ -5821,6 +6046,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-sm-6">
+
 
                                                                 <div class="block-nds block--featured-content-card ">
                                                                     <div class="block--featured-content-card__image">

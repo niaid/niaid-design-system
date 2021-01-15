@@ -1,4 +1,28 @@
+{#
+    ---
+    title: Search Result Block
+    ---
+
+    Type: Molecules -> Blocks
+
+    Description:
+        Created directly by the Default Block component, the Search Result pattern can be used to display a set of results returned by your search engine.
+
+    Blocks:
+        {% block blocks_search_result_description %}: The description of the search result.
+    
+    Parameters:
+        blocks_search_result_classes: Additional block classes.
+        blocks_search_result_id: Block ID.
+        blocks_search_result_title: Search result title.
+        blocks_search_result_href: Search result target destination URL.
+        blocks_search_result_date_last_reviewed: Optional date last reviewed of the search result content.
+
+    Last Updated: January 14, 2021
+#}
+
 {% set blocks_search_result_classes = blocks_search_result_classes|default() %}
+{% set blocks_search_result_id = blocks_search_result_id|default() %}
 {% set blocks_search_result_title = blocks_search_result_title|default() %}
 {% set blocks_search_result_href = blocks_search_result_href|default() %}
 {% set blocks_search_result_description = block('blocks_search_result_description') %}
@@ -6,7 +30,8 @@
 
 {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" with
     {
-        "block_default_classes": "block--search-result " ~  blocks_search_results_classes
+        "block_default_classes": "block--search-result " ~  blocks_search_results_classes,
+        "block_default_id": blocks_search_result_id
     }
 %}
     {% block block_content %}

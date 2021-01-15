@@ -1,3 +1,25 @@
+{#
+    ---
+    title: Search Chips Block
+    ---
+
+    Type: Molecules -> Blocks
+
+    Description:
+        Use this component in tandem with the Filters Component to display the selected filters. Place this component under the search bar.
+
+    Parameters:
+        block_search_chips_classes: Additional block classes.
+        block_search_chips_data: An array of search chip objects. Structure: {"text": "", "url": ""}. The URL should be the link to remove the chip.
+        block_search_chips_clear: A URL hooked to the clear button that removes all search chips.
+
+    Includes:
+        Atoms -> Buttons -> button-default
+        Atoms -> Text -> text-chip
+
+    Last Updated: January 14, 2021
+#}
+
 {% set block_search_chips_classes = block_search_chips_classes|default() %}
 {% set block_search_chips_data = block_search_chips_data|default() %}
 {% set block_search_chips_clear = block_search_chips_clear|default() %}

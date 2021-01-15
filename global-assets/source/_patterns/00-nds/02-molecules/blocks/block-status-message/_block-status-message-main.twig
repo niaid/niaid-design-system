@@ -1,8 +1,33 @@
 {#
-    block_status_message_type: message--information, message--warning, message--success, message--error
+    ---
+    title: Status Message Block
+    ---
+
+    Type: Molecules -> Blocks
+
+    Description:
+        Status messages are used to convery important information to users. There are four types of status messages - Success, Information, Warning, and Error:
+            - Success: Used to indicate a user has completed an important step or call to action.
+            - Information: Used to call out an important snippet of information a user could find useful at-a-glance.
+            - Warning: Used to slow a reader down if skimming through the content. Indicates the user may need to take action before moving on.
+            - Error: Used in rare cases where a user should stop reading or moving forward and take additional action.
+
+    Blocks:
+        {% block block_status_message_content %}: The status message HTML content.
+
+    Parameters:
+        block_status_message_classes: Additional status message classes.
+        block_status_message_id: Status message ID.
+        block_status_message_type: The type of status message (required). Options: "message--success", "message--information", "message--warning", "message--error".
+
+    Includes:
+        Atoms -> Icons -> icon-default
+
+    Last Updated: January 14, 2021
 #}
 
 {% set block_status_message_classes = block_status_message_classes|default() %}
+{% set block_status_message_id = block_status_message_id|default() %}
 {% set block_status_message_type = block_status_message_type|default() %}
 
 {% if block_status_message_type == 'message--information' %}
@@ -17,7 +42,7 @@
     {% set block_status_message_icon = 'question-circle' %}
 {% endif %}
 
-<div class="block-nds block--status-message {{ block_status_message_type }} {{ block_status_message_classes }}">
+<div class="block-nds block--status-message {{ block_status_message_type ~ " " ~ block_status_message_classes }}"{% if block_status_message_id is not empty %} id="{{ block_status_message_id }}"{% endif %}>
     <div class="block--status-message__icon">
         {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
             {

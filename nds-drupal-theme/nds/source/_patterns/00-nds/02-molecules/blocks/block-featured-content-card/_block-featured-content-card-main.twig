@@ -1,4 +1,31 @@
+{#
+    ---
+    title: Featured Content Card Block
+    ---
+
+    Type: Molecules -> Blocks
+
+    Description:
+        Featured Content Cards are useful blocks designed to highlight your most important content. Each feature includes a title, an image, and a short description of the content.
+
+    Parameters:
+        block_featured_content_card_classes: Additional block classes.
+        block_featured_content_card_id: Block ID.
+        block_featured_content_card_src: The path to the featured image.
+        block_featured_content_card_alt: Alt text for the featured image.
+        block_featured_content_card_title: Title of the featured card.
+        block_featured_content_card_title_link: Optional URL for the linked title.
+        block_featured_content_card_description: Featured card description.
+        block_featured_content_card_featured: Optional text that appears above the title (ex. FEATURED).
+
+    Includes:
+        Atoms -> Images -> image-default
+
+    Last Updated: January 14, 2021
+#}
+
 {% set block_featured_content_card_classes = block_featured_content_card_classes|default() %}
+{% set block_featured_content_card_id = block_featured_content_card_id|default() %}
 {% set block_featured_content_card_src = block_featured_content_card_src|default() %}
 {% set block_featured_content_card_alt = block_featured_content_card_alt|default() %}
 {% set block_featured_content_card_title = block_featured_content_card_title|default() %}
@@ -6,7 +33,7 @@
 {% set block_featured_content_card_description = block_featured_content_card_description|default() %}
 {% set block_featured_content_card_featured = block_featured_content_card_featured|default() %}
 
-<div class="block-nds block--featured-content-card {{ block_featured_content_card_classes }}">
+<div class="block-nds block--featured-content-card {{ block_featured_content_card_classes }}"{% if block_featured_content_card_id is not empty %} id="{{ block_featured_content_card_id }}"{% endif %}>
     <div class="block--featured-content-card__image">
         {% block featured_content_card_image %}
             {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with

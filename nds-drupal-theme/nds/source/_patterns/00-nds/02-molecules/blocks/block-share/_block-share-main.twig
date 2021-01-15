@@ -1,7 +1,29 @@
+{#
+    ---
+    title: Share Block
+    ---
+
+    Type: Molecules -> Blocks
+
+    Description:
+        The Share Block component is a collection of Share Buttons for various social media platforms.
+
+    Parameters:
+        block_share_classes: Additional block classes.
+        block_share_id: Block ID.
+        block_share_data: An array of share button objects. Structure: {"type": "", "icon": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform (ex. Twitter).
+
+    Includes:
+        Atoms -> Buttons -> button-share
+
+    Last Updated: January 14, 2021
+#}
+
 {% set block_share_classes = block_share_classes|default() %}
+{% set block_share_id = block_share_id|default() %}
 {% set block_share_data = block_share_data|default() %}
 
-<div class="block-nds block--share {{ block_share_classes }}">
+<div class="block-nds block--share {{ block_share_classes }}"{% if block_share_id is not empty %} id="{{ block_share_id }}"{% endif %}>
     {% for icon in block_share_data %}
         <div class="block--share__wrapper">
             {% include "@nds/01-atoms/buttons/button-share/_button-share-main.twig" with

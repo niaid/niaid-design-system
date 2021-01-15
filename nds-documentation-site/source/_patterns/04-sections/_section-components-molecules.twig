@@ -18,11 +18,23 @@
         <p>Blocks tend to be non-functional components that are visually distinct from the normal body content.</p>
 
         <h4>Default Block</h4>
-        <p>The default block is a flexible pattern that can be used with almost any content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
+        <p>The default block is a flexible pattern that can be used with almost any HTML content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-default/demo/block-default.twig" %}
                 {% include "@nds/02-molecules/blocks/block-default/demo/block-default-accent.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block block_content %&#125;: The HTML content to appear in the block.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>block_default_classes: Additional block classes.</li>
+                    <li>block_default_id: Block ID.</li>
+                    <li>block_default_accent: Optional accent on the left of the block. Options: true, false (Default).</li>
+                </ul>
             {% endblock %}
         {% endembed %}
 
@@ -32,6 +44,20 @@
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block blocks_search_result_description %&#125;: The description of the search result.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>blocks_search_result_classes: Additional block classes.</li>
+                    <li>blocks_search_result_id: Block ID.</li>
+                    <li>blocks_search_result_title: Search result title.</li>
+                    <li>blocks_search_result_href: Search result target destination URL.</li>
+                    <li>blocks_search_result_date_last_reviewed: Optional date last reviewed of the search result content.</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Search Chips</h4>
@@ -39,6 +65,19 @@
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-search-chips/demo/block-search-chips.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>block_search_chips_classes: Additional block classes.</li>
+                    <li>block_search_chips_data: An array of search chip objects. Structure: {"text": "", "url": ""}. The URL should be the link to remove the chip.</li>
+                    <li>block_search_chips_clear: A URL hooked to the clear button that removes all search chips.</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Buttons -> button-default</li>
+                    <li>Atoms -> Text -> text-chip</li>
+                </ul>
             {% endblock %}
         {% endembed %}
 
@@ -57,6 +96,23 @@
         %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-featured-content-card/demo/block-featured-content-card.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>block_featured_content_card_classes: Additional block classes.</li>
+                    <li>block_featured_content_card_id: Block ID.</li>
+                    <li>block_featured_content_card_src: The path to the featured image.</li>
+                    <li>block_featured_content_card_alt: Alt text for the featured image.</li>
+                    <li>block_featured_content_card_title: Title of the featured card.</li>
+                    <li>block_featured_content_card_title_link: Optional URL for the linked title.</li>
+                    <li>block_featured_content_card_description: Featured card description.</li>
+                    <li>block_featured_content_card_featured: Optional text that appears above the title (ex. FEATURED).</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Images -> image-default</li>
+                </ul>
             {% endblock %}
         {% endembed %}
 
@@ -86,6 +142,18 @@
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-alert/demo/block-alert.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block block_alert_content %&#125;: The alert HTML content.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>block_alert_classes: Additional alert classes.</li>
+                    <li>block_alert_id: Alert ID.</li>
+                    <li>block_alert_severity_level: The alert severity level. Options: "1" (Default), "2", "3", "4".</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Status Message Block</h4>
@@ -100,24 +168,51 @@
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-status-message/demo/block-status-message.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block block_status_message_content %&#125;: The status message HTML content.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>block_status_message_classes: Additional status message classes.</li>
+                    <li>block_status_message_id: Status message ID.</li>
+                    <li>block_status_message_type: The type of status message (required). Options: "message--success", "message--information", "message--warning", "message--error".</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Icons -> icon-default</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
         
         <h4>Hero Block</h4>
         <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a Parallax effect courtest of the Materialize library.</p>
         <p>When selecting imagery for the hero, it is recommended to choose images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
         <p>The Hero Block pattern optionally includes the abiliity to add breadcrumbs to the top.</p>
-        <h5>Pattern Usage</h5>
-        <p>The Hero Block pattern requires users to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-hero/demo/block-hero.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>The Hero Block pattern requires users to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block block_hero_image %&#125;: The hero image, passed in as a &lt;img&gt; tag.</li>
+                    <li>&#123;% block block_hero_breadcrumbs %&#125;: Optional block to include breadcrumbs (ex. the NDS Breadcrumb pattern).</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>block_hero_classes: Additional hero classes.</li>
+                    <li>block_hero_id: Hero ID.</li>
+                    <li>block_hero_overlay_color: An optional class used to apply a color to the hero overlay. This class must contain a background color with an opacity less than 1.</li>
+                </ul>
             {% endblock %}
         {% endembed %}
 
         <h4>Share Block</h4>
         <p>The Share Block component is a collection of Share Buttons for various social media platforms.</p>
-        <h5>Pattern Usage</h5>
-        <p>The Share Block component uses a loop to render the Share Buttons. Pass data to the "block_share_data" parameter to generate each button.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_classes": "component--snippet--block-share"
@@ -126,13 +221,38 @@
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-share/demo/block-share.twig" %}
             {% endblock %}
+             {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>The Share Block component uses a loop to render the Share Buttons. Pass data to the "block_share_data" parameter to generate each button.</p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>block_share_classes: Additional block classes.</li>
+                    <li>block_share_id: Block ID.</li>
+                    <li>block_share_data: An array of share button objects. Structure: {"type": "", "icon": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform (ex. Twitter).</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Buttons -> button-share</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
-        <h4>Was This Page Helpful? Block</h4>
+        <h4>Was This Page Helpful? (WTPH) Block</h4>
         <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in functionality, meaning users will need to add their own functions and input handling.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-wtph/demo/block-wtph.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>block_wtph_classes: Additional block classes.</li>
+                    <li>block_wtph_id: Block ID.</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Buttons -> button-default</li>
+                </ul>
             {% endblock %}
         {% endembed %}
     {% endblock %}
