@@ -1,3 +1,36 @@
+{#
+    ---
+    title: Branding Component
+    ---
+
+    Type: Molecules -> Components
+
+    Description:
+        The NDS Branding component makes it easy to comply with NIAID's Digital Policy surrounding web property identification.
+
+        Add your product identity using one or both of the following parameters:
+            - component_branding_identity_top
+            - component_branding_identity_bottom
+
+        If only one of these parameters is used, your product identity will be centered on one line (unless it exceeds a certain width).
+
+    Parameters:
+        component_branding_classes: Additional component classes.
+        component_branding_href: URL for the logo (Default: "/").
+        component_branding_logo_src: Path to the logo image (Default: "global/niaid/logo-niaid.svg").
+        component_branding_logo_alt: Alternative text for the logo (Default: "NIAID Logo").
+        component_branding_logo_mobile_src: Path to the logo image for mobile displays (Default: "global/niaid/logo-niaid-mobile.svg").
+        component_branding_logo_mobile_alt: Alternative text for the mobile logo (Default: "NIAID Logo").
+        component_branding_identity_top: The top line of the product identity (name).
+        component_branding_identity_bottom: The bottom line of the product identity (name).
+
+    Includes:
+        Atoms -> Images -> image-default
+        Atoms -> Text -> text-product-identity
+
+    Last Updated: January 15, 2021
+#}
+
 {% set component_branding_classes = component_branding_classes|default() %}
 {% set component_branding_href = component_branding_href|default('/') %}
 {% set component_branding_logo_src = component_branding_logo_src|default('global/niaid/logo-niaid.svg') %}
@@ -23,10 +56,10 @@
         }
     %}
     <div class="component--branding__vertical-bar"></div>
-    {% include "@nds/02-molecules/components/component-product-identity/_component-product-identity-main.twig" with
+    {% include "@nds/01-atoms/text/text-product-identity/_text-product-identity-main.twig" with
         {
-            "component_product_identity_top": component_branding_identity_top,
-            "component_product_identity_bottom": component_branding_identity_bottom
+            "text_product_identity_top": component_branding_identity_top,
+            "text_product_identity_bottom": component_branding_identity_bottom
         }
     %}
 </a>

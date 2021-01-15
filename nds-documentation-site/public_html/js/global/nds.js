@@ -22,28 +22,6 @@ function windowWidth() {
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
 }
 
-(function ($) {
-  function init_layouts_tabs(context) {
-    $('#tab--mockup').attr('tabindex', '-1');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.layoutsTabs = {
-        attach: function attach(context) {
-          init_layouts_tabs(context);
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      init_layouts_tabs();
-    });
-  }
-})(jQuery);
-
 $(document).ready(function () {
   var mql = window.matchMedia('all and (min-width: 992px)');
   var wWidth = $(window).width();
@@ -66,6 +44,28 @@ $(document).ready(function () {
     }
   });
 });
+
+(function ($) {
+  function init_layouts_tabs(context) {
+    $('#tab--mockup').attr('tabindex', '-1');
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.layoutsTabs = {
+        attach: function attach(context) {
+          init_layouts_tabs(context);
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      init_layouts_tabs();
+    });
+  }
+})(jQuery);
 
 (function ($) {
   function initComponentScrollspySection() {
@@ -606,13 +606,13 @@ $(document).ready(function () {
         var style = tempArr.split('--')[tempArr.split('--').length - 1];
         var name = $(this).siblings('input').attr('name');
         if (name == "form--product-identity__inputs__top") {
-            $('.component--product-identity__top').toggleClass(style);
+            $('.text--product-identity__top').toggleClass(style);
             var styles = state["productIDTopStyles"];
             styles = toggleElement(styles, style);
             state = updateState(state, { "productIDTopStyles":  styles});
         }
         if (name == "form--product-identity__inputs__bottom") {
-            $('.component--product-identity__bottom').toggleClass(style);
+            $('.text--product-identity__bottom').toggleClass(style);
             var styles = state["productIDBottomStyles"];
             styles = toggleElement(styles, style);
             state = updateState(state, { "productIDBottomStyles":  styles});
@@ -725,12 +725,12 @@ $(document).ready(function () {
 
     if (state.productIDTop != "") {
       $('#form--product-identity__inputs__top').val(state.productIDTop);
-      $('.main').find('.component--product-identity__top').text(state.productIDTop);
+      $('.main').find('.text--product-identity__top').text(state.productIDTop);
     }
 
     if (state.productIDBottom != "") {
       $('#form--product-identity__inputs__bottom').val(state.productIDBottom);
-      $('.main').find('.component--product-identity__bottom').text(state.productIDBottom);
+      $('.main').find('.text--product-identity__bottom').text(state.productIDBottom);
     }
 
     if (state.productIDTop != "" || state.productIDBottom != "") {
@@ -742,20 +742,20 @@ $(document).ready(function () {
   function updateProductID(state, inputID) {
     if ($('#form--product-identity__inputs__top').val() == "" && $('#form--product-identity__inputs__bottom').val() == "") {
       $('.main').find('.component--branding__vertical-bar').css('display', 'none');
-      $('.main').find('.component--product-identity__top').text("");
-      $('.main').find('.component--product-identity__bottom').text("");
+      $('.main').find('.text--product-identity__top').text("");
+      $('.main').find('.text--product-identity__bottom').text("");
     } else {
       $('.main').find('.component--branding__vertical-bar').css('display', 'inline-block');
 
       if (inputID.name == "form--product-identity__inputs__top") {
-        $('.main').find('.component--product-identity__top').text(inputID.value);
+        $('.main').find('.text--product-identity__top').text(inputID.value);
         return updateState(state, {
           "productIDTop": inputID.value
         });
       }
 
       if (inputID.name == "form--product-identity__inputs__bottom") {
-        $('.main').find('.component--product-identity__bottom').text(inputID.value);
+        $('.main').find('.text--product-identity__bottom').text(inputID.value);
         return updateState(state, {
           "productIDBottom": inputID.value
         });
@@ -856,200 +856,6 @@ $(document).ready(function () {
     });
   }
 })(jQuery);
-
-(function ($) {
-  function initBlockHero() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.parallax').length) {
-      var elems = document.querySelectorAll('.parallax');
-      var instances = M.Parallax.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
-        attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initBlockHero();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initComponentLightbox() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentLightbox = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-lightbox').each(function () {
-            initComponentLightbox(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentLightbox();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initComponentModal() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.component--modal').length) {
-      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-      var modalsList = document.getElementsByClassName("component--modal");
-
-      var _loop = function _loop() {
-        var firstFocusableElement = modalsList[i].querySelectorAll(focusableElements)[0];
-        var focusableContent = modalsList[i].querySelectorAll(focusableElements);
-        var lastFocusableElement = focusableContent[focusableContent.length - 1];
-        document.addEventListener('keydown', function (e) {
-          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-
-          if (!isTabPressed) {
-            return;
-          }
-
-          if (e.shiftKey) {
-            if (document.activeElement === firstFocusableElement) {
-              lastFocusableElement.focus();
-              e.preventDefault();
-            }
-          } else {
-            if (document.activeElement === lastFocusableElement) {
-              firstFocusableElement.focus();
-              e.preventDefault();
-            }
-          }
-        });
-        firstFocusableElement.focus();
-      };
-
-      for (var i = 0; i < modalsList.length; i++) {
-        _loop();
-      }
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentModal = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-modal').each(function () {
-            initComponentModal(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentModal();
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initNavigationDrawer();
-}); // initNavigationDrawer - Functionality to support the NDS mobile drawer.
-
-function initNavigationDrawer() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var wWidth = windowWidth();
-  document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
-    document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
-    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
-    overlay.style.display = 'block';
-    document.querySelector('.navigation--drawer__top__button-close').focus();
-    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
-
-    for (var i = 0; i < tabElements.length; i++) {
-      tabElements[i].setAttribute('tabindex', '0');
-    }
-  });
-  document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
-    closeMenu();
-  });
-  document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
-    closeMenu();
-  });
-
-  window.onresize = function (e) {
-    if (wWidth != windowWidth()) {
-      wWidth = windowWidth();
-      closeMenu();
-    }
-  }; // 508 Compliance Focus Helpers
-
-
-  document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
-    document.querySelector('.navigation--drawer__top__button-close').focus();
-  });
-  document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
-    var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
-    tabElements[tabElements.length - 1].focus();
-  });
-} // closeMenu - Helper function to close the mobile drawer.
-
-
-function closeMenu() {
-  document.querySelector('#global-mobile-menu').focus();
-  document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
-  var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
-  overlay.style.display = 'none';
-  var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
-
-  for (var i = 0; i < tabElements.length; i++) {
-    tabElements[i].setAttribute('tabindex', '-1');
-  }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initNavigationLocal();
-}); // initNavigationLocal - Functionality to support the local navigation pattern, specifically adding keyboard accessibility.
-
-function initNavigationLocal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-  if (document.querySelectorAll('.navigation--local').length) {
-    var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
-
-    for (var i = 0; i < localNavigationItems.length; i++) {
-      localNavigationItems[i].addEventListener("keydown", function (event) {
-        if (event.isComposing || event.keyCode === 13) {
-          this.click();
-        }
-      });
-    }
-  }
-}
 
 (function ($) {
   function initInputNDS() {
@@ -1214,48 +1020,6 @@ function initLinkExternalMailto() {
   for (var i = 0; i < mailtoLinks.length; i++) {
     mailtoLinks[i].classList.add('link--external--mail');
   }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initDataAttributes();
-}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-
-function initDataAttributes() {
-  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
-    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-
-    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
-
-    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-  }
-} // setDataAttributes - Helper function to add data attributes to elements.
-
-
-function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-  for (var i = 0; i < els.length; i++) {
-    var linkText = els[i].textContent.trim();
-
-    if (linkText !== "") {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-    }
-  }
 } // Dependencies
 //  - DataTables
 //  - jQuery
@@ -1317,4 +1081,240 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       initTableDefault();
     });
   }
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initDataAttributes();
+}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+
+function initDataAttributes() {
+  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
+    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+
+    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+  }
+} // setDataAttributes - Helper function to add data attributes to elements.
+
+
+function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+  for (var i = 0; i < els.length; i++) {
+    var linkText = els[i].textContent.trim();
+
+    if (linkText !== "") {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    }
+  }
+}
+
+(function ($) {
+  function initComponentLightbox() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentLightbox = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-lightbox').each(function () {
+            initComponentLightbox(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentLightbox();
+    });
+  }
 })(jQuery);
+
+(function ($) {
+  function initComponentModal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.component--modal').length) {
+      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      var modalsList = document.getElementsByClassName("component--modal");
+
+      var _loop = function _loop() {
+        var firstFocusableElement = modalsList[i].querySelectorAll(focusableElements)[0];
+        var focusableContent = modalsList[i].querySelectorAll(focusableElements);
+        var lastFocusableElement = focusableContent[focusableContent.length - 1];
+        document.addEventListener('keydown', function (e) {
+          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+          if (!isTabPressed) {
+            return;
+          }
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
+          }
+        });
+        firstFocusableElement.focus();
+      };
+
+      for (var i = 0; i < modalsList.length; i++) {
+        _loop();
+      }
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentModal = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-modal').each(function () {
+            initComponentModal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentModal();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.parallax').length) {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initNavigationDrawer();
+}); // initNavigationDrawer - Functionality to support the NDS mobile drawer.
+
+function initNavigationDrawer() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var wWidth = windowWidth();
+  document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
+    document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
+    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+    overlay.style.display = 'block';
+    document.querySelector('.navigation--drawer__top__button-close').focus();
+    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+    for (var i = 0; i < tabElements.length; i++) {
+      tabElements[i].setAttribute('tabindex', '0');
+    }
+  });
+  document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
+    closeMenu();
+  });
+  document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
+    closeMenu();
+  });
+
+  window.onresize = function (e) {
+    if (wWidth != windowWidth()) {
+      wWidth = windowWidth();
+      closeMenu();
+    }
+  }; // 508 Compliance Focus Helpers
+
+
+  document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
+    document.querySelector('.navigation--drawer__top__button-close').focus();
+  });
+  document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
+    var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
+    tabElements[tabElements.length - 1].focus();
+  });
+} // closeMenu - Helper function to close the mobile drawer.
+
+
+function closeMenu() {
+  document.querySelector('#global-mobile-menu').focus();
+  document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
+  var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+  overlay.style.display = 'none';
+  var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+  for (var i = 0; i < tabElements.length; i++) {
+    tabElements[i].setAttribute('tabindex', '-1');
+  }
+} // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initNavigationLocal();
+}); // initNavigationLocal - Functionality to support the local navigation pattern, specifically adding keyboard accessibility.
+
+function initNavigationLocal() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+  if (document.querySelectorAll('.navigation--local').length) {
+    var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
+
+    for (var i = 0; i < localNavigationItems.length; i++) {
+      localNavigationItems[i].addEventListener("keydown", function (event) {
+        if (event.isComposing || event.keyCode === 13) {
+          this.click();
+        }
+      });
+    }
+  }
+}

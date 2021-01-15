@@ -145,6 +145,7 @@
         </section>
         <div class="global-nds global--header ">
 
+
             <a href="/" class="component-nds component--branding ">
 
 
@@ -154,9 +155,10 @@
                 <div class="component--branding__vertical-bar"></div>
 
 
-                <div class="component-nds component--product-identity  ">
-                    <div class="component--product-identity__top">Design System</div>
-                    <div class="component--product-identity__bottom"></div>
+
+                <div class="text-nds text--product-identity  ">
+                    <div class="text--product-identity__top">Design System</div>
+                    <div class="text--product-identity__bottom"></div>
                 </div>
             </a>
             <div>
@@ -320,6 +322,7 @@
                 <div class="layouts--main__column layouts--main__first col-lg-3">
 
                     <div class="navigation-nds navigation--mobile-rail ">
+
 
                         <div class="component-nds component--accordion " id="navigation--mobile-rail">
                             <div id="navigation--mobile-rail__button">
@@ -4379,6 +4382,7 @@
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
 
+
                                             <div class="component-nds component--accordion " id="accordion1">
                                                 <div class="component--accordion__card">
                                                     <div class="component--accordion__card__header" id="headingOne">
@@ -4434,6 +4438,7 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
+
                                                 <div class="component-nds component--accordion " id="accordion1">
                                                     <div class="component--accordion__card">
                                                         <div class="component--accordion__card__header" id="headingOne">
@@ -4480,22 +4485,37 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Overview</h5>
+                                            <p>The Accordion pattern is simply a wrapper designed to container Bootstrap Accordion markup. Please reference the demo or <a href="https://getbootstrap.com/docs/4.0/components/collapse/">Bootstrap's Collapse Documentation</a> for more information.</p>
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block component_accordion_content %&#125;: The Bootstrap markup for accordions.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>component_accordion_classes: Additional accordion classes.</li>
+                                                <li>component_accordion_id: Accordion ID.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Branding Component</h4>
                             <p>The NDS Branding component makes it easy to comply with NIAID's Digital Policy surrounding web property identification.</p>
-                            <h5>Pattern Usage</h5>
-                            <p>Add your product identity using one or both of the following parameters:</p>
-                            <ul>
-                                <li>component_branding_identity_top</li>
-                                <li>component_branding_identity_bottom</li>
-                            </ul>
-                            <p>If only one of these parameters is used, your product identity will be centered on one line (unless it exceeds a certain width).</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
                                     <div class="component--snippet__block__code">
                                         <div class="component--snippet__block__code__rendered">
+
 
                                             <a href="/" class="component-nds component--branding ">
 
@@ -4506,9 +4526,10 @@
                                                 <div class="component--branding__vertical-bar"></div>
 
 
-                                                <div class="component-nds component--product-identity  both-top-bottom">
-                                                    <div class="component--product-identity__top">NIAID</div>
-                                                    <div class="component--product-identity__bottom">Design System</div>
+
+                                                <div class="text-nds text--product-identity  both-top-bottom">
+                                                    <div class="text--product-identity__top">NIAID</div>
+                                                    <div class="text--product-identity__bottom">Design System</div>
                                                 </div>
                                             </a>
                                         </div>
@@ -4534,6 +4555,7 @@
                                         <div class="component--snippet__block__code__wrapper">
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
+
                                                 <a href="/" class="component-nds component--branding ">
 
 
@@ -4543,9 +4565,10 @@
                                                     <div class="component--branding__vertical-bar"></div>
 
 
-                                                    <div class="component-nds component--product-identity  both-top-bottom">
-                                                        <div class="component--product-identity__top">NIAID</div>
-                                                        <div class="component--product-identity__bottom">Design System</div>
+
+                                                    <div class="text-nds text--product-identity  both-top-bottom">
+                                                        <div class="text--product-identity__top">NIAID</div>
+                                                        <div class="text--product-identity__bottom">Design System</div>
                                                     </div>
                                                 </a>
                                             </div>
@@ -4562,12 +4585,43 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Overview</h5>
+                                            <p>Add your product identity using one or both of the following parameters:</p>
+                                            <ul>
+                                                <li>component_branding_identity_top</li>
+                                                <li>component_branding_identity_bottom</li>
+                                            </ul>
+                                            <p>If only one of these parameters is used, your product identity will be centered on one line (unless it exceeds a certain width).</p>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>component_branding_classes: Additional component classes.</li>
+                                                <li>component_branding_href: URL for the logo (Default: "/").</li>
+                                                <li>component_branding_logo_src: Path to the logo image (Default: "global/niaid/logo-niaid.svg").</li>
+                                                <li>component_branding_logo_alt: Alternative text for the logo (Default: "NIAID Logo").</li>
+                                                <li>component_branding_logo_mobile_src: Path to the logo image for mobile displays (Default: "global/niaid/logo-niaid-mobile.svg").</li>
+                                                <li>component_branding_logo_mobile_alt: Alternative text for the mobile logo (Default: "NIAID Logo").</li>
+                                                <li>component_branding_identity_top: The top line of the product identity (name).</li>
+                                                <li>component_branding_identity_bottom: The bottom line of the product identity (name).</li>
+                                            </ul>
+                                            <h5>Includes</h5>
+                                            <ul>
+                                                <li>Atoms -> Images -> image-default</li>
+                                                <li>Atoms -> Text -> text-product-identity</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>USWDS Banner Component</h4>
                             <p>The USWDS Banner component helps assure users that the site they are visiting is an official government site. This banner is placed at the very top of website pages.</p>
-                            <h5>Pattern Usage</h5>
-                            <p>This pattern relies on the USWDS CSS and JS files included with NDS. Be sure that these files are included in your project if using the USWDS Banner component.</p>
 
                             <div class="block-nds block--dependencies ">
                                 <div class="block--dependencies__label">Dependencies:</div>
@@ -4713,6 +4767,22 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Overview</h5>
+                                            <p>This pattern relies on the USWDS CSS and JS files included with NDS. Be sure that these files are included in your project if using the USWDS Banner component.</p>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>component_uswds_banner_classes: Additional banner classes.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <h4>Media Component</h4>
@@ -4808,6 +4878,34 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Overview</h5>
+                                            <p>If you would like to include the lightbox from Materialize, you must include the Materialize script and pass "yes" to the component_media_lightbox parameter.</p>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>component_media_classes: Additional media component classes.</li>
+                                                <li>component_media_src: Path to the image.</li>
+                                                <li>component_media_alt: Alternative text for the image.</li>
+                                                <li>component_media_caption: Caption text to appear below the image.</li>
+                                                <li>component_media_credit: Credit text to appear below the image.</li>
+                                                <li>component_media_credit_label: The label to appear before the credit text (Default: "Credit:").</li>
+                                                <li>component_media_float: The direction to float the component (optional). Options: "left", "right".</li>
+                                                <li>component_media_lightbox: A parameter to determine if the image should include the Materialize lightbox feature. Options: "yes".</li>
+                                            </ul>
+                                            <h5>Includes</h5>
+                                            <ul>
+                                                <li>Atoms -> Images -> image-default</li>
+                                                <li>Atoms -> Text -> text-image-credit-caption</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -4907,6 +5005,32 @@
                                                     <span class="button--icon__text icon--left">Copy</span>
                                                 </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block component_modal_header %&#125;: Content to appear at the top of the modal (ex. Modal title).</li>
+                                                <li>&#123;% block component_modal_content %&#125;: The main content to appear within the modal.</li>
+                                                <li>&#123;% block component_modal_footer %&#125;: Content to appear at the bottom of the modal.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>component_modal_trigger_classes: Additional classes on the wrapper around the modal trigger (ex. button).</li>
+                                                <li>component_modal_id: Modal ID.</li>
+                                                <li>component_modal_classes: Additional modal classes.</li>
+                                            </ul>
+                                            <h5>Includes</h5>
+                                            <ul>
+                                                <li>Atoms -> Icons -> icon-default</li>
+                                            </ul>
+
                                         </div>
                                     </div>
                                 </div>
@@ -6083,6 +6207,7 @@
 
                                             <div class="navigation-nds navigation--mobile-rail ">
 
+
                                                 <div class="component-nds component--accordion " id="navigation--mobile-rail">
                                                     <div id="navigation--mobile-rail__button">
                                                         <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Left Rail</button>
@@ -6117,6 +6242,7 @@
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
                                                 <div class="navigation-nds navigation--mobile-rail ">
+
 
                                                     <div class="component-nds component--accordion " id="navigation--mobile-rail">
                                                         <div id="navigation--mobile-rail__button">
@@ -6194,6 +6320,7 @@
 
                                                         <i class="icon-nds icon--default fas fa-bars "></i>
                                                     </button>
+
                                                     <a href="/" class="component-nds component--branding ">
 
 
@@ -6203,9 +6330,10 @@
                                                         <div class="component--branding__vertical-bar"></div>
 
 
-                                                        <div class="component-nds component--product-identity  ">
-                                                            <div class="component--product-identity__top"></div>
-                                                            <div class="component--product-identity__bottom"></div>
+
+                                                        <div class="text-nds text--product-identity  ">
+                                                            <div class="text--product-identity__top"></div>
+                                                            <div class="text--product-identity__bottom"></div>
                                                         </div>
                                                     </a>
                                                     <div class="form-nds form--search ">

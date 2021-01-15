@@ -245,13 +245,13 @@
             var style = tempArr.split('--')[tempArr.split('--').length - 1];
             var name = $(this).siblings('input').attr('name');
             if (name == "form--product-identity__inputs__top") {
-                $('.component--product-identity__top').toggleClass(style);
+                $('.text--product-identity__top').toggleClass(style);
                 var styles = state["productIDTopStyles"];
                 styles = toggleElement(styles, style);
                 state = updateState(state, { "productIDTopStyles":  styles});
             }
             if (name == "form--product-identity__inputs__bottom") {
-                $('.component--product-identity__bottom').toggleClass(style);
+                $('.text--product-identity__bottom').toggleClass(style);
                 var styles = state["productIDBottomStyles"];
                 styles = toggleElement(styles, style);
                 state = updateState(state, { "productIDBottomStyles":  styles});
@@ -367,11 +367,11 @@
 
         if (state.productIDTop != "") {
             $('#form--product-identity__inputs__top').val(state.productIDTop);
-            $('.main').find('.component--product-identity__top').text(state.productIDTop);
+            $('.main').find('.text--product-identity__top').text(state.productIDTop);
         }
         if (state.productIDBottom != "") {
             $('#form--product-identity__inputs__bottom').val(state.productIDBottom);
-            $('.main').find('.component--product-identity__bottom').text(state.productIDBottom);
+            $('.main').find('.text--product-identity__bottom').text(state.productIDBottom);
         }
         if (state.productIDTop != "" || state.productIDBottom != "") {
             $('.main').find('.component--branding__vertical-bar').css('display', 'inline-block');
@@ -382,16 +382,16 @@
     function updateProductID(state, inputID) {
         if ($('#form--product-identity__inputs__top').val() == "" && $('#form--product-identity__inputs__bottom').val() == "") {
             $('.main').find('.component--branding__vertical-bar').css('display', 'none');
-            $('.main').find('.component--product-identity__top').text("");
-            $('.main').find('.component--product-identity__bottom').text("");
+            $('.main').find('.text--product-identity__top').text("");
+            $('.main').find('.text--product-identity__bottom').text("");
         } else {
             $('.main').find('.component--branding__vertical-bar').css('display', 'inline-block');
             if (inputID.name == "form--product-identity__inputs__top") {
-                $('.main').find('.component--product-identity__top').text(inputID.value);
+                $('.main').find('.text--product-identity__top').text(inputID.value);
                 return updateState(state, { "productIDTop": inputID.value });
             }
             if (inputID.name == "form--product-identity__inputs__bottom") {
-                $('.main').find('.component--product-identity__bottom').text(inputID.value);
+                $('.main').find('.text--product-identity__bottom').text(inputID.value);
                 return updateState(state, { "productIDBottom": inputID.value });
             }
         }
