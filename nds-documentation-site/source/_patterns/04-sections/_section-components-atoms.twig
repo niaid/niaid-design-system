@@ -465,7 +465,7 @@
     {% block component_scrollspy_section_content %}
         <h3>Layouts</h3>
         <h4>Site Layout</h4>
-        <p>The Site Layout component provides a generally framework for a NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility:</p>
+        <p>The Site Layout component provides a general framework for a NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_show_rendered": "no"
@@ -592,6 +592,7 @@
         {% endembed %}
 
         <h4>Link with Icon</h4>
+        <p>A link pattern that allows for an icon to be included with the link text.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/links/link-icon/demo/link-icon-left.twig" %}
@@ -607,6 +608,38 @@
                     <li>link_icon_type: Font Awesome icon name.</li>
                     <li>link_icon_weight: Font Awesome icon weight. Options: 'r', 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                     <li>link_icon_icon_classes: Additional classes for the icon.</li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}
+<hr>
+{% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+    {
+        "component_scrollspy_section_id": "section-components-atoms-lists"
+    }
+%}
+    {% block component_scrollspy_section_content %}
+        <h3>Lists</h3>
+        <h4>Links List</h4>
+        <p>A pattern used to generate a list of links. The links may optionally include icons.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/01-atoms/lists/list-links/demo/list-links.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>This pattern can be used to generate a list of links with or without icons. To include icons, all icon parameters must be supplied as part of the list_links_data objects.</p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>list_links_classes: Additional list classes.</li>
+                    <li>list_links_data: An array of link objects. Structure: {"text": "", "href": "", "icon": "", "weight": "", "position": ""}. Position options should be either "left" or "right".</li>
+                    <li>list_links_type: The type of list to generate. Options: "ul" (Default), "ol".</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Links -> link-icon</li>
+                    <li>Atoms -> Links -> link-default</li>
                 </ul>
             {% endblock %}
         {% endembed %}

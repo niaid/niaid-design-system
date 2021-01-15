@@ -1,3 +1,28 @@
+{#
+    ---
+    title: Site Layout
+    ---
+
+    Type: Atoms -> Layout
+
+    Description:
+        The Site Layout component provides a general framework for a NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility.
+
+        The Site Layout component is generally embedded in a template or page to provide a page with structure. Content is passed and positioned within the layout with block statements. Blocks do not have to be defined and will not render unless content is passed.
+
+    Blocks:
+        {% block header %}: Typically contains the website header.
+        {% block global_navigation %}: Typically contains the website's primary navigation.
+        {% block hero %}: Typically contains a hero component.
+        {% block main %}: Typically contains the main website content.
+        {% block footer %}: Typically contains the website footer.
+
+    Parameters:
+        layouts_site_id - Layout ID.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set layouts_site_id = layouts_site_id|default() %}
 
 <div class="page" id="{{ layouts_site_id }}">

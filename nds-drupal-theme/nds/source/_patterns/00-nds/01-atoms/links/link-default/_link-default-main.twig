@@ -1,3 +1,22 @@
+{#
+    ---
+    title: Link Default
+    ---
+
+    Type: Atoms -> Links
+
+    Description:
+        The Default Link pattern can be used to build generic links.
+
+    Parameters:
+        link_default_classes: Additional link classes.
+        link_default_href: The link destination path.
+        link_default_text: The text of the link.
+        link_default_attributes: Additional link attributes.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set link_default_classes = link_default_classes|default() %}
 {% set link_default_href = link_default_href|default() %}
 {% set link_default_text = link_default_text|default() %}

@@ -1,3 +1,32 @@
+{#
+    ---
+    title: Input Select
+    ---
+
+    Type: Atoms -> Input
+
+    Description:
+        A pattern for select input fields, based on Select2.
+
+    Parameters:
+        input_select_classes: Additional select wrapper classes.
+        input_select_id: Select ID.
+        input_select_placeholder: Placeholder text for the select field.
+        input_select_name: Name attribute of the select field.
+        input_select_value: Default value of the select field.
+        input_select_multiple: Bool to determine if multiple options can be selected from the select field. Options: true, false (Default).
+        input_select_tabindex: Tabindex attribute for the select field.
+        input_select_disabled: Bool determining if the input is disabled or not. Options: true, false.
+        input_select_readonly: Bool determining if the input is readonly or not. Options: true, false.
+        input_select_required: Bool determining if the input is required or not. Options: true, false.
+        input_select_always_selected: Bool determining if one select option should be selected at all times. Options true, false (Default).
+
+    Includes:
+        Atoms -> Input -> input-attributes
+
+    Last Updated: January 15, 2021
+#}
+
 {% set input_select_classes = input_select_classes|default() %}
 {% set input_select_id = input_select_id|default() %}
 {% set input_select_placeholder = input_select_placeholder|default() %}
@@ -5,9 +34,9 @@
 {% set input_select_value = input_select_value|default() %}
 {% set input_select_multiple = input_select_multiple|default(false) %}
 {% set input_select_tabindex = input_select_tabindex|default() %}
-{% set input_select_disabled = input_select_disabled|default(false) %}
-{% set input_select_readonly = input_select_readonly|default(false) %}
-{% set input_select_required = input_select_required|default(false) %}
+{% set input_select_disabled = input_select_disabled|default() %}
+{% set input_select_readonly = input_select_readonly|default() %}
+{% set input_select_required = input_select_required|default() %}
 {% set input_select_always_selected = input_select_always_selected|default(false) %}
 
 <div class="input-nds input--select {{ input_select_classes }}">

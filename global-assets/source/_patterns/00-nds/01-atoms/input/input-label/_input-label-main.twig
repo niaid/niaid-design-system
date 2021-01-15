@@ -1,10 +1,33 @@
+{#
+    ---
+    title: Input Label
+    ---
+
+    Type: Atoms -> Input
+
+    Description:
+        A pattern for input labels, found above NDS input fields, or as part of radio and checkboxes.
+
+    Parameters:
+        input_label_id: Label ID.
+        input_label_classes: Additional label classes.
+        input_label_text: The text of the label.
+        input_label_tooltip: Text for an optional tooltip to appear after the label text.
+        input_label_tooltip_icon: Font Awesome icon name (Default: "info-circle").
+        input_label_tooltip_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+
+    Includes:
+        Atoms -> Icons -> icon-default
+
+    Last Updated: January 15, 2021
+#}
+
 {% set input_label_id = input_label_id|default() %}
 {% set input_label_classes = input_label_classes|default() %}
 {% set input_label_text = input_label_text|default() %}
 {% set input_label_tooltip = input_label_tooltip|default() %}
 {% set input_label_tooltip_icon = input_label_tooltip_icon|default('info-circle') %}
 {% set input_label_tooltip_icon_weight = input_label_tooltip_icon_weight|default('s') %}
-
 
 <label class="input-nds input--label {{ input_label_classes }}" for="{{ input_label_id }}" title="{{ input_label_text }}">{{ input_label_text }}
     {% if input_label_tooltip is not empty %}

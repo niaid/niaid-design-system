@@ -1,3 +1,26 @@
+{#
+    ---
+    title: Link with Icon
+    ---
+
+    Type: Atoms -> Links
+
+    Description:
+        A link pattern that allows for an icon to be included with the link text.
+
+    Parameters:
+        link_icon_classes: Additional link classes.
+        link_icon_href: The link destination path.
+        link_icon_text: The text of the link.
+        link_icon_sr_text: Text to be by screen readers only (not displayed visually).
+        link_icon_position: The side of the text the icon will appear on. Options: "left" (Default), "right".
+        link_icon_type: Font Awesome icon name.
+        link_icon_weight: Font Awesome icon weight. Options: 'r', 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+        link_icon_icon_classes: Additional classes for the icon.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set link_icon_classes = link_icon_classes|default() %}
 {% set link_icon_href = link_icon_href|default() %}
 {% set link_icon_text = link_icon_text|default() %}

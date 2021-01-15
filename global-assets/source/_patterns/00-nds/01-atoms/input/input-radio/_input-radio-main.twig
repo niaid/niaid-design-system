@@ -1,8 +1,34 @@
+{#
+    ---
+    title: Input Radio
+    ---
+
+    Type: Atoms -> Input
+
+    Description:
+        A pattern for a single radio.
+
+    Parameters:
+        input_radio_id: Radio ID.
+        input_radio_classes: Radio ID.
+        input_radio_name: Name attribute of the input element.
+        input_radio_label: Text label of the radio option.
+        input_radio_value: Value of the radio option.
+        input_radio_disabled: Bool determining if the input is disabled or not. Options: true, false.
+        input_radio_readonly: Bool determining if the input is readonly or not. Options: true, false.
+        input_radio_required: Bool determining if the input is required or not. Options: true, false.
+
+    Includes:
+        Atoms -> Input -> input-attributes
+        Atoms -> Input -> input-label
+
+    Last Updated: January 15, 2021
+#}
+
 {% set input_radio_id = input_radio_id|default() %}
 {% set input_radio_classes = input_radio_classes|default() %}
 {% set input_radio_name = input_radio_name|default() %}
 {% set input_radio_label = input_radio_label|default() %}
-{% set input_radio_placeholder = input_radio_placeholder|default() %}
 {% set input_radio_value = input_radio_value|default() %}
 {% set input_radio_title = input_radio_title|default() %}
 {% set input_radio_disabled = input_radio_disabled|default() %}

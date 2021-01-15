@@ -1,8 +1,30 @@
+{#
+    ---
+    title: Links List
+    ---
+
+    Type: Atoms -> Lists
+
+    Description:
+        This pattern can be used to generate a list of links with or without icons. To include icons, all icon parameters must be supplied as part of the list_links_data objects.
+
+    Parameters:
+        list_links_classes: Additional list classes.
+        list_links_data: An array of link objects. Structure: {"text": "", "href": "", "icon": "", "weight": "", "position": ""}. Position options should be either "left" or "right".
+        list_links_type: The type of list to generate. Options: "ul" (Default), "ol".
+
+    Includes:
+        Atoms -> Links -> link-icon
+        Atoms -> Links -> link-default
+
+    Last Updated: January 15, 2021
+#}
+
 {% set list_links_classes = list_links_classes|default() %}
 {% set list_links_data = list_links_data|default() %}
-{% set list_links_num = list_links_num|default() %}
+{% set list_links_type = list_links_type|default('ul') %}
 
-<ul class="list-nds list--links {{ list_links_classes }}">
+<{{ list_links_type }} class="list-nds list--links {{ list_links_classes }}">
     {% for link in list_links_data %}
         <li>
             {% if link.icon is not empty %}
@@ -26,4 +48,4 @@
             {% endif %}
         </li>
     {% endfor %}
-</ul>
+</{{ list_links_type }}>
