@@ -1,3 +1,27 @@
+{#
+    ---
+    title: Icon Button
+    ---
+
+    Type: Atoms -> Buttons
+
+    Description:
+        This component allows users to include a Font Awesome icon inside an NDS button.
+
+    Parameters:
+        button_icon_classes: Additional button classes.
+        button_icon_id: Button ID.
+        button_icon_icon: Font Awesome icon name.
+        button_icon_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+        button_icon_icon_position: The side of the button text the icon should appear. Options: "left" (Default) or "right"
+        button_icon_text: Button text.
+        button_icon_attributes: Additional button attributes.
+        button_icon_aria_label: Button aria-label.
+        button_icon_href: Button link destination.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set button_icon_classes = button_icon_classes|default() %}
 {% set button_icon_id = button_icon_id|default() %}
 {% set button_icon_icon = button_icon_icon|default() %}

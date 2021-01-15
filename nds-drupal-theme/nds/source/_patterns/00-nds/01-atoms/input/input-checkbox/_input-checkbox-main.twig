@@ -1,3 +1,29 @@
+{#
+    ---
+    title: Input Checkbox
+    ---
+
+    Type: Atoms -> Input
+
+    Description:
+        A pattern for a single checkbox.
+
+    Parameters:
+        input_checkbox_id: Checkbox ID.
+        input_checkbox_classes: Checkbox ID.
+        input_checkbox_name: Name attribute of the input element.
+        input_checkbox_label: Text label of the checkbox option.
+        input_checkbox_value: Value of the checkbox option.
+        input_checkbox_disabled: Bool determining if the input is disabled or not. Options: true, false.
+        input_checkbox_readonly: Bool determining if the input is readonly or not. Options: true, false.
+        input_checkbox_required: Bool determining if the input is required or not. Options: true, false.
+
+    Includes:
+        Atoms -> Input -> input-attributes
+
+    Last Updated: January 15, 2021
+#}
+
 {% set input_checkbox_id = input_checkbox_id|default() %}
 {% set input_checkbox_classes = input_checkbox_classes|default() %}
 {% set input_checkbox_name = input_checkbox_name|default() %}

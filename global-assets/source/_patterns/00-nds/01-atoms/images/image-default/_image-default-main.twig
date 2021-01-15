@@ -1,3 +1,24 @@
+{#
+    ---
+    title: Image Default
+    ---
+
+    Type: Atoms -> Images
+
+    Description:
+        Default pattern to include images.
+
+    Parameters:
+        image_default_classes: Additional pattern classes
+        image_default_src: The path to the image.
+        image_default_alt: Alt text to describe the image.
+        image_default_width: The desired width of the image (Optional).
+        image_default_height: The desired height of the image (Optional).
+        image_default_attributes: Additional image attributes.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set image_default_classes = image_default_classes|default() %}
 {% set image_default_src = image_default_src|default() %}
 {% set image_default_alt = image_default_alt|default() %}

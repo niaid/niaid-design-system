@@ -368,6 +368,15 @@
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/icons/icon-default/demo/icon-default.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>icon_default_classes: Additional &lt;i&gt; tag classes.</li>
+                    <li>icon_default_type: Font Awesome icon name.</li>
+                    <li>icon_default_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>icon_default_sr_text: Optional text for screen readers only.</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Icon Circle</h4>

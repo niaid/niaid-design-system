@@ -1,3 +1,20 @@
+{#
+    ---
+    title: Icon Loader
+    ---
+
+    Type: Atoms -> Icons
+
+    Description:
+        The Icon Loader pattern from Materialize can be used as visual feedback to your users that the site is processing, receiving, or transmitting information.
+
+    Parameters:
+        icon_loader_classes: Additional pattern classes
+        icon_loader_size: The size of the loader. Options: "small" and "big" (Default)
+
+    Last Updated: January 15, 2021
+#}
+
 {% set icon_loader_classes = icon_loader_classes|default() %}
 {% set icon_loader_size = icon_loader_size|default('big') %}
 

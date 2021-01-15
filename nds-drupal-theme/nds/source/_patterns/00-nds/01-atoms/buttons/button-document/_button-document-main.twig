@@ -3,15 +3,31 @@
     title: Document Button
     ---
 
-    Type: Atoms -> Button
+    Type: Atoms -> Buttons
 
-    Description: A button that contains an image or icon of a document type.
+    Description:
+        Document icons can help users more quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.
+
+        Use the "button_document_type" parameter to choose a type as follows:
+
+            Word - "file-word"
+            Excel - "file-excel"
+            PowerPoint - "file-ppt"
+            PDF - "file-pdf"
+            Image - "image"
+            Video - "video"
+
+        This component can also be used as a static <div>. To use this pattern simply as a decorative element, omit the document_button_href attribute.
 
     Parameters:
-        button_document_classes - Classes used to style the button.
-        button_document_type - The type of document to display. Options: file-word, file-excel, file-powerpoint, file-pdf, image, video
+        button_document_classes: Additional document button classes.
+        button_document_id: Button ID.
+        button_document_type: Type of document button. Options: file-word, file-excel, file-ppt, file-pdf, image, video.
+        button_document_href: Button link destination.
+        button_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+        button_document_attributes: Additional button attributes.
 
-    Last Updated: December 19, 2018
+    Last Updated: January 15, 2021
 #}
 
 {% set button_document_classes = button_document_classes|default() %}

@@ -1,13 +1,38 @@
 {#
    ---
-   title: Icons
+   title: Icon Default
    ---
-   Pattern for including an icon. Icons are from the Font Awesome Library. Access the names of the icons using the [Font Awesome Cheatsheet](https://fontawesome.com/cheatsheet#use).
+
+   Type: Atoms -> Icons
+
+   Description:
+      NDS uses the Font Awesome library for all icons (with the exception of third-party applications and companies). In Font Awesome, icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:
+
+         Solid - fas
+         Brands - fab
+         Regular - fa/far
+     
+      If you have access to Font Awesome Pro, a "Light" icon style (fal) and a Duotone iocn style (fad) are also supported.
+
+      NDS makes using Font Awesome icons easy through its icon-default pattern. This pattern has two key parameters: icon_default_type, and icon_default_weight. For the icon_default_type, simply pass the name of the icon (without the fa-). For weight, pass only the letter corresponding to the desired icon weight:
+
+         Solid - s
+         Brands - b
+         Regular - r
+         Light - l (Pro Only)
+         Duotone - d (Pro Only)
+         
+      Visit the Font Awesome Library to view the full Font Awesome icon library.
+
+      OCGR has a Font Awesome Pro license that may be used under certain circumstances. If you have a need for Font Awesome Pro, please contact OCGR and request access. If you have already received access and are looking for documentation on upgrading from Font Awesome Free, please see our Using Font Awesome Pro with NDS (NPM) guide.
 
    Parameters:
-   icon_default_class - Classes to style the icon.
-   icon_default_type - The icon name. Note: Do not include the "fa-" if present in the name of the icon.
-   icon_default_weight - The Font Awesome style of the icon. Options: - 's' = solid, 'l' = light, 'r' = regular.
+      icon_default_classes: Additional <i> tag classes.
+      icon_default_type: Font Awesome icon name.
+      icon_default_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+      icon_default_sr_text: Optional text for screen readers only.
+
+   Last Updated: January 15, 2021
 #}
 
 {% set icon_default_classes = icon_default_classes|default() %}

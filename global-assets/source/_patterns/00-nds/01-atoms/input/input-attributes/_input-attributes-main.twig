@@ -1,3 +1,27 @@
+{#
+    ---
+    title: Input Attributes
+    ---
+
+    Type: Atoms -> Input
+
+    Description:
+        The input attributes pattern provides several standard attributes needed for input fields. This pattern is used in several other Input Atoms.
+
+    Parameters:
+        input_attributes_id: Input ID.
+        input_attributes_name: Name attribute of the input element.
+        input_attributes_placeholder: Placeholder text of the input element.
+        input_attributes_type: Input type.
+        input_attributes_value: Input default value.
+        input_attributes_tabindex: Input tabindex attribute.
+        input_attributes_disabled: Bool determining if the input is disabled or not. Options: true, false.
+        input_attributes_readonly: Bool determining if the input is readonly or not. Options: true, false.
+        input_attributes_required: Bool determining if the input is required or not. Options: true, false.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set input_attributes_id = input_attributes_id|default() %}
 {% set input_attributes_name = input_attributes_name|default() %}
 {% set input_attributes_placeholder = input_attributes_placeholder|default() %}

@@ -1,3 +1,23 @@
+{#
+    ---
+    title: Image Logo
+    ---
+
+    Type: Atoms -> Images
+
+    Description:
+        You must seek approval to use the NIAID Logo on your website. If you are a NIAID or NIH employee, please review the Requesting the Use of the NIAID Logo page on NIAID's Intranet.
+
+    Parameters:
+        image_logo_classes: Additional pattern classes.
+        image_logo_id: Logo ID.
+        image_logo_src: The path to the image.
+        image_logo_alt: Alt text to describe the image.
+        image_logo_href: Logo link destination, usually "/".
+
+    Last Updated: January 15, 2021
+#}
+
 {% set image_logo_classes = image_logo_classes|default() %}
 {% set image_logo_id = image_logo_id|default() %}
 {% set image_logo_src = image_logo_src|default() %}

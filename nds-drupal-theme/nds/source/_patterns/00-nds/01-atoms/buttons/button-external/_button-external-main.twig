@@ -1,3 +1,25 @@
+{#
+    ---
+    title: External Button
+    ---
+
+    Type: Atoms -> Buttons
+
+    Description:
+        Used specifically for links to external sites displayed as a button.
+
+    Parameters:
+        button_external_classes: Additional button classes.
+        button_external_id: Button ID.
+        button_external_text: Button text.
+        button_external_href: Button link destination.
+        button_external_icon: Font Awesome icon name (Default: external-link-alt).
+        button_external_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+        button_external_attributes: Additional button attributes.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set button_external_classes = button_external_classes|default() %}
 {% set button_external_id = button_external_id|default() %}
 {% set button_external_text = button_external_text|default() %}
