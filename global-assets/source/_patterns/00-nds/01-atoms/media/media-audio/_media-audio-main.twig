@@ -1,3 +1,24 @@
+{#
+    ---
+    title: Media Audio
+    ---
+
+    Type: Atoms -> Media
+
+    Description:
+        The Audio media component provides a way to offer audio content to users.
+
+    Parameters:
+        media_audio_classes: Additional media element classes.
+        media_audio_id: Media element ID.
+        media_audio_src_ogg: Path to the audio source in .ogg format.
+        media_audio_src_mp3: Path to the audio source in .mp3 format.
+        media_audio_src_wav: Path to the audio source in .wav format.
+        media_audio_attributes: Additional media attributes.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set media_audio_classes = media_audio_classes|default() %}
 {% set media_audio_id = media_audio_id|default() %}
 {% set media_audio_src_ogg = media_audio_src_ogg|default() %}

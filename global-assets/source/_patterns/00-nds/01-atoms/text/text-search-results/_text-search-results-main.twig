@@ -1,3 +1,22 @@
+{#
+    ---
+    title: Search Results
+    ---
+
+    Type: Atoms -> Text
+
+    Description:
+        When displaying a set of search results, it is a best practice to include the number of overall results returned. The Search Results component provides a display for this purpose. Place this component directly above the listing of search results.
+
+    Parameters:
+        text_search_results_classes: Additional search results display classes.
+        text_search_results_title_text: Label for the search results. Default: "Results".
+        text_search_results_title_level: The heading level for the results display. Default: "2".
+        text_search_results_title_number: A string of the number of results.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set text_search_results_classes = text_search_results_classes|default() %}
 {% set text_search_results_title_text = text_search_results_title_text|default('Results') %}
 {% set text_search_results_title_level = text_search_results_title_level|default('2') %}

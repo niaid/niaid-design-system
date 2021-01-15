@@ -1,3 +1,28 @@
+{#
+    ---
+    title: Heading with Icon
+    ---
+
+    Type: Atoms -> Text
+
+    Description:
+        This component allows users to include a Font Awesome icon next to a heading.
+
+    Parameters:
+        text_heading_icon_classes: Additional heading classes.
+        text_heading_icon_id: Heading ID.
+        text_heading_level: The heading level. Options: "1" through "6".
+        text_heading_text: The heading text.
+        text_heading_icon: Font Awesome icon name.
+        text_heading_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+        text_heading_icon_position: The side of the heading text that the icon appears on. Options: "left" (Default), "right".
+
+    Includes:
+        Atoms -> Icons -> icon-default
+
+    Last Updated: January 15, 2021
+#}
+
 {% set text_heading_icon_classes = text_heading_icon_classes|default() %}
 {% set text_heading_icon_id = text_heading_icon_id|default() %}
 {% set text_heading_level = text_heading_level|default() %}

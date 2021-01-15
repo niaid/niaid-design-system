@@ -1,3 +1,23 @@
+{#
+    ---
+    title: Credit & Caption Text
+    ---
+
+    Type: Atoms -> Text
+
+    Description:
+        NDS strongly suggests captioning and crediting your images to bolster accessibility and to properly cite sources. The easiest way to use this pattern is by leveraging the Media Component (molecule: component-media), negating the need to use this pattern on its own.
+
+    Parameters:
+        text_image_credit_caption_classes: Additional credit and caption classes.
+        text_image_credit_caption_id: Credit and caption ID.
+        text_image_credit_caption_caption: Caption text.
+        text_image_credit_caption_credit: Credit text.
+        text_image_credit_caption_credit_label: Label for the credit. Default: "Credit:".
+
+    Last Updated: January 15, 2021
+#}
+
 {% set text_image_credit_caption_classes = text_image_credit_caption_classes|default() %}
 {% set text_image_credit_caption_id = text_image_credit_caption_id|default() %}
 {% set text_image_credit_caption_caption = text_image_credit_caption_caption|default() %}

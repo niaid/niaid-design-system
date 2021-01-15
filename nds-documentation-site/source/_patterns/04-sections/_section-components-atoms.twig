@@ -655,6 +655,7 @@
         <h3>Media</h3>
         <p>Audio and video can be effective ways to communicate with your audience, however, each comes with a variety of accessibility requirements. Please review the <a href="https://www.w3.org/WAI/media/av/">guidelines from W3C on how to make your audio or video accessible.</a></p>
         <h4>Audio</h4>
+        <p>The Audio media component provides a way to offer audio content to users.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/media/media-audio/demo/media-audio.twig" %}
@@ -673,6 +674,7 @@
         {% endembed %}
 
         <h4>Video</h4>
+        <p>The Video media component provides a way to offer native video content to users.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/media/media-video/demo/media-video.twig" %}
@@ -694,11 +696,14 @@
         {% endembed %}
 
         <h4>YouTube Video</h4>
+        <p>This components makes it easy to embed YouTube videos on your website.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/media/media-video-youtube/demo/media-video-youtube.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>The "media_video_youtube_src" parameter requires a specific embed URL from YouTube (not to be confused with the regular URL to the video page). To get this embed link, go to the YouTube page you would like to embed. Click "Share" below the video, then "Embed". The needed URL is found as the value for the "src" attribute in the displayed embed code.</p>
                 <h5>Parameters</h5>
                 <ul>
                     <li>media_video_youtube_classes: Additional media element classes.</li>
@@ -802,6 +807,10 @@
                     <li>text_chip_href: A URL that, when navigated to, removes the chip from the filter list.</li>
                     <li>text_chip_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                 </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Icons -> icon-default</li>
+                </ul>
             {% endblock %}
         {% endembed %}
 
@@ -821,6 +830,10 @@
                     <li>text_heading_icon: Font Awesome icon name.</li>
                     <li>text_heading_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                     <li>text_heading_icon_position: The side of the heading text that the icon appears on. Options: "left" (Default), "right".</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Icons -> icon-default</li>
                 </ul>
             {% endblock %}
         {% endembed %}

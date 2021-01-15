@@ -1,3 +1,27 @@
+{#
+    ---
+    title: Media Video
+    ---
+
+    Type: Atoms -> Media
+
+    Description:
+        The Video media component provides a way to offer native video content to users.
+
+    Parameters:
+        media_video_classes: Additional media element classes.
+		media_video_id: Media element ID.
+		media_video_height: Desired height of the video.
+		media_video_width: Desired width of the video.
+		media_video_controls: HTML5 controls attribute for the video.
+		media_video_src_ogv: Path to the video source in .ogv format.
+		media_video_src_mp4: Path to the video source in .mp4 format.
+		media_video_src_webm: Path to the video source in .webm format.
+		media_video_attributes: Additional media attributes.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set media_video_classes = media_video_classes|default() %}
 {% set media_video_id = media_video_id|default() %}
 {% set media_video_height = media_video_height|default() %}

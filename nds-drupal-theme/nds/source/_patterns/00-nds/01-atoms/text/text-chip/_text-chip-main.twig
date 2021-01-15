@@ -1,3 +1,26 @@
+{#
+    ---
+    title: Chip
+    ---
+
+    Type: Atoms -> Text
+
+    Description:
+        Chips are functional indicators of search and filter results. NDS uses a search style wherein selected filters are displayed using chips, allowing users to see exactly what they have searched and filtered on. Selecting the 'x' in the chip should remove the filter from the search.
+
+    Parameters:
+        text_chip_classes: Additional chip classes.
+        text_chip_id: Chip ID.
+        text_chip_text: Chip text.
+        text_chip_href: A URL that, when navigated to, removes the chip from the filter list.
+        text_chip_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+
+    Includes:
+        Atoms -> Icons -> icon-default
+
+    Last Updated: January 15, 2021
+#}
+
 {% set text_chip_classes = text_chip_classes|default() %}
 {% set text_chip_id = text_chip_id|default() %}
 {% set text_chip_text = text_chip_text|default() %}
