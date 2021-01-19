@@ -399,6 +399,18 @@
 
         <h4>Modal Component</h4>
         <p>Modals are windows that open up over the rest of a page's content. Modals are typically used to gather user input or to alert users of pressing information.</p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_data": [
+                    {
+                        "text": "Bootstrap 4"
+                    },
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-modal/demo/component-modal.twig" %}
