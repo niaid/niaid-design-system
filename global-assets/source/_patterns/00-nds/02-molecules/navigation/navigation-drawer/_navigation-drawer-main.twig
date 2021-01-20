@@ -1,7 +1,30 @@
-{% set navigation_drawer_id = navigation_drawer_id|default() %}
-{% set navigation_drawer_classes = navigation_drawer_classes|default() %}
+{#
+    ---
+    title: Navigation Drawer
+    ---
 
-<div id="{{ navigation_drawer_id }}" class="navigation-nds navigation--drawer {{ navigation_drawer_classes }}">
+    Type: Molecules -> Navigation
+
+    Description:
+        When viewing websites on mobile devices, the site navigation often changes to accommodate the smaller screen size. NDS offers a "drawer" style slide out menu where menu links can be added. NDS has pre-made JavaScript functionality that toggles the drawer open and closed on click of a button with an ID of "global-mobile-menu."
+
+    Blocks:
+        {% block navigation_drawer_content %}: The block holding the side drawer markup.
+
+    Parameters:
+        navigation_drawer_classes: Additional classes for the side drawer component.
+        navigation_drawer_id: The side drawer ID.
+
+    Includes:
+        Atoms -> Buttons -> button--default
+
+    Last Updated: January 15, 2021
+#}
+
+{% set navigation_drawer_classes = navigation_drawer_classes|default() %}
+{% set navigation_drawer_id = navigation_drawer_id|default() %}
+
+<div class="navigation-nds navigation--drawer {{ navigation_drawer_classes }}"{% if navigation_drawer_id is not empty %} id="{{ navigation_drawer_id }}"{% endif %}>
     <div class="navigation--drawer__top">
         <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
         {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with

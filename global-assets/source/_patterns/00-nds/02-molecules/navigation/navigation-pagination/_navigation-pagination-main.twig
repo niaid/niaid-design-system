@@ -1,3 +1,26 @@
+{#
+    ---
+    title: Pagination
+    ---
+
+    Type: Molecules -> Navigation
+
+    Description:
+        Pagination helps separate long lists of content, such as search results, into separate pages to improve content readability and findability. Pagination is typically found below the content listing.
+
+    Blocks:
+        {% block navigation_pagination_content %}: The block holding the pagination markup.
+
+    Parameters:
+        navigation_pagination_classes: Additional classes for the navigation component.
+        navigation_pagination_id: Navigation component ID.
+        navigation_pagination_data: An array of pagination button objects. Structure: {"href": "", "class": ""}. Pass "active" or "is-active" to the the "class" key for the current page.
+        navigation_pagination_next_href: URL destination for the "Next" page button.
+        navigation_pagination_last_href: URL destination for the "Last" page button.
+
+    Last Updated: January 15, 2021
+#}
+
 {% set navigation_pagination_classes = navigation_pagination_classes|default() %}
 {% set navigation_pagination_id = navigation_pagination_id|default() %}
 {% set navigation_pagination_data = navigation_pagination_data|default() %}

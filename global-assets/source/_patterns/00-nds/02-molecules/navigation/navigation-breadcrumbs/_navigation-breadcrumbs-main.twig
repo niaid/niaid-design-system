@@ -1,3 +1,26 @@
+{#
+    ---
+    title: Breadcrumbs
+    ---
+
+    Type: Molecules -> Navigation
+
+    Description:
+        Breadcrumbs are used to help users identify where they are within the menu sytem of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.
+
+        Read more guidance about Breadcrumbs from the U.S. Web Design System.
+
+    Parameters:
+        navigation_breadcrumbs_classes: Additional classes for the navigation component.
+        navigation_breadcrumbs_id: Navigation component ID.
+        navigation_breadcrumbs_data: An array of breadcrumb objects. Structure: {"text": "", "href": "", "routeName": ""}. The "href" key can be empty. The "routeName" key should be empty unless using Drupal.
+        navigation_breadcrumbs_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+
+    Includes:
+        Atoms -> Input -> input-default
+
+    Last Updated: January 15, 2021
+#}
 
 {% set navigation_breadcrumbs_classes = navigation_breadcrumbs_classes|default() %}
 {% set navigation_breadcrumbs_id = navigation_breadcrumbs_id|default() %}

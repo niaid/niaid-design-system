@@ -27,6 +27,7 @@
                         color: $white;
                     }
                 }
+                &.active,
                 &.is-active {
                     a {
                         background: $color-theme-1-1-1;
