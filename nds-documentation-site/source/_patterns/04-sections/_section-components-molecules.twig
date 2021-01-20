@@ -787,8 +787,6 @@
                 {% include "@nds/02-molecules/navigation/navigation-pagination/demo/navigation-pagination.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
-                <h5>Overview</h5>
-                <p>The markup for the pagination buttons is based on the Drupal implementation. The Pagination component mostly serves as a wrapper to pass pagination butotn markup to the "navigation_pagination_content" block. Refer to the demo for the proper structure and classes of the pagination buttons.</p>
                 <h5>Blocks</h5>
                 <ul>
                     <li>&#123;% block navigation_pagination_content %&#125;: The block holding the pagination markup.</li>
@@ -797,6 +795,9 @@
                 <ul>
                     <li>navigation_pagination_classes: Additional classes for the navigation component.</li>
                     <li>navigation_pagination_id: Navigation component ID.</li>
+                    <li>navigation_pagination_data: An array of pagination button objects. Structure: {"href": "", "class": ""}. Pass "active" or "is-active" to the the "class" key for the current page.</li>
+                    <li>navigation_pagination_next_href: URL destination for the "Next" page button.</li>
+                    <li>navigation_pagination_last_href: URL destination for the "Last" page button.</li>
                 </ul>
             {% endblock %}
         {% endembed %}
@@ -815,13 +816,47 @@
                     }
                 %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_drawer_content %&#125;: The block holding the side drawer markup.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_drawer_classes: Additional classes for the side drawer component.</li>
+                    <li>navigation_drawer_id: The side drawer ID.</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Buttons -> button--default</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Mobile Rail</h4>
         <p>This simple component helps transition your site from a desktop layout to mobile by collapsing the local navigation (or whatever is wrapped) into a dropdown.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_show_rendered": "no"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-mobile-rail/demo/navigation-mobile-rail.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_mobile_rail_content %&#125;: The block holding the mobile rail content.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_mobile_rail_classes: Additional classes for the mobile rail component.</li>
+                    <li>navigation_mobile_rail_button_text: The text to appear on the mobile rail toggle button.</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Molecules -> Components -> component--accordion</li>
+                </ul>
             {% endblock %}
         {% endembed %}
     {% endblock %}
