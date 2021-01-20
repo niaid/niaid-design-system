@@ -1,6 +1,6 @@
 {% set navigation_primary_classes = navigation_primary_classes|default() %}
 {% set navigation_primary_id = navigation_primary_id|default() %}
 
-<nav id="{{ navigation_primary_id }}" class="navigation-nds navigation--primary {{ navigation_primary_classes }}">
+<nav class="navigation-nds navigation--primary {{ navigation_primary_classes }}"{% if navigation_primary_id is not empty %} id="{{ navigation_primary_id }}"{% endif %}>
     {% block navigation_primary_content %}{% endblock %}
 </nav>

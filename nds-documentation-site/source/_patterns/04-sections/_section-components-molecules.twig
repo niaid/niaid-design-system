@@ -686,7 +686,7 @@
         <h3>Forms</h3>
 
         <h4>Search Form</h4>
-        <p>TODO</p>
+        <p>Search allows users to find content on your site. A search feature is almost always recommended for websites, unless the website is only a few pages.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
                 "text_uswds_component_name": "Search",
@@ -697,13 +697,22 @@
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/forms/form-search/demo/form-search.twig" %}
             {% endblock %}
-        {% endembed %}
-
-        <h4>Facets</h4>
-        <p>This component is based on the Drupal Facets module's implementation of filters.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
-            {% block component_snippet_code %}
-                {% include "@nds/02-molecules/forms/form-facet/demo/form-facet.twig" %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>The Search Form pattern has a default &lt;form&gt; element that can be replaced by passing your own to the "form_search_content" block.</p>
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block form_search_content %&#125;: The block holding the search form HTML.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>form_search_classes: Additional classes on the wrapper around the search form.</li>
+                    <li>form_search_id: ID of the &lt;form&gt; element.</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Input -> input-text</li>
+                </ul>
             {% endblock %}
         {% endembed %}
     {% endblock %}
@@ -719,11 +728,28 @@
         <p>Navigation elements are crucial to any website as they allow users to move between site pages. NDS offers several patterns to make navigation easy and policy-compliant.</p>
         <h4>Primary Navigation</h4>
         <p>Primary navigation is used to move between the major sections of your website. NDS recommends including primary navigation directly below the header of your site for easiest access.</p>
-        <h5>Pattern Usage</h5>
-        <p>Although it is possible to use the NDS out of the box component for Priary Navigation, it is likely you will need to replicate the pattern for your particular site due to the unique nature of different websites. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes to the component without altering the original NDS component.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        <p></p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_classes": "component--snippet--primary-navigation"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-primary/demo/navigation-primary.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>Although it is possible to use the NDS out of the box component for Priary Navigation, it is likely you will need to replicate the pattern for your particular site due to the unique nature of different websites. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes to the component without altering the original NDS component.</p>
+                <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup, using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_primary_content %&#125;: The block holding the navigation markup.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_primary_classes: Additional classes for the navigation component.</li>
+                    <li>navigation_primary_id: Navigation component ID.</li>
+                </ul>
             {% endblock %}
         {% endembed %}
 
@@ -739,6 +765,19 @@
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/demo/navigation-breadcrumbs.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_breadcrumbs_classes: Additional classes for the navigation component.</li>
+                    <li>navigation_breadcrumbs_id: Navigation component ID.</li>
+                    <li>navigation_breadcrumbs_data: An array of breadcrumb objects. Structure: {"text": "", "href": "", "routeName": ""}. The "href" key can be empty. The "routeName" key should be empty unless using Drupal.</li>
+                    <li>navigation_breadcrumbs_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Icons -> icon-default</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Pagination</h4>
@@ -746,6 +785,19 @@
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-pagination/demo/navigation-pagination.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>The markup for the pagination buttons is based on the Drupal implementation. The Pagination component mostly serves as a wrapper to pass pagination butotn markup to the "navigation_pagination_content" block. Refer to the demo for the proper structure and classes of the pagination buttons.</p>
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_pagination_content %&#125;: The block holding the pagination markup.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_pagination_classes: Additional classes for the navigation component.</li>
+                    <li>navigation_pagination_id: Navigation component ID.</li>
+                </ul>
             {% endblock %}
         {% endembed %}
 

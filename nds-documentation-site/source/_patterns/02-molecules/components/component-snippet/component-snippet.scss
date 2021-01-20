@@ -1,4 +1,5 @@
 .component--snippet {
+    max-width: $layout-type-max-width;
     $code-background: #1E1E1E;
     margin: 1rem 0 2rem 0;
     &__block {
@@ -66,8 +67,9 @@
         &__pattern {
             &__toggle {
                 background: transparent !important;
-                border: 0 !important;
-                border-radius: 0 !important;
+                border: 0;
+                border-top-left-radius: 0 !important;
+                border-top-right-radius: 0 !important;
                 color: $type-link;
                 width: 100%;
                 text-align: left;
@@ -77,6 +79,7 @@
                 }
                 &:hover,
                 &:focus {
+                    border: 0;
                     color: $type-link;
                 }
                 &.open {
@@ -125,6 +128,14 @@
         .block--featured-content-card {
             @include media-breakpoint-up(lg) {
                 max-width: 50%;
+            }
+        }
+    }
+    &.component--snippet--primary-navigation {
+        .component--snippet__block__code__rendered {
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: block;
             }
         }
     }

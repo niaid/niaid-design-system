@@ -56,6 +56,11 @@
             color: $type-body;
         }
     }
+    .layouts--tabs {
+        .layouts--body {
+            margin: 0;
+        }
+    }
     .component--modal__wrapper__content__header__close {
         height: 4rem;
         width: 4rem;

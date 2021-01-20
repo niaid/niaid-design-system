@@ -10,18 +10,6 @@
         pre {
             border-radius: 0 0 $corner-radius $corner-radius;
         }
-        &.no-render {
-            .component--snippet__block {
-                border: 0;
-            }
-            .component--snippet__block__code__snippet {
-                border: 0.0625rem solid $input-border;
-                border-radius: $corner-radius;
-            }
-            pre {
-                border-radius: $corner-radius;
-            }
-        }
     }
     #design {
         .container {
@@ -49,16 +37,11 @@
         pre {
             border-radius: 0 0 $corner-radius $corner-radius;
         }
-        &.no-render {
-            .component--snippet__block {
-                border: 0;
-            }
-            .component--snippet__block__code__snippet {
-                border: 0.0625rem solid $input-border;
-                border-radius: $corner-radius;
-            }
-            pre {
-                border-radius: $corner-radius;
+        &__block {
+            &__pattern {
+                &__toggle {
+                    border-radius: 0 0 $corner-radius $corner-radius;
+                }
             }
         }
     }

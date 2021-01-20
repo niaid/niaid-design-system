@@ -36,6 +36,12 @@
     .component--snippet {
         &__block {
             &__pattern {
+                &__toggle {
+                    &:hover,
+                    &:focus {
+                        border: 0;
+                    }
+                }
                 &__content {
                     h5 {
                         margin-top: 2rem;
