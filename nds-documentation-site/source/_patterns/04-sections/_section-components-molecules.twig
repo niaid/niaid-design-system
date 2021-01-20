@@ -365,12 +365,22 @@
                 <h5>Parameters</h5>
                 <ul>
                     <li>component_uswds_banner_classes: Additional banner classes.</li>
+                    <li>component_uswds_banner_id: Component ID.</li>
                 </ul>
             {% endblock %}
         {% endembed %}
 
         <h4>Media Component</h4>
         <p>The Media component makes it easy to include credits and captions to your images. Additionally, you can control the float (left or right placement) of your images.</p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_data": [
+                    {
+                        "text": "Materialize"
+                    }
+                ]
+            }
+        %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-media/demo/component-media.twig" %}
@@ -447,32 +457,138 @@
         <p>Receiving data is a key interaction point for users of websites. NDS has several types of input components to help get information from users.</p>
 
         <h4>Text Field Group</h4>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_data": [
+                    {
+                        "text": "Bootstrap 4"
+                    },
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text.twig" %}
                 {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text-icon.twig" %}
                 {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text-tooltip.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>input_group_text_classes: Additional classes on the wrapper around the input field.</li>
+                    <li>input_group_text_id: Input ID.</li>
+                    <li>input_group_text_label: Input label.</li>
+                    <li>input_group_text_label_classes: Additional classes for the input field label.</li>
+                    <li>input_group_text_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).</li>
+                    <li>input_group_text_placeholder: Placeholder text for the field.</li>
+                    <li>input_group_text_name: Name attribute of the field.</li>
+                    <li>input_group_text_value: Default value of the field.</li>
+                    <li>input_group_text_tabindex: Optional tabindex attribute of the field.</li>
+                    <li>input_group_text_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
+                    <li>input_group_text_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
+                    <li>input_group_text_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
+                    <li>input_group_text_icon: Optional name of Font Awesome icon to appear in the field.</li>
+                    <li>input_group_text_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Input -> input-label</li>
+                    <li>Atoms -> Input -> input-text</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Checkbox Group</h4>
+        <p>The Checkbox Group pattern is designed to build a list of checkbox options with a label.</p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_data": [
+                    {
+                        "text": "Bootstrap 4"
+                    },
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %} 
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-checkbox/demo/input-group-checkbox.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>Embed the Checkbox Group pattern and pass individual checkbox options (Atoms -> Input -> input-checkbox) to the block "input_checkbox_options".</p>
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block input_checkbox_options %&#125;: The block holding the individual checkbox items.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>input_group_checkbox_classes: Additional classes on the wrapper around the input field.</li>
+                    <li>input_group_checkbox_id: Input ID.</li>
+                    <li>input_group_checkbox_label: Input label.</li>
+                    <li>input_group_checkbox_label_classes: Additional classes for the input field label.</li>
+                    <li>input_group_checkbox_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Input -> input-label</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Radio Button Group</h4>
+        <p>The Radio Group pattern is designed to build a list of radio options with a label.</p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_data": [
+                    {
+                        "text": "Bootstrap 4"
+                    },
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %} 
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-radio/demo/input-group-radio.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>Embed the Radio Group pattern and pass individual radio options (Atoms -> Input -> input-radio) to the block "input_radio_options".</p>
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block input_radio_options %&#125;: The block holding the individual radio items.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>input_group_radio_classes: Additional classes on the wrapper around the input field.</li>
+                    <li>input_group_radio_id: Input ID.</li>
+                    <li>input_group_radio_label: Input label.</li>
+                    <li>input_group_radio_label_classes: Additional classes for the input field label.</li>
+                    <li>input_group_radio_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Input -> input-label</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Select Field Group</h4>
+        <p>The Select Field Group provides users with an improved select list experience courtesy of the Select2 library.</p>
         {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
             {
                 "block_dependencies_data": [
+                    {
+                        "text": "Bootstrap 4"
+                    },
                     {
                         "text": "Select2"
                     },
@@ -487,9 +603,38 @@
                 {% include "@nds/02-molecules/input-group/input-group-select/demo/input-group-select.twig" %}
                 {% include "@nds/02-molecules/input-group/input-group-select/demo/input-group-multiselect.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block input_group_select_options %&#125;: The block holding the select &lt;option&gt;'s.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>input_group_select_classes: Additional classes on the wrapper around the input field.</li>
+                    <li>input_group_select_id: Input ID.</li>
+                    <li>input_group_select_label: Input label.</li>
+                    <li>input_group_select_label_classes: Additional classes for the input field label.</li>
+                    <li>input_group_select_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).</li>
+                    <li>input_group_select_placeholder: Placeholder text for the field.</li>
+                    <li>input_group_select_name: Name attribute of the field.</li>
+                    <li>input_group_select_value: Default value of the field.</li>
+                    <li>input_group_select_tabindex: Optional tabindex attribute of the field.</li>
+                    <li>input_group_select_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
+                    <li>input_group_select_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
+                    <li>input_group_select_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
+                    <li>input_group_select_always_selected: Bool indicating if the field should always have one option selected. Options: true, false (Default).</li>
+                    <li>input_group_select_multiple: Bool indicating if the field can have multiple selections. Options: true, false (Default).</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Input -> input-label</li>
+                    <li>Atoms -> Input -> input-select</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Date Picker Field Group</h4>
+        <p>The Date Picker Field Group provides users with an improved date selection experience courtesy of the Bootstrap Datepicker library.</p>
         {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
             {
                 "block_dependencies_data": [
@@ -505,6 +650,28 @@
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-date-picker/demo/input-group-date-picker.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Parameters</h5>
+                <ul>
+                    <li>input_group_date_picker_classes: Additional classes on the wrapper around the input field.</li>
+                    <li>input_group_date_picker_id: Input ID.</li>
+                    <li>input_group_date_picker_label: Input label.</li>
+                    <li>input_group_date_picker_label_classes: Additional classes for the input field label.</li>
+                    <li>input_group_date_picker_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).</li>
+                    <li>input_group_date_picker_placeholder: Placeholder text for the field.</li>
+                    <li>input_group_date_picker_name: Name attribute of the field.</li>
+                    <li>input_group_date_picker_value: Default value of the field.</li>
+                    <li>input_group_date_picker_tabindex: Optional tabindex attribute of the field.</li>
+                    <li>input_group_date_picker_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
+                    <li>input_group_date_picker_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
+                    <li>input_group_date_picker_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Input -> input-label</li>
+                    <li>Atoms -> Input -> input-date-picker</li>
+                </ul>
             {% endblock %}
         {% endembed %}
     {% endblock %}

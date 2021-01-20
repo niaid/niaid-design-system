@@ -1,3 +1,36 @@
+{#
+    ---
+    title: Radio Group
+    ---
+
+    Type: Molecules -> Input Group
+
+    Description:
+        The Radio Group pattern is designed to build a list of radio options with a label.
+
+        Embed the Radio Group pattern and pass individual radio options (Atoms -> Input -> input-radio) to the block "input_radio_options".
+
+    Dependencies:
+        In order to leverage the full capabilities of this component, you must include the following libraries in addition to the NDS Global JS:
+            - Bootstrap 4
+            - jQuery
+
+    Blocks:
+        {% block input_radio_options %}: The block holding the individual radio items.
+
+    Parameters:
+        input_group_radio_classes: Additional classes on the wrapper around the input field.
+        input_group_radio_id: Input ID.
+        input_group_radio_label: Input label.
+        input_group_radio_label_classes: Additional classes for the input field label.
+        input_group_radio_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).
+
+    Includes:
+        Atoms -> Input -> input-label
+
+    Last Updated: January 15, 2021
+#}
+
 {% set input_group_radio_classes = input_group_radio_classes|default() %}
 {% set input_group_radio_id = input_group_radio_id|default() %}
 {% set input_group_radio_label = input_group_radio_label|default() %}

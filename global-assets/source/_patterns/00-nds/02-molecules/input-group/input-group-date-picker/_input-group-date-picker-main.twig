@@ -1,3 +1,39 @@
+{#
+    ---
+    title: Date Picker Group
+    ---
+
+    Type: Molecules -> Input Group
+
+    Description:
+        The Date Picker Field Group provides users with an improved date selection experience courtesy of the Bootstrap Datepicker library.
+
+    Dependencies:
+        In order to leverage the full capabilities of this component, you must include the following libraries in addition to the NDS Global JS:
+            - Bootstrap Datepicker
+            - jQuery
+
+    Parameters:
+        input_group_date_picker_classes: Additional classes on the wrapper around the input field.
+        input_group_date_picker_id: Input ID.
+        input_group_date_picker_label: Input label.
+        input_group_date_picker_label_classes: Additional classes for the input field label.
+        input_group_date_picker_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).
+        input_group_date_picker_placeholder: Placeholder text for the field.
+        input_group_date_picker_name: Name attribute of the field.
+        input_group_date_picker_value: Default value of the field.
+        input_group_date_picker_tabindex: Optional tabindex attribute of the field.
+        input_group_date_picker_disabled: Bool indicating if the field is disabled. Options: true, false (Default).
+        input_group_date_picker_readonly: Bool indicating if the field is readonly. Options: true, false (Default).
+        input_group_date_picker_required: Bool indicating if the field is requred. Options: true, false (Default).
+
+    Includes:
+        Atoms -> Input -> input-label
+        Atoms -> Input -> input-date-picker
+
+    Last Updated: January 15, 2021
+#}
+
 {% set input_group_date_picker_classes = input_group_date_picker_classes|default() %}
 {% set input_group_date_picker_id = input_group_date_picker_id|default() %}
 {% set input_group_date_picker_label = input_group_date_picker_label|default() %}

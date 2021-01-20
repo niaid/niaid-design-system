@@ -1,5 +1,5 @@
 (function($) {
-    function initComponentLightbox(context = document) {
+    function initComponentMedia(context = document) {
         if (document.querySelectorAll('.materialboxed').length) {
             var elems = document.querySelectorAll('.materialboxed');
             var instances = M.Materialbox.init(elems);
@@ -9,10 +9,10 @@
     if (typeof Drupal !== 'undefined') {
         // Define Drupal behavior.
         (function($, Drupal) {
-            Drupal.behaviors.initComponentLightbox = {
+            Drupal.behaviors.initComponentMedia = {
                 attach: function(context) {
-                    $("body", context).once('nds-component-lightbox').each(function() {
-                        initComponentLightbox(context);
+                    $("body", context).once('nds-component-media').each(function() {
+                        initComponentMedia(context);
                     });
                 },
             };
@@ -20,7 +20,7 @@
     } else {
         // If Drupal isn't loaded, add JS for Pattern Lab.
         $(document).ready(function() {
-            initComponentLightbox();
+            initComponentMedia();
         });
     }
 })(jQuery);

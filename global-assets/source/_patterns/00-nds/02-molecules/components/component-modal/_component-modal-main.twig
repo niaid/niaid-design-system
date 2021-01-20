@@ -1,6 +1,6 @@
 {#
     ---
-    title: ModalComponent
+    title: Modal Component
     ---
 
     Type: Molecules -> Components
@@ -13,8 +13,18 @@
             - Bootstrap
             - jQuery 
 
+    Blocks:
+        {% block component_modal_header %}: Content to appear at the top of the modal (ex. Modal title).
+        {% block component_modal_content %}: The main content to appear within the modal.
+        {% block component_modal_footer %}: Content to appear at the bottom of the modal.
+
     Parameters:
-        component_uswds_banner_classes: Additional banner classes.
+        component_modal_trigger_classes: Additional classes on the wrapper around the modal trigger (ex. button).
+        component_modal_id: Modal ID.
+        component_modal_classes: Additional modal classes.
+    
+    Includes:
+        Atoms -> Icons -> icon-default
 
     Last Updated: January 15, 2021
 #}

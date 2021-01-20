@@ -16,13 +16,15 @@
 
     Parameters:
         component_uswds_banner_classes: Additional banner classes.
+        component_uswds_banner_id: Component ID.
 
     Last Updated: January 15, 2021
 #}
 
 {% set component_uswds_banner_classes = component_uswds_banner_classes|default() %}
+{% set component_uswds_banner_id = component_uswds_banner_id|default() %}
 
-<section class="component-nds component--uswds-banner usa-banner {{ component_uswds_banner_classes }}" aria-label="Official government website">
+<section class="component-nds component--uswds-banner usa-banner {{ component_uswds_banner_classes }}" aria-label="Official government website"{% if component_uswds_banner_id is not empty %} id="{{ component_uswds_banner_id }}"{% endif %}>
   <div class="usa-accordion">
     <header class="usa-banner__header">
       <div class="usa-banner__inner">

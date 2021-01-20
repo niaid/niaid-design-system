@@ -1,3 +1,42 @@
+{#
+    ---
+    title: Text Field Group
+    ---
+
+    Type: Molecules -> Input Group
+
+    Description:
+        This component is used to create generic text field inputs.
+
+    Dependencies:
+        In order to leverage the full capabilities of this component, you must include the following libraries in addition to the NDS Global JS:
+            - Bootstrap 4
+            - jQuery
+
+    Parameters:
+        input_group_text_classes: Additional classes on the wrapper around the input field.
+        input_group_text_id: Input ID.
+        input_group_text_label: Input label.
+        input_group_text_label_classes: Additional classes for the input field label.
+        input_group_text_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).
+        input_group_text_placeholder: Placeholder text for the field.
+        input_group_text_name: Name attribute of the field.
+        input_group_text_value: Default value of the field.
+        input_group_text_tabindex: Optional tabindex attribute of the field.
+        input_group_text_disabled: Bool indicating if the field is disabled. Options: true, false (Default).
+        input_group_text_readonly: Bool indicating if the field is readonly. Options: true, false (Default).
+        input_group_text_required: Bool indicating if the field is requred. Options: true, false (Default).
+        input_group_text_icon: Optional name of Font Awesome icon to appear in the field.
+        input_group_text_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+
+    Includes:
+        Atoms -> Input -> input-label
+        Atoms -> Input -> input-text
+
+    Last Updated: January 15, 2021
+#}
+
+
 {% set input_group_text_classes = input_group_text_classes|default() %}
 {% set input_group_text_id = input_group_text_id|default() %}
 {% set input_group_text_label = input_group_text_label|default() %}
