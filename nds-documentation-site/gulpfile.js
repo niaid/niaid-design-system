@@ -48,7 +48,12 @@ var includedJS = ['./source/js/utilities/utilities.js'];
 gulp.task('computeIncludedJSFiles', function() {
     var overridesJS = [];
     return gulp.src('./source/_patterns/**/*.js').pipe(tap(function(file, t) {
-        var parsedPath = file.path.split('source/')[1];
+        if (file.path.split('source/').length > 1) {
+            var parsedPath = file.path.split('source/')[1];
+        }
+        else {
+            var parsedPath = file.path.split("source\\")[1];
+        }
         if (!parsedPath.includes('00-nds')) {
             overridesJS.push(parsedPath);
             includedJS.push('./source/' + parsedPath);

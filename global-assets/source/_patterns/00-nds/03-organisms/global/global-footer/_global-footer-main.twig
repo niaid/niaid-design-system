@@ -1,18 +1,42 @@
 {#
     ---
-    title: Footer
+    title: Global Footer
     ---
-    The footer of the website that includes navigational links.
+
+    Type: Organisms -> Global
+
+    Description:
+        Website footers are often used to provide supplemental information to site users, such as contact information or related resources. The NDS footer demo provides suggested links for inclusion in the footer, however, these can change based on the site's needs.
+        
+        Read more guidance about Footers from the U.S. Web Design System.
+
+    Blocks:
+        {% block global_footer_content_left %}: The block containing content for the left-most column.
+        {% block global_footer_content_middle %}: The block containing content for the middle column.
+        {% block global_footer_content_right %}: The block containing content for the right-most column.
+        {% block global_footer_prefooter_content %}: The block containing content to appear at the top of the footer.
+        {% block global_footer_tagline %}: The block containing an optional website tagline or copyright notice.
+
+    Parameters:
+        global_footer_classes: Additional classes for the footer.
+        global_footer_logo_src: The URL path of the website logo. Default: "global/niaid/logo-niaid-white.svg"
+        global_footer_logo_alt: The top line of the product identity. Default: "NIAID Logo"
+        global_footer_column_left: The Bootstrap 4 class corresponding to the column for the left column. Default: "col-md-4".
+        global_footer_column_middle: The Bootstrap 4 class corresponding to the column for the middle column. Default: "col-md-4".
+        global_footer_column_right: The Bootstrap 4 class corresponding to the column for the right column. Default: "col-md-4".
+
+    Includes:
+        Atoms -> Icons -> icon-default
+
+    Last Updated: January 22, 2021
 #}
 
 {% set global_footer_classes = global_footer_classes|default() %}
 {% set global_footer_logo_src = global_footer_logo_src|default('global/niaid/logo-niaid-white.svg') %}
 {% set global_footer_logo_alt = global_footer_logo_alt|default('NIAID Logo') %}
-
 {% set global_footer_column_left = global_footer_column_left|default('col-md-4') %}
 {% set global_footer_column_middle = global_footer_column_middle|default('col-md-4') %}
 {% set global_footer_column_right = global_footer_column_right|default('col-md-4') %}
-
 {% set global_footer_content_left = block('global_footer_content_left') %}
 {% set global_footer_content_middle = block('global_footer_content_middle') %}
 {% set global_footer_content_right = block('global_footer_content_right') %}

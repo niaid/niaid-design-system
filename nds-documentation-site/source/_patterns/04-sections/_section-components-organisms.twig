@@ -32,6 +32,25 @@
             {% block component_snippet_code %}
                 {% include "@nds/03-organisms/global/global-header/demo/global-header.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block global_header_content %&#125;: The block holding the global header markup. Can be used to replace all the default content in the header.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>global_header_classes: Additional classes for the header.</li>
+                    <li>global_header_id: The header ID.</li>
+                    <li>global_header_product_id_top: The top line of the product identity.</li>
+                    <li>global_header_product_id_bottom: The bottom line of the product identity.</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Buttons -> button-icon</li>
+                    <li>Molecules -> Components -> component-branding</li>
+                    <li>Molecules -> Forms -> form-search</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Footer</h4>
@@ -49,6 +68,29 @@
         %}
             {% block component_snippet_code %}
                 {% include "@nds/03-organisms/global/global-footer/demo/global-footer.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block global_footer_content_left %&#125;: The block containing content for the left-most column.</li>
+                    <li>&#123;% block global_footer_content_middle %&#125;: The block containing content for the middle column.</li>
+                    <li>&#123;% block global_footer_content_right %&#125;: The block containing content for the right-most column.</li>
+                    <li>&#123;% block global_footer_prefooter_content %&#125;: The block containing content to appear at the top of the footer.</li>
+                    <li>&#123;% block global_footer_tagline %&#125;: The block containing an optional website tagline or copyright notice.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>global_footer_classes: Additional classes for the footer.</li>
+                    <li>global_footer_logo_src: The URL path of the website logo. Default: "global/niaid/logo-niaid-white.svg"</li>
+                    <li>global_footer_logo_alt: The top line of the product identity. Default: "NIAID Logo"</li>
+                    <li>global_footer_column_left: The Bootstrap 4 class corresponding to the column for the left column. Default: "col-md-4".</li>
+                    <li>global_footer_column_middle: The Bootstrap 4 class corresponding to the column for the middle column. Default: "col-md-4".</li>
+                    <li>global_footer_column_right: The Bootstrap 4 class corresponding to the column for the right column. Default: "col-md-4".</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Atoms -> Icons -> icon-default</li>
+                </ul>
             {% endblock %}
         {% endembed %}
     {% endblock %}
@@ -68,6 +110,29 @@
             {% block component_snippet_code %}
                 {% include "@nds/03-organisms/views/view-listing/demo/view-listing.twig" %}
             {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block view_listing_heading %&#125;: The block containing the list view heading.</li>
+                    <li>&#123;% block view_listing_content %&#125;: The block containing the list view content.</li>
+                    <li>&#123;% block view_listing_button %&#125;: The block containing the optional list view button.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>view_listing_classes: Additional classes for view wrapper.</li>
+                    <li>view_listing_id: ID for the view.</li>
+                    <li>view_listing_data: An array of default block objects. Structure: { "content": "" }. The "content" should be an HTML string.</li>
+                    <li>view_listing_heading: Heading text to label the view listing.</li>
+                    <li>view_listing_heading_level: Heading level for the view listing header. Default: "2".</li>
+                    <li>view_listing_button_text: Text to appear on an optional button at the end of the view.</li>
+                    <li>view_listing_button_href: URL destination for an optional button at the end of the view.</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Molecules -> Blocks -> block-default</li>
+                    <li>Atoms -> Buttons -> button-default</li>
+                </ul>
+            {% endblock %}
         {% endembed %}
 
         <h4>Featured Content Cards View</h4>
@@ -75,6 +140,26 @@
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/03-organisms/views/view-featured-content-cards/demo/view-featured-content-cards.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>The Featured Content Card component can be used either by utilizing the &#123;% block view_featured_content_cards_content %&#125; or by passing data to the "view_featured_content_cards_data" parameter. If using the parameter, the component will calculate the correct width of the Bootstrap columns ("view_featured_content_cards_column_width") based on the number of card objects passed. Therefore, if using the parameter option, you do not need to specify a value for "view_featured_content_cards_column_width".</p>
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block view_featured_content_cards_content %&#125;: The block containing featured content cards.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>view_featured_content_cards_classes: Additional classes for view wrapper.</li>
+                    <li>view_featured_content_cards_id: ID for the view.</li>
+                    <li>view_featured_content_cards_data: An array of featured content card objects. Structure: {"src": "", "alt": "", "title": "", "href": "", "description": "", "featured": ""}. See the Featured Content Card pattern for more information.</li>
+                    <li>view_featured_content_cards_column_breakpoint: The Bootstrap column breakpoint for the view. Options: "sm", "md" (Default), "lg", "xl".</li>
+                    <li>view_featured_content_cards_column_width: The Bootstrap column width for the view. Options: "1", "2", "3", "4", "6" (Default), "12".</li>
+                </ul>
+                <h5>Includes</h5>
+                <ul>
+                    <li>Molecules -> Blocks -> block-featured-content-card</li>
+                </ul>
             {% endblock %}
         {% endembed %}
     {% endblock %}
