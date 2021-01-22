@@ -1,3 +1,30 @@
+{#
+    ---
+    title: Search Form
+    ---
+
+    Type: Molecules -> Forms
+
+    Description:
+        Search allows users to find content on your site. A search feature is almost always recommended for websites, unless the website is only a few pages.
+
+        Read more guidance about Search from the U.S. Web Design System.
+
+        The Search Form pattern has a default <form> element that can be replaced by passing your own to the "form_search_content" block.
+
+    Blocks:
+        {% block form_search_content %}: The block holding the search form HTML.
+
+    Parameters:
+        form_search_classes: Additional classes on the wrapper around the search form.
+        form_search_id: ID of the <form> element.
+
+    Includes:
+        Atoms -> Input -> input-text
+
+    Last Updated: January 22, 2021
+#}
+
 {% set form_search_classes = form_search_classes|default() %}
 {% set form_search_id = form_search_id|default() %}
 

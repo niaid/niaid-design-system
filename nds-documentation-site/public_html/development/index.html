@@ -89,6 +89,7 @@
 
 <div class="page" id="development">
             
+
 <section class="component-nds component--uswds-banner usa-banner " aria-label="Official government website">
   <div class="usa-accordion">
     <header class="usa-banner__header">
@@ -163,7 +164,8 @@
 
 <i class="icon-nds icon--default fal fa-bars "></i>
             </button></div>                
-<nav id="main-navigation" class="navigation-nds navigation--primary ">
+
+<nav class="navigation-nds navigation--primary " id="main-navigation">
             <div class="navigation--primary__inner">
             <div class="navigation--primary__inner__item">
                 <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -301,6 +303,7 @@
 <div class="layouts-nds layouts--main fixed-left" id="main">
             <div class="layouts--main__column layouts--main__first col-lg-3">
                             
+
 <div class="navigation-nds navigation--mobile-rail ">
     
 
@@ -341,6 +344,7 @@
             <h2>Atomic Design</h2>
         <p>NDS employs the use of a development philosophy known as Atomic Design. Under this system, web components are broken up into their simplest parts, like colors, fonts, and button styles. These basic building blocks of design are referred to as Atoms. Atoms combine to create Molecules, which are more complex web structures. Examples of Molecules include teaser cards, input groups, and simple navigation structures. Finally, Molecules come together to create yet another level of complex web structures, such as website headers and footers. These structures are called Organisms, and are typically the most complex components. The following video provides a useful visualization for how these structures combine together.</p>
         
+
     
 
 <div class="component-nds component--media ">
@@ -375,6 +379,7 @@
         <h4>1. Efficient code manipulation</h4>
         <p>Perhaps the most significant benefit of Atomic Design is the speed at which changes can be made to design components. Since web components or patterns are composed of other smaller components, changes need only happen in one place. For example, if a designer wanted to change the color of a button, and that button pattern is referenced in a featured content card molecule, the developer can change the color of the button at the Atom level, and any references to that pattern will be updated automatically.</p>
         
+
     
 
 <div class="component-nds component--media ">
@@ -433,6 +438,7 @@
         <h5>Source Directory</h5>
         <p>The ./source folder houses all NDS components as well as global CSS, JS, images, and fonts. Broadly, most development will happen within this folder.</p>
         
+
     
 
 <div class="component-nds component--media ">
@@ -471,6 +477,7 @@
             <li>A demo directory that contains a twig file. This file contains a sample of how to reference or include the pattern in other places/patterns.</li>
         </ul>
         
+
     
 
 <div class="component-nds component--media image--patternlab__structure">
@@ -505,6 +512,7 @@
         <p>When Pattern Lab compiles, a locally-hosted style guide is opened in a browser. This style guide comes from the ./public folder, wherein all patterns are converted to web-ready HTML.</p>
         <p>When building a static website, the production HTML should be copied from within the ./public/patterns/ directory. The gulpfile.js file that ships with NDS has sample code to pull your final pages into a production-ready folder.</p>
         
+
     
 
 <div class="component-nds component--media ">
@@ -831,8 +839,6 @@
         </div>
     </div>        </div>
             
-
-
 
 <footer id="footer" class="global-nds global--footer container-fluid ">
         <div class="global--footer__content row">

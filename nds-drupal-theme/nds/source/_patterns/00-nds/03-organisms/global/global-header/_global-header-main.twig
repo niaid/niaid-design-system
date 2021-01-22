@@ -1,8 +1,38 @@
+{#
+    ---
+    title: Global Header
+    ---
+
+    Type: Organisms -> Global
+
+    Description:
+        The header is one of the first things users will see when visiting your site. Therefore, it is important to ensure that NDS websites communicate a clear and consistent brand through their headers. Headers typically consist of site branding and key navigational functionality. The NDS header component is demoed with a menu button, site branding, a search field, and a button used to toggle the mobile menu. Since every website is different, you will likely need to create your own copy of the header component to suit your website. Remember that custom components should be placed outside the 00-nds/ directory.
+        
+        Read more guidance about Headers from the U.S. Web Design System.
+
+    Blocks:
+        {% block global_header_content %}: The block holding the global header markup. Can be used to replace all the default content in the header.
+
+    Parameters:
+        global_header_classes: Additional classes for the header.
+        global_header_id: The header ID.
+        global_header_product_id_top: The top line of the product identity.
+        global_header_product_id_bottom: The bottom line of the product identity.
+
+    Includes:
+        Atoms -> Buttons -> button-icon
+        Molecules -> Components -> component-branding
+        Molecules -> Forms -> form-search
+
+    Last Updated: January 22, 2021
+#}
+
 {% set global_header_classes = global_header_classes|default() %}
+{% set global_header_id = global_header_id|default() %}
 {% set global_header_product_id_top = global_header_product_id_top|default() %}
 {% set global_header_product_id_bottom = global_header_product_id_bottom|default() %}
 
-<div class="global-nds global--header {{ global_header_classes }}">
+<div class="global-nds global--header {{ global_header_classes }}"{% if global_header_id is not empty %} id="{{ global_header_id }}"{% endif %}>
     {% block global_header_content %}
         {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
             {

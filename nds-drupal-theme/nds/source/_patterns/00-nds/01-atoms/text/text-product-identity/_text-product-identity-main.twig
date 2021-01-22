@@ -1,0 +1,30 @@
+{#
+    ---
+    title: Product Identity Text
+    ---
+
+    Type: Atoms -> Text
+
+    Description:
+        This pattern is used, in conjunction with the NIAID logo, to create product branding. The name of the website can span two lines of text (top and bottom), however, both need not be used.
+
+    Parameters:
+        text_product_identity_classes: Additional product identity classes.
+        text_product_identity_top: Name to appear on top in the product name.
+        text_product_identity_bottom: Name to appear on bottom in the product name.
+
+    Last Updated: January 22, 2021
+#}
+
+{% set text_product_identity_classes = text_product_identity_classes|default() %}
+{% set text_product_identity_top = text_product_identity_top|default() %}
+{% set text_product_identity_bottom = text_product_identity_bottom|default() %}
+
+{% if text_product_identity_top is not empty and text_product_identity_bottom is not empty %}
+    {% set text_product_identity_additional_classes = "both-top-bottom" %}
+{% endif %}
+
+<div class="text-nds text--product-identity {{ text_product_identity_classes }} {{ text_product_identity_additional_classes }}">
+    <div class="text--product-identity__top">{{ text_product_identity_top }}</div>
+    <div class="text--product-identity__bottom">{{ text_product_identity_bottom }}</div>
+</div>

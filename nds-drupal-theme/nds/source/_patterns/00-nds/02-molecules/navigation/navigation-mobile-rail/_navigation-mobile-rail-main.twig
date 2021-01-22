@@ -1,3 +1,27 @@
+{#
+    ---
+    title: Mobile Rail
+    ---
+
+    Type: Molecules -> Navigation
+
+    Description:
+        This simple component helps transition your site from a desktop layout to mobile by collapsing the local navigation (or whatever is wrapped) into a dropdown.
+
+    Blocks:
+        {% block navigation_mobile_rail_content %}: The block holding the mobile rail content.
+
+    Parameters:
+        navigation_mobile_rail_classes: Additional classes for the mobile rail component.
+        navigation_mobile_rail_button_text: The text to appear on the mobile rail toggle button.
+        navigation_mobile_rail_button_text: The text to appear on the mobile rail toggle button.
+
+    Includes:
+        Molecules -> Components -> component--accordion
+
+    Last Updated: January 22, 2021
+#}
+
 {% set navigation_mobile_rail_classes = navigation_mobile_rail_classes|default() %}
 {% set navigation_mobile_rail_button_text = navigation_mobile_rail_button_text|default() %}
 {% set navigation_mobile_rail_content = block('navigation_mobile_rail_content') %}

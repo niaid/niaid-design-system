@@ -153,25 +153,4 @@ function closeMenu() {
   for (var i = 0; i < tabElements.length; i++) {
     tabElements[i].setAttribute('tabindex', '-1');
   }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initNavigationLocal();
-}); // initNavigationLocal - Functionality to support the local navigation pattern, specifically adding keyboard accessibility.
-
-function initNavigationLocal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-  if (document.querySelectorAll('.navigation--local').length) {
-    var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
-
-    for (var i = 0; i < localNavigationItems.length; i++) {
-      localNavigationItems[i].addEventListener("keydown", function (event) {
-        if (event.isComposing || event.keyCode === 13) {
-          this.click();
-        }
-      });
-    }
-  }
 }

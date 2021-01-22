@@ -2,19 +2,32 @@
     ---
     title: Breadcrumbs
     ---
-    A form of navigation in which users are given context about the page they are currently on. Breadcrumb items are linked if possible.
-    This pattern is not yet completed.
+
+    Type: Molecules -> Navigation
+
+    Description:
+        Breadcrumbs are used to help users identify where they are within the menu sytem of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.
+
+        Read more guidance about Breadcrumbs from the U.S. Web Design System.
 
     Parameters:
+        navigation_breadcrumbs_classes: Additional classes for the navigation component.
+        navigation_breadcrumbs_id: Navigation component ID.
+        navigation_breadcrumbs_data: An array of breadcrumb objects. Structure: {"text": "", "href": "", "routeName": ""}. The "href" key can be empty. The "routeName" key should be empty unless using Drupal.
+        navigation_breadcrumbs_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
 
-    breadcrumbs - The data set passed to populate the breadcrumbs pattern.
+    Includes:
+        Atoms -> Input -> input-default
+
+    Last Updated: January 22, 2021
 #}
 
-{% set navigation_breadcrumbs_data = navigation_breadcrumbs_data|default() %}
 {% set navigation_breadcrumbs_classes = navigation_breadcrumbs_classes|default() %}
+{% set navigation_breadcrumbs_id = navigation_breadcrumbs_id|default() %}
+{% set navigation_breadcrumbs_data = navigation_breadcrumbs_data|default() %}
 {% set navigation_breadcrumbs_icon_weight = navigation_breadcrumbs_icon_weight|default('s') %}
 
-<div class="navigation-nds navigation--breadcrumbs {{ navigation_breadcrumbs_classes }}">
+<div class="navigation-nds navigation--breadcrumbs {{ navigation_breadcrumbs_classes }}"{% if navigation_breadcrumbs_id is not empty %} id="{{ navigation_breadcrumbs_id }}"{% endif %}>
     <p>
         {% for crumb in navigation_breadcrumbs_data %}
             {% if crumb.href.routeName != '<none>' and crumb.href != "" %}<a href="{{ crumb.href }}">{% endif %}<span>{{ crumb.text }}</span>{% if crumb.href.routeName != '<none>' %}</a>{% endif %}

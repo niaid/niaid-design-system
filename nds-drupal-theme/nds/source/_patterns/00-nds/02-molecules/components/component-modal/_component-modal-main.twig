@@ -1,3 +1,34 @@
+{#
+    ---
+    title: Modal Component
+    ---
+
+    Type: Molecules -> Components
+
+    Description:
+        Modals are windows that open up over the rest of a page's content. Modals are typically used to gather user input or to alert users of pressing information.
+
+    Dependencies:
+        In order to leverage the full capabilities of this component, you must include the following libraries in addition to the NDS Global JS:
+            - Bootstrap
+            - jQuery 
+
+    Blocks:
+        {% block component_modal_header %}: Content to appear at the top of the modal (ex. Modal title).
+        {% block component_modal_content %}: The main content to appear within the modal.
+        {% block component_modal_footer %}: Content to appear at the bottom of the modal.
+
+    Parameters:
+        component_modal_trigger_classes: Additional classes on the wrapper around the modal trigger (ex. button).
+        component_modal_id: Modal ID.
+        component_modal_classes: Additional modal classes.
+    
+    Includes:
+        Atoms -> Icons -> icon-default
+
+    Last Updated: January 22, 2021
+#}
+
 {% set component_modal_trigger_classes = component_modal_trigger_classes|default() %}
 {% set component_modal_id = component_modal_id|default() %}
 {% set component_modal_classes = component_modal_classes|default() %}

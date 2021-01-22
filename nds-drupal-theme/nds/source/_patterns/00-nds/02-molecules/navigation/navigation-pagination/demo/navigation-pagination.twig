@@ -1,31 +1,24 @@
-{# This Example is Based on Drupal Generated sCode #}
-
-{% embed "@nds/02-molecules/navigation/navigation-pagination/_navigation-pagination-main.twig" %}
-    {% block navigation_pagination_content %}
-        <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
-            <a>
-                <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
-            </a>
-            <ul class="pager__items js-pager__items">
-                <li class="pager__item is-active">
-                    <a href="#" title="Current page"><span class="visually-hidden">Current page</span>1</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 2"><span class="visually-hidden">Page</span>2</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 3"><span class="visually-hidden">Page</span>3</a>
-                </li>
-                <li class="pager__item">
-                    <a href="#" title="Go to page 4"><span class="visually-hidden">Page</span>4</a>
-                </li>
-                <li class="pager__item pager__item--next">
-                    <a href="#" title="Go to next page" rel="next"><span class="visually-hidden">Next page</span><span aria-hidden="true">››</span></a>
-                </li>
-                <li class="pager__item pager__item--last">
-                    <a href="#" title="Go to last page"><span class="visually-hidden">Last page</span><span aria-hidden="true">Last »</span></a>
-                </li>
-            </ul>
-        </nav>
-    {% endblock %}
-{% endembed %}
+{% include "@nds/02-molecules/navigation/navigation-pagination/_navigation-pagination-main.twig" with
+    {
+        "navigation_pagination_data": [
+            {
+                "href": "#",
+                "class": "active"
+            },
+            {
+                "href": "#"
+            },
+            {
+                "href": "#"
+            },
+            {
+                "href": "#"
+            },
+            {
+                "href": "#"
+            }
+        ],
+        "navigation_pagination_next_href": "#",
+        "navigation_pagination_last_href": "#"
+    }
+%}

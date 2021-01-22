@@ -1,6 +1,30 @@
-{% set component_uswds_banner_classes = component_uswds_banner_classes|default() %}
+{#
+    ---
+    title: USWDS Banner Component
+    ---
 
-<section class="component-nds component--uswds-banner usa-banner {{ component_uswds_banner_classes }}" aria-label="Official government website">
+    Type: Molecules -> Components
+
+    Description:
+        The USWDS Banner component helps assure users that the site they are visiting is an official government site. This banner is placed at the very top of website pages.
+
+        This pattern relies on the USWDS CSS and JS files included with NDS. Be sure that these files are included in your project if using the USWDS Banner component.
+
+    Dependencies:
+        In order to leverage the full capabilities of this component, you must include the following libraries in addition to the NDS Global JS:
+            - USWDS
+
+    Parameters:
+        component_uswds_banner_classes: Additional banner classes.
+        component_uswds_banner_id: Component ID.
+
+    Last Updated: January 22, 2021
+#}
+
+{% set component_uswds_banner_classes = component_uswds_banner_classes|default() %}
+{% set component_uswds_banner_id = component_uswds_banner_id|default() %}
+
+<section class="component-nds component--uswds-banner usa-banner {{ component_uswds_banner_classes }}" aria-label="Official government website"{% if component_uswds_banner_id is not empty %} id="{{ component_uswds_banner_id }}"{% endif %}>
   <div class="usa-accordion">
     <header class="usa-banner__header">
       <div class="usa-banner__inner">

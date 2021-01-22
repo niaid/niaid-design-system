@@ -1,3 +1,22 @@
+{#
+    ---
+    title: Filters Component
+    ---
+
+    Type: Molecules -> Components
+
+    Description:
+        A wrapper component for housing search results filters.
+
+    Blocks:
+        {% block component_filters_filters %}: The code to render the search filters.
+
+    Parameters:
+        component_filters_classes: Additional component classes.
+
+    Last Updated: January 19, 2021
+#}
+
 {% set component_filters_classes = component_filters_classes|default() %}
 
 <div class="component-nds component--filters {{ component_filters_classes }}">

@@ -1,5 +1,55 @@
-{% set navigation_pagination_classes = navigation_pagination_classes|default() %}
+{#
+    ---
+    title: Pagination
+    ---
 
-<div class="navigation-nds navigation--pagination {{ navigation_pagination_classes }}">
-    {% block navigation_pagination_content %}{% endblock %}
+    Type: Molecules -> Navigation
+
+    Description:
+        Pagination helps separate long lists of content, such as search results, into separate pages to improve content readability and findability. Pagination is typically found below the content listing.
+
+    Blocks:
+        {% block navigation_pagination_content %}: The block holding the pagination markup.
+
+    Parameters:
+        navigation_pagination_classes: Additional classes for the navigation component.
+        navigation_pagination_id: Navigation component ID.
+        navigation_pagination_data: An array of pagination button objects. Structure: {"href": "", "class": ""}. Pass "active" or "is-active" to the the "class" key for the current page.
+        navigation_pagination_next_href: URL destination for the "Next" page button.
+        navigation_pagination_last_href: URL destination for the "Last" page button.
+
+    Last Updated: January 22, 2021
+#}
+
+{% set navigation_pagination_classes = navigation_pagination_classes|default() %}
+{% set navigation_pagination_id = navigation_pagination_id|default() %}
+{% set navigation_pagination_data = navigation_pagination_data|default() %}
+{% set navigation_pagination_next_href = navigation_pagination_next_href|default() %}
+{% set navigation_pagination_last_href = navigation_pagination_last_href|default() %}
+
+<div class="navigation-nds navigation--pagination {{ navigation_pagination_classes }}"{% if navigation_pagination_id is not empty %} id="{{ navigation_pagination_id }}"{% endif %}>
+    {% block navigation_pagination_content %}
+        <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+            <a>
+                <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+            </a>
+            <ul class="pager__items js-pager__items">
+                {% for page in navigation_pagination_data %}
+                    <li class="pager__item {{ page.class }}">
+                        <a href="{{ page.href }}" title="{{ page.class == "is-active" ? "Current Page" : "Go to page " ~ loop.index }}"><span class="visually-hidden">{{ page.class == "is-active" ? "Current Page" : "Page" }}</span>{{ loop.index }}</a>
+                    </li>
+                {% endfor %}
+                {% if navigation_pagination_next_href is not empty %}
+                    <li class="pager__item pager__item--next">
+                        <a href="{{ navigation_pagination_next_href }}" title="Go to next page" rel="next"><span class="visually-hidden">Next page</span><span aria-hidden="true">››</span></a>
+                    </li>
+                {% endif %}
+                {% if navigation_pagination_last_href is not empty %}
+                    <li class="pager__item pager__item--last">
+                        <a href="{{ navigation_pagination_last_href }}" title="Go to last page"><span class="visually-hidden">Last page</span><span aria-hidden="true">Last »</span></a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endblock %}
 </div>
