@@ -3,7 +3,7 @@
     "cssPath": "../../css/",
     "jsPath": "../../js/",
     "imagePath": "../../images/",
-    "assetsPath": "../../assets/",
+    "assetsPath": "../../images/",
     "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans",
     "cssIncludes": {
         "select2": true,

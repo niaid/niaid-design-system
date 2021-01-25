@@ -46,6 +46,11 @@
     button {
         border-radius: $corner-radius;
     }
+    .icon-nds {
+        &.icon--document {
+            border-radius: $corner-radius;
+        }
+    }
     .image--embedded {
         &__image {
             border-radius: $corner-radius;
@@ -190,6 +195,11 @@
     button {
         border-radius: $corner-radius-full;
         &.button--floating {
+            border-radius: $corner-radius-full;
+        }
+    }
+    .icon-nds {
+        &.icon--document {
             border-radius: $corner-radius-full;
         }
     }

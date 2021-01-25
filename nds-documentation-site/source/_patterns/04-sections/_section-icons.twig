@@ -5,12 +5,12 @@
 %}
     {% block component_scrollspy_section_content %}
         <h2>Icons</h2>
-        <p>While there are some universally recognized icons, like the magnifying glass for search, most icons do not have ubiquitous meanings, leading to comprehension issues for users. NDS encourages thoughtful icon selection, ideally verified through usability studies.</p>
+        <p>While there are some universally recognized icons, like {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with {"icon_default_classes": "px-1", "icon_default_type": "search", "icon_default_weight": "s", "icon_default_sr_text": "the magnifying glass"} %} for search, most icons do not have ubiquitous meanings, leading to miscomprehension by users. NDS encourages thoughtful icon selection, ideally verified through usability studies.</p>
         <p>NDS requires that all icons come from the <a href="https://fontawesome.com/">Font Awesome Icon Library</a>, which provides an expansive set of icons to choose from. Sourcing all icons from the Font Awesome library keeps the visual style and design consistent.</p>
         {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
             {
                 "component_media_src": 'fa.png',
-                "component_media_alt": 'A screenshot of the Font Awesome Icon Library',
+                "component_media_alt": 'Refer to the image caption for a description.',
                 "component_media_credit": '<a href="https://fontawesome.com/icons?d=gallery">Font Awesome</a>',
                 "component_media_caption": "A screenshot of the Font Awesome Icon Library",
                 "component_media_lightbox": "yes"

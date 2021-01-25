@@ -37,7 +37,7 @@
         <code>gulp</code><br>
         <p>This will compile your project and create a localhost with your patterns and pages. Use the black bar at the top to navigate to your components.</p>
         <h3>Building NDS for Production</h3>
-        <p>NDS provides a way to quickly build a distribution folder with all the necessary, web-ready assets. Upon build, the assets get generated and placed into a public_html/ directory.</p>
+        <p>NDS provides a way to quickly build a distribution folder with all the necessary, web-ready assets. Upon build, the assets are generated and placed into a public_html/ directory.</p>
         <p class="step">1. Create a Distribution Pattern Folder.</p>
         <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
         {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
@@ -50,7 +50,7 @@
                 "component_media_lightbox": "yes"
             }
         %}
-        <p>For each page of your static site, create a new folder and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
+        <p>For each page of your static site, create a new folder (typically with the same name as the corresponding 05-pages/ directory) and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
         {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
             {
                 "component_media_src": 'json.png',
@@ -61,7 +61,7 @@
             }
         %}
         <p class="step">2. Configure the Production JSON Files</p>
-        <p>The JSON file in each pages' folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
+        <p>The JSON file in each page's 06-dist folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
         <ul>
             <li>Configure the variable paths (cssPath, jsPath, etc.) to your desired structure.</p>
             <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>

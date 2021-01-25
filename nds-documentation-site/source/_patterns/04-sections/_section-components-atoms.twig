@@ -120,57 +120,6 @@
             {% endblock %}
         {% endembed %}
 
-        <h4>Document Buttons</h4>
-        <p>Document icons can help users more quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
-            {% block component_snippet_code %}
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-word.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-excel.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-powerpoint.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-pdf.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-image.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-document/demo/button-document-video.twig" %}
-                        </div>
-                    </div>
-                </div>
-            {% endblock %}
-            {% block component_snippet_pattern_info %}
-                <h5>Overview</h5>
-                <p>Use the "button_document_type" parameter to choose a type as follows:</p>
-                <ul>
-                    <li>Word - "file-word"</li>
-                    <li>Excel - "file-excel"</li>
-                    <li>PowerPoint - "file-ppt"</li>
-                    <li>PDF - "file-pdf"</li>
-                    <li>Image - "image"</li>
-                    <li>Video - "video"</li>
-                </ul>
-                <p>This component can also be used as a static &lt;div&gt;. To use this pattern simply as a decorative element, omit the document_button_href attribute.</p>
-                <h5>Parameters</h5>
-                <ul>
-                    <li>button_document_classes: Additional document button classes.</li>
-                    <li>button_document_id: Button ID.</li>
-                    <li>button_document_type: Type of document button. Options: file-word, file-excel, file-ppt, file-pdf, image, video.</li>
-                    <li>button_document_href: Button link destination.</li>
-                    <li>button_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
-                    <li>button_document_attributes: Additional button attributes.</li>
-                </ul>
-            {% endblock %}
-        {% endembed %}
-
         <h4>Floating Button</h4>
         <p>In some instances, you may want to have a persistent button available to users at all times. For example, you may want a "Back to Top" button that returns users to the top of the page, or the color palette button on this site the allows for theme customizations. For these purposes, NDS provides the Floating Button pattern, which is fixed at the lower right of the screen. In order to provide more clarity about its function, the Floating Button expands on hover and focus to reveal button text.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
@@ -375,6 +324,57 @@
                     <li>icon_default_type: Font Awesome icon name.</li>
                     <li>icon_default_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                     <li>icon_default_sr_text: Optional text for screen readers only.</li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Document Icons</h4>
+        <p>Document icons can help users more quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-word.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-excel.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-powerpoint.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-pdf.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-image.twig" %}
+                        </div>
+                        <div class="col-md">
+                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-video.twig" %}
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Overview</h5>
+                <p>The Document Icon pattern can also be used as a button, if a path is supplied to the "icon_document_href" parameter.</p>
+                <p>Use the "icon_document_type" parameter to choose a type as follows:</p>
+                <ul>
+                    <li>Word - "file-word"</li>
+                    <li>Excel - "file-excel"</li>
+                    <li>PowerPoint - "file-ppt"</li>
+                    <li>PDF - "file-pdf"</li>
+                    <li>Image - "image"</li>
+                    <li>Video - "video"</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>icon_document_classes: Additional document icon classes.</li>
+                    <li>icon_document_id: Icon wrapper ID.</li>
+                    <li>icon_document_type: Type of document icon. Options: file-word, file-excel, file-ppt, file-pdf, image, video.</li>
+                    <li>icon_document_href: Optional button link destination.</li>
+                    <li>icon_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>icon_document_attributes: Additional icon attributes.</li>
                 </ul>
             {% endblock %}
         {% endembed %}

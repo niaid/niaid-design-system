@@ -433,7 +433,7 @@
         <p>
             
 
-<a href="../../assets/nds.zip" class="button-nds button--icon waves-effect waves-light " download>
+<a href="../../images/nds.zip" class="button-nds button--icon waves-effect waves-light " download>
             
 
 <i class="icon-nds icon--default fas fa-download "></i>
@@ -473,7 +473,7 @@
         <code>gulp</code><br>
         <p>This will compile your project and create a localhost with your patterns and pages. Use the black bar at the top to navigate to your components.</p>
         <h3>Building NDS for Production</h3>
-        <p>NDS provides a way to quickly build a distribution folder with all the necessary, web-ready assets. Upon build, the assets get generated and placed into a public_html/ directory.</p>
+        <p>NDS provides a way to quickly build a distribution folder with all the necessary, web-ready assets. Upon build, the assets are generated and placed into a public_html/ directory.</p>
         <p class="step">1. Create a Distribution Pattern Folder.</p>
         <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
         
@@ -500,7 +500,7 @@
     </div>                    </div>
     </div>
 </div>
-        <p>For each page of your static site, create a new folder and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
+        <p>For each page of your static site, create a new folder (typically with the same name as the corresponding 05-pages/ directory) and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
         
 
     
@@ -526,7 +526,7 @@
     </div>
 </div>
         <p class="step">2. Configure the Production JSON Files</p>
-        <p>The JSON file in each pages' folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
+        <p>The JSON file in each page's 06-dist folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
         <ul>
             <li>Configure the variable paths (cssPath, jsPath, etc.) to your desired structure.</p>
             <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>
@@ -575,7 +575,7 @@
         <div class="block--files__col col-12 col-sm-6">
             
 
-<a href="../../assets/nds-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/nds-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fab fa-js "></i>
@@ -584,7 +584,7 @@
         <div class="block--files__col col-12 col-sm-6">
             
 
-<a href="../../assets/nds-min.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/nds-min.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fab fa-css3 "></i>
@@ -604,7 +604,7 @@
                 <div class="block--files__col col-12 col-sm-6">
                     
 
-<a href="../../assets/nds-lite-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/nds-lite-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fab fa-js "></i>
@@ -616,7 +616,7 @@
 <div id="section-drupal-website" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Building a Drupal Site</h2>
         <h3>Overview</h3>
-        <p>NDS Drupal Theme is a base theme which is integrated with NIAID Design System. NDS Drupal Theme out-of-the-box is a responsive with many regions provided for advance functionality. NDS Drupal Theme distributions also come with several theme settings.</p>
+        <p>NDS Drupal Theme is a base theme which is integrated with the NIAID Design System. NDS Drupal Theme out-of-the-box is responsive with many Drupal regions provided for advanced functionality. NDS Drupal Theme distributions also come with several theme settings.</p>
         <p>Core features of NDS Drupal Theme:</p>
         <ul>
             <li>Admin configurable theme settings including colors, fonts, corner style, and shadows.</li>
@@ -628,7 +628,7 @@
         <p>
             
 
-<a href="../../assets/nds-drupal-theme.zip" class="button-nds button--icon waves-effect waves-light " download>
+<a href="../../images/nds-drupal-theme.zip" class="button-nds button--icon waves-effect waves-light " download>
             
 
 <i class="icon-nds icon--default fas fa-download "></i>
@@ -683,7 +683,7 @@
     </div>                        
 <div id="section-working-with-nds" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Working with NDS</h2>
-        <p>Whether you are building a static site or a Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. For Drupal-based projects, the _patterns/ folder is located under the ./nds directory. If custom components, style rules, or functionality are needed, <strong>do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, place them in the appropriate atomic folders outside of the 00-nds directory.</p>
+        <p>Whether you are building a static site or a Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. For Drupal-based projects, the _patterns/ folder is located under the ./nds directory. If custom components, style rules, or functionality are needed, <strong>do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, place them in the appropriate Atomic folders outside of the 00-nds directory.</p>
         
 
     
@@ -699,7 +699,7 @@
 
 <div class="text-nds text--image-credit-caption ">
             <div class="text--image-credit-caption__caption">
-            <p class="text--image-credit-caption__caption__text">Custom components should be placed in the atomic folders outside of the 00-nds/ directory.</p>
+            <p class="text--image-credit-caption__caption__text">Custom components should be placed in the Atomic folders outside of the 00-nds/ directory.</p>
         </div>
                 <div class="text--image-credit-caption__credit">
             <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
@@ -737,7 +737,7 @@
         <div class="block--files__col col-12 col-sm-6">
             
 
-<a href="../../assets/nds-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/nds-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fab fa-js "></i>
@@ -746,7 +746,7 @@
         <div class="block--files__col col-12 col-sm-6">
             
 
-<a href="../../assets/nds-min.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/nds-min.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fab fa-css3 "></i>
@@ -760,7 +760,7 @@
         <div class="col-md-6">
             
 
-<a href="../../assets/public-sans.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/public-sans.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fas fa-file-archive "></i>
@@ -770,7 +770,7 @@
         <div class="col-md-6">
             
 
-<a href="../../assets/roboto.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/roboto.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fas fa-file-archive "></i>
@@ -782,7 +782,7 @@
         <div class="col-md-6">
             
 
-<a href="../../assets/martel.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/martel.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fas fa-file-archive "></i>
@@ -792,7 +792,7 @@
         <div class="col-md-6">
             
 
-<a href="../../assets/merriweather.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+<a href="../../images/merriweather.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fas fa-file-archive "></i>
@@ -805,13 +805,13 @@
 <div class="block--design-files ">
     
 
-<a class="button-nds button--image button--secondary" href="../../assets/NDS-Sketch.sketch" download>
+<a class="button-nds button--image button--secondary" href="../../images/NDS-Sketch.sketch" download>
     
 
 <img class="image-nds image--default " src="../assets/sketch.svg" alt="Sketch Icon" />            <span class="button--image__text">Download Sketch File</span>
     </a>    
 
-<a class="button-nds button--image button--secondary" href="../../assets/NDS-Figma.fig" download>
+<a class="button-nds button--image button--secondary" href="../../images/NDS-Figma.fig" download>
     
 
 <img class="image-nds image--default " src="../assets/figma.svg" alt="Figma Icon" />            <span class="button--image__text">Download Figma File</span>

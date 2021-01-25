@@ -1,0 +1,132 @@
+{#
+    ---
+    title: Document Icon
+    ---
+
+    Type: Atoms -> Icons
+
+    Description:
+        Document icons can help users more quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.
+        
+        The Document Icon pattern can also be used as a button, if a path is supplied to the "icon_document_href" parameter.
+
+        Use the "icon_document_type" parameter to choose a type as follows:
+
+            Word - "file-word"
+            Excel - "file-excel"
+            PowerPoint - "file-ppt"
+            PDF - "file-pdf"
+            Image - "image"
+            Video - "video"
+
+    Parameters:
+        icon_document_classes: Additional document icon classes.
+        icon_document_id: Icon wrapper ID.
+        icon_document_type: Type of document icon. Options: file-word, file-excel, file-ppt, file-pdf, image, video.
+        icon_document_href: Optional button link destination.
+        icon_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+        icon_document_attributes: Additional icon attributes.
+
+    Last Updated: January 25, 2021
+#}
+
+{% set icon_document_classes = icon_document_classes|default() %}
+{% set icon_document_id = icon_document_id|default() %}
+{% set icon_document_type = icon_document_type|default() %}
+{% set icon_document_href = icon_document_href|default() %}
+{% set icon_document_icon_weight = icon_document_icon_weight|default('r') %}
+{% set icon_document_attributes = icon_document_attributes|default() %}
+
+<{{ icon_document_href != "" ? 'a' : 'div' }} class="icon-nds icon--document {% if icon_document_type is not empty %}icon--document--{{ icon_document_type }}{% endif %} {{ icon_document_classes }}{% if icon_document_href is not empty %} icon--document--button{% endif %}"{% if icon_document_id is not empty %} id="{{ icon_document_id }}"{% endif %}{% if icon_document_href is not empty %} href="{{ icon_document_href }}"{% endif %} {{ icon_document_attributes }}>
+    {% if icon_document_type == "file-word" %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "icon--document__wrapper__icon icon--document__wrapper__icon--word",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "file-word"
+                }
+            %}
+        </div>
+    {% elseif icon_document_type == "file-excel" %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "icon--document__wrapper__icon icon--document__wrapper__icon--excel",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "file-excel"
+                }
+            %}
+        </div>
+    {% elseif icon_document_type == "file-ppt" %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "icon--document__wrapper__icon icon--document__wrapper__icon--powerpoint",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "file-powerpoint"
+                }
+            %}
+        </div>
+    {% elseif icon_document_type == "file-pdf" %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "icon--document__wrapper__icon icon--document__wrapper__icon--pdf",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "file-pdf"
+                }
+            %}
+        </div>
+    {% elseif icon_document_type == "video" %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "file-video"
+                }
+            %}
+        </div>
+    {% elseif icon_document_type == "image" %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "file-image"
+                }
+            %}
+        </div>
+    {% elseif icon_document_type == "application" %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "icon--default--application",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "desktop-alt"
+                }
+            %}
+        </div>
+    {% elseif icon_document_type == "link" %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "external-link-square"
+                }
+            %}
+        </div>
+    {% else %}
+        <div class="icon--document__wrapper">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
+                {
+                    "icon_default_classes": "",
+                    "icon_default_weight": icon_document_icon_weight,
+                    "icon_default_type": "file-alt"
+                }
+            %}
+        </div>
+    {% endif %}
+</{{ icon_document_href != "" ? 'a' : 'div' }}>

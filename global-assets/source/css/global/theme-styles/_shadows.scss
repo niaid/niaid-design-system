@@ -68,9 +68,18 @@
             }
         }
     }
-    .icon--circle {
-        @include md-2dp;
-        border: 0;
+    .icon-nds {
+        &.icon--circle {
+            @include md-2dp;
+            border: 0;
+        }
+        &.icon--document {
+            @include md-2dp;
+            border: 0;
+            &.icon--document--button {
+                @extend .hoverable;
+            }
+        }
     }
     .input-nds {
         &.input--select {
