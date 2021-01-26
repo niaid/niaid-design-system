@@ -19,26 +19,6 @@
                     "block_hero_width": "col-xl-9"
                 }
             %}
-                {% block block_hero_breadcrumbs %}
-                    {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/_navigation-breadcrumbs-main.twig" with
-                        {
-                            "navigation_breadcrumbs_data": [
-                                {
-                                    "text":"Level 1",
-                                    "href":""
-                                },
-                                {
-                                    "text":"Level 2",
-                                    "href":"#"
-                                },
-                                {
-                                    "text":"Level 3",
-                                    "href":"#"
-                                }
-                            ]
-                        }
-                    %}
-                {% endblock %}
                 {% block block_hero_image %}
                     <img src="{{ imagePath }}michael-longmire-L9EV3OogLh0-unsplash.jpg" alt=""/>
                 {% endblock %}
