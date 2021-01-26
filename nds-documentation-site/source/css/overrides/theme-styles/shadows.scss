@@ -37,9 +37,10 @@
         &__block {
             &__pattern {
                 &__toggle {
+                    border: 0 !important;
                     &:hover,
                     &:focus {
-                        border: 0;
+                        border: 0 !important;
                     }
                 }
                 &__content {

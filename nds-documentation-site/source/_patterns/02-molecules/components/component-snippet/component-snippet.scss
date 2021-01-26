@@ -67,7 +67,7 @@
         &__pattern {
             &__toggle {
                 background: transparent !important;
-                border: 0;
+                border: 0 !important;
                 border-top-left-radius: 0 !important;
                 border-top-right-radius: 0 !important;
                 color: $type-link;
