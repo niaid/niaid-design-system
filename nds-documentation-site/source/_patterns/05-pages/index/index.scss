@@ -26,5 +26,24 @@
                 }
             }
         }
+        .tout-block {
+            max-width: 50rem;
+            .tout {
+                text-align: center;
+                .icon--circle {
+                    margin: 0 auto;
+                    background: #D81F50 !important;
+                    border: .0625rem solid #D81F50 !important;
+                    i {
+                        color: $white !important;
+                    }
+                }
+                p {
+                    line-height: 1.5;
+                    max-width: 16rem;
+                    margin: 1rem auto;
+                }
+            }
+        }
     }
 }

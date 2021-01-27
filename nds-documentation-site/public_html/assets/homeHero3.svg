@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1312px" height="729px" viewBox="0 0 1312 729" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 6</title>
+    <defs>
+        <linearGradient x1="18.153446%" y1="39.0319524%" x2="91.1384311%" y2="63.7790347%" id="linearGradient-1">
+            <stop stop-color="#FBFBFD" offset="0%"></stop>
+            <stop stop-color="#F5F6FA" offset="100%"></stop>
+            <stop stop-color="#F5F6FA" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.0900333%" y1="100%" x2="42.9344409%" y2="37.1873606%" id="linearGradient-2">
+            <stop stop-color="#D3DBE8" offset="0%"></stop>
+            <stop stop-color="#F5F6FA" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-3">
+            <stop stop-color="#D3DBE8" offset="0%"></stop>
+            <stop stop-color="#F5F6FA" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.0900333%" y1="77.6768%" x2="42.9344409%" y2="42.9077428%" id="linearGradient-4">
+            <stop stop-color="#F5F6FA" offset="0%"></stop>
+            <stop stop-color="#D3DBE8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.0900333%" y1="53.4568711%" x2="42.9344409%" y2="49.1141671%" id="linearGradient-5">
+            <stop stop-color="#F5F6FA" offset="0%"></stop>
+            <stop stop-color="#D3DBE8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.0900333%" y1="53.4565268%" x2="42.9344409%" y2="49.1142554%" id="linearGradient-6">
+            <stop stop-color="#F5F6FA" offset="0%"></stop>
+            <stop stop-color="#D3DBE8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.0900333%" y1="53.457813%" x2="42.9344409%" y2="49.1139258%" id="linearGradient-7">
+            <stop stop-color="#F5F6FA" offset="0%"></stop>
+            <stop stop-color="#D3DBE8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="117.773766%" y1="140.857661%" x2="42.9344409%" y2="37.1873606%" id="linearGradient-8">
+            <stop stop-color="#D3DBE8" offset="0%"></stop>
+            <stop stop-color="#F5F6FA" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.0900333%" y1="77.5918367%" x2="42.9344409%" y2="42.9295149%" id="linearGradient-9">
+            <stop stop-color="#F5F6FA" offset="0%"></stop>
+            <stop stop-color="#D3DBE8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="81.0900333%" y1="77.7274785%" x2="42.9344409%" y2="42.8947563%" id="linearGradient-10">
+            <stop stop-color="#F5F6FA" offset="0%"></stop>
+            <stop stop-color="#D3DBE8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-64.000000, -65.000000)">
+            <g id="Group-6" transform="translate(64.582481, 65.000000)">
+                <rect id="Rectangle" fill="url(#linearGradient-1)" transform="translate(655.417519, 364.500000) scale(-1, 1) translate(-655.417519, -364.500000) " x="0.417519" y="0" width="1310" height="729"></rect>
+                <circle id="Oval" stroke="url(#linearGradient-2)" stroke-width="17" cx="1223.91752" cy="258.5" r="38.5"></circle>
+                <rect id="Rectangle-Copy-41" fill="url(#linearGradient-3)" x="800.417519" y="633" width="9" height="9" rx="2"></rect>
+                <polygon id="Triangle-Copy-2" fill="url(#linearGradient-4)" points="90.917519 205 153.417519 298 28.417519 298"></polygon>
+                <path d="M0.417519,552.603994 C99.2187252,449.132002 239.376441,449.132002 420.890667,552.603994 C602.404893,656.075987 784.247177,714.874655 966.417519,729 L0.417519,729 L0.417519,552.603994 Z" id="Rectangle" fill="url(#linearGradient-5)" opacity="0.2"></path>
+                <circle id="Oval-Copy-2" fill="url(#linearGradient-2)" cx="1104.91752" cy="339.5" r="54.5"></circle>
+                <circle id="Oval-Copy" fill="url(#linearGradient-2)" cx="1120.91752" cy="194.5" r="29.5"></circle>
+                <path d="M0.417519,587.093201 C79.9049265,503.852206 192.664415,503.852206 338.695985,587.093201 C484.727555,670.334197 631.023053,717.636463 777.582481,729 L0.417519,729 L0.417519,587.093201 Z" id="Rectangle" fill="url(#linearGradient-6)" opacity="0.45"></path>
+                <path d="M0,623.271413 C59.1170778,561.351165 142.979562,561.351165 251.587453,623.271413 C360.195344,685.19166 468.999526,720.378265 578,728.831227 L0,728.831227 L0,623.271413 Z" id="Rectangle" fill="url(#linearGradient-7)"></path>
+                <circle id="Oval" fill="url(#linearGradient-2)" cx="1035.91752" cy="276.5" r="69.5"></circle>
+                <g id="Group-2" transform="translate(1067.417519, 487.000000)" fill="url(#linearGradient-8)">
+                    <rect id="Rectangle" x="0" y="130" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-6" x="0" y="104" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy" x="26" y="130" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-7" x="26" y="104" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-2" x="52" y="130" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-8" x="52" y="104" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-3" x="78" y="130" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-9" x="78" y="104" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-4" x="104" y="130" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-10" x="104" y="104" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-5" x="130" y="130" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-11" x="130" y="104" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-17" x="0" y="78" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-16" x="26" y="78" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-15" x="52" y="78" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-14" x="78" y="78" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-13" x="104" y="78" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-12" x="130" y="78" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-23" x="0" y="52" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-22" x="26" y="52" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-21" x="52" y="52" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-20" x="78" y="52" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-19" x="104" y="52" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-18" x="130" y="52" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-29" x="0" y="26" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-28" x="26" y="26" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-27" x="52" y="26" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-26" x="78" y="26" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-25" x="104" y="26" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-24" x="130" y="26" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-35" x="0" y="0" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-34" x="26" y="0" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-33" x="52" y="0" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-32" x="78" y="0" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-31" x="104" y="0" width="10" height="10"></rect>
+                    <rect id="Rectangle-Copy-30" x="130" y="0" width="10" height="10"></rect>
+                </g>
+                <polygon id="Triangle" fill="url(#linearGradient-9)" points="118.417519 287 153.417519 339 83.417519 339"></polygon>
+                <polygon id="Triangle-Copy" fill="url(#linearGradient-10)" points="176.917519 234 200.417519 269 153.417519 269"></polygon>
+                <rect id="Rectangle-Copy-37" fill="url(#linearGradient-3)" x="826.417519" y="594" width="52" height="52" rx="4.5"></rect>
+                <rect id="Rectangle-Copy-39" fill="url(#linearGradient-3)" x="767.417519" y="594" width="29" height="29" rx="4.5"></rect>
+                <rect id="Rectangle-Copy-40" fill="url(#linearGradient-3)" x="809.417519" y="557" width="29" height="29" rx="4.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

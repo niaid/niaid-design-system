@@ -3,14 +3,14 @@
 <div class="hero-nds hero--home {{ hero_home_classes }}">
     {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
         {
-            "image_default_src": 'homeHero2.svg',
+            "image_default_src": 'homeHero3.svg',
             "image_default_alt": ''
         }
     %}
     <div class="hero--home__content">
         {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
             {
-                "image_default_src": 'global/niaid/logo-niaid-mobile-white.svg',
+                "image_default_src": 'global/niaid/logo-niaid-mobile.svg',
                 "image_default_alt": 'NIAID'
             }
         %}
@@ -27,7 +27,7 @@
             %}
             {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
                 {
-                    "button_default_type": "primary",
+                    "button_default_type": "secondary",
                     "button_default_classes": "button--learn-more",
                     "button_default_href": links.design,
                     "button_default_label": "Learn More"

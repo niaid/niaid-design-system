@@ -1,10 +1,10 @@
 .style--headings--public-sans {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
         font-family: "Public Sans", "Roboto", sans-serif;
         a {
             font-family: "Public Sans", "Roboto", sans-serif;
@@ -13,12 +13,12 @@
 }
 
 .style--headings--roboto {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
         font-family: "Roboto", "Public Sans", sans-serif;
         a {
             font-family: "Roboto", "Public Sans", sans-serif;
@@ -27,12 +27,12 @@
 }
 
 .style--headings--merriweather {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
         font-weight: $font-weight-light;
         font-family: "Merriweather", "Martel", serif;
         a {
@@ -45,12 +45,12 @@
 }
 
 .style--headings--martel {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
         font-family: "Martel", "Merriweather", serif;
         a {
             font-family: "Martel", "Merriweather", serif;
