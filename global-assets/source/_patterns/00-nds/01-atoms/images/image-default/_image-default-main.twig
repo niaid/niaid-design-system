@@ -16,7 +16,7 @@
         image_default_height: The desired height of the image (Optional).
         image_default_attributes: Additional image attributes.
 
-    Last Updated: January 22, 2021
+    Last Updated: January 26, 2021
 #}
 
 {% set image_default_classes = image_default_classes|default() %}
@@ -26,4 +26,8 @@
 {% set image_default_height = image_default_height|default() %}
 {% set image_default_attributes = image_default_attributes|default() %}
 
-<img class="image-nds image--default {{ image_default_classes }}" src="{{ imagePath }}{{ image_default_src }}" alt="{{ image_default_alt }}" {% if image_default_height is not empty %} height="{{ image_default_height }}"{% endif %}{% if image_default_width is not empty %} width="{{ image_default_width }}"{% endif %}{% if image_default_title is not empty %} title="{{ image_default_title }}"{% endif %}{{ image_default_attributes }}/>
+{% if "https:" not in image_default_src and "http:" not in image_default_src %}
+	{% set image_default_src = imagePath ~ image_default_src %}
+{% endif %}
+
+<img class="image-nds image--default {{ image_default_classes }}" src="{{ image_default_src }}" alt="{{ image_default_alt }}" {% if image_default_height is not empty %} height="{{ image_default_height }}"{% endif %}{% if image_default_width is not empty %} width="{{ image_default_width }}"{% endif %}{% if image_default_title is not empty %} title="{{ image_default_title }}"{% endif %}{{ image_default_attributes }}/>
