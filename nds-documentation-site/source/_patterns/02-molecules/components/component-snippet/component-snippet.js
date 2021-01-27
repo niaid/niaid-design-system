@@ -1,14 +1,22 @@
 (function($) {
     function initComponentSnippet(context = document) {
         $('.component--snippet__block__code__wrapper__snippet').each(function() {
-            var codeSnippet = escapeHtml($(this).html());
-            $(this).empty();
-            $(this).append(codeSnippet);
-            $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
-            var block = $(this).find('code');
-            Prism.highlightElement(block[0]);
-            $('.component--snippet__block__code__wrapper').show();
-            $('.component--snippet__block__code__loader').hide();
+            if ($("#components").length) {
+                var codeSnippet = escapeHtml($(this).html());
+                $(this).empty();
+                $(this).append(codeSnippet);
+                $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
+                var block = $(this).find('code');
+                Prism.highlightElement(block[0]);
+                $('.component--snippet__block__code__wrapper').show();
+                $('.component--snippet__block__code__loader').hide();
+            }
+            else {
+                var block = $(this).find('code');
+                Prism.highlightElement(block[0]);
+                $('.component--snippet__block__code__wrapper').show();
+                $('.component--snippet__block__code__loader').hide();
+            }
         });
 
         $('.component--snippet').find('.button--icon').on('click', function() {

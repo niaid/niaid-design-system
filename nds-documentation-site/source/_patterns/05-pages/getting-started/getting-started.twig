@@ -46,34 +46,6 @@
                     }
                 %}
                     {% block navigation_mobile_rail_content %}
-                        {# {% include "@nds/02-molecules/navigation/navigation-local/_navigation-local-main.twig" with
-                            {
-                                "navigation_local_id": "navigation-local",
-                                "navigation_local_title_text": "Getting Started",
-                                "navigation_local_items": [
-                                    {
-                                        "text": "Overview",
-                                        "href": "#main-content"
-                                    },
-                                    {
-                                        "text": "Building a Static Site",
-                                        "href": "#section-static-website"
-                                    },
-                                    {
-                                        "text": "Building a Drupal Site",
-                                        "href": "#section-drupal-website"
-                                    },
-                                    {
-                                        "text": "Working with NDS",
-                                        "href": "#section-working-with-nds"
-                                    },
-                                    {
-                                        "text": "Resources",
-                                        "href": "#section-resources"
-                                    }
-                                ]
-                            }
-                        %} #}
                         {% include "@molecules/components/component-scrollspy-toc/_component-scrollspy-toc-main.twig" with
                             {
                                 "component_scrollspy_toc_title": "Getting Started",
@@ -83,43 +55,16 @@
                                         "text": "Overview"
                                     },
                                     {
-                                        "href": "section-prerequisites",
-                                        "text": "Prerequisites"
-                                    },
-                                    {
-                                        "href": "section-choose-type",
-                                        "text": "Choose Your Website Type"
-                                    },
-                                    {
-                                        "href": "section-choose-type-static",
-                                        "text": "Static Site",
-                                        "class": "ml-3"
-                                    },
-                                    {
-                                        "href": "section-choose-type-dynamic",
-                                        "text": "Dynamic Site",
-                                        "class": "ml-3"
-                                    },
-                                    {
-                                        "href": "section-choose-type-drupal",
-                                        "text": "Drupal-Based Site",
-                                        "class": "ml-3"
+                                        "href": "section-quick-start",
+                                        "text": "Quick Start"
                                     },
                                     {
                                         "href": "section-static-website",
-                                        "text": "Building a Static Site"
-                                    },
-                                    {
-                                        "href": "section-dynamic-website",
-                                        "text": "Building a Dynamic Site"
+                                        "text": "Static Site Builder"
                                     },
                                     {
                                         "href": "section-drupal-website",
-                                        "text": "Building a Drupal Site"
-                                    },
-                                    {
-                                        "href": "section-working-with-nds",
-                                        "text": "Working with NDS"
+                                        "text": "NDS Drupal Theme"
                                     },
                                     {
                                         "href": "section-resources",
@@ -134,14 +79,74 @@
             {% block main_column %}
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
-                        {% include "@sections/_section-overview-getting-started.twig" %}
-                        {% include "@sections/_section-prerequisites.twig" %}
-                        {% include "@sections/_section-choose-type.twig" %}
-                        {% include "@sections/_section-static-website.twig" %}
-                        {% include "@sections/_section-dynamic-website.twig" %}
-                        {% include "@sections/_section-drupal-website.twig" %}
-                        {% include "@sections/_section-working-with-nds.twig" %}
-                        {% include "@sections/_section-resources.twig" %}
+                        <h1 id="main-content">Getting Started</h1>
+                        <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project. If you are interested in adding NDS to an existing website, please view our <a href="{{ links.migrationGuide}}">Migration Guide</a> for more information.</p>
+                        <hr>
+                        <h2>Quick Start</h2>
+                        <p>The fastest way to start using the NIAID Design System is to download the source code and add it to your HTML.</p>
+                        <h3>CSS</h3>
+                        {# DOWNLOAD #}
+                        <p>Download the Global NDS CSS file and include the following code in the &lt;head&gt; of your HTML.</p>
+                        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+                            {
+                                "component_snippet_show_rendered": "no"
+                            }
+                        %}
+                            {% block component_snippet_code %}
+                                <pre>
+                                    <code class="language-markup">
+                                        &lt;link rel="stylesheet" href="PATH-TO-CSS/nds-min.css" media="all" /&gt;
+                                    </code>
+                                </pre>
+                            {% endblock %}
+                        {% endembed %}
+
+                        <h3>JS</h3>
+                        <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components. To increase flexibility and use, we provide two versions of the NDS JS.</p>
+
+                        <h4>Bundled JS (Recommended)</h4>
+                        {# DOWNLOAD #}
+                        <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong>To use this version, download the NDS Bundled JS file and include the scripts right before the closing &lt;/body&gt; tag.</p>
+                        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+                            {
+                                "component_snippet_show_rendered": "no"
+                            }
+                        %}
+                            {% block component_snippet_code %}
+                                <pre>
+                                    <code class="language-markup">
+                                        &lt;script src="../../js/libraries/jquery/jquery.min.js">&lt;/script>
+                                        &lt;script src="../../js/libraries/select2/select2.full.min.js">&lt;/script>
+                                        &lt;script src="../../js/libraries/materialize/materialize.min.js">&lt;/script>
+                                        &lt;script src="../../js/libraries/bootstrap/bootstrap.bundle.min.js">&lt;/script>
+                                        &lt;script src="../../js/libraries/match-media/match-media.js">&lt;/script>
+                                        &lt;script src="../../js/libraries/datatables/datatables.min.js">&lt;/script>
+                                        &lt;script src="../../js/libraries/bootstrap-datepicker/bootstrap-datepicker.min.js">&lt;/script>
+                                        &lt;script src="../../js/libraries/uswds/uswds.min.js">&lt;/script>
+
+                                        &lt;script src="../../js/global/nds-min.js">&lt;/script>
+                                        &lt;/body>
+                                    </code>
+                                </pre>
+                            {% endblock %}
+                        {% endembed %}
+
+                        <p>Use the <a href="{{ links.components }}">Components page</a> to see which components rely on third-party libraries.</p>
+
+                        <h4>Dependency-Free JS</h4>
+                        {# DOWNLOAD #}
+                        {# What's Included? #}
+
+                        <h3>Page Template</h3>
+                        <p>If you are building HTML from scratch, you can use the following template to jump start your process.</p>
+
+                        <h3>Components</h3>
+
+                        <h2>Static Site Builder</h2>
+
+                        <h2>NDS Drupal Theme</h2>
+
+                        {# Resources #}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
