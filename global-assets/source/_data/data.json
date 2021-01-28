@@ -8,17 +8,14 @@
     "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans",
     "cssIncludes": {
         "select2": true,
-        "bootstrapDatepicker": true,
-        "uswds": true
+        "bootstrapDatepicker": true
     },
     "jsIncludes": {
         "jquery": true,
         "select2": true,
         "materialize": true,
         "bootstrap": true,
-        "matchMedia": true,
         "dataTables": true,
-        "dateTimePicker": true,
-        "uswds": true
+        "dateTimePicker": true
     }
 }
