@@ -101,6 +101,23 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
+  initComponentUSWDSBanner();
+}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+
+function initComponentUSWDSBanner() {
+  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+      document.getElementById("uswds-banner-content").style.display = 'none';
+    } else {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+      document.getElementById("uswds-banner-content").style.display = 'block';
+    }
+  });
+} // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
   initNavigationDrawer();
 }); // initNavigationDrawer - Functionality to support the NDS mobile drawer.
 

@@ -4,7 +4,7 @@
     <title>Theme Builder | NIAID Design System</title>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../css/libraries/bootstrap-datepicker/bootstrap-datepicker.min.css" />    <link rel="stylesheet" href="../css/libraries/select2/select2.min.css" />    <link rel="stylesheet" href="../css/libraries/uswds/uswds-banner.min.css" />    
+    <link rel="stylesheet" href="../css/libraries/bootstrap-datepicker/bootstrap-datepicker.min.css" />    <link rel="stylesheet" href="../css/libraries/select2/select2.min.css" />    
     <link rel="stylesheet" href="../css/custom/prism/prism.css" />
 
     <link rel="icon" href="../assets/global/favicons/favicon.ico" type="image/x-icon"/>
@@ -29,48 +29,43 @@
 <div class="page" id="builder">
             
 
-<section class="component-nds component--uswds-banner usa-banner " aria-label="Official government website">
-  <div class="usa-accordion">
-    <header class="usa-banner__header">
-      <div class="usa-banner__inner">
-        <div class="grid-col-auto">
-          <img class="usa-banner__header-flag" src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag">
+<aside class="component-nds component--uswds-banner usa-banner " aria-label="Official Government Website">
+    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government webstite banner." aria-expanded="false">
+        
+
+	
+<img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" />        <span>An official website of the United States government. Here's how you know.</span>
+        
+
+<i class="icon-nds icon--default fas fa-chevron-right "></i>
+    </button>
+    <div id="uswds-banner-content" class="component--uswds-banner__content container">
+        <div class="row">
+            <div class="component--uswds-banner__content__column col-12 col-md-6">
+                
+
+	
+<img class="image-nds image--default component--uswds-banner__content__column__icon" src="../assets/global/uswds/icon-dot-gov.svg" alt="Dot gov" />                <p>
+                    <strong class="component--uswds-banner__content__column__title">Official websites use .gov</strong>
+                    <br/>A <strong>.gov</strong> website belongs to an official government organization in the United States.
+                </p>
+            </div>
+            <div class="component--uswds-banner__content__column col-12 col-md-6">
+                
+
+	
+<img class="image-nds image--default component--uswds-banner__content__column__icon" src="../assets/global/uswds/icon-https.svg" alt="Https" />                <p>
+                    <strong class="component--uswds-banner__content__column__title">Secure .gov websites use HTTPS</strong>
+                    <br/>
+                    A <strong>lock</strong> (<span class="icon-lock">
+
+	
+<img class="image-nds image--default " src="../assets/global/uswds/icon-lock.svg" alt="lock icon" /></span>) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+                </p>
+            </div>
         </div>
-        <div class="grid-col-fill tablet:grid-col-auto">
-          <p class="usa-banner__header-text">An official website of the United States government.</p>
-          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
-        </div>
-        <button class="usa-accordion__button usa-banner__button"
-          aria-expanded="false" aria-controls="gov-banner">
-          <span class="usa-banner__button-text">Here’s how you know</span>
-        </button>
-      </div>
-    </header>
-    <div class="usa-banner__content usa-accordion__content" id="gov-banner" hidden>
-      <div class="grid-row grid-gap-lg">
-        <div class="usa-banner__guidance tablet:grid-col-6">
-          <img class="usa-banner__icon usa-media-block__img" src="../assets/global/uswds/icon-dot-gov.svg" role="img" alt="Dot gov">
-          <div class="usa-media-block__body">
-            <p>
-              <strong>Official websites use .gov</strong>
-              <br/>A <strong>.gov</strong> website belongs to an official government organization in the United States.
-            </p>
-          </div>
-        </div>
-        <div class="usa-banner__guidance tablet:grid-col-6">
-          <img class="usa-banner__icon usa-media-block__img" src="../assets/global/uswds/icon-https.svg" role="img" alt="Https">
-          <div class="usa-media-block__body">
-            <p>
-              <strong>Secure .gov websites use HTTPS</strong>
-              <br/>
-              A <strong>lock</strong> (<span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"/></svg></span>) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>        
+    <div>
+</aside>        
 <div class="global-nds global--header ">
     
 
@@ -1274,7 +1269,7 @@
     </footer>    </div>        
         <script src="../js/custom/stickybits.min.js"></script>
 
-        <script src="../js/libraries/jquery/jquery.min.js"></script>        <script src="../js/libraries/select2/select2.full.min.js"></script>        <script src="../js/libraries/materialize/materialize.min.js"></script>        <script src="../js/libraries/bootstrap/bootstrap.bundle.min.js"></script>        <script src="../js/libraries/match-media/match-media.js"></script>        <script src="../js/libraries/datatables/datatables.min.js"></script>        <script src="../js/libraries/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>        <script src="../js/libraries/uswds/uswds.min.js"></script>        <script src="../js/custom/jquery.cookie.js"></script>
+        <script src="../js/libraries/jquery/jquery.min.js"></script>        <script src="../js/libraries/select2/select2.full.min.js"></script>        <script src="../js/libraries/materialize/materialize.min.js"></script>        <script src="../js/libraries/bootstrap/bootstrap.bundle.min.js"></script>        <script src="../js/libraries/datatables/datatables.min.js"></script>        <script src="../js/libraries/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>                <script src="../js/custom/jquery.cookie.js"></script>
         <script src="../js/custom/prism/prism.js" data-manual></script>
         <script src="../js/custom/prism/prism-normalize-whitespace.min.js"></script>
         <script src="../js/global/nds-min.js"></script>
