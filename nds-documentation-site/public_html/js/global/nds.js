@@ -932,6 +932,38 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     });
   }
 })(jQuery); // Dependencies
+//  - Bootstrap Datepicker
+//  - jQuery
+
+
+(function ($) {
+  function initInputDatePicker() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.input--date-picker').each(function () {
+      if ($(this).find('input').attr('nds-date-picker') == 'true') {
+        $(this).find('input').datepicker();
+      }
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputDatePicker = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-date-picker').each(function () {
+            initInputDatePicker(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputDatePicker();
+    });
+  }
+})(jQuery); // Dependencies
 //  - Select2
 //  - jQuery
 
@@ -1038,38 +1070,6 @@ function initLinkExternalMailto() {
     mailtoLinks[i].classList.add('link--external--mail');
   }
 } // Dependencies
-//  - Bootstrap Datepicker
-//  - jQuery
-
-
-(function ($) {
-  function initInputDatePicker() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('.input--date-picker').each(function () {
-      if ($(this).find('input').attr('nds-date-picker') == 'true') {
-        $(this).find('input').datepicker();
-      }
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputDatePicker = {
-        attach: function attach(context) {
-          $('body', context).once('nds-input-date-picker').each(function () {
-            initInputDatePicker(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputDatePicker();
-    });
-  }
-})(jQuery); // Dependencies
 //  - DataTables
 //  - jQuery
 
