@@ -23,9 +23,6 @@
                     padding: 0;
                     height: 3rem;
                     width: 3rem;
-                    &:visited {
-                        color: $white;
-                    }
                 }
                 &.active,
                 &.is-active {
@@ -34,6 +31,7 @@
                         color: $white;
                     }
                 }
+                &.pager__item--first,
                 &.pager__item--next,
                 &.pager__item--last {
                     a {
