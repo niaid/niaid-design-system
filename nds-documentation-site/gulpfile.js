@@ -154,7 +154,7 @@ gulp.task('serveProject', function() {
 gulp.task('default', gulp.series(copyFonts, copyGlobalImages, copyGlobalSass, copyGlobalJS, cleanNDS, copyGlobalPatterns, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
 // GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compileNDSLite, compilePatternLab, formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, zipAssets));
+gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compileNDSLite, compilePatternLab, formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleJS, zipAssets));
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
@@ -350,10 +350,21 @@ function zipAssets() {
         .pipe(gulp.dest('./public_html/assets/'));
 }
 
+// formatComponents - A function to beautify the Component code snippets for production.
 function formatComponents() {
     return gulp.src('./public/patterns/06-dist-components-components/06-dist-components-components.html')
         .pipe(beautify())
         .pipe(gulp.dest('./public/patterns/06-dist-components-components/'));
+}
+
+// bundleJS - A function to build a zip file of bundled JS.
+function bundleJS() {
+    gulp.src(['./public_html/assets/nds-lite.js', './public_html/assets/nds-lite-min.js'])
+        .pipe(zip('nds-lite-js.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
+    return gulp.src(['../global-assets/source/js/global', '../global-assets/source/js/libraries'])
+        .pipe(zip('nds-bundled-js.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
 }
 
 gulp.task('compileNDSLite', gulp.series(compileNDSLite));

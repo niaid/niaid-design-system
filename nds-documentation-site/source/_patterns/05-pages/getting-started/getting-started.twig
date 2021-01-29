@@ -104,9 +104,18 @@
                         <h3>JS</h3>
                         <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components. To increase flexibility and use, we provide two versions of the NDS JS.</p>
 
-                        <h4>Bundled JS (Recommended)</h4>
-                        {# DOWNLOAD #}
-                        <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong>To use this version, download the NDS Bundled JS file and include the scripts right before the closing &lt;/body&gt; tag.</p>
+                        <h4>NDS Bundled JS (Recommended)</h4>
+                        <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong> To use this version, download the NDS Bundled JS file/accompanying third-party libraries and include the scripts right before the closing &lt;/body&gt; tag.</p>
+                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                            {
+                                "button_icon_classes": "button--secondary",
+                                "button_icon_icon": "js",
+                                "button_icon_icon_weight": "b",
+                                "button_icon_href": assetsPath ~ "nds-bundled-js.zip",
+                                "button_icon_text": "Download NDS Global JS & Third Party Libraries",
+                                "button_icon_attributes": "download"
+                            }
+                        %}
                         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
                             {
                                 "component_snippet_show_rendered": "no"
@@ -133,9 +142,25 @@
 
                         <p>Use the <a href="{{ links.components }}">Components page</a> to see which components rely on third-party libraries.</p>
 
-                        <h4>Dependency-Free JS</h4>
-                        {# DOWNLOAD #}
-                        {# What's Included? #}
+                        <h4>NDS Lite JS</h4>
+                        <p>Many modern frameworks for building front-ends, such as Vue.js, React.js, or Angular.js, do not interact well with jQuery. To accomodate sites using these frameworks, NDS also provides a dependency-free version of the global JS, NDS Lite.</p>
+                        <h3>What does NDS Lite do?</h3>
+                        <ul>
+                            <li>Adds external link icons and envelope icons to applicable links.</li>
+                            <li>Adds data attributes to elements for Google Analytics tracking.</li>
+                            <li>Opens and closes the mobile side drawer menu on header button click.</li>
+                            <li>Manages the toggling of the United States Web Design System banner.</li>
+                        </ul>
+                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                            {
+                                "button_icon_classes": "button--secondary",
+                                "button_icon_icon": "js",
+                                "button_icon_icon_weight": "b",
+                                "button_icon_href": assetsPath ~ "nds-lite-js.zip",
+                                "button_icon_text": "Download NDS Lite",
+                                "button_icon_attributes": "download"
+                            }
+                        %}
 
                         <h3>Page Template</h3>
                         <p>If you are building HTML from scratch, you can use the following template to jump start your process.</p>
@@ -143,10 +168,30 @@
                         <h3>Components</h3>
 
                         <h2>Static Site Builder</h2>
+                        <p>The Static Site Builder is a tool that is designed to rapidly create static HTML websites powered by the NIAID Design System. The tool is built using Pattern Lab, an framework based on the Twig templating language and the principle of Atomic Design. The Static Site Builder is perfect for small websites with a simple navigational structure and content that changes infrequently. The Static Site Builder is easy to use, and does not require a full development team to make simple websites.</p>
+                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                            {
+                                "button_icon_icon": "long-arrow-right",
+                                "button_icon_icon_weight": "r",
+                                "button_icon_text": "Start Using the Static Site Builder",
+                                "button_icon_href": links.staticSiteBuilder,
+                                "button_icon_icon_position": "right"
+                            }
+                        %}
 
                         <h2>NDS Drupal Theme</h2>
+                        <p>If your website is more complex and hosts a large amount of rapidly changing content, you may need a Content Management System. NDS supports Drupal 8 development through our own NDS Drupal Theme. Using Drupal with your website is complex, and will likely require significant developer effort and time. Like any Drupal website, building the theme is only one component of the development involved.</p>
+                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                            {
+                                "button_icon_icon": "long-arrow-right",
+                                "button_icon_icon_weight": "r",
+                                "button_icon_text": "Start Using the NDS Drupal Theme",
+                                "button_icon_href": links.ndsDrupalTheme,
+                                "button_icon_icon_position": "right"
+                            }
+                        %}
 
-                        {# Resources #}
+                        {% include "@sections/_section-resources.twig" %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}

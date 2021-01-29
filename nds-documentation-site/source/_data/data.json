@@ -58,6 +58,8 @@
         "getStarted": "/public/patterns/05-pages-getting-started-getting-started/05-pages-getting-started-getting-started.html",
         "migrationGuide": "/public/patterns/05-pages-migration-guide-migration-guide/05-pages-migration-guide-migration-guide.html",
         "fontAwesomePro": "/public/patterns/05-pages-font-awesome-pro-font-awesome-pro/05-pages-font-awesome-pro-font-awesome-pro.html",
-        "about": "/public/patterns/05-pages-about-about/05-pages-about-about.html"
+        "about": "/public/patterns/05-pages-about-about/05-pages-about-about.html",
+        "staticSiteBuilder": "/public/patterns/05-pages-static-site-builder-static-site-builder/05-pages-static-site-builder-static-site-builder.html",
+        "ndsDrupalTheme": "/public/patterns/05-pages-nds-drupal-theme-nds-drupal-theme/05-pages-nds-drupal-theme-nds-drupal-theme.html"
     }
 }
