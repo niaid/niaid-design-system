@@ -170,8 +170,9 @@
                 </button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/getting-started/">Overview</a>
-                    <a class="dropdown-item" href="/getting-started/#section-static-website">Building a Static Site</a>
-                    <a class="dropdown-item" href="/getting-started/#section-drupal-website">Building a Drupal Site</a>
+                    <a class="dropdown-item" href="/getting-started/#section-quick-start">Quick Start</a>
+                    <a class="dropdown-item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                    <a class="dropdown-item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
                     <a class="dropdown-item" href="/getting-started/#section-resources">Resources</a>
                 </div>
             </div>
@@ -231,8 +232,9 @@
                 </div>
                 <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseOne" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/">Overview</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-static-website">Building a Static Site</a>
-                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-drupal-website">Building a Drupal Site</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-quick-start">Quick Start</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-resources">Resources</a>
                 </div>
             </div>
@@ -314,10 +316,13 @@
     <h2>Getting Started</h2>
     <hr>
     <ul class="component--scrollspy-toc__list section table-of-contents">
-                    <li class="component--scrollspy-toc__list__item"><a href="#section-overview">Overview</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-getting-started-overview">Overview</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-quick-start">Quick Start</a></li>
-                    <li class="component--scrollspy-toc__list__item"><a href="#section-static-website">Static Site Builder</a></li>
-                    <li class="component--scrollspy-toc__list__item"><a href="#section-drupal-website">NDS Drupal Theme</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-quick-start-css">CSS</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-quick-start-js">JS</a></li>
+                    <li class="component--scrollspy-toc__list__item ml-3"><a href="#section-quick-start-components">Components</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-static-site-builder">Static Site Builder</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-nds-drupal-theme">NDS Drupal Theme</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-resources">Resources</a></li>
             </ul>
 </div>                    
@@ -328,21 +333,40 @@
                             
 
 <div class="layouts-nds layouts--body ">
-                            <h1 id="main-content">Getting Started</h1>
-                        <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project. If you are interested in adding NDS to an existing website, please view our <a href="/migration-guide/">Migration Guide</a> for more information.</p>
-                        <hr>
-                        <h2>Quick Start</h2>
-                        <p>The fastest way to start using the NIAID Design System is to download the NDS JS and CSS files and add them to your HTML.</p>
-                        <h3>CSS</h3>
-                        <p>Download the Global NDS CSS file and include the following code in the &lt;head&gt; of your HTML.</p>
-                        
+                                                    
+<div id="section-getting-started-overview" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h1 id="main-content">Getting Started</h1>
+                                <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project.</p>
+                                
+
+    
+<div class="block-nds block--status-message message--information ">
+    <div class="block--status-message__icon">
+        
+
+<i class="icon-nds icon--default fas fa-question-circle "></i>
+    </div>
+    <div class="block--status-message__content">
+                                                <p>Add the official NIAID Design System header and footer to your existing website easily by following our <a href="/migration-guide/">Migration Guide</a>.</p>
+                                        </div>
+</div>                            </div>
+                                                
+<div id="section-quick-start" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h2>Quick Start</h2>
+                                <p>The fastest way to start using the NIAID Design System is to download the NDS JS and CSS files and add them to your HTML.</p>
+                            </div>
+                                                
+<div id="section-quick-start-css" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h3>CSS</h3>
+                                <p>Download the Global NDS CSS file and include the following code in the &lt;head&gt; of your HTML.</p>
+                                
 
 <a href="../assets/nds-css.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fab fa-css3 "></i>
                 <span class="button--icon__text icon--left">Download NDS Global CSS</span>
-        </a>                        
+        </a>                                
 <div class="component-nds component--snippet  no-render">
     <div class="component--snippet__block">
         <div class="component--snippet__block__code">
@@ -366,12 +390,12 @@
 </div>            </div>
             <div class="component--snippet__block__code__wrapper">
                 <div class="component--snippet__block__code__wrapper__snippet">
-                                                    <pre>
-                                    <code class="language-markup">
-                                        &lt;link rel="stylesheet" href="PATH-TO-CSS/nds-min.css" media="all" /&gt;
-                                    </code>
-                                </pre>
-                            
+                                                            <pre>
+                                            <code class="language-markup">
+                                                &lt;link rel="stylesheet" href="PATH-TO-CSS/nds-min.css" media="all" /&gt;
+                                            </code>
+                                        </pre>
+                                    
                 </div>
                 <div class="component--snippet__block__code__wrapper__button">
                     <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -386,20 +410,22 @@
             </div>
         </div>
             </div>
-</div>
-                        <h3>JS</h3>
-                        <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components. To increase flexibility and use, we provide two versions of the NDS JS.</p>
+</div>                            </div>
+                                                
+<div id="section-quick-start-js" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h3>JS</h3>
+                                <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components. To increase flexibility and use, we provide two versions of the NDS JS.</p>
 
-                        <h4>NDS Bundled JS (Recommended)</h4>
-                        <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong> To use this version, download the NDS Bundled JS file/accompanying third-party libraries and include the scripts right before the closing &lt;/body&gt; tag.</p>
-                        
+                                <h4>NDS Bundled JS (Recommended)</h4>
+                                <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong> To use this version, download the NDS Bundled JS file/accompanying third-party libraries and include the scripts right before the closing &lt;/body&gt; tag.</p>
+                                
 
 <a href="../assets/nds-bundled-js.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fab fa-js "></i>
                 <span class="button--icon__text icon--left">Download NDS Global JS &amp; Third Party Libraries</span>
-        </a>                        
+        </a>                                
 <div class="component-nds component--snippet  no-render">
     <div class="component--snippet__block">
         <div class="component--snippet__block__code">
@@ -423,22 +449,22 @@
 </div>            </div>
             <div class="component--snippet__block__code__wrapper">
                 <div class="component--snippet__block__code__wrapper__snippet">
-                                                    <pre>
-                                    <code class="language-markup">
-                                        &lt;script src="../../js/libraries/jquery/jquery.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/select2/select2.full.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/materialize/materialize.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/bootstrap/bootstrap.bundle.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/match-media/match-media.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/datatables/datatables.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/bootstrap-datepicker/bootstrap-datepicker.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/uswds/uswds.min.js">&lt;/script>
+                                                            <pre>
+                                            <code class="language-markup">
+                                                &lt;script src="PATH-TO-JS/js/libraries/jquery/jquery.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/select2/select2.full.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/materialize/materialize.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/bootstrap/bootstrap.bundle.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/match-media/match-media.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/datatables/datatables.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/bootstrap-datepicker/bootstrap-datepicker.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/uswds/uswds.min.js">&lt;/script>
 
-                                        &lt;script src="../../js/global/nds-min.js">&lt;/script>
-                                        &lt;/body>
-                                    </code>
-                                </pre>
-                            
+                                                &lt;script src="PATH-TO-JS/js/global/nds-min.js">&lt;/script>
+                                                &lt;/body>
+                                            </code>
+                                        </pre>
+                                    
                 </div>
                 <div class="component--snippet__block__code__wrapper__button">
                     <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -454,48 +480,53 @@
         </div>
             </div>
 </div>
-                        <p>Use the <a href="/components/">Components page</a> to see which components rely on third-party libraries.</p>
+                                <p>Use the <a href="/components/">Components page</a> to see which components rely on third-party libraries.</p>
 
-                        <h4>NDS Lite JS</h4>
-                        <p>Many modern frameworks for building front-ends, such as Vue.js, React.js, or Angular.js, do not interact well with jQuery. To accomodate sites using these frameworks, NDS also provides a dependency-free version of the global JS, NDS Lite.</p>
-                        <h3>What does NDS Lite do?</h3>
-                        <ul>
-                            <li>Adds external link icons and envelope icons to applicable links.</li>
-                            <li>Adds data attributes to elements for Google Analytics tracking.</li>
-                            <li>Opens and closes the mobile side drawer menu on header button click.</li>
-                            <li>Manages the toggling of the United States Web Design System banner.</li>
-                        </ul>
-                        
+                                <h4>NDS Lite JS</h4>
+                                <p>Many modern frameworks for building front-ends, such as Vue.js, React.js, or Angular.js, do not interact well with jQuery. To accomodate sites using these frameworks, NDS also provides a dependency-free version of the global JS, NDS Lite.</p>
+                                <h4>What does NDS Lite do?</h4>
+                                <ul>
+                                    <li>Adds external link icons and envelope icons to applicable links.</li>
+                                    <li>Adds data attributes to elements for Google Analytics tracking.</li>
+                                    <li>Opens and closes the mobile side drawer menu on header button click.</li>
+                                    <li>Manages the toggling of the United States Web Design System banner.</li>
+                                </ul>
+                                
 
 <a href="../assets/nds-lite-js.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
             
 
 <i class="icon-nds icon--default fab fa-js "></i>
                 <span class="button--icon__text icon--left">Download NDS Lite</span>
-        </a>
-                        <h2>Components</h2>
-                        <p>The NIAID Design System is comprised of a comprehensive set of flexible web components. These components can be combined and reused to build any number of policy and brand compliant websites. Once you have included the NDS CSS and JS files, you can leverage NDS components. <a href="/components/">Visit the Components page</a> for documentation on available components and usage guidelines.</p>
-
-                        <h2><a href="/public/patterns/05-pages-static-site-builder-static-site-builder/05-pages-static-site-builder-static-site-builder.html">Static Site Builder</a></h2>
-                        <p>The Static Site Builder is a tool that is designed to rapidly create static HTML websites powered by the NIAID Design System. The tool is built using Pattern Lab, an framework based on the Twig templating language and the principle of Atomic Design. The Static Site Builder is perfect for small websites with a simple navigational structure and content that changes infrequently. The Static Site Builder is easy to use, and does not require a full development team to make simple websites.</p>
-                        
+        </a>                            </div>                                                
+<div id="section-quick-start-components" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h3>Components</h3>
+                                <p>The NIAID Design System is comprised of a comprehensive set of flexible web components. These components can be combined and reused to build any number of policy and brand compliant websites. Once you have included the NDS CSS and JS files, you can leverage NDS components. <a href="/components/">Visit the Components page</a> for documentation on available components and usage guidelines.</p>
+                            </div>
+                                                
+<div id="section-static-site-builder" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h2><a href="/public/patterns/05-pages-static-site-builder-static-site-builder/05-pages-static-site-builder-static-site-builder.html">Static Site Builder</a></h2>
+                                <p>The Static Site Builder is a tool that is designed to rapidly create static HTML websites powered by the NIAID Design System. The tool is built using Pattern Lab, an framework based on the Twig templating language and the principle of Atomic Design. The Static Site Builder is perfect for small websites with a simple navigational structure and content that changes infrequently. The Static Site Builder is easy to use, and does not require a full development team to make simple websites.</p>
+                                
 
 <a href="/public/patterns/05-pages-static-site-builder-static-site-builder/05-pages-static-site-builder-static-site-builder.html" class="button-nds button--icon waves-effect waves-light " >
                 <span class="button--icon__text icon--right">Start Using the Static Site Builder</span>
                 
 
 <i class="icon-nds icon--default far fa-long-arrow-right "></i>
-    </a>
-                        <h2><a href="/public/patterns/05-pages-nds-drupal-theme-nds-drupal-theme/05-pages-nds-drupal-theme-nds-drupal-theme.html">NDS Drupal Theme</a></h2>
-                        <p>If your website is more complex and hosts a large amount of rapidly changing content, you may need a Content Management System. NDS supports Drupal 8 development through our own NDS Drupal Theme. Using Drupal with your website is complex, and will likely require significant developer effort and time. Like any Drupal website, building the theme is only one component of the development involved.</p>
-                        
+    </a>                            </div>
+                                                
+<div id="section-nds-drupal-theme" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h2><a href="/public/patterns/05-pages-nds-drupal-theme-nds-drupal-theme/05-pages-nds-drupal-theme-nds-drupal-theme.html">NDS Drupal Theme</a></h2>
+                                <p>If your website is more complex and hosts a large amount of rapidly changing content, you may need a Content Management System. NDS supports Drupal 8 development through our own NDS Drupal Theme. Using Drupal with your website is complex, and will likely require significant developer effort and time. Like any Drupal website, building the theme is only one component of the development involved.</p>
+                                
 
 <a href="/public/patterns/05-pages-nds-drupal-theme-nds-drupal-theme/05-pages-nds-drupal-theme-nds-drupal-theme.html" class="button-nds button--icon waves-effect waves-light " >
                 <span class="button--icon__text icon--right">Start Using the NDS Drupal Theme</span>
                 
 
 <i class="icon-nds icon--default far fa-long-arrow-right "></i>
-    </a>
+    </a>                            </div>
                         
 <div id="section-resources" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Resources</h2>

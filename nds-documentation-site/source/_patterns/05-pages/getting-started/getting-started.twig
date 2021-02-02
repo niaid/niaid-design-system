@@ -51,7 +51,7 @@
                                 "component_scrollspy_toc_title": "Getting Started",
                                 "component_scrollspy_toc_data": [
                                     {
-                                        "href": "section-overview",
+                                        "href": "section-getting-started-overview",
                                         "text": "Overview"
                                     },
                                     {
@@ -59,11 +59,26 @@
                                         "text": "Quick Start"
                                     },
                                     {
-                                        "href": "section-static-website",
+                                        "class": "ml-3",
+                                        "href": "section-quick-start-css",
+                                        "text": "CSS"
+                                    },
+                                    {
+                                        "class": "ml-3",
+                                        "href": "section-quick-start-js",
+                                        "text": "JS"
+                                    },
+                                    {
+                                        "class": "ml-3",
+                                        "href": "section-quick-start-components",
+                                        "text": "Components"
+                                    },
+                                    {
+                                        "href": "section-static-site-builder",
                                         "text": "Static Site Builder"
                                     },
                                     {
-                                        "href": "section-drupal-website",
+                                        "href": "section-nds-drupal-theme",
                                         "text": "NDS Drupal Theme"
                                     },
                                     {
@@ -79,124 +94,196 @@
             {% block main_column %}
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
-                        <h1 id="main-content">Getting Started</h1>
-                        <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project. If you are interested in adding NDS to an existing website, please view our <a href="{{ links.migrationGuide}}">Migration Guide</a> for more information.</p>
-                        <hr>
-                        <h2>Quick Start</h2>
-                        <p>The fastest way to start using the NIAID Design System is to download the NDS JS and CSS files and add them to your HTML.</p>
-                        <h3>CSS</h3>
-                        <p>Download the Global NDS CSS file and include the following code in the &lt;head&gt; of your HTML.</p>
-                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                        {# Overview #}
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
                             {
-                                "button_icon_classes": "button--secondary",
-                                "button_icon_icon": "css3",
-                                "button_icon_icon_weight": "b",
-                                "button_icon_href": assetsPath ~ "nds-css.zip",
-                                "button_icon_text": "Download NDS Global CSS",
-                                "button_icon_attributes": "download"
+                                "component_scrollspy_section_id": "section-getting-started-overview"
                             }
                         %}
-                        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
-                            {
-                                "component_snippet_show_rendered": "no"
-                            }
-                        %}
-                            {% block component_snippet_code %}
-                                <pre>
-                                    <code class="language-markup">
-                                        &lt;link rel="stylesheet" href="PATH-TO-CSS/nds-min.css" media="all" /&gt;
-                                    </code>
-                                </pre>
+                            {% block component_scrollspy_section_content %}
+                                <h1 id="main-content">Getting Started</h1>
+                                <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project.</p>
+                                {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
+                                    {
+                                        "block_status_message_type": "message--information"
+                                    }
+                                %}
+                                    {% block block_status_message_content %}
+                                        <p>Add the official NIAID Design System header and footer to your existing website easily by following our <a href="{{ links.migrationGuide }}">Migration Guide</a>.</p>
+                                    {% endblock %}
+                                {% endembed %}
                             {% endblock %}
                         {% endembed %}
 
-                        <h3>JS</h3>
-                        <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components. To increase flexibility and use, we provide two versions of the NDS JS.</p>
-
-                        <h4>NDS Bundled JS (Recommended)</h4>
-                        <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong> To use this version, download the NDS Bundled JS file/accompanying third-party libraries and include the scripts right before the closing &lt;/body&gt; tag.</p>
-                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                        {# Quick Start #}
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
                             {
-                                "button_icon_classes": "button--secondary",
-                                "button_icon_icon": "js",
-                                "button_icon_icon_weight": "b",
-                                "button_icon_href": assetsPath ~ "nds-bundled-js.zip",
-                                "button_icon_text": "Download NDS Global JS & Third Party Libraries",
-                                "button_icon_attributes": "download"
+                                "component_scrollspy_section_id": "section-quick-start"
                             }
                         %}
-                        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
-                            {
-                                "component_snippet_show_rendered": "no"
-                            }
-                        %}
-                            {% block component_snippet_code %}
-                                <pre>
-                                    <code class="language-markup">
-                                        &lt;script src="../../js/libraries/jquery/jquery.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/select2/select2.full.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/materialize/materialize.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/bootstrap/bootstrap.bundle.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/match-media/match-media.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/datatables/datatables.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/bootstrap-datepicker/bootstrap-datepicker.min.js">&lt;/script>
-                                        &lt;script src="../../js/libraries/uswds/uswds.min.js">&lt;/script>
-
-                                        &lt;script src="../../js/global/nds-min.js">&lt;/script>
-                                        &lt;/body>
-                                    </code>
-                                </pre>
+                            {% block component_scrollspy_section_content %}
+                                <h2>Quick Start</h2>
+                                <p>The fastest way to start using the NIAID Design System is to download the NDS JS and CSS files and add them to your HTML.</p>
                             {% endblock %}
                         {% endembed %}
 
-                        <p>Use the <a href="{{ links.components }}">Components page</a> to see which components rely on third-party libraries.</p>
-
-                        <h4>NDS Lite JS</h4>
-                        <p>Many modern frameworks for building front-ends, such as Vue.js, React.js, or Angular.js, do not interact well with jQuery. To accomodate sites using these frameworks, NDS also provides a dependency-free version of the global JS, NDS Lite.</p>
-                        <h3>What does NDS Lite do?</h3>
-                        <ul>
-                            <li>Adds external link icons and envelope icons to applicable links.</li>
-                            <li>Adds data attributes to elements for Google Analytics tracking.</li>
-                            <li>Opens and closes the mobile side drawer menu on header button click.</li>
-                            <li>Manages the toggling of the United States Web Design System banner.</li>
-                        </ul>
-                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                        {# Quick Start -> CSS #}
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
                             {
-                                "button_icon_classes": "button--secondary",
-                                "button_icon_icon": "js",
-                                "button_icon_icon_weight": "b",
-                                "button_icon_href": assetsPath ~ "nds-lite-js.zip",
-                                "button_icon_text": "Download NDS Lite",
-                                "button_icon_attributes": "download"
+                                "component_scrollspy_section_id": "section-quick-start-css"
                             }
                         %}
+                            {% block component_scrollspy_section_content %}
+                                <h3>CSS</h3>
+                                <p>Download the Global NDS CSS file and include the following code in the &lt;head&gt; of your HTML.</p>
+                                {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                    {
+                                        "button_icon_classes": "button--secondary",
+                                        "button_icon_icon": "css3",
+                                        "button_icon_icon_weight": "b",
+                                        "button_icon_href": assetsPath ~ "nds-css.zip",
+                                        "button_icon_text": "Download NDS Global CSS",
+                                        "button_icon_attributes": "download"
+                                    }
+                                %}
+                                {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+                                    {
+                                        "component_snippet_show_rendered": "no"
+                                    }
+                                %}
+                                    {% block component_snippet_code %}
+                                        <pre>
+                                            <code class="language-markup">
+                                                &lt;link rel="stylesheet" href="PATH-TO-CSS/nds-min.css" media="all" /&gt;
+                                            </code>
+                                        </pre>
+                                    {% endblock %}
+                                {% endembed %}
+                            {% endblock %}
+                        {% endembed %}
 
-                        <h2>Components</h2>
-                        <p>The NIAID Design System is comprised of a comprehensive set of flexible web components. These components can be combined and reused to build any number of policy and brand compliant websites. Once you have included the NDS CSS and JS files, you can leverage NDS components. <a href="{{ links.components }}">Visit the Components page</a> for documentation on available components and usage guidelines.</p>
-
-                        <h2><a href="{{ links.staticSiteBuilder }}">Static Site Builder</a></h2>
-                        <p>The Static Site Builder is a tool that is designed to rapidly create static HTML websites powered by the NIAID Design System. The tool is built using Pattern Lab, an framework based on the Twig templating language and the principle of Atomic Design. The Static Site Builder is perfect for small websites with a simple navigational structure and content that changes infrequently. The Static Site Builder is easy to use, and does not require a full development team to make simple websites.</p>
-                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                        {# Quick Start -> JS #}
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
                             {
-                                "button_icon_icon": "long-arrow-right",
-                                "button_icon_icon_weight": "r",
-                                "button_icon_text": "Start Using the Static Site Builder",
-                                "button_icon_href": links.staticSiteBuilder,
-                                "button_icon_icon_position": "right"
+                                "component_scrollspy_section_id": "section-quick-start-js"
                             }
                         %}
+                            {% block component_scrollspy_section_content %}
+                                <h3>JS</h3>
+                                <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components. To increase flexibility and use, we provide two versions of the NDS JS.</p>
 
-                        <h2><a href="{{ links.ndsDrupalTheme }}">NDS Drupal Theme</a></h2>
-                        <p>If your website is more complex and hosts a large amount of rapidly changing content, you may need a Content Management System. NDS supports Drupal 8 development through our own NDS Drupal Theme. Using Drupal with your website is complex, and will likely require significant developer effort and time. Like any Drupal website, building the theme is only one component of the development involved.</p>
-                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                <h4>NDS Bundled JS (Recommended)</h4>
+                                <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong> To use this version, download the NDS Bundled JS file/accompanying third-party libraries and include the scripts right before the closing &lt;/body&gt; tag.</p>
+                                {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                    {
+                                        "button_icon_classes": "button--secondary",
+                                        "button_icon_icon": "js",
+                                        "button_icon_icon_weight": "b",
+                                        "button_icon_href": assetsPath ~ "nds-bundled-js.zip",
+                                        "button_icon_text": "Download NDS Global JS & Third Party Libraries",
+                                        "button_icon_attributes": "download"
+                                    }
+                                %}
+                                {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+                                    {
+                                        "component_snippet_show_rendered": "no"
+                                    }
+                                %}
+                                    {% block component_snippet_code %}
+                                        <pre>
+                                            <code class="language-markup">
+                                                &lt;script src="PATH-TO-JS/js/libraries/jquery/jquery.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/select2/select2.full.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/materialize/materialize.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/bootstrap/bootstrap.bundle.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/match-media/match-media.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/datatables/datatables.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/bootstrap-datepicker/bootstrap-datepicker.min.js">&lt;/script>
+                                                &lt;script src="PATH-TO-JS/js/libraries/uswds/uswds.min.js">&lt;/script>
+
+                                                &lt;script src="PATH-TO-JS/js/global/nds-min.js">&lt;/script>
+                                                &lt;/body>
+                                            </code>
+                                        </pre>
+                                    {% endblock %}
+                                {% endembed %}
+
+                                <p>Use the <a href="{{ links.components }}">Components page</a> to see which components rely on third-party libraries.</p>
+
+                                <h4>NDS Lite JS</h4>
+                                <p>Many modern frameworks for building front-ends, such as Vue.js, React.js, or Angular.js, do not interact well with jQuery. To accomodate sites using these frameworks, NDS also provides a dependency-free version of the global JS, NDS Lite.</p>
+                                <h4>What does NDS Lite do?</h4>
+                                <ul>
+                                    <li>Adds external link icons and envelope icons to applicable links.</li>
+                                    <li>Adds data attributes to elements for Google Analytics tracking.</li>
+                                    <li>Opens and closes the mobile side drawer menu on header button click.</li>
+                                    <li>Manages the toggling of the United States Web Design System banner.</li>
+                                </ul>
+                                {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                    {
+                                        "button_icon_classes": "button--secondary",
+                                        "button_icon_icon": "js",
+                                        "button_icon_icon_weight": "b",
+                                        "button_icon_href": assetsPath ~ "nds-lite-js.zip",
+                                        "button_icon_text": "Download NDS Lite",
+                                        "button_icon_attributes": "download"
+                                    }
+                                %}
+                            {% endblock %}
+                        {% endembed %}
+                        {# Quick Start -> Components #}
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
                             {
-                                "button_icon_icon": "long-arrow-right",
-                                "button_icon_icon_weight": "r",
-                                "button_icon_text": "Start Using the NDS Drupal Theme",
-                                "button_icon_href": links.ndsDrupalTheme,
-                                "button_icon_icon_position": "right"
+                                "component_scrollspy_section_id": "section-quick-start-components"
                             }
                         %}
+                            {% block component_scrollspy_section_content %}
+                                <h3>Components</h3>
+                                <p>The NIAID Design System is comprised of a comprehensive set of flexible web components. These components can be combined and reused to build any number of policy and brand compliant websites. Once you have included the NDS CSS and JS files, you can leverage NDS components. <a href="{{ links.components }}">Visit the Components page</a> for documentation on available components and usage guidelines.</p>
+                            {% endblock %}
+                        {% endembed %}
+
+                        {# Static Site Builder #}
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+                            {
+                                "component_scrollspy_section_id": "section-static-site-builder"
+                            }
+                        %}
+                            {% block component_scrollspy_section_content %}
+                                <h2><a href="{{ links.staticSiteBuilder }}">Static Site Builder</a></h2>
+                                <p>The Static Site Builder is a tool that is designed to rapidly create static HTML websites powered by the NIAID Design System. The tool is built using Pattern Lab, an framework based on the Twig templating language and the principle of Atomic Design. The Static Site Builder is perfect for small websites with a simple navigational structure and content that changes infrequently. The Static Site Builder is easy to use, and does not require a full development team to make simple websites.</p>
+                                {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                    {
+                                        "button_icon_icon": "long-arrow-right",
+                                        "button_icon_icon_weight": "r",
+                                        "button_icon_text": "Start Using the Static Site Builder",
+                                        "button_icon_href": links.staticSiteBuilder,
+                                        "button_icon_icon_position": "right"
+                                    }
+                                %}
+                            {% endblock %}
+                        {% endembed %}
+
+                        {# NDS Drupal Theme #}
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+                            {
+                                "component_scrollspy_section_id": "section-nds-drupal-theme"
+                            }
+                        %}
+                            {% block component_scrollspy_section_content %}
+                                <h2><a href="{{ links.ndsDrupalTheme }}">NDS Drupal Theme</a></h2>
+                                <p>If your website is more complex and hosts a large amount of rapidly changing content, you may need a Content Management System. NDS supports Drupal 8 development through our own NDS Drupal Theme. Using Drupal with your website is complex, and will likely require significant developer effort and time. Like any Drupal website, building the theme is only one component of the development involved.</p>
+                                {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                    {
+                                        "button_icon_icon": "long-arrow-right",
+                                        "button_icon_icon_weight": "r",
+                                        "button_icon_text": "Start Using the NDS Drupal Theme",
+                                        "button_icon_href": links.ndsDrupalTheme,
+                                        "button_icon_icon_position": "right"
+                                    }
+                                %}
+                            {% endblock %}
+                        {% endembed %}
 
                         {% include "@sections/_section-resources.twig" %}
                     {% endblock %}
