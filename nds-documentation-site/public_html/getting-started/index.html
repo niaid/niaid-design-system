@@ -332,10 +332,17 @@
                         <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project. If you are interested in adding NDS to an existing website, please view our <a href="/migration-guide/">Migration Guide</a> for more information.</p>
                         <hr>
                         <h2>Quick Start</h2>
-                        <p>The fastest way to start using the NIAID Design System is to download the source code and add it to your HTML.</p>
+                        <p>The fastest way to start using the NIAID Design System is to download the NDS JS and CSS files and add them to your HTML.</p>
                         <h3>CSS</h3>
-                                                <p>Download the Global NDS CSS file and include the following code in the &lt;head&gt; of your HTML.</p>
+                        <p>Download the Global NDS CSS file and include the following code in the &lt;head&gt; of your HTML.</p>
                         
+
+<a href="../assets/nds-css.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-css3 "></i>
+                <span class="button--icon__text icon--left">Download NDS Global CSS</span>
+        </a>                        
 <div class="component-nds component--snippet  no-render">
     <div class="component--snippet__block">
         <div class="component--snippet__block__code">
@@ -383,9 +390,16 @@
                         <h3>JS</h3>
                         <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components. To increase flexibility and use, we provide two versions of the NDS JS.</p>
 
-                        <h4>Bundled JS (Recommended)</h4>
-                                                <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong>To use this version, download the NDS Bundled JS file and include the scripts right before the closing &lt;/body&gt; tag.</p>
+                        <h4>NDS Bundled JS (Recommended)</h4>
+                        <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong> To use this version, download the NDS Bundled JS file/accompanying third-party libraries and include the scripts right before the closing &lt;/body&gt; tag.</p>
                         
+
+<a href="../assets/nds-bundled-js.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-js "></i>
+                <span class="button--icon__text icon--left">Download NDS Global JS &amp; Third Party Libraries</span>
+        </a>                        
 <div class="component-nds component--snippet  no-render">
     <div class="component--snippet__block">
         <div class="component--snippet__block__code">
@@ -442,18 +456,137 @@
 </div>
                         <p>Use the <a href="/components/">Components page</a> to see which components rely on third-party libraries.</p>
 
-                        <h4>Dependency-Free JS</h4>
-                                                
-                        <h3>Page Template</h3>
-                        <p>If you are building HTML from scratch, you can use the following template to jump start your process.</p>
+                        <h4>NDS Lite JS</h4>
+                        <p>Many modern frameworks for building front-ends, such as Vue.js, React.js, or Angular.js, do not interact well with jQuery. To accomodate sites using these frameworks, NDS also provides a dependency-free version of the global JS, NDS Lite.</p>
+                        <h3>What does NDS Lite do?</h3>
+                        <ul>
+                            <li>Adds external link icons and envelope icons to applicable links.</li>
+                            <li>Adds data attributes to elements for Google Analytics tracking.</li>
+                            <li>Opens and closes the mobile side drawer menu on header button click.</li>
+                            <li>Manages the toggling of the United States Web Design System banner.</li>
+                        </ul>
+                        
 
-                        <h3>Components</h3>
+<a href="../assets/nds-lite-js.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
 
-                        <h2>Static Site Builder</h2>
+<i class="icon-nds icon--default fab fa-js "></i>
+                <span class="button--icon__text icon--left">Download NDS Lite</span>
+        </a>
+                        <h2>Components</h2>
+                        <p>The NIAID Design System is comprised of a comprehensive set of flexible web components. These components can be combined and reused to build any number of policy and brand compliant websites. Once you have included the NDS CSS and JS files, you can leverage NDS components. <a href="/components/">Visit the Components page</a> for documentation on available components and usage guidelines.</p>
 
-                        <h2>NDS Drupal Theme</h2>
+                        <h2><a href="/public/patterns/05-pages-static-site-builder-static-site-builder/05-pages-static-site-builder-static-site-builder.html">Static Site Builder</a></h2>
+                        <p>The Static Site Builder is a tool that is designed to rapidly create static HTML websites powered by the NIAID Design System. The tool is built using Pattern Lab, an framework based on the Twig templating language and the principle of Atomic Design. The Static Site Builder is perfect for small websites with a simple navigational structure and content that changes infrequently. The Static Site Builder is easy to use, and does not require a full development team to make simple websites.</p>
+                        
 
-                                            </div>            
+<a href="/public/patterns/05-pages-static-site-builder-static-site-builder/05-pages-static-site-builder-static-site-builder.html" class="button-nds button--icon waves-effect waves-light " >
+                <span class="button--icon__text icon--right">Start Using the Static Site Builder</span>
+                
+
+<i class="icon-nds icon--default far fa-long-arrow-right "></i>
+    </a>
+                        <h2><a href="/public/patterns/05-pages-nds-drupal-theme-nds-drupal-theme/05-pages-nds-drupal-theme-nds-drupal-theme.html">NDS Drupal Theme</a></h2>
+                        <p>If your website is more complex and hosts a large amount of rapidly changing content, you may need a Content Management System. NDS supports Drupal 8 development through our own NDS Drupal Theme. Using Drupal with your website is complex, and will likely require significant developer effort and time. Like any Drupal website, building the theme is only one component of the development involved.</p>
+                        
+
+<a href="/public/patterns/05-pages-nds-drupal-theme-nds-drupal-theme/05-pages-nds-drupal-theme-nds-drupal-theme.html" class="button-nds button--icon waves-effect waves-light " >
+                <span class="button--icon__text icon--right">Start Using the NDS Drupal Theme</span>
+                
+
+<i class="icon-nds icon--default far fa-long-arrow-right "></i>
+    </a>
+                        
+<div id="section-resources" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Resources</h2>
+        <h3>CSS &amp; JS</h3>
+        
+<div class="block--files ">
+    <div class="row">
+        <div class="block--files__col col-12 col-sm-6">
+            
+
+<a href="../assets/nds-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-js "></i>
+                <span class="button--icon__text icon--left">Download NDS Global JS</span>
+        </a>        </div>
+        <div class="block--files__col col-12 col-sm-6">
+            
+
+<a href="../assets/nds-min.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-css3 "></i>
+                <span class="button--icon__text icon--left">Download NDS Global CSS</span>
+        </a>        </div>
+    </div>
+</div>        <h3>Fonts</h3>
+        
+<div class="block--fonts container-fluid ">
+    <div class="row">
+        <div class="col-md-6">
+            
+
+<a href="../assets/public-sans.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fas fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Public Sans</span>
+        </a>            <span class="block--fonts__credit">Provided by USWDS</span>
+        </div>
+        <div class="col-md-6">
+            
+
+<a href="../assets/roboto.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fas fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Roboto</span>
+        </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            
+
+<a href="../assets/martel.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fas fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Martel</span>
+        </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
+        </div>
+        <div class="col-md-6">
+            
+
+<a href="../assets/merriweather.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fas fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Merriweather</span>
+        </a>            <span class="block--fonts__credit">Provided by USWDS</span>
+        </div>
+    </div>
+</div>        <h3>Design Files</h3>
+        
+<div class="block--design-files ">
+    
+
+<a class="button-nds button--image button--secondary" href="../assets/NDS-Sketch.sketch" download>
+    
+
+	
+<img class="image-nds image--default " src="../assets/sketch.svg" alt="Sketch Icon" />            <span class="button--image__text">Download Sketch File</span>
+    </a>    
+
+<a class="button-nds button--image button--secondary" href="../assets/NDS-Figma.fig" download>
+    
+
+	
+<img class="image-nds image--default " src="../assets/figma.svg" alt="Figma Icon" />            <span class="button--image__text">Download Figma File</span>
+    </a>    </div>    </div>                    </div>            
         </div>
                 <div class="layouts--main__column layouts--main__third col-lg-2">
             <span></span>

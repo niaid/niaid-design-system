@@ -83,10 +83,19 @@
                         <p>Thank you for your interest in using the NIAID Design System (NDS). This page contains information on how to get started using NDS for your project. If you are interested in adding NDS to an existing website, please view our <a href="{{ links.migrationGuide}}">Migration Guide</a> for more information.</p>
                         <hr>
                         <h2>Quick Start</h2>
-                        <p>The fastest way to start using the NIAID Design System is to download the source code and add it to your HTML.</p>
+                        <p>The fastest way to start using the NIAID Design System is to download the NDS JS and CSS files and add them to your HTML.</p>
                         <h3>CSS</h3>
-                        {# DOWNLOAD #}
                         <p>Download the Global NDS CSS file and include the following code in the &lt;head&gt; of your HTML.</p>
+                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                            {
+                                "button_icon_classes": "button--secondary",
+                                "button_icon_icon": "css3",
+                                "button_icon_icon_weight": "b",
+                                "button_icon_href": assetsPath ~ "nds-css.zip",
+                                "button_icon_text": "Download NDS Global CSS",
+                                "button_icon_attributes": "download"
+                            }
+                        %}
                         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
                             {
                                 "component_snippet_show_rendered": "no"
@@ -162,12 +171,10 @@
                             }
                         %}
 
-                        <h3>Page Template</h3>
-                        <p>If you are building HTML from scratch, you can use the following template to jump start your process.</p>
+                        <h2>Components</h2>
+                        <p>The NIAID Design System is comprised of a comprehensive set of flexible web components. These components can be combined and reused to build any number of policy and brand compliant websites. Once you have included the NDS CSS and JS files, you can leverage NDS components. <a href="{{ links.components }}">Visit the Components page</a> for documentation on available components and usage guidelines.</p>
 
-                        <h3>Components</h3>
-
-                        <h2>Static Site Builder</h2>
+                        <h2><a href="{{ links.staticSiteBuilder }}">Static Site Builder</a></h2>
                         <p>The Static Site Builder is a tool that is designed to rapidly create static HTML websites powered by the NIAID Design System. The tool is built using Pattern Lab, an framework based on the Twig templating language and the principle of Atomic Design. The Static Site Builder is perfect for small websites with a simple navigational structure and content that changes infrequently. The Static Site Builder is easy to use, and does not require a full development team to make simple websites.</p>
                         {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                             {
@@ -179,7 +186,7 @@
                             }
                         %}
 
-                        <h2>NDS Drupal Theme</h2>
+                        <h2><a href="{{ links.ndsDrupalTheme }}">NDS Drupal Theme</a></h2>
                         <p>If your website is more complex and hosts a large amount of rapidly changing content, you may need a Content Management System. NDS supports Drupal 8 development through our own NDS Drupal Theme. Using Drupal with your website is complex, and will likely require significant developer effort and time. Like any Drupal website, building the theme is only one component of the development involved.</p>
                         {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                             {
