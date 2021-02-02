@@ -1,8 +1,9 @@
 .block--fonts {
     padding: 0;
+    margin-bottom: -1rem;
     .row {
-        margin-bottom: 1rem;
         > div {
+            margin-bottom: 1rem;
             text-align: center;
         }
     }

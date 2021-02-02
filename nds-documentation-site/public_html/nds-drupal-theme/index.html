@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <title>NDS Drupal Theme | NIAID Design System</title>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../css/libraries/bootstrap-datepicker/bootstrap-datepicker.min.css" />    <link rel="stylesheet" href="../css/libraries/select2/select2.min.css" />    
+    <link rel="stylesheet" href="../css/custom/prism/prism.css" />
+
+    <link rel="icon" href="../assets/global/favicons/favicon.ico" type="image/x-icon"/>
+
+          <link rel="stylesheet" href="../css/nds-min.css" media="all" />
+        
+    
+    
+          <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-56JHMG');</script>
+      </head>
+  <body class="style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56JHMG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+<div class="component-nds component--style-controls ">
+    <div class="component--style-controls__control">
+        
+
+<div class="input-nds input--select ">
+    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
+
+ id="text-heading" type="text"    >
+                        <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+                <option value="martel">Martel</option>
+                <option value="merriweather">Merriweather</option>
+                </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+
+<div class="input-nds input--select ">
+    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
+
+ id="text-body" type="text"    >
+                        <option value="public-sans">Public Sans</option>
+                <option value="roboto">Roboto</option>
+                </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+
+<div class="input-nds input--select ">
+    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
+
+ id="color-select" type="text"    >
+                        <option value="theme-1">Theme 1</option>
+                <option value="theme-2">Theme 2</option>
+                <option value="theme-3">Theme 3</option>
+                </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+
+<div class="input-nds input--select ">
+    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
+
+ id="shadows" type="text"    >
+                        <option value="flat">Flat</option>
+                <option value="shadows">Material</option>
+                </select>
+</div>    </div>
+    <div class="component--style-controls__control">
+        
+
+<div class="input-nds input--select ">
+    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
+
+ id="corners" type="text"    >
+                        <option value="straight">Sharp</option>
+                <option selected="selected" value="semirounded">Semi-Rounded</option>
+                <option value="rounded">Fully-Rounded</option>
+                </select>
+</div>    </div>
+</div>
+
+
+<div class="page" id="nds-drupal-theme">
+            
+
+<aside class="component-nds component--uswds-banner usa-banner " aria-label="Official Government Website">
+    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government webstite banner." aria-expanded="false">
+        
+
+	
+<img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" />        <span>An official website of the United States government. Here's how you know.</span>
+        
+
+<i class="icon-nds icon--default fas fa-chevron-right "></i>
+    </button>
+    <div id="uswds-banner-content" class="component--uswds-banner__content container">
+        <div class="row">
+            <div class="component--uswds-banner__content__column col-12 col-md-6">
+                
+
+	
+<img class="image-nds image--default component--uswds-banner__content__column__icon" src="../assets/global/uswds/icon-dot-gov.svg" alt="Dot gov" />                <p>
+                    <strong class="component--uswds-banner__content__column__title">Official websites use .gov</strong>
+                    <br/>A <strong>.gov</strong> website belongs to an official government organization in the United States.
+                </p>
+            </div>
+            <div class="component--uswds-banner__content__column col-12 col-md-6">
+                
+
+	
+<img class="image-nds image--default component--uswds-banner__content__column__icon" src="../assets/global/uswds/icon-https.svg" alt="Https" />                <p>
+                    <strong class="component--uswds-banner__content__column__title">Secure .gov websites use HTTPS</strong>
+                    <br/>
+                    A <strong>lock</strong> (<span class="icon-lock">
+
+	
+<img class="image-nds image--default " src="../assets/global/uswds/icon-lock.svg" alt="lock icon" /></span>) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+                </p>
+            </div>
+        </div>
+    <div>
+</aside>        
+<div class="global-nds global--header ">
+    
+
+<a href="/" class="component-nds component--branding ">
+    
+
+	
+<img class="image-nds image--default component--branding__logo--desktop" src="../assets/global/niaid/logo-niaid.svg" alt="NIAID Logo" />    
+
+	
+<img class="image-nds image--default component--branding__logo--mobile" src="../assets/global/niaid/logo-niaid-mobile.svg" alt="NIAID Logo" />    <div class="component--branding__vertical-bar"></div>
+    
+
+
+<div class="text-nds text--product-identity  ">
+    <div class="text--product-identity__top">Design System</div>
+    <div class="text--product-identity__bottom"></div>
+</div></a>    <div>
+        <span class="global--header__version">v 1.0.0</span>
+        
+
+<a href="/getting-started/" class="button-nds button--icon waves-effect waves-light global--header__download-button button--secondary" >
+            
+
+<i class="icon-nds icon--default fas fa-download "></i>
+                <span class="button--icon__text icon--left">Download NDS</span>
+        </a>    </div>
+    
+
+<button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary" aria-label="Open Global Menu" >
+            
+
+<i class="icon-nds icon--default fal fa-bars "></i>
+            </button></div>                
+
+<nav class="navigation-nds navigation--primary " id="main-navigation">
+            <div class="navigation--primary__inner">
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Getting Started
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/getting-started/">Overview</a>
+                    <a class="dropdown-item" href="/getting-started/#section-quick-start">Quick Start</a>
+                    <a class="dropdown-item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                    <a class="dropdown-item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
+                    <a class="dropdown-item" href="/getting-started/#section-resources">Resources</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Design
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/design/">Overview</a>
+                    <a class="dropdown-item" href="/design/#section-typography">Typography</a>
+                    <a class="dropdown-item" href="/design/#section-icons">Icons</a>
+                    <a class="dropdown-item" href="/design/#section-colors">Colors</a>
+                    <a class="dropdown-item" href="/design/#section-forms">Forms &amp; Input</a>
+                    <a class="dropdown-item" href="/design/#section-layout">Layout &amp; Spacing</a>
+                    <a class="dropdown-item" href="/design/#section-shadows">Shadows</a>
+                    <a class="dropdown-item" href="/design/#section-corners">Corners</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Development
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/development/">Overview</a>
+                    <a class="dropdown-item" href="/development/#section-atomic-design">Atomic Design</a>
+                    <a class="dropdown-item" href="/development/#section-libraries">Libraries</a>
+                    <a class="dropdown-item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
+                    <a class="dropdown-item" href="/development/#section-themes">Themes</a>
+                </div>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/components/">Components</a>
+            </div>
+            <div class="navigation--primary__inner__item">
+                <a class="" href="/builder/">Theme Builder</a>
+            </div>
+        </div>
+    </nav>        
+<div id="main-navigation-mobile" class="navigation-nds navigation--drawer ">
+    <div class="navigation--drawer__top">
+        <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
+        
+
+<button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary" aria-label="Close Global Menu" >
+            
+
+<i class="icon-nds icon--default fal fa-arrow-to-left "></i>
+            </button>    </div>
+            <div class="navigation--drawer__inner">
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" href="/">Home</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <div class="navigation--drawer__inner__section__button-wrapper" id="navGettingStarted">
+                    <a href="/getting-started/">Getting Started</a>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" tabindex="-1"></button>
+                </div>
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseOne" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-quick-start">Quick Start</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-resources">Resources</a>
+                </div>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <div class="navigation--drawer__inner__section__button-wrapper" id="navDesign">
+                    <a href="/design/">Design</a>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" tabindex="-1"></button>
+                </div>
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseTwo" class="collapse" aria-labelledby="navDesign" data-parent="#main-navigation-mobile">
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-typography">Typography</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-icons">Icons</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-colors">Colors</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-forms">Forms &amp; Input</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-layout">Layout &amp; Spacing</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-shadows">Shadows</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-corners">Corners</a>
+                </div>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <div class="navigation--drawer__inner__section__button-wrapper" id="navDevelopment">
+                    <a href="/development/">Development</a>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" tabindex="-1"></button>
+                </div>
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseThree" class="collapse" aria-labelledby="navDevelopment" data-parent="#main-navigation-mobile">
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/">Overview</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-atomic-design">Atomic Design</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-libraries">Libraries</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-themes">Themes</a>
+                </div>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" class="" href="/components/">Components</a>
+            </div>
+            <div class="navigation--drawer__inner__section">
+                <a tabindex="-1" class="" href="/builder/">Theme Builder</a>
+            </div>
+            <div class="navigation--drawer__inner__download">
+                 
+
+<a href="/getting-started/" class="button-nds button--icon waves-effect waves-light " >
+            
+
+<i class="icon-nds icon--default fal fa-download "></i>
+                <span class="button--icon__text icon--left">Download NDS</span>
+        </a>            </div>
+        </div>
+        <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
+    </div>
+<div class="navigation--drawer--overlay" tabindex="0"></div>        
+
+<button  id="custom-styles-toggle" class="button-nds button--floating ">
+    <div class="button--floating__icon">
+        
+
+<i class="icon-nds icon--default fal fa-palette "></i>
+    </div>
+    <div class="button--floating__text">Customize Page Theme</div>
+</button>            <div class="main" role="main">
+                
+
+
+
+<div class="layouts-nds layouts--main fixed-left" id="main">
+            <div class="layouts--main__column layouts--main__first col-lg-3">
+                            
+
+<div class="navigation-nds navigation--mobile-rail ">
+    
+
+<div class="component-nds component--accordion " id="navigation--mobile-rail">
+                <div id="navigation--mobile-rail__button">
+                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open NDS Drupal Theme Menu</button>
+            </div>
+            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
+                                                                
+<div class="component-nds component--scrollspy-toc " data-target="">
+    <h2>NDS Drupal Theme</h2>
+    <hr>
+    <ul class="component--scrollspy-toc__list section table-of-contents">
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-overview">Overview</a></li>
+            </ul>
+</div>                    
+                            </div>
+        </div></div>            
+        </div>
+                <div class="layouts--main__column layouts--main__second col-lg-9">
+                            
+
+<div class="layouts-nds layouts--body ">
+                            <h1 id="main-content">NDS Drupal Theme</h1>
+                        
+<div id="section-prerequisites" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Prerequisites</h2>
+        <p>You’ll need several application packages to work with the NIAID Design System. You can download and install the necessary packages below:</p>
+        <ul>
+            <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+            <li><a href="https://www.npmjs.com/get-npm">NPM</a></li>
+            <li><a href="https://www.php.net/downloads">PHP</a> (For Static &amp; Drupal-Based Sites)</li>
+            <li><a href="https://getcomposer.org/download/">Composer</a> (For Static &amp; Drupal-Based Sites)</li>
+        </ul>
+    </div>                        
+<div id="section-drupal-website" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Building a Drupal Site</h2>
+        <h3>Overview</h3>
+        <p>NDS Drupal Theme is a base theme which is integrated with the NIAID Design System. NDS Drupal Theme out-of-the-box is responsive with many Drupal regions provided for advanced functionality. NDS Drupal Theme distributions also come with several theme settings.</p>
+        <p>Core features of NDS Drupal Theme:</p>
+        <ul>
+            <li>Admin configurable theme settings including colors, fonts, corner style, and shadows.</li>
+            <li>Configured system branding and page title blocks.</li>
+            <li>Responsive design support for mobile and tablet experiences.</li>
+        </ul>
+        <h3>Downloading &amp; Installing NDS Drupal Theme</h3>
+        <p>Download and unzip the NDS Drupal Theme Folder:</p>
+        <p>
+            
+
+<a href="../assets/nds-drupal-theme.zip" class="button-nds button--icon waves-effect waves-light " download>
+            
+
+<i class="icon-nds icon--default fas fa-download "></i>
+                <span class="button--icon__text icon--left">Download NDS Drupal Theme</span>
+        </a>        </p>
+        <p>Install as any other Drupal Contributed Theme. For more information about installing a contributed theme, please visit the <a href="https://www.drupal.org/docs/extending-drupal/installing-themes">Drupal documentation site.</a></p>
+
+        <h3>Drupal Theme Configuration</h3>
+        <p>Configure Drupal theme settings by navigating: Administration > Appearance > Settings > NDS Drupal Theme. Select from the provided theme options.</p>
+        <ul>
+            <li>Product Identity
+                <ul>
+                    <li>Select Product Identity and fill out Top Field. - For example, NIAID </li>
+                    <li>Select Product Identity and fill out Bottom Field. - For example, Design System</li>
+                </ul>
+            </li>
+            <li>Font Headings
+                <ul>
+                    <li>Roboto</li>
+                    <li>Public Sans</li>
+                    <li>Merriweather</li>
+                    <li>Martel</li>
+                </ul>
+            </li>
+            <li>Body Headings
+                <ul>
+                    <li>Roboto</li>
+                    <li>Public Sans</li>
+                </ul>
+            </li>
+            <li>Shadows
+                <ul>
+                    <li>Flat</li>
+                    <li>Material (Shadows)</li>
+                </ul>
+            </li>
+            <li>Corners
+                <ul>
+                    <li>Sharp</li>
+                    <li>Semi-Rounded</li>
+                    <li>Fully-Rounded</li>
+                </ul>
+            </li>
+            <li>Colors
+                <ul>
+                    <li>Select from one of the three available theme palettes.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 id="menus">Menus</h3>
+        <p>In NDS Drupal Theme, the primary menu is currently hard-coded and implemented using the NIAID Design System component. In order to modify this menu, please place the menu block on Primary Menu region and uncomment the  on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig.</p>
+    </div>                        
+<div id="section-working-with-nds" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Working with NDS</h2>
+        <p>Whether you are building a static site or a Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. For Drupal-based projects, the _patterns/ folder is located under the ./nds directory. If custom components, style rules, or functionality are needed, <strong>do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, place them in the appropriate Atomic folders outside of the 00-nds directory.</p>
+        
+
+    
+
+<div class="component-nds component--media ">
+    <div class="component--media__media">
+                    
+
+	
+<img class="image-nds image--default materialboxed" src="../assets/custom-components.png" alt="See caption for details" />            </div>
+    <div class="component--media__text">
+        <div class="component--media__text__content-wrapper">
+                            
+
+<div class="text-nds text--image-credit-caption ">
+            <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">Custom components should be placed in the Atomic folders outside of the 00-nds/ directory.</p>
+        </div>
+                <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
+            <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+        </div>
+    </div>                    </div>
+    </div>
+</div>
+        <p>The global project CSS rules can be found in the css/ directory in source/. The global/ folder is similar to the 00-nds/ folder in that custom changes should not occur within the directory. Instead, make edits in the overrides/ directory. Here, you can create new files and write custom style rules.</p>
+        <p>For both static and Drupal-based websites, the CSS and JS will need to be compiled before it is reflected on the site. Run the following commands depending on your project type:</p>
+        <p><strong>Static Websites:</strong></p>
+        <code>gulp</code><br>
+        <p><strong>Drupal Websites:</strong></p>
+        <code>cd nds</code><br>
+        <code>gulp</code><br>
+
+        <p>Running the gulp command will compile the project assets and produce a localhost with your Pattern Lab styleguide. Note that the Gulp script is configured to watch files and listen for changes. When changes are detected, Gulp will automatically recompile your assets and refresh the localhost, so that you may verify your changes look correct.</p>
+
+        <p>For Drupal-based projects, you may need to clear the Drupal cache to see your changes.</p>
+
+        
+
+<div class="block-nds block--default  ">
+                    <h4>Developing with NIAID Design System</h4>
+                <p>Get more information on how NDS is structured.</p>
+                
+
+<a class="button-nds waves-effect waves-light button--primary " href="/development/" role="button" >Develop with NDS</a>            </div>    </div>                        
+
+<div id="section-resources" class="component-nds component--scrollspy-section scrollspy section ">
+            <h2>Additional Resources</h2>
+        <h3>CSS &amp; JS</h3>
+        
+<div class="block--files container-fluid ">
+    <div class="row">
+        <div class="block--files__col col-md-6">
+            
+
+<a href="../assets/nds-min.js" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-js "></i>
+                <span class="button--icon__text icon--left">Download NDS Global JS</span>
+        </a>        </div>
+        <div class="block--files__col col-md-6">
+            
+
+<a href="../assets/nds-min.css" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fab fa-css3 "></i>
+                <span class="button--icon__text icon--left">Download NDS Global CSS</span>
+        </a>        </div>
+    </div>
+</div>        <h3>Fonts</h3>
+        
+<div class="block--fonts container-fluid ">
+    <div class="row">
+        <div class="col-md-6">
+            
+
+<a href="../assets/public-sans.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fas fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Public Sans</span>
+        </a>            <span class="block--fonts__credit">Provided by USWDS</span>
+        </div>
+        <div class="col-md-6">
+            
+
+<a href="../assets/roboto.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fas fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Roboto</span>
+        </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            
+
+<a href="../assets/martel.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fas fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Martel</span>
+        </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
+        </div>
+        <div class="col-md-6">
+            
+
+<a href="../assets/merriweather.zip" class="button-nds button--icon waves-effect waves-light button--secondary" download>
+            
+
+<i class="icon-nds icon--default fas fa-file-archive "></i>
+                <span class="button--icon__text icon--left">Download Merriweather</span>
+        </a>            <span class="block--fonts__credit">Provided by USWDS</span>
+        </div>
+    </div>
+</div>        <h3>Design Files</h3>
+        
+<div class="block--design-files container-fluid ">
+    <div class="row">
+        <div class="col-md-6">
+            
+
+<a class="button-nds button--image button--secondary" href="../assets/NDS-Sketch.sketch" download>
+    
+
+	
+<img class="image-nds image--default " src="../assets/sketch.svg" alt="Sketch Icon" />            <span class="button--image__text">Download Sketch File</span>
+    </a>        </div>
+        <div class="col-md-6">
+            
+
+<a class="button-nds button--image button--secondary" href="../assets/NDS-Figma.fig" download>
+    
+
+	
+<img class="image-nds image--default " src="../assets/figma.svg" alt="Figma Icon" />            <span class="button--image__text">Download Figma File</span>
+    </a>        </div>
+    </div>
+</div>    </div>                    </div>            
+        </div>
+                <div class="layouts--main__column layouts--main__third col-lg-3">
+            <span></span>
+        </div>
+    </div>        </div>
+            
+
+<footer id="footer" class="global-nds global--footer container-fluid ">
+        <div class="global--footer__content row">
+                    <div class="global--footer__content__column col-md-4">
+                        
+
+	
+<a class="image-nds image--logo " href="/">
+  <img class="image--logo__image" src="../assets/global/niaid/logo-niaid-white.svg" alt="NIAID Logo"/>
+</a>    
+            </div>
+                            <div class="global--footer__content__column col-md-4">
+                        <h4>Website Policies &amp; Notices</h4>
+        <ul>
+            <li><a class="link--carot" href="/about-nds/">About NDS</a></li>
+            <li><a class="link--carot" href="#">Freedom of Information Act (FOIA)</a></li>
+            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+        </ul>
+    
+            </div>
+                            <div class="global--footer__content__column col-md-4">
+                        <h4>Related Government Websites</h4>
+        <ul>
+            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+        </ul>
+    
+            </div>
+            </div>
+      
+        <div class="global--footer__tagline">
+            <p>
+                
+
+<i class="icon-nds icon--default fas fa-bolt "></i>
+                <span>Powered by the <a href="https://designsystem.niaid.nih.gov/">NIAID Design System</a></span>
+            </p>
+        </div>
+    </footer>    </div>        
+        <script src="../js/custom/stickybits.min.js"></script>
+
+        <script src="../js/libraries/jquery/jquery.min.js"></script>        <script src="../js/libraries/select2/select2.full.min.js"></script>        <script src="../js/libraries/materialize/materialize.min.js"></script>        <script src="../js/libraries/bootstrap/bootstrap.bundle.min.js"></script>                                <script src="../js/custom/jquery.cookie.js"></script>
+        <script src="../js/custom/prism/prism.js" data-manual></script>
+        <script src="../js/custom/prism/prism-normalize-whitespace.min.js"></script>
+        <script src="../js/global/nds-min.js"></script>
+    </body>
+</html>

@@ -53,6 +53,22 @@
                                     {
                                         "href": "section-overview",
                                         "text": "Overview"
+                                    },
+                                    {
+                                        "href": "section-prerequisites",
+                                        "text": "Prerequisites"
+                                    },
+                                    {
+                                        "href": "section-initialization",
+                                        "text": "Initialization"
+                                    },
+                                    {
+                                        "href": "section-overview",
+                                        "text": "Working with NDS"
+                                    },
+                                    {
+                                        "href": "section-overview",
+                                        "text": "Building NDS for Production"
                                     }
                                 ]
                             }
@@ -64,10 +80,81 @@
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
                         <h1 id="main-content">Static Site Builder</h1>
-                        {% include "@sections/_section-prerequisites.twig" %}
+                        <p>With the NIAID Design System Static Site Builder, creating a responsive and compliant website is quick and easy. The Static Site Builder leverages a technology called <a href="https://patternlab.io/">Pattern Lab</a> to manage web components and the content.</p>
+                        <p><strong>Use the Static Site Builder if:</strong></p>
+                        <ul>
+                            <li>Your website needs to be built quickly.</li>
+                            <li>Your website is small with relatively static content.</li>
+                            <li>Your team lacks signficant development resources.</li>
+                            <li>Your team has basic knowledge of HTML, CSS, JS.</li>
+                        </ul>
+                        <h2>Prerequisites</h2>
+                        <p>In addition to a basic understanding of HTML, CSS, JS, you’ll need several application packages to work with the Static Site Builder. You can download and install the necessary packages below:</p>
+                        <ul>
+                            <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+                            <li><a href="https://www.npmjs.com/get-npm">NPM</a></li>
+                            <li><a href="https://gulpjs.com/">Gulp</a></li>
+                            <li><a href="https://www.php.net/downloads">PHP</a></li>
+                            <li><a href="https://getcomposer.org/download/">Composer</a></li>
+                        </ul>
+                        
+                        <p class="h3">Pattern Lab</p>
+                        <p>The NDS Static Site Builder is built with <a href="https://patternlab.io/">Pattern Lab</a>, a development framework architected on the principle of <a href="{{ basePath }}development/#section-atomic-design">Atomic Design</a>. While this technology was originally built to showcase UI web components, Pattern Lab can also be leveraged to intuitively manage and generate complete static websites. The Static Site Builder consists of an instance of Pattern Lab coupled with NDS components and assets to allow you to quickly build your website. While we have written this guide to be effective even if you do not have Pattern Lab experience, we encourage you to familiarize yourself with <a href="https://patternlab.io/">the documentation on the Pattern Lab website.</a></p>
+
                         {% include "@sections/_section-static-website.twig" %}
                         {% include "@sections/_section-working-with-nds.twig" %}
-                        {% include "@sections/_section-resources.twig" %}
+                        <h2>Building NDS for Production</h2>
+                        <p>NDS provides a way to quickly build a distribution folder with all the necessary, web-ready assets. Upon build, the assets are generated and placed into a public_html/ directory.</p>
+                        <p class="step">1. Create a Distribution Pattern Folder.</p>
+                        <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
+                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                            {
+                                "component_media_src": 'dist.png',
+                                "component_media_alt": 'See caption for details',
+                                "component_media_credit": 'NIAID, Office of Communications and Government Relations (OCGR)',
+                                "component_media_caption": "Create a 06-dist/ directory.",
+                                "component_media_float": "right",
+                                "component_media_lightbox": "yes"
+                            }
+                        %}
+                        <p>For each page of your static site, create a new folder (typically with the same name as the corresponding 05-pages/ directory) and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
+                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                            {
+                                "component_media_src": 'json.png',
+                                "component_media_alt": 'See caption for details',
+                                "component_media_credit": 'NIAID, Office of Communications and Government Relations (OCGR)',
+                                "component_media_caption": "An example JSON file in the 06-dist/ directory.",
+                                "component_media_lightbox": "yes"
+                            }
+                        %}
+                        <p class="step">2. Configure the Production JSON Files</p>
+                        <p>The JSON file in each page's 06-dist folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
+                        <ul>
+                            <li>Configure the variable paths (cssPath, jsPath, etc.) to your desired structure.</p>
+                            <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>
+                            <li>If using an NDS-based navigation element, use the "navigationPrimaryActiveLink" parameter to add active page styling.</li>
+                        </ul>
+                        <p>You may also add your own parameters for use in custom patterns.</p>
+
+                        <p class="step">3. Configure Gulp Paths to Your Production Pages</p>
+                        <p>Once your 06-dist/ directory is setup, compile Pattern Lab. Next, open your gulpfile.js, and find the "buildPaths" variable declaration. For every page you want to deploy, add a new object. For pageName, add the name of the folder/file for that page in 06-dist/. For target_dest, specify the ultimate path you want that page to file under.</p>
+                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                            {
+                                "component_media_src": 'build-paths-gulp.png',
+                                "component_media_alt": 'See caption for details',
+                                "component_media_credit": 'NIAID, Office of Communications and Government Relations (OCGR)',
+                                "component_media_caption": "A sample buildPaths variable declaration.",
+                                "component_media_lightbox": "yes"
+                            }
+                        %}
+                        <p class="step">4. Build the Distribution Directory</p>
+                        <code>gulp buildProd</code><br>
+                        <p>After running the buildProd command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
+                        {% include "@sections/_section-resources.twig" with
+                            {
+                                "section_resources_additional": "Additional "
+                            }
+                        %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}

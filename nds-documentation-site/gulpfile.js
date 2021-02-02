@@ -195,6 +195,14 @@ function buildNDSDocumentationSite() {
         {
             "page_name": "about",
             "target_dest": "./public_html/about-nds"
+        },
+        {
+            "page_name": "static-site-builder",
+            "target_dest": "./public_html/nds-static-site-builder"
+        },
+        {
+            "page_name": "nds-drupal-theme",
+            "target_dest": "./public_html/nds-drupal-theme"
         }
     ];
 

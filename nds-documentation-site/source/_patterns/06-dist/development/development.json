@@ -23,7 +23,9 @@
         "themeBuilder": "/builder/",
         "getStarted": "/getting-started/",
         "migrationGuide": "/migration-guide/",
-        "about": "/about-nds/"
+        "about": "/about-nds/",
+        "staticSiteBuilder": "/nds-static-site-builder/",
+        "ndsDrupalTheme": "/nds-drupal-theme/"
     },
     "columns": {
         "left": 3,

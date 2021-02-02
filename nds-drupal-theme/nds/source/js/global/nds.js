@@ -224,7 +224,49 @@ function initLinkExternalMailto() {
       initTableDefault();
     });
   }
-})(jQuery);
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initDataAttributes();
+}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+
+function initDataAttributes() {
+  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
+    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+
+    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+  }
+} // setDataAttributes - Helper function to add data attributes to elements.
+
+
+function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+  for (var i = 0; i < els.length; i++) {
+    var linkText = els[i].textContent.trim();
+
+    if (linkText !== "") {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    }
+  }
+}
 
 (function ($) {
   function initBlockHero() {
@@ -434,47 +476,5 @@ function closeMenu() {
 
   for (var i = 0; i < tabElements.length; i++) {
     tabElements[i].setAttribute('tabindex', '-1');
-  }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initDataAttributes();
-}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-
-function initDataAttributes() {
-  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
-    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-
-    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
-
-    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-  }
-} // setDataAttributes - Helper function to add data attributes to elements.
-
-
-function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-  for (var i = 0; i < els.length; i++) {
-    var linkText = els[i].textContent.trim();
-
-    if (linkText !== "") {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-    }
   }
 }

@@ -1,11 +1,24 @@
 .block--design-files {
     padding: 0;
-    margin: 0 -.5rem;
+    margin-bottom: -1rem;
+    .row {
+        > div {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    }
     .button--image {
-        display: inline-flex;
-        margin: .5rem;
+        display: block;
+        text-align: center;
+        width: 100%;
         img {
-            height: 2rem;
+            height: 3rem;
+            max-height: none;
+            display: block;
+            margin: 1rem auto;
+        }
+        &__text {
+            padding: 0;
         }
     }
 }

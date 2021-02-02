@@ -67,7 +67,11 @@
                         {% include "@sections/_section-prerequisites.twig" %}
                         {% include "@sections/_section-drupal-website.twig" %}
                         {% include "@sections/_section-working-with-nds.twig" %}
-                        {% include "@sections/_section-resources.twig" %}
+                        {% include "@sections/_section-resources.twig" with
+                            {
+                                "section_resources_additional": "Additional "
+                            }
+                        %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}

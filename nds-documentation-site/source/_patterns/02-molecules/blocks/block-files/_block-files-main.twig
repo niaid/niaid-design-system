@@ -1,8 +1,8 @@
 {% set block_files_classes = block_files_classes|default() %}
 
-<div class="block--files {{ block_files_classes }}">
+<div class="block--files container-fluid {{ block_files_classes }}">
     <div class="row">
-        <div class="block--files__col col-12 col-sm-6">
+        <div class="block--files__col col-md-6">
             {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                 {
                     "button_icon_classes": "button--secondary",
@@ -14,7 +14,7 @@
                 }
             %}
         </div>
-        <div class="block--files__col col-12 col-sm-6">
+        <div class="block--files__col col-md-6">
             {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                 {
                     "button_icon_classes": "button--secondary",
