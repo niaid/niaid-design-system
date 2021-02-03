@@ -356,6 +356,10 @@ function zipAssets() {
 
 // formatComponents - A function to beautify the Component code snippets for production.
 function formatComponents() {
+    gulp.src('./public/patterns/06-dist-migration-guide-migration-guide/06-dist-migration-guide-migration-guide.html')
+        .pipe(beautify())
+        .pipe(gulp.dest('./public/patterns/06-dist-migration-guide-migration-guide/'));
+
     return gulp.src('./public/patterns/06-dist-components-components/06-dist-components-components.html')
         .pipe(beautify())
         .pipe(gulp.dest('./public/patterns/06-dist-components-components/'));
