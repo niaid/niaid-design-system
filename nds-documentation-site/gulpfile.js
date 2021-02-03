@@ -20,6 +20,7 @@ const del = require('del');
 const replace = require('gulp-replace');
 const beautify = require('gulp-jsbeautifier');
 const ndsLiteFiles = require('./config-nds-lite.json');
+var merge = require('merge-stream');
 
 // compileSass - Compile CSS for NDS Documentation
 gulp.task('compileSass', () => {
@@ -284,40 +285,28 @@ function compileGlobalAssets() {
 
 // buildDist - Copies global files from global-assets into a distribution folder.
 function buildDist() {
-    // Transfer Fonts
-    console.log("Transferring Assets from Global Webfonts...");
-    gulp.src('../global-assets/source/webfonts/**/*')
-        .pipe(gulp.dest('../global-assets/dist/source/webfonts/'));
+    var paths = [
+        { src: '../global-assets/source/webfonts/**/*', dest: '../global-assets/dist/source/webfonts/' },
+        { src: '../global-assets/source/css/**/*', dest: '../global-assets/dist/source/css/' },
+        { src: '../global-assets/source/js/**/*', dest: '../global-assets/dist/source/js/' },
+        { src: '../global-assets/source/_patterns/**/*', dest: '../global-assets/dist/source/_patterns/' },
+        { src: '../global-assets/source/_data/**/*', dest: '../global-assets/dist/source/_data/' },
+        { src: '../global-assets/source/_meta/**/*', dest: '../global-assets/dist/source/_meta/' },
+        { src: '../global-assets/source/images/**/*', dest: '../global-assets/dist/source/images/' },
+        { src: '../global-assets/config/**/*', dest: '../global-assets/dist/config' },
+        { src: '../global-assets/core/**/*', dest: '../global-assets/dist/core' },
+        { src: '../global-assets/package.json', dest: '../global-assets/dist/' },
+        { src: '../global-assets/composer.json', dest: '../global-assets/dist/' },
+        { src: '../global-assets/LICENSE', dest: '../global-assets/dist/' },
+        { src: '../global-assets/Readme.md', dest: '../global-assets/dist/' },
+        { src: '../global-assets/gulpfile.js', dest: '../global-assets/dist/' }
+    ];
 
-    // Transfer CSS
-    console.log("Transferring Assets from Global SASS...");
-    gulp.src('../global-assets/source/css/**/*').pipe(gulp.dest('../global-assets/dist/source/css/'));
+    var tasks = paths.map(function (path) {
+        return gulp.src(path.src).pipe(gulp.dest(path.dest));
+    });
 
-    // Transfer JS
-    console.log("Transferring Assets from Global JS...");
-    gulp.src('../global-assets/source/js/**/*').pipe(gulp.dest('../global-assets/dist/source/js/'));
-
-    // Transfer Patterns
-    console.log("Transferring Assets from Global Patterns...");
-    gulp.src('../global-assets/source/_patterns/**/*').pipe(gulp.dest('../global-assets/dist/source/_patterns/'));
-
-    // Transfer Data and Meta
-    console.log("Transferring Assets from Data and Meta...");
-    gulp.src('../global-assets/source/_data/**/*').pipe(gulp.dest('../global-assets/dist/source/_data/'));
-    gulp.src('../global-assets/source/_meta/**/*').pipe(gulp.dest('../global-assets/dist/source/_meta/'));
-
-    // Transfer Images
-    console.log("Transferring Assets from Global Images...");
-    gulp.src('../global-assets/source/images/**/*').pipe(gulp.dest('../global-assets/dist/source/images/'));
-
-    // Other Files
-    gulp.src('../global-assets/config/**/*').pipe(gulp.dest('../global-assets/dist/config'));
-    gulp.src('../global-assets/core/**/*').pipe(gulp.dest('../global-assets/dist/core'));
-    gulp.src('../global-assets/package.json').pipe(gulp.dest('../global-assets/dist/'));
-    gulp.src('../global-assets/composer.json').pipe(gulp.dest('../global-assets/dist/'));
-    gulp.src('../global-assets/LICENSE').pipe(gulp.dest('../global-assets/dist/'));
-    gulp.src('../global-assets/Readme.md').pipe(gulp.dest('../global-assets/dist/'));
-    return gulp.src('../global-assets/gulpfile.js').pipe(gulp.dest('../global-assets/dist/'));
+    return merge(tasks);
 }
 
 // zipAssets - Zips webfont pacakges, the NDS Drupal Theme, and the distribution folder created in buildDist.
