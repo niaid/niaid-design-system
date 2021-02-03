@@ -146,7 +146,9 @@ gulp.task('cleanIgnoredSourceDirectories', (cb) => {
 gulp.task('cleanDistributionDirectories', (cb) => {
     let dirs = [
         './public_html/**/*',
-        '../nds-drupal-theme/nds/**/*'
+        '../nds-drupal-theme/nds/**/*',
+        '../global-assets/dist/**/*',
+        '!../global-assets/dist/.gitignore'
     ];
     return del(dirs, {'force': true}, cb);
 });
