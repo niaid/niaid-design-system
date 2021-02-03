@@ -3,8 +3,7 @@
         @include media-breakpoint-up(lg) {
             height: 100vh;
             overflow-y: auto;
-            background: $page-background-alternate;
-            border-right: 0.0625rem solid $input-border;
+            border-right: 0.0625rem solid $border;
         }
     }
 }
