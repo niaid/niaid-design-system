@@ -53,6 +53,26 @@
                                     {
                                         "href": "section-overview",
                                         "text": "Overview"
+                                    },
+                                    {
+                                        "href": "section-downloading-and-installing",
+                                        "text": "Downloading & Installing"
+                                    },
+                                    {
+                                        "href": "section-drupal-theme-configuration",
+                                        "text": "Drupal Theme Configuration"
+                                    },
+                                    {
+                                        "href": "section-working-with-menus",
+                                        "text": "Working with Menus"
+                                    },
+                                    {
+                                        "href": "section-working-with-nds",
+                                        "text": "Working with NDS"
+                                    },
+                                    {
+                                        "href": "section-resources",
+                                        "text": "Additional Resources"
                                     }
                                 ]
                             }
@@ -61,11 +81,149 @@
                 {% endembed %}
             {% endblock %}
             {% block main_column %}
-                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" with
+                    {
+                        "layouts_body_vertical_padding": "no"
+                    }
+                %}
                     {% block body_content %}
-                        <h1 id="main-content">NDS Drupal Theme</h1>
-                        {% include "@sections/_section-prerequisites.twig" %}
-                        {% include "@sections/_section-drupal-website.twig" %}
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+                            {
+                                "component_scrollspy_section_id": "section-overview"
+                            }
+                        %}
+                            {% block component_scrollspy_section_content %}
+                                <aside>
+                                    {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/_navigation-breadcrumbs-main.twig" with
+                                        {
+                                            "navigation_breadcrumbs_data": [
+                                                {
+                                                    "text": "Getting Started",
+                                                    "href": links.getStarted
+                                                },
+                                                {
+                                                    "text": "NDS Drupal Theme"
+                                                }
+                                            ]
+                                        }
+                                    %}
+                                </aside>
+                                <h1 id="main-content">NDS Drupal Theme</h1>
+                                <p>Drupal 8 is a powerful Content Management System (CMS) designed to give you ample flexibility and control over your website and its content. Drupal 8 websites typically have tens or hundreds of pages with content that changes often. The NIAID Design System was built to work seamlessly with Drupal 8, connecting NDS components to the content managed by Drupal. For this reason, the underlying architecture is based on Pattern Lab, a technology that can be used to build and manage web components of a Drupal Theme.</p>
+                                
+                                <p><strong>Use Drupal 8 (and the NDS Drupal Theme) if:</strong></p>
+                                <ul>
+                                    <li>Your website has many pages of content.</li>
+                                    <li>Your website content changes frequently.</li>
+                                    <li>Your website has multiple editors at once.</li>
+                                    <li>You have ample development resources with Drupal knowledge.</li>
+                                </ul>
+
+                                {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
+                                    {
+                                        "block_status_message_classes": "my-5",
+                                        "block_status_message_type": "message--warning"
+                                    }
+                                %}
+                                    {% block block_status_message_content %}
+                                        <p><strong>In order to use the NDS Drupal Theme, you must a working Drupal 8 development environment.</strong></p>
+                                    {% endblock %}
+                                {% endembed %}
+
+                                <p>NDS Drupal Theme is a base theme which is integrated with the NIAID Design System. NDS Drupal Theme out-of-the-box is responsive with many Drupal regions provided for advanced functionality. NDS Drupal Theme distributions also come with several theme settings.</p>
+                                <p>Core features of NDS Drupal Theme:</p>
+                                <ul>
+                                    <li>Admin configurable theme settings including colors, fonts, corner style, and shadows.</li>
+                                    <li>Configured system branding and page title blocks.</li>
+                                    <li>Responsive design support for mobile and tablet experiences.</li>
+                                </ul>
+                            {% endblock %}
+                        {% endembed %}
+
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+                            {
+                                "component_scrollspy_section_id": "section-downloading-and-installing"
+                            }
+                        %}
+                            {% block component_scrollspy_section_content %}
+                                <h2>Downloading &amp; Installing NDS Drupal Theme</h2>
+                                <p>Download and unzip the NDS Drupal Theme Folder:</p>
+                                <p>
+                                    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                                        {
+                                            "button_icon_href": assetsPath ~ "nds-drupal-theme.zip",
+                                            "button_icon_icon": "download",
+                                            "button_icon_text": "Download NDS Drupal Theme",
+                                            "button_icon_attributes": "download"
+                                        }
+                                    %}
+                                </p>
+                                <p>Install as any other Drupal Contributed Theme. For more information about installing a contributed theme, please visit the <a href="https://www.drupal.org/docs/extending-drupal/installing-themes">Drupal documentation site.</a></p>
+                            {% endblock %}
+                        {% endembed %}
+
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+                            {
+                                "component_scrollspy_section_id": "section-drupal-theme-configuration"
+                            }
+                        %}
+                            {% block component_scrollspy_section_content %}
+                                <h2>Drupal Theme Configuration</h2>
+                                <p>Configure Drupal theme settings by navigating: Administration > Appearance > Settings > NDS Drupal Theme. Select from the provided theme options.</p>
+                                <ul>
+                                    <li>Product Identity
+                                        <ul>
+                                            <li>Select Product Identity and fill out Top Field. - For example, NIAID </li>
+                                            <li>Select Product Identity and fill out Bottom Field. - For example, Design System</li>
+                                        </ul>
+                                    </li>
+                                    <li>Font Headings
+                                        <ul>
+                                            <li>Roboto</li>
+                                            <li>Public Sans</li>
+                                            <li>Merriweather</li>
+                                            <li>Martel</li>
+                                        </ul>
+                                    </li>
+                                    <li>Body Headings
+                                        <ul>
+                                            <li>Roboto</li>
+                                            <li>Public Sans</li>
+                                        </ul>
+                                    </li>
+                                    <li>Shadows
+                                        <ul>
+                                            <li>Flat</li>
+                                            <li>Material (Shadows)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Corners
+                                        <ul>
+                                            <li>Sharp</li>
+                                            <li>Semi-Rounded</li>
+                                            <li>Fully-Rounded</li>
+                                        </ul>
+                                    </li>
+                                    <li>Colors
+                                        <ul>
+                                            <li>Select from one of the three available theme palettes.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            {% endblock %}
+                        {% endembed %}
+
+                        {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
+                            {
+                                "component_scrollspy_section_id": "section-working-with-menus"
+                            }
+                        %}
+                            {% block component_scrollspy_section_content %}
+                                <h2 id="menus">Working with Menus</h2>
+                                <p>In NDS Drupal Theme, the primary menu is currently hard-coded and implemented using the NIAID Design System component. In order to modify this menu, please place the menu block on Primary Menu region and uncomment the &#123;{ page.primary_meneu }&#125; on page.html.twig file. The pattern for the menu is found here: nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig.</p>
+                            {% endblock %}
+                        {% endembed %}
+
                         {% include "@sections/_section-working-with-nds.twig" %}
                         {% include "@sections/_section-resources.twig" with
                             {

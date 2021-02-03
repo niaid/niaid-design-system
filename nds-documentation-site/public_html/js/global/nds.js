@@ -65,7 +65,49 @@ $(document).ready(function () {
       init_layouts_tabs();
     });
   }
-})(jQuery);
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initDataAttributes();
+}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+
+function initDataAttributes() {
+  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
+    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+
+    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+  }
+} // setDataAttributes - Helper function to add data attributes to elements.
+
+
+function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+  for (var i = 0; i < els.length; i++) {
+    var linkText = els[i].textContent.trim();
+
+    if (linkText !== "" && els[i].closest('.component--snippet') == null) {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    }
+  }
+}
 
 (function ($) {
   function initComponentScrollspySection() {
@@ -348,49 +390,7 @@ $(document).ready(function () {
       }
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initDataAttributes();
-}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-
-function initDataAttributes() {
-  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
-    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-
-    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
-
-    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-  }
-} // setDataAttributes - Helper function to add data attributes to elements.
-
-
-function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-  for (var i = 0; i < els.length; i++) {
-    var linkText = els[i].textContent.trim();
-
-    if (linkText !== "" && els[i].closest('.component--snippet') == null) {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-    }
-  }
-}
+})(jQuery);
 
 (function ($) {
   function init_build_controls(context) {
@@ -1188,24 +1188,7 @@ function initLinkExternalMailto() {
       initComponentMedia();
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initComponentUSWDSBanner();
-}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
-
-function initComponentUSWDSBanner() {
-  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
-    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
-      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
-      document.getElementById("uswds-banner-content").style.display = 'none';
-    } else {
-      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
-      document.getElementById("uswds-banner-content").style.display = 'block';
-    }
-  });
-}
+})(jQuery);
 
 (function ($) {
   function initComponentModal() {
@@ -1265,6 +1248,23 @@ function initComponentUSWDSBanner() {
     });
   }
 })(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initComponentUSWDSBanner();
+}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+
+function initComponentUSWDSBanner() {
+  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+      document.getElementById("uswds-banner-content").style.display = 'none';
+    } else {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+      document.getElementById("uswds-banner-content").style.display = 'block';
+    }
+  });
+} // Part of NDS Lite
 
 
 document.addEventListener("DOMContentLoaded", function (e) {

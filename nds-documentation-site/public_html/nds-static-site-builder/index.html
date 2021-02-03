@@ -319,8 +319,9 @@
                     <li class="component--scrollspy-toc__list__item"><a href="#section-overview">Overview</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-prerequisites">Prerequisites</a></li>
                     <li class="component--scrollspy-toc__list__item"><a href="#section-initialization">Initialization</a></li>
-                    <li class="component--scrollspy-toc__list__item"><a href="#section-overview">Working with NDS</a></li>
-                    <li class="component--scrollspy-toc__list__item"><a href="#section-overview">Building NDS for Production</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-working-with-nds">Working with NDS</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-building-nds-production">Building NDS for Production</a></li>
+                    <li class="component--scrollspy-toc__list__item"><a href="#section-resources">Additional Resources</a></li>
             </ul>
 </div>                    
                             </div>
@@ -329,50 +330,66 @@
                 <div class="layouts--main__column layouts--main__second col-lg-9">
                             
 
-<div class="layouts-nds layouts--body ">
-                            <h1 id="main-content">Static Site Builder</h1>
-                        <p>With the NIAID Design System Static Site Builder, creating a responsive and compliant website is quick and easy. The Static Site Builder leverages a technology called <a href="https://patternlab.io/">Pattern Lab</a> to manage web components and the content.</p>
-                        <p><strong>Use the Static Site Builder if:</strong></p>
-                        <ul>
-                            <li>Your website needs to be built quickly.</li>
-                            <li>Your website is small with relatively static content.</li>
-                            <li>Your team lacks signficant development resources.</li>
-                            <li>Your team has basic knowledge of HTML, CSS, JS.</li>
-                        </ul>
-                        <h2>Prerequisites</h2>
-                        <p>In addition to a basic understanding of HTML, CSS, JS, you’ll need several application packages to work with the Static Site Builder. You can download and install the necessary packages below:</p>
-                        <ul>
-                            <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
-                            <li><a href="https://www.npmjs.com/get-npm">NPM</a></li>
-                            <li><a href="https://gulpjs.com/">Gulp</a></li>
-                            <li><a href="https://www.php.net/downloads">PHP</a></li>
-                            <li><a href="https://getcomposer.org/download/">Composer</a></li>
-                        </ul>
-                        
-                        <p class="h3">Pattern Lab</p>
-                        <p>The NDS Static Site Builder is built with <a href="https://patternlab.io/">Pattern Lab</a>, a development framework architected on the principle of <a href="development/#section-atomic-design">Atomic Design</a>. While this technology was originally built to showcase UI web components, Pattern Lab can also be leveraged to intuitively manage and generate complete static websites. The Static Site Builder consists of an instance of Pattern Lab coupled with NDS components and assets to allow you to quickly build your website. While we have written this guide to be effective even if you do not have Pattern Lab experience, we encourage you to familiarize yourself with <a href="https://patternlab.io/">the documentation on the Pattern Lab website.</a></p>
+<div class="layouts-nds layouts--body layouts--body--no-vertical-padding">
+                            
+<div id="section-overview" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <aside>
+                                    
 
+<div class="navigation-nds navigation--breadcrumbs ">
+    <p>
+                    <a href="/getting-started/"><span>Getting Started</span></a>                            &ensp;
+                
+
+<i class="icon-nds icon--default fas fa-chevron-right "></i>
+                &ensp;
+                                <span>Static Site Builder</span></a>                        </p>
+</div>                                </aside>
+                                <h1 id="main-content">Static Site Builder</h1>
+                                <p>With the NIAID Design System Static Site Builder, creating a responsive and compliant website is quick and easy. The Static Site Builder leverages a technology called <a href="https://patternlab.io/">Pattern Lab</a> to manage web components and the content.</p>
+                                <p><strong>Use the Static Site Builder if:</strong></p>
+                                <ul>
+                                    <li>Your website needs to be built quickly.</li>
+                                    <li>Your website is small with relatively static content.</li>
+                                    <li>Your team lacks signficant development resources.</li>
+                                    <li>Your team has basic knowledge of HTML, CSS, JS.</li>
+                                </ul>
+                            </div>                        
+<div id="section-prerequisites" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h2>Prerequisites</h2>
+                                <p>In addition to a basic understanding of HTML, CSS, JS, you’ll need several application packages to work with the Static Site Builder. You can download and install the necessary packages below:</p>
+                                <ul>
+                                    <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+                                    <li><a href="https://www.npmjs.com/get-npm">NPM</a></li>
+                                    <li><a href="https://gulpjs.com/">Gulp</a></li>
+                                    <li><a href="https://www.php.net/downloads">PHP</a></li>
+                                    <li><a href="https://getcomposer.org/download/">Composer</a></li>
+                                </ul>
+                                
+                                <p class="h3">Pattern Lab</p>
+                                <p>The NDS Static Site Builder is built with <a href="https://patternlab.io/">Pattern Lab</a>, a development framework architected on the principle of <a href="development/#section-atomic-design">Atomic Design</a>. While this technology was originally built to showcase UI web components, Pattern Lab can also be leveraged to intuitively manage and generate complete static websites. The Static Site Builder consists of an instance of Pattern Lab coupled with NDS components and assets to allow you to quickly build your website. While we have written this guide to be effective even if you do not have Pattern Lab experience, we encourage you to familiarize yourself with <a href="https://patternlab.io/">the documentation on the Pattern Lab website.</a></p>
+                            </div>
                         
-<div id="section-static-website" class="component-nds component--scrollspy-section scrollspy section ">
-            <h2>Initialization</h2>
-        <p class="step">1. Download the Static Website Package:</p>
-        <p>
-            
+<div id="section-initialization" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h2>Initialization</h2>
+                                <p class="step">1. Download the Static Website Package:</p>
+                                <p>
+                                    
 
 <a href="../assets/nds.zip" class="button-nds button--icon waves-effect waves-light " download>
             
 
 <i class="icon-nds icon--default fas fa-download "></i>
                 <span class="button--icon__text icon--left">Download NDS</span>
-        </a>        </p>
-        <p class="step mt-5">2. Unzip and Open the Directory in Your Preferred Code Editor.</p>
-        <p>Editors like <a href="https://code.visualstudio.com/">Visual Studio Code</a> are free to download and provide many features that make development easier.</p>
-        <p class="step">3. Install Node and Composer Dependencies</p>
-        <p>Open a new terminal and change into your project directory. If using Visual Studio Code, you may select Terminal -> New Terminal from the application bar. Run the followung commands to install the needed dependencies:</p>
-        <code>npm install</code><br>
-        <code>composer install</code><br>
-        <p><strong>Note:</strong> When you run <code>composer install</code> there may be a prompt asking if you want to install a default theme. Type <code>n</code> and hit enter.</p>
-        
+        </a>                                </p>
+                                <p class="step mt-4">2. Unzip and Open the Directory in Your Preferred Code Editor.</p>
+                                <p>Editors like <a href="https://code.visualstudio.com/">Visual Studio Code</a> are free to download and provide many features that make development easier.</p>
+                                <p class="step">3. Install Node and Composer Dependencies</p>
+                                <p>Open a new terminal and change into your project directory. If using Visual Studio Code, you may select Terminal -> New Terminal from the application bar. Run the followung commands to install the needed dependencies:</p>
+                                <code>npm install</code><br>
+                                <code>composer install</code><br>
+                                <p><strong>Note:</strong> When you run <code>composer install</code> there may be a prompt asking if you want to install a default theme. Type <code>n</code> and hit enter.</p>
+                                
 
     
 
@@ -397,11 +414,12 @@
     </div>                    </div>
     </div>
 </div>
-        <p class="step">4. Open the Project on Your Localhost</p>
-        <p>In your terminal, run:</p>
-        <code>gulp</code><br>
-        <p>This will compile your project and create a localhost with your patterns and pages. Use the black bar at the top to navigate to your components.</p>
-    </div>                        
+                                <p class="step">4. Open the Project on Your Localhost</p>
+                                <p>In your terminal, run:</p>
+                                <code>gulp</code><br>
+                                <p>This will compile your project and create a localhost with your patterns and pages. Use the black bar at the top to navigate to your components.</p>
+                            </div>
+                        
 <div id="section-working-with-nds" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Working with NDS</h2>
         <p>Whether you are building a static site or a Drupal site, once your project is setup, you can begin to add pages, make new components, and make customizations. All NDS out-of-the-box components live in the 00-nds directory inside of the _patterns/ folder. For Drupal-based projects, the _patterns/ folder is located under the ./nds directory. If custom components, style rules, or functionality are needed, <strong>do not make changes inside the 00-nds directory,</strong> as this folder may get updated and overwritten. If you need to make your own custom components, place them in the appropriate Atomic folders outside of the 00-nds directory.</p>
@@ -449,11 +467,14 @@
                 <p>Get more information on how NDS is structured.</p>
                 
 
-<a class="button-nds waves-effect waves-light button--primary " href="/development/" role="button" >Develop with NDS</a>            </div>    </div>                        <h2>Building NDS for Production</h2>
-                        <p>NDS provides a way to quickly build a distribution folder with all the necessary, web-ready assets. Upon build, the assets are generated and placed into a public_html/ directory.</p>
-                        <p class="step">1. Create a Distribution Pattern Folder.</p>
-                        <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
+<a class="button-nds waves-effect waves-light button--primary " href="/development/" role="button" >Develop with NDS</a>            </div>    </div>
                         
+<div id="section-building-nds-production" class="component-nds component--scrollspy-section scrollspy section ">
+                                    <h2>Building NDS for Production</h2>
+                                <p>When you are satisfied with your site, the Static Site Builder allows you to build a distribution folder (public_html/) with all the necessary, web-ready assets. The steps below explain how to generate your distribution code.</p>
+                                <p class="step">1. Create a Distribution Pattern Folder.</p>
+                                <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
+                                
 
     
     
@@ -478,8 +499,8 @@
     </div>                    </div>
     </div>
 </div>
-                        <p>For each page of your static site, create a new folder (typically with the same name as the corresponding 05-pages/ directory) and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
-                        
+                                <p>For each page of your static site, create a new folder (typically with the same name as the corresponding 05-pages/ directory) and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
+                                
 
     
 
@@ -504,18 +525,18 @@
     </div>                    </div>
     </div>
 </div>
-                        <p class="step">2. Configure the Production JSON Files</p>
-                        <p>The JSON file in each page's 06-dist folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
-                        <ul>
-                            <li>Configure the variable paths (cssPath, jsPath, etc.) to your desired structure.</p>
-                            <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>
-                            <li>If using an NDS-based navigation element, use the "navigationPrimaryActiveLink" parameter to add active page styling.</li>
-                        </ul>
-                        <p>You may also add your own parameters for use in custom patterns.</p>
+                                <p class="step">2. Configure the Production JSON Files</p>
+                                <p>The JSON file in each page's 06-dist folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
+                                <ul>
+                                    <li>Configure the variable paths (cssPath, jsPath, etc.) to your desired structure.</p>
+                                    <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>
+                                    <li>If using an NDS-based navigation element, use the "navigationPrimaryActiveLink" parameter to add active page styling.</li>
+                                </ul>
+                                <p>You may also add your own parameters for use in custom patterns.</p>
 
-                        <p class="step">3. Configure Gulp Paths to Your Production Pages</p>
-                        <p>Once your 06-dist/ directory is setup, compile Pattern Lab. Next, open your gulpfile.js, and find the "buildPaths" variable declaration. For every page you want to deploy, add a new object. For pageName, add the name of the folder/file for that page in 06-dist/. For target_dest, specify the ultimate path you want that page to file under.</p>
-                        
+                                <p class="step">3. Configure Gulp Paths to Your Production Pages</p>
+                                <p>Once your 06-dist/ directory is setup, compile Pattern Lab. Next, open your gulpfile.js, and find the "buildPaths" variable declaration. For every page you want to deploy, add a new object. For pageName, add the name of the folder/file for that page in 06-dist/. For target_dest, specify the ultimate path you want that page to file under.</p>
+                                
 
     
 
@@ -540,10 +561,10 @@
     </div>                    </div>
     </div>
 </div>
-                        <p class="step">4. Build the Distribution Directory</p>
-                        <code>gulp buildProd</code><br>
-                        <p>After running the buildProd command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
-                        
+                                <p class="step">4. Build the Distribution Directory</p>
+                                <code>gulp buildProd</code><br>
+                                <p>After running the buildProd command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
+                                
 
 <div id="section-resources" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Additional Resources</h2>
@@ -640,7 +661,7 @@
 <img class="image-nds image--default " src="../assets/figma.svg" alt="Figma Icon" />            <span class="button--image__text">Download Figma File</span>
     </a>        </div>
     </div>
-</div>    </div>                    </div>            
+</div>    </div>                            </div>                    </div>            
         </div>
                 <div class="layouts--main__column layouts--main__third col-lg-3">
             <span></span>
