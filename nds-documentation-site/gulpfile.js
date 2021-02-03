@@ -19,10 +19,10 @@ const zip = require('gulp-zip');
 const del = require('del');
 const replace = require('gulp-replace');
 const beautify = require('gulp-jsbeautifier');
-let ndsLiteFiles = require('./config-nds-lite.json');
+const ndsLiteFiles = require('./config-nds-lite.json');
 
 // compileSass - Compile CSS for NDS Documentation
-function compileSass() {
+gulp.task('compileSass', () => {
     console.log("Compiling Sass...");
     return gulp.src('source/css/style.scss')
         .pipe(sassGlob())
@@ -40,7 +40,7 @@ function compileSass() {
         .pipe(gulp.dest('./source/css'))
         .pipe(cache.clear())
         .pipe(browserSync.stream());
-}
+});
 
 // compileJS - Compile JS for NDS Documentation
 // This logic replaces any scripts on build in the 00-nds folder with scripts of the same name in the custom directories (01-atoms, etc.).
@@ -73,7 +73,8 @@ gulp.task('computeIncludedJSFiles', function() {
         }
     }));
 });
-function compileJS() {
+
+gulp.task('compileJS', () => {
     console.log(includedJS);
     console.log("Compiling JS...");
     return gulp.src(includedJS, {base: './source/'})
@@ -84,57 +85,52 @@ function compileJS() {
         .pipe(minify())
         .pipe(sourcemaps.write('./source/js/global/'))
         .pipe(gulp.dest('./source/js/global/'));
-}
+});
 
 // compilePatternLab - Compile Pattern Lab for NDS Documentation
-function compilePatternLab(cb) {
+gulp.task('compilePatternLab', (cb) => {
     console.log("Compiling Pattern Lab...")
     return exec('php core/console --generate', function(err, stdout, stderr) {
         cache.clearAll();
         browserSync.reload();
         cb(err);
     });
-}
+});
 
 // copyGlobalSass - Copy CSS into NDS Documentation
-function copyGlobalSass() {
+gulp.task('copyGlobalSass', () => {
     console.log("Transferring Assets from Global SASS...");
     gulp.src('../global-assets/source/css/libraries/**/*').pipe(gulp.dest('./source/css/libraries/'));
     return gulp.src('../global-assets/source/css/global/**/*').pipe(gulp.dest('./source/css/global/'));
-}
+});
 
 // copyGlobalJS - Copy JS into NDS Documentation
-function copyGlobalJS() {
+gulp.task('copyGlobalJS', () => {
     console.log("Transferring Assets from Global JS...");
     return gulp.src('../global-assets/source/js/**/*').pipe(gulp.dest('./source/js/'));
-}
+});
 
 // copyGlobalPatterns - Copy Patterns into NDS Documentation
-function copyGlobalPatterns() {
+gulp.task('copyGlobalPatterns', () => {
     console.log("Transferring Assets from Global Patterns...");
     console.log("Copying Patterns...");
     return gulp.src('../global-assets/source/_patterns/00-nds/**/*').pipe(gulp.dest('./source/_patterns/00-nds/'));
-}
+});
 
 // copyGlobalImages - Copy Images into NDS Documentation
-function copyGlobalImages() {
+gulp.task('copyGlobalImages', () => {
     console.log("Transferring Assets from Global Images...");
     return gulp.src('../global-assets/source/images/**/*').pipe(gulp.dest('./source/images/'));
-}
-
-// copyFonts - Copy Fonts into NDS Documentation
-function copyFonts() {
-    return gulp.src('../global-assets/source/webfonts/**/*')
-        .pipe(gulp.dest('./source/webfonts/'));
-}
+});
 
 // cleanNDS - Clear out the 00-nds folder.
-function cleanNDS() {
-    return del('./source/_patterns/00-nds/**/*', {force:true});
-}
+gulp.task('cleanNDS', (cb) => {
+    console.log("Cleaning 00-NDS from Global Assets");
+    return del(['./source/_patterns/00-nds/**/*'], cb);
+});
 
 // GULP: serveProject - Serves project locally and watches files for changes.
-gulp.task('serveProject', function() {
+gulp.task('serveProject', () => {
     browserSync.init({
         server: {
             baseDir: './',
@@ -143,18 +139,18 @@ gulp.task('serveProject', function() {
         open: true
     });
 
-    gulp.watch(['./source/_patterns/01-atoms/**/*', './source/_patterns/02-molecules/**/*', './source/_patterns/03-organisms/**/*', './source/_patterns/04-sections/**/*', './source/_patterns/05-pages/**/*'], gulp.series(compileSass, compileJS, compilePatternLab));
-    gulp.watch('../global-assets/source/css/**/*', gulp.series(copyGlobalSass, compileSass, compilePatternLab));
-    gulp.watch('../global-assets/source/js/**/*', gulp.series(copyGlobalJS, compileJS, compilePatternLab));
-    gulp.watch('../global-assets/source/_patterns/**/*', gulp.series(cleanNDS, copyGlobalPatterns, compileSass, compileJS, compilePatternLab));
+    gulp.watch(['./source/_patterns/01-atoms/**/*', './source/_patterns/02-molecules/**/*', './source/_patterns/03-organisms/**/*', './source/_patterns/04-sections/**/*', './source/_patterns/05-pages/**/*'], gulp.series('compileSass', 'compileJS', 'compilePatternLab'));
+    gulp.watch('../global-assets/source/css/**/*', gulp.series('copyGlobalSass', 'compileSass', 'compilePatternLab'));
+    gulp.watch('../global-assets/source/js/**/*', gulp.series('copyGlobalJS', 'compileJS', 'compilePatternLab'));
+    gulp.watch('../global-assets/source/_patterns/**/*', gulp.series('cleanNDS', 'copyGlobalPatterns', 'compileSass', 'compileJS', 'compilePatternLab'));
 });
 
 // GULP: default - Running gulp compiles the NDS Documentaiton site and serves it locally.
 // TODO: Add copyNodeModules
-gulp.task('default', gulp.series(copyFonts, copyGlobalImages, copyGlobalSass, copyGlobalJS, cleanNDS, copyGlobalPatterns, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
+gulp.task('default', gulp.series('copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'cleanNDS', 'copyGlobalPatterns', 'compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab', 'serveProject'));
 
 // GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('buildProd', gulp.series(compileSass, 'computeIncludedJSFiles', compileJS, compileNDSLite, compilePatternLab, formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
+gulp.task('buildProd', gulp.series('compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
