@@ -240,6 +240,15 @@
                         {% include "@sections/_section-components-atoms.twig" %}
                         {% include "@sections/_section-components-molecules.twig" %}
                         {% include "@sections/_section-components-organisms.twig" %}
+                        <hr class="my-4">
+                        {% include "@molecules/blocks/block-directions/_block-directions-main.twig" with
+                            {
+                                "block_directions_prev_text": "Development",
+                                "block_directions_prev_href": links.development,
+                                "block_directions_next_text": "Theme Builder",
+                                "block_directions_next_href": links.themeBuilder
+                            }
+                        %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
