@@ -6,6 +6,7 @@
     "jsPath": "../js/",
     "imagePath": "../assets/",
     "assetsPath": "../assets/",
+    "navigationPrimaryActiveLink": "get-started",
     "jsIncludes": {
         "jquery": true,
         "select2": true,

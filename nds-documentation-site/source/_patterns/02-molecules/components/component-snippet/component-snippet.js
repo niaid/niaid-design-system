@@ -1,7 +1,7 @@
 (function($) {
     function initComponentSnippet(context = document) {
         $('.component--snippet__block__code__wrapper__snippet').each(function() {
-            if ($("#components").length) {
+            if ($("#components").length || $("#migration-guide").length) {
                 var codeSnippet = escapeHtml($(this).html());
                 $(this).empty();
                 $(this).append(codeSnippet);

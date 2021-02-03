@@ -39,11 +39,30 @@
             }
         %}
             {% block main_column %}
-                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" with
+                    {
+                        "layouts_body_vertical_padding": "no"
+                    }
+                %}
                     {% block body_content %}
+                        <aside>
+                            {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/_navigation-breadcrumbs-main.twig" with
+                                {
+                                    "navigation_breadcrumbs_data": [
+                                        {
+                                            "text": "Getting Started",
+                                            "href": links.getStarted
+                                        },
+                                        {
+                                            "text": "Migration Guide"
+                                        }
+                                    ]
+                                }
+                            %}
+                        </aside>
                         <h1 id="main-content">Migration Guide</h1>
                         
-                        <p><strong>Updated:</strong> November 24, 2020</p>
+                        <p><strong>Updated:</strong> February 3, 2021</p>
 
                         <h2>Overview</h2>
                         <p>This page will explain how pre-existing websites can leverage the NIAID Design System (NDS) to become compliant with NIAID's policies and branding. If you are looking to build a new site from scratch, be sure to check out the <a href="{{ links.getStarted }}">Getting Started</a> page for more information.</p>
