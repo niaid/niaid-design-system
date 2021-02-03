@@ -126,8 +126,29 @@ gulp.task('copyGlobalImages', () => {
 
 // cleanNDS - Clear out the 00-nds folder.
 gulp.task('cleanNDS', (cb) => {
-    console.log("Cleaning 00-NDS from Global Assets");
     return del(['./source/_patterns/00-nds/**/*'], cb);
+});
+
+// cleanIgnoredSourceDirectories - Cleans out any gitignored directories before fresh copies from Global Assets are added.
+gulp.task('cleanIgnoredSourceDirectories', (cb) => {
+    let dirs = [
+        './source/css/global/**/*',
+        './source/css/libraries/**/*',
+        './source/images/global/**/*',
+        './source/js/global/**/*',
+        './source/js/libraries/**/*',
+        './source/js/utilities/**/*'
+    ];
+    return del(dirs, {'force': true}, cb);
+});
+
+// cleanDistributionDirectories - Cleans out any distribution items before a fresh build is created.
+gulp.task('cleanDistributionDirectories', (cb) => {
+    let dirs = [
+        './public_html/**/*',
+        '../nds-drupal-theme/nds/**/*'
+    ];
+    return del(dirs, {'force': true}, cb);
 });
 
 // GULP: serveProject - Serves project locally and watches files for changes.
@@ -147,11 +168,10 @@ gulp.task('serveProject', () => {
 });
 
 // GULP: default - Running gulp compiles the NDS Documentaiton site and serves it locally.
-// TODO: Add copyNodeModules
-gulp.task('default', gulp.series('copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'cleanNDS', 'copyGlobalPatterns', 'compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab', 'serveProject'));
+gulp.task('default', gulp.series('cleanNDS', 'cleanIgnoredSourceDirectories', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab', 'serveProject'));
 
 // GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('buildProd', gulp.series('compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
+gulp.task('buildProd', gulp.series('cleanDistributionDirectories', 'compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
