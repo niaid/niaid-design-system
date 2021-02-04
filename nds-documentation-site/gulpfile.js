@@ -354,10 +354,10 @@ function zipAssets() {
         .pipe(zip('nds-drupal-theme.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
 
-    // Zip Pattern Lab
+    // Zip Static Site Builder
     console.log("Zipping Pattern Lab");
     return gulp.src('../global-assets/dist/**', {dot: true})
-        .pipe(zip('nds.zip'))
+        .pipe(zip('nds-static-site-builder.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
 }
 

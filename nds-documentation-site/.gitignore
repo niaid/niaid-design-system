@@ -12,5 +12,3 @@ source/js/utilities
 source/images/global/*
 vendor/*
 node_modules/*
-nds.zip
-!public_html/assets/nds.zip
