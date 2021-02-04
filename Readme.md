@@ -34,9 +34,9 @@ You will need the following installed on your local machine:
 
 ### Ways to Use NDS
 There are three main ways to use NDS listed below. To get started please visit our documentation site:
-* [NDS Components](#)
-* [Static Site Builder](#)
-* [NDS Drupal Theme](#)
+* [NDS Components](#) - COMING SOON
+* [Static Site Builder](#) - COMING SOON
+* [NDS Drupal Theme](#) - COMING SOON
 
 ## Built With
 
@@ -46,6 +46,6 @@ There are three main ways to use NDS listed below. To get started please visit o
 
 ## Developers
 
-* **Jacob Caccamo** - Creator, UI/UX Designer & Front-End Developer
+* [**Jacob Caccamo**](https://github.com/caccamojr) - Creator, UI/UX Designer & Front-End Developer
 * [Roshana Devkota](https://github.com/roshana-devkota-nih) - Drupal Developer
-* Souley Coulibaly - DevOps SME
+* [Souley Coulibaly](https://github.com/souleyNIAID) - DevOps SME
