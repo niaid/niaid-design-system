@@ -1,4 +1,4 @@
-# NIAID Design System (NDS) Documentation Site
+# NIAID Design System (NDS)
 
 The NIAID Design System was developed within the Office of Communications and Government Relations (OCGR) at the National Institute of Allergy and Infectious Diseases (NIAID) by Booz Allen Hamilton. The design system is designed to aid users with the process of creating policy-compliant websites that conform to design standards and guidance set by NIAID, NIH, HHS, and USWDS. This Readme details the steps needed to service and maintin both NDS and its accompanying documentation site.
 
