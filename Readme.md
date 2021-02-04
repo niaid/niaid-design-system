@@ -47,5 +47,5 @@ There are three main ways to use NDS listed below. To get started please visit o
 ## Developers
 
 * **Jacob Caccamo** - Creator, UI/UX Designer & Front-End Developer
-* Roshana Devkota - Drupal Developer
+* [Roshana Devkota](https://github.com/roshana-devkota-nih) - Drupal Developer
 * Souley Coulibaly - DevOps SME
