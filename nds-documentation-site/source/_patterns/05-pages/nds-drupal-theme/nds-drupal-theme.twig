@@ -230,6 +230,17 @@
                                 "section_resources_additional": "Additional "
                             }
                         %}
+
+                        <hr class="my-4">
+
+                        {% include "@molecules/blocks/block-directions/_block-directions-main.twig" with
+                            {
+                                "block_directions_prev_text": "Getting Started",
+                                "block_directions_prev_href": links.getStarted,
+                                "block_directions_next_text": "Design",
+                                "block_directions_next_href": links.design
+                            }
+                        %}
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
