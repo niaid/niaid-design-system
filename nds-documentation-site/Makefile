@@ -12,7 +12,12 @@ default: build
 build:
 	gulp buildProd
 
-deploy: build
-	aws s3 sync ./public_html s3://$(S3_BUCKET_PATH) --exclude ".git/*" --delete
+deploy-staging: build
+	aws s3 sync ./public_html s3://$(S3_BUCKET_PATH)/staging --exclude ".git/*" --delete
 
-# aws s3 sync ./public_html s3://ids-theme-builder.niaid.nih.gov --exclude ".git/*" --delete
+deploy-prod: build
+	aws s3 sync ./public_html s3://$(S3_BUCKET_PATH)/prod --exclude ".git/*" --delete
+
+deploy-all: build
+	aws s3 sync ./public_html s3://$(S3_BUCKET_PATH)/staging --exclude ".git/*" --delete
+	aws s3 sync ./public_html s3://$(S3_BUCKET_PATH)/prod --exclude ".git/*" --delete

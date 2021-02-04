@@ -27,5 +27,8 @@
         "about": "/about-nds/",
         "staticSiteBuilder": "/nds-static-site-builder/",
         "ndsDrupalTheme": "/nds-drupal-theme/"
+    },
+    "columns": {
+        "main": 7
     }
 }

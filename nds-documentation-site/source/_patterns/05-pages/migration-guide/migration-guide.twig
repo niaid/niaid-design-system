@@ -71,15 +71,27 @@
 
                         <h2>Starting the Migration Process</h2>
 
-                        <p>The first step in migrating your pre-existing site to NDS is to include the global CSS and JS files in your site. Download these files below:</p>
+                        <p>The first step in migrating your pre-existing site to NDS is to include the global CSS and JS files in your site.</p>
                         
                         {% include "@molecules/blocks/block-files/_block-files-main.twig" %}
 
-                        <p>Depending on the architecture of your application, where you actually add these files may vary. With vanilla HTML, the CSS file should be linked to from the &lt;head&gt; of the HTML document, and the JS file should be linked to just above the closing &lt;/body&gt; tag.</p>
+                        <p>Depending on the architecture of your application, where you add these files in code may vary. With vanilla HTML, the CSS file should be linked to from the &lt;head&gt; of the HTML document, and the JS file should be linked to just above the closing &lt;/body&gt; tag.</p>
+
+                        <p>If you are using a modern JavaScript framework like Vue.js, React.js, or Angular.js, NDS has supplied a jQuery-free and third-party dependency-free version of the global JavaScript, NDS Lite:</p>
+                        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                            {
+                                "button_icon_classes": "button--secondary",
+                                "button_icon_icon": "js",
+                                "button_icon_icon_weight": "b",
+                                "button_icon_href": assetsPath ~ "nds-lite-js.zip",
+                                "button_icon_text": "Download NDS Lite",
+                                "button_icon_attributes": "download"
+                            }
+                        %}
 
                         <h2>Adding the Header &amp; Footer</h2>
 
-                        <p>The two most important components for NIAID brand compliance is the Header and Footer. The raw HTML markup for these two components are found below and can be copied directly into your project regardless of the front-end architecture. NDS may also offer these patterns as React, Angular, or Vue components in the future.</p>
+                        <p>The two most important components for NIAID brand compliance is the Header and Footer. The raw HTML markup for these two components are found below and can be copied directly into your project regardless of your website's front-end architecture. NDS may also offer these patterns as Vue.js, React.js, or Angular.js components in the future.</p>
 
                         <h3>Header Component</h3>
                         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
