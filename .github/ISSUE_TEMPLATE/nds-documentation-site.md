@@ -7,7 +7,7 @@ assignees: caccamojr
 
 ---
 
-# Please tag the type of issue - **bug**, **enhancement**, or **question** - and fill out the information that pertains to that issue type:
+## Please add a Label (in addition to NDS Documentation Site) for the issue type - **bug**, **enhancement**, or **question** - and fill out the information that pertains to that issue type:
 
 ## Bugs
 Please provide the following information:
