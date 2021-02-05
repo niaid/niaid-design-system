@@ -110,7 +110,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="tout-block container-fluid mt-4">
+                                            <div class="tout-block container-fluid my-4">
                                                 <div class="row">
                                                     <div class="tout col-sm-12 col-md-6 col-lg-6">
                                                         {% include "@nds/01-atoms/icons/icon-circle/_icon-circle-main.twig" with
@@ -190,7 +190,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            {# row of three columns, with circle icons and descriptions (1. component library, 2. static website builder 3. theme builder, 4. drupal theme) #}
+                                            
+                                            <div class="container-fluid">
+                                                {% include "@molecules/blocks/block-updates/_block-updates-main.twig" %}
+                                            </div>
 
                                             {# Callout block to the NDP website #}
                                         {% endblock %}
