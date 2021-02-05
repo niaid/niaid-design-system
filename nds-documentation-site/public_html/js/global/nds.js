@@ -904,98 +904,25 @@ $(document).ready(function () {
       }
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initLinkExternal();
-  initLinkExternalMailto();
-}); // initLinkExternal - Adds external link icons to links that qualify as external.
-
-function initLinkExternal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var externalLinks = document.querySelectorAll('a');
-
-  for (var i = 0; i < externalLinks.length; i++) {
-    if (externalLinks[i].innerHTML != "") {
-      var url = externalLinks[i].getAttribute('href');
-      var hostname = externalLinks[i].hostname;
-
-      if (url && hostname !== location.hostname) {
-        url = url.toLowerCase();
-
-        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-          externalLinks[i].setAttribute('target', '_blank');
-          var linkIcon = document.createElement('a');
-          linkIcon.setAttribute('href', url);
-          linkIcon.setAttribute('class', "ext-link-icon");
-          linkIcon.setAttribute('aria-label', "External Link");
-          externalLinks[i].insertAdjacentElement('afterend', linkIcon);
-        }
-      }
-    }
-  }
-} // initLinkExternalMailto - Adds envelope icons to mailto links.
-
-
-function initLinkExternalMailto() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
-
-  for (var i = 0; i < mailtoLinks.length; i++) {
-    mailtoLinks[i].classList.add('link--external--mail');
-  }
-} // Dependencies
-//  - DataTables
-//  - jQuery
-
+})(jQuery);
 
 (function ($) {
-  function initTableDefault() {
+  function initComponentMedia() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-    /* KEY
-        Sorting: Add data-tablesort="true" to the <table> tag.
-        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
-    */
-    $("table").each(function () {
-      if ($(this).attr('nds-datatable') == 'true') {
-        var defaultConfigs = {
-          "responsive": true,
-          "paging": false,
-          "info": false,
-          "autoWidth": false,
-          "searching": false
-        };
-
-        if (!($(this).attr('data-tablesort') == "true")) {
-          defaultConfigs['ordering'] = false;
-        } else {
-          // Determine Column Type
-          var columns = [];
-          $(this).find('thead').find('th').each(function (i) {
-            if ($(this).attr('data-column-num') == "true") {
-              columns.push({
-                "type": "natural",
-                "targets": i
-              });
-            }
-          });
-          defaultConfigs['columnDefs'] = columns;
-        }
-
-        $(this).dataTable(defaultConfigs);
-      }
-    });
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initTableDefault = {
+      Drupal.behaviors.initComponentMedia = {
         attach: function attach(context) {
-          $("body", context).once('nds-table-default').each(function () {
-            initTableDefault(context);
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
           });
         }
       };
@@ -1003,10 +930,163 @@ function initLinkExternalMailto() {
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initTableDefault();
+      initComponentMedia();
     });
   }
 })(jQuery);
+
+(function ($) {
+  function initComponentModal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.component--modal').length) {
+      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      var modalsList = document.getElementsByClassName("component--modal");
+
+      var _loop = function _loop() {
+        var firstFocusableElement = modalsList[i].querySelectorAll(focusableElements)[0];
+        var focusableContent = modalsList[i].querySelectorAll(focusableElements);
+        var lastFocusableElement = focusableContent[focusableContent.length - 1];
+        document.addEventListener('keydown', function (e) {
+          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+          if (!isTabPressed) {
+            return;
+          }
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
+          }
+        });
+        firstFocusableElement.focus();
+      };
+
+      for (var i = 0; i < modalsList.length; i++) {
+        _loop();
+      }
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentModal = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-modal').each(function () {
+            initComponentModal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentModal();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initComponentUSWDSBanner();
+}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+
+function initComponentUSWDSBanner() {
+  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+      document.getElementById("uswds-banner-content").style.display = 'none';
+    } else {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+      document.getElementById("uswds-banner-content").style.display = 'block';
+    }
+  });
+} // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initNavigationLocal();
+}); // initNavigationLocal - Functionality to support the local navigation pattern, specifically adding keyboard accessibility.
+
+function initNavigationLocal() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+  if (document.querySelectorAll('.navigation--local').length) {
+    var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
+
+    for (var i = 0; i < localNavigationItems.length; i++) {
+      localNavigationItems[i].addEventListener("keydown", function (event) {
+        if (event.isComposing || event.keyCode === 13) {
+          this.click();
+        }
+      });
+    }
+  }
+} // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initNavigationDrawer();
+}); // initNavigationDrawer - Functionality to support the NDS mobile drawer.
+
+function initNavigationDrawer() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var wWidth = windowWidth();
+  document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
+    document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
+    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+    overlay.style.display = 'block';
+    document.querySelector('.navigation--drawer__top__button-close').focus();
+    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+    for (var i = 0; i < tabElements.length; i++) {
+      tabElements[i].setAttribute('tabindex', '0');
+    }
+  });
+  document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
+    closeMenu();
+  });
+  document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
+    closeMenu();
+  });
+
+  window.onresize = function (e) {
+    if (wWidth != windowWidth()) {
+      wWidth = windowWidth();
+      closeMenu();
+    }
+  }; // 508 Compliance Focus Helpers
+
+
+  document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
+    document.querySelector('.navigation--drawer__top__button-close').focus();
+  });
+  document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
+    var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
+    tabElements[tabElements.length - 1].focus();
+  });
+} // closeMenu - Helper function to close the mobile drawer.
+
+
+function closeMenu() {
+  document.querySelector('#global-mobile-menu').focus();
+  document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
+  var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+  overlay.style.display = 'none';
+  var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+  for (var i = 0; i < tabElements.length; i++) {
+    tabElements[i].setAttribute('tabindex', '-1');
+  }
+}
 
 (function ($) {
   function initInputNDS() {
@@ -1130,6 +1210,108 @@ function initLinkExternalMailto() {
       initInputSelect();
     });
   }
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initLinkExternal();
+  initLinkExternalMailto();
+}); // initLinkExternal - Adds external link icons to links that qualify as external.
+
+function initLinkExternal() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var externalLinks = document.querySelectorAll('a');
+
+  for (var i = 0; i < externalLinks.length; i++) {
+    if (externalLinks[i].innerHTML != "") {
+      var url = externalLinks[i].getAttribute('href');
+      var hostname = externalLinks[i].hostname;
+
+      if (url && hostname !== location.hostname) {
+        url = url.toLowerCase();
+
+        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+          externalLinks[i].setAttribute('target', '_blank');
+          var linkIcon = document.createElement('a');
+          linkIcon.setAttribute('href', url);
+          linkIcon.setAttribute('class', "ext-link-icon");
+          linkIcon.setAttribute('aria-label', "External Link");
+          externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+        }
+      }
+    }
+  }
+} // initLinkExternalMailto - Adds envelope icons to mailto links.
+
+
+function initLinkExternalMailto() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+  for (var i = 0; i < mailtoLinks.length; i++) {
+    mailtoLinks[i].classList.add('link--external--mail');
+  }
+} // Dependencies
+//  - DataTables
+//  - jQuery
+
+
+(function ($) {
+  function initTableDefault() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    /* KEY
+        Sorting: Add data-tablesort="true" to the <table> tag.
+        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
+    */
+    $("table").each(function () {
+      if ($(this).attr('nds-datatable') == 'true') {
+        var defaultConfigs = {
+          "responsive": true,
+          "paging": false,
+          "info": false,
+          "autoWidth": false,
+          "searching": false
+        };
+
+        if (!($(this).attr('data-tablesort') == "true")) {
+          defaultConfigs['ordering'] = false;
+        } else {
+          // Determine Column Type
+          var columns = [];
+          $(this).find('thead').find('th').each(function (i) {
+            if ($(this).attr('data-column-num') == "true") {
+              columns.push({
+                "type": "natural",
+                "targets": i
+              });
+            }
+          });
+          defaultConfigs['columnDefs'] = columns;
+        }
+
+        $(this).dataTable(defaultConfigs);
+      }
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initTableDefault = {
+        attach: function attach(context) {
+          $("body", context).once('nds-table-default').each(function () {
+            initTableDefault(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initTableDefault();
+    });
+  }
 })(jQuery);
 
 (function ($) {
@@ -1160,185 +1342,3 @@ function initLinkExternalMailto() {
     });
   }
 })(jQuery);
-
-(function ($) {
-  function initComponentModal() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.component--modal').length) {
-      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-      var modalsList = document.getElementsByClassName("component--modal");
-
-      var _loop = function _loop() {
-        var firstFocusableElement = modalsList[i].querySelectorAll(focusableElements)[0];
-        var focusableContent = modalsList[i].querySelectorAll(focusableElements);
-        var lastFocusableElement = focusableContent[focusableContent.length - 1];
-        document.addEventListener('keydown', function (e) {
-          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-
-          if (!isTabPressed) {
-            return;
-          }
-
-          if (e.shiftKey) {
-            if (document.activeElement === firstFocusableElement) {
-              lastFocusableElement.focus();
-              e.preventDefault();
-            }
-          } else {
-            if (document.activeElement === lastFocusableElement) {
-              firstFocusableElement.focus();
-              e.preventDefault();
-            }
-          }
-        });
-        firstFocusableElement.focus();
-      };
-
-      for (var i = 0; i < modalsList.length; i++) {
-        _loop();
-      }
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentModal = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-modal').each(function () {
-            initComponentModal(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentModal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initComponentUSWDSBanner();
-}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
-
-function initComponentUSWDSBanner() {
-  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
-    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
-      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
-      document.getElementById("uswds-banner-content").style.display = 'none';
-    } else {
-      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
-      document.getElementById("uswds-banner-content").style.display = 'block';
-    }
-  });
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initNavigationLocal();
-}); // initNavigationLocal - Functionality to support the local navigation pattern, specifically adding keyboard accessibility.
-
-function initNavigationLocal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-  if (document.querySelectorAll('.navigation--local').length) {
-    var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
-
-    for (var i = 0; i < localNavigationItems.length; i++) {
-      localNavigationItems[i].addEventListener("keydown", function (event) {
-        if (event.isComposing || event.keyCode === 13) {
-          this.click();
-        }
-      });
-    }
-  }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initNavigationDrawer();
-}); // initNavigationDrawer - Functionality to support the NDS mobile drawer.
-
-function initNavigationDrawer() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var wWidth = windowWidth();
-  document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
-    document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
-    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
-    overlay.style.display = 'block';
-    document.querySelector('.navigation--drawer__top__button-close').focus();
-    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
-
-    for (var i = 0; i < tabElements.length; i++) {
-      tabElements[i].setAttribute('tabindex', '0');
-    }
-  });
-  document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
-    closeMenu();
-  });
-  document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
-    closeMenu();
-  });
-
-  window.onresize = function (e) {
-    if (wWidth != windowWidth()) {
-      wWidth = windowWidth();
-      closeMenu();
-    }
-  }; // 508 Compliance Focus Helpers
-
-
-  document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
-    document.querySelector('.navigation--drawer__top__button-close').focus();
-  });
-  document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
-    var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
-    tabElements[tabElements.length - 1].focus();
-  });
-} // closeMenu - Helper function to close the mobile drawer.
-
-
-function closeMenu() {
-  document.querySelector('#global-mobile-menu').focus();
-  document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
-  var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
-  overlay.style.display = 'none';
-  var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
-
-  for (var i = 0; i < tabElements.length; i++) {
-    tabElements[i].setAttribute('tabindex', '-1');
-  }
-}
