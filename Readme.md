@@ -44,8 +44,12 @@ There are three main ways to use NDS listed below. To get started please visit o
 * [Bootstrap 4](https://getbootstrap.com/) - Grid System Framework
 * [Gulp](https://gulpjs.com/) - JS-Based Task Manager
 
-## Developers
+## Team
 
+### Developers
 * [**Jacob Caccamo**](https://github.com/caccamojr) - Creator, UI/UX Designer & Front-End Developer
 * [Roshana Devkota](https://github.com/roshana-devkota-nih) - Drupal Developer
-* [Souley Coulibaly](https://github.com/souleyNIAID) - DevOps SME
+
+### DevOps
+* [Souley Coulibaly](https://github.com/souleyNIAID) - DevOps Lead
+* Vikram Mareddy - DevOps SME
