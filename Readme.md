@@ -1,6 +1,6 @@
 # NIAID Design System (NDS)
 
-The NIAID Design System was developed within the Office of Communications and Government Relations (OCGR) at the National Institute of Allergy and Infectious Diseases (NIAID) by Booz Allen Hamilton. The design system is designed to aid users with the process of creating policy-compliant websites that conform to design standards and guidance set by NIAID, NIH, HHS, and USWDS. This Readme details the steps needed to service and maintin both NDS and its accompanying documentation site.
+The [NIAID Design System](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/) was developed within the Office of Communications and Government Relations (OCGR) at the National Institute of Allergy and Infectious Diseases (NIAID) by Booz Allen Hamilton. The design system is designed to aid users with the process of creating policy-compliant websites that conform to design standards and guidance set by NIAID, NIH, HHS, and USWDS. This Readme details the steps needed to service and maintin both NDS and its accompanying documentation site.
 
 ## Repo Contents
 * The NIAID Design System: The code that NDS components use to function including CSS, JS, Twig, as well as third-party library assets (CSS, JS).
@@ -34,13 +34,13 @@ You will need the following installed on your local machine:
 
 ### Ways to Use NDS
 There are three main ways to use NDS listed below. To get started please visit our documentation site:
-* [NDS Components](#) - COMING SOON
-* [Static Site Builder](#) - COMING SOON
-* [NDS Drupal Theme](#) - COMING SOON
+* [NDS Components](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/components)
+* [Static Site Builder](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/static-site-builder)
+* [NDS Drupal Theme](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/nds-drupal-theme)
 
 ## Built With
 
-* [Pattern Lab](https://patternlab.io/) - Atomic Design System
+* [Pattern Lab](https://patternlab.io/) - Atomic Design System Framework
 * [Bootstrap 4](https://getbootstrap.com/) - Grid System Framework
 * [Gulp](https://gulpjs.com/) - JS-Based Task Manager
 
