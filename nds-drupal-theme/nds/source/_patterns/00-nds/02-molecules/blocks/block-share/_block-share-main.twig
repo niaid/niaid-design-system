@@ -11,7 +11,7 @@
     Parameters:
         block_share_classes: Additional block classes.
         block_share_id: Block ID.
-        block_share_data: An array of share button objects. Structure: {"type": "", "icon": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform (ex. Twitter).
+        block_share_data: An array of share button objects. Structure: {"type": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform in lowercase form (ex. twitter).
 
     Includes:
         Atoms -> Buttons -> button-share
@@ -28,9 +28,7 @@
         <div class="block--share__wrapper">
             {% include "@nds/01-atoms/buttons/button-share/_button-share-main.twig" with
                 {
-                    "button_share_classes": "button--share--" ~ icon.type,
-                    "button_share_icon": icon.icon,
-                    "button_share_icon_weight": "b",
+                    "button_share_type": icon.type,
                     "button_share_href": icon.href,
                     "button_share_aria_label": icon.ariaLabel
                 }

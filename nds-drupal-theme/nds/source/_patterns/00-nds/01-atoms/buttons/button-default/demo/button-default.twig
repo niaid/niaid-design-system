@@ -1,0 +1,49 @@
+<div class="container-fluid demo">
+    <div class="row">
+        <div class="col">
+            {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_type": "primary",
+                    "button_default_href": "#",
+                    "button_default_label": "Primary Button"
+                }
+            %}
+        </div>
+        <div class="col">
+            {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_type": "secondary",
+                    "button_default_href": "#",
+                    "button_default_label": "Secondary Button"
+                }
+            %}
+        </div>
+        <div class="col">
+            {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_type": "tertiary",
+                    "button_default_href": "#",
+                    "button_default_label": "Tertiary Button",
+                }
+            %}
+        </div>
+        <div class="col">
+            {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_type": "negative",
+                    "button_default_href": "#",
+                    "button_default_label": "Negative Button"
+                }
+            %}
+        </div>
+        <div class="col">
+            {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {
+                    "button_default_type": "primary",
+                    "button_default_label": "Disabled Button",
+                    "button_default_classes": "disabled"
+                }
+            %}
+        </div>
+    </div>
+</div>

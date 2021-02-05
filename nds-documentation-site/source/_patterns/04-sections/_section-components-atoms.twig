@@ -7,7 +7,7 @@
         <h1>Components</h1>
         <p>NDS components can be used on any type of project. We have provided most of the available NDS components and, where relevant, additional documentation to support your development. Simply include the global NDS JS and CSS files in your website to get started!</p>
         {% include "@molecules/blocks/block-files/_block-files-main.twig" %}
-        <p>Some of the NDS components make use of third-party libraries to bring enhanced user experience and functionality to your users. In order to use these components, the applicable libraries must be included in your project. These libraries are noted in the pattern doucmentation.</p>
+        <p>Some of the NDS components make use of third-party libraries to bring enhanced user experience and functionality to your users. In order to use these components, the applicable libraries must be included in your project. These libraries are noted in the pattern documentation.</p>
         <h2>Atoms</h2>
     {% endblock %}
 {% endembed %}
@@ -21,7 +21,7 @@
         <h3>Buttons</h3>
 
         <h4>Default Button</h4>
-        <p>There are three button styles for each Color Theme option: Primary, Secondary, and Tertiary. In general, buttons are used for actions that occur on the page, while links take users from one page to another. Depending on the importance of a link, you may decide to style it as a button to make it stand out more.</p>
+        <p>There are four main button styles for each Color Theme option: Primary, Secondary, Tertiary, and Negative (Error State). In general, buttons are used for actions that occur on the page, while links take users from one page to another. Depending on the importance of a link, you may decide to style it as a button to make it stand out more. Also shown here is the "disabled" button style.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
                 "text_uswds_component_name": "Buttons",
@@ -30,29 +30,7 @@
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-primary.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-secondary.twig" %}
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-tertiary.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-negative.twig" %}
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-default/demo/button-default-disabled.twig" %}
-                        </div>
-                    </div>
-                </div>
+                {% include "@nds/01-atoms/buttons/button-default/demo/button-default.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Overview</h5>
@@ -75,9 +53,9 @@
         <p>Used specifically for links to external sites displayed as a button.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                <div class="container-fluid">
+                <div class="container-fluid demo">
                     <div class="row">
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
                                 {
                                     "button_external_text": "Button",
@@ -85,7 +63,7 @@
                                 }
                             %}
                         </div>
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
                                 {
                                     "button_external_classes": "button--secondary",
@@ -94,7 +72,7 @@
                                 }
                             %}
                         </div>
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
                                 {
                                     "button_external_classes": "button--tertiary",
@@ -145,9 +123,9 @@
         <p>This component allows users to include a Font Awesome icon inside an NDS button.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                <div class="container-fluid">
+                <div class="container-fluid demo">
                     <div class="row">
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                                 {
                                     "button_icon_icon": "question-circle",
@@ -155,7 +133,7 @@
                                 }
                             %}
                         </div>
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                                 {
                                     "button_icon_classes": "button--secondary",
@@ -164,7 +142,7 @@
                                 }
                             %}
                         </div>
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                                 {
                                     "button_icon_classes": "button--tertiary",
@@ -196,9 +174,9 @@
         <p>This component allows for an small image, such as a user picture, to be included inside a button.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                <div class="container-fluid">
+                <div class="container-fluid demo">
                     <div class="row">
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
                                 {
                                     "button_image_src": "global/sample/avatar_circle.png",
@@ -207,7 +185,7 @@
                                 }
                             %}
                         </div>
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
                                 {
                                     "button_image_classes": "button--secondary",
@@ -217,7 +195,7 @@
                                 }
                             %}
                         </div>
-                        <div class="col-md">
+                        <div class="col">
                             {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
                                 {
                                     "button_image_classes": "button--tertiary",
@@ -245,33 +223,18 @@
         {% endembed %}
 
         <h4>Share Buttons</h4>
-        <p>Following the NDS icon policy, social share buttons for popular social media platforms are included ready to use.</p>
+        <p>Share Buttons are useful for sharing site content to social media platforms. NDS provides buttons for several platforms and utilizes proper platform brand colors. The support social media platforms are shown below.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-share/demo/button-share-facebook.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-share/demo/button-share-twitter.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-share/demo/button-share-linkedin.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/buttons/button-share/demo/button-share-instagram.twig" %}
-                        </div>
-                    </div>
-                </div>
+                {% include "@nds/01-atoms/buttons/button-share/demo/button-share.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Parameters</h5>
                 <ul>
                     <li>button_share_classes: Additional button classes.</li>
                     <li>button_share_id: Button ID.</li>
-                    <li>button_share_icon: Font Awesome icon name.</li>
-                    <li>button_share_icon_weight: Font Awesome icon weight Options: 'r', 's', 'b'(Default).</li>
+                    <li>button_share_type: The classes to define the type of social media platform. Supported Options: "facebook", "twitter", "linkedin", "instagram", "youtube", "pinterest", "flickr", "google-plus".</li>
+                    <li>button_share_icon_weight: Font Awesome icon weight Options: 'r', 's' (Default for Non-Social Media Platform Icons), 'b' (Default for Social Media Platforms).</li>
                     <li>button_share_href: Button link destination.</li>
                     <li>button_share_aria_label: Button aria-label.</li>
                     <li>button_share_tabindex: Button tabindex.</li>
@@ -332,28 +295,7 @@
         <p>Document icons can help users more quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-word.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-excel.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-powerpoint.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-pdf.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-image.twig" %}
-                        </div>
-                        <div class="col-md">
-                            {% include "@nds/01-atoms/icons/icon-document/demo/icon-document-video.twig" %}
-                        </div>
-                    </div>
-                </div>
+                {% include "@nds/01-atoms/icons/icon-document/demo/icon-document.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Overview</h5>

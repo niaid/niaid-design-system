@@ -101,6 +101,14 @@
             }
         }
     }
+    .demo > .row {
+        margin: 0 -2rem;
+        > .col {
+            margin: .5rem;
+            @extend .col-md;
+            flex-grow: 0;
+        }
+    }
     .button--floating {
         position: relative !important;
         bottom: auto;

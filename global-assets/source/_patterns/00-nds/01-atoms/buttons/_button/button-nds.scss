@@ -7,6 +7,7 @@ button {
     padding: 1rem 2rem;
     line-height: initial;
     border-radius: 0;
+    white-space: nowrap;
     &:visited {
         color: $white;
         &:hover,

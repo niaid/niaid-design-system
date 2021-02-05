@@ -31,6 +31,7 @@
         border: 0.0625rem solid $brands-linkedin !important;
     }
     &--instagram {
+        background-color: #515BD4;
         background-image: url('../images/global/icons/social/icon-social-instagram-background.png');
         background-position: center;
         color: $white !important;
@@ -41,7 +42,7 @@
         color: $white !important;
         border: 0.0625rem solid $brands-youtube !important;
     }
-    &--pinterest-p {
+    &--pinterest {
         background: $brands-pinterest;
         color: $white !important;
         border: 0.0625rem solid $brands-pinterest !important;
@@ -51,17 +52,10 @@
         color: $white !important;
         border: 0.0625rem solid $brands-flickr !important;
     }
-    &--google-plus-g {
+    &--google-plus {
         background: $brands-google-plus;
         color: $white !important;
         border: 0.0625rem solid $brands-google-plus !important;
-    }
-    &--comment,
-    &--envelope,
-    &--copyright {
-        i {
-            color: $blue;
-        }
     }
     & + .ext-link-icon {
         display: none;

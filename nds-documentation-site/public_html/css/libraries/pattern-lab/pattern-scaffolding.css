@@ -56,3 +56,13 @@
 .sg-subtype h2 {
   text-transform: capitalize;
 }
+
+/* Added by NDS */
+#sg-patterns .demo > .row {
+  margin: 0 -2rem;
+}
+
+#sg-patterns .demo > .row > .col {
+  margin: .5rem;
+  padding: 0 .5rem;
+}
