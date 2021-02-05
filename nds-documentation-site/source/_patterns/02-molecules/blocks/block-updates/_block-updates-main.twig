@@ -1,0 +1,20 @@
+<div class="block-updates">
+    {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" with
+        {
+            "block_default_accent": true
+        }
+    %}
+        {% block block_content %}
+            <h2>Ask Questions, Report Issues, Stay Informed</h2>
+            <p>For questions about the NIAID Design System or to report issues, please visit the Issues tab of the  NDS repository on GitHub. To get updates on NDS features and changes, please add yourself as a "Watcher" on the NDS GitHub repository.</p>
+            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                {
+                    "button_icon_icon": "github",
+                    "button_icon_text": "NDS on GitHub",
+                    "button_icon_icon_weight": "b",
+                    "button_icon_href": "https://github.com/niaid/niaid-design-system"
+                }
+            %}
+        {% endblock %}
+    {% endembed %}
+</div>

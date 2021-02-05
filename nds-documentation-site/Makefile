@@ -1,6 +1,6 @@
 -include env_make
 
-S3_BUCKET_PATH=ids-theme-builder.niaid.nih.gov
+S3_BUCKET_PATH=nds.niaid.nih.gov
 
 # Cache clear parameters
 paths?="/*"
