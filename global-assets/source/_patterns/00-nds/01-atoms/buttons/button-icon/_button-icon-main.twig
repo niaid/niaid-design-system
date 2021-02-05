@@ -13,24 +13,28 @@
         button_icon_id: Button ID.
         button_icon_icon: Font Awesome icon name.
         button_icon_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
-        button_icon_icon_position: The side of the button text the icon should appear. Options: "left" (Default) or "right"
+        button_icon_icon_size: Size of the icon to display. Options: 'small' (Default) or 'large'.
+        button_icon_icon_position: The side of the button text the icon should appear. Options: "left" (Default) or "right".
         button_icon_text: Button text.
         button_icon_attributes: Additional button attributes.
         button_icon_aria_label: Button aria-label.
         button_icon_href: Button link destination.
 
-    Last Updated: January 22, 2021
+    Last Updated: February 5, 2021
 #}
 
 {% set button_icon_classes = button_icon_classes|default() %}
 {% set button_icon_id = button_icon_id|default() %}
 {% set button_icon_icon = button_icon_icon|default() %}
 {% set button_icon_icon_weight = button_icon_icon_weight|default('s') %}
+{% set button_icon_icon_size = button_icon_icon_size|default('small') %}
 {% set button_icon_icon_position = button_icon_icon_position|default('left') %}
 {% set button_icon_text = button_icon_text|default() %}
 {% set button_icon_attributes = button_icon_attributes|default() %}
 {% set button_icon_aria_label = button_icon_aria_label|default() %}
 {% set button_icon_href = button_icon_href|default() %}
+
+{% set button_icon_classes = button_icon_classes ~ ' button--icon--' ~ button_icon_icon_size %}
 
 <{{ button_icon_href != "" ? 'a' : 'button' }}{% if button_icon_href is not empty %} href="{{ button_icon_href }}"{% endif %}{% if button_icon_id is not empty %} id="{{ button_icon_id }}"{% endif %} class="button-nds button--icon waves-effect waves-light {{ button_icon_classes }}"{% if button_icon_aria_label is not empty %} aria-label="{{ button_icon_aria_label }}"{% endif %} {{ button_icon_attributes }}>
     {% if button_icon_icon_position != "right" %}

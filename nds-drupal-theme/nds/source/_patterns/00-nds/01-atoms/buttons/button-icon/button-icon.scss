@@ -29,4 +29,8 @@
             border: 0.0625rem solid $status-error;
         }
     }
+    &--large {
+        font-size: 1.5rem;
+        padding: .75rem 1rem;
+    }
 }
