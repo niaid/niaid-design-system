@@ -21,6 +21,7 @@
         input_group_text_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).
         input_group_text_placeholder: Placeholder text for the field.
         input_group_text_name: Name attribute of the field.
+        input_group_text_aria_label: Aria Label of the text field.
         input_group_text_value: Default value of the field.
         input_group_text_tabindex: Optional tabindex attribute of the field.
         input_group_text_disabled: Bool indicating if the field is disabled. Options: true, false (Default).
@@ -33,7 +34,7 @@
         Atoms -> Input -> input-label
         Atoms -> Input -> input-text
 
-    Last Updated: January 22, 2021
+    Last Updated: February 8, 2021
 #}
 
 
@@ -45,6 +46,7 @@
 {% set input_group_text_placeholder = input_group_text_placeholder|default() %}
 {% set input_group_text_name = input_group_text_name|default() %}
 {% set input_group_text_value = input_group_text_value|default() %}
+{% set input_group_text_aria_label = input_group_text_aria_label|default() %}
 {% set input_group_text_tabindex = input_group_text_tabindex|default() %}
 {% set input_group_text_disabled = input_group_text_disabled|default() %}
 {% set input_group_text_readonly = input_group_text_readonly|default() %}
@@ -67,6 +69,7 @@
             "input_text_name": input_group_text_name,
             "input_text_placeholder": input_group_text_placeholder,
             "input_text_value": input_group_text_value,
+            "input_text_aria_label": input_group_text_aria_label,
             "input_text_title": input_group_text_label,
             "input_text_icon": input_group_text_icon,
             "input_text_icon_weight": input_group_text_icon_weight,

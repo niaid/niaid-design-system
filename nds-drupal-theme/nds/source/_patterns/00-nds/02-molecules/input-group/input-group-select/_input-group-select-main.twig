@@ -26,6 +26,7 @@
         input_group_select_placeholder: Placeholder text for the field.
         input_group_select_name: Name attribute of the field.
         input_group_select_value: Default value of the field.
+        input_group_select_aria_label: Aria Label of the select field.
         input_group_select_tabindex: Optional tabindex attribute of the field.
         input_group_select_disabled: Bool indicating if the field is disabled. Options: true, false (Default).
         input_group_select_readonly: Bool indicating if the field is readonly. Options: true, false (Default).
@@ -37,7 +38,7 @@
         Atoms -> Input -> input-label
         Atoms -> Input -> input-select
 
-    Last Updated: January 22, 2021
+    Last Updated: February 8, 2021
 #}
 
 {% set input_group_select_classes = input_group_select_classes|default() %}
@@ -48,6 +49,7 @@
 {% set input_group_select_placeholder = input_group_select_placeholder|default() %}
 {% set input_group_select_name = input_group_select_name|default() %}
 {% set input_group_select_value = input_group_select_value|default() %}
+{% set input_group_select_aria_label = input_group_select_aria_label|default() %}
 {% set input_group_select_tabindex = input_group_select_tabindex|default() %}
 {% set input_group_select_readonly = input_group_select_readonly|default(false) %}
 {% set input_group_select_disabled = input_group_select_disabled|default(false) %}
@@ -71,6 +73,7 @@
             "input_select_placeholder": input_group_select_placeholder,
             "input_select_name": input_group_select_name,
             "input_select_value": input_group_select_value,
+            "input_select_aria_label": input_group_select_aria_label,
             "input_select_tabindex": input_group_select_tabindex,
             "input_select_readonly": input_group_select_readonly,
             "input_select_disabled": input_group_select_disabled,
