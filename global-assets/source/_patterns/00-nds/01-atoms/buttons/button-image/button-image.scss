@@ -2,12 +2,12 @@
     @extend .button--primary;
     display: flex;
     align-items: center;
-    padding: 1rem 1.25rem;
+    padding: $s-1 $s-1-25;
     &__text {
         padding-left: .75rem;
     }
     img {
-        max-height: 2rem;
+        max-height: $s-2;
     }
     &.button--secondary {
         color: $color-theme-1-1-1;
@@ -16,7 +16,7 @@
         &:focus {
             background: $color-theme-1-1-1;
             color: $white;
-            border: 0.0625rem solid $color-theme-1-1-1;
+            border: $s-1px solid $color-theme-1-1-1;
         }
     }
     &.button--negative {
@@ -26,7 +26,7 @@
         &:focus {
             background: $status-error;
             color: $white;
-            border: 0.0625rem solid $status-error;
+            border: $s-1px solid $status-error;
         }
     }
 }

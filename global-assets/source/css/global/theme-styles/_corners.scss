@@ -188,7 +188,7 @@
 }
 
 .style--corners--rounded {
-    $corner-radius: 1rem;
+    $corner-radius: $s-1;
     $corner-radius-full: 100rem;
     /* Atoms */
     .button-nds,
@@ -211,12 +211,12 @@
     .input-nds {
         border-radius: $corner-radius-full;
         &.input--text {
-            padding: .5rem 1.5rem;
+            padding: .5rem $s-1-50;
         }
         &.input--select {
             .select2-container {
                 .select2-selection  {
-                    padding: .625rem 4rem .625rem 1.5rem;
+                    padding: .625rem $s-4 .625rem $s-1-50;
                     border-radius: $corner-radius-full;
                     &.select2-selection--multiple {
                         .select2-selection__rendered {
@@ -232,7 +232,7 @@
                 &.selection-made {
                     .select2-selection {
                         &.select2-selection--single {
-                            padding: .25rem 4rem .25rem .25rem;
+                            padding: .25rem $s-4 .25rem .25rem;
                         }
                     }
                     .select2-selection__rendered {
@@ -241,7 +241,7 @@
                 }
                 &.selection-made-multi {
                     .select2-selection  {
-                        padding: .25rem 4rem .25rem .25rem;
+                        padding: .25rem $s-4 .25rem .25rem;
                     }
                 }
             }
@@ -254,10 +254,10 @@
     }
     .input--text--icon {
         .icon--default {
-            left: 1.25rem;
+            left: $s-1-25;
         }
         .input--text {
-            padding-left: 3rem;
+            padding-left: $s-3;
         }
     }
     table {

@@ -1,9 +1,9 @@
 .block--featured-content-card {
-    margin: 1rem 0;
+    margin: $s-1 0;
     max-width: 100%;
     padding: 0;
     background: $white;
-    border: 0.0625rem solid $input-border;
+    border: $s-1px solid $input-border;
     @include media-breakpoint-up(sm) {
         height: 100%;
     }
@@ -16,10 +16,10 @@
         }
     }
     &__text {
-        padding: 1rem;
+        padding: $s-1;
         &__title {
             margin-top: 0;
-            font-size: 1.25rem;
+            font-size: $s-1-25;
         }
         &__featured {
             font-weight: $font-weight-semibold;

@@ -15,7 +15,7 @@
 
 .link--external--mail {
     position: relative;
-    margin-right: 1.5rem;
+    margin-right: $s-1-50;
     &:after {
         @extend %fa-icon;
         @extend .far;

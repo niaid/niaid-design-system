@@ -1,9 +1,9 @@
 .button--floating {
     @extend .button--primary;
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    height: 4rem;
+    bottom: $s-2;
+    right: $s-2;
+    height: $s-4;
     width: 3.95rem;
     z-index: 999;
     padding: 0;
@@ -12,7 +12,7 @@
     &__icon {
         float: left;
         width: 3.85rem;
-        font-size: 1.5rem;
+        font-size: $s-1-50;
     }
     &__text {
         position: absolute;
@@ -20,14 +20,14 @@
         overflow: hidden;
         top: 50%;
         transform: translateY(-50%);
-        left: 3rem;
+        left: $s-3;
         width: 0;
     }
     &:hover,
     &:focus {
         width: 11.25rem;
         .button--floating__text {
-            width: 8rem;
+            width: $s-8;
         }
     }
     &.button--secondary {
@@ -37,7 +37,7 @@
         &:focus {
             background: $color-theme-1-1-1;
             color: $white;
-            border: 0.0625rem solid $color-theme-1-1-1;
+            border: $s-1px solid $color-theme-1-1-1;
         }
     }
     &.button--negative {
@@ -47,7 +47,7 @@
         &:focus {
             background: $status-error;
             color: $white;
-            border: 0.0625rem solid $status-error;
+            border: $s-1px solid $status-error;
         }
     }
 }

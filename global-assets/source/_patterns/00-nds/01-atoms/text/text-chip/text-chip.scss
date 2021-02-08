@@ -1,7 +1,7 @@
 .text--chip {
     @extend .button-nds;
     @extend .button--tertiary;
-    padding: 1rem;
+    padding: $s-1;
     display: inline-flex;
     cursor: default;
     a {
@@ -14,7 +14,7 @@
     }
     &:hover,
     &:focus {
-        border: .0625rem solid $color-theme-1-2-1;
+        border: $s-1px solid $color-theme-1-2-1;
         background: $color-theme-1-2-1;
     }
 }

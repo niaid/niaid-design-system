@@ -52,6 +52,7 @@ $brands-flickr: #FF0084;
 $brands-google-plus: #D34836;
 
 /**** BORDER RADIUS ****/
+$border-radius-sharp: 0;
 $border-radius-semi: .3125rem;
 $border-radius-full: 1rem;
 
@@ -124,6 +125,9 @@ $theme: (
     )
 );
 
+// TOKENS
+
+// Colors
 $color-theme-1-1-1: map-get(map-get(map-get($theme, 1), 1), 1);
 $color-theme-1-1-2: map-get(map-get(map-get($theme, 1), 1), 2);
 $color-theme-1-2-1: map-get(map-get(map-get($theme, 1), 2), 1);
@@ -147,3 +151,34 @@ $color-theme-3-2-2: map-get(map-get(map-get($theme, 3), 2), 2);
 $color-theme-3-3-1: map-get(map-get(map-get($theme, 3), 3), 1);
 $color-theme-3-3-2: map-get(map-get(map-get($theme, 3), 3), 2);
 $color-theme-3-accent: map-get(map-get(map-get($theme, 3), 4), 1);
+
+// Spacing
+$base-size-pixels: 16;
+$base-spacer: 1rem;
+
+$s-1px: $base-spacer / $base-size-pixels;
+$s-2px: ($base-spacer * 2) / $base-size-pixels;
+$s-0: 0;
+$s-0-25: $base-spacer * .25;
+$s-0-50: $base-spacer * .5;
+$s-0-75: $base-spacer * .75;
+$s-1: $base-spacer;
+$s-1-25: $s-1 + $s-0-25;
+$s-1-50: $s-1 + $s-0-50;
+$s-1-75: $s-1 + $s-0-75;
+$s-2: $base-spacer * 2;
+$s-2-25: $s-2 + $s-0-25;
+$s-2-50: $s-2 + $s-0-50;
+$s-2-75: $s-2 + $s-0-75;
+$s-3: $base-spacer * 3;
+$s-3-25: $s-3 + $s-0-25;
+$s-3-50: $s-3 + $s-0-50;
+$s-3-75: $s-3 + $s-0-75;
+$s-4: $base-spacer * 4;
+$s-4-25: $s-4 + $s-0-25;
+$s-4-50: $s-4 + $s-0-50;
+$s-4-75: $s-4 + $s-0-75;
+$s-5: $base-spacer * 5;
+$s-6: $base-spacer * 6;
+$s-7: $base-spacer * 7;
+$s-8: $base-spacer * 8;

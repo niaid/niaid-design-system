@@ -1,5 +1,5 @@
 .block--default {
-    margin: 1rem 0;
+    margin: $s-1 0;
     display: inline-block;
     width: 100%;
     flex-wrap: wrap;
@@ -15,7 +15,7 @@
     .button--tertiary,
     .button--negative,
     button {
-        margin: 1rem 0 0 0;
+        margin: $s-1 0 0 0;
         display: inline-flex;
     }
     ul, li, p {

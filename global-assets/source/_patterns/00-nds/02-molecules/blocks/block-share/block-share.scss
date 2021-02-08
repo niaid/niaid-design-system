@@ -6,7 +6,7 @@
     margin: 0;
     border: 0;
     position: absolute;
-    top: 1rem;
+    top: $s-1;
     right: 0;
     &__wrapper {
         width: 100%;
@@ -15,7 +15,7 @@
             width: 1.75rem;
             margin: 0 0 .75rem 0;
             i {
-                font-size: 1rem;
+                font-size: $s-1;
             }
         }
     }

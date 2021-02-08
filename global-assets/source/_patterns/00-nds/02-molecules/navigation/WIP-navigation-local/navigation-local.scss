@@ -1,9 +1,9 @@
 .navigation--local {
-    margin: 0 2rem;
-    padding: 2rem 2rem 1rem 2rem;
+    margin: 0 $s-2;
+    padding: $s-2 $s-2 $s-1 $s-2;
     border-bottom-color: $color-theme-1-1-1;
     &__title {
-        font-size: 1.5rem;
+        font-size: $s-1-50;
         margin: 0;
         padding: 0 .5rem;
     }
@@ -31,10 +31,10 @@
                 text-align: left;
                 a {
                     width: 100%;
-                    border-bottom: 0.0625rem solid transparent;
+                    border-bottom: $s-1px solid transparent;
                     &:hover,
                     &:focus {
-                        border-bottom: 0.0625rem solid $type-link-underline;
+                        border-bottom: $s-1px solid $type-link-underline;
                     }
                 }
                 p {
@@ -77,12 +77,12 @@
         }
         .level-2 {
             &.navigation--local__group__label {
-                margin-left: 1rem !important;
+                margin-left: $s-1 !important;
             }
         }
         .level-3 {
             &.navigation--local__group__label {
-                margin-left: 1.5rem !important;
+                margin-left: $s-1-50 !important;
             }
         }
     }

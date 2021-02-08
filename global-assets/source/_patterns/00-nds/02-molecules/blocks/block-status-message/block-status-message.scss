@@ -1,8 +1,8 @@
 .block--status-message {
     position: relative;
     background: $white;
-    padding: 1rem 1rem 1rem 2.5rem;
-    margin: 1rem 0 1rem 1.25rem;
+    padding: $s-1 $s-1 $s-1 2.5rem;
+    margin: $s-1 0 $s-1 $s-1-25;
     &__icon {
         display: flex;
         align-items: center;
@@ -15,7 +15,7 @@
         top: 50%;
         left: 0;
         transform: translate(-50%, -50%);
-        font-size: 1.25rem;
+        font-size: $s-1-25;
     }
     &__content {
         & > *:first-child {

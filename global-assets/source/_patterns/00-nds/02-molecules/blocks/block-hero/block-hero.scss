@@ -8,7 +8,7 @@
     .parallax-container {
         position: relative;
         overflow: hidden;
-        height: 14rem;
+        height: 1$s-4;
         background-color: rgba(0,0,0,.7);
         .parallax {
             position: absolute;
@@ -38,13 +38,13 @@
             max-width: 900px;
             margin: 0 auto;
             @include media-breakpoint-up(sm) {
-                margin: 0 1rem;
+                margin: 0 $s-1;
             }
             @include media-breakpoint-up(md) {
-                margin: 0 2rem;
+                margin: 0 $s-2;
             }
             @include media-breakpoint-up(lg) {
-                margin: 0 3rem;
+                margin: 0 $s-3;
             }
             @include media-breakpoint-up(xl) {
                 margin: 0 auto;
@@ -56,12 +56,12 @@
         .block--hero__content {
             &__breadcrumbs {
                 .col-xl-12 {
-                    padding: .5rem 3rem;
+                    padding: .5rem $s-3;
                     a, i {
                         color: $white;
                     }
                     a {
-                        border-bottom: 0.0625rem solid $white;
+                        border-bottom: $s-1px solid $white;
                     }
                 }
             }

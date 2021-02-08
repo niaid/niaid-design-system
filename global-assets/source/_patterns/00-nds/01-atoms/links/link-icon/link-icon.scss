@@ -9,7 +9,7 @@
     &__text {
         &:hover,
         &:focus {
-            border-bottom: 0.0625rem solid $type-link-underline;
+            border-bottom: $s-1px solid $type-link-underline;
         }
     }
 

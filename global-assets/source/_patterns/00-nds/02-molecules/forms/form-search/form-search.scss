@@ -20,10 +20,10 @@
             @extend .button--primary;
             display: inline-flex;
             line-height: initial;
-            padding: .375rem 1.5rem;
+            padding: .375rem $s-1-50;
             border-radius: 0;
             border: 0;
-            margin-left: -0.0625rem;
+            margin-left: -$s-1px;
             &:hover,
             &:focus {
                 border: 0;

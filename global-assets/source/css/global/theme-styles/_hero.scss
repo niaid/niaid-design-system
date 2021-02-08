@@ -4,7 +4,7 @@
     }
     .layouts--main {
         @include media-breakpoint-up(sm) {
-            margin-top: -4rem;
+            margin-top: -$s-4;
         }
     }
     .block--hero {
@@ -38,7 +38,7 @@
     }
 
     &.style--corners--rounded {
-        $corner-radius: 1rem;
+        $corner-radius: $s-1;
         .layouts--body {
             @include media-breakpoint-up(lg){
                 border-top-left-radius: $corner-radius;
@@ -63,7 +63,7 @@
     &.style--shadows {
         .block--hero {
             .parallax-container {
-                padding-bottom: 4rem;
+                padding-bottom: $s-4;
             }
         }
     }

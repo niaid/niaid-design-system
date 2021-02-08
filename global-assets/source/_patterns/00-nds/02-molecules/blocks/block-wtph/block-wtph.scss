@@ -1,14 +1,14 @@
 .block--wtph {
     border: 0;
-    margin: 2rem 0;
-    padding: 2rem;
-    border-top: 0.0625rem solid $input-border;
-    border-bottom: 0.0625rem solid $input-border;
+    margin: $s-2 0;
+    padding: $s-2;
+    border-top: $s-1px solid $input-border;
+    border-bottom: $s-1px solid $input-border;
     &__inner {
         text-align: center;
         &__title {
-            font-size: 1.5rem;
-            margin: 0 0 1.25rem 0;
+            font-size: $s-1-50;
+            margin: 0 0 $s-1-25 0;
         }
         &__button {
             margin: 0 .5rem;

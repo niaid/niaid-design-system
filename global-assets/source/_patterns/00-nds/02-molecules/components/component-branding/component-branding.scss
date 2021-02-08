@@ -13,7 +13,7 @@
     }
     &__vertical-bar {
         display: block;
-        width: 0.0625rem;
+        width: $s-1px;
         height: 100%;
         margin: 0 .75rem;
         background: $input-border;

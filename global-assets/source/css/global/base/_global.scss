@@ -1,7 +1,7 @@
 html,
 body {
     line-height: 2.0;
-    font-size: 16px;
+    font-size: #{$base-size-pixels}unquote("px");
     background: $page-background;
     font-family: "Roboto", sans-serif;
     color: $type-body;

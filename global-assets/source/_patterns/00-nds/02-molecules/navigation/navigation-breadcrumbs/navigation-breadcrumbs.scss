@@ -1,7 +1,7 @@
 .navigation--breadcrumbs {
     font-weight: $font-weight-light;
     font-size: .8rem;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 $s-1-50 0;
     padding: 0;
     >p {
         margin: 0;
@@ -10,7 +10,7 @@
     a {
         &:hover,
         &:focus {
-            border-bottom: 0.0625rem solid transparent;
+            border-bottom: $s-1px solid transparent;
         }
     }
     i {
