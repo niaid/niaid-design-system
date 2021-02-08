@@ -597,7 +597,9 @@
     {% block component_scrollspy_section_content %}
         <h3>Media</h3>
         <p>Audio and video can be effective ways to communicate with your audience, however, each comes with a variety of accessibility requirements. Please review the <a href="https://www.w3.org/WAI/media/av/">guidelines from W3C on how to make your audio or video accessible.</a></p>
-        <h4>Audio</h4>
+        
+        {# DISABLING UNTIL WE HAVE DEMO CONTENT #}
+        {# <h4>Audio</h4>
         <p>The Audio media component provides a way to offer audio content to users.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
@@ -636,7 +638,7 @@
                     <li>media_video_attributes: Additional media attributes.</li>
                 </ul>
             {% endblock %}
-        {% endembed %}
+        {% endembed %} #}
 
         <h4>YouTube Video</h4>
         <p>This components makes it easy to embed YouTube videos on your website.</p>

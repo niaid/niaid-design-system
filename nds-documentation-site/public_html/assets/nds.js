@@ -122,7 +122,48 @@
       initInputSelect();
     });
   }
-})(jQuery); // Dependencies
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initLinkExternal();
+  initLinkExternalMailto();
+}); // initLinkExternal - Adds external link icons to links that qualify as external.
+
+function initLinkExternal() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var externalLinks = document.querySelectorAll('a');
+
+  for (var i = 0; i < externalLinks.length; i++) {
+    if (externalLinks[i].innerHTML != "") {
+      var url = externalLinks[i].getAttribute('href');
+      var hostname = externalLinks[i].hostname;
+
+      if (url && hostname !== location.hostname) {
+        url = url.toLowerCase();
+
+        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+          externalLinks[i].setAttribute('target', '_blank');
+          var linkIcon = document.createElement('a');
+          linkIcon.setAttribute('href', url);
+          linkIcon.setAttribute('class', "ext-link-icon");
+          linkIcon.setAttribute('aria-label', "External Link");
+          externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+        }
+      }
+    }
+  }
+} // initLinkExternalMailto - Adds envelope icons to mailto links.
+
+
+function initLinkExternalMailto() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+  for (var i = 0; i < mailtoLinks.length; i++) {
+    mailtoLinks[i].classList.add('link--external--mail');
+  }
+} // Dependencies
 //  - DataTables
 //  - jQuery
 
@@ -184,47 +225,6 @@
     });
   }
 })(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initLinkExternal();
-  initLinkExternalMailto();
-}); // initLinkExternal - Adds external link icons to links that qualify as external.
-
-function initLinkExternal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var externalLinks = document.querySelectorAll('a');
-
-  for (var i = 0; i < externalLinks.length; i++) {
-    if (externalLinks[i].innerHTML != "") {
-      var url = externalLinks[i].getAttribute('href');
-      var hostname = externalLinks[i].hostname;
-
-      if (url && hostname !== location.hostname) {
-        url = url.toLowerCase();
-
-        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-          externalLinks[i].setAttribute('target', '_blank');
-          var linkIcon = document.createElement('a');
-          linkIcon.setAttribute('href', url);
-          linkIcon.setAttribute('class', "ext-link-icon");
-          linkIcon.setAttribute('aria-label', "External Link");
-          externalLinks[i].insertAdjacentElement('afterend', linkIcon);
-        }
-      }
-    }
-  }
-} // initLinkExternalMailto - Adds envelope icons to mailto links.
-
-
-function initLinkExternalMailto() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
-
-  for (var i = 0; i < mailtoLinks.length; i++) {
-    mailtoLinks[i].classList.add('link--external--mail');
-  }
-} // Part of NDS Lite
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -324,7 +324,24 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       initComponentMedia();
     });
   }
-})(jQuery);
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initComponentUSWDSBanner();
+}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+
+function initComponentUSWDSBanner() {
+  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+      document.getElementById("uswds-banner-content").style.display = 'none';
+    } else {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+      document.getElementById("uswds-banner-content").style.display = 'block';
+    }
+  });
+}
 
 (function ($) {
   function initComponentModal() {
@@ -384,23 +401,6 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     });
   }
 })(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initComponentUSWDSBanner();
-}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
-
-function initComponentUSWDSBanner() {
-  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
-    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
-      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
-      document.getElementById("uswds-banner-content").style.display = 'none';
-    } else {
-      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
-      document.getElementById("uswds-banner-content").style.display = 'block';
-    }
-  });
-} // Part of NDS Lite
 
 
 document.addEventListener("DOMContentLoaded", function (e) {

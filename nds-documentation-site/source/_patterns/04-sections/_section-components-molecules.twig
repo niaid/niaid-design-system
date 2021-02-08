@@ -464,6 +464,34 @@
             }
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code_alternate_render %}
+                {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
+                    {
+                        "input_group_text_id": "input-group-text-render",
+                        "input_group_text_name": "input-group-text",
+                        "input_group_text_placeholder": "Enter Text...",
+                        "input_group_text_label": "Input Text"
+                    }
+                %}
+                {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
+                    {
+                        "input_group_text_id": "input-group-text-icon-render",
+                        "input_group_text_name": "input-group-text-icon",
+                        "input_group_text_placeholder": "Enter Text...",
+                        "input_group_text_label": "Input Text with Icon",
+                        "input_group_text_icon": "filter"
+                    }
+                %}
+                {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
+                    {
+                        "input_group_text_id": "input-group-text-tooltip-render",
+                        "input_group_text_name": "input-group-text-tooltip",
+                        "input_group_text_placeholder": "Enter Text...",
+                        "input_group_text_label": "Input Text with Tooltip",
+                        "input_group_text_tooltip": "Add Helpful Text Here"
+                    }
+                %}
+            {% endblock %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text.twig" %}
                 {% include "@nds/02-molecules/input-group/input-group-text/demo/input-group-text-icon.twig" %}
@@ -593,6 +621,44 @@
             }
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code_alternate_render %}
+                {% embed "@nds/02-molecules/input-group/input-group-select/_input-group-select-main.twig" with
+                    {
+                        "input_group_select_id": "input-group-select-render",
+                        "input_group_select_label": "Select Field",
+                        "input_group_select_placeholder": "Select a Fruit..."
+                    }
+                %}
+                    {% block input_group_select_options %}
+                        <option value=""></option>
+                        <option value="Apple">Apple</option>
+                        <option value="Banana">Banana</option>
+                        <option value="Cherry">Cherry</option>
+                        <option value="Date">Date</option>
+                        <option value="Fig">Fig</option>
+                        <option value="Guava">Guava</option>
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed "@nds/02-molecules/input-group/input-group-select/_input-group-select-main.twig" with
+                    {
+                        "input_group_select_id": "input-group-multiselect-render",
+                        "input_group_select_label": "Multiselect Field",
+                        "input_group_select_placeholder": "Select Multiple Fruits...",
+                        "input_group_select_multiple": true
+                    }
+                %}
+                    {% block input_group_select_options %}
+                        <option value=""></option>
+                        <option value="Apple">Apple</option>
+                        <option value="Banana">Banana</option>
+                        <option value="Cherry">Cherry</option>
+                        <option value="Date">Date</option>
+                        <option value="Fig">Fig</option>
+                        <option value="Guava">Guava</option>
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-select/demo/input-group-select.twig" %}
                 {% include "@nds/02-molecules/input-group/input-group-select/demo/input-group-multiselect.twig" %}
@@ -611,6 +677,7 @@
                     <li>input_group_select_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).</li>
                     <li>input_group_select_placeholder: Placeholder text for the field.</li>
                     <li>input_group_select_name: Name attribute of the field.</li>
+                    <li>input_group_select_value: Default value of the field.</li>
                     <li>input_group_select_value: Default value of the field.</li>
                     <li>input_group_select_tabindex: Optional tabindex attribute of the field.</li>
                     <li>input_group_select_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
@@ -642,6 +709,16 @@
             }
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code_alternate_render %}
+                {% include "@nds/02-molecules/input-group/input-group-date-picker/_input-group-date-picker-main.twig" with
+                    {
+                        "input_group_date_picker_id": "input-group-date-picker-render",
+                        "input_group_date_picker_label": "Choose a Date",
+                        "input_group_date_picker_placeholder": "Choose a Date...",
+                        "input_group_date_picker_value": "01/21/1995"
+                    }
+                %}
+            {% endblock %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-date-picker/demo/input-group-date-picker.twig" %}
             {% endblock %}
@@ -688,6 +765,16 @@
             }
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code_alternate_render %}
+                {% include "@nds/02-molecules/forms/form-search/_form-search-main.twig" with
+                    {
+                        "form_search_id": "form-sample-search-render",
+                        "form_search_input_id": "form-sample-search-input-id-render",
+                        "form_search_input_name": "form-sample-search-input-name",
+                        "form_search_input_placeholder": "Searching for something..."
+                    }
+                %}
+            {% endblock %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/forms/form-search/demo/form-search.twig" %}
             {% endblock %}

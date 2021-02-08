@@ -20,7 +20,52 @@ function windowWidth() {
   var docElemProp = window.document.documentElement.clientWidth,
       body = window.document.body;
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
-} // Part of NDS Lite
+}
+
+$(document).ready(function () {
+  var mql = window.matchMedia('all and (min-width: 992px)');
+  var wWidth = $(window).width();
+  $('.fixed-left').each(function () {
+    if (mql.matches) {
+      stickybits($(this).find('.layouts--main__first'));
+    }
+  });
+  $(window).on('resize', function () {
+    if (wWidth != $(this).width()) {
+      wWidth = $(this).width();
+      $('.fixed-left').each(function () {
+        if (mql.matches) {
+          stickybits($(this).find('.layouts--main__first'));
+        } else {
+          stickybits($(this).find('.layouts--main__first')).cleanup();
+          $(this).find('.layouts--main__first').css('position', 'relative');
+        }
+      });
+    }
+  });
+});
+
+(function ($) {
+  function init_layouts_tabs(context) {
+    $('#tab--mockup').attr('tabindex', '-1');
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.layoutsTabs = {
+        attach: function attach(context) {
+          init_layouts_tabs(context);
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      init_layouts_tabs();
+    });
+  }
+})(jQuery); // Part of NDS Lite
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -857,51 +902,6 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       if ($("#builder").length) {
         init_build_controls();
       }
-    });
-  }
-})(jQuery);
-
-$(document).ready(function () {
-  var mql = window.matchMedia('all and (min-width: 992px)');
-  var wWidth = $(window).width();
-  $('.fixed-left').each(function () {
-    if (mql.matches) {
-      stickybits($(this).find('.layouts--main__first'));
-    }
-  });
-  $(window).on('resize', function () {
-    if (wWidth != $(this).width()) {
-      wWidth = $(this).width();
-      $('.fixed-left').each(function () {
-        if (mql.matches) {
-          stickybits($(this).find('.layouts--main__first'));
-        } else {
-          stickybits($(this).find('.layouts--main__first')).cleanup();
-          $(this).find('.layouts--main__first').css('position', 'relative');
-        }
-      });
-    }
-  });
-});
-
-(function ($) {
-  function init_layouts_tabs(context) {
-    $('#tab--mockup').attr('tabindex', '-1');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.layoutsTabs = {
-        attach: function attach(context) {
-          init_layouts_tabs(context);
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      init_layouts_tabs();
     });
   }
 })(jQuery);

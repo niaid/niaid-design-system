@@ -14,12 +14,13 @@
         input_attributes_placeholder: Placeholder text of the input element.
         input_attributes_type: Input type.
         input_attributes_value: Input default value.
+        input_attributes_aria_label: Aria Label for the input field.
         input_attributes_tabindex: Input tabindex attribute.
         input_attributes_disabled: Bool determining if the input is disabled or not. Options: true, false.
         input_attributes_readonly: Bool determining if the input is readonly or not. Options: true, false.
         input_attributes_required: Bool determining if the input is required or not. Options: true, false.
 
-    Last Updated: January 22, 2021
+    Last Updated: February 8, 2021
 #}
 
 {% set input_attributes_id = input_attributes_id|default() %}
@@ -27,9 +28,10 @@
 {% set input_attributes_placeholder = input_attributes_placeholder|default() %}
 {% set input_attributes_type = input_attributes_type|default() %}
 {% set input_attributes_value = input_attributes_value|default() %}
+{% set input_attributes_aria_label = input_attributes_value|default() %}
 {% set input_attributes_tabindex = input_attributes_tabindex|default() %}
 {% set input_attributes_disabled = input_attributes_disabled|default() %}
 {% set input_attributes_readonly = input_attributes_readonly|default() %}
 {% set input_attributes_required = input_attributes_required|default() %}
 
-{% if input_attributes_id is not empty %} id="{{ input_attributes_id }}"{% endif %}{% if input_attributes_type is not empty %} type="{{ input_attributes_type }}"{% endif %}{% if input_attributes_name is not empty %} name="{{ input_attributes_name }}"{% endif %}{% if input_attributes_value is not empty %} value="{{ input_attributes_value }}"{% endif %}{% if input_attributes_placeholder is not empty %} placeholder="{{ input_attributes_placeholder }}"{% endif %}{% if input_attributes_tabindex is not empty %} tabindex="{{ input_attributes_tabindex }}"{% endif %}{% if input_attributes_disabled %} disabled{% endif %}{% if input_attributes_readonly %} readonly{% endif %}{% if input_attributes_required %} required{% endif %}
+{% if input_attributes_id is not empty %} id="{{ input_attributes_id }}"{% endif %}{% if input_attributes_type is not empty %} type="{{ input_attributes_type }}"{% endif %}{% if input_attributes_name is not empty %} name="{{ input_attributes_name }}"{% endif %}{% if input_attributes_value is not empty %} value="{{ input_attributes_value }}"{% endif %}{% if input_attributes_placeholder is not empty %} placeholder="{{ input_attributes_placeholder }}"{% endif %}{% if input_attributes_tabindex is not empty %} tabindex="{{ input_attributes_tabindex }}"{% endif %}{% if input_attributes_aria_label is not empty %} aria-label="{{ input_attributes_aria_label }}"{% endif %}{% if input_attributes_disabled %} disabled{% endif %}{% if input_attributes_readonly %} readonly{% endif %}{% if input_attributes_required %} required{% endif %}

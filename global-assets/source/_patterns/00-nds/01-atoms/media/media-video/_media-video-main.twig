@@ -19,7 +19,7 @@
 		media_video_src_webm: Path to the video source in .webm format.
 		media_video_attributes: Additional media attributes.
 
-    Last Updated: January 26, 2021
+    Last Updated: February 8, 2021
 #}
 
 {% set media_video_classes = media_video_classes|default() %}
@@ -32,13 +32,13 @@
 {% set media_video_src_webm = media_video_src_webm|default() %}
 {% set media_video_attributes = media_video_attributes|default() %}
 
-{% if "https:" not in media_video_src_ogv and "http:" not in media_video_src_ogv %}
+{% if "https:" not in media_video_src_ogv and "http:" not in media_video_src_ogv and media_video_src_ogv is not empty %}
 	{% set media_video_src_ogv = assetsPath ~ media_video_src_ogv %}
 {% endif %}
-{% if "https:" not in media_video_src_mp4 and "http:" not in media_video_src_mp4 %}
+{% if "https:" not in media_video_src_mp4 and "http:" not in media_video_src_mp4 and media_video_src_mp4 is not empty %}
 	{% set media_video_src_mp4 = assetsPath ~ media_video_src_mp4 %}
 {% endif %}
-{% if "https:" not in media_video_src_webm and "http:" not in media_video_src_webm %}
+{% if "https:" not in media_video_src_webm and "http:" not in media_video_src_webm and media_video_src_webm is not empty %}
 	{% set media_video_src_webm = assetsPath ~ media_video_src_webm %}
 {% endif %}
 
