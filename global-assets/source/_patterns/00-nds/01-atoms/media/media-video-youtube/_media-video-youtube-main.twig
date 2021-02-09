@@ -19,7 +19,7 @@
         media_video_youtube_width: Desired width of the video.
         media_video_youtube_attributes: Additional attributes on the <iframe>.
 
-    Last Updated: January 22, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set media_video_youtube_classes = media_video_youtube_classes|default() %}
@@ -31,5 +31,5 @@
 {% set media_video_youtube_attributes = media_video_youtube_attributes|default() %}
 
 <div class="media-nds media--video-youtube {{ media_video_youtube_classes }}"{% if media_video_youtube_id is not empty %} id="{{ media_video_youtube_id }}"{% endif %}>
-    <iframe class="media--video-youtube__iframe" allowfullscreen="" frameborder="0" height="{{ media_video_youtube_height }}" width="{{ media_video_youtube_width }}" src="{{ media_video_youtube_src }}" title="{{ media_video_youtube_title }}" {{ media_video_youtube_attributes }}></iframe>
+    <iframe class="media--video-youtube__iframe" allowfullscreen="" frameborder="0" height="{{ media_video_youtube_height }}" width="{{ media_video_youtube_width }}" src="{{ media_video_youtube_src }}" title="{{ media_video_youtube_title }}" {{ media_video_youtube_attributes|raw }}></iframe>
 </div>

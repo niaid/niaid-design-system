@@ -303,12 +303,14 @@
                 <p>The Document Icon pattern can also be used as a button, if a path is supplied to the "icon_document_href" parameter.</p>
                 <p>Use the "icon_document_type" parameter to choose a type as follows:</p>
                 <ul>
-                    <li>Word - "file-word"</li>
-                    <li>Excel - "file-excel"</li>
-                    <li>PowerPoint - "file-ppt"</li>
-                    <li>PDF - "file-pdf"</li>
+                    <li>Word - "word"</li>
+                    <li>Excel - "excel"</li>
+                    <li>PowerPoint - "ppt"</li>
+                    <li>PDF - "pdf"</li>
                     <li>Image - "image"</li>
                     <li>Video - "video"</li>
+                    <li>Application - "application"</li>
+                    <li>Link - "link"</li>
                 </ul>
                 <h5>Parameters</h5>
                 <ul>
@@ -316,6 +318,7 @@
                     <li>icon_document_id: Icon wrapper ID.</li>
                     <li>icon_document_type: Type of document icon. Options: file-word, file-excel, file-ppt, file-pdf, image, video.</li>
                     <li>icon_document_href: Optional button link destination.</li>
+                    <li>icon_document_aria_label: Aria Label for the document icon if it is linked (computed by the icon_document_type).</li>
                     <li>icon_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                     <li>icon_document_attributes: Additional icon attributes.</li>
                 </ul>
@@ -409,6 +412,7 @@
         <h3>Layouts</h3>
         <h4>Site Layout</h4>
         <p>The Site Layout component provides a general framework for a NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility.</p>
+        <p>Included in the Site Layout is a skip link that will direct users to the main content of the page for accessibility purposes. It is important to add an ID of value "main-content" to the first element on the page that appears after elements that are common to all pages, such as headers and navigation. This will help users who navigate with their keyboards or with a screen reader to easily move past redundant content. For more information skip links, please visit the <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html">WCAG 2.0 documentation on skip links.</a></p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_show_rendered": "no"
@@ -597,7 +601,9 @@
     {% block component_scrollspy_section_content %}
         <h3>Media</h3>
         <p>Audio and video can be effective ways to communicate with your audience, however, each comes with a variety of accessibility requirements. Please review the <a href="https://www.w3.org/WAI/media/av/">guidelines from W3C on how to make your audio or video accessible.</a></p>
-        <h4>Audio</h4>
+        
+        {# DISABLING UNTIL WE HAVE DEMO CONTENT #}
+        {# <h4>Audio</h4>
         <p>The Audio media component provides a way to offer audio content to users.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
@@ -636,7 +642,7 @@
                     <li>media_video_attributes: Additional media attributes.</li>
                 </ul>
             {% endblock %}
-        {% endembed %}
+        {% endembed %} #}
 
         <h4>YouTube Video</h4>
         <p>This components makes it easy to embed YouTube videos on your website.</p>

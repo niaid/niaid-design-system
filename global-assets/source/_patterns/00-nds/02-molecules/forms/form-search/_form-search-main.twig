@@ -22,22 +22,29 @@
     Includes:
         Atoms -> Input -> input-text
 
-    Last Updated: January 22, 2021
+    Last Updated: February 8, 2021
 #}
 
 {% set form_search_classes = form_search_classes|default() %}
 {% set form_search_id = form_search_id|default() %}
+{% set form_search_input_id = form_search_input_id|default() %}
+{% set form_search_input_name = form_search_input_name|default() %}
+{% set form_search_input_placeholder = form_search_input_placeholder|default() %}
+{% set form_search_input_icon = form_search_input_icon|default('search') %}
+{% set form_search_input_weight = form_search_input_weight|default('s') %}
+{% set form_search_input_aria_label = form_search_input_aria_label|default() %}
 
 <div class="form-nds form--search {{ form_search_classes }}">
     {% block form_search_content %}
         <form id="{{ form_search_id }}" class="form--search__form">
             {% include "@nds/01-atoms/input/input-text/_input-text-main.twig" with
                 {
-                    "input_text_id": "search-sample-field",
-                    "input_text_name": "search-sample-field",
-                    "input_text_placeholder": "Searching for something...",
-                    "input_text_icon": "search",
-                    "input_text_aria_label": "Site Search"
+                    "input_text_id": form_search_input_id,
+                    "input_text_name": form_search_input_name,
+                    "input_text_placeholder": form_search_input_placeholder,
+                    "input_text_icon": form_search_input_icon,
+                    "input_text_icon_weight": form_search_input_weight,
+                    "input_text_aria_label": form_search_input_aria_label
                 }
             %}
             <input class="form-submit" type="submit" value="Search">

@@ -35,6 +35,11 @@
             $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
         });
 
+        // Add Accessibility Compliane to Loaded Select Field
+        $('.select2-selection--single').attr('aria-label', 'Click to select option.');
+        $('.select2-selection--multiple').attr('aria-label', 'Click to select option(s).');
+
+        // Remove selection on click of "X"
         $(document).on('click', '.single-clear', function(e) {
             e.stopPropagation();
             var $selectField = $(this).parent().siblings('select');

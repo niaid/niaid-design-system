@@ -48,7 +48,14 @@
                 "component_branding_identity_bottom": global_header_product_id_bottom
             }
         %}
-        {% include "@nds/02-molecules/forms/form-search/_form-search-main.twig" %}
+        {% include "@nds/02-molecules/forms/form-search/_form-search-main.twig" with
+            {
+                "form_search_id": "header-search-form-demo",
+                "form_search_input_id": "header-search-form-input-demo",
+                "form_search_input_name": "header-search-form-demo",
+                "form_search_input_placeholder": "Searching for something..."
+            }
+        %}
         {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
             {
                 "button_icon_id": "global-header-search--open",

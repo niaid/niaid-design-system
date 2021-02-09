@@ -5,7 +5,7 @@
         <div class="col-6">
             {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
                 {
-                    "input_group_text_id": "input-text-example",
+                    "input_group_text_id": "input-text-example-`",
                     "input_group_text_name": "input-text-example",
                     "input_group_text_placeholder": "Enter value...",
                     "input_group_text_label": "Field Label",
@@ -19,7 +19,7 @@
         <div class="col-6">
             {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
                 {
-                    "input_group_text_id": "input-text-example",
+                    "input_group_text_id": "input-text-example-2",
                     "input_group_text_classes": "focus-field",
                     "input_group_text_name": "input-text-example",
                     "input_group_text_placeholder": "",
@@ -37,7 +37,7 @@
         <div class="col-6">
             {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
                 {
-                    "input_group_text_id": "input-text-example",
+                    "input_group_text_id": "input-text-example-3",
                     "input_group_text_name": "input-text-example",
                     "input_group_text_placeholder": "Enter value...",
                     "input_group_text_icon": "filter",
@@ -52,7 +52,7 @@
         <div class="col-6">
             {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
                 {
-                    "input_group_text_id": "input-text-example",
+                    "input_group_text_id": "input-text-example-4",
                     "input_group_text_classes": "error-field",
                     "input_group_text_name": "input-text-example",
                     "input_group_text_placeholder": "Password",
@@ -68,22 +68,21 @@
     </div>
     <div class="row">
         <div class="col-12">
-            {% include "@nds/02-molecules/forms/form-search/_form-search-main.twig" %}
+            {% include "@nds/02-molecules/forms/form-search/demo/form-search.twig" %}
         </div>
     </div>
     <div class="row">
         <div class="col-6">
             {% embed "@nds/02-molecules/input-group/input-group-checkbox/_input-group-checkbox-main.twig" with
                 {
-                    "input_group_checkbox_id": "form-group-example",
-                    "input_group_checkbox_label": "Choose Platforms You Own",
-                    "input_group_checkbox_tooltip": ""
+                    "input_group_checkbox_id": "console-select-checkbox",
+                    "input_group_checkbox_label": "Choose Platforms You Own"
                 }
             %}
                 {% block input_checkbox_options %}
                     {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
                         {
-                            "input_checkbox_name": "form-group-example",
+                            "input_checkbox_name": "console-select-checkbox",
                             "input_checkbox_id": "xbox",
                             "input_checkbox_value": "xbox",
                             "input_checkbox_label": "Xbox",
@@ -92,7 +91,7 @@
                     %}
                     {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
                         {
-                            "input_checkbox_name": "form-group-example",
+                            "input_checkbox_name": "console-select-checkbox",
                             "input_checkbox_id": "playstation",
                             "input_checkbox_value": "playstation",
                             "input_checkbox_label": "Playstation"
@@ -100,7 +99,7 @@
                     %}
                     {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
                         {
-                            "input_checkbox_name": "form-group-example",
+                            "input_checkbox_name": "console-select-checkbox",
                             "input_checkbox_id": "pc",
                             "input_checkbox_value": "pc",
                             "input_checkbox_label": "PC"
@@ -112,9 +111,8 @@
         <div class="col-6">
             {% embed "@nds/02-molecules/input-group/input-group-radio/_input-group-radio-main.twig" with
                 {
-                    "input_group_radio_id": "console-select",
-                    "input_group_radio_label": "Choose the Platform You Own",
-                    "input_group_radio_tooltip": ""
+                    "input_group_radio_id": "console-select-radio",
+                    "input_group_radio_label": "Choose the Platform You Own"
                 }
             %}
                 {% block input_radio_options %}

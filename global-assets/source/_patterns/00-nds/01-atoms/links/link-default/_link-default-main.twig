@@ -14,7 +14,7 @@
         link_default_text: The text of the link.
         link_default_attributes: Additional link attributes.
 
-    Last Updated: January 22, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set link_default_classes = link_default_classes|default() %}
@@ -22,4 +22,4 @@
 {% set link_default_text = link_default_text|default() %}
 {% set link_default_attributes = link_default_attributes|default() %}
 
-<a class="link-nds link--default {{ link_default_classes }}" href="{{ link_default_href }}" {{ link_default_attributes }}>{{ link_default_text }}</a>
+<a class="link-nds link--default {{ link_default_classes }}" href="{{ link_default_href }}" {{ link_default_attributes|raw }}>{{ link_default_text }}</a>

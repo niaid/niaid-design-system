@@ -16,13 +16,13 @@
         block_alert_id: Alert ID.
         block_alert_severity_level: The alert severity level. Options: "1" (Default), "2", "3", "4".
 
-    Last Updated: January 22, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set block_alert_classes = block_alert_classes|default() %}
 {% set block_alert_id = block_alert_id|default() %}
 {% set block_alert_severity_level = block_alert_severity_level|default('1') %}
 
-<div class="block-nds block--alert {{ block_alert_classes ~ " severity--" ~ block_alert_severity_level }}"{% if block_alert_id is not empty %} id="{{ block_alert_id }}"{% endif %}>
+<aside class="block-nds block--alert {{ block_alert_classes ~ " severity--" ~ block_alert_severity_level }}"{% if block_alert_id is not empty %} id="{{ block_alert_id }}"{% endif %}>
     {% block block_alert_content %}{% endblock %}
-</div>
+</aside>
