@@ -308,6 +308,7 @@
             .pager {
                 .pager__items {
                     .pager__item {
+                        &.active,
                         &.is-active {
                             a {
                                 background: $color-theme-2-1-1;
@@ -648,6 +649,7 @@
             .pager {
                 .pager__items {
                     .pager__item {
+                        &.active,
                         &.is-active {
                             a {
                                 background: $color-theme-3-1-1;

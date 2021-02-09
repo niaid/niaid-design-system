@@ -16,7 +16,7 @@
         media_audio_src_wav: Path to the audio source in .wav format.
         media_audio_attributes: Additional media attributes.
 
-    Last Updated: January 26, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set media_audio_classes = media_audio_classes|default() %}
@@ -26,18 +26,18 @@
 {% set media_audio_src_wav = media_audio_src_wav|default() %}
 {% set media_audio_attributes = media_audio_attributes|default() %}
 
-{% if "https:" not in media_audio_src_ogg and "http:" not in media_audio_src_ogg %}
+{% if "https:" not in media_audio_src_ogg and "http:" not in media_audio_src_ogg and media_audio_src_ogg is not empty %}
 	{% set media_audio_src_ogg = assetsPath ~ media_audio_src_ogg %}
 {% endif %}
-{% if "https:" not in media_audio_src_mp3 and "http:" not in media_audio_src_mp3 %}
+{% if "https:" not in media_audio_src_mp3 and "http:" not in media_audio_src_mp3 and media_audio_src_mp3 is not empty %}
 	{% set media_audio_src_mp3 = assetsPath ~ media_audio_src_mp3 %}
 {% endif %}
-{% if "https:" not in media_audio_src_wav and "http:" not in media_audio_src_wav %}
+{% if "https:" not in media_audio_src_wav and "http:" not in media_audio_src_wav and media_audio_src_wav is not empty %}
 	{% set media_audio_src_wav = assetsPath ~ media_audio_src_wav %}
 {% endif %}
 
 <div class="media-nds media--audio {{ media_audio_classes }}">
-    <audio {% if media_audio_id is not empty %} id="{{ media_audio_id }}"{% endif %} controls {{ media_audio_attributes }}>
+    <audio {% if media_audio_id is not empty %} id="{{ media_audio_id }}"{% endif %} controls {{ media_audio_attributes|raw }}>
         {% if media_audio_src_ogg is not empty %}<source src="{{ media_audio_src_ogg }}" type="audio/ogg">{% endif %}
         {% if media_audio_src_mp3 is not empty %}<source src="{{ media_audio_src_mp3 }}" type="audio/mpeg">{% endif %}
         {% if media_audio_src_wav is not empty %}<source src="{{ media_audio_src_wav }}" type="audio/wav">{% endif %}

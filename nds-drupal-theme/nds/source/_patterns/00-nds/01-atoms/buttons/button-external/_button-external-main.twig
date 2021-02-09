@@ -17,7 +17,7 @@
         button_external_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
         button_external_attributes: Additional button attributes.
 
-    Last Updated: January 22, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set button_external_classes = button_external_classes|default() %}
@@ -28,7 +28,7 @@
 {% set button_external_icon_weight = button_external_icon_weight|default('s') %}
 {% set button_external_attributes = button_external_attributes|default() %}
 
-<{{ button_external_href != "" ? 'a' : 'button' }}{% if button_external_id is not empty %} id="{{ button_external_id }}"{% endif %} class="button-nds button--external waves-effect waves-light {{ button_external_classes }}" href="{{ button_external_href }}" {{ button_external_attributes }}>
+<{{ button_external_href != "" ? 'a' : 'button' }}{% if button_external_id is not empty %} id="{{ button_external_id }}"{% endif %} class="button-nds button--external waves-effect waves-light {{ button_external_classes }}" href="{{ button_external_href }}" {{ button_external_attributes|raw }}>
     <span>{{ button_external_text }}</span>
     {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
         {

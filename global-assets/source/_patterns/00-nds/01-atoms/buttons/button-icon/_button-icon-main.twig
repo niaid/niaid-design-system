@@ -20,7 +20,7 @@
         button_icon_aria_label: Button aria-label.
         button_icon_href: Button link destination.
 
-    Last Updated: February 5, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set button_icon_classes = button_icon_classes|default() %}
@@ -36,7 +36,7 @@
 
 {% set button_icon_classes = button_icon_classes ~ ' button--icon--' ~ button_icon_icon_size %}
 
-<{{ button_icon_href != "" ? 'a' : 'button' }}{% if button_icon_href is not empty %} href="{{ button_icon_href }}"{% endif %}{% if button_icon_id is not empty %} id="{{ button_icon_id }}"{% endif %} class="button-nds button--icon waves-effect waves-light {{ button_icon_classes }}"{% if button_icon_aria_label is not empty %} aria-label="{{ button_icon_aria_label }}"{% endif %} {{ button_icon_attributes }}>
+<{{ button_icon_href != "" ? 'a' : 'button' }}{% if button_icon_href is not empty %} href="{{ button_icon_href }}"{% endif %}{% if button_icon_id is not empty %} id="{{ button_icon_id }}"{% endif %} class="button-nds button--icon waves-effect waves-light {{ button_icon_classes }}"{% if button_icon_aria_label is not empty %} aria-label="{{ button_icon_aria_label }}"{% endif %} {{ button_icon_attributes|raw }}>
     {% if button_icon_icon_position != "right" %}
         {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
             {

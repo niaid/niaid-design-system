@@ -14,7 +14,7 @@
         icon_circle_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
         icon_circle_attributes: Additional pattern attributes.
 
-    Last Updated: January 22, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set icon_circle_classes = icon_circle_classes|default() %}
@@ -22,7 +22,7 @@
 {% set icon_circle_icon_weight = icon_circle_icon_weight|default('s') %}
 {% set icon_circle_attributes = icon_circle_attributes|default() %}
 
-<div class="icon-nds icon--circle {{ icon_circle_classes }}" {{ icon_circle_attributes }}>
+<div class="icon-nds icon--circle {{ icon_circle_classes }}" {{ icon_circle_attributes|raw }}>
     {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
         {
             "icon_default_type": icon_circle_icon,

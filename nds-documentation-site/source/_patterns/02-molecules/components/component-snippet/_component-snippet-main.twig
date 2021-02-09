@@ -1,5 +1,6 @@
 {% set component_snippet_classes = component_snippet_classes|default() %}
 {% set component_snippet_code = block('component_snippet_code') %}
+{% set component_snippet_code_alternate_render = block('component_snippet_code_alternate_render') %}
 {% set component_snippet_pattern_info = block('component_snippet_pattern_info') %}
 {% set component_snippet_show_rendered = component_snippet_show_rendered|default('yes') %}
 
@@ -7,9 +8,15 @@
     <div class="component--snippet__block">
         <div class="component--snippet__block__code">
             {% if component_snippet_show_rendered == 'yes' %}
-                <div class="component--snippet__block__code__rendered">
-                    {{ component_snippet_code|raw }}
-                </div>
+                {% if component_snippet_code_alternate_render|trim is not empty %}
+                    <div class="component--snippet__block__code__rendered">
+                        {{ component_snippet_code_alternate_render|raw }}
+                    </div>
+                {% else %}
+                    <div class="component--snippet__block__code__rendered">
+                        {{ component_snippet_code|raw }}
+                    </div>
+                {% endif %}
             {% endif %}
             <div class="component--snippet__block__code__loader">
                 {% include "@nds/01-atoms/icons/icon-loader/_icon-loader-main.twig" with
