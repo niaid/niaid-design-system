@@ -10,7 +10,7 @@
                 "button_icon_icon": "arrow-to-left",
                 "button_icon_icon_weight": "l",
                 "button_icon_aria_label": "Close Global Menu",
-                "button_icon_tabindex": "-1"
+                "button_icon_attributes": 'tabindex=-1'
             }
         %}
     </div>
@@ -21,7 +21,7 @@
             </div>
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navGettingStarted">
-                    <a href="{{ links.getStarted }}">Getting Started</a>
+                    <a href="{{ links.getStarted }}" tabindex="-1">Getting Started</a>
                     <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" tabindex="-1" aria-label="Toggle Getting Started Section"></button>
                 </div>
                 <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseOne" class="collapse" aria-labelledby="navGettingStarted" data-parent="#{{ navigation_drawer_id }}">
@@ -34,7 +34,7 @@
             </div>
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navDesign">
-                    <a href="{{ links.design }}">Design</a>
+                    <a href="{{ links.design }}" tabindex="-1">Design</a>
                     <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" tabindex="-1" aria-label="Toggle Design Section"></button>
                 </div>
                 <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseTwo" class="collapse" aria-labelledby="navDesign" data-parent="#{{ navigation_drawer_id }}">
@@ -50,7 +50,7 @@
             </div>
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navDevelopment">
-                    <a href="{{ links.development }}">Development</a>
+                    <a href="{{ links.development }}" tabindex="-1">Development</a>
                     <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" tabindex="-1" aria-label="Toggle Development Section"></button>
                 </div>
                 <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseThree" class="collapse" aria-labelledby="navDevelopment" data-parent="#{{ navigation_drawer_id }}">
@@ -73,7 +73,8 @@
                         "button_icon_href": links.getStarted,
                         "button_icon_icon": "download",
                         "button_icon_icon_weight": "l",
-                        "button_icon_text": "Download NDS"
+                        "button_icon_text": "Download NDS",
+                        "button_icon_attributes": 'tabindex=-1'
                     }
                 %}
             </div>

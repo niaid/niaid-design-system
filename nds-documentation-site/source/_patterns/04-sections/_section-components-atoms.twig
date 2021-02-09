@@ -409,6 +409,7 @@
         <h3>Layouts</h3>
         <h4>Site Layout</h4>
         <p>The Site Layout component provides a general framework for a NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility.</p>
+        <p>Included in the Site Layout is a skip link that will direct users to the main content of the page for accessibility purposes. It is important to add an ID of value "main-content" to the first element on the page that appears after elements that are common to all pages, such as headers and navigation. This will help users who navigate with their keyboards or with a screen reader to easily move past redundant content. For more information skip links, please visit the <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html">WCAG 2.0 documentation on skip links.</a></p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_show_rendered": "no"
