@@ -18,7 +18,7 @@
         button_share_tabindex: Button tabindex.
         button_share_attributes: Additional button attributes.
 
-    Last Updated: February 4, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set button_share_classes = button_share_classes|default() %}
@@ -56,7 +56,7 @@
     {% set button_share_icon_weight = "b" %}
 {% endif %}
 
-<a href="{{ button_share_href }}" {% if button_share_id is not empty %} id="{{ button_share_id }}"{% endif %} class="button-nds button--share button--share--{{ button_share_type }} {{ button_share_classes }}"{% if button_share_aria_label is not empty %} aria-label="{{ button_share_aria_label }}"{% endif %}{% if button_share_tabindex is not empty %} tabindex="{{ button_share_tabindex }}"{% endif %} {{ button_share_attributes }}>
+<a href="{{ button_share_href }}" {% if button_share_id is not empty %} id="{{ button_share_id }}"{% endif %} class="button-nds button--share button--share--{{ button_share_type }} {{ button_share_classes }}"{% if button_share_aria_label is not empty %} aria-label="{{ button_share_aria_label }}"{% endif %}{% if button_share_tabindex is not empty %} tabindex="{{ button_share_tabindex }}"{% endif %} {{ button_share_attributes|raw }}>
     {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
         {
             "icon_default_type": button_share_icon,

@@ -17,7 +17,7 @@
         button_image_alt: Alt text to describe the image.
         button_image_attributes: Additional button attributes.
 
-    Last Updated: January 22, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set button_image_classes = button_image_classes|default() %}
@@ -28,7 +28,7 @@
 {% set button_image_alt = button_image_alt|default() %}
 {% set button_image_attributes = button_image_attributes|default() %}
 
-<{{ button_image_href != "" ? 'a' : 'button' }} class="button-nds button--image {{ button_image_classes }}"{% if button_image_id is not empty %} id="{{ button_image_id }}"{% endif %}{% if button_image_href != "" %} href="{{ button_image_href }}"{% endif %} {{ button_image_attributes }}>
+<{{ button_image_href != "" ? 'a' : 'button' }} class="button-nds button--image {{ button_image_classes }}"{% if button_image_id is not empty %} id="{{ button_image_id }}"{% endif %}{% if button_image_href != "" %} href="{{ button_image_href }}"{% endif %} {{ button_image_attributes|raw }}>
     {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
         {
             "image_default_src": button_image_src,

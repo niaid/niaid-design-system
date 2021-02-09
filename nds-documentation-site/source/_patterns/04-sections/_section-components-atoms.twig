@@ -303,12 +303,14 @@
                 <p>The Document Icon pattern can also be used as a button, if a path is supplied to the "icon_document_href" parameter.</p>
                 <p>Use the "icon_document_type" parameter to choose a type as follows:</p>
                 <ul>
-                    <li>Word - "file-word"</li>
-                    <li>Excel - "file-excel"</li>
-                    <li>PowerPoint - "file-ppt"</li>
-                    <li>PDF - "file-pdf"</li>
+                    <li>Word - "word"</li>
+                    <li>Excel - "excel"</li>
+                    <li>PowerPoint - "ppt"</li>
+                    <li>PDF - "pdf"</li>
                     <li>Image - "image"</li>
                     <li>Video - "video"</li>
+                    <li>Application - "application"</li>
+                    <li>Link - "link"</li>
                 </ul>
                 <h5>Parameters</h5>
                 <ul>
@@ -316,6 +318,7 @@
                     <li>icon_document_id: Icon wrapper ID.</li>
                     <li>icon_document_type: Type of document icon. Options: file-word, file-excel, file-ppt, file-pdf, image, video.</li>
                     <li>icon_document_href: Optional button link destination.</li>
+                    <li>icon_document_aria_label: Aria Label for the document icon if it is linked (computed by the icon_document_type).</li>
                     <li>icon_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
                     <li>icon_document_attributes: Additional icon attributes.</li>
                 </ul>
