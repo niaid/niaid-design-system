@@ -13,7 +13,8 @@
         input_date_picker_id: Date picker ID.
         input_date_picker_placeholder: Placeholder text for the date picker (Default: "MM/DD/YYYY").
         input_date_picker_name: Name attribute of the date picker element.
-        input_date_picker_value: Value of the date picker option.
+        input_date_picker_value: Value of the date picker input.
+        input_date_picker_aria_label: Aria Label of the date picker input.
         input_date_picker_disabled: Bool determining if the input is disabled or not. Options: true, false.
         input_date_picker_readonly: Bool determining if the input is readonly or not. Options: true, false.
         input_date_picker_required: Bool determining if the input is required or not. Options: true, false.
@@ -24,7 +25,7 @@
         Atoms -> Input -> input-attributes
         Atoms -> Icons -> icon-default
 
-    Last Updated: January 22, 2021
+    Last Updated: February 8, 2021
 #}
 
 {% set input_date_picker_classes = input_date_picker_classes|default() %}
@@ -32,6 +33,7 @@
 {% set input_date_picker_placeholder = input_date_picker_placeholder|default('MM/DD/YYYY') %}
 {% set input_date_picker_name = input_date_picker_name|default() %}
 {% set input_date_picker_value = input_date_picker_value|default() %}
+{% set input_date_picker_aria_label = input_date_picker_aria_label|default() %}
 {% set input_date_picker_tabindex = input_date_picker_tabindex|default() %}
 {% set input_date_picker_disabled = input_date_picker_disabled|default() %}
 {% set input_date_picker_readonly = input_date_picker_readonly|default() %}
@@ -48,6 +50,7 @@
                 "input_attributes_placeholder": input_date_picker_placeholder,
                 "input_attributes_type": "text",
                 "input_attributes_value": input_date_picker_value,
+                "input_attributes_aria_label": input_date_picker_aria_label,
                 "input_attributes_tabindex": input_date_picker_tabindex,
                 "input_attributes_disabled": input_date_picker_disabled,
                 "input_attributes_readonly": input_date_picker_readonly,

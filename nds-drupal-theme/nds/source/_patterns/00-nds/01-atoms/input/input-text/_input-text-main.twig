@@ -14,6 +14,7 @@
         input_text_placeholder: Placeholder text for the input field.
         input_text_name: Name attribute of the input field.
         input_text_value: Default value of the input field.
+        input_text_aria_label: Aria Label for the input field.
         input_text_icon: Font Awesome icon name.
         input_text_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
         input_text_tabindex: Tabindex attribute for the input field.
@@ -26,7 +27,7 @@
         Atoms -> Input -> input-attributes
         Atoms -> Icons -> icons-default
 
-    Last Updated: January 22, 2021
+    Last Updated: February 8, 2021
 #}
 
 {% set input_text_classes = input_text_classes|default() %}
@@ -34,6 +35,7 @@
 {% set input_text_placeholder = input_text_placeholder|default() %}
 {% set input_text_name = input_text_name|default() %}
 {% set input_text_value = input_text_value|default() %}
+{% set input_text_aria_label = input_text_aria_label|default() %}
 {% set input_text_icon = input_text_icon|default() %}
 {% set input_text_icon_weight = input_text_icon_weight|default('s') %}
 {% set input_text_tabindex = input_text_tabindex|default() %}
@@ -51,6 +53,7 @@
             "input_attributes_placeholder": input_text_placeholder,
             "input_attributes_type": "text",
             "input_attributes_value": input_text_value,
+            "input_attributes_aria_label": input_text_aria_label,
             "input_attributes_tabindex": input_text_tabindex,
             "input_attributes_disabled": input_text_disabled,
             "input_attributes_readonly": input_text_readonly,

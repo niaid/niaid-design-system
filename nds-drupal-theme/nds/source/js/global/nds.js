@@ -266,24 +266,36 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
     }
   }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initComponentUSWDSBanner();
-}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
-
-function initComponentUSWDSBanner() {
-  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
-    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
-      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
-      document.getElementById("uswds-banner-content").style.display = 'none';
-    } else {
-      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
-      document.getElementById("uswds-banner-content").style.display = 'block';
-    }
-  });
 }
+
+(function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.parallax').length) {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
+    });
+  }
+})(jQuery);
 
 (function ($) {
   function initComponentMedia() {
@@ -371,36 +383,45 @@ function initComponentUSWDSBanner() {
       initComponentModal();
     });
   }
-})(jQuery);
+})(jQuery); // Part of NDS Lite
 
-(function ($) {
-  function initBlockHero() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-    if (document.querySelectorAll('.parallax').length) {
-      var elems = document.querySelectorAll('.parallax');
-      var instances = M.Parallax.init(elems);
+document.addEventListener("DOMContentLoaded", function (e) {
+  initComponentUSWDSBanner();
+}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+
+function initComponentUSWDSBanner() {
+  document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+    if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+      document.getElementById("uswds-banner-content").style.display = 'none';
+    } else {
+      document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+      document.getElementById("uswds-banner-content").style.display = 'block';
+    }
+  });
+} // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initNavigationLocal();
+}); // initNavigationLocal - Functionality to support the local navigation pattern, specifically adding keyboard accessibility.
+
+function initNavigationLocal() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+  if (document.querySelectorAll('.navigation--local').length) {
+    var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
+
+    for (var i = 0; i < localNavigationItems.length; i++) {
+      localNavigationItems[i].addEventListener("keydown", function (event) {
+        if (event.isComposing || event.keyCode === 13) {
+          this.click();
+        }
+      });
     }
   }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
-        attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initBlockHero();
-    });
-  }
-})(jQuery); // Part of NDS Lite
+} // Part of NDS Lite
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -455,26 +476,5 @@ function closeMenu() {
 
   for (var i = 0; i < tabElements.length; i++) {
     tabElements[i].setAttribute('tabindex', '-1');
-  }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initNavigationLocal();
-}); // initNavigationLocal - Functionality to support the local navigation pattern, specifically adding keyboard accessibility.
-
-function initNavigationLocal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-  if (document.querySelectorAll('.navigation--local').length) {
-    var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
-
-    for (var i = 0; i < localNavigationItems.length; i++) {
-      localNavigationItems[i].addEventListener("keydown", function (event) {
-        if (event.isComposing || event.keyCode === 13) {
-          this.click();
-        }
-      });
-    }
   }
 }
