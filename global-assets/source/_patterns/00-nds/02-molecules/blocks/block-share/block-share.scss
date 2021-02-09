@@ -3,17 +3,13 @@
     border-radius: 0;
     padding: 0;
     background: transparent;
-    margin: 0;
     border: 0;
-    position: absolute;
-    top: $s-1;
-    right: 0;
     &__wrapper {
         width: 100%;
         .button--share {
-            height: 1.75rem;
-            width: 1.75rem;
-            margin: 0 0 .75rem 0;
+            height: $s-1-75;
+            width: $s-1-75;
+            margin: 0 0 $s-0-75 0;
             i {
                 font-size: $s-1;
             }

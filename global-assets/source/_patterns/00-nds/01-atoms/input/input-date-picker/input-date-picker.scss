@@ -1,7 +1,7 @@
 .input--date-picker {
     position: relative;
     &__field {
-        padding: .5rem $s-3 .5rem $s-1;
+        padding: $s-0-50 $s-3 $s-0-50 $s-1;
         width: 100%;
         border: $s-1px solid $input-border;
         color: $type-body;
@@ -37,7 +37,7 @@
     }
     th,
     td {
-        padding: .25rem .65rem;
+        padding: $s-0-25 $s-0-75;
         border-radius: 0 !important;
     }
     thead {

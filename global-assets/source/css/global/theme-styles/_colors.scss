@@ -179,10 +179,10 @@
     }
     .text-nds {
         &.text--blockquote {
-            border-left: .125rem solid $color-theme-2-accent;
+            border-left: $s-2px solid $color-theme-2-accent;
         }
         &.text--image-credit-caption {
-            border-left: 0.125rem solid $color-theme-2-accent;
+            border-left: $s-2px solid $color-theme-2-accent;
         }
         &.text--chip {
             &:hover,
@@ -205,7 +205,7 @@
     .block-nds {
         &.block--default {
             &.block--default--accent {
-                border-left: .25rem solid $color-theme-2-accent;
+                border-left: $s-0-25 solid $color-theme-2-accent;
             }
         }
         &.block--featured-content-card {
@@ -326,7 +326,7 @@
             }
         }
         &.global--footer {
-            border-top: .25rem solid $color-theme-2-accent;
+            border-top: $s-0-25 solid $color-theme-2-accent;
             .global--footer__content {
                 .link--carot {
                     &:after {
@@ -519,10 +519,10 @@
     }
     .text-nds {
         &.text--blockquote {
-            border-left: .125rem solid $color-theme-3-accent;
+            border-left: $s-2px solid $color-theme-3-accent;
         }
         &.text--image-credit-caption {
-            border-left: 0.125rem solid $color-theme-3-accent;
+            border-left: $s-2px solid $color-theme-3-accent;
         }
         &.text--chip {
             &:hover,
@@ -545,7 +545,7 @@
     .block-nds {
         &.block--default {
             &.block--default--accent {
-                border-left: .25rem solid $color-theme-3-accent;
+                border-left: $s-0-25 solid $color-theme-3-accent;
             }
         }
         &.block--featured-content-card {
@@ -666,7 +666,7 @@
             }
         }
         &.global--footer {
-            border-top: .25rem solid $color-theme-3-accent;
+            border-top: $s-0-25 solid $color-theme-3-accent;
             .global--footer__content {
                 .link--carot {
                     &:after {

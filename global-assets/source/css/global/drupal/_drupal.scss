@@ -43,10 +43,10 @@
         }
 
         li {
-            padding: .5rem $s-1;
+            padding: $s-0-50 $s-1;
 
             a {
-                @extend .p-0;
+                padding: 0;
                 color: $white;
 
                 &:hover, &:focus {

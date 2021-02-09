@@ -1,7 +1,7 @@
 .text--search-results {
     width: 100%;
     border-bottom: $s-1px solid $input-border;
-    padding: 0 0 .25rem 0;
+    padding-bottom: $s-0-25;
     margin: $s-1 0;
     &__title {
         margin: 0;
@@ -11,7 +11,7 @@
             font-size: $s-1-50;
         }
         &__text {
-            margin-left: -.25rem;
+            margin-left: -1 * $s-0-25;
             font-size: $s-1;
         }
     }

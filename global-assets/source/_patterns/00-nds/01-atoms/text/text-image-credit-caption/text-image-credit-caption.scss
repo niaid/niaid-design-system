@@ -4,7 +4,7 @@
     width: auto;
     border-left: $s-2px solid $color-theme-1-accent;
     &__caption {
-        padding-top: .25rem;
+        padding-top: $s-0-25;
         font-size: $s-0-75;
         span,
         p,
@@ -15,7 +15,7 @@
     }
     &__credit {
         line-height: initial;
-        padding: .25rem 0;
+        padding: $s-0-25 0;
         span,
         p,
         a,

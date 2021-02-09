@@ -4,14 +4,13 @@
     color: $white;
     border-radius: 0 !important;
     border: 0;
-    margin: 0;
     padding: $s-1;
     * {
         color: $white;
     }
     h1 {
-        font-size: 1.75rem;
-        margin-bottom: .75rem;
+        font-size: $s-1-75;
+        margin-bottom: $s-0-75;
         margin-top: 0;
         padding-top: 0;
     }
@@ -37,10 +36,10 @@
     }
     hr {
         background: $white;
-        margin: .75rem 0;
+        margin: $s-0-75 0;
     }
     p {
-        margin: .35rem 0;
+        margin: $s-0-25 0;
         &:last-child {
             margin-bottom: 0;
         }

@@ -1,9 +1,8 @@
 .navigation--breadcrumbs {
     font-weight: $font-weight-light;
-    font-size: .8rem;
-    margin: 0 0 $s-1-50 0;
+    font-size: $s-0-75;
     padding: 0;
-    >p {
+    > p {
         margin: 0;
         padding: 0;
     }
@@ -14,7 +13,7 @@
         }
     }
     i {
-        font-size: .7rem;
+        font-size: $s-0-75;
         width: auto;
         color: $type-body;
     }

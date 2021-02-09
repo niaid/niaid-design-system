@@ -4,15 +4,15 @@
     line-height: 1.5;
     &__toggle {
         .image--default {
-            margin-right: .5rem;
+            margin-right: $s-0-50;
         }
         display: flex;
         align-items: center;
         border-radius: 0 !important;
         background: transparent !important;
         border: 0 !important;
-        padding: .25rem $s-1-50;
-        font-size: .85rem;
+        padding: $s-0-25 $s-1-50;
+        font-size: $s-0-75;
         text-align: left;
         &:hover,
         &:focus {
@@ -21,7 +21,7 @@
             border: 0 !important;
         }
         .icon--default {
-            margin-left: .25rem;
+            margin-left: $s-0-25;
         }
         &[aria-expanded="true"] {
             .icon--default {
@@ -44,14 +44,14 @@
                 @extend .h5;
                 color: $white;
                 margin: 0;
-                font-size: 1.15rem;
+                font-size: $s-1-25;
             }
             &__icon {
                 height: $s-3;
                 margin-right: $s-1;
             }
             p {
-                font-size: .85rem;
+                font-size: $s-0-75;
                 color: $white;
                 margin: 0;
                 .icon-lock {

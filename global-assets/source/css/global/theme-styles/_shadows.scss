@@ -135,7 +135,7 @@
         background: $white;
         &.block--default {
             &.block--default--accent {
-                border-left: .25rem solid $color-theme-1-accent;
+                border-left: $s-0-25 solid $color-theme-1-accent;
             }
         }
         &.block--alert {
@@ -334,7 +334,7 @@
         .block-nds {
             &.block--default {
                 &.block--default--accent {
-                    border-left: .25rem solid $color-theme-2-accent;
+                    border-left: $s-0-25 solid $color-theme-2-accent;
                 }
             }
         }
@@ -428,7 +428,7 @@
         .block-nds {
             &.block--default {
                 &.block--default--accent {
-                    border-left: .25rem solid $color-theme-3-accent;
+                    border-left: $s-0-25 solid $color-theme-3-accent;
                 }
             }
         }

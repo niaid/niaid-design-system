@@ -1,10 +1,10 @@
 .global--footer {
     $footer-background: $type-heading;
     background: $footer-background;
-    min-height: 3.125rem;
+    min-height: $s-3-50;
     position: relative;
     padding: 0;
-    border-top: .25rem solid $color-theme-1-accent;
+    border-top: $s-0-25 solid $color-theme-1-accent;
     * {
         color: $white;
     }
@@ -34,9 +34,9 @@
                 @extend %fa-icon;
                 @extend .fas;
                 content: fa-content($fa-var-chevron-right);
-                font-size: 0.8rem;
-                padding-left: .5rem;
-                border-bottom: .25rem solid $footer-background;
+                font-size: $s-0-75;
+                padding-left: $s-0-50;
+                border-bottom: $s-0-25 solid $footer-background;
             }
         }
         &__column {
@@ -54,23 +54,22 @@
                 padding-left: 0;
                 li {
                     line-height: 1.5;
-                    margin-bottom: .75rem;
+                    margin-bottom: $s-0-75;
                 }
             }
             .image--logo {
                 &__image {
                     max-width: 100%;
-                    height: 3.5rem;
+                    height: $s-2-50;
                 }
             }
         }
     }
     &__tagline {
-        display: none;
-        // display: flex;
+        display: none; // Currently Disabled
         justify-content: center;
         align-items: center;
-        font-size: .8rem;
+        font-size: $s-0-75;
         padding: 0 $s-2;
         &:before, &:after {
             content: "";
@@ -89,7 +88,7 @@
             margin-left: $s-1;
         }
         .icon--default {
-            margin-right: .5rem;
+            margin-right: $s-0-50;
         }
     }
 }

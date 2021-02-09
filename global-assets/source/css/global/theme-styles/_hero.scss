@@ -15,7 +15,7 @@
     }
 
     &.style--corners--semirounded {
-        $corner-radius: .3125rem;
+        $corner-radius: $border-radius-semi;
         .layouts--body {
             @include media-breakpoint-up(lg){
                 border-top-left-radius: $corner-radius;

@@ -12,7 +12,7 @@
             text-align: left;
             .pager__item {
                 padding: 0;
-                margin-right: .5rem;
+                margin-right: $s-0-50;
                 display: inline-flex;
                 a {
                     @extend .button-nds;

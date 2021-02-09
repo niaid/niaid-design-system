@@ -1,14 +1,13 @@
 .navigation--local {
-    margin: 0 $s-2;
     padding: $s-2 $s-2 $s-1 $s-2;
     border-bottom-color: $color-theme-1-1-1;
     &__title {
         font-size: $s-1-50;
         margin: 0;
-        padding: 0 .5rem;
+        padding: 0 $s-0-50;
     }
     hr {
-        margin: .5rem 0;
+        margin: $s-0-50 0;
     }
     .is-active {
         font-weight: $font-weight-bold;
@@ -23,7 +22,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: .25rem .5rem;
+            padding: $s-0-25 $s-0-50;
             border-radius: 0;
             border: 0;
             background: none;
@@ -67,12 +66,12 @@
         }
         .level-0 {
             &.navigation--local__group__label {
-                margin-left: 0rem !important;
+                margin-left: 0 !important;
             }
         }
         .level-1 {
             &.navigation--local__group__label {
-                margin-left: .5rem !important;
+                margin-left: $s-0-50 !important;
             }
         }
         .level-2 {

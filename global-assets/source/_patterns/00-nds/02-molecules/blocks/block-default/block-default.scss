@@ -1,5 +1,4 @@
 .block--default {
-    margin: $s-1 0;
     display: inline-block;
     width: 100%;
     flex-wrap: wrap;
@@ -15,20 +14,12 @@
     .button--tertiary,
     .button--negative,
     button {
-        margin: $s-1 0 0 0;
         display: inline-flex;
     }
     ul, li, p {
         max-width: none;
-        & + .button--primary,
-        & + .button--secondary,
-        & + .button--tertiary,
-        & + .button--negative,
-        & + button {
-            margin: 0;
-        }
     }
     &.block--default--accent {
-        border-left: .25rem solid $color-theme-1-accent;
+        border-left: $s-0-25 solid $color-theme-1-accent;
     }
 }

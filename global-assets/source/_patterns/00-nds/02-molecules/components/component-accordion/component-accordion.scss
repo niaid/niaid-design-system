@@ -4,7 +4,7 @@
         overflow: visible;
         width: 100%;
         border: 0;
-        margin-bottom: .5rem;
+        margin-bottom: $s-0-50;
         &__header {
             @extend .card-header;
             z-index: 1;
@@ -19,7 +19,7 @@
                 border: $s-1px solid $type-link;
                 font-size: $s-1;
                 background: $white;
-                padding: $s-1 2.5rem $s-1 $s-1;
+                padding: $s-1 $s-2-50 $s-1 $s-1;
                 width: 100%;
                 text-align: left;
                 color: $type-link;
@@ -55,8 +55,8 @@
             @extend .card-body;
             @extend .block-nds;
             z-index: 0;
-            padding: 2.25rem $s-1-25 $s-1-25 $s-1-25;
-            margin-top: -$s-1;
+            padding: $s-2-25 $s-1-25 $s-1-25 $s-1-25;
+            margin-top: -1 * $s-1;
             border-top: 0 !important;
             border-top-left-radius: 0 !important;
             border-top-right-radius: 0 !important;
