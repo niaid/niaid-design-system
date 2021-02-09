@@ -12,13 +12,13 @@
         component_uswds_banner_classes: Additional banner classes.
         component_uswds_banner_id: Component ID.
 
-    Last Updated: January 28, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set component_uswds_banner_classes = component_uswds_banner_classes|default() %}
 {% set component_uswds_banner_id = component_uswds_banner_id|default() %}
 
-<aside class="component-nds component--uswds-banner usa-banner {{ component_uswds_banner_classes }}" aria-label="Official Government Website"{% if component_uswds_banner_id is not empty %} id="{{ component_uswds_banner_id }}"{% endif %}>
+<aside class="component-nds component--uswds-banner {{ component_uswds_banner_classes }}" aria-label="Official Government Website"{% if component_uswds_banner_id is not empty %} id="{{ component_uswds_banner_id }}"{% endif %}>
     <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
         {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
             {

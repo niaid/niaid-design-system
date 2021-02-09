@@ -114,9 +114,7 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
     if ($('.scrollspy').length) {
-      $('.scrollspy').scrollSpy({
-        scrollOffset: "0"
-      });
+      $('.scrollspy').scrollSpy();
     }
   }
 
@@ -171,6 +169,16 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     $('.component--snippet__block__pattern__toggle').on('click', function () {
       $(this).siblings('.component--snippet__block__pattern__content').toggleClass('open');
       $(this).toggleClass('open');
+    }); // Specific Component Handling:
+
+    $('.component--snippet').find('.component--uswds-banner__toggle').on('click', function () {
+      if ($(this).attr('aria-expanded') == 'true') {
+        $(this).attr('aria-expanded', 'false');
+        $(this).siblings(".component--uswds-banner__content").hide();
+      } else {
+        $(this).attr('aria-expanded', 'true');
+        $(this).siblings(".component--uswds-banner__content").show();
+      }
     });
   }
 
@@ -1001,7 +1009,11 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     $('select').on('select2:open', function (e) {
       $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
       $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
-    });
+    }); // Add Accessibility Compliane to Loaded Select Field
+
+    $('.select2-selection--single').attr('aria-label', 'Click to select option.');
+    $('.select2-selection--multiple').attr('aria-label', 'Click to select option(s).'); // Remove selection on click of "X"
+
     $(document).on('click', '.single-clear', function (e) {
       e.stopPropagation();
       var $selectField = $(this).parent().siblings('select');

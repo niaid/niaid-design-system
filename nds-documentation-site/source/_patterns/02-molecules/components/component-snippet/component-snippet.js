@@ -33,6 +33,18 @@
             $(this).siblings('.component--snippet__block__pattern__content').toggleClass('open');
             $(this).toggleClass('open');
         });
+
+        // Specific Component Handling:
+        $('.component--snippet').find('.component--uswds-banner__toggle').on('click', function() {
+            if ($(this).attr('aria-expanded') == 'true') {
+                $(this).attr('aria-expanded', 'false');
+                $(this).siblings(".component--uswds-banner__content").hide();
+            }
+            else {
+                $(this).attr('aria-expanded', 'true');
+                $(this).siblings(".component--uswds-banner__content").show();
+            }
+        });
     }
 
     function copyToClipboard($element) {

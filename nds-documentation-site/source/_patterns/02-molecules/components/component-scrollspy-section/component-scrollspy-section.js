@@ -1,7 +1,7 @@
 (function($) {
     function initComponentScrollspySection(context = document) {
         if ($('.scrollspy').length) {
-            $('.scrollspy').scrollSpy({scrollOffset: "0"});
+            $('.scrollspy').scrollSpy();
         }
     }
 

@@ -12,22 +12,25 @@
 
         Use the "icon_document_type" parameter to choose a type as follows:
 
-            Word - "file-word"
-            Excel - "file-excel"
-            PowerPoint - "file-ppt"
-            PDF - "file-pdf"
+            Word - "word"
+            Excel - "excel"
+            PowerPoint - "powerpoint"
+            PDF - "pdf"
             Image - "image"
             Video - "video"
+            Application - "application"
+            Link - "link"
 
     Parameters:
         icon_document_classes: Additional document icon classes.
         icon_document_id: Icon wrapper ID.
-        icon_document_type: Type of document icon. Options: file-word, file-excel, file-ppt, file-pdf, image, video.
+        icon_document_type: Type of document icon. Options: word, excel, powerpoint, pdf, image, video, application, link.
         icon_document_href: Optional button link destination.
         icon_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+        icon_document_aria_label: Aria Label for the document icon if it is linked (computed by the icon_document_type).
         icon_document_attributes: Additional icon attributes.
 
-    Last Updated: January 25, 2021
+    Last Updated: Febraury 9, 2021
 #}
 
 {% set icon_document_classes = icon_document_classes|default() %}
@@ -35,10 +38,31 @@
 {% set icon_document_type = icon_document_type|default() %}
 {% set icon_document_href = icon_document_href|default() %}
 {% set icon_document_icon_weight = icon_document_icon_weight|default('r') %}
+{% set icon_document_aria_label = icon_document_aria_label|default() %}
 {% set icon_document_attributes = icon_document_attributes|default() %}
 
-<{{ icon_document_href != "" ? 'a' : 'div' }} class="icon-nds icon--document {% if icon_document_type is not empty %}icon--document--{{ icon_document_type }}{% endif %} {{ icon_document_classes }}{% if icon_document_href is not empty %} icon--document--button{% endif %}"{% if icon_document_id is not empty %} id="{{ icon_document_id }}"{% endif %}{% if icon_document_href is not empty %} href="{{ icon_document_href }}"{% endif %} {{ icon_document_attributes }}>
-    {% if icon_document_type == "file-word" %}
+{% if icon_document_href != "" and icon_document_aria_label == "" %}
+    {% if icon_document_type == "word" %}
+        {% set icon_document_aria_label = "Open Word Document" %}
+    {% elseif icon_document_type == "excel" %}
+        {% set icon_document_aria_label = "Open Excel Document" %}
+    {% elseif icon_document_type == "powerpoint" %}
+        {% set icon_document_aria_label = "Open PowerPoint Document" %}
+    {% elseif icon_document_type == "pdf" %}
+        {% set icon_document_aria_label = "Open PDF Document" %}
+    {% elseif icon_document_type == "video" %}
+        {% set icon_document_aria_label = "Open Video" %}
+    {% elseif icon_document_type == "image" %}
+        {% set icon_document_aria_label = "Open Image" %}
+    {% elseif icon_document_type == "application" %}
+        {% set icon_document_aria_label = "Open Application" %}
+    {% elseif icon_document_type == "link" %}
+        {% set icon_document_aria_label = "Open Link" %}
+    {% endif %}
+{% endif %}
+
+<{{ icon_document_href != "" ? 'a' : 'div' }} class="icon-nds icon--document {% if icon_document_type is not empty %}icon--document--{{ icon_document_type }}{% endif %} {{ icon_document_classes }}{% if icon_document_href is not empty %} icon--document--button{% endif %}"{% if icon_document_id is not empty %} id="{{ icon_document_id }}"{% endif %}{% if icon_document_href is not empty %} href="{{ icon_document_href }}"{% endif %}{% if icon_document_aria_label is not empty %} aria-label="{{ icon_document_aria_label }}"{% endif %} {{ icon_document_attributes|raw }}>
+    {% if icon_document_type == "word" %}
         <div class="icon--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {
@@ -48,7 +72,7 @@
                 }
             %}
         </div>
-    {% elseif icon_document_type == "file-excel" %}
+    {% elseif icon_document_type == "excel" %}
         <div class="icon--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {
@@ -58,7 +82,7 @@
                 }
             %}
         </div>
-    {% elseif icon_document_type == "file-ppt" %}
+    {% elseif icon_document_type == "powerpoint" %}
         <div class="icon--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {
@@ -68,7 +92,7 @@
                 }
             %}
         </div>
-    {% elseif icon_document_type == "file-pdf" %}
+    {% elseif icon_document_type == "pdf" %}
         <div class="icon--document__wrapper">
             {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with 
                 {

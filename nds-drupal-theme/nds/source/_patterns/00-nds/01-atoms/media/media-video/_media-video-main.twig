@@ -19,7 +19,7 @@
 		media_video_src_webm: Path to the video source in .webm format.
 		media_video_attributes: Additional media attributes.
 
-    Last Updated: February 8, 2021
+    Last Updated: February 9, 2021
 #}
 
 {% set media_video_classes = media_video_classes|default() %}
@@ -42,7 +42,7 @@
 	{% set media_video_src_webm = assetsPath ~ media_video_src_webm %}
 {% endif %}
 
-<video class="media-nds media--video {{ media_video_classes }}" {% if media_video_id is not empty %} id="{{ media_video_id }}"{% endif %}{% if media_video_width is not empty %} width="{{ media_video_width }}"{% endif %}{% if media_video_height is not empty %} height="{{ media_video_height }}"{% endif %} controls="{{ media_video_controls }}" {{ media_video_attributes }}>
+<video class="media-nds media--video {{ media_video_classes }}" {% if media_video_id is not empty %} id="{{ media_video_id }}"{% endif %}{% if media_video_width is not empty %} width="{{ media_video_width }}"{% endif %}{% if media_video_height is not empty %} height="{{ media_video_height }}"{% endif %} controls="{{ media_video_controls }}" {{ media_video_attributes|raw }}>
 	{% if media_video_src_mp4 is not empty %}<source src="{{ media_video_src_mp4 }}" type="video/mp4">{% endif %}
 	{% if media_video_src_webm is not empty %}<source src="{{ media_video_src_webm }}" type="video/webm">{% endif %}
 	{% if media_video_src_ogv is not empty %}<source src="{{ media_video_src_ogv }}" type="video/ogv">{% endif %}
