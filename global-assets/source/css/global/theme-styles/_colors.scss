@@ -109,7 +109,7 @@
         &.icon--loader {
             .preloader-wrapper {
                 .spinner-layer {
-                    border-color: map-get(map-get(map-get($theme, 2), 2), 1);
+                    border-color: $color-theme-2-2-1;
                 }
             }
         }
@@ -450,7 +450,7 @@
         &.icon--loader {
             .preloader-wrapper {
                 .spinner-layer {
-                    border-color: map-get(map-get(map-get($theme, 3), 2), 1);
+                    border-color: $color-theme-3-2-1;
                 }
             }
         }

@@ -51,6 +51,31 @@ $brands-pinterest: #C92228;
 $brands-flickr: #FF0084;
 $brands-google-plus: #D34836;
 
+/**** COLORS > THEMES ****/
+$color-theme-1-1-1: #157B8D;
+$color-theme-1-1-2: #0E5763;
+$color-theme-1-2-1: #497951;
+$color-theme-1-2-2: #3D6543;
+$color-theme-1-3-1: #262626;
+$color-theme-1-3-2: #000;
+$color-theme-1-accent: #75C3AC;
+
+$color-theme-2-1-1: #586FAB;
+$color-theme-2-1-2: #425380;
+$color-theme-2-2-1: #247BA0;
+$color-theme-2-2-2: #17526B;
+$color-theme-2-3-1: #244D56;
+$color-theme-2-3-2: #173339;
+$color-theme-2-accent: #FAB952;
+
+$color-theme-3-1-1: #14675A;
+$color-theme-3-1-2: #0D443C;
+$color-theme-3-2-1: #423E63;
+$color-theme-3-2-2: #2A2840;
+$color-theme-3-3-1: #123B56;
+$color-theme-3-3-2: #0D2E44;
+$color-theme-3-accent: #79A9D1;
+
 /**** BORDER RADIUS ****/
 $border-radius-sharp: 0;
 $border-radius-semi: .3125rem;
@@ -71,88 +96,7 @@ $layout-main-max-width: 1800px;
 $layout-body-max-width: 1200px;
 $layout-type-max-width: 88ex;
 
-$theme: (
-    1: (
-        1: (
-            1: #157B8D,
-            2: #0E5763
-        ),
-        2: (
-            1: #497951,
-            2: #3D6543
-        ),
-        3: (
-            1: #262626,
-            2: #000
-        ),
-        4: (
-            1: #75C3AC
-        )
-    ),
-    2: (
-        1: (
-            1: #586FAB,
-            2: #425380
-        ),
-        2: (
-            1: #247BA0,
-            2: #17526B
-        ),
-        3: (
-            1: #244D56,
-            2: #173339
-        ),
-        4: (
-            1: #FAB952
-        )
-    ),
-    3: (
-        1: (
-            1: #14675A,
-            2: #0D443C
-        ),
-        2: (
-            1: #423E63,
-            2: #2A2840
-        ),
-        3: (
-            1: #123B56,
-            2: #0D2E44
-        ),
-        4: (
-            1: #79A9D1
-        )
-    )
-);
-
-// TOKENS
-
-// Colors
-$color-theme-1-1-1: map-get(map-get(map-get($theme, 1), 1), 1);
-$color-theme-1-1-2: map-get(map-get(map-get($theme, 1), 1), 2);
-$color-theme-1-2-1: map-get(map-get(map-get($theme, 1), 2), 1);
-$color-theme-1-2-2: map-get(map-get(map-get($theme, 1), 2), 2);
-$color-theme-1-3-1: map-get(map-get(map-get($theme, 1), 3), 1);
-$color-theme-1-3-2: map-get(map-get(map-get($theme, 1), 3), 2);
-$color-theme-1-accent: map-get(map-get(map-get($theme, 1), 4), 1);
-
-$color-theme-2-1-1: map-get(map-get(map-get($theme, 2), 1), 1);
-$color-theme-2-1-2: map-get(map-get(map-get($theme, 2), 1), 2);
-$color-theme-2-2-1: map-get(map-get(map-get($theme, 2), 2), 1);
-$color-theme-2-2-2: map-get(map-get(map-get($theme, 2), 2), 2);
-$color-theme-2-3-1: map-get(map-get(map-get($theme, 2), 3), 1);
-$color-theme-2-3-2: map-get(map-get(map-get($theme, 2), 3), 2);
-$color-theme-2-accent: map-get(map-get(map-get($theme, 2), 4), 1);
-
-$color-theme-3-1-1: map-get(map-get(map-get($theme, 3), 1), 1);
-$color-theme-3-1-2: map-get(map-get(map-get($theme, 3), 1), 2);
-$color-theme-3-2-1: map-get(map-get(map-get($theme, 3), 2), 1);
-$color-theme-3-2-2: map-get(map-get(map-get($theme, 3), 2), 2);
-$color-theme-3-3-1: map-get(map-get(map-get($theme, 3), 3), 1);
-$color-theme-3-3-2: map-get(map-get(map-get($theme, 3), 3), 2);
-$color-theme-3-accent: map-get(map-get(map-get($theme, 3), 4), 1);
-
-// Spacing
+/**** SPACING & SIZING ****/
 $base-size-pixels: 16;
 $base-spacer: 1rem;
 
@@ -179,6 +123,26 @@ $s-4-25: $s-4 + $s-0-25;
 $s-4-50: $s-4 + $s-0-50;
 $s-4-75: $s-4 + $s-0-75;
 $s-5: $base-spacer * 5;
+$s-5-25: $s-5 + $s-0-25;
+$s-5-50: $s-5 + $s-0-50;
+$s-5-75: $s-5 + $s-0-75;
 $s-6: $base-spacer * 6;
+$s-6-25: $s-6 + $s-0-25;
+$s-6-50: $s-6 + $s-0-50;
+$s-6-75: $s-6 + $s-0-75;
 $s-7: $base-spacer * 7;
+$s-7-25: $s-7 + $s-0-25;
+$s-7-50: $s-7 + $s-0-50;
+$s-7-75: $s-7 + $s-0-75;
 $s-8: $base-spacer * 8;
+$s-8-25: $s-8 + $s-0-25;
+$s-8-50: $s-8 + $s-0-50;
+$s-8-75: $s-8 + $s-0-75;
+$s-9: $base-spacer * 9;
+$s-9-25: $s-9 + $s-0-25;
+$s-9-50: $s-9 + $s-0-50;
+$s-9-75: $s-9 + $s-0-75;
+$s-10: $base-spacer * 10;
+$s-10-25: $s-10 + $s-0-25;
+$s-10-50: $s-10 + $s-0-50;
+$s-10-75: $s-10 + $s-0-75;
