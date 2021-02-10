@@ -17,6 +17,8 @@ $fa-font-path: '../webfonts/font-awesome';
 @import "overrides/variables.scss";
 @import "global/mixins.scss";
 @import "overrides/mixins.scss";
+@import "global/utilities.scss";
+@import "overrides/utilities.scss";
 
 // MATERIALZE
 @import "global/reset/reset-materialize.scss";
