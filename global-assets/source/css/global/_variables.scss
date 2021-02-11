@@ -5,6 +5,9 @@
 $white: #FFF;
 $black: #000;
 $niaid-blue: #20558A;
+$error: #D23342;
+$warning: #FFC10A;
+$success: #17805F;
 
 /**** COLORS > LAYOUT ****/
 $page-background: #FDFDFD;
@@ -27,16 +30,16 @@ $icon-doc-pdf: #F40F02;
 $media-audio-background: #F1F3F4;
 
 /**** COLORS > ALERT SEVERITY ****/
-$alert-severity-1: #D23342;
-$alert-severity-2: #FFC10A;
+$alert-severity-1: $error;
+$alert-severity-2: $warning;
 $alert-severity-3: #F8FF55;
-$alert-severity-4: #17805F;
+$alert-severity-4: $success;
 
 /**** COLORS > STATUS ****/
-$status-error: #D23342;
-$status-success: #17805F;
+$status-error: $error;
+$status-success: $success;
 $status-information: #4865E3;
-$status-warning: #FFC10A;
+$status-warning: $warning;
 
 /**** COLORS > INPUT ****/
 $input-border: #717171;

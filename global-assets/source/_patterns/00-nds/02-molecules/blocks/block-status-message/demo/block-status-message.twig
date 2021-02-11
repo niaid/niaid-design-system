@@ -7,7 +7,11 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
     {% endblock %}
 {% endembed %}
-
+{% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+    {
+        "spacer_classes": "h-1"
+    }
+%}
 {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
     {
         "block_status_message_type": "message--information"
@@ -17,7 +21,11 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
     {% endblock %}
 {% endembed %}
-
+{% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+    {
+        "spacer_classes": "h-1"
+    }
+%}
 {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
     {
         "block_status_message_type": "message--warning"
@@ -27,7 +35,11 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada bibendum arcu vitae elementum curabitur vitae.</p>
     {% endblock %}
 {% endembed %}
-
+{% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+    {
+        "spacer_classes": "h-1"
+    }
+%}
 {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
     {
         "block_status_message_type": "message--error"
