@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $('.fixed-left').each(function() {
         if (mql.matches) {
-            stickybits($(this).find('.layouts--main__first'));
+            stickybits($(this).find('.navigation--mobile-rail'));
         }
     });
 
@@ -13,11 +13,11 @@ $(document).ready(function() {
             wWidth = $(this).width();
             $('.fixed-left').each(function() {
                 if (mql.matches) {
-                    stickybits($(this).find('.layouts--main__first'));
+                    stickybits($(this).find('.navigation--mobile-rail'));
                 }
                 else {
-                    stickybits($(this).find('.layouts--main__first')).cleanup();
-                    $(this).find('.layouts--main__first').css('position', 'relative');
+                    stickybits($(this).find('.navigation--mobile-rail')).cleanup();
+                    $(this).find('.navigation--mobile-rail').css('position', 'relative');
                 }
             });
         }

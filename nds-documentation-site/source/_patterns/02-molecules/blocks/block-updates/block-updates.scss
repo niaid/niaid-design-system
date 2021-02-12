@@ -1,4 +1,5 @@
 .block-updates {
+    max-width: $layout-type-max-width;
     h2 {
         @extend .h3;
     }

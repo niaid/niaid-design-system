@@ -1293,9 +1293,9 @@
                             <p>NDS uses the <a href="https://fontawesome.com/">Font Awesome library</a> for all icons (with the exception of third-party applications and companies). In Font Awesome, icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:</p>
 
                             <ul>
-                                <li>Solid - fas</li>
-                                <li>Brands - fab</li>
-                                <li>Regular - fa/far</li>
+                                <li>Solid - <code>fas</code></li>
+                                <li>Brands - <code>fab</code></li>
+                                <li>Regular - <code>fa/far</code></li>
                             </ul>
 
                             <p>If you have access to Font Awesome Pro, a "Light" icon style (fal) and a Duotone iocn style (fad) are also supported.</p>
@@ -1303,11 +1303,11 @@
                             <p>NDS makes using Font Awesome icons easy through its icon-default pattern. This pattern has two key parameters: icon_default_type, and icon_default_weight. For the icon_default_type, simply pass the name of the icon (without the fa-). For weight, pass only the letter corresponding to the desired icon weight:</p>
 
                             <ul>
-                                <li>Solid - s</li>
-                                <li>Brands - b</li>
-                                <li>Regular - r</li>
-                                <li>Light - l (Pro Only)</li>
-                                <li>Duotone - d (Pro Only)</li>
+                                <li>Solid - <code>s</code></li>
+                                <li>Brands - <code>b</code></li>
+                                <li>Regular - <code>r</code></li>
+                                <li>Light - <code>l</code> (Pro Only)</li>
+                                <li>Duotone - <code>d</code> (Pro Only)</li>
                             </ul>
 
                             <p>Visit the <a href="https://fontawesome.com/icons?d=gallery">Font Awesome Library</a> to view the full Font Awesome icon library.</p>
@@ -1616,7 +1616,7 @@
                                             <ul>
                                                 <li>Word - "word"</li>
                                                 <li>Excel - "excel"</li>
-                                                <li>PowerPoint - "ppt"</li>
+                                                <li>PowerPoint - "powerpoint"</li>
                                                 <li>PDF - "pdf"</li>
                                                 <li>Image - "image"</li>
                                                 <li>Video - "video"</li>
@@ -1627,7 +1627,7 @@
                                             <ul>
                                                 <li>icon_document_classes: Additional document icon classes.</li>
                                                 <li>icon_document_id: Icon wrapper ID.</li>
-                                                <li>icon_document_type: Type of document icon. Options: file-word, file-excel, file-ppt, file-pdf, image, video.</li>
+                                                <li>icon_document_type: Type of document icon. Options: 'word', 'excel', 'powerpoint', 'pdf', 'image', 'video', 'application', 'link'.</li>
                                                 <li>icon_document_href: Optional button link destination.</li>
                                                 <li>icon_document_aria_label: Aria Label for the document icon if it is linked (computed by the icon_document_type).</li>
                                                 <li>icon_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
@@ -7184,6 +7184,7 @@
         </footer>
     </div>
     <script src="../js/custom/stickybits.min.js"></script>
+    <script src="../js/custom/matchMedia.js"></script>
 
     <script src="../js/libraries/jquery/jquery.min.js"></script>
     <script src="../js/libraries/select2/select2.full.min.js"></script>

@@ -1,6 +1,9 @@
 .block--design-files {
     padding: 0;
     margin-bottom: -1rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: $layout-type-max-width;
     .row {
         > div {
             margin-bottom: 1rem;

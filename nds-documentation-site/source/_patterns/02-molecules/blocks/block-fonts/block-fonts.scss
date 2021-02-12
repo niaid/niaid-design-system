@@ -1,5 +1,8 @@
 .block--fonts {
+    max-width: $layout-type-max-width;
     padding: 0;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: -1 * $s-1;
     .row {
         > div {

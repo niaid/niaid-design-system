@@ -22,7 +22,7 @@
         $('.component--snippet').find('.button--icon').on('click', function() {
             let $copyText = $(this).siblings('.component--snippet__block__code__wrapper__button__copied');
             $copyText.css('opacity', 0);
-            copyToClipboard($(this).closest('.component--snippet').find('pre'));
+            copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
             $copyText.css('opacity', 1);
             setTimeout(function() {
                 $copyText.css('opacity', 0);
