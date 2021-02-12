@@ -4,6 +4,8 @@
 
 (function($) {
     function initInputSelect(context = document) {
+        $('[data-toggle="tooltip"]').tooltip();
+        
         $('select').each(function() {
             if ($(this).attr('nds-select') == 'true') {
                 $(this).select2({

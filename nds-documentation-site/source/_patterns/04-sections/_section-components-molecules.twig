@@ -527,18 +527,6 @@
 
         <h4>Checkbox Group</h4>
         <p>The Checkbox Group pattern is designed to build a list of checkbox options with a label.</p>
-        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
-            {
-                "block_dependencies_data": [
-                    {
-                        "text": "Bootstrap 4"
-                    },
-                    {
-                        "text": "jQuery"
-                    }
-                ]
-            }
-        %} 
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-checkbox/demo/input-group-checkbox.twig" %}
@@ -567,18 +555,6 @@
 
         <h4>Radio Button Group</h4>
         <p>The Radio Group pattern is designed to build a list of radio options with a label.</p>
-        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
-            {
-                "block_dependencies_data": [
-                    {
-                        "text": "Bootstrap 4"
-                    },
-                    {
-                        "text": "jQuery"
-                    }
-                ]
-            }
-        %} 
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-radio/demo/input-group-radio.twig" %}
@@ -610,9 +586,6 @@
         {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
             {
                 "block_dependencies_data": [
-                    {
-                        "text": "Bootstrap 4"
-                    },
                     {
                         "text": "Select2"
                     },
@@ -818,7 +791,18 @@
         <p>Navigation elements are crucial to any website as they allow users to move between site pages. NDS offers several patterns to make navigation easy and policy-compliant.</p>
         <h4>Primary Navigation</h4>
         <p>Primary navigation is used to move between the major sections of your website. NDS recommends including primary navigation directly below the header of your site for easiest access.</p>
-        <p></p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_data": [
+                    {
+                        "text": "Bootstrap 4"
+                    },
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_classes": "component--snippet--primary-navigation"

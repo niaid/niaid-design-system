@@ -35,7 +35,7 @@
 {% set input_radio_readonly = input_radio_readonly|default() %}
 {% set input_radio_required = input_radio_required|default() %}
 
-<div class="input-nds input--radio {{ input_radio_classes }}">
+<div class="input-nds input--radio {{ input_radio_classes }}" tabindex="1">
     <input
         {% include "@nds/01-atoms/input/input-attributes/_input-attributes-main.twig" with
             {
