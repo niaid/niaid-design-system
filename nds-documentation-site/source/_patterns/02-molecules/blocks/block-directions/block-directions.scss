@@ -4,6 +4,9 @@
     box-shadow: none !important;
     padding: 0;
     border: 0 !important;
+    max-width: $layout-type-max-width;
+    margin-left: 0;
+    margin-right: 0;
     &__prev,
     &__next {
         > span {

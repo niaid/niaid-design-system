@@ -1,5 +1,5 @@
 .fixed-left {
-    .layouts--main__first {
+    .navigation--mobile-rail {
         @include media-breakpoint-up(lg) {
             height: 100vh;
             overflow-y: auto;

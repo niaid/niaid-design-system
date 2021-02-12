@@ -31,11 +31,17 @@
         border: 0.0625rem solid $brands-linkedin !important;
     }
     &--instagram {
-        background-color: #515BD4;
-        background-image: url('../images/global/icons/social/icon-social-instagram-background.png');
-        background-position: center;
+        background: rgb(246,135,79);
+        background: -moz-linear-gradient(45deg, rgba(246,135,79,1) 0%, rgba(207,70,121,1) 50%, rgba(140,47,143,1) 100%);
+        background: -webkit-linear-gradient(45deg, rgba(246,135,79,1) 0%, rgba(207,70,121,1) 50%, rgba(140,47,143,1) 100%);
+        background: linear-gradient(45deg, rgba(246,135,79,1) 0%, rgba(207,70,121,1) 50%, rgba(140,47,143,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f6874f",endColorstr="#8c2f8f",GradientType=1);
         color: $white !important;
-        border: 0.0625rem solid transparent !important;
+        border: 0 !important;
+        &:hover,
+        &:focus {
+            border: 0 !important;
+        }
     }
     &--youtube {
         background: $brands-youtube;
