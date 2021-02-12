@@ -9,15 +9,15 @@
     &__text {
         &:hover,
         &:focus {
-            border-bottom: 0.0625rem solid $type-link-underline;
+            border-bottom: $s-1px solid $type-link-underline;
         }
     }
 
     &--left {
-        margin-right: .5rem;
+        margin-right: $s-0-50;
     }
 
     &--right {
-        margin-left: .5rem;
+        margin-left: $s-0-50;
     }
 }

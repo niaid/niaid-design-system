@@ -1,8 +1,8 @@
 .button--external {
     @extend .button--primary;
-    padding: 1rem 1.25rem;
+    padding: $s-1 $s-1-25;
     .icon--default {
-        margin-left: .5rem;
+        margin-left: $s-0-50;
     }
     & + .ext-link-icon {
         display: none !important;
@@ -14,7 +14,7 @@
         &:focus {
             background: $color-theme-1-1-1;
             color: $white;
-            border: 0.0625rem solid $color-theme-1-1-1;
+            border: $s-1px solid $color-theme-1-1-1;
         }
     }
     &.button--negative {
@@ -24,7 +24,7 @@
         &:focus {
             background: $status-error;
             color: $white;
-            border: 0.0625rem solid $status-error;
+            border: $s-1px solid $status-error;
         }
     }
 }

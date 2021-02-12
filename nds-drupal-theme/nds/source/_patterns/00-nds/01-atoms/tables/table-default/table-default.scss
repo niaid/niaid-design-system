@@ -1,7 +1,7 @@
 table {
     width: 100%;
-    margin: 1rem 0;
-    border: 0.0625rem solid $input-border;
+    margin: $s-1 0;
+    border: $s-1px solid $input-border;
     border-collapse: separate;
     border-radius: 0;
     border-spacing: 0px;
@@ -13,7 +13,7 @@ table {
         vertical-align: inherit;
         border-color: inherit;
         th, td {
-            padding: 1rem; 
+            padding: $s-1; 
             text-align: left;
             vertical-align: top;
         }

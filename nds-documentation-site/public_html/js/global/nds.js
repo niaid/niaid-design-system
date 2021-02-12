@@ -65,49 +65,7 @@ $(document).ready(function () {
       init_layouts_tabs();
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initDataAttributes();
-}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-
-function initDataAttributes() {
-  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
-    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-
-    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
-
-    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-  }
-} // setDataAttributes - Helper function to add data attributes to elements.
-
-
-function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-  for (var i = 0; i < els.length; i++) {
-    var linkText = els[i].textContent.trim();
-
-    if (linkText !== "" && els[i].closest('.component--snippet') == null) {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-    }
-  }
-}
+})(jQuery);
 
 (function ($) {
   function initComponentScrollspySection() {
@@ -133,6 +91,115 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentScrollspySection();
+    });
+  }
+})(jQuery); // Functionality for Sticky Local Nav, NOT IN USE
+// (function($) {
+//     function initComponentStickybits(context = document) {
+//         $(window).ready(function() {
+//             stickybits(".component--accordion", { useStickyClasses: true, stickyBitStickyOffset: 24 });
+//             const stickybitsInstancetoBeUpdated = stickybits(".component--accordion");
+//             window.addEventListener('resize', function() {
+//                 console.log('resize');
+//                 stickybitsInstancetoBeUpdated.update({ useStickyClasses: true, stickyBitStickyOffset: 24 });
+//             });
+//         });
+//     }
+//     if (typeof Drupal !== 'undefined') {
+//         // Define Drupal behavior.
+//         (function($, Drupal) {
+//             Drupal.behaviors.initComponentStickybits = {
+//                 attach: function(context) {
+//                     $('body', context).once('nds-component-stickybits').each(function() {
+//                         initComponentStickybits(context);
+//                     });
+//                 },
+//             };
+//         })(jQuery, Drupal);
+//     } else {
+//         // If Drupal isn't loaded, add JS for Pattern Lab.
+//         $(document).ready(function() {
+//             initComponentStickybits();
+//         });
+//     }
+// })(jQuery);
+
+
+(function ($) {
+  function initComponentSnippet() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.component--snippet__block__code__wrapper__snippet').each(function () {
+      if ($("#components").length || $("#migration-guide").length) {
+        var codeSnippet = escapeHtml($(this).html());
+        $(this).empty();
+        $(this).append(codeSnippet);
+        $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
+        var block = $(this).find('code');
+        Prism.highlightElement(block[0]);
+        $('.component--snippet__block__code__wrapper').show();
+        $('.component--snippet__block__code__loader').hide();
+      } else {
+        var block = $(this).find('code');
+        Prism.highlightElement(block[0]);
+        $('.component--snippet__block__code__wrapper').show();
+        $('.component--snippet__block__code__loader').hide();
+      }
+    });
+    $('.component--snippet').find('.button--icon').on('click', function () {
+      var $copyText = $(this).siblings('.component--snippet__block__code__wrapper__button__copied');
+      $copyText.css('opacity', 0);
+      copyToClipboard($(this).closest('.component--snippet').find('pre'));
+      $copyText.css('opacity', 1);
+      setTimeout(function () {
+        $copyText.css('opacity', 0);
+      }, 2000);
+    });
+    $('.component--snippet__block__pattern__toggle').on('click', function () {
+      $(this).siblings('.component--snippet__block__pattern__content').toggleClass('open');
+      $(this).toggleClass('open');
+    }); // Specific Component Handling:
+
+    $('.component--snippet').find('.component--uswds-banner__toggle').on('click', function () {
+      if ($(this).attr('aria-expanded') == 'true') {
+        $(this).attr('aria-expanded', 'false');
+        $(this).siblings(".component--uswds-banner__content").hide();
+      } else {
+        $(this).attr('aria-expanded', 'true');
+        $(this).siblings(".component--uswds-banner__content").show();
+      }
+    });
+  }
+
+  function copyToClipboard($element) {
+    var copyText = $element.text();
+    var textArea = document.createElement('textarea');
+    textArea.classList.add("hidden-textarea");
+    textArea.textContent = copyText;
+    document.body.append(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+  }
+
+  function escapeHtml(unsafe) {
+    return unsafe.replace(/ "/g, '"').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/(^[ \t]*\n)/gm, "");
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentSnippet = {
+        attach: function attach(context) {
+          $('body', context).once('nds-component-snippet').each(function () {
+            initComponentSnippet(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentSnippet();
     });
   }
 })(jQuery);
@@ -291,116 +358,49 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       }
     });
   }
-})(jQuery);
+})(jQuery); // Part of NDS Lite
 
-(function ($) {
-  function initComponentSnippet() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('.component--snippet__block__code__wrapper__snippet').each(function () {
-      if ($("#components").length || $("#migration-guide").length) {
-        var codeSnippet = escapeHtml($(this).html());
-        $(this).empty();
-        $(this).append(codeSnippet);
-        $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
-        var block = $(this).find('code');
-        Prism.highlightElement(block[0]);
-        $('.component--snippet__block__code__wrapper').show();
-        $('.component--snippet__block__code__loader').hide();
-      } else {
-        var block = $(this).find('code');
-        Prism.highlightElement(block[0]);
-        $('.component--snippet__block__code__wrapper').show();
-        $('.component--snippet__block__code__loader').hide();
-      }
-    });
-    $('.component--snippet').find('.button--icon').on('click', function () {
-      var $copyText = $(this).siblings('.component--snippet__block__code__wrapper__button__copied');
-      $copyText.css('opacity', 0);
-      copyToClipboard($(this).closest('.component--snippet').find('pre'));
-      $copyText.css('opacity', 1);
-      setTimeout(function () {
-        $copyText.css('opacity', 0);
-      }, 2000);
-    });
-    $('.component--snippet__block__pattern__toggle').on('click', function () {
-      $(this).siblings('.component--snippet__block__pattern__content').toggleClass('open');
-      $(this).toggleClass('open');
-    }); // Specific Component Handling:
 
-    $('.component--snippet').find('.component--uswds-banner__toggle').on('click', function () {
-      if ($(this).attr('aria-expanded') == 'true') {
-        $(this).attr('aria-expanded', 'false');
-        $(this).siblings(".component--uswds-banner__content").hide();
-      } else {
-        $(this).attr('aria-expanded', 'true');
-        $(this).siblings(".component--uswds-banner__content").show();
-      }
-    });
+document.addEventListener("DOMContentLoaded", function (e) {
+  initDataAttributes();
+}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+
+function initDataAttributes() {
+  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
+    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
   }
 
-  function copyToClipboard($element) {
-    var copyText = $element.text();
-    var textArea = document.createElement('textarea');
-    textArea.classList.add("hidden-textarea");
-    textArea.textContent = copyText;
-    document.body.append(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    textArea.remove();
+  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
   }
 
-  function escapeHtml(unsafe) {
-    return unsafe.replace(/ "/g, '"').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/(^[ \t]*\n)/gm, "");
+  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
   }
 
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentSnippet = {
-        attach: function attach(context) {
-          $('body', context).once('nds-component-snippet').each(function () {
-            initComponentSnippet(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentSnippet();
-    });
-  }
-})(jQuery); // Functionality for Sticky Local Nav, NOT IN USE
-// (function($) {
-//     function initComponentStickybits(context = document) {
-//         $(window).ready(function() {
-//             stickybits(".component--accordion", { useStickyClasses: true, stickyBitStickyOffset: 24 });
-//             const stickybitsInstancetoBeUpdated = stickybits(".component--accordion");
-//             window.addEventListener('resize', function() {
-//                 console.log('resize');
-//                 stickybitsInstancetoBeUpdated.update({ useStickyClasses: true, stickyBitStickyOffset: 24 });
-//             });
-//         });
-//     }
-//     if (typeof Drupal !== 'undefined') {
-//         // Define Drupal behavior.
-//         (function($, Drupal) {
-//             Drupal.behaviors.initComponentStickybits = {
-//                 attach: function(context) {
-//                     $('body', context).once('nds-component-stickybits').each(function() {
-//                         initComponentStickybits(context);
-//                     });
-//                 },
-//             };
-//         })(jQuery, Drupal);
-//     } else {
-//         // If Drupal isn't loaded, add JS for Pattern Lab.
-//         $(document).ready(function() {
-//             initComponentStickybits();
-//         });
-//     }
-// })(jQuery);
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
 
+    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+  }
+} // setDataAttributes - Helper function to add data attributes to elements.
+
+
+function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+  for (var i = 0; i < els.length; i++) {
+    var linkText = els[i].textContent.trim();
+
+    if (linkText !== "" && els[i].closest('.component--snippet') == null) {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    }
+  }
+}
 
 (function ($) {
   function init_build_controls(context) {
@@ -946,54 +946,6 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
 })(jQuery);
 
 (function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initComponentUSWDSBanner();
-}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
-
-function initComponentUSWDSBanner() {
-  if (document.querySelectorAll('#uswds-banner-toggle').length > 0) {
-    document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
-      if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
-        document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
-        document.getElementById("uswds-banner-content").style.display = 'none';
-      } else {
-        document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
-        document.getElementById("uswds-banner-content").style.display = 'block';
-      }
-    });
-  }
-}
-
-(function ($) {
   function initComponentModal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -1050,7 +1002,55 @@ function initComponentUSWDSBanner() {
       initComponentModal();
     });
   }
+})(jQuery);
+
+(function ($) {
+  function initComponentMedia() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentMedia = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentMedia();
+    });
+  }
 })(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initComponentUSWDSBanner();
+}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+
+function initComponentUSWDSBanner() {
+  if (document.querySelectorAll('#uswds-banner-toggle').length > 0) {
+    document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+      if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+        document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+        document.getElementById("uswds-banner-content").style.display = 'none';
+      } else {
+        document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+        document.getElementById("uswds-banner-content").style.display = 'block';
+      }
+    });
+  }
+} // Part of NDS Lite
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
