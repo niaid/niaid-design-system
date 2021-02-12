@@ -34,7 +34,7 @@
 {% set input_checkbox_readonly = input_checkbox_readonly|default() %}
 {% set input_checkbox_required = input_checkbox_required|default() %}
 
-<div class="input-nds input--checkbox {{ input_checkbox_classes }}">
+<div class="input-nds input--checkbox {{ input_checkbox_classes }}" tabindex="1">
     <input
         {% include "@nds/01-atoms/input/input-attributes/_input-attributes-main.twig" with
             {
