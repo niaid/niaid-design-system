@@ -1,14 +1,14 @@
 .icon--document {
     display: block;
     position: relative;
-    height: 4rem;
-    width: 4rem;
+    height: $s-4;
+    width: $s-4;
     padding: 0;
     border: 0;
     &__wrapper {
         display: flex;
         position: relative;
-        font-size: 1.65rem;
+        font-size: $s-1-75;
         height: 100%;
         align-items: center;
         justify-content: center;
@@ -29,7 +29,7 @@
     }
     .icon--default {
         &--application {
-            font-size: 1.25rem;
+            font-size: $s-1-25;
         }
     }
     &.icon--document--button {

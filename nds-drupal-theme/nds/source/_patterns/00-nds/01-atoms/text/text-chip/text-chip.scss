@@ -1,20 +1,20 @@
 .text--chip {
     @extend .button-nds;
     @extend .button--tertiary;
-    padding: 1rem;
+    padding: $s-1;
     display: inline-flex;
     cursor: default;
     a {
         color: $white;
         border-bottom: 0;
-        margin-left: .5rem;
+        margin-left: $s-0-50;
         &:visited {
             color: $white;
         }
     }
     &:hover,
     &:focus {
-        border: .0625rem solid $color-theme-1-2-1;
+        border: $s-1px solid $color-theme-1-2-1;
         background: $color-theme-1-2-1;
     }
 }

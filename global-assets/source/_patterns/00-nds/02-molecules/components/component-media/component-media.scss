@@ -1,5 +1,4 @@
 .component--media {
-    margin: 2rem 0;
     width: 100%;
     max-width: 100%;
     .image--default {
@@ -21,13 +20,12 @@
     &--left {
         float: left;
         clear: right;
-        margin-right: 2rem;
-        max-width: 50%;
+        margin-right: $s-2;
     }
     &--right {
         float: right;
         clear: left;
-        margin-left: 2rem;
+        margin-left: $s-2;
     }
     /* Drupal Overrides */
     .field--name-field-media-caption,

@@ -1,0 +1,180 @@
+// SPACING & SIZING
+
+$spacers: 10;
+$intervals: 25, 50, 75;
+$mods: 't', 'b', 'l', 'r', 'x', 'y';
+
+$map-mods: (
+    't': 'top',
+    'b': 'bottom',
+    'l': 'left',
+    'r': 'right',
+    'x': ('left', 'right'),
+    'y': ('top', 'bottom')
+);
+
+@mixin spaceUtil($abbreviation, $rule) {
+    @for $i from 0 through $spacers {
+        $important: '';
+        // Overriding Bootstrap Utilities
+        @if ($i == 1 or $i == 2 or $i == 3 or $i == 4 or $i == 5) { 
+            $important: '!important';
+        }
+        @if $i != 0 { 
+            .#{$abbreviation}-#{$i} {
+                #{$rule}: ($i * $base-spacer) #{$important};
+            }
+            @each $mod in $mods {
+                .#{$abbreviation}-#{$mod}-#{$i} {
+                    @each $j in map-get($map-mods, $mod) {
+                        #{$rule}-#{$j}: $i * $base-spacer;
+                    }
+                }
+            }
+        }
+        @each $interval in $intervals {
+            .#{$abbreviation}-#{$i}-#{$interval} {
+                #{$rule}: $i * $base-spacer + ($interval / 100);
+            }
+            @each $mod in $mods {
+                .#{$abbreviation}-#{$mod}-#{$i}-#{$interval} {
+                    @each $j in map-get($map-mods, $mod) {
+                        #{$rule}-#{$j}: $i * $base-spacer + ($interval / 100);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin sizeUtil($abbreviation, $rule) {
+    @for $i from 1 through $spacers {
+        .#{$abbreviation}-#{$i} {
+            #{$rule}: $i * $base-spacer;
+        }
+        @each $interval in $intervals {
+            .#{$abbreviation}-#{$i}-#{$interval} {
+                #{$rule}: $i * $base-spacer + ($interval / 100);
+            }
+        }
+    }
+}
+
+@include spaceUtil('m', 'margin');
+@include spaceUtil('p', 'padding');
+@include sizeUtil('h', 'height');
+@include sizeUtil('w', 'width');
+
+$s-1px: $base-spacer / $base-size-pixels;
+$s-2px: ($base-spacer * 2) / $base-size-pixels;
+
+// Smaller Units
+.m-1px {
+    margin: $s-1px;
+}
+.m-1px-t {
+    margin-top: $s-1px;
+}
+.m-1px-b {
+    margin-bottom: $s-1px;
+}
+.m-1px-l {
+    margin-left: $s-1px;
+}
+.m-1px-r {
+    margin-right: $s-1px;
+}
+.m-1px-x {
+    margin-left: $s-1px;
+    margin-right: $s-1px;
+}
+.m-1px-y {
+    margin-top: $s-1px;
+    margin-bottom: $s-1px;
+}
+
+.p-1px {
+    padding: $s-1px;
+}
+.p-1px-t {
+    padding-top: $s-1px;
+}
+.p-1px-b {
+    padding-bottom: $s-1px;
+}
+.p-1px-l {
+    padding-left: $s-1px;
+}
+.p-1px-r {
+    padding-right: $s-1px;
+}
+.p-1px-x {
+    padding-left: $s-1px;
+    padding-right: $s-1px;
+}
+.p-1px-y {
+    padding-top: $s-1px;
+    padding-bottom: $s-1px;
+}
+
+.h-1px {
+    height: $s-1px;
+}
+.w-1px {
+    width: $s-1px;
+}
+
+.m-2px {
+    margin: $s-2px;
+}
+.m-2px-t {
+    margin-top: $s-2px;
+}
+.m-2px-b {
+    margin-bottom: $s-2px;
+}
+.m-2px-l {
+    margin-left: $s-2px;
+}
+.m-2px-r {
+    margin-right: $s-2px;
+}
+.m-2px-x {
+    margin-left: $s-2px;
+    margin-right: $s-2px;
+}
+.m-2px-y {
+    margin-top: $s-2px;
+    margin-bottom: $s-2px;
+}
+
+.p-2px {
+    padding: $s-2px;
+}
+.p-2px-t {
+    padding-top: $s-2px;
+}
+.p-2px-b {
+    padding-bottom: $s-2px;
+}
+.p-2px-l {
+    padding-left: $s-2px;
+}
+.p-2px-r {
+    padding-right: $s-2px;
+}
+.p-2px-x {
+    padding-left: $s-2px;
+    padding-right: $s-2px;
+}
+.p-2px-y {
+    padding-top: $s-2px;
+    padding-bottom: $s-2px;
+}
+
+.h-2px {
+    height: $s-2px;
+}
+.w-2px {
+    width: $s-2px;
+}

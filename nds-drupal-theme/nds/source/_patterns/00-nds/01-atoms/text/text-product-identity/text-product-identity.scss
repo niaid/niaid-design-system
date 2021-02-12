@@ -8,7 +8,7 @@
     &__top,
     &__bottom {
         color: $type-heading;
-        font-size: 1.25rem;
+        font-size: $s-1-25;
         &.bold {
             font-weight: $font-weight-bold !important;
         }
@@ -20,7 +20,7 @@
         .text--product-identity {
             &__top,
             &__bottom {
-                font-size: 1rem;
+                font-size: $s-1;
             }
         }
     }

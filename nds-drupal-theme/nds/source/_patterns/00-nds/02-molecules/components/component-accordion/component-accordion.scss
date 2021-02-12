@@ -4,7 +4,7 @@
         overflow: visible;
         width: 100%;
         border: 0;
-        margin-bottom: .5rem;
+        margin-bottom: $s-0-50;
         &__header {
             @extend .card-header;
             z-index: 1;
@@ -16,10 +16,10 @@
                 padding: 0;
             }
             &__button {
-                border: .0625rem solid $type-link;
-                font-size: 1rem;
+                border: $s-1px solid $type-link;
+                font-size: $s-1;
                 background: $white;
-                padding: 1rem 2.5rem 1rem 1rem;
+                padding: $s-1 $s-2-50 $s-1 $s-1;
                 width: 100%;
                 text-align: left;
                 color: $type-link;
@@ -29,7 +29,7 @@
                     @extend %fa-icon;
                     @extend .fas;
                     position: absolute;
-                    margin-right: 1rem;
+                    margin-right: $s-1;
                     right: 0;
                     color: $color-theme-1-1-1;
                     top: 50%;
@@ -38,7 +38,7 @@
                 &:hover,
                 &:focus {
                     background: $type-link;
-                    border: .0625rem solid $type-link;
+                    border: $s-1px solid $type-link;
                     &:after {
                         color: $white;
                     }
@@ -55,8 +55,8 @@
             @extend .card-body;
             @extend .block-nds;
             z-index: 0;
-            padding: 2.25rem 1.25rem 1.25rem 1.25rem;
-            margin-top: -1rem;
+            padding: $s-2-25 $s-1-25 $s-1-25 $s-1-25;
+            margin-top: -1 * $s-1;
             border-top: 0 !important;
             border-top-left-radius: 0 !important;
             border-top-right-radius: 0 !important;

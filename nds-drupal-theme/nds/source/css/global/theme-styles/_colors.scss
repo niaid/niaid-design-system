@@ -2,12 +2,12 @@
     /* Atoms */
     button {
         background: $color-theme-2-1-1;
-        border: 0.0625rem solid $color-theme-2-1-1;
+        border: $s-1px solid $color-theme-2-1-1;
         &:hover,
         &:focus,
         &:active {
             background: $color-theme-2-1-2;
-            border: 0.0625rem solid $color-theme-2-1-2;
+            border: $s-1px solid $color-theme-2-1-2;
         }
         &.button--secondary {
             color: $color-theme-2-1-1;
@@ -16,17 +16,17 @@
             &:focus {
                 background: $color-theme-2-1-1;
                 color: $white;
-                border: 0.0625rem solid $color-theme-2-1-1;
+                border: $s-1px solid $color-theme-2-1-1;
             }
         }
         &.button--tertiary {
             background: $color-theme-2-2-1;
-            border: 0.0625rem solid $color-theme-2-2-1;
+            border: $s-1px solid $color-theme-2-2-1;
             &:hover,
             &:focus,
             &:active {
                 background: $color-theme-2-2-2;
-                border: 0.0625rem solid $color-theme-2-2-2;
+                border: $s-1px solid $color-theme-2-2-2;
             }
         }
         &.button--negative {
@@ -36,47 +36,47 @@
             &:focus {
                 background: $status-error;
                 color: $white;
-                border: 0.0625rem solid $status-error;
+                border: $s-1px solid $status-error;
             }
         }
     }
     .button-nds {
         &.button--primary {
             background: $color-theme-2-1-1;
-            border: 0.0625rem solid $color-theme-2-1-1;
+            border: $s-1px solid $color-theme-2-1-1;
             &:hover,
             &:focus {
                 background: $color-theme-2-1-2;
-                border: 0.0625rem solid $color-theme-2-1-2;
+                border: $s-1px solid $color-theme-2-1-2;
             }
         }
         &.button--secondary {
             color: $color-theme-2-1-1;
-            border: 0.0625rem solid $color-theme-2-1-1;
+            border: $s-1px solid $color-theme-2-1-1;
             &:hover,
             &:focus {
                 color: $white;
                 background: $color-theme-2-1-1;
-                border: 0.0625rem solid $color-theme-2-1-1;
+                border: $s-1px solid $color-theme-2-1-1;
             }
         }
         &.button--tertiary {
             background: $color-theme-2-2-1;
-            border: 0.0625rem solid $color-theme-2-2-1;
+            border: $s-1px solid $color-theme-2-2-1;
             &:hover,
             &:focus {
                 background: $color-theme-2-2-2;
-                border: 0.0625rem solid $color-theme-2-2-2;
+                border: $s-1px solid $color-theme-2-2-2;
             }
         }
         &.button--negative {
             color: $status-error;
-            border: 0.0625rem solid $status-error;
+            border: $s-1px solid $status-error;
             &:hover,
             &:focus {
                 color: $white;
                 background: $status-error;
-                border: 0.0625rem solid $status-error;
+                border: $s-1px solid $status-error;
             }
         }
         &.button--floating,
@@ -90,7 +90,7 @@
                 &:focus {
                     background: $color-theme-2-1-1;
                     color: $white;
-                    border: 0.0625rem solid $color-theme-2-1-1;
+                    border: $s-1px solid $color-theme-2-1-1;
                 }
             }
             &.button--negative {
@@ -100,7 +100,7 @@
                 &:focus {
                     background: $status-error;
                     color: $white;
-                    border: 0.0625rem solid $status-error;
+                    border: $s-1px solid $status-error;
                 }
             }
         }
@@ -109,7 +109,7 @@
         &.icon--loader {
             .preloader-wrapper {
                 .spinner-layer {
-                    border-color: map-get(map-get(map-get($theme, 2), 2), 1);
+                    border-color: $color-theme-2-2-1;
                 }
             }
         }
@@ -148,7 +148,7 @@
             input:checked~label {
                 &:before {
                     background: $color-theme-2-1-1;
-                    border: 0.0625rem solid $color-theme-2-1-1;
+                    border: $s-1px solid $color-theme-2-1-1;
                 }
             }
         }
@@ -179,15 +179,15 @@
     }
     .text-nds {
         &.text--blockquote {
-            border-left: .125rem solid $color-theme-2-accent;
+            border-left: $s-2px solid $color-theme-2-accent;
         }
         &.text--image-credit-caption {
-            border-left: 0.125rem solid $color-theme-2-accent;
+            border-left: $s-2px solid $color-theme-2-accent;
         }
         &.text--chip {
             &:hover,
             &:focus {
-                border: .0625rem solid $color-theme-2-2-1;
+                border: $s-1px solid $color-theme-2-2-1;
                 background: $color-theme-2-2-1;
             }
         }
@@ -205,7 +205,7 @@
     .block-nds {
         &.block--default {
             &.block--default--accent {
-                border-left: .25rem solid $color-theme-2-accent;
+                border-left: $s-0-25 solid $color-theme-2-accent;
             }
         }
         &.block--featured-content-card {
@@ -238,14 +238,14 @@
                 &__header {
                     &__button {
                         background: $white;
-                        border: .0625rem solid $type-link;
+                        border: $s-1px solid $type-link;
                         &:after {
                             color: $color-theme-2-1-1;
                         }
                         &:hover,
                         &:focus {
                             background: $type-link;
-                            border: .0625rem solid $type-link;
+                            border: $s-1px solid $type-link;
                             &:after {
                                 color: $white;
                             }
@@ -296,7 +296,7 @@
         &.navigation--mobile-rail {
             .navigation--mobile-rail__button {
                 color: $color-theme-2-1-1;
-                border: 0.0625rem solid $color-theme-2-1-1;
+                border: $s-1px solid $color-theme-2-1-1;
                 &:hover,
                 &:focus {
                     background: $color-theme-2-1-1;
@@ -327,7 +327,7 @@
             }
         }
         &.global--footer {
-            border-top: .25rem solid $color-theme-2-accent;
+            border-top: $s-0-25 solid $color-theme-2-accent;
             .global--footer__content {
                 .link--carot {
                     &:after {
@@ -343,12 +343,12 @@
     /* Atoms */
     button {
         background: $color-theme-3-1-1;
-        border: 0.0625rem solid $color-theme-3-1-1;
+        border: $s-1px solid $color-theme-3-1-1;
         &:hover,
         &:focus,
         &:active {
             background: $color-theme-3-1-2;
-            border: 0.0625rem solid $color-theme-3-1-2;
+            border: $s-1px solid $color-theme-3-1-2;
         }
         &.button--secondary {
             color: $color-theme-3-1-1;
@@ -357,17 +357,17 @@
             &:focus {
                 background: $color-theme-3-1-1;
                 color: $white;
-                border: 0.0625rem solid $color-theme-3-1-1;
+                border: $s-1px solid $color-theme-3-1-1;
             }
         }
         &.button--tertiary {
             background: $color-theme-3-2-1;
-            border: 0.0625rem solid $color-theme-3-2-1;
+            border: $s-1px solid $color-theme-3-2-1;
             &:hover,
             &:focus,
             &:active {
                 background: $color-theme-3-2-2;
-                border: 0.0625rem solid $color-theme-3-2-2;
+                border: $s-1px solid $color-theme-3-2-2;
             }
         }
         &.button--negative {
@@ -377,47 +377,47 @@
             &:focus {
                 background: $status-error;
                 color: $white;
-                border: 0.0625rem solid $status-error;
+                border: $s-1px solid $status-error;
             }
         }
     }
     .button-nds {
         &.button--primary {
             background: $color-theme-3-1-1;
-            border: 0.0625rem solid $color-theme-3-1-1;
+            border: $s-1px solid $color-theme-3-1-1;
             &:hover,
             &:focus {
                 background: $color-theme-3-1-2;
-                border: 0.0625rem solid $color-theme-3-1-2;
+                border: $s-1px solid $color-theme-3-1-2;
             }
         }
         &.button--secondary {
             color: $color-theme-3-1-1;
-            border: 0.0625rem solid $color-theme-3-1-1;
+            border: $s-1px solid $color-theme-3-1-1;
             &:hover,
             &:focus {
                 color: $white;
                 background: $color-theme-3-1-1;
-                border: 0.0625rem solid $color-theme-3-1-1;
+                border: $s-1px solid $color-theme-3-1-1;
             }
         }
         &.button--tertiary {
             background: $color-theme-3-2-1;
-            border: 0.0625rem solid $color-theme-3-2-1;
+            border: $s-1px solid $color-theme-3-2-1;
             &:hover,
             &:focus {
                 background: $color-theme-3-2-2;
-                border: 0.0625rem solid $color-theme-3-2-2;
+                border: $s-1px solid $color-theme-3-2-2;
             }
         }
         &.button--negative {
             color: $status-error;
-            border: 0.0625rem solid $status-error;
+            border: $s-1px solid $status-error;
             &:hover,
             &:focus {
                 color: $white;
                 background: $status-error;
-                border: 0.0625rem solid $status-error;
+                border: $s-1px solid $status-error;
             }
         }
         &.button--floating,
@@ -431,7 +431,7 @@
                 &:focus {
                     background: $color-theme-3-1-1;
                     color: $white;
-                    border: 0.0625rem solid $color-theme-3-1-1;
+                    border: $s-1px solid $color-theme-3-1-1;
                 }
             }
             &.button--negative {
@@ -441,7 +441,7 @@
                 &:focus {
                     background: $status-error;
                     color: $white;
-                    border: 0.0625rem solid $status-error;
+                    border: $s-1px solid $status-error;
                 }
             }
         }
@@ -450,7 +450,7 @@
         &.icon--loader {
             .preloader-wrapper {
                 .spinner-layer {
-                    border-color: map-get(map-get(map-get($theme, 3), 2), 1);
+                    border-color: $color-theme-3-2-1;
                 }
             }
         }
@@ -489,7 +489,7 @@
             input:checked~label {
                 &:before {
                     background: $color-theme-3-1-1;
-                    border: 0.0625rem solid $color-theme-3-1-1;
+                    border: $s-1px solid $color-theme-3-1-1;
                 }
             }
         }
@@ -520,15 +520,15 @@
     }
     .text-nds {
         &.text--blockquote {
-            border-left: .125rem solid $color-theme-3-accent;
+            border-left: $s-2px solid $color-theme-3-accent;
         }
         &.text--image-credit-caption {
-            border-left: 0.125rem solid $color-theme-3-accent;
+            border-left: $s-2px solid $color-theme-3-accent;
         }
         &.text--chip {
             &:hover,
             &:focus {
-                border: .0625rem solid $color-theme-3-2-1;
+                border: $s-1px solid $color-theme-3-2-1;
                 background: $color-theme-3-2-1;
             }
         }
@@ -546,7 +546,7 @@
     .block-nds {
         &.block--default {
             &.block--default--accent {
-                border-left: .25rem solid $color-theme-3-accent;
+                border-left: $s-0-25 solid $color-theme-3-accent;
             }
         }
         &.block--featured-content-card {
@@ -579,14 +579,14 @@
                 &__header {
                     &__button {
                         background: $white;
-                        border: .0625rem solid $type-link;
+                        border: $s-1px solid $type-link;
                         &:after {
                             color: $color-theme-3-1-1;
                         }
                         &:hover,
                         &:focus {
                             background: $type-link;
-                            border: .0625rem solid $type-link;
+                            border: $s-1px solid $type-link;
                             &:after {
                                 color: $white;
                             }
@@ -637,7 +637,7 @@
         &.navigation--mobile-rail {
             .navigation--mobile-rail__button {
                 color: $color-theme-3-1-1;
-                border: 0.0625rem solid $color-theme-3-1-1;
+                border: $s-1px solid $color-theme-3-1-1;
                 &:hover,
                 &:focus {
                     background: $color-theme-3-1-1;
@@ -668,7 +668,7 @@
             }
         }
         &.global--footer {
-            border-top: .25rem solid $color-theme-3-accent;
+            border-top: $s-0-25 solid $color-theme-3-accent;
             .global--footer__content {
                 .link--carot {
                     &:after {

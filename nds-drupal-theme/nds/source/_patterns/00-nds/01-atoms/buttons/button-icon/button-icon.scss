@@ -1,12 +1,12 @@
 .button--icon {
     @extend .button--primary;
-    padding: 1rem 1.25rem;
+    padding: $s-1 $s-1-25;
     &__text {
         &.icon--left {
-            padding-left: .4rem;
+            padding-left: $s-0-50;
         }
         &.icon--right {
-            padding-right: .4rem;
+            padding-right: $s-0-50;
         }
     }
     &.button--secondary {
@@ -16,7 +16,7 @@
         &:focus {
             background: $color-theme-1-1-1;
             color: $white;
-            border: 0.0625rem solid $color-theme-1-1-1;
+            border: $s-1px solid $color-theme-1-1-1;
         }
     }
     &.button--negative {
@@ -26,11 +26,11 @@
         &:focus {
             background: $status-error;
             color: $white;
-            border: 0.0625rem solid $status-error;
+            border: $s-1px solid $status-error;
         }
     }
     &--large {
-        font-size: 1.5rem;
-        padding: .75rem 1rem;
+        font-size: $s-1-50;
+        padding: $s-0-75 $s-1;
     }
 }

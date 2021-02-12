@@ -2,11 +2,11 @@
     position: relative;
     z-index: 160;
     background: $page-background;
-    padding: 1.5rem;
+    padding: $s-1-50;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 0.0625rem solid $type-body;
+    border-bottom: $s-1px solid $type-body;
     @include media-breakpoint-up('lg') {
         border-bottom: 0;
     }
@@ -14,8 +14,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 3rem;
-        width: 3rem;
+        height: $s-3;
+        width: $s-3;
         padding: 0;
         @include media-breakpoint-up('md') {
             display: none;

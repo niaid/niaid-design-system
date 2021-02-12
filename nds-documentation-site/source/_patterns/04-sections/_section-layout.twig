@@ -8,10 +8,117 @@
         <h3>Layout</h3>
         <p>Web pages are built using a 12-column grid system, provided under the <a href="https://getbootstrap.com/">Bootstrap 4</a> framework. To learn more about the Bootstrap 4 grid system, visit the official <a href="https://getbootstrap.com/docs/4.5/layout/grid/">Bootstrap 4 grid system documentation.</a></p>
 
-        <p>NDS websites will typically have a main content area that occupies eight or nine Bootstrap columns out of 12. This configuration allows for a side rail of content, such as a section for local navigation.</p>
+        <p>NDS websites will typically have a main content area that occupies eight or nine Bootstrap columns out of 12. This configuration allows for a side rail of content, such as a section for local navigation, but this is not required.</p>
 
         <h3>Spacing &amp; Sizing</h3>
-        <p>Spacing in NDS is governed by an <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">8pt grid system.</a> In general, items are spaced by some factor or multiple of eight. Keeping elements spaced in this way helps to promote and maintain visual consistency.</p>
-        <p>All sizing of elements should be done using the "rem" CSS unit. Rems are based on the font sizing defined in the body. As noted above, the default font size is 16px. 1rem is therefore equivalent to 16px. The benefits of using rems are numerous, the main one being scalability. If every component is styled using the rem unit, as is the case in NDS, then altering the base font size in the body instantly scales all rems proportionally, and the size ratio of the elements are maintained. This means that your components will still look the same but may be bigger or smaller, if the default font size is changed.</p>
+        <p>NDS is governed by an <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">8pt grid system.</a> In general, items are spaced by some factor or multiple of eight. Keeping elements spaced in this way helps to promote and maintain visual consistency. All sizing of elements should be done using the "rem" unit to maintain relative scalability.</p>
+        <p>NDS has provided a set of design tokens for sizing and spacing, similarly to Bootstrap and USWDS, to make it easier to use standardized spaces and sizes. These tokens can be used in the form of classes, or can be <a href="#sass-tokens">used in SASS as variables.</a> The classes structure uses the format <code>{property}-{sides}-{size}-{interval}</code>.</p>
+
+        <p><code>{property}</code> - Type of CSS property:</p>
+        <ul>
+            <li><code>m</code> - margin</li>
+            <li><code>p</code> - padding</li>
+            <li><code>h</code> - height</li>
+            <li><code>w</code> - width</li>
+        </ul>
+
+        <p><code>{sides}</code> - Side to apply spacing (optional):</p>
+        <ul>
+            <li><code>t</code> - top</li>
+            <li><code>b</code> - bottom</li>
+            <li><code>l</code> - left</li>
+            <li><code>r</code> - right</li>
+            <li><code>x</code> - left and right</li>
+            <li><code>y</code> - top and bottom</li>
+        </ul>
+        <p>Note: Specifying {sides} is not required. If this value is omitted for margin or padding, the style will be applied to all sides (i.e. margin: $m-3).</p>
+
+        <p><code>{size}</code> - Token unit of spacing. The following table shows the available size values:</p>
+
+        <table class="token-table">
+            <thead>
+                <tr>
+                    <th>Size (Token) Value</th>
+                    <th>Sample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1px</td>
+                    <td>
+                        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+                            {
+                                "spacer_classes": "h-1px"
+                            }
+                        %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>2px</td>
+                    <td>
+                        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+                            {
+                                "spacer_classes": "h-2px"
+                            }
+                        %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+                            {
+                                "spacer_classes": "h-1"
+                            }
+                        %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+                            {
+                                "spacer_classes": "h-2"
+                            }
+                        %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+                            {
+                                "spacer_classes": "h-3"
+                            }
+                        %}
+                    </td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>
+                        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+                            {
+                                "spacer_classes": "h-10"
+                            }
+                        %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><code>{interval}</code> - Token partial spacing (optional):</p>
+        <ul>
+            <li><code>25</code> - An additional .25rem</li>
+            <li><code>50</code> - An additional .5rem</li>
+            <li><code>75</code> - An additional .75rem</li>
+        </ul>
+        <p><i>Examples: </i><code>.m-0-50</code><code>.t-x-5-75</code></p>
+
+        <h4 id="sass-tokens">Sizing &amp; Spacing in SASS</h4>
+        <p>All token spacing/sizing values can be used in SASS as variables using the following syntax: <code>$s-{property}-{size}-{interval}</code>. Similarly to the classes, the <code>{interval}</code> value is optional.</p>
     {% endblock %}
 {% endembed %}
