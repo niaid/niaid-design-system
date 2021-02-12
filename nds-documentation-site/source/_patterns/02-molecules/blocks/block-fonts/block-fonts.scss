@@ -1,14 +1,14 @@
 .block--fonts {
     padding: 0;
-    margin-bottom: -1rem;
+    margin-bottom: -1 * $s-1;
     .row {
         > div {
-            margin-bottom: 1rem;
+            margin-bottom: $s-1;
             text-align: center;
         }
     }
     &__credit {
-        font-size: .8rem;
+        font-size: $s-0-75;
     }
     .button--icon {
         display: block;
@@ -17,14 +17,14 @@
         white-space: normal;
         .icon--default {
             width: 100%;
-            padding: 1rem;
+            padding: $s-1;
             &:before {
-                font-size: 3rem;
+                font-size: $s-3;
             }
         }
         &__text {
             padding: 0;
-            margin-top: 1rem;
+            margin-top: $s-1;
         }
     }
 }

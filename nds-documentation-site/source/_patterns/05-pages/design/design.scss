@@ -31,7 +31,7 @@
 
     .main {
         .container {
-            margin: 2rem 0;
+            @extend .m-y-2;
             padding: 2rem;
             background: $page-background-alternate;
             &--button {
