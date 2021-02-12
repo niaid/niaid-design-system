@@ -22,30 +22,47 @@ function windowWidth() {
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
 }
 
-(function ($) {
-  function initComponentScrollspySection() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.scrollspy').length) {
-      $('.scrollspy').scrollSpy();
+$(document).ready(function () {
+  var mql = window.matchMedia('all and (min-width: 992px)');
+  var wWidth = $(window).width();
+  $('.fixed-left').each(function () {
+    if (mql.matches) {
+      stickybits($(this).find('.navigation--mobile-rail'));
     }
+  });
+  $(window).on('resize', function () {
+    if (wWidth != $(this).width()) {
+      wWidth = $(this).width();
+      $('.fixed-left').each(function () {
+        if (mql.matches) {
+          stickybits($(this).find('.navigation--mobile-rail'));
+        } else {
+          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
+          $(this).find('.navigation--mobile-rail').css('position', 'relative');
+        }
+      });
+    }
+  });
+});
+
+(function ($) {
+  function init_layouts_tabs(context) {
+    $('#tab--mockup').attr('tabindex', '-1');
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initComponentScrollspySection = {
+      Drupal.behaviors.layoutsTabs = {
         attach: function attach(context) {
-          $('body', context).once('nds-component-scrollspy-section').each(function () {
-            initComponentScrollspySection(context);
-          });
+          init_layouts_tabs(context);
         }
       };
     })(jQuery, Drupal);
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initComponentScrollspySection();
+      init_layouts_tabs();
     });
   }
 })(jQuery); // Part of NDS Lite
@@ -91,6 +108,34 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     }
   }
 }
+
+(function ($) {
+  function initComponentScrollspySection() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.scrollspy').length) {
+      $('.scrollspy').scrollSpy();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentScrollspySection = {
+        attach: function attach(context) {
+          $('body', context).once('nds-component-scrollspy-section').each(function () {
+            initComponentScrollspySection(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentScrollspySection();
+    });
+  }
+})(jQuery);
 
 (function ($) {
   function initComponentSnippet() {
@@ -839,51 +884,6 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       }
     });
   }
-})(jQuery);
-
-$(document).ready(function () {
-  var mql = window.matchMedia('all and (min-width: 992px)');
-  var wWidth = $(window).width();
-  $('.fixed-left').each(function () {
-    if (mql.matches) {
-      stickybits($(this).find('.navigation--mobile-rail'));
-    }
-  });
-  $(window).on('resize', function () {
-    if (wWidth != $(this).width()) {
-      wWidth = $(this).width();
-      $('.fixed-left').each(function () {
-        if (mql.matches) {
-          stickybits($(this).find('.navigation--mobile-rail'));
-        } else {
-          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
-          $(this).find('.navigation--mobile-rail').css('position', 'relative');
-        }
-      });
-    }
-  });
-});
-
-(function ($) {
-  function init_layouts_tabs(context) {
-    $('#tab--mockup').attr('tabindex', '-1');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.layoutsTabs = {
-        attach: function attach(context) {
-          init_layouts_tabs(context);
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      init_layouts_tabs();
-    });
-  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -1004,7 +1004,48 @@ function initInputNDS() {
       initInputSelect();
     });
   }
-})(jQuery); // Dependencies
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initLinkExternal();
+  initLinkExternalMailto();
+}); // initLinkExternal - Adds external link icons to links that qualify as external.
+
+function initLinkExternal() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var externalLinks = document.querySelectorAll('a');
+
+  for (var i = 0; i < externalLinks.length; i++) {
+    if (externalLinks[i].innerHTML != "") {
+      var url = externalLinks[i].getAttribute('href');
+      var hostname = externalLinks[i].hostname;
+
+      if (url && hostname !== location.hostname) {
+        url = url.toLowerCase();
+
+        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+          externalLinks[i].setAttribute('target', '_blank');
+          var linkIcon = document.createElement('a');
+          linkIcon.setAttribute('href', url);
+          linkIcon.setAttribute('class', "ext-link-icon");
+          linkIcon.setAttribute('aria-label', "External Link");
+          externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+        }
+      }
+    }
+  }
+} // initLinkExternalMailto - Adds envelope icons to mailto links.
+
+
+function initLinkExternalMailto() {
+  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+  var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+  for (var i = 0; i < mailtoLinks.length; i++) {
+    mailtoLinks[i].classList.add('link--external--mail');
+  }
+} // Dependencies
 //  - DataTables
 //  - jQuery
 
@@ -1065,48 +1106,7 @@ function initInputNDS() {
       initTableDefault();
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initLinkExternal();
-  initLinkExternalMailto();
-}); // initLinkExternal - Adds external link icons to links that qualify as external.
-
-function initLinkExternal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var externalLinks = document.querySelectorAll('a');
-
-  for (var i = 0; i < externalLinks.length; i++) {
-    if (externalLinks[i].innerHTML != "") {
-      var url = externalLinks[i].getAttribute('href');
-      var hostname = externalLinks[i].hostname;
-
-      if (url && hostname !== location.hostname) {
-        url = url.toLowerCase();
-
-        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-          externalLinks[i].setAttribute('target', '_blank');
-          var linkIcon = document.createElement('a');
-          linkIcon.setAttribute('href', url);
-          linkIcon.setAttribute('class', "ext-link-icon");
-          linkIcon.setAttribute('aria-label', "External Link");
-          externalLinks[i].insertAdjacentElement('afterend', linkIcon);
-        }
-      }
-    }
-  }
-} // initLinkExternalMailto - Adds envelope icons to mailto links.
-
-
-function initLinkExternalMailto() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
-
-  for (var i = 0; i < mailtoLinks.length; i++) {
-    mailtoLinks[i].classList.add('link--external--mail');
-  }
-}
+})(jQuery);
 
 (function ($) {
   function initBlockHero() {
@@ -1133,6 +1133,35 @@ function initLinkExternalMailto() {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initBlockHero();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentMedia() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentMedia = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentMedia();
     });
   }
 })(jQuery);
@@ -1192,35 +1221,6 @@ function initLinkExternalMailto() {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentModal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
     });
   }
 })(jQuery); // Part of NDS Lite
