@@ -1,61 +1,61 @@
 .button--share {
     display: block;
     position: relative;
-    height: 3rem;
-    width: 3rem;
+    height: $s-3;
+    width: $s-3;
     padding: 0;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem;
+    margin-right: $s-1;
     i {
-        font-size: 1.25rem;
+        font-size: $s-1-25;
         line-height: initial;
     }
     &:focus {
-        outline: -webkit-focus-ring-color auto 0.0625rem;
+        outline: -webkit-focus-ring-color auto $s-1px;
     }
     &--facebook {
         background: $brands-facebook !important;
         color: $white !important;
-        border: 0.0625rem solid $brands-facebook !important;
+        border: $s-1px solid $brands-facebook !important;
     }
     &--twitter {
         background: $brands-twitter !important;
         color: $white !important;
-        border: 0.0625rem solid $brands-twitter !important;
+        border: $s-1px solid $brands-twitter !important;
     }
     &--linkedin {
         background: $brands-linkedin !important;
         color: $white !important;
-        border: 0.0625rem solid $brands-linkedin !important;
+        border: $s-1px solid $brands-linkedin !important;
     }
     &--instagram {
         background-color: #515BD4;
         background-image: url('../images/global/icons/social/icon-social-instagram-background.png');
         background-position: center;
         color: $white !important;
-        border: 0.0625rem solid transparent !important;
+        border: $s-1px solid transparent !important;
     }
     &--youtube {
         background: $brands-youtube;
         color: $white !important;
-        border: 0.0625rem solid $brands-youtube !important;
+        border: $s-1px solid $brands-youtube !important;
     }
     &--pinterest {
         background: $brands-pinterest;
         color: $white !important;
-        border: 0.0625rem solid $brands-pinterest !important;
+        border: $s-1px solid $brands-pinterest !important;
     }
     &--flickr {
         background: $brands-flickr;
         color: $white !important;
-        border: 0.0625rem solid $brands-flickr !important;
+        border: $s-1px solid $brands-flickr !important;
     }
     &--google-plus {
         background: $brands-google-plus;
         color: $white !important;
-        border: 0.0625rem solid $brands-google-plus !important;
+        border: $s-1px solid $brands-google-plus !important;
     }
     & + .ext-link-icon {
         display: none;

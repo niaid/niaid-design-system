@@ -4,22 +4,21 @@
     color: $white;
     border-radius: 0 !important;
     border: 0;
-    margin: 0;
-    padding: 1rem;
+    padding: $s-1;
     * {
         color: $white;
     }
     h1 {
-        font-size: 1.75rem;
-        margin-bottom: .75rem;
+        font-size: $s-1-75;
+        margin-bottom: $s-0-75;
         margin-top: 0;
         padding-top: 0;
     }
     a {
-        border-bottom: 0.0625rem solid $white;
+        border-bottom: $s-1px solid $white;
         &:hover,
         &:focus {
-            border-bottom: 0.0625rem solid transparent;
+            border-bottom: $s-1px solid transparent;
             color: $white;
         }
         &:visited {
@@ -37,10 +36,10 @@
     }
     hr {
         background: $white;
-        margin: .75rem 0;
+        margin: $s-0-75 0;
     }
     p {
-        margin: .35rem 0;
+        margin: $s-0-25 0;
         &:last-child {
             margin-bottom: 0;
         }
@@ -53,10 +52,10 @@
             background: $black;
         }
         a {
-            border-bottom: 0.0625rem solid $black;
+            border-bottom: $s-1px solid $black;
             &:hover,
             &:focus {
-                border-bottom: 0.0625rem solid transparent;
+                border-bottom: $s-1px solid transparent;
                 color: $black;
             }
             &:visited {

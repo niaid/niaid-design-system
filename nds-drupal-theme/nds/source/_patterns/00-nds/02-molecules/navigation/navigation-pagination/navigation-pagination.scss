@@ -3,8 +3,8 @@
         .visually-hidden {
             position: absolute !important;
             overflow: hidden;
-            width: 0.0625rem;
-            height: 0.0625rem;
+            width: $s-1px;
+            height: $s-1px;
         }
         .pager__items {
             padding: 0;
@@ -12,7 +12,7 @@
             text-align: left;
             .pager__item {
                 padding: 0;
-                margin-right: .5rem;
+                margin-right: $s-0-50;
                 display: inline-flex;
                 a {
                     @extend .button-nds;
@@ -21,8 +21,8 @@
                     justify-content: center;
                     align-items: center;
                     padding: 0;
-                    height: 3rem;
-                    width: 3rem;
+                    height: $s-3;
+                    width: $s-3;
                 }
                 &.active,
                 &.is-active {
@@ -35,7 +35,7 @@
                 &.pager__item--next,
                 &.pager__item--last {
                     a {
-                        padding: 0 1.25rem;
+                        padding: 0 $s-1-25;
                         width: auto;
                     }
                 }

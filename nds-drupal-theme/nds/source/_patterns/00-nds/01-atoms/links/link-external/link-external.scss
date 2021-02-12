@@ -8,21 +8,21 @@
         @extend %fa-icon;
         @extend .fas;
         content: fa-content($fa-var-external-link-alt) !important;
-        font-size: 0.7rem;
-        margin-left: .25rem;
+        font-size: $s-0-75;
+        margin-left: $s-0-25;
     }
 }
 
 .link--external--mail {
     position: relative;
-    margin-right: 1.5rem;
+    margin-right: $s-1-50;
     &:after {
         @extend %fa-icon;
         @extend .far;
         content: fa-content($fa-var-envelope) !important;
         position: absolute;
         bottom: 0;
-        margin-left: .25rem;
-        font-size: .8rem;
+        margin-left: $s-0-25;
+        font-size: $s-0-75;
     }
 }

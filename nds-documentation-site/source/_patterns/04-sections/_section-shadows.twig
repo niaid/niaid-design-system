@@ -22,7 +22,11 @@
                 "component_media_lightbox": "yes"
             }
         %}
-
+        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+            {
+                "spacer_classes": "h-2"
+            }
+        %}
         {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
             {% block block_content %}
                 <h4>Developing with NIAID Design System Shadows</h4>

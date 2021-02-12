@@ -3,14 +3,14 @@
     background: rgba(0, 0, 0, .7);
     &__wrapper {
         @extend .modal-dialog;
-        margin: 3rem auto;
+        margin: $s-3 auto;
         &__content {
             border-radius: 0;
             cursor: default;
             @extend .modal-content;
             &__header {
                 @extend .modal-header;
-                padding: 1.5rem;
+                padding: $s-1-50;
                 position: relative;
                 * {
                     margin: 0;
@@ -19,26 +19,26 @@
                     @include md-2dp;
                     @extend .hoverable;
                     position: absolute;
-                    height: 3rem;
-                    width: 3rem;
+                    height: $s-3;
+                    width: $s-3;
                     border-radius: 100% !important;
                     padding: 0;
                     color: $status-error !important;
                     background: $white !important;
-                    border: .0625rem solid transparent !important;
-                    right: -1.5rem;
-                    top: -1.5rem;
+                    border: $s-1px solid transparent !important;
+                    right: -1 * $s-1-50;
+                    top: -1 * $s-1-50;
                     &:hover,
                     &:focus,
                     &:active {
-                        border: .0625rem solid $status-error !important;
+                        border: $s-1px solid $status-error !important;
                         background: $status-error !important;
                         color: $white !important;
                     }
                 }
             }
             &__body {
-                padding: 1rem 2rem;
+                padding: $s-1 $s-2;
                 img {
                     max-width: 100%;
                 }

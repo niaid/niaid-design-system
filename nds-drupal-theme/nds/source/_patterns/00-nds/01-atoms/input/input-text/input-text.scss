@@ -1,12 +1,12 @@
 .input--text {
-    padding: .5rem 1rem;
+    padding: $s-0-50 $s-1;
     width: 100%;
-    border: 0.0625rem solid $input-border;
+    border: $s-1px solid $input-border;
     color: $type-body;
     &:focus {
-        border: 0.0625rem solid $type-link;
+        border: $s-1px solid $type-link;
         outline: 0;
-        box-shadow: 0 0 0 0.0625rem $type-link;
+        box-shadow: 0 0 0 $s-1px $type-link;
         & + .icon--default {
             color: $type-link;
         }
@@ -17,12 +17,12 @@
     position: relative;
     .icon--default {
         position: absolute;
-        left: 1rem;
+        left: $s-1;
         color: $type-body;
         top: 50%;
         transform: translateY(-50%);
     }
     .input--text {
-        padding-left: 2.75rem;
+        padding-left: $s-2-75;
     }
 }

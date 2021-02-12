@@ -15,13 +15,19 @@
         .layouts--body {
             min-height: auto !important;
             padding: 1rem !important;
-            >.block--share {
+            .block--share {
                 display: none;
+            }
+            .navigation--breadcrumbs {
+                @extend .m-b-1;
             }
             @include media-breakpoint-up('md') {
                 padding: 1rem 3rem 1rem 3rem !important;
-                >.block--share {
+                .block--share {
                     display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
                 }
             }
         }

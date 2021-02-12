@@ -6,7 +6,7 @@
             height: auto;
             padding: .625rem 4rem .625rem 1rem;
             background: $white;
-            border: 0.0625rem solid $input-border;
+            border: 0$s-1px solid $input-border;
             border-radius: 0;
             &__arrow {
                 display: none;
@@ -25,11 +25,11 @@
                 @extend .fas;
                 cursor: pointer;
                 content: fa-content($fa-var-chevron-right);
-                font-weight: 900;
+                font-weight: $font-weight-black;
                 position: absolute;
                 color: $type-body;
                 height: 100%;
-                width: 3rem;
+                width: $s-3;
                 top: 0;
                 right: 0;
                 display: inline-flex;
@@ -174,7 +174,7 @@
         }
         &.no-clear {
             .select2-selection {
-                padding-right: 3rem !important;
+                padding-right: $s-3 !important;
                 
             }
         }

@@ -1,7 +1,7 @@
 .text--badge {
     line-height: initial;
-    padding: .5rem;
+    padding: $s-0-50;
     background: $page-background-alternate;
     color: $type-link;
-    border: .0625rem solid $type-link;
+    border: $s-1px solid $type-link;
 }

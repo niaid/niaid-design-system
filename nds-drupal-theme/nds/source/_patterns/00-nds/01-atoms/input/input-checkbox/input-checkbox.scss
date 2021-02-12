@@ -1,8 +1,8 @@
 .input--checkbox {
     position: relative;
-    margin: .5rem 0;
+    margin: $s-0-50 0;
     &:first-child {
-        margin-top: 1rem;
+        margin-top: $s-1;
     }
     input {
         position: absolute;
@@ -12,7 +12,7 @@
     }
     .input--label {
         cursor: pointer;
-        padding-left: 2rem;
+        padding-left: $s-2;
         position: relative;
         margin: 0;
         &:before {
@@ -21,10 +21,10 @@
             top: 50%;
             transform: translateY(-50%);
             left: 0;
-            height: 1.5rem;
-            width: 1.5rem;
+            height: $s-1-50;
+            width: $s-1-50;
             background: $white;
-            border: 0.0625rem solid $input-border;
+            border: $s-1px solid $input-border;
         }
         &:after {
             content: "";
@@ -43,7 +43,7 @@
             color: $white;
             content: fa-content($fa-var-check);
             display: block;
-            left: .3rem;
+            left: $s-0-25;
             top: 50%;
             transform: translateY(-50%);
         }

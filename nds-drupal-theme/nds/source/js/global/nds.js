@@ -220,6 +220,106 @@ function initLinkExternalMailto() {
       initTableDefault();
     });
   }
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initDataAttributes();
+}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+
+function initDataAttributes() {
+  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
+    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+
+    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+  }
+} // setDataAttributes - Helper function to add data attributes to elements.
+
+
+function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+  for (var i = 0; i < els.length; i++) {
+    var linkText = els[i].textContent.trim();
+
+    if (linkText !== "") {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    }
+  }
+}
+
+(function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.parallax').length) {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentMedia() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentMedia = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentMedia();
+    });
+  }
 })(jQuery);
 
 (function ($) {
@@ -279,35 +379,6 @@ function initLinkExternalMailto() {
       initComponentModal();
     });
   }
-})(jQuery);
-
-(function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
-    });
-  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -326,77 +397,6 @@ function initComponentUSWDSBanner() {
         document.getElementById("uswds-banner-content").style.display = 'block';
       }
     });
-  }
-}
-
-(function ($) {
-  function initBlockHero() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.parallax').length) {
-      var elems = document.querySelectorAll('.parallax');
-      var instances = M.Parallax.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
-        attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initBlockHero();
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initDataAttributes();
-}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-
-function initDataAttributes() {
-  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
-    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-
-    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
-
-    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-  }
-} // setDataAttributes - Helper function to add data attributes to elements.
-
-
-function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-  for (var i = 0; i < els.length; i++) {
-    var linkText = els[i].textContent.trim();
-
-    if (linkText !== "") {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-    }
   }
 } // Part of NDS Lite
 

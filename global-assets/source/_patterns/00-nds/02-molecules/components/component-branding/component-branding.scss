@@ -1,5 +1,5 @@
 .component--branding {
-    height: 3.5rem;
+    height: $s-3-50;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -13,9 +13,9 @@
     }
     &__vertical-bar {
         display: block;
-        width: 0.0625rem;
+        width: $s-1px;
         height: 100%;
-        margin: 0 .75rem;
+        margin: 0 $s-0-75;
         background: $input-border;
     }
     &__logo {

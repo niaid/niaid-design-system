@@ -25,13 +25,13 @@
 
 #block-niaid-drupal-theme-local-tasks {
     position: absolute;
-    right: calc(1rem - 0.0625rem);
-    right: 1rem;
+    right: calc(#{$s-1} - #{$s-1px});
+    right: $s-1;
     top: 0;
 
     nav.tabs {
         background-color: rgba(0,0,0,.7);
-        border-bottom-left-radius: 1rem;
+        border-bottom-left-radius: $s-1;
     }
 
     .tabs {
@@ -43,10 +43,10 @@
         }
 
         li {
-            padding: .5rem 1rem;
+            padding: $s-0-50 $s-1;
 
             a {
-                @extend .p-0;
+                padding: 0;
                 color: $white;
 
                 &:hover, &:focus {
