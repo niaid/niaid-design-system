@@ -4,6 +4,9 @@
     @include media-breakpoint-up('md') {
         padding: $s-2;
     }
+    .row {
+        margin: 0 (-1 * $s-2);
+    }
     .block--featured-content-card {
         margin: 0;
     }
