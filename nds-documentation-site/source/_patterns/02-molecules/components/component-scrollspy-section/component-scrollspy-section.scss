@@ -1,0 +1,27 @@
+.section {
+    & > .container,
+    & > .container-fluid,
+    & > .component--media,
+    & > table,
+    & > .block--directions,
+    & > .block--status-message,
+    & > .block-updates,
+    & > .block--default {
+        max-width: $layout-type-max-width;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    & > .component--media--left,
+    & > .component--media--right {
+        @include media-breakpoint-up(md) {
+            max-width: 50%;
+        }
+    }
+    & > .component--media--right {
+        margin-left: $s-2;
+    }
+    & > .component--media--left {
+        margin-right: $s-2;
+    }
+}

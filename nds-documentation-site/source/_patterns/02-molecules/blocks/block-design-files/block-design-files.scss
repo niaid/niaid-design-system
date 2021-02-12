@@ -1,12 +1,9 @@
 .block--design-files {
     padding: 0;
-    margin-bottom: -1rem;
-    margin-left: 0;
-    margin-right: 0;
-    max-width: $layout-type-max-width;
+    margin-bottom: -1 * $s-1;
     .row {
         > div {
-            margin-bottom: 1rem;
+            margin-bottom: $s-1;
             text-align: center;
         }
     }
@@ -16,10 +13,10 @@
         width: 100%;
         white-space: normal;
         img {
-            height: 3rem;
+            height: $s-3;
             max-height: none;
             display: block;
-            margin: 1rem auto;
+            margin: $s-1 auto;
         }
         &__text {
             padding: 0;
