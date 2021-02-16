@@ -170,9 +170,9 @@
                         %}
                             {% block component_scrollspy_section_content %}
                                 <h3>JS</h3>
-                                <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components. To increase flexibility and use, we provide two versions of the NDS JS.</p>
+                                <p>The NIAID Design System relies on several third-party libraries to enhance both the user experience and the accessibility of our web components.{# To increase flexibility and use, we provide two versions of the NDS JS.#}</p>
 
-                                <h4>NDS Bundled JS (Recommended)</h4>
+                                {# <h4>NDS Bundled JS (Recommended)</h4> #}
                                 <p>The bundled version of NDS's JavaScript is needed for many of our components to operate properly. This version includes several initializations of third-party library components and <strong>relies on jQuery to function.</strong> To use this version, download the NDS Bundled JS file/accompanying third-party libraries and include the scripts right before the closing &lt;/body&gt; tag.</p>
                                 {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
                                     {
@@ -210,7 +210,7 @@
 
                                 <p>Use the <a href="{{ links.components }}">Components page</a> to see which components rely on third-party libraries.</p>
 
-                                <h4>NDS Lite JS</h4>
+                                {# <h4>NDS Lite JS</h4>
                                 <p>Many modern frameworks for building front-ends, such as Vue.js, React.js, or Angular.js, do not interact well with jQuery. To accomodate sites using these frameworks, NDS also provides a dependency-free version of the global JS, NDS Lite.</p>
                                 <h4>What does NDS Lite do?</h4>
                                 <ul>
@@ -229,7 +229,7 @@
                                         "button_icon_text": "Download NDS Lite",
                                         "button_icon_attributes": "download"
                                     }
-                                %}
+                                %} #}
                             {% endblock %}
                         {% endembed %}
                         {# Quick Start -> Components #}

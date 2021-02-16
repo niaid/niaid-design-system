@@ -22,93 +22,6 @@ function windowWidth() {
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
 }
 
-$(document).ready(function () {
-  var mql = window.matchMedia('all and (min-width: 992px)');
-  var wWidth = $(window).width();
-  $('.fixed-left').each(function () {
-    if (mql.matches) {
-      stickybits($(this).find('.navigation--mobile-rail'));
-    }
-  });
-  $(window).on('resize', function () {
-    if (wWidth != $(this).width()) {
-      wWidth = $(this).width();
-      $('.fixed-left').each(function () {
-        if (mql.matches) {
-          stickybits($(this).find('.navigation--mobile-rail'));
-        } else {
-          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
-          $(this).find('.navigation--mobile-rail').css('position', 'relative');
-        }
-      });
-    }
-  });
-});
-
-(function ($) {
-  function init_layouts_tabs(context) {
-    $('#tab--mockup').attr('tabindex', '-1');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.layoutsTabs = {
-        attach: function attach(context) {
-          init_layouts_tabs(context);
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      init_layouts_tabs();
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initDataAttributes();
-}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-
-function initDataAttributes() {
-  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
-    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-
-    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
-
-    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-  }
-} // setDataAttributes - Helper function to add data attributes to elements.
-
-
-function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-  for (var i = 0; i < els.length; i++) {
-    var linkText = els[i].textContent.trim();
-
-    if (linkText !== "" && els[i].closest('.component--snippet') == null) {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-    }
-  }
-}
-
 (function ($) {
   function initComponentScrollspySection() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
@@ -133,6 +46,85 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentScrollspySection();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentSnippet() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.component--snippet__block__code__wrapper__snippet').each(function () {
+      if ($("#components").length || $("#migration-guide").length) {
+        var codeSnippet = escapeHtml($(this).html());
+        $(this).empty();
+        $(this).append(codeSnippet);
+        $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
+        var block = $(this).find('code');
+        Prism.highlightElement(block[0]);
+        $('.component--snippet__block__code__wrapper').show();
+        $('.component--snippet__block__code__loader').hide();
+      } else {
+        var block = $(this).find('code');
+        Prism.highlightElement(block[0]);
+        $('.component--snippet__block__code__wrapper').show();
+        $('.component--snippet__block__code__loader').hide();
+      }
+    });
+    $('.component--snippet').find('.button--icon').on('click', function () {
+      var $copyText = $(this).siblings('.component--snippet__block__code__wrapper__button__copied');
+      $copyText.css('opacity', 0);
+      copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
+      $copyText.css('opacity', 1);
+      setTimeout(function () {
+        $copyText.css('opacity', 0);
+      }, 2000);
+    });
+    $('.component--snippet__block__pattern__toggle').on('click', function () {
+      $(this).siblings('.component--snippet__block__pattern__content').toggleClass('open');
+      $(this).toggleClass('open');
+    }); // Specific Component Handling:
+
+    $('.component--snippet').find('.component--uswds-banner__toggle').on('click', function () {
+      if ($(this).attr('aria-expanded') == 'true') {
+        $(this).attr('aria-expanded', 'false');
+        $(this).siblings(".component--uswds-banner__content").hide();
+      } else {
+        $(this).attr('aria-expanded', 'true');
+        $(this).siblings(".component--uswds-banner__content").show();
+      }
+    });
+  }
+
+  function copyToClipboard($element) {
+    var copyText = $element.text();
+    var textArea = document.createElement('textarea');
+    textArea.classList.add("hidden-textarea");
+    textArea.textContent = copyText;
+    document.body.append(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+  }
+
+  function escapeHtml(unsafe) {
+    return unsafe.replace(/ "/g, '"').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/(^[ \t]*\n)/gm, "");
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentSnippet = {
+        attach: function attach(context) {
+          $('body', context).once('nds-component-snippet').each(function () {
+            initComponentSnippet(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentSnippet();
     });
   }
 })(jQuery);
@@ -291,83 +283,91 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       }
     });
   }
-})(jQuery);
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initDataAttributes();
+}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+
+function initDataAttributes() {
+  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
+    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+
+    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+  }
+} // setDataAttributes - Helper function to add data attributes to elements.
+
+
+function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+  for (var i = 0; i < els.length; i++) {
+    var linkText = els[i].textContent.trim();
+
+    if (linkText !== "" && els[i].closest('.component--snippet') == null) {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    }
+  }
+}
+
+$(document).ready(function () {
+  var mql = window.matchMedia('all and (min-width: 992px)');
+  var wWidth = $(window).width();
+  $('.fixed-left').each(function () {
+    if (mql.matches) {
+      stickybits($(this).find('.navigation--mobile-rail'));
+    }
+  });
+  $(window).on('resize', function () {
+    if (wWidth != $(this).width()) {
+      wWidth = $(this).width();
+      $('.fixed-left').each(function () {
+        if (mql.matches) {
+          stickybits($(this).find('.navigation--mobile-rail'));
+        } else {
+          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
+          $(this).find('.navigation--mobile-rail').css('position', 'relative');
+        }
+      });
+    }
+  });
+});
 
 (function ($) {
-  function initComponentSnippet() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('.component--snippet__block__code__wrapper__snippet').each(function () {
-      if ($("#components").length || $("#migration-guide").length) {
-        var codeSnippet = escapeHtml($(this).html());
-        $(this).empty();
-        $(this).append(codeSnippet);
-        $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
-        var block = $(this).find('code');
-        Prism.highlightElement(block[0]);
-        $('.component--snippet__block__code__wrapper').show();
-        $('.component--snippet__block__code__loader').hide();
-      } else {
-        var block = $(this).find('code');
-        Prism.highlightElement(block[0]);
-        $('.component--snippet__block__code__wrapper').show();
-        $('.component--snippet__block__code__loader').hide();
-      }
-    });
-    $('.component--snippet').find('.button--icon').on('click', function () {
-      var $copyText = $(this).siblings('.component--snippet__block__code__wrapper__button__copied');
-      $copyText.css('opacity', 0);
-      copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
-      $copyText.css('opacity', 1);
-      setTimeout(function () {
-        $copyText.css('opacity', 0);
-      }, 2000);
-    });
-    $('.component--snippet__block__pattern__toggle').on('click', function () {
-      $(this).siblings('.component--snippet__block__pattern__content').toggleClass('open');
-      $(this).toggleClass('open');
-    }); // Specific Component Handling:
-
-    $('.component--snippet').find('.component--uswds-banner__toggle').on('click', function () {
-      if ($(this).attr('aria-expanded') == 'true') {
-        $(this).attr('aria-expanded', 'false');
-        $(this).siblings(".component--uswds-banner__content").hide();
-      } else {
-        $(this).attr('aria-expanded', 'true');
-        $(this).siblings(".component--uswds-banner__content").show();
-      }
-    });
-  }
-
-  function copyToClipboard($element) {
-    var copyText = $element.text();
-    var textArea = document.createElement('textarea');
-    textArea.classList.add("hidden-textarea");
-    textArea.textContent = copyText;
-    document.body.append(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    textArea.remove();
-  }
-
-  function escapeHtml(unsafe) {
-    return unsafe.replace(/ "/g, '"').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/(^[ \t]*\n)/gm, "");
+  function init_layouts_tabs(context) {
+    $('#tab--mockup').attr('tabindex', '-1');
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initComponentSnippet = {
+      Drupal.behaviors.layoutsTabs = {
         attach: function attach(context) {
-          $('body', context).once('nds-component-snippet').each(function () {
-            initComponentSnippet(context);
-          });
+          init_layouts_tabs(context);
         }
       };
     })(jQuery, Drupal);
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initComponentSnippet();
+      init_layouts_tabs();
     });
   }
 })(jQuery);
@@ -884,6 +884,263 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       }
     });
   }
+})(jQuery); // Part of NDS Lite
+
+
+(function ($) {
+  // initInputNDS - Functionality to support keyboard accessibility on radio and checkbox inputs.
+  function initInputNDS() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var inputElements = document.querySelectorAll('.input--radio, .input--checkbox');
+
+    for (var i = 0; i < inputElements.length; i++) {
+      inputElements[i].addEventListener('keydown', function (e) {
+        if (e.code === "Enter" || e.keyCode === "13" || e.code === "Space" || e.keyCode === "23") {
+          e.target.querySelector('input').click();
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputNDS = {
+        attach: function attach(context) {
+          $("body", context).once('nds-input').each(function () {
+            initInputNDS(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputNDS();
+    });
+  }
+})(jQuery); // Dependencies
+//  - Bootstrap Datepicker
+//  - jQuery
+
+
+(function ($) {
+  function initInputDatePicker() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.input--date-picker').each(function () {
+      if ($(this).find('input').attr('nds-date-picker') == 'true') {
+        $(this).find('input').datepicker();
+      }
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputDatePicker = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-date-picker').each(function () {
+            initInputDatePicker(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputDatePicker();
+    });
+  }
+})(jQuery); // Dependencies
+//  - Select2
+//  - jQuery
+
+
+(function ($) {
+  function initInputSelect() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('[data-toggle="tooltip"]').tooltip();
+    $('select').each(function () {
+      if ($(this).attr('nds-select') == 'true') {
+        $(this).select2({
+          minimumResultsForSearch: 10
+        });
+
+        if ($(this).val() != "") {
+          $(this).siblings('.select2-container').addClass('no-clear selection-made');
+        }
+      }
+    });
+    $('select').change(function (e, p) {
+      if ($(this).attr('nds-select') == 'true') {
+        if (!e.target.multiple) {
+          $(this).siblings('.select2-container').addClass('selection-made');
+
+          if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
+            $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
+          }
+        } else {
+          $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
+        }
+      }
+    }); // Listener to Add Accessibility Compliance to Open Modals
+
+    $('select').on('select2:open', function (e) {
+      $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
+      $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
+    }); // Add Accessibility Compliane to Loaded Select Field
+
+    $('.select2-selection--single').attr('aria-label', 'Click to select option.');
+    $('.select2-selection--multiple').attr('aria-label', 'Click to select option(s).'); // Remove selection on click of "X"
+
+    $(document).on('click', '.single-clear', function (e) {
+      e.stopPropagation();
+      var $selectField = $(this).parent().siblings('select');
+      $selectField.prop('selectedIndex', 0);
+      var placeholder = $selectField.attr("data-placeholder");
+      $(this).parent().removeClass('selection-made');
+      $(this).siblings('.selection').find('.select2-selection__rendered').text(placeholder);
+      $(this).remove();
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputSelect = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-select').each(function () {
+            initInputSelect(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputSelect();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
+(function ($) {
+  // initLinkExternal - Adds external link icons to links that qualify as external.
+  function initLinkExternal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var externalLinks = document.querySelectorAll('a');
+
+    for (var i = 0; i < externalLinks.length; i++) {
+      if (externalLinks[i].innerHTML != "") {
+        var url = externalLinks[i].getAttribute('href');
+        var hostname = externalLinks[i].hostname;
+
+        if (url && hostname !== location.hostname) {
+          url = url.toLowerCase();
+
+          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+            externalLinks[i].setAttribute('target', '_blank');
+            var linkIcon = document.createElement('a');
+            linkIcon.setAttribute('href', url);
+            linkIcon.setAttribute('class', "ext-link-icon");
+            linkIcon.setAttribute('aria-label', "External Link");
+            externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+          }
+        }
+      }
+    }
+  } // initLinkExternalMailto - Adds envelope icons to mailto links.
+
+
+  function initLinkExternalMailto() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+    for (var i = 0; i < mailtoLinks.length; i++) {
+      mailtoLinks[i].classList.add('link--external--mail');
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initLinks = {
+        attach: function attach(context) {
+          $("body", context).once('nds-links').each(function () {
+            initLinkExternal(context);
+            initLinkExternalMailto(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initLinkExternal();
+      initLinkExternalMailto();
+    });
+  }
+})(jQuery); // Dependencies
+//  - DataTables
+//  - jQuery
+
+
+(function ($) {
+  function initTableDefault() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    /* KEY
+        Sorting: Add data-tablesort="true" to the <table> tag.
+        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
+    */
+    $("table").each(function () {
+      if ($(this).attr('nds-datatable') == 'true') {
+        var defaultConfigs = {
+          "responsive": true,
+          "paging": false,
+          "info": false,
+          "autoWidth": false,
+          "searching": false
+        };
+
+        if (!($(this).attr('data-tablesort') == "true")) {
+          defaultConfigs['ordering'] = false;
+        } else {
+          // Determine Column Type
+          var columns = [];
+          $(this).find('thead').find('th').each(function (i) {
+            if ($(this).attr('data-column-num') == "true") {
+              columns.push({
+                "type": "natural",
+                "targets": i
+              });
+            }
+          });
+          defaultConfigs['columnDefs'] = columns;
+        }
+
+        $(this).dataTable(defaultConfigs);
+      }
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initTableDefault = {
+        attach: function attach(context) {
+          $("body", context).once('nds-table-default').each(function () {
+            initTableDefault(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initTableDefault();
+    });
+  }
 })(jQuery);
 
 (function ($) {
@@ -913,106 +1170,7 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       initBlockHero();
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initNavigationLocal();
-}); // initNavigationLocal - Functionality to support the local navigation pattern, specifically adding keyboard accessibility.
-
-function initNavigationLocal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-  if (document.querySelectorAll('.navigation--local').length) {
-    var localNavigationItems = document.getElementsByClassName('navigation--local__group__label');
-
-    for (var i = 0; i < localNavigationItems.length; i++) {
-      localNavigationItems[i].addEventListener("keydown", function (event) {
-        if (event.isComposing || event.keyCode === 13) {
-          this.click();
-        }
-      });
-    }
-  }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initNavigationDrawer();
-}); // initNavigationDrawer - Functionality to support the NDS mobile drawer.
-
-function initNavigationDrawer() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-  if (document.querySelectorAll('.navigation--drawer').length > 0) {
-    var wWidth = windowWidth();
-    document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
-      document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
-      var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
-      overlay.style.display = 'block';
-      document.querySelector('.navigation--drawer__top__button-close').focus();
-      var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
-
-      for (var i = 0; i < tabElements.length; i++) {
-        tabElements[i].setAttribute('tabindex', '0');
-      }
-    });
-    document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
-      closeMenu();
-    });
-    document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
-      closeMenu();
-    });
-
-    window.onresize = function (e) {
-      if (wWidth != windowWidth()) {
-        wWidth = windowWidth();
-        closeMenu();
-      }
-    }; // 508 Compliance Focus Helpers
-
-
-    document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
-      document.querySelector('.navigation--drawer__top__button-close').focus();
-    });
-    document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
-      var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
-      tabElements[tabElements.length - 1].focus();
-    });
-  }
-} // closeMenu - Helper function to close the mobile drawer.
-
-
-function closeMenu() {
-  document.querySelector('#global-mobile-menu').focus();
-  document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
-  var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
-  overlay.style.display = 'none';
-  var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
-
-  for (var i = 0; i < tabElements.length; i++) {
-    tabElements[i].setAttribute('tabindex', '-1');
-  }
-} // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initComponentUSWDSBanner();
-}); // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
-
-function initComponentUSWDSBanner() {
-  if (document.querySelectorAll('#uswds-banner-toggle').length > 0) {
-    document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
-      if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
-        document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
-        document.getElementById("uswds-banner-content").style.display = 'none';
-      } else {
-        document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
-        document.getElementById("uswds-banner-content").style.display = 'block';
-      }
-    });
-  }
-}
+})(jQuery);
 
 (function ($) {
   function initComponentMedia() {
@@ -1103,81 +1261,29 @@ function initComponentUSWDSBanner() {
 })(jQuery); // Part of NDS Lite
 
 
-document.addEventListener("DOMContentLoaded", function (e) {
-  initInputNDS();
-}); // initInputNDS - Functionality to support keyboard accessibility on radio and checkbox inputs.
-
-function initInputNDS() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var inputElements = document.querySelectorAll('.input--radio, .input--checkbox');
-
-  for (var i = 0; i < inputElements.length; i++) {
-    inputElements[i].addEventListener('keydown', function (e) {
-      if (e.code === "Enter" || e.keyCode === "13" || e.code === "Space" || e.keyCode === "23") {
-        e.target.querySelector('input').click();
-      }
-    });
-  }
-} // Dependencies
-//  - Select2
-//  - jQuery
-
-
 (function ($) {
-  function initInputSelect() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('[data-toggle="tooltip"]').tooltip();
-    $('select').each(function () {
-      if ($(this).attr('nds-select') == 'true') {
-        $(this).select2({
-          minimumResultsForSearch: 10
-        });
-
-        if ($(this).val() != "") {
-          $(this).siblings('.select2-container').addClass('no-clear selection-made');
-        }
-      }
-    });
-    $('select').change(function (e, p) {
-      if ($(this).attr('nds-select') == 'true') {
-        if (!e.target.multiple) {
-          $(this).siblings('.select2-container').addClass('selection-made');
-
-          if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
-            $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
-          }
+  // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+  function initComponentUSWDSBanner() {
+    if (document.querySelectorAll('#uswds-banner-toggle').length > 0) {
+      document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+        if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+          document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+          document.getElementById("uswds-banner-content").style.display = 'none';
         } else {
-          $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
+          document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+          document.getElementById("uswds-banner-content").style.display = 'block';
         }
-      }
-    }); // Listener to Add Accessibility Compliance to Open Modals
-
-    $('select').on('select2:open', function (e) {
-      $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
-      $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
-    }); // Add Accessibility Compliane to Loaded Select Field
-
-    $('.select2-selection--single').attr('aria-label', 'Click to select option.');
-    $('.select2-selection--multiple').attr('aria-label', 'Click to select option(s).'); // Remove selection on click of "X"
-
-    $(document).on('click', '.single-clear', function (e) {
-      e.stopPropagation();
-      var $selectField = $(this).parent().siblings('select');
-      $selectField.prop('selectedIndex', 0);
-      var placeholder = $selectField.attr("data-placeholder");
-      $(this).parent().removeClass('selection-made');
-      $(this).siblings('.selection').find('.select2-selection__rendered').text(placeholder);
-      $(this).remove();
-    });
+      });
+    }
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initInputSelect = {
+      Drupal.behaviors.initComponentUSWDSBanner = {
         attach: function attach(context) {
-          $('body', context).once('nds-input-select').each(function () {
-            initInputSelect(context);
+          $("body", context).once('nds-component-uswds-banner').each(function () {
+            initComponentUSWDSBanner(context);
           });
         }
       };
@@ -1185,72 +1291,75 @@ function initInputNDS() {
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initInputSelect();
+      initComponentUSWDSBanner();
     });
   }
 })(jQuery); // Part of NDS Lite
 
 
-document.addEventListener("DOMContentLoaded", function (e) {
-  initLinkExternal();
-  initLinkExternalMailto();
-}); // initLinkExternal - Adds external link icons to links that qualify as external.
+(function ($) {
+  // initNavigationDrawer - Functionality to support the NDS mobile drawer.
+  function initNavigationDrawer() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-function initLinkExternal() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var externalLinks = document.querySelectorAll('a');
+    if (document.querySelectorAll('.navigation--drawer').length > 0) {
+      var wWidth = windowWidth();
+      document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
+        document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
+        var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+        overlay.style.display = 'block';
+        document.querySelector('.navigation--drawer__top__button-close').focus();
+        var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
 
-  for (var i = 0; i < externalLinks.length; i++) {
-    if (externalLinks[i].innerHTML != "") {
-      var url = externalLinks[i].getAttribute('href');
-      var hostname = externalLinks[i].hostname;
-
-      if (url && hostname !== location.hostname) {
-        url = url.toLowerCase();
-
-        if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-          externalLinks[i].setAttribute('target', '_blank');
-          var linkIcon = document.createElement('a');
-          linkIcon.setAttribute('href', url);
-          linkIcon.setAttribute('class', "ext-link-icon");
-          linkIcon.setAttribute('aria-label', "External Link");
-          externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+        for (var i = 0; i < tabElements.length; i++) {
+          tabElements[i].setAttribute('tabindex', '0');
         }
-      }
+      });
+      document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
+        closeMenu();
+      });
+      document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
+        closeMenu();
+      });
+
+      window.onresize = function (e) {
+        if (wWidth != windowWidth()) {
+          wWidth = windowWidth();
+          closeMenu();
+        }
+      }; // 508 Compliance Focus Helpers
+
+
+      document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
+        document.querySelector('.navigation--drawer__top__button-close').focus();
+      });
+      document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
+        var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
+        tabElements[tabElements.length - 1].focus();
+      });
+    }
+  } // closeMenu - Helper function to close the mobile drawer.
+
+
+  function closeMenu() {
+    document.querySelector('#global-mobile-menu').focus();
+    document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
+    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+    overlay.style.display = 'none';
+    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+    for (var i = 0; i < tabElements.length; i++) {
+      tabElements[i].setAttribute('tabindex', '-1');
     }
   }
-} // initLinkExternalMailto - Adds envelope icons to mailto links.
-
-
-function initLinkExternalMailto() {
-  var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-  var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
-
-  for (var i = 0; i < mailtoLinks.length; i++) {
-    mailtoLinks[i].classList.add('link--external--mail');
-  }
-} // Dependencies
-//  - Bootstrap Datepicker
-//  - jQuery
-
-
-(function ($) {
-  function initInputDatePicker() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('.input--date-picker').each(function () {
-      if ($(this).find('input').attr('nds-date-picker') == 'true') {
-        $(this).find('input').datepicker();
-      }
-    });
-  }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initInputDatePicker = {
+      Drupal.behaviors.initNavigationDrawer = {
         attach: function attach(context) {
-          $('body', context).once('nds-input-date-picker').each(function () {
-            initInputDatePicker(context);
+          $("body", context).once('nds-navigation-drawer').each(function () {
+            initNavigationDrawer(context);
           });
         }
       };
@@ -1258,68 +1367,7 @@ function initLinkExternalMailto() {
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initInputDatePicker();
-    });
-  }
-})(jQuery); // Dependencies
-//  - DataTables
-//  - jQuery
-
-
-(function ($) {
-  function initTableDefault() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    /* KEY
-        Sorting: Add data-tablesort="true" to the <table> tag.
-        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
-    */
-    $("table").each(function () {
-      if ($(this).attr('nds-datatable') == 'true') {
-        var defaultConfigs = {
-          "responsive": true,
-          "paging": false,
-          "info": false,
-          "autoWidth": false,
-          "searching": false
-        };
-
-        if (!($(this).attr('data-tablesort') == "true")) {
-          defaultConfigs['ordering'] = false;
-        } else {
-          // Determine Column Type
-          var columns = [];
-          $(this).find('thead').find('th').each(function (i) {
-            if ($(this).attr('data-column-num') == "true") {
-              columns.push({
-                "type": "natural",
-                "targets": i
-              });
-            }
-          });
-          defaultConfigs['columnDefs'] = columns;
-        }
-
-        $(this).dataTable(defaultConfigs);
-      }
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initTableDefault = {
-        attach: function attach(context) {
-          $("body", context).once('nds-table-default').each(function () {
-            initTableDefault(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initTableDefault();
+      initNavigationDrawer();
     });
   }
 })(jQuery);
