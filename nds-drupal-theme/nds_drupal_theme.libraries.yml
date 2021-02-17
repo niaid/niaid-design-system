@@ -10,7 +10,6 @@ global-styling:
 global-scripts:
   version: 1.x
   js:
-    nds/source/js/libraries/jquery/jquery.min.js: {}
     nds/source/js/libraries/select2/select2.full.min.js: {}
     nds/source/js/libraries/materialize/materialize.min.js: {}
     nds/source/js/libraries/bootstrap/bootstrap.bundle.min.js: {}

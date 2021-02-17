@@ -148,12 +148,33 @@
       {% endembed %}
     {% endblock %}
     {% block footer %}
-        {% include "@nds/03-organisms/global/global-footer/_global-footer-main.twig" with 
-        {
-            "global_footer_logo_src": "/themes/custom/nds-drupal-theme/nds/source/images/global/niaid/logo-niaid-white.svg", 
-            "global_footer_logo_alt": "NIAID Logo"
-        }
-        
-        %}
-    {% endblock %}
+        {% embed "@nds/03-organisms/global/global-footer/_global-footer-main.twig" %}
+          {% block global_footer_content_left %}
+              {% include "@nds/01-atoms/images/image-logo/_image-logo-main.twig" with
+                {
+                    "image_logo_src":  "/themes/custom/nds-drupal-theme/nds/source/images/global/niaid/logo-niaid-white.svg",
+                    "image_logo_alt": "NIAID Logo",
+                    "image_logo_href": "/"
+                }
+            %}
+        {% endblock %}
+        {% block global_footer_content_middle %}
+          <h4>Website Policies &amp; Notices</h4>
+          <ul>
+            <li><a class="link--carot" href="#">Freedom of Information Act (FOIA)</a></li>
+            <li><a class="link--carot" href="#">Privacy Policy</a></li>
+            <li><a class="link--carot" href="#">No Fear Act Data</a></li>
+          </ul>
+        {% endblock %}
+        {% block global_footer_content_right %}
+          <h4>Related Government Websites</h4>
+          <ul>
+            <li><a href="https://www.niaid.nih.gov">National Institute of Allergy &amp; Infectious Diseases</a></li>
+            <li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+            <li><a href="https://www.hhs.gov/">Health and Human Services</a></li>
+            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+          </ul>
+        {% endblock %}
+      {% endembed %}
+  {% endblock %}}
 </div>
