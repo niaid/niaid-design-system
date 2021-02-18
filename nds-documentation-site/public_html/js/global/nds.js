@@ -22,30 +22,47 @@ function windowWidth() {
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
 }
 
-(function ($) {
-  function initComponentScrollspySection() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if ($('.scrollspy').length) {
-      $('.scrollspy').scrollSpy();
+$(document).ready(function () {
+  var mql = window.matchMedia('all and (min-width: 992px)');
+  var wWidth = $(window).width();
+  $('.fixed-left').each(function () {
+    if (mql.matches) {
+      stickybits($(this).find('.navigation--mobile-rail'));
     }
+  });
+  $(window).on('resize', function () {
+    if (wWidth != $(this).width()) {
+      wWidth = $(this).width();
+      $('.fixed-left').each(function () {
+        if (mql.matches) {
+          stickybits($(this).find('.navigation--mobile-rail'));
+        } else {
+          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
+          $(this).find('.navigation--mobile-rail').css('position', 'relative');
+        }
+      });
+    }
+  });
+});
+
+(function ($) {
+  function init_layouts_tabs(context) {
+    $('#tab--mockup').attr('tabindex', '-1');
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initComponentScrollspySection = {
+      Drupal.behaviors.layoutsTabs = {
         attach: function attach(context) {
-          $('body', context).once('nds-component-scrollspy-section').each(function () {
-            initComponentScrollspySection(context);
-          });
+          init_layouts_tabs(context);
         }
       };
     })(jQuery, Drupal);
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initComponentScrollspySection();
+      init_layouts_tabs();
     });
   }
 })(jQuery); // Part of NDS Lite
@@ -91,6 +108,34 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     }
   }
 }
+
+(function ($) {
+  function initComponentScrollspySection() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.scrollspy').length) {
+      $('.scrollspy').scrollSpy();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentScrollspySection = {
+        attach: function attach(context) {
+          $('body', context).once('nds-component-scrollspy-section').each(function () {
+            initComponentScrollspySection(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentScrollspySection();
+    });
+  }
+})(jQuery);
 
 (function ($) {
   function initComponentSnippet() {
@@ -323,51 +368,6 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
       if (!$("#builder").length) {
         init_style_controls();
       }
-    });
-  }
-})(jQuery);
-
-$(document).ready(function () {
-  var mql = window.matchMedia('all and (min-width: 992px)');
-  var wWidth = $(window).width();
-  $('.fixed-left').each(function () {
-    if (mql.matches) {
-      stickybits($(this).find('.navigation--mobile-rail'));
-    }
-  });
-  $(window).on('resize', function () {
-    if (wWidth != $(this).width()) {
-      wWidth = $(this).width();
-      $('.fixed-left').each(function () {
-        if (mql.matches) {
-          stickybits($(this).find('.navigation--mobile-rail'));
-        } else {
-          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
-          $(this).find('.navigation--mobile-rail').css('position', 'relative');
-        }
-      });
-    }
-  });
-});
-
-(function ($) {
-  function init_layouts_tabs(context) {
-    $('#tab--mockup').attr('tabindex', '-1');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.layoutsTabs = {
-        attach: function attach(context) {
-          init_layouts_tabs(context);
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      init_layouts_tabs();
     });
   }
 })(jQuery);
@@ -913,82 +913,6 @@ $(document).ready(function () {
       initBlockHero();
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-(function ($) {
-  // initNavigationDrawer - Functionality to support the NDS mobile drawer.
-  function initNavigationDrawer() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.navigation--drawer').length > 0) {
-      var wWidth = windowWidth();
-      document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
-        document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
-        var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
-        overlay.style.display = 'block';
-        document.querySelector('.navigation--drawer__top__button-close').focus();
-        var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
-
-        for (var i = 0; i < tabElements.length; i++) {
-          tabElements[i].setAttribute('tabindex', '0');
-        }
-      });
-      document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
-        closeMenu();
-      });
-      document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
-        closeMenu();
-      });
-
-      window.onresize = function (e) {
-        if (wWidth != windowWidth()) {
-          wWidth = windowWidth();
-          closeMenu();
-        }
-      }; // 508 Compliance Focus Helpers
-
-
-      document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
-        document.querySelector('.navigation--drawer__top__button-close').focus();
-      });
-      document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
-        var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
-        tabElements[tabElements.length - 1].focus();
-      });
-    }
-  } // closeMenu - Helper function to close the mobile drawer.
-
-
-  function closeMenu() {
-    document.querySelector('#global-mobile-menu').focus();
-    document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
-    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
-    overlay.style.display = 'none';
-    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
-
-    for (var i = 0; i < tabElements.length; i++) {
-      tabElements[i].setAttribute('tabindex', '-1');
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationDrawer = {
-        attach: function attach(context) {
-          $("body", context).once('nds-navigation-drawer').each(function () {
-            initNavigationDrawer(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationDrawer();
-    });
-  }
 })(jQuery);
 
 (function ($) {
@@ -1111,6 +1035,82 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentUSWDSBanner();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
+(function ($) {
+  // initNavigationDrawer - Functionality to support the NDS mobile drawer.
+  function initNavigationDrawer() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.navigation--drawer').length > 0) {
+      var wWidth = windowWidth();
+      document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
+        document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
+        var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+        overlay.style.display = 'block';
+        document.querySelector('.navigation--drawer__top__button-close').focus();
+        var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+        for (var i = 0; i < tabElements.length; i++) {
+          tabElements[i].setAttribute('tabindex', '0');
+        }
+      });
+      document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
+        closeMenu();
+      });
+      document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
+        closeMenu();
+      });
+
+      window.onresize = function (e) {
+        if (wWidth != windowWidth()) {
+          wWidth = windowWidth();
+          closeMenu();
+        }
+      }; // 508 Compliance Focus Helpers
+
+
+      document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
+        document.querySelector('.navigation--drawer__top__button-close').focus();
+      });
+      document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
+        var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
+        tabElements[tabElements.length - 1].focus();
+      });
+    }
+  } // closeMenu - Helper function to close the mobile drawer.
+
+
+  function closeMenu() {
+    document.querySelector('#global-mobile-menu').focus();
+    document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
+    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+    overlay.style.display = 'none';
+    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+    for (var i = 0; i < tabElements.length; i++) {
+      tabElements[i].setAttribute('tabindex', '-1');
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationDrawer = {
+        attach: function attach(context) {
+          $("body", context).once('nds-navigation-drawer').each(function () {
+            initNavigationDrawer(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationDrawer();
     });
   }
 })(jQuery); // Part of NDS Lite
