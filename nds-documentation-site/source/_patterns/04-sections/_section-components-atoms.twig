@@ -28,7 +28,11 @@
                 "text_uswds_href": "https://designsystem.digital.gov/components/button/"
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_classes": "component--snippet--button-default"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/buttons/button-default/demo/button-default.twig" %}
             {% endblock %}
@@ -814,10 +818,10 @@
             {% block component_snippet_pattern_info %}
                 <h5>Parameters</h5>
                 <ul>
-                    <li>text_search_results_classes: Additional search results display classes.</a>
-                    <li>text_search_results_title_text: Label for the search results. Default: "Results".</a>
-                    <li>text_search_results_title_level: The heading level for the results display. Default: "2".</a>
-                    <li>text_search_results_title_number: A string of the number of results.</a>
+                    <li>text_search_results_classes: Additional search results display classes.</li>
+                    <li>text_search_results_title_text: Label for the search results. Default: "Results".</li>
+                    <li>text_search_results_title_level: The heading level for the results display. Default: "2".</li>
+                    <li>text_search_results_title_number: A string of the number of results.</li>
                 </ul>
             {% endblock %}
         {% endembed %}

@@ -19,7 +19,7 @@
             @extend .button-nds;
             @extend .button--primary;
             display: inline-flex;
-            line-height: initial;
+            line-height: normal;
             padding:  $s-0-50 $s-1-50;
             border-radius: 0;
             border: 0;

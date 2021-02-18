@@ -1,6 +1,6 @@
 html,
 body {
-    line-height: 2.0;
+    line-height: $line-height-default;
     font-size: $base-size-pixels * 1px;
     background: $page-background;
     font-family: "Roboto", sans-serif;

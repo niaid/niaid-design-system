@@ -13,7 +13,7 @@
             }
             &__rendered {
                 display: inline-flex;
-                line-height: initial;
+                line-height: normal;
                 padding: 0;
                 color: $input-placeholder;
                 .select2-selection__placeholder {
@@ -54,7 +54,7 @@
                     .select2-search--inline {
                         display: block;
                         margin: 0;
-                        line-height: 2.0;
+                        line-height: $line-height-default;
                         .select2-search__field {
                             margin: 0;
                             font-size: 1rem;

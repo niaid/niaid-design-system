@@ -79,12 +79,10 @@ $color-theme-3-3-1: #123B56;
 $color-theme-3-3-2: #0D2E44;
 $color-theme-3-accent: #79A9D1;
 
-/**** BORDER RADIUS ****/
-$border-radius-sharp: 0;
-$border-radius-semi: .3125rem;
-$border-radius-full: 1rem;
+/**** TYPE ****/
+$line-height-default: 2.0;
 
-/**** FONT WEIGHT ****/
+/**** TYPE > FONT WEIGHT ****/
 $font-weight-thin: 100;
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -92,6 +90,11 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-black: 900;
+
+/**** BORDER RADIUS ****/
+$border-radius-sharp: 0;
+$border-radius-semi: .3125rem;
+$border-radius-full: 1rem;
 
 /**** BREAKPOINTS & SIZING ****/
 $layout-mobile-menu-breakpoint: 950px;

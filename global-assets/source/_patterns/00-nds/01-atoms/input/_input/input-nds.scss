@@ -1,4 +1,8 @@
 .input-nds {
+    line-height: $line-height-default;
+    input {
+        line-height: $line-height-default;
+    }
     &::-webkit-input-placeholder {
         color: $input-placeholder;
     }

@@ -14,13 +14,13 @@
         }
     }
     &__credit {
-        line-height: initial;
+        line-height: normal;
         padding: $s-0-25 0;
         span,
         p,
         a,
         div {
-            line-height: initial;
+            line-height: normal;
             margin: 0;
             padding: 0;
             font-style: italic;

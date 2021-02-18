@@ -39,3 +39,9 @@
         }
     }
 }
+
+.navigation--mobile-rail {
+    &.js-is-sticky {
+        width: 25%; // Assumes that the left rail is col-3
+    }
+}

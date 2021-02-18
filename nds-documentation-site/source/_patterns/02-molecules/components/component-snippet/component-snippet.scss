@@ -105,8 +105,6 @@
         margin: 0 -2rem;
         > .col {
             margin: .5rem;
-            @extend .col-md;
-            flex-grow: 0;
         }
     }
     .button--floating {
@@ -117,6 +115,12 @@
     .view--listing {
         h2 {
             margin-top: 0;
+        }
+    }
+    &.component--snippet--button-default {
+        .col {
+            flex-basis: 20%;
+            flex-grow: 0;
         }
     }
     &.component--snippet--icon-default {
