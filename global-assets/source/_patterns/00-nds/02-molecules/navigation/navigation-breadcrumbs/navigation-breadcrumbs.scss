@@ -1,11 +1,6 @@
 .navigation--breadcrumbs {
     font-weight: $font-weight-light;
     font-size: $s-0-75;
-    padding: 0;
-    > p {
-        margin: 0;
-        padding: 0;
-    }
     a {
         &:hover,
         &:focus {
