@@ -18,50 +18,45 @@
         global_header_id: The header ID.
         global_header_product_id_top: The top line of the product identity.
         global_header_product_id_bottom: The bottom line of the product identity.
+        global_header_logo_src: Path to the website logo.
+        global_header_logo_alt: Alternative text to describe the website logo.
+        global_header_logo_src_mobile: Path to the mobile version of the website logo.
+        global_header_logo_alt_mobile: Alternative text to describe the mobile version of the website logo.
 
     Includes:
         Atoms -> Buttons -> button-icon
         Molecules -> Components -> component-branding
-        Molecules -> Forms -> form-search
 
-    Last Updated: January 22, 2021
+    Last Updated: February 17, 2021
 #}
 
 {% set global_header_classes = global_header_classes|default() %}
 {% set global_header_id = global_header_id|default() %}
 {% set global_header_product_id_top = global_header_product_id_top|default() %}
 {% set global_header_product_id_bottom = global_header_product_id_bottom|default() %}
+{% set global_header_logo_src = global_header_logo_src|default() %}
+{% set global_header_logo_alt = global_header_logo_alt|default() %}
+{% set global_header_logo_src_mobile = global_header_logo_src_mobile|default() %}
+{% set global_header_logo_alt_mobile = global_header_logo_alt_mobile|default() %}
 
 <div class="global-nds global--header {{ global_header_classes }}"{% if global_header_id is not empty %} id="{{ global_header_id }}"{% endif %}>
     {% block global_header_content %}
+        {% include "@nds/02-molecules/components/component-branding/_component-branding-main.twig" with
+            {
+                "component_branding_identity_top": global_header_product_id_top,
+                "component_branding_identity_bottom": global_header_product_id_bottom,
+                "component_branding_logo_src": global_header_logo_src,
+                "component_branding_logo_alt": global_header_logo_alt,
+                "component_branding_logo_mobile_src": global_header_logo_src_mobile,
+                "component_branding_logo_mobile_alt": global_header_logo_alt_mobile
+            }
+        %}
         {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
             {
                 "button_icon_id": "global-mobile-menu",
                 "button_icon_classes": "global--header__button button--secondary",
                 "button_icon_icon": "bars",
                 "button_icon_aria_label": "Open Global Menu"
-            }
-        %}
-        {% include "@nds/02-molecules/components/component-branding/_component-branding-main.twig" with
-            {
-                "component_branding_identity_top": global_header_product_id_top,
-                "component_branding_identity_bottom": global_header_product_id_bottom
-            }
-        %}
-        {% include "@nds/02-molecules/forms/form-search/_form-search-main.twig" with
-            {
-                "form_search_id": "header-search-form-demo",
-                "form_search_input_id": "header-search-form-input-demo",
-                "form_search_input_name": "header-search-form-demo",
-                "form_search_input_placeholder": "Searching for something..."
-            }
-        %}
-        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-            {
-                "button_icon_id": "global-header-search--open",
-                "button_icon_classes": "global--header__button button--secondary",
-                "button_icon_icon": "search",
-                "button_icon_aria_label": "Open Global Search"
             }
         %}
     {% endblock %}

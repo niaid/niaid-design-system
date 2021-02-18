@@ -12,9 +12,10 @@
             border-bottom: $s-1px solid transparent;
         }
     }
-    i {
+    .icon--default {
         font-size: $s-0-75;
         width: auto;
         color: $type-body;
+        margin: 0 $s-0-50;
     }
 }
