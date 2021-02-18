@@ -114,13 +114,13 @@ function nds_drupal_theme_form_system_theme_settings_alter(&$form, &$form_state)
     $form['website_color']['website_base_color'] = [
       '#type' => 'radios',
       '#title' => t('Select Website Theme Color'),
-      '#default_value' => NULL !== theme_get_setting('website_base_color'),
       '#options' => [
         'theme-1' => t('Theme One'),
         'theme-2' => t('Theme Two'),
         'theme-3' => t('Theme Three'),
       ],
-      '#description' => t('Select the base color of the theme to give a complete new look to the website. Please visit the <a href="http://ids-theme-builder.niaid.nih.gov.s3-website-us-east-1.amazonaws.com">NIAID Design System documentation site</a> to find out about available color options'),
+      '#default_value' => theme_get_setting('website_base_color'),
+      '#description' => t('Select the base color of the theme to give a complete new look to the website. Please visit the <a href="http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/">NIAID Design System documentation site</a> to find out about available color options'),
   ];
 }
 
