@@ -38,7 +38,7 @@
         });
 
         // Add Accessibility Compliane to Loaded Select Field
-        $('.select2-selection--single').attr('aria-label', 'Click to select option.');
+        $('.select2-selection--single').find('.select2-selection__rendered').attr('aria-label', 'Click to select option.');
         $('.select2-selection--multiple').attr('aria-label', 'Click to select option(s).');
 
         // Remove selection on click of "X"
