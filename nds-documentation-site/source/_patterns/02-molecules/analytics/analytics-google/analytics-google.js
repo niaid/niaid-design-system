@@ -26,6 +26,11 @@ function initDataAttributes() {
         let navigationLinks = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
         setDataAttributes(navigationLinks, 'data-content', 'accordion-');
     }
+
+    for (var i = 0; i < document.getElementsByClassName("navigation--mobile-rail__content").length; i++) {
+        let navigationLinks = document.getElementsByClassName("navigation--mobile-rail__content")[i].querySelectorAll('a');
+        setDataAttributes(navigationLinks, 'data-nav', 'nav-left-');
+    }
 }
 
 // setDataAttributes - Helper function to add data attributes to elements.

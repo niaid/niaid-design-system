@@ -111,6 +111,12 @@
             }
         }
     }
+    .select2-container {
+        .select2-dropdown {
+            @include md-16dp;
+            border: 0;
+        }
+    }
     .media-nds {
         &.media--audio {
             @include md-2dp;

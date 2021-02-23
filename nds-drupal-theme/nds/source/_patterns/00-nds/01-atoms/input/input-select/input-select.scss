@@ -225,4 +225,16 @@
 
 .select2-dropdown {
     z-index: 100000;
+    overflow: hidden;
+    border-radius: 0;
+    .select2-results__options {
+        .select2-results__option {
+            &.select2-results__option--highlighted {
+                background-color: $type-link;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
