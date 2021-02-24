@@ -6,9 +6,9 @@
     Type: Organisms -> Views
 
     Description:
-        Featured Content Cards are excellent for highlighting information, but too many can be overwehelming and can reduce the relative importance of each card. NDS recommends two or three cards be included when using the Featured Content Cards View.
+        Featured Content Cards are excellent for highlighting information, but too many can be overwhelming and reduce the relative importance of each card. We recommend no more thantwo or three cards be used with the Featured Content Cards View.
 
-        The Featured Content Card component can be used either by utilizing the {% block view_featured_content_cards_content %} or by passing data to the "view_featured_content_cards_data" parameter. If using the parameter, the component will calculate the correct width of the Bootstrap columns ("view_featured_content_cards_column_width") based on the number of card objects passed. Therefore, if using the parameter option, you do not need to specify a value for "view_featured_content_cards_column_width".
+        To implement the Featured Content Card use the {% block view_featured_content_cards_content %} or pass data to the "view_featured_content_cards_data" parameter. If using the parameter, the component will calculate the correct width of the Bootstrap columns ("view_featured_content_cards_column_width") based on the number of card objects passed therefore negating the need to specify a value for "view_featured_content_cards_column_width".
 
     Blocks:
         {% block view_featured_content_cards_content %}: The block containing featured content cards.

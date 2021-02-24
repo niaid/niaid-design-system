@@ -18,7 +18,7 @@
         <p>Blocks tend to be non-functional components that are visually distinct from the normal body content.</p>
 
         <h4>Default Block</h4>
-        <p>The default block is a flexible pattern that can be used with almost any HTML content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
+        <p>The Default block is a flexible pattern that can be used with almost any HTML content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-default/demo/block-default.twig" %}
@@ -32,7 +32,11 @@
                 <ul>
                     <li>block_default_classes: Additional block classes.</li>
                     <li>block_default_id: Block ID.</li>
-                    <li>block_default_accent: Optional accent on the left of the block. Options: true, false (Default).</li>
+                    <li>block_default_accent: Optional accent on the left of the block.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
                 </ul>
             {% endblock %}
         {% endembed %}
@@ -60,7 +64,7 @@
         {% endembed %}
 
         <h4>Search Chips</h4>
-        <p>Use this component in tandem with the Filters Component to display the selected filters. Place this component under the search bar.</p>
+        <p>Place this component under the search bar to display the filter criteria.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-search-chips/demo/block-search-chips.twig" %}
@@ -69,7 +73,11 @@
                 <h5>Parameters</h5>
                 <ul>
                     <li>block_search_chips_classes: Additional block classes.</li>
-                    <li>block_search_chips_data: An array of search chip objects. Structure: {"text": "", "url": ""}. The URL should be the link to remove the chip.</li>
+                    <li>block_search_chips_data: An array of search chip objects.
+                        <ul>
+                            <li>Structure: {"text": "", "url": ""}. The URL should be the link to remove the chip.</li>
+                        </ul>
+                    </li>
                     <li>block_search_chips_clear: A URL hooked to the clear button that removes all search chips.</li>
                 </ul>
                 <h5>Includes</h5>
@@ -116,7 +124,7 @@
         {% endembed %}
 
         <h4>Alert Block</h4>
-        <p>Alerts are used to display important, need to know information to site users. NDS offers for alert severity blocks. Alerts are for high priority only and must be for immediate notification. Only one alert can show at any time.</p>
+        <p>Alerts are used to display important, need to know information to site users. NDS offers four alert severity blocks. Alerts are for high priority messaging that requires immediate notification only. Only one alert can show at any time.</p>
         <p>Examples of Alerts include:</p>
         <ul>
             <li>System outages</li>
@@ -150,17 +158,21 @@
                 <ul>
                     <li>block_alert_classes: Additional alert classes.</li>
                     <li>block_alert_id: Alert ID.</li>
-                    <li>block_alert_severity_level: The alert severity level. Options: "1" (Default), "2", "3", "4".</li>
+                    <li>block_alert_severity_level: The alert severity level.
+                        <ul>
+                            <li>Options: "1" (Default), "2", "3", "4".</li>
+                        </ul>
+                    </li>
                 </ul>
             {% endblock %}
         {% endembed %}
 
         <h4>Status Message Block</h4>
-        <p>Status messages are used to convery important information to users. There are four types of status messages - Success, Information, Warning, and Error:
+        <p>Status messages are used to convey important information to users. There are four types of status messages - success, information, warning, and error:</p>
         <ul>
-            <li>Success - Used to indicate a user has completed an important step or call to action.</li>
-            <li>Information - Used to call out an important snippet of information a user could find useful at-a-glance.</li>
-            <li>Warning - Used to slow a reader down if skimming through the content. Indicates the user may need to take action before moving on.</li>
+            <li>Success - Indicates a user has completed an important step or call to action.</li>
+            <li>Information - Calls out an important snippet of information a user could find useful at-a-glance.</li>
+            <li>Warning - Slows a reader down if skimming through the content. Indicates the user may need to take action before moving on.</li>
             <li>Error - Used in rare cases where a user should stop reading or moving forward and take additional action.</li>
         </ul>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
@@ -176,7 +188,11 @@
                 <ul>
                     <li>block_status_message_classes: Additional status message classes.</li>
                     <li>block_status_message_id: Status message ID.</li>
-                    <li>block_status_message_type: The type of status message (required). Options: "message--success", "message--information", "message--warning", "message--error".</li>
+                    <li>block_status_message_type: The type of status message (required).
+                        <ul>
+                            <li>Options: "message--success", "message--information", "message--warning", "message--error".</li>
+                        </ul>
+                    </li>
                     <li>block_status_message_attributes: Additional status message attributes, used particularly if these messages appear dynamically.</li>
                 </ul>
                 <h5>Includes</h5>
@@ -187,16 +203,16 @@
         {% endembed %}
         
         <h4>Hero Block</h4>
-        <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a Parallax effect courtest of the Materialize library.</p>
-        <p>When selecting imagery for the hero, it is recommended to choose images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
-        <p>The Hero Block pattern optionally includes the abiliity to add breadcrumbs to the top.</p>
+        <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a parallax effect courtest of the <a href="https://materializecss.com/parallax.html">Materialize library.</a></p>
+        <p>When selecting imagery for the Hero block, we recommend images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
+        <p>The Hero Block pattern optionally includes the ability to add breadcrumbs to the top.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-hero/demo/block-hero.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Overview</h5>
-                <p>The Hero Block pattern requires users to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
+                <p>The Hero Block pattern requires developers to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
                 <h5>Blocks</h5>
                 <ul>
                     <li>&#123;% block block_hero_image %&#125;: The hero image, passed in as a &lt;img&gt; tag.</li>
@@ -228,7 +244,11 @@
                 <ul>
                     <li>block_share_classes: Additional block classes.</li>
                     <li>block_share_id: Block ID.</li>
-                    <li>block_share_data: An array of share button objects. Structure: {"type": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform in lowercase form (ex. twitter).</li>
+                    <li>block_share_data: An array of share button objects.
+                        <ul>
+                            <li>Structure: {"type": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform in lowercase form (ex. twitter).</li>
+                        </ul>
+                    </li>
                 </ul>
                 <h5>Includes</h5>
                 <ul>
@@ -238,7 +258,7 @@
         {% endembed %}
 
         <h4>Was This Page Helpful? (WTPH) Block</h4>
-        <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in functionality, meaning users will need to add their own functions and input handling.</p>
+        <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in form or data-collection functionality, meaning users will need to add their own functions and input handling.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-wtph/demo/block-wtph.twig" %}
@@ -265,9 +285,9 @@
 %}
     {% block component_scrollspy_section_content %}
         <h3>Components</h3>
-        <p>Component are similar to Block patterns but tend to have enhanced functionality (JavaScript).</p>
+        <p>Components are similar to Block patterns but tend to have enhanced functionality (JavaScript).</p>
         <h4>Accordion Component</h4>
-        <p>Accordions are web components that separate a large amount of content into toggleable sections, thereby reducing the overall page length and allowing the user to focus on individual pieces of content at a time.</p>
+        <p>Accordions are web components that separate a large amount of content into sections that can be toggled open or closed, thereby reducing the overall page length and allowing the user to focus on individual pieces of content at a time.</p>
         {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
             {
                 "block_dependencies_data": [
@@ -292,7 +312,7 @@
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Overview</h5>
-                <p>The Accordion pattern is simply a wrapper designed to container Bootstrap Accordion markup. Please reference the demo or <a href="https://getbootstrap.com/docs/4.0/components/collapse/">Bootstrap's Collapse Documentation</a> for more information.</p>
+                <p>The Accordion pattern is simply a wrapper for Bootstrap's accordion markup. Please reference the demo or <a href="https://getbootstrap.com/docs/4.0/components/collapse/">Bootstrap's Collapse Documentation</a> for more information.</p>
                 <h5>Blocks</h5>
                 <ul>
                     <li>&#123;% block component_accordion_content %&#125;: The Bootstrap markup for accordions.</li>
@@ -306,7 +326,7 @@
         {% endembed %}
 
         <h4>Branding Component</h4>
-        <p>The NDS Branding component makes it easy to comply with NIAID's Digital Policy surrounding web property identification.</p>
+        <p>The NDS Branding component makes it easy to comply with NIAID's digital policies surrounding branding and visuals for digital properties.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-branding/demo/component-branding.twig" %}
@@ -390,8 +410,16 @@
                     <li>component_media_caption: Caption text to appear below the image.</li>
                     <li>component_media_credit: Credit text to appear below the image.</li>
                     <li>component_media_credit_label: The label to appear before the credit text (Default: "Credit:").</li>
-                    <li>component_media_float: The direction to float the component (optional). Options: "left", "right".</li>
-                    <li>component_media_lightbox: A parameter to determine if the image should include the Materialize lightbox feature. Options: "yes".</li>
+                    <li>component_media_float: The direction to float the component (optional).
+                        <ul>
+                            <li>Options: "left", "right".</li>
+                        </ul>
+                    </li>
+                    <li>component_media_lightbox: A parameter to determine if the image should include the Materialize lightbox feature.
+                        <ul>
+                            <li>Options: "yes".</li>
+                        </ul>
+                    </li>
                 </ul>
                 <h5>Includes</h5>
                 <ul>
@@ -510,11 +538,27 @@
                     <li>input_group_text_value: Default value of the field.</li>
                     <li>input_group_text_aria_label: Aria Label of the text field.</li>
                     <li>input_group_text_tabindex: Optional tabindex attribute of the field.</li>
-                    <li>input_group_text_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
-                    <li>input_group_text_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
-                    <li>input_group_text_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
+                    <li>input_group_text_disabled: Bool indicating if the field is disabled.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
+                    <li>input_group_text_readonly: Bool indicating if the field is readonly.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
+                    <li>input_group_text_required: Bool indicating if the field is requred.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
                     <li>input_group_text_icon: Optional name of Font Awesome icon to appear in the field.</li>
-                    <li>input_group_text_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>input_group_text_icon_weight: Font Awesome icon weight.
+                        <ul>
+                            <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                        </ul>
+                    </li>
                 </ul>
                 <h5>Includes</h5>
                 <ul>
@@ -581,7 +625,7 @@
         {% endembed %}
 
         <h4>Select Field Group</h4>
-        <p>The Select Field Group provides users with an improved select list experience courtesy of the Select2 library.</p>
+        <p>The Select Field Group provides a user-friendly select list experience courtesy of the Select2 library.</p>
         {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
             {
                 "block_dependencies_data": [
@@ -654,11 +698,31 @@
                     <li>input_group_select_value: Default value of the field.</li>
                     <li>input_group_select_aria_label: Aria Label of the select field.</li>
                     <li>input_group_select_tabindex: Optional tabindex attribute of the field.</li>
-                    <li>input_group_select_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
-                    <li>input_group_select_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
-                    <li>input_group_select_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
-                    <li>input_group_select_always_selected: Bool indicating if the field should always have one option selected. Options: true, false (Default).</li>
-                    <li>input_group_select_multiple: Bool indicating if the field can have multiple selections. Options: true, false (Default).</li>
+                    <li>input_group_select_disabled: Bool indicating if the field is disabled.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
+                    <li>input_group_select_readonly: Bool indicating if the field is readonly.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
+                    <li>input_group_select_required: Bool indicating if the field is requred.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
+                    <li>input_group_select_always_selected: Bool indicating if the field should always have one option selected.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
+                    <li>input_group_select_multiple: Bool indicating if the field can have multiple selections.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
                 </ul>
                 <h5>Includes</h5>
                 <ul>
@@ -709,9 +773,21 @@
                     <li>input_group_date_picker_value: Default value of the field.</li>
                     <li>input_group_date_picker_aria_label: Aria Label of the Date Picker.</li>
                     <li>input_group_date_picker_tabindex: Optional tabindex attribute of the field.</li>
-                    <li>input_group_date_picker_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
-                    <li>input_group_date_picker_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
-                    <li>input_group_date_picker_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
+                    <li>input_group_date_picker_disabled: Bool indicating if the field is disabled.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
+                    <li>input_group_date_picker_readonly: Bool indicating if the field is readonly.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
+                    <li>input_group_date_picker_required: Bool indicating if the field is requred.
+                        <ul>
+                            <li>Options: true, false (Default).</li>
+                        </ul>
+                    </li>
                 </ul>
                 <h5>Includes</h5>
                 <ul>
@@ -732,7 +808,7 @@
         <h3>Forms</h3>
 
         <h4>Search Form</h4>
-        <p>Search allows users to find content on your site. A search feature is almost always recommended for websites, unless the website is only a few pages.</p>
+        <p>Search allows users to find content on your site. A search feature is almost always recommended for websites unless the website is only a few pages.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
                 "text_uswds_component_name": "Search",
@@ -768,7 +844,11 @@
                     <li>form_search_input_name: Name of the form's &lt;input&gt; element.</li>
                     <li>form_search_input_placeholder: Placeholder text for the form's &lt;input&gt; element.</li>
                     <li>form_search_input_icon: Optional name of Font Awesome icon to appear in the field.</li>
-                    <li>form_search_input_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>form_search_input_icon_weight: Font Awesome icon weight.
+                        <ul>
+                            <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                        </ul>
+                    </li>
                     <li>form_search_input_aria_label: Aria Label for the form's &lt;input&gt; element.</li>
                 </ul>
                 <h5>Includes</h5>
@@ -789,7 +869,7 @@
         <h3>Navigation</h3>
         <p>Navigation elements are crucial to any website as they allow users to move between site pages. NDS offers several patterns to make navigation easy and policy-compliant.</p>
         <h4>Primary Navigation</h4>
-        <p>Primary navigation is used to move between the major sections of your website. NDS recommends including primary navigation directly below the header of your site for easiest access.</p>
+        <p>Primary navigation is used to move between the major sections of your website. We recommend including primary navigation directly below the header of your site for easiest access.</p>
         {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
             {
                 "block_dependencies_data": [
@@ -812,7 +892,7 @@
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Overview</h5>
-                <p>Although it is possible to use the NDS out of the box component for Primary Navigation, it is likely you will need to replicate the pattern for your particular site due to the unique nature of different websites. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes to the component without altering the original NDS component.</p>
+                <p>Although it is possible to use the NDS out-of-the-box component for Primary Navigation, it is likely you will need to customize the pattern for your particular site. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes without altering the original NDS component.</p>
                 <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup, using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
                 <h5>Blocks</h5>
                 <ul>
@@ -827,7 +907,7 @@
         {% endembed %}
 
         <h4>Breadcrumbs</h4>
-        <p>Breadcrumbs are used to help users identify where they are within the menu sytem of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
+        <p>Breadcrumbs are used to help users identify where they are within the menu system of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
                 "text_uswds_component_name": "Breadcrumbs",
@@ -843,8 +923,16 @@
                 <ul>
                     <li>navigation_breadcrumbs_classes: Additional classes for the navigation component.</li>
                     <li>navigation_breadcrumbs_id: Navigation component ID.</li>
-                    <li>navigation_breadcrumbs_data: An array of breadcrumb objects. Structure: {"text": "", "href": "", "routeName": ""}. The "href" key can be empty. The "routeName" key should be empty unless using Drupal.</li>
-                    <li>navigation_breadcrumbs_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                    <li>navigation_breadcrumbs_data: An array of breadcrumb objects.
+                        <ul>
+                            <li>Structure: {"text": "", "href": "", "routeName": ""}. The "href" key can be empty. The "routeName" key should be empty unless using Drupal.</li>
+                        </ul>
+                    </li>
+                    <li>navigation_breadcrumbs_icon_weight: Font Awesome icon weight.
+                        <ul>
+                            <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                        </ul>
+                    </li>
                 </ul>
                 <h5>Includes</h5>
                 <ul>
@@ -868,7 +956,11 @@
                 <ul>
                     <li>navigation_pagination_classes: Additional classes for the navigation component.</li>
                     <li>navigation_pagination_id: Navigation component ID.</li>
-                    <li>navigation_pagination_data: An array of pagination button objects. Structure: {"href": "", "class": ""}. Pass "active" or "is-active" to the the "class" key for the current page.</li>
+                    <li>navigation_pagination_data: An array of pagination button objects.
+                        <ul>
+                            <li>Structure: {"href": "", "class": ""}. Pass "active" or "is-active" to the the "class" key for the current page.</li>
+                        </ul>
+                    </li>
                     <li>navigation_pagination_next_href: URL destination for the "Next" page button.</li>
                     <li>navigation_pagination_last_href: URL destination for the "Last" page button.</li>
                 </ul>
@@ -907,7 +999,7 @@
         {% endembed %}
 
         <h4>Mobile Rail</h4>
-        <p>This simple component helps transition your site from a desktop layout to mobile by collapsing the local navigation (or whatever is wrapped) into a dropdown.</p>
+        <p>This simple component helps transition your site from a desktop to mobile layout by collapsing the local navigation (or whatever other content is wrapped) into a dropdown.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_show_rendered": "no"

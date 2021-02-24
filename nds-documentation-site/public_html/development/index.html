@@ -353,7 +353,7 @@
     </div>                        
 <div id="section-atomic-design" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Atomic Design</h2>
-        <p>NDS employs the use of a development philosophy known as Atomic Design. Under this system, web components are broken up into their simplest parts, like colors, fonts, and button styles. These basic building blocks of design are referred to as Atoms. Atoms combine to create Molecules, which are more complex web structures. Examples of Molecules include teaser cards, input groups, and simple navigation structures. Finally, Molecules come together to create yet another level of complex web structures, such as website headers and footers. These structures are called Organisms, and are typically the most complex components. The following video provides a useful visualization for how these structures combine together.</p>
+        <p>NDS employs a development philosophy known as Atomic Design. Under this system, web components are broken up into their simplest parts, like colors, fonts, and button styles. These basic building blocks of design are referred to as atoms. Atoms combine to create molecules, which are more complex web structures. Examples of molecules include teaser cards, input groups, and simple navigation structures. Finally, molecules come together to create yet another level of complex web structures, such as website headers and footers. These structures are called organisms, and are typically the most complex components. The following video provides a useful visualization for how these structures combine together.</p>
         
 
     
@@ -380,7 +380,7 @@
     </div>                    </div>
     </div>
 </div>
-        <p>NDS focuses primarily on the first three levels of Atomic structure (Atoms, Molecules, &amp; Organisms), due to its focus on integrating with Drupal.</a> If Drupal is not used, further Atomic levels, such as Templates and Pages, can be leveraged to create static HTML sites.
+        <p>NDS focuses primarily on the first three levels of Atomic structure (atoms, molecules, &amp; organisms), due to its focus on integrating with Drupal.</a> If Drupal is not used, further Atomic levels, such as templates and pages, can be leveraged to create static HTML sites.
         <h3>Benefits of Atomic Design</h3>
         <p>There are many benefits to Atomic Design, including:</p>
         <ol>
@@ -389,7 +389,7 @@
             <li>Better organization of component files</li>
         </ol>
         <h4>1. Efficient code manipulation</h4>
-        <p>Perhaps the most significant benefit of Atomic Design is the speed at which changes can be made to design components. Since web components or patterns are composed of other smaller components, changes need only happen in one place. For example, if a designer wanted to change the color of a button, and that button pattern is referenced in a featured content card molecule, the developer can change the color of the button at the Atom level, and any references to that pattern will be updated automatically.</p>
+        <p>Perhaps the most significant benefit of Atomic Design is the speed at which changes can be made to design components. Since web components or patterns are composed of other smaller components, changes need only happen in one place. For example, if a designer wanted to change the color of a button, and that button pattern is referenced in a featured content card molecule, the developer can change the color of the button at the atom level, and any references to that pattern will be updated automatically.</p>
         
 
     
@@ -410,13 +410,13 @@
         </div>
                 <div class="text--image-credit-caption__credit">
             <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
-            <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
         </div>
     </div>                    </div>
     </div>
 </div>
         <h4>2. Modular components that can be reused</h4>
-        <p>Pattern Libraries of Design Systems cut down on development time by allowing components to be shared and reused across an unlimited number of web properties. NDS is constantly evolving and growing by incorporating new patterns into its component library.</p>
+        <p>Pattern libraries of Design Systems cut down on development time by allowing components to be shared and reused across an unlimited number of web properties. NDS is constantly evolving and growing by incorporating new patterns into its component library.</p>
         <h4>3. Better organization of component files</h4>
         <p>Under Atomic Design, the various assets needed for a component, such as component-specific CSS, JS, and HTML, are packaged together in folders. This makes it easy to find the code that makes up a certain component, saving time during the development process. Furthermore, this organization makes it easier to share components with other projects.</p>
     </div>                        
@@ -431,9 +431,9 @@
     </div>                        
 <div id="section-patternlab" class="component-nds component--scrollspy-section scrollspy section ">
             <h3>Pattern Lab (Twig Version)</h3>
-        <p>NDS implements the Atomic Design philosophy using a framework called <a href="https://patternlab.io/">Pattern Lab.</a> Pattern Lab houses the components that NDS provides to users and organizes them into Atomic folders. The framework uses templating languages to create component structures, which gives developers the ability to feed smaller components into larger ones. These components are then compiled into web-ready HTML code.</p>
+        <p>NDS implements the Atomic Design philosophy using a framework called <a href="https://patternlab.io/">Pattern Lab.</a> Pattern Lab houses the components that NDS provides to users and organizes them into atomic folders. The framework uses templating languages to create component structures, which gives developers the ability to feed smaller components into larger ones. These components are then compiled into web-ready HTML code.</p>
         <h4>Twig</h4>
-        <p>Twig is a templating language which is responsible for defining the HTML structures for patterns. Unlike pure HTML, however, Twig allows users to create variables, render markup with loops, and include patterns inside other patterns. Pattern Lab relies on templating languages to implement Atomic Design through this inclusion. Pattern Lab supports a variety of templating languages, but due to Drupal integration support, NDS uses the Twig-based version.</p>
+        <p>Twig is a templating language which is responsible for defining the HTML structures for patterns. Unlike pure HTML, however, Twig allows users to create variables, render markup with loops, and include patterns inside other patterns. Pattern Lab relies on templating languages to implement Atomic Design through this inclusion. Pattern Lab supports a variety of templating languages; due to Drupal integration support, NDS uses the Twig-based version.</p>
         
 
 <div class="block-nds block--default  ">
@@ -470,7 +470,7 @@
         </div>
                 <div class="text--image-credit-caption__credit">
             <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
-            <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
         </div>
     </div>                    </div>
     </div>
@@ -485,9 +485,9 @@
         <h6>_patterns Directory</h6>
         <p>Within the _patterns/ directory, components are grouped in folders by Atomic level (i.e. 01-atoms, 02-molecules, etc.). Each Atomic level is further broken down into Atomic sub-categories. For example, the 01-atoms folder contains pattern categories like buttons, icons, and images. Within these sub-categories, individual pattern directories can be found. Pattern directories contain the necessary assets for the pattern to function. The contents of a pattern folder may include:</p>
         <ul>
-            <li>A main twig file, denoted _[atomic-sub-category]-[pattern-name]-main.twig (i.e. _button-default-main.twig)</li>
-            <li>A SCSS file that has pattern-specific styling: (i.e. button-default.scss)</li>
-            <li>A JS file that adds pattern-specific functionality (i.e. button-default.js)</li>
+            <li>A main twig file, denoted _[atomic-sub-category]-[pattern-name]-main.twig (e.g. _button-default-main.twig)</li>
+            <li>A SCSS file that has pattern-specific styling: (e.g. button-default.scss)</li>
+            <li>A JS file that adds pattern-specific functionality (e.g. button-default.js)</li>
             <li>A demo directory that contains a twig file. This file contains a sample of how to reference or include the pattern in other places/patterns.</li>
         </ul>
         
@@ -510,21 +510,21 @@
         </div>
                 <div class="text--image-credit-caption__credit">
             <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
-            <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
         </div>
     </div>                    </div>
     </div>
 </div>
-        <p>In addition to the traditional Atomic level directories, where project-specific patterns are organized, NDS supplies its own out-of-the-box components in a 00-nds/ folder. Inside 00-nds/, patterns are organized into the usual 01-atoms, 02-molecules, etc. to mirror the conventional structure. <strong>Do not make changes to patterns in the 00-nds/ directory,</strong> since this directory may be updated as NDS evolves and changes will be removed. If you want to modify an NDS component for project-specific implementations, simply copy the pattern folder from inside 00-nds/ and add it to the proper Atomic subdirectory under the _patterns folder.
+        <p>In addition to the traditional Atomic level directories, where project-specific patterns are organized, NDS supplies its own out-of-the-box components in a 00-nds/ folder. Inside 00-nds/, patterns are organized into the usual 01-atoms, 02-molecules, etc. to mirror the conventional structure. <strong>Do not make changes to patterns in the 00-nds/ directory</strong> since this directory may be updated as NDS evolves and changes will be removed. If you want to modify an NDS component for project-specific implementations, simply copy the pattern folder from inside 00-nds/ and add it to the proper Atomic subdirectory under the _patterns folder.
         <h6>css/ Directory</h6>
         <p>The css/ directory houses the styling rules for the global aspects of NDS's visual appearance. It also holds the main "style.scss" which orchestrates how the Sass rules compile into CSS. The global/ directory houses the NDS SASS variables and mixins, as well as general styling rules such as heading and body font properties. The libraries/ directory houses third-party library CSS files. Similarly to the 00-nds/ directory, <strong>do not make changes in the global/ and libraries/ folders</strong>, as they are subject to continual updates.</p>
         <p>For customizations of global styling rules, use the overrides/ directory. This folder directly mirrors the global/ folder, and NDS has been designed to give priority to rules in overrides/. For instance, if a site needed to specify its own set of breakpoints for use in responsive design, those modifications can be placed in the overrides/ folder.</p>
         <h6>js/ Directory</h6>
         <p>The js/ directory houses JavaScript files that NDS needs. These files include third-party library scripts, such as Bootstrap and Materialize. The js/ directory also includes "nds.js", a file that is a compiled version of all the pattern-specific scripts. Custom patterns with custom JS are compiled into nds.js.</p>
         <h6>images/ Directory</h6>
-        <p>The images/ directory holds some generic placeholder images, as well as global images, such as document icons. Place any project-specific images needed into this folder.</p>
+        <p>The images/ directory holds some generic placeholder images as well as global images, such as document icons. Place any project-specific images needed into this folder.</p>
         <h5>Public Directory</h5>
-        <p>When Pattern Lab compiles, a locally-hosted style guide is opened in a browser. This style guide comes from the ./public folder, wherein all patterns are converted to web-ready HTML.</p>
+        <p>When Pattern Lab compiles, a locally-hosted style guide is opened in a browser. This style guide comes from the ./public folder wherein all patterns are converted to web-ready HTML.</p>
         <p>When building a static website, the production HTML should be copied from within the ./public/patterns/ directory. The gulpfile.js file that ships with NDS has sample code to pull your final pages into a production-ready folder.</p>
         
 
@@ -546,7 +546,7 @@
         </div>
                 <div class="text--image-credit-caption__credit">
             <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
-            <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+            <span class="text--image-credit-caption__credit__text">NIAID</span>
         </div>
     </div>                    </div>
     </div>
@@ -576,7 +576,7 @@
             <h3>jQuery</h3>
         
 
-<span class="text-nds text--badge ">Version: 3.5.1</span>        <p><a href="https://jquery.com/">jQuery</a> is a JavaScript library that, according to its website, "makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers." In other words, jQuery simplifies many different different tasks in plain JavaScript. NDS is making strides to decouple from jQuery to provide more flexibility for developers, however, jQuery currently remains a dependency.</p>
+<span class="text-nds text--badge ">Version: 3.5.1</span>        <p><a href="https://jquery.com/">jQuery</a> is a JavaScript library that, according to its website, "makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers." In other words, jQuery simplifies many different tasks in plain JavaScript. NDS is making strides to decouple from jQuery to provide more flexibility for developers, however, jQuery currently remains a dependency.</p>
     </div>                        
 <div id="section-gulp" class="component-nds component--scrollspy-section scrollspy section ">
             <h3>Gulp</h3>
@@ -610,15 +610,15 @@
         <h3>Materialize</h3>
         
 
-<span class="text-nds text--badge ">Version: 1.0.0</span>        <p><a href="https://materializecss.com/">Materialize</a> is a front-end library that has converted guidance from Google's Material Design documentation into code. The main utility of this library that is leveraged in NDS is the Parallax effect for hero images. Other capabilities may be used for custom needs as well.</p>
+<span class="text-nds text--badge ">Version: 1.0.0</span>        <p><a href="https://materializecss.com/">Materialize</a> is a front-end library that has converted guidance from Google's Material Design documentation into code. The main utility NDS uses from this library is the parallax effect for hero images. Other capabilities from Materialize may be used for custom needs.</p>
         <h3>DataTables</h3>
         
 
-<span class="text-nds text--badge ">Version: 1.10.20</span>        <p>Tables can be tricky on the web for accessibility and responsive reasons. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables and improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initizlaize the responsive functionality of DataTables.</p>
+<span class="text-nds text--badge ">Version: 1.10.20</span>        <p>Tables can be tricky on the web for accessibility and responsive reasons. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables and improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initialize the responsive functionality of DataTables.</p>
         <h3>Select2</h3>
         
 
-<span class="text-nds text--badge ">Version: 4.0.13</span>        <p><a href="https://select2.org/">Select2</a> enhances dropdown fields (select elements) by adding additional functionality such as inline searching and multi-select.</p>
+<span class="text-nds text--badge ">Version: 4.0.13</span>        <p><a href="https://select2.org/">Select2</a> enhances dropdown fields (select elements) by adding functionality such as inline searching and multi-select.</p>
         <h3>Bootstrap Datepicker</h3>
         
 
@@ -632,14 +632,14 @@
             <h2>Themes</h2>
         <p>NDS comes preconfigured with a set of theming options including heading and body font family, color palettes, and corner radius. For the complete set of options, visit the <a href="/builder/">Theme Builder</a>. NDS applies these styles through the use of classes applied to the &lt;body&gt; HTML tag.</p>
         <h3 id="developing-with-typography">Developing with Typography</h3>
-        <p>NDS users can select font families for the headings and body of a page. For the headings, there are four available fonts to choose from - Public Sans, Roboto, Martel, and Merriweather. To apply one of these fonts to your headings, add the appropriate body class:</p>
+        <p>NDS users can select font families for the headings and body of a page. For the headings, there are four available fonts to choose from: Public Sans, Roboto, Martel, and Merriweather. To apply one of these fonts to your headings, add the appropriate body class:</p>
         <ul>
             <li>Public Sans: <code>style--headings--public-sans</code></li>
             <li>Roboto: <code>style--headings--roboto</code></li>
             <li>Martel: <code>style--headings--martel</code></li>
             <li>Merriweather: <code>style--headings--merriweather</code></li>
         </ul>
-        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body, add the appropriate body class:</p>
+        <p>For body font, NDS provides two options: Public Sans and Roboto. To apply one of these fonts to your body add the appropriate body class:</p>
         <ul>
             <li>Public Sans: <code>style--body--public-sans</code></li>
             <li>Roboto: <code>style--body--roboto</code></li>
@@ -696,7 +696,7 @@
         </div>
     </div>
 </div>        <h3 id="developing-with-colors">Developing with Colors</h3>
-        <p>Currently, NDS users have three color palette options to choose from, however, more may be available in the future. Add the corresponding body class for your desired palette:</p>
+        <p>Currently, NDS users have three color palette options to choose from. More may be available in the future. Add the corresponding body class for your desired palette:</p>
         
 <div class="view-nds view--swatches container-fluid ">
     <h4>Theme 1 (Default):</h4>
@@ -820,7 +820,7 @@
 </div>        </div>
     </div>
 </div>        <h3 id="developing-with-shadows">Developing with Shadows</h3>
-        <p>NDS supports both the Flat and Material Design visual style. By default, NDS is configured in Flat design. If Material Design is desired, add the following class to the body:</p>
+        <p>NDS supports both the flat and Material Design visual style. By default, NDS is configured in flat design. If Material Design is desired, add the following class to the body:</p>
         <code>style--shadows</code> 
         <h3 id="developing-with-corners">Developing with Corners</h3>
         <p>There are three corner styles available with NDS: Sharp, Semi-Rounded, Fully-Rounded. To apply one of these corner styles to your site, add the appropriate body class:</p>

@@ -1,32 +1,41 @@
 {% embed "@nds/02-molecules/input-group/input-group-checkbox/_input-group-checkbox-main.twig" with
     {
-        "input_group_checkbox_id": "input-group-checkbox",
-        "input_group_checkbox_label": "Choose Platforms You Own"
+        "input_group_checkbox_id": "form-group-example",
+        "input_group_checkbox_label": "Choose Type(s) of Diseases/Conditions"
     }
 %}
     {% block input_checkbox_options %}
         {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
             {
-                "input_checkbox_name": "input-group-checkbox",
-                "input_checkbox_id": "checkbox-xbox",
-                "input_checkbox_value": "xbox",
-                "input_checkbox_label": "Xbox"
+                "input_checkbox_name": "form-group-example",
+                "input_checkbox_id": "coronaviruses",
+                "input_checkbox_value": "coronaviruses",
+                "input_checkbox_label": "Coronaviruses",
+                "input_checkbox_required": "yes"
             }
         %}
         {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
             {
-                "input_checkbox_name": "input-group-checkbox",
-                "input_checkbox_id": "checkbox-playstation",
-                "input_checkbox_value": "playstation",
-                "input_checkbox_label": "Playstation"
+                "input_checkbox_name": "form-group-example",
+                "input_checkbox_id": "ebola-marburg",
+                "input_checkbox_value": "ebola-marburg",
+                "input_checkbox_label": "Ebola & Marburg"
             }
         %}
         {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
             {
-                "input_checkbox_name": "input-group-checkbox",
-                "input_checkbox_id": "checkbox-pc",
-                "input_checkbox_value": "pc",
-                "input_checkbox_label": "PC"
+                "input_checkbox_name": "form-group-example",
+                "input_checkbox_id": "food-allergy",
+                "input_checkbox_value": "food-allergy",
+                "input_checkbox_label": "Food Allergy"
+            }
+        %}
+        {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
+            {
+                "input_checkbox_name": "form-group-example",
+                "input_checkbox_id": "hiv-aids",
+                "input_checkbox_value": "hiv-aids",
+                "input_checkbox_label": "HIV/AIDS"
             }
         %}
     {% endblock %}

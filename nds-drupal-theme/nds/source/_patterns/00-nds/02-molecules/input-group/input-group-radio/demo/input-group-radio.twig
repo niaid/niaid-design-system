@@ -1,32 +1,41 @@
 {% embed "@nds/02-molecules/input-group/input-group-radio/_input-group-radio-main.twig" with
     {
-        "input_group_radio_id": "input-group-radio",
-        "input_group_radio_label": "Choose the Platform You Own"
+        "input_group_radio_id": "radio-disease-conditions",
+        "input_group_radio_label": "Choose Type of Diseases/Condition"
     }
 %}
     {% block input_radio_options %}
         {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
             {
-                "input_radio_name": "input-group-radio",
-                "input_radio_id": "radio-xbox",
-                "input_radio_value": "xbox",
-                "input_radio_label": "Xbox"
+                "input_radio_name": "radio-disease-conditions",
+                "input_radio_id": "r-coronaviruses",
+                "input_radio_value": "coronaviruses",
+                "input_radio_label": "Coronaviruses",
+                "input_radio_required": "yes"
             }
         %}
         {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
             {
-                "input_radio_name": "input-group-radio",
-                "input_radio_id": "radio-playstation",
-                "input_radio_value": "playstation",
-                "input_radio_label": "Playstation"
+                "input_radio_name": "radio-disease-conditions",
+                "input_radio_id": "r-ebola-marburg",
+                "input_radio_value": "ebola-marburg",
+                "input_radio_label": "Ebola & Marburg"
             }
         %}
         {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
             {
-                "input_radio_name": "input-group-radio",
-                "input_radio_id": "radio-pc",
-                "input_radio_value": "pc",
-                "input_radio_label": "PC"
+                "input_radio_name": "radio-disease-conditions",
+                "input_radio_id": "r-food-allergy",
+                "input_radio_value": "food-allergy",
+                "input_radio_label": "Food Allergy"
+            }
+        %}
+        {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
+            {
+                "input_radio_name": "radio-disease-conditions",
+                "input_radio_id": "r-hiv-aids",
+                "input_radio_value": "hiv-aids",
+                "input_radio_label": "HIV/AIDS"
             }
         %}
     {% endblock %}

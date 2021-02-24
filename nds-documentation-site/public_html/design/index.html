@@ -348,7 +348,7 @@
                             
 <div id="section-overview" class="component-nds component--scrollspy-section scrollspy section ">
             <h1>Design</h1>
-        <p>The visual style of the NIAID Design System is based on <a href="https://material.io/design/">Material Design</a>, but has been modified to give NIAID web properties a unique look and feel. The visual style is also informed by HHS, NIH, and <a href="https://designsystem.digital.gov/">USWDS</a> policies, best practices, and many usability studies.</p>
+        <p>The visual style of the NIAID Design System is based on <a href="https://material.io/design/">Material Design</a>, but has been modified to give NIAID web properties a unique look and feel. The visual style is also informed by HHS, NIH, and the <a href="https://designsystem.digital.gov/">United States Web Design System (USWDS)</a> policies, best practices, and many usability studies.</p>
         
 <div class="block--design-files container-fluid ">
     <div class="row">
@@ -457,9 +457,9 @@
         <h4>Lists</h4>
         <h5>Unordered List</h5>
         <ul>
-            <li>List Item Number One</li>
-            <li>List Item Number Two</li>
-            <li>List Item Number Three</li>
+            <li>List Item</li>
+            <li>List Item</li>
+            <li>List Item</li>
         </ul>
         <h5>Ordered List</h5>
         <ol>
@@ -796,7 +796,7 @@
 <a class="button-nds waves-effect waves-light button--primary " href="/development/#developing-with-colors" role="button" >Develop with Colors</a>            </div>    </div>                        
 <div id="section-forms" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Forms &amp; Input</h2>
-        <p>Form controls and inputs are an essential mechanism for websites and applications to get user-provided information. From "Was This Page Helpful?" forms to Contact Us pages, form fields and inputs add a layer of interactivity to digital platforms. Form fields can be difficult to get right due to stringent accessibility laws such as <a href="https://www.ada.gov/508/">Section 508 under the Americans with Disabilities Act (ADA).</a> NDS ensures form fields are compliant and elegant by ensuring visible focus states and color contrast meet the guidelines.</p>
+        <p>Form controls and inputs are an essential mechanism for websites and applications to get user-provided information. From "Was This Page Helpful?" forms to Contact Us pages, form fields and inputs add a layer of interactivity to digital platforms. Form fields can be difficult to get right due to stringent requirements under <a href="https://www.ada.gov/508/">Section 508 of the Americans with Disabilities Act (ADA).</a> NDS ensures form fields are compliant and elegant by ensuring visible focus states and color contrast meet the guidelines.</p>
         <h3>Buttons</h3>
         <p>NDS supports four main button styles: Primary, Secondary, Tertiary, and Negative. These four styles are shown below:</p>
         <div class="container container--button">
@@ -908,75 +908,95 @@
 <div id="form-group-example" class="input-group-nds input-group--checkbox " role="checkbox">
     
 
-<label class="input-nds input--label " for="form-group-example" title="Choose Platforms You Own">Choose Platforms You Own
+<label class="input-nds input--label " for="form-group-example" title="Choose Type(s) of Diseases/Conditions">Choose Type(s) of Diseases/Conditions
     </label>                                
 
 <div class="input-nds input--checkbox " tabindex="1">
     <input
         
 
- id="xbox" type="checkbox" name="form-group-example" value="xbox" required    >
+ id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required    >
     
 
-<label class="input-nds input--label " for="xbox" title="Xbox">Xbox
+<label class="input-nds input--label " for="coronaviruses" title="Coronaviruses">Coronaviruses
     </label></div>                            
 
 <div class="input-nds input--checkbox " tabindex="1">
     <input
         
 
- id="playstation" type="checkbox" name="form-group-example" value="playstation"    >
+ id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg"    >
     
 
-<label class="input-nds input--label " for="playstation" title="Playstation">Playstation
+<label class="input-nds input--label " for="ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
     </label></div>                            
 
 <div class="input-nds input--checkbox " tabindex="1">
     <input
         
 
- id="pc" type="checkbox" name="form-group-example" value="pc"    >
+ id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy"    >
     
 
-<label class="input-nds input--label " for="pc" title="PC">PC
+<label class="input-nds input--label " for="food-allergy" title="Food Allergy">Food Allergy
+    </label></div>                            
+
+<div class="input-nds input--checkbox " tabindex="1">
+    <input
+        
+
+ id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids"    >
+    
+
+<label class="input-nds input--label " for="hiv-aids" title="HIV/AIDS">HIV/AIDS
     </label></div>                        </div>                </div>
                 <div class="col-6">
                     
 
-<div id="console-select" class="input-group-nds input-group--radio " role="radiogroup">
+<div id="radio-disease-conditions" class="input-group-nds input-group--radio " role="radiogroup">
     
 
-<label class="input-nds input--label " for="console-select" title="Choose the Platform You Own">Choose the Platform You Own
+<label class="input-nds input--label " for="radio-disease-conditions" title="Choose Type of Diseases/Condition">Choose Type of Diseases/Condition
     </label>                                
 
 <div class="input-nds input--radio " tabindex="1">
     <input
         
 
- id="xbox-radio" type="radio" name="console-select-radio" value="xbox" required    >
+ id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required    >
     
 
-<label class="input-nds input--label " for="xbox-radio" title="Xbox">Xbox
+<label class="input-nds input--label " for="r-coronaviruses" title="Coronaviruses">Coronaviruses
     </label></div>                            
 
 <div class="input-nds input--radio " tabindex="1">
     <input
         
 
- id="playstation-radio" type="radio" name="console-select-radio" value="playstation"    >
+ id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg"    >
     
 
-<label class="input-nds input--label " for="playstation-radio" title="Playstation">Playstation
+<label class="input-nds input--label " for="r-ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
     </label></div>                            
 
 <div class="input-nds input--radio " tabindex="1">
     <input
         
 
- id="pc-radio" type="radio" name="console-select-radio" value="pc"    >
+ id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy"    >
     
 
-<label class="input-nds input--label " for="pc-radio" title="PC">PC
+<label class="input-nds input--label " for="r-food-allergy" title="Food Allergy">Food Allergy
+    </label></div>                            
+
+<div class="input-nds input--radio " tabindex="1">
+    <input
+        
+
+ id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids"    >
+    
+
+<label class="input-nds input--label " for="r-hiv-aids" title="HIV/AIDS">HIV/AIDS
     </label></div>                        </div>                </div>
             </div>
         </div>
@@ -989,8 +1009,8 @@
         <p>NDS websites will typically have a main content area that occupies eight or nine Bootstrap columns out of 12. This configuration allows for a side rail of content, such as a section for local navigation, but this is not required.</p>
 
         <h3>Spacing &amp; Sizing</h3>
-        <p>NDS is governed by an <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">8pt grid system.</a> In general, items are spaced by some factor or multiple of eight. Keeping elements spaced in this way helps to promote and maintain visual consistency. All sizing of elements should be done using the "rem" unit to maintain relative scalability.</p>
-        <p>NDS has provided a set of design tokens for sizing and spacing, similarly to Bootstrap and USWDS, to make it easier to use standardized spaces and sizes. These tokens can be used in the form of classes, or can be <a href="#sass-tokens">used in SASS as variables.</a> The classes structure uses the format <code>{property}-{sides}-{size}-{interval}</code>.</p>
+        <p>NDS is governed by an <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">8-point grid system.</a> In general, items are spaced by some factor or multiple of eight. Keeping elements spaced in this way helps to promote and maintain visual consistency. All sizing of elements should be done using the "rem" unit to maintain relative scalability.</p>
+        <p>NDS has provided a set of design tokens for sizing and spacing, similar to Bootstrap and USWDS, to make it easier to use standardized spaces and sizes. These tokens can be used in the form of classes or can be <a href="#sass-tokens">used in SASS as variables.</a> The classes structure uses the format <code>{property}-{sides}-{size}-{interval}</code>.</p>
 
         <p><code>{property}</code> - Type of CSS property:</p>
         <ul>
@@ -1083,12 +1103,12 @@
     </div>                        
 <div id="section-shadows" class="component-nds component--scrollspy-section scrollspy section ">
             <h2>Shadows</h2>
-        <p>Shadows are a popular effect in modern web design, and there are several different philosophies that govern their usage.</p>
+        <p>Shadows are a popular effect in modern web design and there are several different philosophies that govern their usage.</p>
         <p>As part of the personalization effort, the NIAID Design System allows users to choose between Flat Design (no shadows) or Material Design.</p>
         <h3>Flat Design</h3>
         <p>Flat Design is the practice of designing web pages without the use of shadows. Under this paradigm, users rely predominately on color to determine the importance of web components and which areas of the page require their attention.</p>
         <h3>Material Design</h3>
-        <p><a href="https://material.io/">Material Design</a> by Google treats web components, such as buttons, cards, and images, as surfaces. Material Design creates a visual hierachy through the use of light and shadowing, where elements of greater importance appear closer or have a higher "elevation" than other elements. Not only does this strategy provide visual interest by adding a 3D effect to the design, it also directs users focus to the elements of the page that are most important or in need of attention at any given time.</p>
+        <p><a href="https://material.io/">Material Design</a> by Google treats web components, such as buttons, cards, and images, as surfaces. Material Design creates a visual hierarchy through the use of light and shadowing, where elements of greater importance appear closer or have a higher "elevation" than other elements. Not only does this strategy provide visual interest by adding a 3D effect to the design, it also directs users' focus to the elements of the page that are most important or in need of attention at any given time.</p>
         <p>In order to create uniformity, the Material Design system has <a href="https://material.io/design/environment/elevation.html">documented each web components' elevation</a>, or its position relative to other components. These elevations lie on a scale from zero (flat) to 24. The following graphic from the Material Design documentation shows some of these elevations:</p>
 
         
@@ -1100,7 +1120,7 @@
                     
 
 	
-<img class="image-nds image--default materialboxed" src="../assets/elevations.png" alt="A chart showing the Material Design Eleveations" />            </div>
+<img class="image-nds image--default materialboxed" src="../assets/elevations.png" alt="A chart showing the Material Design Elevations." />            </div>
     <div class="component--media__text">
         <div class="component--media__text__content-wrapper">
                             

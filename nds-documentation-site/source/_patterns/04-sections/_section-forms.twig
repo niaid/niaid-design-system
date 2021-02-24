@@ -5,7 +5,7 @@
 %}
     {% block component_scrollspy_section_content %}
         <h2>Forms &amp; Input</h2>
-        <p>Form controls and inputs are an essential mechanism for websites and applications to get user-provided information. From "Was This Page Helpful?" forms to Contact Us pages, form fields and inputs add a layer of interactivity to digital platforms. Form fields can be difficult to get right due to stringent accessibility laws such as <a href="https://www.ada.gov/508/">Section 508 under the Americans with Disabilities Act (ADA).</a> NDS ensures form fields are compliant and elegant by ensuring visible focus states and color contrast meet the guidelines.</p>
+        <p>Form controls and inputs are an essential mechanism for websites and applications to get user-provided information. From "Was This Page Helpful?" forms to Contact Us pages, form fields and inputs add a layer of interactivity to digital platforms. Form fields can be difficult to get right due to stringent requirements under <a href="https://www.ada.gov/508/">Section 508 of the Americans with Disabilities Act (ADA).</a> NDS ensures form fields are compliant and elegant by ensuring visible focus states and color contrast meet the guidelines.</p>
         <h3>Buttons</h3>
         <p>NDS supports four main button styles: Primary, Secondary, Tertiary, and Negative. These four styles are shown below:</p>
         <div class="container container--button">
@@ -124,34 +124,41 @@
                     {% embed "@nds/02-molecules/input-group/input-group-checkbox/_input-group-checkbox-main.twig" with
                         {
                             "input_group_checkbox_id": "form-group-example",
-                            "input_group_checkbox_label": "Choose Platforms You Own",
-                            "input_group_checkbox_tooltip": ""
+                            "input_group_checkbox_label": "Choose Type(s) of Diseases/Conditions"
                         }
                     %}
                         {% block input_checkbox_options %}
                             {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
                                 {
                                     "input_checkbox_name": "form-group-example",
-                                    "input_checkbox_id": "xbox",
-                                    "input_checkbox_value": "xbox",
-                                    "input_checkbox_label": "Xbox",
+                                    "input_checkbox_id": "coronaviruses",
+                                    "input_checkbox_value": "coronaviruses",
+                                    "input_checkbox_label": "Coronaviruses",
                                     "input_checkbox_required": "yes"
                                 }
                             %}
                             {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
                                 {
                                     "input_checkbox_name": "form-group-example",
-                                    "input_checkbox_id": "playstation",
-                                    "input_checkbox_value": "playstation",
-                                    "input_checkbox_label": "Playstation"
+                                    "input_checkbox_id": "ebola-marburg",
+                                    "input_checkbox_value": "ebola-marburg",
+                                    "input_checkbox_label": "Ebola & Marburg"
                                 }
                             %}
                             {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
                                 {
                                     "input_checkbox_name": "form-group-example",
-                                    "input_checkbox_id": "pc",
-                                    "input_checkbox_value": "pc",
-                                    "input_checkbox_label": "PC"
+                                    "input_checkbox_id": "food-allergy",
+                                    "input_checkbox_value": "food-allergy",
+                                    "input_checkbox_label": "Food Allergy"
+                                }
+                            %}
+                            {% include "@nds/01-atoms/input/input-checkbox/_input-checkbox-main.twig" with
+                                {
+                                    "input_checkbox_name": "form-group-example",
+                                    "input_checkbox_id": "hiv-aids",
+                                    "input_checkbox_value": "hiv-aids",
+                                    "input_checkbox_label": "HIV/AIDS"
                                 }
                             %}
                         {% endblock %}
@@ -160,35 +167,42 @@
                 <div class="col-6">
                     {% embed "@nds/02-molecules/input-group/input-group-radio/_input-group-radio-main.twig" with
                         {
-                            "input_group_radio_id": "console-select",
-                            "input_group_radio_label": "Choose the Platform You Own",
-                            "input_group_radio_tooltip": ""
+                            "input_group_radio_id": "radio-disease-conditions",
+                            "input_group_radio_label": "Choose Type of Diseases/Condition"
                         }
                     %}
                         {% block input_radio_options %}
                             {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
                                 {
-                                    "input_radio_name": "console-select-radio",
-                                    "input_radio_id": "xbox-radio",
-                                    "input_radio_value": "xbox",
-                                    "input_radio_label": "Xbox",
+                                    "input_radio_name": "radio-disease-conditions",
+                                    "input_radio_id": "r-coronaviruses",
+                                    "input_radio_value": "coronaviruses",
+                                    "input_radio_label": "Coronaviruses",
                                     "input_radio_required": "yes"
                                 }
                             %}
                             {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
                                 {
-                                    "input_radio_name": "console-select-radio",
-                                    "input_radio_id": "playstation-radio",
-                                    "input_radio_value": "playstation",
-                                    "input_radio_label": "Playstation"
+                                    "input_radio_name": "radio-disease-conditions",
+                                    "input_radio_id": "r-ebola-marburg",
+                                    "input_radio_value": "ebola-marburg",
+                                    "input_radio_label": "Ebola & Marburg"
                                 }
                             %}
                             {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
                                 {
-                                    "input_radio_name": "console-select-radio",
-                                    "input_radio_id": "pc-radio",
-                                    "input_radio_value": "pc",
-                                    "input_radio_label": "PC"
+                                    "input_radio_name": "radio-disease-conditions",
+                                    "input_radio_id": "r-food-allergy",
+                                    "input_radio_value": "food-allergy",
+                                    "input_radio_label": "Food Allergy"
+                                }
+                            %}
+                            {% include "@nds/01-atoms/input/input-radio/_input-radio-main.twig" with
+                                {
+                                    "input_radio_name": "radio-disease-conditions",
+                                    "input_radio_id": "r-hiv-aids",
+                                    "input_radio_value": "hiv-aids",
+                                    "input_radio_label": "HIV/AIDS"
                                 }
                             %}
                         {% endblock %}

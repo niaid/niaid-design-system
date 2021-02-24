@@ -378,7 +378,7 @@
 
                         <div id="section-components-atoms" class="component-nds component--scrollspy-section scrollspy section ">
                             <h1>Components</h1>
-                            <p>NDS components can be used on any type of project. We have provided most of the available NDS components and, where relevant, additional documentation to support your development. Simply include the global NDS JS and CSS files in your website to get started!</p>
+                            <p>NDS components can be used on any type of project. We have provided information on available NDS components and, where relevant, additional documentation to support your development. Simply include the global NDS JS and CSS files in your website to get started!</p>
 
                             <div class="block--files container-fluid ">
                                 <div class="row">
@@ -406,7 +406,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Some of the NDS components make use of third-party libraries to bring enhanced user experience and functionality to your users. In order to use these components, the applicable libraries must be included in your project. These libraries are noted in the pattern documentation.</p>
+                            <p>Some of the NDS components make use of third-party libraries to bring enhanced user experience and functionality to your site. In order to use these components, the applicable libraries must be included in your project. These libraries are noted in the pattern documentation.</p>
                             <h2>Atoms</h2>
                         </div>
 
@@ -414,7 +414,7 @@
                             <h3>Buttons</h3>
 
                             <h4>Default Button</h4>
-                            <p>There are four main button styles for each Color Theme option: Primary, Secondary, Tertiary, and Negative (Error State). In general, buttons are used for actions that occur on the page, while links take users from one page to another. Depending on the importance of a link, you may decide to style it as a button to make it stand out more. Also shown here is the "disabled" button style.</p>
+                            <p>There are four main button styles for each Color Theme option: Primary, Secondary, Tertiary, and Negative (Error State). In general, buttons are used for actions that occur on the page while links take users from one page to another. Depending on the importance of a link, you may decide to style it as a button to make it stand out more. Also shown here is the "disabled" button style.</p>
 
                             <p class="text-nds text--uswds ">
 
@@ -529,14 +529,18 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>The Default Button pattern supports both buttons and links. Links are created automatically if the button_default_href attribute is passed. If omitted, the resultant output will be a button element.</p>
+                                            <p>The Default Button pattern supports both buttons and links. Links are created automatically if the button_default_href attribute is passed. If omitted, the resulting output will be a button element.</p>
                                             <p>To use one of the styles below, pass the "button_default_type" parameter the desired style ("primary", "secondary", "tertiary", or "negative").</p>
                                             <p>These button styles can also be applied to other button components by passing the desired classes (i.e. button--primary) to the pattern. See below for examples of using various button styles on other button components.</p>
                                             <h5>Parameters</h5>
                                             <ul>
                                                 <li>button_default_classes: Additional button classes.</li>
                                                 <li>button_default_id: Button ID.</li>
-                                                <li>button_default_type: Button style. Options: primary, secondary, tertiary, negative.</li>
+                                                <li>button_default_type: Button style.
+                                                    <ul>
+                                                        <li>Options: primary, secondary, tertiary, negative.</li>
+                                                    </ul>
+                                                </li>
                                                 <li>button_default_label: Button text.</li>
                                                 <li>button_default_href: Button link destination (optional).</li>
                                                 <li>button_default_attributes: Additional button attributes.</li>
@@ -674,7 +678,11 @@
                                                 <li>button_external_text: Button text.</li>
                                                 <li>button_external_href: Button link destination.</li>
                                                 <li>button_external_icon: Font Awesome icon name (Default: external-link-alt).</li>
-                                                <li>button_external_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>button_external_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>button_external_attributes: Additional button attributes.</li>
                                             </ul>
 
@@ -683,7 +691,7 @@
                                 </div>
                             </div>
                             <h4>Floating Button</h4>
-                            <p>In some instances, you may want to have a persistent button available to users at all times. For example, you may want a "Back to Top" button that returns users to the top of the page, or the color palette button on this site the allows for theme customizations. For these purposes, NDS provides the Floating Button pattern, which is fixed at the lower right of the screen. In order to provide more clarity about its function, the Floating Button expands on hover and focus to reveal button text.</p>
+                            <p>In some instances, you may want to have a persistent button available to users at all times. For example a "Back to Top" button that returns users to the top of the page or the color palette button on this site that allows for theme customizations. For these purposes NDS provides the Floating Button pattern which is fixed at the lower right of the screen. To provide more clarity about its function the Floating Button expands on hover and focus to reveal button text.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -754,14 +762,18 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>The width of the Floating Button on hover and focus depends on the width of the text. Out of the box, the Floating Button pattern's width is configured to work for "Back to Top" text. You may change this text, but will also likely need to change the default width and the width on hover and focus.</p>
+                                            <p>The width of the Floating Button on hover and focus depends on the width of the text. Out of the box, the Floating Button pattern's width is configured to work for "Back to Top" text. You may change this text but you will also likely need to change the default width and the width on hover and focus.</p>
                                             <h5>Parameters</h5>
                                             <ul>
                                                 <li>button_floating_classes: Additional document button classes.</li>
                                                 <li>button_floating_id: Button ID.</li>
                                                 <li>button_floating_text: Button text.</li>
                                                 <li>button_floating_icon: Font Awesome icon name.</li>
-                                                <li>button_floating_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>button_floating_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>button_floating_aria_label: Button aria-label.</li>
                                             </ul>
 
@@ -901,9 +913,20 @@
                                                 <li>button_icon_classes: Additional button classes.</li>
                                                 <li>button_icon_id: Button ID.</li>
                                                 <li>button_icon_icon: Font Awesome icon name.</li>
-                                                <li>button_icon_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
-                                                <li>button_icon_icon_size: Size of the icon to display. Options: 'small' (Default) or 'large'.</li>
-                                                <li>button_icon_icon_position: The side of the button text the icon should appear. Options: "left" (Default) or "right"</li>
+                                                <li>button_icon_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>button_icon_icon_size: Size of the icon to display.
+                                                    <ul>
+                                                        <li>Options: 'small' (Default) or 'large'.</li>
+                                                    </ul>
+                                                <li>button_icon_icon_position: The side of the button text the icon should appear.
+                                                    <ul>
+                                                        <li>Options: "left" (Default) or "right"</li>
+                                                    </ul>
+                                                </li>
                                                 <li>button_icon_text: Button text.</li>
                                                 <li>button_icon_attributes: Additional button attributes.</li>
                                                 <li>button_icon_aria_label: Button aria-label.</li>
@@ -915,7 +938,7 @@
                                 </div>
                             </div>
                             <h4>Button with Image</h4>
-                            <p>This component allows for an small image, such as a user picture, to be included inside a button.</p>
+                            <p>This component allows for a small image such as a user picture, to be included inside a button.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -1273,8 +1296,16 @@
                                             <ul>
                                                 <li>button_share_classes: Additional button classes.</li>
                                                 <li>button_share_id: Button ID.</li>
-                                                <li>button_share_type: The classes to define the type of social media platform. Supported Options: "facebook", "twitter", "linkedin", "instagram", "youtube", "pinterest", "flickr", "google-plus".</li>
-                                                <li>button_share_icon_weight: Font Awesome icon weight Options: 'r', 's' (Default for Non-Social Media Platform Icons), 'b' (Default for Social Media Platforms).</li>
+                                                <li>button_share_type: The classes to define the type of social media platform.
+                                                    <ul>
+                                                        <li>Supported Options: "facebook", "twitter", "linkedin", "instagram", "youtube", "pinterest", "flickr", "google-plus".</li>
+                                                    </ul>
+                                                </li>
+                                                <li>button_share_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default for Non-Social Media Platform Icons), 'b' (Default for Social Media Platforms).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>button_share_href: Button link destination.</li>
                                                 <li>button_share_aria_label: Button aria-label.</li>
                                                 <li>button_share_tabindex: Button tabindex.</li>
@@ -1290,7 +1321,7 @@
 
                         <div id="section-components-atoms-icons" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Icons</h3>
-                            <p>NDS uses the <a href="https://fontawesome.com/">Font Awesome library</a> for all icons (with the exception of third-party applications and companies). In Font Awesome, icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:</p>
+                            <p>NDS uses the <a href="https://fontawesome.com/">Font Awesome library</a> for all icons (with the exception of third-party applications and companies). In Font Awesome icons are selected using classes. The specific icon is selected with fa- class (e.g. fa-envelope). The style or weight of the icon is also specified using classes. The following icon weights and corresponding classes are available under the Font Awesome Free version:</p>
 
                             <ul>
                                 <li>Solid - <code>fas</code></li>
@@ -1298,7 +1329,7 @@
                                 <li>Regular - <code>fa/far</code></li>
                             </ul>
 
-                            <p>If you have access to Font Awesome Pro, a "Light" icon style (fal) and a Duotone iocn style (fad) are also supported.</p>
+                            <p>If you have access to Font Awesome Pro, a "Light" icon style (fal) and a Duotone icon style (fad) are also supported.</p>
 
                             <p>NDS makes using Font Awesome icons easy through its icon-default pattern. This pattern has two key parameters: icon_default_type, and icon_default_weight. For the icon_default_type, simply pass the name of the icon (without the fa-). For weight, pass only the letter corresponding to the desired icon weight:</p>
 
@@ -1312,7 +1343,7 @@
 
                             <p>Visit the <a href="https://fontawesome.com/icons?d=gallery">Font Awesome Library</a> to view the full Font Awesome icon library.</p>
 
-                            <p>NIAID's Office of Communications and Government Relations (OCGR) has a Font Awesome Pro license that may be used under certain circumstances. If you have a need for Font Awesome Pro, please contact OCGR and request access. If you have already received access and are looking for documentation on upgrading from Font Awesome Free, please see our <a href="/font-awesome-pro-nds-npm/">Using Font Awesome Pro with NDS (NPM) guide.</a></p>
+                            <p>NIAID's Office of Communications and Government Relations (OCGR) has a Font Awesome Pro license that may be used under certain circumstances. If you have a need for Font Awesome Pro, <a href="https://ecollab.niaid.nih.gov/sites/portalprojects/Lists/Box/newform2.aspx">please request access</a>. If you have already received access and are looking for documentation on upgrading from Font Awesome Free, please see our <a href="/font-awesome-pro-nds-npm/">Using Font Awesome Pro with NDS (NPM) guide.</a></p>
 
 
                             <div class="component-nds component--snippet component--snippet--icon-default ">
@@ -1399,7 +1430,11 @@
                                             <ul>
                                                 <li>icon_default_classes: Additional &lt;i&gt; tag classes.</li>
                                                 <li>icon_default_type: Font Awesome icon name.</li>
-                                                <li>icon_default_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>icon_default_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>icon_default_sr_text: Optional text for screen readers only.</li>
                                             </ul>
 
@@ -1408,7 +1443,7 @@
                                 </div>
                             </div>
                             <h4>Document Icons</h4>
-                            <p>Document icons can help users more quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.</p>
+                            <p>Document icons can help users quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -1611,7 +1646,7 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>The Document Icon pattern can also be used as a button, if a path is supplied to the "icon_document_href" parameter.</p>
+                                            <p>The Document Icon pattern can also be used as a button if a path is supplied to the "icon_document_href" parameter.</p>
                                             <p>Use the "icon_document_type" parameter to choose a type as follows:</p>
                                             <ul>
                                                 <li>Word - "word"</li>
@@ -1627,10 +1662,18 @@
                                             <ul>
                                                 <li>icon_document_classes: Additional document icon classes.</li>
                                                 <li>icon_document_id: Icon wrapper ID.</li>
-                                                <li>icon_document_type: Type of document icon. Options: 'word', 'excel', 'powerpoint', 'pdf', 'image', 'video', 'application', 'link'.</li>
+                                                <li>icon_document_type: Type of document icon.
+                                                    <ul>
+                                                        <li>Options: 'word', 'excel', 'powerpoint', 'pdf', 'image', 'video', 'application', 'link'.</li>
+                                                    </ul>
+                                                </li>
                                                 <li>icon_document_href: Optional button link destination.</li>
                                                 <li>icon_document_aria_label: Aria Label for the document icon if it is linked (computed by the icon_document_type).</li>
-                                                <li>icon_document_icon_weight: Font Awesome icon weight. Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>icon_document_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r' (Default), 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>icon_document_attributes: Additional icon attributes.</li>
                                             </ul>
 
@@ -1639,7 +1682,7 @@
                                 </div>
                             </div>
                             <h4>Icon Circle</h4>
-                            <p>This component can be useful for adding visual interest or additional meaning through iconography. In general, NDS advises that icons be used only when their meaning is very clear.</p>
+                            <p>This component can be useful for adding visual interest or additional meaning through iconography. We advise that icons be used only when their meaning is very clear.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -1707,7 +1750,11 @@
                                             <ul>
                                                 <li>icon_circle_classes: Additional pattern classes.</li>
                                                 <li>icon_circle_icon: Font Awesome icon name.</li>
-                                                <li>icon_circle_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>icon_circle_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>icon_circle_attributes: Additional pattern attributes.</li>
                                             </ul>
 
@@ -1716,7 +1763,7 @@
                                 </div>
                             </div>
                             <h4>Icon Loader</h4>
-                            <p>The Icon Loader pattern from <a href="https://materializecss.com/preloader.html">Materialize</a> can be used as visual feedback to your users that the site is processing, receiving, or transmitting information.</p>
+                            <p>The Icon Loader pattern from <a href="https://materializecss.com/preloader.html">Materialize</a> is used to provide visual feedback to users that the site is processing, receiving, or transmitting information.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -1803,7 +1850,11 @@
                                             <h5>Parameters</h5>
                                             <ul>
                                                 <li>icon_loader_classes: Additional pattern classes</li>
-                                                <li>icon_loader_size: The size of the loader. Options: "small" and "big" (Default)</li>
+                                                <li>icon_loader_size: The size of the loader.
+                                                    <ul>
+                                                        <li>Options: "small" and "big" (Default)</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
 
                                         </div>
@@ -1823,7 +1874,7 @@
 
 
 
-                                            <img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Landscape Image" />
+                                            <img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Placeholder image" />
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -1849,7 +1900,7 @@
 
 
 
-                                                <img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Landscape Image" />
+                                                <img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Placeholder image" />
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -1887,7 +1938,7 @@
                                 </div>
                             </div>
                             <h4>NIAID Logo</h4>
-                            <p>You must seek approval to use the NIAID Logo on your website. If you are a NIAID or NIH employee, please review the <a href="https://inside.niaid.nih.gov/communications-media/requesting-use-niaid-logo">Requesting the Use of the NIAID Logo</a> page on NIAID's Intranet.</p>
+                            <p>You must seek approval to use the NIAID logo on your website or application. If you are a NIAID or NIH employee, please review the <a href="https://inside.niaid.nih.gov/communications-media/requesting-use-niaid-logo">Requesting the Use of the NIAID Logo</a> page on NIAID's Intranet.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -1968,8 +2019,8 @@
                         <div id="section-components-atoms-layouts" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Layouts</h3>
                             <h4>Site Layout</h4>
-                            <p>The Site Layout component provides a general framework for a NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility.</p>
-                            <p>Included in the Site Layout is a skip link that will direct users to the main content of the page for accessibility purposes. It is important to add an ID of value "main-content" to the first element on the page that appears after elements that are common to all pages, such as headers and navigation. This will help users who navigate with their keyboards or with a screen reader to easily move past redundant content. For more information skip links, please visit the <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html">WCAG 2.0 documentation on skip links.</a></p>
+                            <p>The Site Layout component provides a general framework for an NDS page using Twig block statements. The main regions defined in the pattern are header, global_navigation, hero, main, and footer. The block statements that define these regions are only visible in the Twig file. The HTML structure of Site Layout is very plain, allowing you to define your own markup with almost full flexibility.</p>
+                            <p>Included in the Site Layout is a skip link that will direct users to the main content of the page for accessibility purposes. It is important to add an ID of value "main-content" to the first element on the page that appears after elements that are common to all pages, such as headers and navigation. This will help users who navigate with a keyboard or screen reader to easily move past redundant content. For more information on skip links, please visit the <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html">WCAG 2.0 documentation on skip links.</a></p>
 
                             <div class="component-nds component--snippet  no-render">
                                 <div class="component--snippet__block">
@@ -2036,7 +2087,7 @@
                                             </ul>
                                             <h5>Parameters</h5>
                                             <ul>
-                                                <li>layouts_site_id - Layout ID.</li>
+                                                <li>layouts_site_id: Layout ID.</li>
                                             </ul>
 
                                         </div>
@@ -2098,7 +2149,7 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>The Main Layout component is generally embedded within the &#123;% block main %&#125; block of the Site Layout pattern. The main layout pattern has three possible columns for content, but using all three is not required.</p>
+                                            <p>The Main Layout component is generally embedded within the &#123;% block main %&#125; block of the Site Layout pattern. The main layout pattern has three possible columns for content but using all three is not required.</p>
                                             <h5>Blocks</h5>
                                             <ul>
                                                 <li>&#123;% block left_column %&#125;: The content for the left column.</li>
@@ -2107,12 +2158,28 @@
                                             </ul>
                                             <h5>Parameters</h5>
                                             <ul>
-                                                <li>layouts_main_classes - Additional layout classes.</li>
-                                                <li>layouts_main_id - Layout ID.</li>
-                                                <li>layouts_main_left - The number of columns (based on Bootstrap) for the left column. Options: "1" through "12".</li>
-                                                <li>layouts_main_main - The number of columns (based on Bootstrap) for the main column. Options: "1" through "12".</li>
-                                                <li>layouts_main_right - The number of columns (based on Bootstrap) for the right column. Options: "1" through "12".</li>
-                                                <li>layouts_main_breakpoint - The Bootstrap breakpoint for the layout columns. Options: "sm", "md", "lg" (Default), "xl".</li>
+                                                <li>layouts_main_classes: Additional layout classes.</li>
+                                                <li>layouts_main_id: Layout ID.</li>
+                                                <li>layouts_main_left: The number of columns (based on Bootstrap) for the left column.
+                                                    <ul>
+                                                        <li>Options: "1" through "12".</li>
+                                                    </ul>
+                                                </li>
+                                                <li>layouts_main_main: The number of columns (based on Bootstrap) for the main column.
+                                                    <ul>
+                                                        <li>Options: "1" through "12".</li>
+                                                    </ul>
+                                                </li>
+                                                <li>layouts_main_right: The number of columns (based on Bootstrap) for the right column.
+                                                    <ul>
+                                                        <li>Options: "1" through "12".</li>
+                                                    </ul>
+                                                </li>
+                                                <li>layouts_main_breakpoint: The Bootstrap breakpoint for the layout columns.
+                                                    <ul>
+                                                        <li>Options: "sm", "md", "lg" (Default), "xl".</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
 
                                         </div>
@@ -2180,8 +2247,12 @@
                                             </ul>
                                             <h5>Parameters</h5>
                                             <ul>
-                                                <li>layouts_body_classes - Additional layout classes.</li>
-                                                <li>layouts_body_vertical_padding - A class indicating if vertical padding should be present or not. Options: "yes" (Default), "no".</li>
+                                                <li>layouts_body_classes: Additional layout classes.</li>
+                                                <li>layouts_body_vertical_padding: A class indicating if vertical padding should be present or not.
+                                                    <ul>
+                                                        <li>Options: "yes" (Default), "no".</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
 
                                         </div>
@@ -2264,7 +2335,7 @@
                                 </div>
                             </div>
                             <h4>External Link</h4>
-                            <p>NDS requires that all external links - links that direct users away from the current site they are viewing - are designated with the Font Awesome external link icon. Out of the box, NDS uses JS to automatically append these icons. A notable exception to this policy is links to social media (i.e. Facebook, Instagram, Twitter, etc.) when they are presented in the form of a button.</p>
+                            <p>NDS requires that all external links &mdash; links that direct users away from the current site they are viewing &mdash; are designated with the Font Awesome external link icon. Out of the box NDS uses JavaScript to automatically append these icons. A notable exception to this policy is links to social media (i.e. Facebook, Instagram, Twitter, etc.) when they are presented in the form of a button.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -2387,10 +2458,18 @@
                                                 <li>link_icon_classes: Additional link classes.</li>
                                                 <li>link_icon_href: The link destination path.</li>
                                                 <li>link_icon_text: The text of the link.</li>
-                                                <li>link_icon_sr_text: Text to be by screen readers only (not displayed visually).</li>
-                                                <li>link_icon_position: The side of the text the icon will appear on. Options: "left" (Default), "right".</li>
+                                                <li>link_icon_sr_text: Text to be read by screen readers only (not displayed visually).</li>
+                                                <li>link_icon_position: The side of the text the icon will appear on.
+                                                    <ul>
+                                                        <li>Options: "left" (Default), "right".</li>
+                                                    </ul>
+                                                </li>
                                                 <li>link_icon_type: Font Awesome icon name.</li>
-                                                <li>link_icon_weight: Font Awesome icon weight. Options: 'r', 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>link_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's', 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>link_icon_icon_classes: Additional classes for the icon.</li>
                                             </ul>
 
@@ -2547,8 +2626,16 @@
                                             <h5>Parameters</h5>
                                             <ul>
                                                 <li>list_links_classes: Additional list classes.</li>
-                                                <li>list_links_data: An array of link objects. Structure: {"text": "", "href": "", "icon": "", "weight": "", "position": ""}. Position options should be either "left" or "right".</li>
-                                                <li>list_links_type: The type of list to generate. Options: "ul" (Default), "ol".</li>
+                                                <li>list_links_data: An array of link objects.
+                                                    <ul>
+                                                        <li>Structure: {"text": "", "href": "", "icon": "", "weight": "", "position": ""}. Position options should be either "left" or "right".</li>
+                                                    </ul>
+                                                </li>
+                                                <li>list_links_type: The type of list to generate.
+                                                    <ul>
+                                                        <li>Options: "ul" (Default), "ol".</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -2565,7 +2652,7 @@
 
                         <div id="section-components-atoms-media" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Media</h3>
-                            <p>Audio and video can be effective ways to communicate with your audience, however, each comes with a variety of accessibility requirements. Please review the <a href="https://www.w3.org/WAI/media/av/">guidelines from W3C on how to make your audio or video accessible.</a></p>
+                            <p>Audio and video can be effective ways to communicate with your audience, however each comes with a variety of accessibility requirements. Please review the <a href="https://www.w3.org/WAI/media/av/">guidelines from W3C on how to make your audio or video accessible.</a></p>
 
 
                             <h4>YouTube Video</h4>
@@ -2630,7 +2717,7 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>The "media_video_youtube_src" parameter requires a specific embed URL from YouTube (not to be confused with the regular URL to the video page). To get this embed link, go to the YouTube page you would like to embed. Click "Share" below the video, then "Embed". The needed URL is found as the value for the "src" attribute in the displayed embed code.</p>
+                                            <p>The "media_video_youtube_src" parameter requires a specific embed URL from YouTube (not to be confused with the regular URL to the video page). To get this embed link, go to the YouTube video you would like to embed. Select "Share" below the video, then "Embed". The needed URL is found as the value for the "src" attribute in the displayed embed code.</p>
                                             <h5>Parameters</h5>
                                             <ul>
                                                 <li>media_video_youtube_classes: Additional media element classes.</li>
@@ -2651,7 +2738,7 @@
 
                         <div id="section-components-atoms-tables" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Tables</h3>
-                            <p>Tables can be tricky on the web for accessibility and responsive reasons. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables to and improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initialize the responsive functionality of Datatables.</p>
+                            <p>Tables on the web can be challenging in terms of accessibility and responsive. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables to improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initialize the responsive functionality of Datatables.</p>
 
                             <div class="block-nds block--dependencies ">
                                 <div class="block--dependencies__label">Dependencies:</div>
@@ -2793,7 +2880,7 @@
                         <div id="section-components-atoms-text" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Text</h3>
                             <h4>Blockquote</h4>
-                            <p>Blockquotes are useful to separate quotes from the rest of the body text, adding visual interest to pages and highlighting the quote.</p>
+                            <p>Blockquotes are useful to separate quotations from the rest of the body text, adding visual interest to pages and highlighting the quotation.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -2867,7 +2954,7 @@
                                 </div>
                             </div>
                             <h4>Badge</h4>
-                            <p>Badges are static, non-functional indicators of information. Typically badges are used to showcase tags and metadata of certain components, like search results.</p>
+                            <p>Badges are static, non-functional indicators of information. Typically badges are used to showcase tags and metadata of certain components such as search results.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -2935,7 +3022,7 @@
                                 </div>
                             </div>
                             <h4>Chip</h4>
-                            <p>Chips are functional indicators of search and filter results. NDS uses a search style wherein selected filters are displayed using chips, allowing users to see exactly what they have searched and filtered on. Selecting the 'x' in the chip should remove the filter from the search.</p>
+                            <p>Chips are functional indicators of search and filter results. NDS uses a search style which displays selected filters as chips, allowing users to see exactly which terms they have searched and filtered on. Selecting the 'x' in the chip removes the term from the search.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -3005,7 +3092,11 @@
                                                 <li>text_chip_id: Chip ID.</li>
                                                 <li>text_chip_text: Chip text.</li>
                                                 <li>text_chip_href: A URL that, when navigated to, removes the chip from the filter list.</li>
-                                                <li>text_chip_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>text_chip_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -3091,11 +3182,23 @@
                                             <ul>
                                                 <li>text_heading_icon_classes: Additional heading classes.</li>
                                                 <li>text_heading_icon_id: Heading ID.</li>
-                                                <li>text_heading_level: The heading level. Options: "1" through "6".</li>
+                                                <li>text_heading_level: The heading level.
+                                                    <ul>
+                                                        <li>Options: "1" through "6".</li>
+                                                    </ul>
+                                                </li>
                                                 <li>text_heading_text: The heading text.</li>
                                                 <li>text_heading_icon: Font Awesome icon name.</li>
-                                                <li>text_heading_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
-                                                <li>text_heading_icon_position: The side of the heading text that the icon appears on. Options: "left" (Default), "right".</li>
+                                                <li>text_heading_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>text_heading_icon_position: The side of the heading text that the icon appears on.
+                                                    <ul>
+                                                        <li>Options: "left" (Default), "right".</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -3107,7 +3210,7 @@
                                 </div>
                             </div>
                             <h4>Image Credit &amp; Caption</h4>
-                            <p>NDS strongly suggests captioning and crediting your images to bolster accessibility and to properly cite sources. The easiest way to use this pattern is by leveraging the Media Component (molecule: component-media), negating the need to use this pattern on its own.</p>
+                            <p>We strongly suggest captioning and crediting your images to bolster accessibility and to properly cite sources. The easiest way to use this pattern is by leveraging the Media Component (molecule: component-media), negating the need to use this pattern on its own.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -3121,7 +3224,7 @@
                                                 </div>
                                                 <div class="text--image-credit-caption__credit">
                                                     <span class="text--image-credit-caption__credit__label-text">Credit:</span>
-                                                    <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+                                                    <span class="text--image-credit-caption__credit__text">NIAID</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -3154,7 +3257,7 @@
                                                     </div>
                                                     <div class="text--image-credit-caption__credit">
                                                         <span class="text--image-credit-caption__credit__label-text">Credit:</span>
-                                                        <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+                                                        <span class="text--image-credit-caption__credit__text">NIAID</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -3193,7 +3296,7 @@
                                 </div>
                             </div>
                             <h4>Search Results</h4>
-                            <p>When displaying a set of search results, it is a best practice to include the number of overall results returned. The Search Results component provides a display for this purpose. Place this component directly above the listing of search results.</p>
+                            <p>When displaying a set of search results, it is a best practice to include the total number of results returned. The Search Results component provides a display for this purpose. Place this component directly above the listing of search results.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -3282,7 +3385,7 @@
                             <p>Blocks tend to be non-functional components that are visually distinct from the normal body content.</p>
 
                             <h4>Default Block</h4>
-                            <p>The default block is a flexible pattern that can be used with almost any HTML content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
+                            <p>The Default block is a flexible pattern that can be used with almost any HTML content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -3362,7 +3465,11 @@
                                             <ul>
                                                 <li>block_default_classes: Additional block classes.</li>
                                                 <li>block_default_id: Block ID.</li>
-                                                <li>block_default_accent: Optional accent on the left of the block. Options: true, false (Default).</li>
+                                                <li>block_default_accent: Optional accent on the left of the block.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
 
                                         </div>
@@ -3458,7 +3565,7 @@
                                 </div>
                             </div>
                             <h4>Search Chips</h4>
-                            <p>Use this component in tandem with the Filters Component to display the selected filters. Place this component under the search bar.</p>
+                            <p>Place this component under the search bar to display the filter criteria.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -3555,7 +3662,11 @@
                                             <h5>Parameters</h5>
                                             <ul>
                                                 <li>block_search_chips_classes: Additional block classes.</li>
-                                                <li>block_search_chips_data: An array of search chip objects. Structure: {"text": "", "url": ""}. The URL should be the link to remove the chip.</li>
+                                                <li>block_search_chips_data: An array of search chip objects.
+                                                    <ul>
+                                                        <li>Structure: {"text": "", "url": ""}. The URL should be the link to remove the chip.</li>
+                                                    </ul>
+                                                </li>
                                                 <li>block_search_chips_clear: A URL hooked to the clear button that removes all search chips.</li>
                                             </ul>
                                             <h5>Includes</h5>
@@ -3682,7 +3793,7 @@
                                 </div>
                             </div>
                             <h4>Alert Block</h4>
-                            <p>Alerts are used to display important, need to know information to site users. NDS offers for alert severity blocks. Alerts are for high priority only and must be for immediate notification. Only one alert can show at any time.</p>
+                            <p>Alerts are used to display important, need to know information to site users. NDS offers four alert severity blocks. Alerts are for high priority messaging that requires immediate notification only. Only one alert can show at any time.</p>
                             <p>Examples of Alerts include:</p>
                             <ul>
                                 <li>System outages</li>
@@ -3818,7 +3929,11 @@
                                             <ul>
                                                 <li>block_alert_classes: Additional alert classes.</li>
                                                 <li>block_alert_id: Alert ID.</li>
-                                                <li>block_alert_severity_level: The alert severity level. Options: "1" (Default), "2", "3", "4".</li>
+                                                <li>block_alert_severity_level: The alert severity level.
+                                                    <ul>
+                                                        <li>Options: "1" (Default), "2", "3", "4".</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
 
                                         </div>
@@ -3826,11 +3941,11 @@
                                 </div>
                             </div>
                             <h4>Status Message Block</h4>
-                            <p>Status messages are used to convery important information to users. There are four types of status messages - Success, Information, Warning, and Error:
+                            <p>Status messages are used to convey important information to users. There are four types of status messages - success, information, warning, and error:</p>
                             <ul>
-                                <li>Success - Used to indicate a user has completed an important step or call to action.</li>
-                                <li>Information - Used to call out an important snippet of information a user could find useful at-a-glance.</li>
-                                <li>Warning - Used to slow a reader down if skimming through the content. Indicates the user may need to take action before moving on.</li>
+                                <li>Success - Indicates a user has completed an important step or call to action.</li>
+                                <li>Information - Calls out an important snippet of information a user could find useful at-a-glance.</li>
+                                <li>Warning - Slows a reader down if skimming through the content. Indicates the user may need to take action before moving on.</li>
                                 <li>Error - Used in rare cases where a user should stop reading or moving forward and take additional action.</li>
                             </ul>
 
@@ -4000,7 +4115,11 @@
                                             <ul>
                                                 <li>block_status_message_classes: Additional status message classes.</li>
                                                 <li>block_status_message_id: Status message ID.</li>
-                                                <li>block_status_message_type: The type of status message (required). Options: "message--success", "message--information", "message--warning", "message--error".</li>
+                                                <li>block_status_message_type: The type of status message (required).
+                                                    <ul>
+                                                        <li>Options: "message--success", "message--information", "message--warning", "message--error".</li>
+                                                    </ul>
+                                                </li>
                                                 <li>block_status_message_attributes: Additional status message attributes, used particularly if these messages appear dynamically.</li>
                                             </ul>
                                             <h5>Includes</h5>
@@ -4013,9 +4132,9 @@
                                 </div>
                             </div>
                             <h4>Hero Block</h4>
-                            <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a Parallax effect courtest of the Materialize library.</p>
-                            <p>When selecting imagery for the hero, it is recommended to choose images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
-                            <p>The Hero Block pattern optionally includes the abiliity to add breadcrumbs to the top.</p>
+                            <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a parallax effect courtest of the <a href="https://materializecss.com/parallax.html">Materialize library.</a></p>
+                            <p>When selecting imagery for the Hero block, we recommend images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
+                            <p>The Hero Block pattern optionally includes the ability to add breadcrumbs to the top.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -4124,7 +4243,7 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>The Hero Block pattern requires users to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
+                                            <p>The Hero Block pattern requires developers to pass images to "block_hero_image" as a block statement. Refer to the demo pattern for an example.</p>
                                             <h5>Blocks</h5>
                                             <ul>
                                                 <li>&#123;% block block_hero_image %&#125;: The hero image, passed in as a &lt;img&gt; tag.</li>
@@ -4266,7 +4385,11 @@
                                             <ul>
                                                 <li>block_share_classes: Additional block classes.</li>
                                                 <li>block_share_id: Block ID.</li>
-                                                <li>block_share_data: An array of share button objects. Structure: {"type": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform in lowercase form (ex. twitter).</li>
+                                                <li>block_share_data: An array of share button objects.
+                                                    <ul>
+                                                        <li>Structure: {"type": "", "href": "", "ariaLabel": ""}. The type is the name of the social media platform in lowercase form (ex. twitter).</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -4278,7 +4401,7 @@
                                 </div>
                             </div>
                             <h4>Was This Page Helpful? (WTPH) Block</h4>
-                            <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in functionality, meaning users will need to add their own functions and input handling.</p>
+                            <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in form or data-collection functionality, meaning users will need to add their own functions and input handling.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -4371,9 +4494,9 @@
 
                         <div id="section-components-molecules-components" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Components</h3>
-                            <p>Component are similar to Block patterns but tend to have enhanced functionality (JavaScript).</p>
+                            <p>Components are similar to Block patterns but tend to have enhanced functionality (JavaScript).</p>
                             <h4>Accordion Component</h4>
-                            <p>Accordions are web components that separate a large amount of content into toggleable sections, thereby reducing the overall page length and allowing the user to focus on individual pieces of content at a time.</p>
+                            <p>Accordions are web components that separate a large amount of content into sections that can be toggled open or closed, thereby reducing the overall page length and allowing the user to focus on individual pieces of content at a time.</p>
 
                             <div class="block-nds block--dependencies ">
                                 <div class="block--dependencies__label">Dependencies:</div>
@@ -4507,7 +4630,7 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>The Accordion pattern is simply a wrapper designed to container Bootstrap Accordion markup. Please reference the demo or <a href="https://getbootstrap.com/docs/4.0/components/collapse/">Bootstrap's Collapse Documentation</a> for more information.</p>
+                                            <p>The Accordion pattern is simply a wrapper for Bootstrap's accordion markup. Please reference the demo or <a href="https://getbootstrap.com/docs/4.0/components/collapse/">Bootstrap's Collapse Documentation</a> for more information.</p>
                                             <h5>Blocks</h5>
                                             <ul>
                                                 <li>&#123;% block component_accordion_content %&#125;: The Bootstrap markup for accordions.</li>
@@ -4523,7 +4646,7 @@
                                 </div>
                             </div>
                             <h4>Branding Component</h4>
-                            <p>The NDS Branding component makes it easy to comply with NIAID's Digital Policy surrounding web property identification.</p>
+                            <p>The NDS Branding component makes it easy to comply with NIAID's digital policies surrounding branding and visuals for digital properties.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -4828,7 +4951,7 @@
                                                             </div>
                                                             <div class="text--image-credit-caption__credit">
                                                                 <span class="text--image-credit-caption__credit__label-text">Credit:</span>
-                                                                <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+                                                                <span class="text--image-credit-caption__credit__text">NIAID</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -4878,7 +5001,7 @@
                                                                 </div>
                                                                 <div class="text--image-credit-caption__credit">
                                                                     <span class="text--image-credit-caption__credit__label-text">Credit:</span>
-                                                                    <span class="text--image-credit-caption__credit__text">NIAID, Office of Communications and Government Relations (OCGR)</span>
+                                                                    <span class="text--image-credit-caption__credit__text">NIAID</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4917,8 +5040,16 @@
                                                 <li>component_media_caption: Caption text to appear below the image.</li>
                                                 <li>component_media_credit: Credit text to appear below the image.</li>
                                                 <li>component_media_credit_label: The label to appear before the credit text (Default: "Credit:").</li>
-                                                <li>component_media_float: The direction to float the component (optional). Options: "left", "right".</li>
-                                                <li>component_media_lightbox: A parameter to determine if the image should include the Materialize lightbox feature. Options: "yes".</li>
+                                                <li>component_media_float: The direction to float the component (optional).
+                                                    <ul>
+                                                        <li>Options: "left", "right".</li>
+                                                    </ul>
+                                                </li>
+                                                <li>component_media_lightbox: A parameter to determine if the image should include the Materialize lightbox feature.
+                                                    <ul>
+                                                        <li>Options: "yes".</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -5225,11 +5356,27 @@
                                                 <li>input_group_text_value: Default value of the field.</li>
                                                 <li>input_group_text_aria_label: Aria Label of the text field.</li>
                                                 <li>input_group_text_tabindex: Optional tabindex attribute of the field.</li>
-                                                <li>input_group_text_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
-                                                <li>input_group_text_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
-                                                <li>input_group_text_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
+                                                <li>input_group_text_disabled: Bool indicating if the field is disabled.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>input_group_text_readonly: Bool indicating if the field is readonly.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>input_group_text_required: Bool indicating if the field is requred.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>input_group_text_icon: Optional name of Font Awesome icon to appear in the field.</li>
-                                                <li>input_group_text_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>input_group_text_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -5250,33 +5397,41 @@
                                         <div class="component--snippet__block__code__rendered">
 
 
-                                            <div id="input-group-checkbox" class="input-group-nds input-group--checkbox " role="checkbox">
+                                            <div id="form-group-example" class="input-group-nds input-group--checkbox " role="checkbox">
 
 
-                                                <label class="input-nds input--label " for="input-group-checkbox" title="Choose Platforms You Own">Choose Platforms You Own
+                                                <label class="input-nds input--label " for="form-group-example" title="Choose Type(s) of Diseases/Conditions">Choose Type(s) of Diseases/Conditions
                                                 </label>
 
                                                 <div class="input-nds input--checkbox " tabindex="1">
-                                                    <input id="checkbox-xbox" type="checkbox" name="input-group-checkbox" value="xbox">
+                                                    <input id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required>
 
 
-                                                    <label class="input-nds input--label " for="checkbox-xbox" title="Xbox">Xbox
+                                                    <label class="input-nds input--label " for="coronaviruses" title="Coronaviruses">Coronaviruses
                                                     </label>
                                                 </div>
 
                                                 <div class="input-nds input--checkbox " tabindex="1">
-                                                    <input id="checkbox-playstation" type="checkbox" name="input-group-checkbox" value="playstation">
+                                                    <input id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg">
 
 
-                                                    <label class="input-nds input--label " for="checkbox-playstation" title="Playstation">Playstation
+                                                    <label class="input-nds input--label " for="ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
                                                     </label>
                                                 </div>
 
                                                 <div class="input-nds input--checkbox " tabindex="1">
-                                                    <input id="checkbox-pc" type="checkbox" name="input-group-checkbox" value="pc">
+                                                    <input id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy">
 
 
-                                                    <label class="input-nds input--label " for="checkbox-pc" title="PC">PC
+                                                    <label class="input-nds input--label " for="food-allergy" title="Food Allergy">Food Allergy
+                                                    </label>
+                                                </div>
+
+                                                <div class="input-nds input--checkbox " tabindex="1">
+                                                    <input id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids">
+
+
+                                                    <label class="input-nds input--label " for="hiv-aids" title="HIV/AIDS">HIV/AIDS
                                                     </label>
                                                 </div>
                                             </div>
@@ -5304,33 +5459,41 @@
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
 
-                                                <div id="input-group-checkbox" class="input-group-nds input-group--checkbox " role="checkbox">
+                                                <div id="form-group-example" class="input-group-nds input-group--checkbox " role="checkbox">
 
 
-                                                    <label class="input-nds input--label " for="input-group-checkbox" title="Choose Platforms You Own">Choose Platforms You Own
+                                                    <label class="input-nds input--label " for="form-group-example" title="Choose Type(s) of Diseases/Conditions">Choose Type(s) of Diseases/Conditions
                                                     </label>
 
                                                     <div class="input-nds input--checkbox " tabindex="1">
-                                                        <input id="checkbox-xbox" type="checkbox" name="input-group-checkbox" value="xbox">
+                                                        <input id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required>
 
 
-                                                        <label class="input-nds input--label " for="checkbox-xbox" title="Xbox">Xbox
+                                                        <label class="input-nds input--label " for="coronaviruses" title="Coronaviruses">Coronaviruses
                                                         </label>
                                                     </div>
 
                                                     <div class="input-nds input--checkbox " tabindex="1">
-                                                        <input id="checkbox-playstation" type="checkbox" name="input-group-checkbox" value="playstation">
+                                                        <input id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg">
 
 
-                                                        <label class="input-nds input--label " for="checkbox-playstation" title="Playstation">Playstation
+                                                        <label class="input-nds input--label " for="ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
                                                         </label>
                                                     </div>
 
                                                     <div class="input-nds input--checkbox " tabindex="1">
-                                                        <input id="checkbox-pc" type="checkbox" name="input-group-checkbox" value="pc">
+                                                        <input id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy">
 
 
-                                                        <label class="input-nds input--label " for="checkbox-pc" title="PC">PC
+                                                        <label class="input-nds input--label " for="food-allergy" title="Food Allergy">Food Allergy
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="input-nds input--checkbox " tabindex="1">
+                                                        <input id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids">
+
+
+                                                        <label class="input-nds input--label " for="hiv-aids" title="HIV/AIDS">HIV/AIDS
                                                         </label>
                                                     </div>
                                                 </div>
@@ -5388,33 +5551,41 @@
                                         <div class="component--snippet__block__code__rendered">
 
 
-                                            <div id="input-group-radio" class="input-group-nds input-group--radio " role="radiogroup">
+                                            <div id="radio-disease-conditions" class="input-group-nds input-group--radio " role="radiogroup">
 
 
-                                                <label class="input-nds input--label " for="input-group-radio" title="Choose the Platform You Own">Choose the Platform You Own
+                                                <label class="input-nds input--label " for="radio-disease-conditions" title="Choose Type of Diseases/Condition">Choose Type of Diseases/Condition
                                                 </label>
 
                                                 <div class="input-nds input--radio " tabindex="1">
-                                                    <input id="radio-xbox" type="radio" name="input-group-radio" value="xbox">
+                                                    <input id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required>
 
 
-                                                    <label class="input-nds input--label " for="radio-xbox" title="Xbox">Xbox
+                                                    <label class="input-nds input--label " for="r-coronaviruses" title="Coronaviruses">Coronaviruses
                                                     </label>
                                                 </div>
 
                                                 <div class="input-nds input--radio " tabindex="1">
-                                                    <input id="radio-playstation" type="radio" name="input-group-radio" value="playstation">
+                                                    <input id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg">
 
 
-                                                    <label class="input-nds input--label " for="radio-playstation" title="Playstation">Playstation
+                                                    <label class="input-nds input--label " for="r-ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
                                                     </label>
                                                 </div>
 
                                                 <div class="input-nds input--radio " tabindex="1">
-                                                    <input id="radio-pc" type="radio" name="input-group-radio" value="pc">
+                                                    <input id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy">
 
 
-                                                    <label class="input-nds input--label " for="radio-pc" title="PC">PC
+                                                    <label class="input-nds input--label " for="r-food-allergy" title="Food Allergy">Food Allergy
+                                                    </label>
+                                                </div>
+
+                                                <div class="input-nds input--radio " tabindex="1">
+                                                    <input id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids">
+
+
+                                                    <label class="input-nds input--label " for="r-hiv-aids" title="HIV/AIDS">HIV/AIDS
                                                     </label>
                                                 </div>
                                             </div>
@@ -5442,33 +5613,41 @@
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
 
-                                                <div id="input-group-radio" class="input-group-nds input-group--radio " role="radiogroup">
+                                                <div id="radio-disease-conditions" class="input-group-nds input-group--radio " role="radiogroup">
 
 
-                                                    <label class="input-nds input--label " for="input-group-radio" title="Choose the Platform You Own">Choose the Platform You Own
+                                                    <label class="input-nds input--label " for="radio-disease-conditions" title="Choose Type of Diseases/Condition">Choose Type of Diseases/Condition
                                                     </label>
 
                                                     <div class="input-nds input--radio " tabindex="1">
-                                                        <input id="radio-xbox" type="radio" name="input-group-radio" value="xbox">
+                                                        <input id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required>
 
 
-                                                        <label class="input-nds input--label " for="radio-xbox" title="Xbox">Xbox
+                                                        <label class="input-nds input--label " for="r-coronaviruses" title="Coronaviruses">Coronaviruses
                                                         </label>
                                                     </div>
 
                                                     <div class="input-nds input--radio " tabindex="1">
-                                                        <input id="radio-playstation" type="radio" name="input-group-radio" value="playstation">
+                                                        <input id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg">
 
 
-                                                        <label class="input-nds input--label " for="radio-playstation" title="Playstation">Playstation
+                                                        <label class="input-nds input--label " for="r-ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
                                                         </label>
                                                     </div>
 
                                                     <div class="input-nds input--radio " tabindex="1">
-                                                        <input id="radio-pc" type="radio" name="input-group-radio" value="pc">
+                                                        <input id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy">
 
 
-                                                        <label class="input-nds input--label " for="radio-pc" title="PC">PC
+                                                        <label class="input-nds input--label " for="r-food-allergy" title="Food Allergy">Food Allergy
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="input-nds input--radio " tabindex="1">
+                                                        <input id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids">
+
+
+                                                        <label class="input-nds input--label " for="r-hiv-aids" title="HIV/AIDS">HIV/AIDS
                                                         </label>
                                                     </div>
                                                 </div>
@@ -5518,7 +5697,7 @@
                                 </div>
                             </div>
                             <h4>Select Field Group</h4>
-                            <p>The Select Field Group provides users with an improved select list experience courtesy of the Select2 library.</p>
+                            <p>The Select Field Group provides a user-friendly select list experience courtesy of the Select2 library.</p>
 
                             <div class="block-nds block--dependencies ">
                                 <div class="block--dependencies__label">Dependencies:</div>
@@ -5676,11 +5855,31 @@
                                                 <li>input_group_select_value: Default value of the field.</li>
                                                 <li>input_group_select_aria_label: Aria Label of the select field.</li>
                                                 <li>input_group_select_tabindex: Optional tabindex attribute of the field.</li>
-                                                <li>input_group_select_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
-                                                <li>input_group_select_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
-                                                <li>input_group_select_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
-                                                <li>input_group_select_always_selected: Bool indicating if the field should always have one option selected. Options: true, false (Default).</li>
-                                                <li>input_group_select_multiple: Bool indicating if the field can have multiple selections. Options: true, false (Default).</li>
+                                                <li>input_group_select_disabled: Bool indicating if the field is disabled.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>input_group_select_readonly: Bool indicating if the field is readonly.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>input_group_select_required: Bool indicating if the field is requred.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>input_group_select_always_selected: Bool indicating if the field should always have one option selected.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>input_group_select_multiple: Bool indicating if the field can have multiple selections.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -5798,9 +5997,21 @@
                                                 <li>input_group_date_picker_value: Default value of the field.</li>
                                                 <li>input_group_date_picker_aria_label: Aria Label of the Date Picker.</li>
                                                 <li>input_group_date_picker_tabindex: Optional tabindex attribute of the field.</li>
-                                                <li>input_group_date_picker_disabled: Bool indicating if the field is disabled. Options: true, false (Default).</li>
-                                                <li>input_group_date_picker_readonly: Bool indicating if the field is readonly. Options: true, false (Default).</li>
-                                                <li>input_group_date_picker_required: Bool indicating if the field is requred. Options: true, false (Default).</li>
+                                                <li>input_group_date_picker_disabled: Bool indicating if the field is disabled.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>input_group_date_picker_readonly: Bool indicating if the field is readonly.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>input_group_date_picker_required: Bool indicating if the field is requred.
+                                                    <ul>
+                                                        <li>Options: true, false (Default).</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -5819,7 +6030,7 @@
                             <h3>Forms</h3>
 
                             <h4>Search Form</h4>
-                            <p>Search allows users to find content on your site. A search feature is almost always recommended for websites, unless the website is only a few pages.</p>
+                            <p>Search allows users to find content on your site. A search feature is almost always recommended for websites unless the website is only a few pages.</p>
 
                             <p class="text-nds text--uswds ">
 
@@ -5915,7 +6126,11 @@
                                                 <li>form_search_input_name: Name of the form's &lt;input&gt; element.</li>
                                                 <li>form_search_input_placeholder: Placeholder text for the form's &lt;input&gt; element.</li>
                                                 <li>form_search_input_icon: Optional name of Font Awesome icon to appear in the field.</li>
-                                                <li>form_search_input_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>form_search_input_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                                 <li>form_search_input_aria_label: Aria Label for the form's &lt;input&gt; element.</li>
                                             </ul>
                                             <h5>Includes</h5>
@@ -5934,7 +6149,7 @@
                             <h3>Navigation</h3>
                             <p>Navigation elements are crucial to any website as they allow users to move between site pages. NDS offers several patterns to make navigation easy and policy-compliant.</p>
                             <h4>Primary Navigation</h4>
-                            <p>Primary navigation is used to move between the major sections of your website. NDS recommends including primary navigation directly below the header of your site for easiest access.</p>
+                            <p>Primary navigation is used to move between the major sections of your website. We recommend including primary navigation directly below the header of your site for easiest access.</p>
 
                             <div class="block-nds block--dependencies ">
                                 <div class="block--dependencies__label">Dependencies:</div>
@@ -6068,7 +6283,7 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>Although it is possible to use the NDS out of the box component for Primary Navigation, it is likely you will need to replicate the pattern for your particular site due to the unique nature of different websites. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes to the component without altering the original NDS component.</p>
+                                            <p>Although it is possible to use the NDS out-of-the-box component for Primary Navigation, it is likely you will need to customize the pattern for your particular site. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes without altering the original NDS component.</p>
                                             <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup, using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
                                             <h5>Blocks</h5>
                                             <ul>
@@ -6085,7 +6300,7 @@
                                 </div>
                             </div>
                             <h4>Breadcrumbs</h4>
-                            <p>Breadcrumbs are used to help users identify where they are within the menu sytem of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
+                            <p>Breadcrumbs are used to help users identify where they are within the menu system of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
 
                             <p class="text-nds text--uswds ">
 
@@ -6167,8 +6382,16 @@
                                             <ul>
                                                 <li>navigation_breadcrumbs_classes: Additional classes for the navigation component.</li>
                                                 <li>navigation_breadcrumbs_id: Navigation component ID.</li>
-                                                <li>navigation_breadcrumbs_data: An array of breadcrumb objects. Structure: {"text": "", "href": "", "routeName": ""}. The "href" key can be empty. The "routeName" key should be empty unless using Drupal.</li>
-                                                <li>navigation_breadcrumbs_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                <li>navigation_breadcrumbs_data: An array of breadcrumb objects.
+                                                    <ul>
+                                                        <li>Structure: {"text": "", "href": "", "routeName": ""}. The "href" key can be empty. The "routeName" key should be empty unless using Drupal.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>navigation_breadcrumbs_icon_weight: Font Awesome icon weight.
+                                                    <ul>
+                                                        <li>Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
@@ -6302,7 +6525,11 @@
                                             <ul>
                                                 <li>navigation_pagination_classes: Additional classes for the navigation component.</li>
                                                 <li>navigation_pagination_id: Navigation component ID.</li>
-                                                <li>navigation_pagination_data: An array of pagination button objects. Structure: {"href": "", "class": ""}. Pass "active" or "is-active" to the the "class" key for the current page.</li>
+                                                <li>navigation_pagination_data: An array of pagination button objects.
+                                                    <ul>
+                                                        <li>Structure: {"href": "", "class": ""}. Pass "active" or "is-active" to the the "class" key for the current page.</li>
+                                                    </ul>
+                                                </li>
                                                 <li>navigation_pagination_next_href: URL destination for the "Next" page button.</li>
                                                 <li>navigation_pagination_last_href: URL destination for the "Last" page button.</li>
                                             </ul>
@@ -6410,7 +6637,7 @@
                                 </div>
                             </div>
                             <h4>Mobile Rail</h4>
-                            <p>This simple component helps transition your site from a desktop layout to mobile by collapsing the local navigation (or whatever is wrapped) into a dropdown.</p>
+                            <p>This simple component helps transition your site from a desktop to mobile layout by collapsing the local navigation (or whatever other content is wrapped) into a dropdown.</p>
 
                             <div class="component-nds component--snippet  no-render">
                                 <div class="component--snippet__block">
@@ -6501,7 +6728,7 @@
                             <h3>Global</h3>
                             <p>The Global Organisms are comprised of the Header and Footer components. Together, these components add familiarity and consistency to NDS websites.</p>
                             <h4>Header</h4>
-                            <p>The header is one of the first things users will see when visiting your site. Therefore, it is important to ensure that NDS websites communicate a clear and consistent brand through their headers. Headers typically consist of site branding and key navigational functionality. The NDS header component demo includes a menu button, site branding, a search field, and a button used to toggle the mobile menu. Since every website is different, you will likely need to create your own copy of the header component to suit your website. Remember that custom components should be placed outside the 00-nds/ directory.</p>
+                            <p>The header is one of the first things users will see when visiting your site. Therefore, it is important to ensure that NDS websites communicate a clear and consistent brand through their headers. Headers typically consist of site branding and key navigation. The NDS Header component demo includes a menu button, site branding, a search field, and a button used to toggle the mobile menu. Since every website is different, you will likely need to create your own copy of the Header component to suit your website. Remember that custom components should be placed outside the 00-nds/ directory.</p>
 
                             <p class="text-nds text--uswds ">
 
@@ -6611,7 +6838,7 @@
                                 </div>
                             </div>
                             <h4>Footer</h4>
-                            <p>Website footers are often used to provide supplemental information to site users, such as contact information or related resources. The NDS footer demo provides suggested links for inclusion in the footer, however, these can change based on the site's needs.</p>
+                            <p>Website footers are often used to provide supplemental information to site users, such as contact information or related resources. The NDS footer demo provides suggested links for inclusion in the footer, however these can change based on the site's needs.</p>
 
                             <p class="text-nds text--uswds ">
 
@@ -6738,7 +6965,7 @@
 
                         <div id="section-components-organisms-views" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Views</h3>
-                            <p>The term "view" comes from Drupal terminology and refers to a collection of Blocks or Components. NDS offers two types of views out of the box - a generic listing view and a view for featured content.</p>
+                            <p>The term "view" comes from Drupal terminology and refers to a collection of Blocks or Components. NDS offers two types of views out of the box &mdash; a generic listing view and a view for featured content.</p>
                             <h4>Listing View</h4>
                             <p>The Listing View is a very versatile component that allows users to present sets of content. For instance, search results are the perfect use case for this component. The Listing View optionally supports a heading and a "See All" button following the display.</p>
 
@@ -6875,7 +7102,7 @@
                                 </div>
                             </div>
                             <h4>Featured Content Cards View</h4>
-                            <p>Featured Content Cards are excellent for highlighting information, but too many can be overwehelming and can reduce the relative importance of each card. NDS recommends two or three cards be included when using the Featured Content Cards View.</p>
+                            <p>Featured Content Cards are excellent for highlighting information, but too many can be overwhelming and reduce the relative importance of each card. We recommend no more thantwo or three cards be used with the Featured Content Cards View.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -7024,7 +7251,7 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>The Featured Content Card component can be used either by utilizing the &#123;% block view_featured_content_cards_content %&#125; or by passing data to the "view_featured_content_cards_data" parameter. If using the parameter, the component will calculate the correct width of the Bootstrap columns ("view_featured_content_cards_column_width") based on the number of card objects passed. Therefore, if using the parameter option, you do not need to specify a value for "view_featured_content_cards_column_width".</p>
+                                            <p>To implement the Featured Content Card use the &#123;% block view_featured_content_cards_content %&#125; or pass data to the "view_featured_content_cards_data" parameter. If using the parameter, the component will calculate the correct width of the Bootstrap columns ("view_featured_content_cards_column_width") based on the number of card objects passed therefore negating the need to specify a value for "view_featured_content_cards_column_width".</p>
                                             <h5>Blocks</h5>
                                             <ul>
                                                 <li>&#123;% block view_featured_content_cards_content %&#125;: The block containing featured content cards.</li>
@@ -7034,8 +7261,16 @@
                                                 <li>view_featured_content_cards_classes: Additional classes for view wrapper.</li>
                                                 <li>view_featured_content_cards_id: ID for the view.</li>
                                                 <li>view_featured_content_cards_data: An array of featured content card objects. Structure: {"src": "", "alt": "", "title": "", "href": "", "description": "", "featured": ""}. See the Featured Content Card pattern for more information.</li>
-                                                <li>view_featured_content_cards_column_breakpoint: The Bootstrap column breakpoint for the view. Options: "sm", "md" (Default), "lg", "xl".</li>
-                                                <li>view_featured_content_cards_column_width: The Bootstrap column width for the view. Options: "1", "2", "3", "4", "6" (Default), "12".</li>
+                                                <li>view_featured_content_cards_column_breakpoint: The Bootstrap column breakpoint for the view.
+                                                    <ul>
+                                                        <li>Options: "sm", "md" (Default), "lg", "xl".</li>
+                                                    </ul>
+                                                </li>
+                                                <li>view_featured_content_cards_column_width: The Bootstrap column width for the view.
+                                                    <ul>
+                                                        <li>Options: "1", "2", "3", "4", "6" (Default), "12".</li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             <h5>Includes</h5>
                                             <ul>
