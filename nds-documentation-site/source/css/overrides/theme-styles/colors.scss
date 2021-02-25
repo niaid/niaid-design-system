@@ -14,6 +14,19 @@
             }
         }
     }
+    #builder {
+        > .main {
+            > .layouts--main {
+                .navigation--mobile-rail__button {
+                    &:hover,
+                    &:focus {
+                        background: $color-theme-2-1-1;
+                        border-bottom: $s-1px solid $color-theme-2-1-1;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .style--colors--theme-3 {
@@ -27,6 +40,19 @@
                         &:focus {
                             border-left: 0.125rem solid $color-theme-3-1-1;
                         }
+                    }
+                }
+            }
+        }
+    }
+    #builder {
+        > .main {
+            > .layouts--main {
+                .navigation--mobile-rail__button {
+                    &:hover,
+                    &:focus {
+                        background: $color-theme-3-1-1;
+                        border-bottom: $s-1px solid $color-theme-3-1-1;
                     }
                 }
             }

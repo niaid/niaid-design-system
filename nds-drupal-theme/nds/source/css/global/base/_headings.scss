@@ -24,18 +24,18 @@ h6, .h6 {
 h1, .h1 {
     margin-top: 0;
     margin-bottom: $s-2;
-    font-size: $s-2-50;
+    font-size: $s-2-75;
     @media only screen and (min-width: 400px) {
         font-size: $s-3;
     }
 }
 
 h2, .h2 {
-    font-size: $s-2;
+    font-size: $s-2-50;
 }
 
 h3, .h3 {
-    font-size: 1.65rem;
+    font-size: $s-2;
 }
 
 h4, .h4 {
