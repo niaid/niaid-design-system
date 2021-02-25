@@ -13,13 +13,40 @@ function initDataAttributes() {
     }
     
     for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-        let navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-        setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+        let menuDropdown = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('.navigation--primary__inner__item');
+        for (var i = 0; i < menuDropdown.length; i++) {
+            let sectionText = menuDropdown[i].querySelectorAll('button');
+            if (sectionText.length > 0) {
+                sectionText = sectionText[0].textContent.trim();
+                sectionText = sectionText.replace(/\//g, '-');
+                sectionText = sectionText.replace(/\s+/g, '-').toLowerCase();
+                let dropdownLinks = menuDropdown[i].querySelectorAll('.dropdown-item');
+                for (var j = 0; j < dropdownLinks.length; j++) {
+                    setDataAttributes(dropdownLinks, 'data-nav', 'header-nav-' + sectionText + '-');
+                }
+            }
+            else {
+                let linkText = menuDropdown[i].querySelectorAll('a');
+                setDataAttributes(linkText, 'data-nav', 'header-nav-');
+            }
+        }
+    }
+
+    for (var i = 0; i < document.getElementsByClassName("global--header").length; i++) {
+        let logoLinks = document.getElementsByClassName("global--header")[i].querySelectorAll('.component--branding');
+        for (var i = 0; i < logoLinks.length; i++) {
+            logoLinks[i].setAttribute('data-nav', 'header-nav-logo');
+        }
     }
 
     for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
         let navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
         setDataAttributes(navigationLinks, 'data-nav', 'footer-nav-');
+        
+        let logoLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('.image--logo');
+        for (var i = 0; i < logoLinks.length; i++) {
+            logoLinks[i].setAttribute('data-nav', 'footer-nav-logo');
+        }
     }
 
     for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
