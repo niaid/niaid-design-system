@@ -10,13 +10,13 @@
         }
     }
     &.button--secondary {
-        color: $color-theme-1-1-1;
+        color: var(--color-theme-primary);
         background: transparent;
         &:hover,
         &:focus {
-            background: $color-theme-1-1-1;
+            background: var(--color-theme-primary);
             color: $white;
-            border: $s-1px solid $color-theme-1-1-1;
+            border: $s-1px solid var(--color-theme-primary);
         }
     }
     &.button--negative {

@@ -39,25 +39,5 @@
                 margin-left: .5rem;
             }
         }
-        &__flair {
-            &__pill {
-                display: inline-block;
-                height: .5rem;
-                width: 3rem;
-                &:nth-child(1) {
-                    border-top-left-radius: 100rem;
-                    border-bottom-left-radius: 100rem;
-                    background: $color-theme-1-accent;
-                }
-                &:nth-child(2) {
-                    background: $color-theme-2-accent;
-                }
-                &:nth-child(3) {
-                    border-top-right-radius: 100rem;
-                    border-bottom-right-radius: 100rem;
-                    background: $color-theme-3-accent;
-                }
-            }
-        }
     }
 }

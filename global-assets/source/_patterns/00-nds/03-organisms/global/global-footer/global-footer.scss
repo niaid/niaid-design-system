@@ -4,7 +4,7 @@
     min-height: $s-3-50;
     position: relative;
     padding: 0;
-    border-top: $s-0-25 solid $color-theme-1-accent;
+    border-top: $s-0-25 solid var(--color-theme-accent);
     * {
         color: $white;
     }
@@ -30,7 +30,7 @@
                 border-bottom: $s-1px solid $white;
             }
             &:after {
-                color: $color-theme-1-accent;
+                color: var(--color-theme-accent);
                 @extend %fa-icon;
                 @extend .fas;
                 content: fa-content($fa-var-chevron-right);

@@ -22,7 +22,7 @@
         &:hover,
         &:focus {
             color: $white;
-            background: $color-theme-1-1-1;
+            background: var(--color-theme-primary);
         }
     }
     &__window {

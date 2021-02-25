@@ -1,5 +1,5 @@
 .navigation--primary {
-    background: $color-theme-1-3-1;
+    background: var(--color-theme-tertiary);
     position: relative;
     z-index: 101;
     display: none;
@@ -65,7 +65,7 @@
                 &:hover,
                 &:focus {
                     border: 0;
-                    background: $color-theme-1-3-2;
+                    background: var(--color-theme-tertiary-hover);
                 }
                 &:visited {
                     color: $white;
@@ -79,7 +79,7 @@
                 margin: 0;
                 border: 0;
                 border-radius: 0;
-                background: $color-theme-1-3-2;
+                background: var(--color-theme-tertiary-hover);
                 color: $white;
                 .dropdown-item {
                     display: block;
@@ -88,7 +88,7 @@
                     }
                     &:hover,
                     &:focus {
-                        background: $color-theme-1-3-1;
+                        background: var(--color-theme-tertiary);
                         color: $white;
                     }
                     &.active {
@@ -98,7 +98,7 @@
                         }
                         &:hover,
                         &:focus {
-                            background: $color-theme-1-3-1;
+                            background: var(--color-theme-tertiary);
                         }
                     }
                 }

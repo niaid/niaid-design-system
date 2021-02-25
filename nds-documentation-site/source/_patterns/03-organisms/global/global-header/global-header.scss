@@ -44,13 +44,14 @@
         padding-right: 1rem;
     }
     &__github {
-        background: #24292e !important;
-        border: .0625rem solid #24292e !important;
+        $github: #24292e;
+        background: $github;
+        border: .0625rem solid $github;
         margin-left: .25rem;
         &:hover,
         &:focus {
-            background: #24292e !important;
-            border: .0625rem solid #24292e !important;
+            background: $github !important;
+            border: .0625rem solid $github !important;
         }
     }
     & > div {

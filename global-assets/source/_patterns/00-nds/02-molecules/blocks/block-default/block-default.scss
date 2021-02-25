@@ -20,6 +20,6 @@
         max-width: none;
     }
     &.block--default--accent {
-        border-left: $s-0-25 solid $color-theme-1-accent;
+        border-left: $s-0-25 solid var(--color-theme-accent);
     }
 }

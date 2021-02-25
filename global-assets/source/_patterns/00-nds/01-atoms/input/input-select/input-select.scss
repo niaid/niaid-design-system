@@ -85,12 +85,12 @@
                         font-size: 1rem;
                         padding: .792rem 2.5rem .792rem 1rem;
                         background-image: none !important;
-                        background: $color-theme-1-2-1;
+                        background: var(--color-theme-secondary);
                         color: $white !important;
                         border: 0 !important;
                         .select2-selection__choice__remove {
                             position: absolute;
-                            color: $color-theme-1-2-1;
+                            color: var(--color-theme-secondary);
                             top: 50%!important;
                             transform: translateY(-50%)!important;
                             right: 0;
@@ -99,7 +99,7 @@
                             font-size: initial !important;
                             &:hover,
                             &:focus {
-                                color: $color-theme-1-2-1;
+                                color: var(--color-theme-secondary);
                             }
                             &:before {
                                 content: fa-content($fa-var-times);
@@ -124,7 +124,7 @@
                         font-size: 1rem;
                         padding: .792rem 2.5rem .792rem 1rem;
                         background-image: none !important;
-                        background: $color-theme-1-2-1;
+                        background: var(--color-theme-secondary);
                         color: $white !important;
                         border: 0 !important;
                         white-space: normal;

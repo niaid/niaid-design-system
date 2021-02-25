@@ -26,7 +26,7 @@
             margin-top: -1 * $s-0-50;
             margin-bottom: $s-0-50;
             display: block;
-            color: $color-theme-1-1-1;
+            color: var(--color-theme-primary);
         }
         &__description {
             margin-bottom: 0;
