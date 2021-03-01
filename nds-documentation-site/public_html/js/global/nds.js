@@ -93,73 +93,7 @@ $(document).ready(function () {
       initComponentScrollspySection();
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-document.addEventListener("DOMContentLoaded", function (e) {
-  initDataAttributes();
-}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-
-function initDataAttributes() {
-  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
-    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-
-    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
-
-    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("navigation--mobile-rail__content").length; i++) {
-    var _navigationLinks3 = document.getElementsByClassName("navigation--mobile-rail__content")[i].querySelectorAll('a');
-
-    setDataAttributes(_navigationLinks3, 'data-nav', 'nav-left-');
-  }
-} // setDataAttributes - Helper function to add data attributes to elements.
-
-
-function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-  for (var i = 0; i < els.length; i++) {
-    var linkText = els[i].textContent.trim();
-
-    if (linkText !== "" && els[i].closest('.component--snippet') == null) {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-    }
-  }
-}
-
-if (window.Element && !Element.prototype.closest) {
-  Element.prototype.closest = function (s) {
-    var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-        i,
-        el = this;
-
-    do {
-      i = matches.length;
-
-      while (--i >= 0 && matches.item(i) !== el) {}
-
-      ;
-    } while (i < 0 && (el = el.parentElement));
-
-    return el;
-  };
-}
+})(jQuery);
 
 (function ($) {
   function initComponentSnippet() {
@@ -238,7 +172,73 @@ if (window.Element && !Element.prototype.closest) {
       initComponentSnippet();
     });
   }
-})(jQuery);
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initDataAttributes();
+}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+
+function initDataAttributes() {
+  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
+    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
+    var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
+    setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+
+    setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("navigation--mobile-rail__content").length; i++) {
+    var _navigationLinks3 = document.getElementsByClassName("navigation--mobile-rail__content")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks3, 'data-nav', 'nav-left-');
+  }
+} // setDataAttributes - Helper function to add data attributes to elements.
+
+
+function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+  for (var i = 0; i < els.length; i++) {
+    var linkText = els[i].textContent.trim();
+
+    if (linkText !== "" && els[i].closest('.component--snippet') == null) {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    }
+  }
+}
+
+if (window.Element && !Element.prototype.closest) {
+  Element.prototype.closest = function (s) {
+    var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+        i,
+        el = this;
+
+    do {
+      i = matches.length;
+
+      while (--i >= 0 && matches.item(i) !== el) {}
+
+      ;
+    } while (i < 0 && (el = el.parentElement));
+
+    return el;
+  };
+}
 
 (function ($) {
   function init_style_controls() {
@@ -1395,3 +1395,28 @@ if (window.Element && !Element.prototype.closest) {
     });
   }
 })(jQuery);
+
+$(document).ready(function () {
+  $(".navigation--dropdown.hover").on('mouseover', function () {
+    openDropdown($(this));
+  });
+  $(".navigation--dropdown.hover").on('mouseout', function () {
+    closeDropdown($(this));
+  });
+  $(".navigation--dropdown").on('focusin', function (e) {
+    openDropdown($(this));
+  });
+  $(".navigation--dropdown").on('blur', function (e) {
+    console.log("We out");
+  });
+
+  function openDropdown($el) {
+    $el.addClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
+  }
+
+  function closeDropdown($el) {
+    $el.removeClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
+  }
+});
