@@ -96,7 +96,8 @@
                         <h3>Header Component</h3>
                         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
                             {
-                                "component_snippet_show_rendered": "no"
+                                "component_snippet_show_rendered": "no",
+                                "component_snippet_name": "global-header"
                             }
                         %}
                             {% block component_snippet_code %}
@@ -107,7 +108,8 @@
                         <h3>Footer Component</h3>
                         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
                             {
-                                "component_snippet_show_rendered": "no"
+                                "component_snippet_show_rendered": "no",
+                                "component_snippet_name": "global-footer"
                             }
                         %}
                             {% block component_snippet_code %}
