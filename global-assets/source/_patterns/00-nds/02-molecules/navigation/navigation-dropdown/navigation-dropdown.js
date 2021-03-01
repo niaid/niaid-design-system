@@ -9,8 +9,11 @@ $(document).ready(function() {
     $(".navigation--dropdown").on('focusin', function(e) {
         openDropdown($(this));
     });
-    $(".navigation--dropdown").on('blur', function(e) {
-        console.log("We out");
+    $(".navigation--dropdown").on('focusout', function(e) {
+        if (this.contains(e.relatedTarget)) {
+            return;
+        }
+        closeDropdown($(this));
     });
 
     function openDropdown($el) {
