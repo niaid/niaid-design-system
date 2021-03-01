@@ -1,15 +1,37 @@
-{% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
-    {
-        "navigation_dropdown_id": "navigation-dropdown-example",
-        "navigation_dropdown_toggle_text": "Dropdown",
-        "navigation_dropdown_toggle_aria_label": "Open Dropdown",
-        "navigation_dropdown_toggle_href": "#"
-    }
-%}
-    {% block navigation_dropdown_content %}
-        <a href="#">Dropdown Item A</a>
-        <a href="#">Dropdown Item B</a>
-        <a href="#">Dropdown Item C</a>
-        <a href="#">Dropdown Item D</a>
-    {% endblock %}
-{% endembed %}
+<div class="container-fluid demo">
+    <div class="row">
+        <div class="col">
+            {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
+                {
+                    "navigation_dropdown_id": "navigation-dropdown-click-example",
+                    "navigation_dropdown_toggle_text": "Click Dropdown",
+                    "navigation_dropdown_toggle_aria_label": "Open Dropdown",
+                }
+            %}
+                {% block navigation_dropdown_content %}
+                    <a href="#">Dropdown Item A</a>
+                    <a href="#">Dropdown Item B</a>
+                    <a href="#">Dropdown Item C</a>
+                    <a href="#">Dropdown Item D</a>
+                {% endblock %}
+            {% endembed %}
+        </div>
+        <div class="col">
+            {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
+                {
+                    "navigation_dropdown_id": "navigation-dropdown-hover-example",
+                    "navigation_dropdown_toggle_text": "Hover Dropdown",
+                    "navigation_dropdown_toggle_aria_label": "Open Dropdown",
+                    "navigation_dropdown_toggle_href": "#"
+                }
+            %}
+                {% block navigation_dropdown_content %}
+                    <a href="#">Dropdown Item A</a>
+                    <a href="#">Dropdown Item B</a>
+                    <a href="#">Dropdown Item C</a>
+                    <a href="#">Dropdown Item D</a>
+                {% endblock %}
+            {% endembed %}
+        </div>
+    </div>
+</div>

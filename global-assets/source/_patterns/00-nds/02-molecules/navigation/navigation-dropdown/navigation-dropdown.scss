@@ -19,6 +19,7 @@
         background: $color-theme-1-3-2;
         color: $white;
         overflow: hidden;
+        z-index: $z-index-dropdown;
         a {
             display: block;
             text-align: left;
