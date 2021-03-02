@@ -3,7 +3,20 @@
     background: $white;
     padding: $s-1 $s-1 $s-1 $s-2-50;
     margin-left: $s-1-25;
-    &__icon {
+    a,
+    p,
+    ol,
+    ul {
+        max-width: none;
+    }
+    & > *:first-child {
+        margin-top: 0;
+    }
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+    &:before {
+        content: "\f059";
         display: flex;
         align-items: center;
         justify-content: center;
@@ -17,47 +30,67 @@
         transform: translate(-50%, -50%);
         font-size: $s-1-25;
     }
-    &__content {
-        & > *:first-child {
-            margin-top: 0;
-        }
-        & > *:last-child {
-            margin-bottom: 0;
-        }
-    }
     &.message--warning {
-        .block--status-message__icon {
+        &:before {
+            content: "\f071";
             color: $type-heading;
             background: $status-warning;
         }
     }
     &.message--information {
-        .block--status-message__icon {
+        &:before {
             color: $white;
             background: $status-information;
         }
     }
     &.message--success {
-        .block--status-message__icon {
+        &:before {
+            content: "\f00c";
             color: $white;
             background: $status-success;
         }
     }
     &.message--error {
-        .block--status-message__icon {
+        &:before {
+            content: "\f00d";
             color: $white;
             background: $status-error;
         }
     }
-    a,
-    p,
-    ol,
-    ul {
-        max-width: none;
+
+    &.fa-icon-weight-s,
+    &.fa-icon-weight-r,
+    &.fa-icon-weight-b,
+    &.fa-icon-weight-l,
+    &.fa-icon-weight-d {
+        &:before {
+            display: flex;
+        }
     }
-    p {
-        &:last-child {
-            margin-bottom: 0;
+
+    &.fa-icon-weight-s {
+        &:before {
+            @extend .fas;
+        }
+    }
+    &.fa-icon-weight-r {
+        &:before {
+            @extend .far;
+        }
+    }
+    &.fa-icon-weight-b {
+        &:before {
+            @extend .fab;
+        }
+    }
+    &.fa-icon-weight-l {
+        &:before {
+            @extend .fal;
+        }
+    }
+    &.fa-icon-weight-d {
+        &:before {
+            @extend .fad;
         }
     }
 }

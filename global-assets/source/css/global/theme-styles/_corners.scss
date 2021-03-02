@@ -133,11 +133,6 @@
         &.block--wtph {
             border-radius: 0;
         }
-        &.block--mission-statement {
-            .block--mission-statement__header {
-                border-radius: $corner-radius;
-            }
-        }
     }
     .component-nds {
         &.component--media {
@@ -314,11 +309,6 @@
         }
         &.block--wtph {
             border-radius: 0;
-        }
-        &.block--mission-statement {
-            .block--mission-statement__header {
-                border-radius: $corner-radius;
-            }
         }
     }
     .component-nds {

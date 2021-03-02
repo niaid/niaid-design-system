@@ -19,41 +19,21 @@
         block_status_message_classes: Additional status message classes.
         block_status_message_id: Status message ID.
         block_status_message_type: The type of status message (required). Options: "message--success", "message--information", "message--warning", "message--error".
+        block_status_message_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'l' (Pro-Only).
         block_status_message_attributes: Additional status message attributes, used particularly if these messages appear dynamically.
 
     Includes:
         Atoms -> Icons -> icon-default
 
-    Last Updated: February 9, 2021
+    Last Updated: March 2, 2021
 #}
 
 {% set block_status_message_classes = block_status_message_classes|default() %}
 {% set block_status_message_id = block_status_message_id|default() %}
 {% set block_status_message_type = block_status_message_type|default() %}
+{% set block_status_message_icon_weight = block_status_message_icon_weight|default('') %}
 {% set block_status_message_attributes = block_status_message_attributes|default() %}
 
-{% if block_status_message_type == 'message--information' %}
-    {% set block_status_message_icon = 'question-circle' %}
-{% elseif block_status_message_type == 'message--warning' %}
-    {% set block_status_message_icon = 'exclamation-triangle' %}
-{% elseif block_status_message_type == 'message--success' %}
-    {% set block_status_message_icon = 'check' %}
-{% elseif block_status_message_type == 'message--error' %}
-    {% set block_status_message_icon = 'times' %}
-{% else %}
-    {% set block_status_message_icon = 'question-circle' %}
-{% endif %}
-
-<div class="block-nds block--status-message {{ block_status_message_type ~ " " ~ block_status_message_classes }}"{% if block_status_message_id is not empty %} id="{{ block_status_message_id }}"{% endif %} {{ block_status_message_attributes|raw }}>
-    <div class="block--status-message__icon">
-        {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
-            {
-                "icon_default_type": block_status_message_icon,
-                "icon_default_weight": "s"
-            }
-        %}
-    </div>
-    <div class="block--status-message__content">
-        {% block block_status_message_content %}{% endblock %}
-    </div>
+<div class="block-nds block--status-message {{ block_status_message_type ~ " fa-icon-weight-" ~ block_status_message_icon_weight ~ " " ~ block_status_message_classes }}"{% if block_status_message_id is not empty %} id="{{ block_status_message_id }}"{% endif %} {{ block_status_message_attributes|raw }}>
+    {% block block_status_message_content %}{% endblock %}
 </div>

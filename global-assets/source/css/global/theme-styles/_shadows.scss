@@ -169,7 +169,7 @@
             background: transparent;
         }
         &.block--status-message {
-            .block--status-message__icon {
+            &:before {
                 @include md-2dp;
             }
         }
