@@ -41,17 +41,7 @@
         }
     }
     &__version {
-        padding-right: 1rem;
-    }
-    &__github {
-        background: #24292e !important;
-        border: .0625rem solid #24292e !important;
-        margin-left: .25rem;
-        &:hover,
-        &:focus {
-            background: #24292e !important;
-            border: .0625rem solid #24292e !important;
-        }
+        padding-right: $s-0-75;
     }
     & > div {
         display: none;

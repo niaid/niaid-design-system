@@ -12,24 +12,15 @@
     %}
     <div>
         <span class="global--header__version">v 1.0.0</span>
-        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+        {# {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
             {
                 "button_icon_classes": 'global--header__download-button button--secondary',
                 "button_icon_href": links.getStarted,
                 "button_icon_icon": "download",
                 "button_icon_text": "Download NDS"
             }
-        %}
-        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-            {
-                "button_icon_classes": "global--header__github",
-                "button_icon_icon": "github",
-                "button_icon_icon_weight": "b",
-                "button_icon_icon_size": "large",
-                "button_icon_href": "https://github.com/niaid/niaid-design-system",
-                "button_icon_aria_label": "NDS on GitHub"
-            }
-        %}
+        %} #}
+        {% include "@atoms/buttons/button-github/_button-github-main.twig" %}
     </div>
     {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
         {

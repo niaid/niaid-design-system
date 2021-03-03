@@ -30,7 +30,10 @@
         }
     }
     &--large {
-        font-size: $s-1-50;
-        padding: $s-0-75 $s-1;
+        display: inline-flex;
+        align-items: center;
+        .icon--default {
+            font-size: $s-1-50;
+        }
     }
 }

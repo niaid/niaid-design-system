@@ -22,7 +22,9 @@
     $corner-radius: 1rem;
     .button--jump-links,
     .block--fonts,
+    .block--design-files,
     .block--files {
+        .button--image,
         .button--icon {
             border-radius: $corner-radius;
         }

@@ -68,15 +68,7 @@
                 <a tabindex="-1" class="{{ navigationPrimaryActiveLink == "builder" ? "active" : "" }}" href="{{ links.themeBuilder }}">Theme Builder</a>
             </div>
             <div class="navigation--drawer__inner__download">
-                 {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-                    {
-                        "button_icon_href": links.getStarted,
-                        "button_icon_icon": "download",
-                        "button_icon_icon_weight": "l",
-                        "button_icon_text": "Download NDS",
-                        "button_icon_attributes": 'tabindex=-1'
-                    }
-                %}
+                 {% include "@atoms/buttons/button-github/_button-github-main.twig" %}
             </div>
         </div>
         <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>

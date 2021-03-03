@@ -24,7 +24,7 @@
         <p>There are four main button styles for each Color Theme option: Primary, Secondary, Tertiary, and Negative (Error State). In general, buttons are used for actions that occur on the page while links take users from one page to another. Depending on the importance of a link, you may decide to style it as a button to make it stand out more. Also shown here is the "disabled" button style.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
-                "text_uswds_component_name": "Buttons",
+                "text_uswds_component_name": "buttons",
                 "text_uswds_href": "https://designsystem.digital.gov/components/button/"
             }
         %}
@@ -850,7 +850,7 @@
         %}
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
-                "text_uswds_component_name": "Tables",
+                "text_uswds_component_name": "tables",
                 "text_uswds_href": "https://designsystem.digital.gov/components/table/"
             }
         %}
@@ -893,8 +893,14 @@
             {% endblock %}
         {% endembed %}
 
-        <h4>Badge</h4>
-        <p>Badges are static, non-functional indicators of information. Typically badges are used to showcase tags and metadata of certain components such as search results.</p>
+        <h4>Badge (Tag)</h4>
+        <p>Badges (tags) are static, non-functional indicators of information. Typically badges are used to showcase tags and metadata of certain components such as search results.</p>
+        {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
+            {
+                "text_uswds_component_name": "badges (tags)",
+                "text_uswds_href": "https://designsystem.digital.gov/components/tag/"
+            }
+        %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
                 "component_snippet_name": "text-badge"
