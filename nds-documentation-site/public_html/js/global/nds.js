@@ -866,7 +866,7 @@ if (window.Element && !Element.prototype.closest) {
   function updateHexes(theme) {
     var target = '.block--palette.' + theme;
     $(target).find('.block--palette__color').each(function (i) {
-      if (i != 3) {
+      if (i != 4) {
         var hex = rgb2hex($(this).css('background-color'));
         var indicator = '.indicator-color--' + (i + 1);
         $(indicator).find('.global--color-indicator__color').css('background', hex);
