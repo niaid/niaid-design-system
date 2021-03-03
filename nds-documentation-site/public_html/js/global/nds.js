@@ -20,7 +20,52 @@ function windowWidth() {
   var docElemProp = window.document.documentElement.clientWidth,
       body = window.document.body;
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
-} // Part of NDS Lite
+}
+
+$(document).ready(function () {
+  var mql = window.matchMedia('all and (min-width: 992px)');
+  var wWidth = $(window).width();
+  $('.fixed-left').each(function () {
+    if (mql.matches) {
+      stickybits($(this).find('.navigation--mobile-rail'));
+    }
+  });
+  $(window).on('resize', function () {
+    if (wWidth != $(this).width()) {
+      wWidth = $(this).width();
+      $('.fixed-left').each(function () {
+        if (mql.matches) {
+          stickybits($(this).find('.navigation--mobile-rail'));
+        } else {
+          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
+          $(this).find('.navigation--mobile-rail').css('position', 'relative');
+        }
+      });
+    }
+  });
+});
+
+(function ($) {
+  function init_layouts_tabs(context) {
+    $('#tab--mockup').attr('tabindex', '-1');
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.layoutsTabs = {
+        attach: function attach(context) {
+          init_layouts_tabs(context);
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      init_layouts_tabs();
+    });
+  }
+})(jQuery); // Part of NDS Lite
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -33,57 +78,35 @@ function initDataAttributes() {
     setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
   }
 
-  for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-    var menuDropdown = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('.navigation--primary__inner__item');
-
-    for (var i = 0; i < menuDropdown.length; i++) {
-      var sectionText = menuDropdown[i].querySelectorAll('button');
-
-      if (sectionText.length > 0) {
-        sectionText = sectionText[0].textContent.trim();
-        sectionText = sectionText.replace(/\//g, '-');
-        sectionText = sectionText.replace(/\s+/g, '-').toLowerCase();
-        var dropdownLinks = menuDropdown[i].querySelectorAll('.dropdown-item');
-
-        for (var j = 0; j < dropdownLinks.length; j++) {
-          setDataAttributes(dropdownLinks, 'data-nav', 'header-nav-' + sectionText + '-');
-        }
-      } else {
-        var linkText = menuDropdown[i].querySelectorAll('a');
-        setDataAttributes(linkText, 'data-nav', 'header-nav-');
-      }
+  $('.navigation--primary').find('.navigation--primary__inner__item').each(function () {
+    if ($(this).find('> button').length > 0) {
+      var sectionText = $(this).find('> button').text().trim();
+      sectionText = sectionText.replace(/\//g, '-');
+      sectionText = sectionText.replace(/\s+/g, '-').toLowerCase();
+      $(this).find('.dropdown-item').each(function () {
+        setDataAttributes($(this), 'data-nav', 'header-nav-' + sectionText + '-');
+      });
+    } else {
+      setDataAttributes($(this).find('a'), 'data-nav', 'header-nav-');
     }
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--header").length; i++) {
-    var logoLinks = document.getElementsByClassName("global--header")[i].querySelectorAll('.component--branding');
-
-    for (var i = 0; i < logoLinks.length; i++) {
-      logoLinks[i].setAttribute('data-nav', 'header-nav-logo');
-    }
-  }
-
-  for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-    var navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-    setDataAttributes(navigationLinks, 'data-nav', 'footer-nav-');
-
-    var _logoLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('.image--logo');
-
-    for (var i = 0; i < _logoLinks.length; i++) {
-      _logoLinks[i].setAttribute('data-nav', 'footer-nav-logo');
-    }
-  }
+  });
+  $('.global--header').each(function () {
+    $(this).find('.component--branding').attr('data-nav', 'header-nav-logo');
+  });
+  $('.global--footer').each(function () {
+    $(this).find('.image--logo').attr('data-nav', 'footer-nav-logo');
+    setDataAttributes($(this).find('a'), 'data-nav', 'footer-nav-');
+  });
 
   for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-    var _navigationLinks = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
-
-    setDataAttributes(_navigationLinks, 'data-content', 'accordion-');
+    var navigationLinks = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+    setDataAttributes(navigationLinks, 'data-content', 'accordion-');
   }
 
   for (var i = 0; i < document.getElementsByClassName("navigation--mobile-rail__content").length; i++) {
-    var _navigationLinks2 = document.getElementsByClassName("navigation--mobile-rail__content")[i].querySelectorAll('a');
+    var _navigationLinks = document.getElementsByClassName("navigation--mobile-rail__content")[i].querySelectorAll('a');
 
-    setDataAttributes(_navigationLinks2, 'data-nav', 'nav-left-');
+    setDataAttributes(_navigationLinks, 'data-nav', 'nav-left-');
   }
 } // setDataAttributes - Helper function to add data attributes to elements.
 
@@ -377,51 +400,6 @@ if (window.Element && !Element.prototype.closest) {
       if (!$("#builder").length) {
         init_style_controls();
       }
-    });
-  }
-})(jQuery);
-
-$(document).ready(function () {
-  var mql = window.matchMedia('all and (min-width: 992px)');
-  var wWidth = $(window).width();
-  $('.fixed-left').each(function () {
-    if (mql.matches) {
-      stickybits($(this).find('.navigation--mobile-rail'));
-    }
-  });
-  $(window).on('resize', function () {
-    if (wWidth != $(this).width()) {
-      wWidth = $(this).width();
-      $('.fixed-left').each(function () {
-        if (mql.matches) {
-          stickybits($(this).find('.navigation--mobile-rail'));
-        } else {
-          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
-          $(this).find('.navigation--mobile-rail').css('position', 'relative');
-        }
-      });
-    }
-  });
-});
-
-(function ($) {
-  function init_layouts_tabs(context) {
-    $('#tab--mockup').attr('tabindex', '-1');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.layoutsTabs = {
-        attach: function attach(context) {
-          init_layouts_tabs(context);
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      init_layouts_tabs();
     });
   }
 })(jQuery);
@@ -888,7 +866,7 @@ $(document).ready(function () {
   function updateHexes(theme) {
     var target = '.block--palette.' + theme;
     $(target).find('.block--palette__color').each(function (i) {
-      if (i != 4) {
+      if (i != 3) {
         var hex = rgb2hex($(this).css('background-color'));
         var indicator = '.indicator-color--' + (i + 1);
         $(indicator).find('.global--color-indicator__color').css('background', hex);
@@ -1227,6 +1205,35 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
+  function initComponentMedia() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentMedia = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentMedia();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initComponentModal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -1281,35 +1288,6 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentModal();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
     });
   }
 })(jQuery); // Part of NDS Lite
