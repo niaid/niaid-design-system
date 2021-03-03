@@ -19,7 +19,7 @@
             }
         });
 
-        $('.component--snippet').find('.button--icon').on('click', function() {
+        $('.component--snippet').find('.component--snippet__block__code__wrapper__button__copy').on('click', function() {
             let $copyText = $(this).siblings('.component--snippet__block__code__wrapper__button__copied');
             $copyText.css('opacity', 0);
             copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
