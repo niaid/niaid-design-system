@@ -30,7 +30,8 @@
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_classes": "component--snippet--button-default"
+                "component_snippet_classes": "component--snippet--button-default",
+                "component_snippet_name": "button-default"
             }
         %}
             {% block component_snippet_code %}
@@ -59,7 +60,11 @@
 
         <h4>External Button</h4>
         <p>Used specifically for links to external sites displayed as a button.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "button-external"
+            }
+        %}
             {% block component_snippet_code %}
                 <div class="container-fluid demo">
                     <div class="row">
@@ -112,7 +117,11 @@
 
         <h4>Floating Button</h4>
         <p>In some instances, you may want to have a persistent button available to users at all times. For example a "Back to Top" button that returns users to the top of the page or the color palette button on this site that allows for theme customizations. For these purposes NDS provides the Floating Button pattern which is fixed at the lower right of the screen. To provide more clarity about its function the Floating Button expands on hover and focus to reveal button text.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "button-floating"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/buttons/button-floating/demo/_button-floating.twig" %}
             {% endblock %}
@@ -137,7 +146,11 @@
 
         <h4>Button with Icon</h4>
         <p>This component allows users to include a Font Awesome icon inside an NDS button.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "button-icon"
+            }
+        %}
             {% block component_snippet_code %}
                 <div class="container-fluid demo">
                     <div class="row">
@@ -200,7 +213,11 @@
 
         <h4>Button with Image</h4>
         <p>This component allows for a small image such as a user picture, to be included inside a button.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "button-image"
+            }
+        %}
             {% block component_snippet_code %}
                 <div class="container-fluid demo">
                     <div class="row">
@@ -252,7 +269,11 @@
 
         <h4>Share Buttons</h4>
         <p>Share Buttons are useful for sharing site content to social media platforms. NDS provides buttons for several platforms and utilizes proper platform brand colors. The support social media platforms are shown below.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "button-share"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/buttons/button-share/demo/button-share.twig" %}
             {% endblock %}
@@ -312,7 +333,12 @@
 
         <p>NIAID's Office of Communications and Government Relations (OCGR) has a Font Awesome Pro license that may be used under certain circumstances. If you have a need for Font Awesome Pro, <a href="https://ecollab.niaid.nih.gov/sites/portalprojects/Lists/Box/newform2.aspx">please request access</a>. If you have already received access and are looking for documentation on upgrading from Font Awesome Free, please see our <a href="{{ links.fontAwesomePro }}">Using Font Awesome Pro with NDS (NPM) guide.</a></p>
 
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with { "component_snippet_classes": "component--snippet--icon-default" } %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_classes": "component--snippet--icon-default",
+                "component_snippet_name": "icon-default"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/icons/icon-default/demo/icon-default.twig" %}
             {% endblock %}
@@ -333,7 +359,11 @@
 
         <h4>Document Icons</h4>
         <p>Document icons can help users quickly identify document types. This component leverages the brand colors for each document type and applies them to the appropriate Font Awesome document icon.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "icon-document"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/icons/icon-document/demo/icon-document.twig" %}
             {% endblock %}
@@ -374,7 +404,11 @@
 
         <h4>Icon Circle</h4>
         <p>This component can be useful for adding visual interest or additional meaning through iconography. We advise that icons be used only when their meaning is very clear.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "icon-circle"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/icons/icon-circle/demo/icon-circle.twig" %}
             {% endblock %}
@@ -395,7 +429,11 @@
 
         <h4>Icon Loader</h4>
         <p>The Icon Loader pattern from <a href="https://materializecss.com/preloader.html">Materialize</a> is used to provide visual feedback to users that the site is processing, receiving, or transmitting information.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "icon-loader"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/icons/icon-loader/demo/icon-loader.twig" %}
             {% endblock %}
@@ -416,12 +454,16 @@
 <hr>
 {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
     {
-        "component_scrollspy_section_id": "section-components-atoms-images"
+        "component_scrollspy_section_id": "section-components-atoms-images",
     }
 %}
     {% block component_scrollspy_section_content %}
         <h3>Images</h3>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "image-default"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/images/image-default/demo/image-default.twig" %}
             {% endblock %}
@@ -440,7 +482,11 @@
 
         <h4>NIAID Logo</h4>
         <p>You must seek approval to use the NIAID logo on your website or application. If you are a NIAID or NIH employee, please review the <a href="https://inside.niaid.nih.gov/communications-media/requesting-use-niaid-logo">Requesting the Use of the NIAID Logo</a> page on NIAID's Intranet.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "image-logo"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/images/image-logo/demo/image-logo.twig" %}
             {% endblock %}
@@ -470,7 +516,8 @@
         <p>Included in the Site Layout is a skip link that will direct users to the main content of the page for accessibility purposes. It is important to add an ID of value "main-content" to the first element on the page that appears after elements that are common to all pages, such as headers and navigation. This will help users who navigate with a keyboard or screen reader to easily move past redundant content. For more information on skip links, please visit the <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html">WCAG 2.0 documentation on skip links.</a></p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "layout-site"
             }
         %}
             {% block component_snippet_code %}
@@ -498,7 +545,8 @@
         <p>The Main Layout component defines the major sections of an NDS page. The component provides three main columns: left, main, and right.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "layout-main"
             }
         %}
             {% block component_snippet_code %}
@@ -549,7 +597,8 @@
         <p>The Body Layout component is used to display a page's main content. This component handles padding at various breakpoints, ensuring a visually appealing experience regardless of device or browser.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "layout-body"
             }
         %}
             {% block component_snippet_code %}
@@ -590,7 +639,11 @@
         <p>Links are used to take website users from page to page. NDS uses a bottom-border instead of an underline to make links look more elegant.</p>
         <h4>Default Link</h4>
         <p>The Default Link pattern can be used to build generic links.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "link-default"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/links/link-default/demo/link-default.twig" %}
             {% endblock %}
@@ -607,7 +660,11 @@
 
         <h4>External Link</h4>
         <p>NDS requires that all external links &mdash; links that direct users away from the current site they are viewing &mdash; are designated with the Font Awesome external link icon. Out of the box NDS uses JavaScript to automatically append these icons. A notable exception to this policy is links to social media (i.e. Facebook, Instagram, Twitter, etc.) when they are presented in the form of a button.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "link-external"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/links/link-external/demo/link-external.twig" %}
             {% endblock %}
@@ -615,7 +672,11 @@
 
         <h4>Link with Icon</h4>
         <p>A link pattern that allows for an icon to be included with the link text.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "link-icon"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/links/link-icon/demo/link-icon-left.twig" %}
             {% endblock %}
@@ -653,7 +714,11 @@
         <h3>Lists</h3>
         <h4>Links List</h4>
         <p>A pattern used to generate a list of links. The links may optionally include icons.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "list-links"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/lists/list-links/demo/list-links.twig" %}
             {% endblock %}
@@ -737,7 +802,11 @@
 
         <h4>YouTube Video</h4>
         <p>This components makes it easy to embed YouTube videos on your website.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "media-youtube"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/media/media-video-youtube/demo/media-video-youtube.twig" %}
             {% endblock %}
@@ -785,7 +854,11 @@
                 "text_uswds_href": "https://designsystem.digital.gov/components/table/"
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "table-default"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/tables/table-default/demo/table-default.twig" %}
             {% endblock %}
@@ -802,7 +875,11 @@
         <h3>Text</h3>
         <h4>Blockquote</h4>
         <p>Blockquotes are useful to separate quotations from the rest of the body text, adding visual interest to pages and highlighting the quotation.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "text-blockquote"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/text/text-blockquote/demo/text-blockquote.twig" %}
             {% endblock %}
@@ -818,7 +895,11 @@
 
         <h4>Badge</h4>
         <p>Badges are static, non-functional indicators of information. Typically badges are used to showcase tags and metadata of certain components such as search results.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "text-badge"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/text/text-badge/demo/text-badge.twig" %}
             {% endblock %}
@@ -834,7 +915,11 @@
 
         <h4>Chip</h4>
         <p>Chips are functional indicators of search and filter results. NDS uses a search style which displays selected filters as chips, allowing users to see exactly which terms they have searched and filtered on. Selecting the 'x' in the chip removes the term from the search.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "text-chip"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/text/text-chip/demo/text-chip.twig" %}
             {% endblock %}
@@ -860,7 +945,11 @@
 
         <h4>Heading with Icon</h4>
         <p>This component allows users to include a Font Awesome icon next to a heading.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "text-heading-icon"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/text/text-heading-icon/demo/text-heading-icon.twig" %}
             {% endblock %}
@@ -896,7 +985,11 @@
 
         <h4>Image Credit &amp; Caption</h4>
         <p>We strongly suggest captioning and crediting your images to bolster accessibility and to properly cite sources. The easiest way to use this pattern is by leveraging the Media Component (molecule: component-media), negating the need to use this pattern on its own.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "text-image-credit-caption"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/text/text-image-credit-caption/demo/text-image-credit-caption.twig" %}
             {% endblock %}
@@ -914,7 +1007,11 @@
 
         <h4>Search Results</h4>
         <p>When displaying a set of search results, it is a best practice to include the total number of results returned. The Search Results component provides a display for this purpose. Place this component directly above the listing of search results.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "text-search-results"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/01-atoms/text/text-search-results/demo/text-search-results.twig" %}
             {% endblock %}
