@@ -115,17 +115,28 @@ gulp.task('buildProd', gulp.series(compileSass, compileJS, compilePatternLab, bu
 
 // buildDist - Build public_html folder for deploy.
 function buildDist() {
-    // Define Names of Pages to Build for Production (Use the name of the Twig file in the 06-dist folder) to Compiled Pages & Desired Distribution Paths.
-    var buildPaths = [
-        {
-            "page_name": "PAGE_NAME_IN_06_DIST",
-            "target_dest": "./public_html/TARGET_PATH/"
+    var pages = [];
+    gulp.src('./source/_patterns/06-dist/*.twig').pipe(tap(function(file, t) {
+        if (file.path.split('source/').length > 1) {
+            let pageFile = file.path.split('source/_patterns/06-dist/')[1];
+            let pageName = pageFile.split('.twig')[0];
+            pages.push(pageName);
         }
-    ];
+        else {
+            var path = file.path.split("\\source\\_patterns\\06-dist\\");
+        }
+    }));
+
+    // var buildPaths = [
+    //     {
+    //         "page_name": "PAGE_NAME_IN_06_DIST",
+    //         "target_dest": "./public_html/TARGET_PATH/"
+    //     }
+    // ];
 
     // Move HTML to Proper Positions
-    for (var i = 0; i < buildPaths.length; i++) {
-        var path = "./public/patterns/06-dist-" + buildPaths[i].page_name + "-" + buildPaths[i].page_name + "/06-dist-" + buildPaths[i].page_name + "-" + buildPaths[i].page_name + ".html";
+    for (let i = 0; i < pages.length; i++) {
+        var path = "./public/patterns/06-dist-" + pages[i] + "-" + buildPaths[i] + "/06-dist-" + buildPaths[i] + "-" + buildPaths[i] + ".html";
         gulp.src(path)
             .pipe(rename({
                 basename: 'index',
@@ -134,32 +145,32 @@ function buildDist() {
             .pipe(gulp.dest(buildPaths[i].target_dest));
     }
 
-    // Copy CSS
-    console.log("Starting Copy of CSS");
-    gulp.src('./source/css/nds-min.css')
-        .pipe(gulp.dest('./public_html/css'));
-    gulp.src('./source/css/libraries/*.css')
-        .pipe(gulp.dest('./public_html/css/libraries'));
-    console.log("Finished Copying CSS");
-    // Fix USWDS Image Paths
-    gulp.src('./public_html/css/libraries/uswds/uswds-banner.min.css')
-        .pipe(replace('../img/', '../images/global/uswds/'))
-        .pipe(gulp.dest('./public_html/css/libraries/uswds/'));
+    // // Copy CSS
+    // console.log("Starting Copy of CSS");
+    // gulp.src('./source/css/nds-min.css')
+    //     .pipe(gulp.dest('./public_html/css'));
+    // gulp.src('./source/css/libraries/*.css')
+    //     .pipe(gulp.dest('./public_html/css/libraries'));
+    // console.log("Finished Copying CSS");
+    // // Fix USWDS Image Paths
+    // gulp.src('./public_html/css/libraries/uswds/uswds-banner.min.css')
+    //     .pipe(replace('../img/', '../images/global/uswds/'))
+    //     .pipe(gulp.dest('./public_html/css/libraries/uswds/'));
 
-    // Copy JS
-    console.log("Starting Copy of JS");
-    gulp.src('./source/js/**/*')
-        .pipe(gulp.dest('./public_html/js'));
-    console.log("Finished Copying JS");
+    // // Copy JS
+    // console.log("Starting Copy of JS");
+    // gulp.src('./source/js/**/*')
+    //     .pipe(gulp.dest('./public_html/js'));
+    // console.log("Finished Copying JS");
 
-    // Copy Images
-    console.log("Starting Copy of Images");
-    gulp.src('./source/images/**/*')
-        .pipe(gulp.dest('./public_html/assets'));
-    console.log("Finished Copying Images");
+    // // Copy Images
+    // console.log("Starting Copy of Images");
+    // gulp.src('./source/images/**/*')
+    //     .pipe(gulp.dest('./public_html/assets'));
+    // console.log("Finished Copying Images");
 
-    // Copy Fonts
-    console.log("Starting Copy of Fonts");
-    return gulp.src('./source/webfonts/**/*')
-        .pipe(gulp.dest('./public_html/webfonts'));
+    // // Copy Fonts
+    // console.log("Starting Copy of Fonts");
+    // return gulp.src('./source/webfonts/**/*')
+    //     .pipe(gulp.dest('./public_html/webfonts'));
 }
