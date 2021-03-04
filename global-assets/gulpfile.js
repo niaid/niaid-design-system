@@ -111,66 +111,67 @@ gulp.task('serveProject', function() {
 gulp.task('default', gulp.series(copyFonts, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
 // GULP: buildProd - Compile your project assets and build public_html folder for deploy.
-gulp.task('buildProd', gulp.series(compileSass, compileJS, compilePatternLab, buildDist));
+gulp.task('buildProd', gulp.series(compileSass, compileJS, compilePatternLab, computePaths, moveAssets));
 
 // buildDist - Build public_html folder for deploy.
-function buildDist() {
-    var pages = [];
-    gulp.src('./source/_patterns/06-dist/*.twig').pipe(tap(function(file, t) {
+var pages = [];
+function computePaths() {
+    return gulp.src('./source/_patterns/06-dist/**/*.twig').pipe(tap(function(file, t) {
         if (file.path.split('source/').length > 1) {
-            let pageFile = file.path.split('source/_patterns/06-dist/')[1];
-            let pageName = pageFile.split('.twig')[0];
-            pages.push(pageName);
+            let distPath = file.path.split('source/_patterns/06-dist/')[1];
+            let fileName = distPath.split('/');
+            fileName = fileName[fileName.length - 1];
+            let pageName = fileName.split('.twig')[0];
+            let targetPath;
+            if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
+            let patternLabPath = targetPath.replace('/', '-');
+            let page = {};
+            page['pageName'] = pageName;
+            page['patternLabPath'] = patternLabPath;
+            page['targetPath'] = targetPath;
+            pages.push(page);
         }
         else {
             var path = file.path.split("\\source\\_patterns\\06-dist\\");
         }
     }));
+}
 
-    // var buildPaths = [
-    //     {
-    //         "page_name": "PAGE_NAME_IN_06_DIST",
-    //         "target_dest": "./public_html/TARGET_PATH/"
-    //     }
-    // ];
-
+function moveAssets() {
     // Move HTML to Proper Positions
     for (let i = 0; i < pages.length; i++) {
-        var path = "./public/patterns/06-dist-" + pages[i] + "-" + buildPaths[i] + "/06-dist-" + buildPaths[i] + "-" + buildPaths[i] + ".html";
-        gulp.src(path)
-            .pipe(rename({
-                basename: 'index',
-                extname: '.html'
-            }))
-            .pipe(gulp.dest(buildPaths[i].target_dest));
+        if (pages[i].targetPath === "/") {
+            var path = "./public/patterns/06-dist-index/06-dist-index.html";
+            gulp.src(path).pipe(rename({ basename: 'index', extname: '.html' })).pipe(gulp.dest('./public_html/'));
+        }
+        else {
+            var path = "./public/patterns/06-dist-" + pages[i].patternLabPath + "-" + pages[i].pageName + "/06-dist-" + pages[i].patternLabPath + "-" + pages[i].pageName + ".html";
+            gulp.src(path).pipe(rename({ basename: 'index', extname: '.html' })).pipe(gulp.dest('./public_html/' + pages[i].targetPath));
+        }
     }
 
-    // // Copy CSS
-    // console.log("Starting Copy of CSS");
-    // gulp.src('./source/css/nds-min.css')
-    //     .pipe(gulp.dest('./public_html/css'));
-    // gulp.src('./source/css/libraries/*.css')
-    //     .pipe(gulp.dest('./public_html/css/libraries'));
-    // console.log("Finished Copying CSS");
-    // // Fix USWDS Image Paths
-    // gulp.src('./public_html/css/libraries/uswds/uswds-banner.min.css')
-    //     .pipe(replace('../img/', '../images/global/uswds/'))
-    //     .pipe(gulp.dest('./public_html/css/libraries/uswds/'));
+    // Copy CSS
+    console.log("Starting Copy of CSS");
+    gulp.src('./source/css/nds-min.css')
+        .pipe(gulp.dest('./public_html/css'));
+    gulp.src('./source/css/libraries/*.css')
+        .pipe(gulp.dest('./public_html/css/libraries'));
+    console.log("Finished Copying CSS");
 
-    // // Copy JS
-    // console.log("Starting Copy of JS");
-    // gulp.src('./source/js/**/*')
-    //     .pipe(gulp.dest('./public_html/js'));
-    // console.log("Finished Copying JS");
+    // Copy JS
+    console.log("Starting Copy of JS");
+    gulp.src('./source/js/**/*')
+        .pipe(gulp.dest('./public_html/js'));
+    console.log("Finished Copying JS");
 
-    // // Copy Images
-    // console.log("Starting Copy of Images");
-    // gulp.src('./source/images/**/*')
-    //     .pipe(gulp.dest('./public_html/assets'));
-    // console.log("Finished Copying Images");
+    // Copy Images
+    console.log("Starting Copy of Images");
+    gulp.src('./source/images/**/*')
+        .pipe(gulp.dest('./public_html/assets'));
+    console.log("Finished Copying Images");
 
-    // // Copy Fonts
-    // console.log("Starting Copy of Fonts");
-    // return gulp.src('./source/webfonts/**/*')
-    //     .pipe(gulp.dest('./public_html/webfonts'));
+    // Copy Fonts
+    console.log("Starting Copy of Fonts");
+    return gulp.src('./source/webfonts/**/*')
+        .pipe(gulp.dest('./public_html/webfonts'));
 }

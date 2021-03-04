@@ -4,4 +4,5 @@ node_modules/**/*
 global-assets/node_modules/**/*
 global-assets/vendor/**/*
 global-assets/dist/**/*
+global-assets/public/**/*
 !global-assets/dist/.gitignore
