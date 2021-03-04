@@ -14,6 +14,10 @@ function windowWidth() {
   var docElemProp = window.document.documentElement.clientWidth,
       body = window.document.body;
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
+}
+
+function hasClass(element, className) {
+  return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
 } // Part of NDS Lite
 
 
@@ -258,7 +262,12 @@ function windowWidth() {
       });
       document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
         var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
-        tabElements[tabElements.length - 1].focus();
+
+        if (hasClass(tabElements[tabElements.length - 1], "ext-link-icon")) {
+          tabElements[tabElements.length - 2].focus();
+        } else {
+          tabElements[tabElements.length - 1].focus();
+        }
       });
     }
   } // closeMenu - Helper function to close the mobile drawer.
