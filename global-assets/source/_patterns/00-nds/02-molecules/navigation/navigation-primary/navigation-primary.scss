@@ -37,8 +37,6 @@
             & > a,
             .navigation--dropdown__toggle {
                 padding: $s-0-50 $s-2;
-            }
-            & > a {
                 background: transparent;
                 background-color: transparent;
                 line-height: inherit;
@@ -47,6 +45,9 @@
                 border: 0;
                 position: relative;
                 cursor: pointer;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
                 &:hover,
                 &:focus {
                     border: 0;
@@ -56,12 +57,8 @@
                     color: $white;
                     &:hover,
                     &:focus {
-                        color: $white;
+                        color: $white !important;
                     }
-                }
-                &:visited:hover,
-                &:visited:focus {
-                    color: $white !important;
                 }
                 &.active {
                     &:before {
@@ -77,6 +74,15 @@
                     &:focus {
                         &:before {
                             display: none !important;
+                        }
+                    }
+                }
+            }
+            .navigation--dropdown {
+                &.is-open {
+                    .navigation--dropdown {
+                        &__toggle {
+                            border: 0;
                         }
                     }
                 }

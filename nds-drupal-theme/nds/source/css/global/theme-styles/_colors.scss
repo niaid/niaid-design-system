@@ -258,11 +258,14 @@
     .navigation-nds {
         &.navigation--primary {
             background: $color-theme-2-3-1;
-            &__inner {
+            .navigation--primary__inner {
                 &__item {
-                    & > a {
+                    & > a,
+                    .navigation--dropdown__toggle {
+                        border: 0;
                         &:hover,
                         &:focus {
+                            border: 0;
                             background: $color-theme-2-3-2;
                         }
                     }
@@ -302,31 +305,29 @@
             }
         }
         &.navigation--dropdown {
-            .navigation--dropdown {
-                &__toggle {
-                    background: $color-theme-2-3-1;
-                    border: $s-1px solid $color-theme-2-3-1;
+            .navigation--dropdown__toggle,
+            .navigation--dropdown__toggle:visited {
+                background: $color-theme-2-3-1;
+                border: $s-1px solid $color-theme-2-3-1;
+                &:hover,
+                &:focus {
+                    background: $color-theme-2-3-2;
+                    border: $s-1px solid $color-theme-2-3-2;
+                }
+            }
+            .navigation--dropdown__menu {
+                background: $color-theme-2-3-2;
+                a {
                     &:hover,
                     &:focus {
+                        background: $color-theme-2-3-1;
+                    }
+                }
+            }
+            &.is-open {
+                .navigation--dropdown {
+                    &__toggle {
                         background: $color-theme-2-3-2;
-                        border: $s-1px solid $color-theme-2-3-2;
-                    }
-                }
-                &__menu {
-                    background: $color-theme-2-3-2;
-                    a {
-                        &:hover,
-                        &:focus {
-                            background: $color-theme-2-3-1;
-                        }
-                    }
-                }
-                &.is-open {
-                    .navigation--dropdown {
-                        &__toggle {
-                            background: $color-theme-2-3-2;
-                            border: $s-1px solid $color-theme-2-3-2;
-                        }
                     }
                 }
             }
@@ -611,11 +612,14 @@
     .navigation-nds {
         &.navigation--primary {
             background: $color-theme-3-3-1;
-            &__inner {
+            .navigation--primary__inner {
                 &__item {
-                    & > a {
+                    & > a,
+                    .navigation--dropdown__toggle {
+                        border: 0;
                         &:hover,
                         &:focus {
+                            border: 0;
                             background: $color-theme-3-3-2;
                         }
                     }
@@ -655,31 +659,29 @@
             }
         }
         &.navigation--dropdown {
-            .navigation--dropdown {
-                &__toggle {
-                    background: $color-theme-3-3-1;
-                    border: $s-1px solid $color-theme-3-3-1;
+            .navigation--dropdown__toggle,
+            .navigation--dropdown__toggle:visited {
+                background: $color-theme-3-3-1;
+                border: $s-1px solid $color-theme-3-3-1;
+                &:hover,
+                &:focus {
+                    background: $color-theme-3-3-2;
+                    border: $s-1px solid $color-theme-3-3-2;
+                }
+            }
+            .navigation--dropdown__menu {
+                background: $color-theme-3-3-2;
+                a {
                     &:hover,
                     &:focus {
+                        background: $color-theme-3-3-1;
+                    }
+                }
+            }
+            &.is-open {
+                .navigation--dropdown {
+                    &__toggle {
                         background: $color-theme-3-3-2;
-                        border: $s-1px solid $color-theme-3-3-2;
-                    }
-                }
-                &__menu {
-                    background: $color-theme-3-3-2;
-                    a {
-                        &:hover,
-                        &:focus {
-                            background: $color-theme-3-3-1;
-                        }
-                    }
-                }
-                &.is-open {
-                    .navigation--dropdown {
-                        &__toggle {
-                            background: $color-theme-3-3-2;
-                            border: $s-1px solid $color-theme-3-3-2;
-                        }
                     }
                 }
             }
