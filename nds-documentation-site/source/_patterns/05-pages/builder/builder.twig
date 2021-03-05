@@ -30,15 +30,16 @@
             }
         %}
             {% block left_column %}
-                {% embed "@nds/02-molecules/navigation/navigation-mobile-rail/_navigation-mobile-rail-main.twig" with
+                {# {% embed "@nds/02-molecules/navigation/navigation-mobile-rail/_navigation-mobile-rail-main.twig" with
                     {
                         "navigation_mobile_rail_button_text": "Open Theme Builder Menu"
                     }
                 %}
-                    {% block navigation_mobile_rail_content %}
+                    {% block navigation_mobile_rail_content %} #}
+                        <h1 class="sr-only">Theme Builder</h1>
                         {% include "@pages/builder/builder-side-drawer/_builder-side-drawer-main.twig" %}
-                    {% endblock %}
-                {% endembed %}
+                    {# {% endblock %}
+                {% endembed %} #}
             {% endblock %}
             {% block main_column %}
                 {% embed "@atoms/layouts/layouts-tabs/_layouts-tabs-main.twig" %}

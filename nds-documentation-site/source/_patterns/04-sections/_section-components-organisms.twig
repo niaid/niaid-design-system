@@ -26,7 +26,8 @@
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "global-header"
             }
         %}
             {% block component_snippet_code %}
@@ -66,7 +67,8 @@
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "global-footer"
             }
         %}
             {% block component_snippet_code %}
@@ -109,7 +111,11 @@
         <p>The term "view" comes from Drupal terminology and refers to a collection of Blocks or Components. NDS offers two types of views out of the box &mdash; a generic listing view and a view for featured content.</p>
         <h4>Listing View</h4>
         <p>The Listing View is a very versatile component that allows users to present sets of content. For instance, search results are the perfect use case for this component. The Listing View optionally supports a heading and a "See All" button following the display.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "views-listing"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/03-organisms/views/view-listing/demo/view-listing.twig" %}
             {% endblock %}
@@ -139,8 +145,12 @@
         {% endembed %}
 
         <h4>Featured Content Cards View</h4>
-        <p>Featured Content Cards are excellent for highlighting information, but too many can be overwhelming and reduce the relative importance of each card. We recommend no more thantwo or three cards be used with the Featured Content Cards View.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        <p>Featured Content Cards are excellent for highlighting information, but too many can be overwhelming and reduce the relative importance of each card. We recommend no more than two or three cards be used with the Featured Content Cards View.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "views-featured-content-cards"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/03-organisms/views/view-featured-content-cards/demo/view-featured-content-cards.twig" %}
             {% endblock %}

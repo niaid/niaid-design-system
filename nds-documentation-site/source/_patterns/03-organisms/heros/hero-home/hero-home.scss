@@ -32,11 +32,18 @@
         }
         &__buttons {
             margin: 0 auto;
-            .button--get-started {
-                margin-right: .5rem;
+            .button--get-started,
+            .button--learn-more {
+                display: block;
+                margin: 0 $s-0-50 $s-1 $s-0-50;
+                @include media-breakpoint-up(sm) {
+                    display: inline-block;
+                }
             }
             .button--learn-more {
-                margin-left: .5rem;
+                @include media-breakpoint-down(lg) {
+                    background: $white !important;
+                }
             }
         }
     }

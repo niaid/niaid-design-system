@@ -11,16 +11,29 @@ function initDataAttributes() {
         let bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
         setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
     }
-    
-    for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-        let navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-        setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-    }
 
-    for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-        let navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
-        setDataAttributes(navigationLinks, 'data-nav', 'footer-nav-');
-    }
+    $('.navigation--primary').find('.navigation--primary__inner__item').each(function() {
+        if ($(this).find('> button').length > 0)  {
+            let sectionText = $(this).find('> button').text().trim();
+            sectionText = sectionText.replace(/\//g, '-');
+            sectionText = sectionText.replace(/\s+/g, '-').toLowerCase();
+            $(this).find('.dropdown-item').each(function() {
+                setDataAttributes($(this), 'data-nav', 'header-nav-' + sectionText + '-');
+            });
+        }
+        else {
+            setDataAttributes($(this).find('a'), 'data-nav', 'header-nav-');
+        }
+    });
+
+    $('.global--header').each(function() {
+        $(this).find('.component--branding').attr('data-nav', 'header-nav-logo');
+    });
+
+    $('.global--footer').each(function() {
+        $(this).find('.image--logo').attr('data-nav', 'footer-nav-logo');
+        setDataAttributes($(this).find('a'), 'data-nav', 'footer-nav-');
+    });
 
     for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
         let navigationLinks = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');

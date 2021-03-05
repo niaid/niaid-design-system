@@ -6,7 +6,8 @@
             {
                 "input_group_select_id": "text-heading",
                 "input_group_select_label": "Headings Font",
-                "input_group_select_always_selected": "true"
+                "input_group_select_always_selected": "true",
+                "input_group_select_tabindex": "-1"
             }
         %}
             {% block input_group_select_options %}
@@ -22,7 +23,8 @@
             {
                 "input_group_select_id": "text-body",
                 "input_group_select_label": "Body Font",
-                "input_group_select_always_selected": "true"
+                "input_group_select_always_selected": "true",
+                "input_group_select_tabindex": "-1"
             }
         %}
             {% block input_group_select_options %}
@@ -36,7 +38,8 @@
             {
                 "input_group_select_id": "color-select",
                 "input_group_select_label": "Color Theme",
-                "input_group_select_always_selected": "true"
+                "input_group_select_always_selected": "true",
+                "input_group_select_tabindex": "-1"
             }
         %}
             {% block input_group_select_options %}
@@ -47,11 +50,12 @@
         {% endembed %}
     </div>
     <div class="component--style-controls__control">
-       {% embed "@nds/02-molecules/input-group/input-group-select/_input-group-select-main.twig" with
+        {% embed "@nds/02-molecules/input-group/input-group-select/_input-group-select-main.twig" with
             {
                 "input_group_select_id": "shadows",
                 "input_group_select_label": "Shadows",
-                "input_group_select_always_selected": "true"
+                "input_group_select_always_selected": "true",
+                "input_group_select_tabindex": "-1"
             }
         %}
             {% block input_group_select_options %}
@@ -65,7 +69,8 @@
             {
                 "input_group_select_id": "corners",
                 "input_group_select_label": "Corners",
-                "input_group_select_always_selected": "true"
+                "input_group_select_always_selected": "true",
+                "input_group_select_tabindex": "-1"
             }
         %}
             {% block input_group_select_options %}
@@ -75,4 +80,5 @@
             {% endblock %}
         {% endembed %}
     </div>
+    <a class="skip-to skip-to--close" href="#" tabindex="-1">Skip to Close Button</a>
 </div>

@@ -37,7 +37,12 @@
             });
             document.querySelector('.skip-to--back').addEventListener("focus", function(e) {
                 let tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
-                tabElements[tabElements.length - 1].focus();
+                if (hasClass(tabElements[tabElements.length - 1], "ext-link-icon")) {
+                    tabElements[tabElements.length - 2].focus();
+                }
+                else {
+                    tabElements[tabElements.length - 1].focus();
+                }
             });
         }
     }

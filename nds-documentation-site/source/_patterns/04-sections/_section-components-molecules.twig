@@ -19,7 +19,11 @@
 
         <h4>Default Block</h4>
         <p>The Default block is a flexible pattern that can be used with almost any HTML content. Optionally, the default block can have an accent style added through the "block_default_accent" parameter. If set to "true," the accent will be added to the left border of the default block.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "block-default"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-default/demo/block-default.twig" %}
             {% endblock %}
@@ -43,7 +47,11 @@
 
         <h4>Search Result</h4>
         <p>Created directly by the Default Block component, the Search Result pattern can be used to display a set of results returned by your search engine.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "block-search-result"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
             {% endblock %}
@@ -65,7 +73,11 @@
 
         <h4>Search Chips</h4>
         <p>Place this component under the search bar to display the filter criteria.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "block-search-chips"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-search-chips/demo/block-search-chips.twig" %}
             {% endblock %}
@@ -98,7 +110,8 @@
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_classes": "component--snippet--featured-content-card"
+                "component_snippet_classes": "component--snippet--featured-content-card",
+                "component_snippet_name": "block-featured-content-card"
             }
         %}
             {% block component_snippet_code %}
@@ -124,7 +137,7 @@
         {% endembed %}
 
         <h4>Alert Block</h4>
-        <p>Alerts are used to display important, need to know information to site users. NDS offers four alert severity blocks. Alerts are for high priority messaging that requires immediate notification only. Only one alert can show at any time.</p>
+        <p>Alerts are used to display important, need to know information to site users. NDS offers four alert severity blocks. Alerts are only for high priority messaging that requires immediate notification. Only one alert can show at any time.</p>
         <p>Examples of Alerts include:</p>
         <ul>
             <li>System outages</li>
@@ -134,10 +147,10 @@
         </ul>
         <p>Alert severity standards are defined below:</p>
         <ul>
-            <li>Severity One (Red): </li>
-            <li>Severity Two (Orange): </li>
-            <li>Severity Three (Yellow): </li>
-            <li>Severity Four (Green): </li>
+            <li>Severity One (Red)</li>
+            <li>Severity Two (Orange)</li>
+            <li>Severity Three (Yellow)</li>
+            <li>Severity Four (Green)</li>
         </ul>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
@@ -145,7 +158,11 @@
                 "text_uswds_href": "https://designsystem.digital.gov/components/alert/"
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "block-alert"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-alert/demo/block-alert.twig" %}
             {% endblock %}
@@ -175,7 +192,11 @@
             <li>Warning - Slows a reader down if skimming through the content. Indicates the user may need to take action before moving on.</li>
             <li>Error - Used in rare cases where a user should stop reading or moving forward and take additional action.</li>
         </ul>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "block-status-block"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-status-message/demo/block-status-message.twig" %}
             {% endblock %}
@@ -203,10 +224,14 @@
         {% endembed %}
         
         <h4>Hero Block</h4>
-        <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a parallax effect courtest of the <a href="https://materializecss.com/parallax.html">Materialize library.</a></p>
+        <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a parallax effect courtesy of the <a href="https://materializecss.com/parallax.html">Materialize library.</a></p>
         <p>When selecting imagery for the Hero block, we recommend images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
         <p>The Hero Block pattern optionally includes the ability to add breadcrumbs to the top.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "block-hero"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-hero/demo/block-hero.twig" %}
             {% endblock %}
@@ -231,7 +256,8 @@
         <p>The Share Block component is a collection of Share Buttons for various social media platforms.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_classes": "component--snippet--block-share"
+                "component_snippet_classes": "component--snippet--block-share",
+                "component_snippet_name": "block-share"
             }
         %}
             {% block component_snippet_code %}
@@ -259,7 +285,11 @@
 
         <h4>Was This Page Helpful? (WTPH) Block</h4>
         <p>Users of NDS frequently have a need to solicit feedback on webpages from their users. NDS provides a mechanism to collect this data with the Was This Page Helpful? Block component. Please note that this component does not have any built-in form or data-collection functionality, meaning users will need to add their own functions and input handling.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "block-wtph"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/blocks/block-wtph/demo/block-wtph.twig" %}
             {% endblock %}
@@ -306,7 +336,11 @@
                 "text_uswds_href": "https://designsystem.digital.gov/components/accordion/"
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "component-accordions"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-accordion/demo/component-accordion.twig" %}
             {% endblock %}
@@ -327,7 +361,11 @@
 
         <h4>Branding Component</h4>
         <p>The NDS Branding component makes it easy to comply with NIAID's digital policies surrounding branding and visuals for digital properties.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "component-branding"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-branding/demo/component-branding.twig" %}
             {% endblock %}
@@ -366,7 +404,11 @@
                 "text_uswds_href": "https://designsystem.digital.gov/components/banner/"
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "component-uswds-banner"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-uswds-banner/demo/component-uswds-banner.twig" %}
             {% endblock %}
@@ -395,7 +437,11 @@
                 ]
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "component-media"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-media/demo/component-media.twig" %}
             {% endblock %}
@@ -443,7 +489,11 @@
                 ]
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "component-modal"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/components/component-modal/demo/component-modal.twig" %}
             {% endblock %}
@@ -491,7 +541,11 @@
                 ]
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "input-group-text"
+            }
+        %}
             {% block component_snippet_code_alternate_render %}
                 {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
                     {
@@ -570,7 +624,11 @@
 
         <h4>Checkbox Group</h4>
         <p>The Checkbox Group pattern is designed to build a list of checkbox options with a label.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "input-group-checkbox"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-checkbox/demo/input-group-checkbox.twig" %}
             {% endblock %}
@@ -598,7 +656,11 @@
 
         <h4>Radio Button Group</h4>
         <p>The Radio Group pattern is designed to build a list of radio options with a label.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "input-group-radio"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/input-group/input-group-radio/demo/input-group-radio.twig" %}
             {% endblock %}
@@ -638,7 +700,11 @@
                 ]
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "input-group-select"
+            }
+        %}
             {% block component_snippet_code_alternate_render %}
                 {% embed "@nds/02-molecules/input-group/input-group-select/_input-group-select-main.twig" with
                     {
@@ -746,7 +812,11 @@
                 ]
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "input-group-date-picker"
+            }
+        %}
             {% block component_snippet_code_alternate_render %}
                 {% include "@nds/02-molecules/input-group/input-group-date-picker/_input-group-date-picker-main.twig" with
                     {
@@ -815,7 +885,11 @@
                 "text_uswds_href": "https://designsystem.digital.gov/components/search/"
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "forms-search"
+            }
+        %}
             {% block component_snippet_code_alternate_render %}
                 {% include "@nds/02-molecules/forms/form-search/_form-search-main.twig" with
                     {
@@ -884,7 +958,8 @@
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_classes": "component--snippet--primary-navigation"
+                "component_snippet_classes": "component--snippet--primary-navigation",
+                "component_snippet_name": "navigation-primary"
             }
         %}
             {% block component_snippet_code %}
@@ -892,8 +967,8 @@
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Overview</h5>
-                <p>Although it is possible to use the NDS out-of-the-box component for Primary Navigation, it is likely you will need to customize the pattern for your particular site. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes without altering the original NDS component.</p>
-                <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup, using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
+                <p>Although it is possible to use the NDS out-of-the-box component for Primary Navigation, it is likely you will need to customize the pattern for your particular site. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory and paste it into your 02-molecules/ directory. Then you can freely make changes without altering the original NDS component.</p>
+                <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
                 <h5>Blocks</h5>
                 <ul>
                     <li>&#123;% block navigation_primary_content %&#125;: The block holding the navigation markup.</li>
@@ -947,7 +1022,11 @@
                 "text_uswds_href": "https://designsystem.digital.gov/components/breadcrumb/"
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "navigation-breadcrumbs"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/demo/navigation-breadcrumbs.twig" %}
             {% endblock %}
@@ -976,7 +1055,11 @@
 
         <h4>Pagination</h4>
         <p>Pagination helps separate long lists of content, such as search results, into separate pages to improve content readability and findability. Pagination is typically found below the content listing.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "navigation-pagination"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-pagination/demo/navigation-pagination.twig" %}
             {% endblock %}
@@ -1004,7 +1087,8 @@
         <p>When viewing websites on mobile devices, the site navigation often changes to accommodate the smaller screen size. NDS offers a "drawer" style slide out menu where menu links can be added. NDS has pre-made JavaScript functionality that toggles the drawer open and closed on click or tap of a button with an ID of "global-mobile-menu."</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "navigation-drawer"
             }
         %}
             {% block component_snippet_code %}
@@ -1035,7 +1119,8 @@
         <p>This simple component helps transition your site from a desktop to mobile layout by collapsing the local navigation (or whatever other content is wrapped) into a dropdown.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "navigation-mobile-rail"
             }
         %}
             {% block component_snippet_code %}

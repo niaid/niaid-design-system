@@ -1,9 +1,12 @@
 .component--branding {
-    height: $s-3-50;
+    height: $s-1-75;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     border-bottom: 0;
+    @include media-breakpoint-up(sm) {
+        height: $s-3-50;
+    }
     &:hover,
     &:focus {
         border-bottom: 0;

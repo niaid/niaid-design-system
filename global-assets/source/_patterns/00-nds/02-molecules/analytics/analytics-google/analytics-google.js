@@ -12,9 +12,21 @@
             setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
         }
 
+        for (var i = 0; i < document.getElementsByClassName("global--header").length; i++) {
+            let logoLinks = document.getElementsByClassName("global--header")[i].querySelectorAll('.component--branding');
+            for (var i = 0; i < logoLinks.length; i++) {
+                logoLinks[i].setAttribute('data-nav', 'header-nav-logo');
+            }
+        }
+
         for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
             let navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
             setDataAttributes(navigationLinks, 'data-nav', 'footer-nav-');
+            
+            let logoLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('.image--logo');
+            for (var i = 0; i < logoLinks.length; i++) {
+                logoLinks[i].setAttribute('data-nav', 'footer-nav-logo');
+            }
         }
 
         for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {

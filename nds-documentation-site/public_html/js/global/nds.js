@@ -21,6 +21,55 @@ function windowWidth() {
       body = window.document.body;
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
 }
+<<<<<<< HEAD
+
+$(document).ready(function () {
+  var mql = window.matchMedia('all and (min-width: 992px)');
+  var wWidth = $(window).width();
+  $('.fixed-left').each(function () {
+    if (mql.matches) {
+      stickybits($(this).find('.navigation--mobile-rail'));
+    }
+  });
+  $(window).on('resize', function () {
+    if (wWidth != $(this).width()) {
+      wWidth = $(this).width();
+      $('.fixed-left').each(function () {
+        if (mql.matches) {
+          stickybits($(this).find('.navigation--mobile-rail'));
+        } else {
+          stickybits($(this).find('.navigation--mobile-rail')).cleanup();
+          $(this).find('.navigation--mobile-rail').css('position', 'relative');
+        }
+      });
+    }
+  });
+});
+
+(function ($) {
+  function init_layouts_tabs(context) {
+    $('#tab--mockup').attr('tabindex', '-1');
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.layoutsTabs = {
+        attach: function attach(context) {
+          init_layouts_tabs(context);
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      init_layouts_tabs();
+    });
+=======
+
+function hasClass(element, className) {
+  return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+}
 
 $(document).ready(function () {
   var mql = window.matchMedia('all and (min-width: 992px)');
@@ -65,6 +114,50 @@ $(document).ready(function () {
       init_layouts_tabs();
     });
   }
+})(jQuery); // Part of NDS Lite
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  initDataAttributes();
+}); // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+
+function initDataAttributes() {
+  for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
+    var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
+    setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+  }
+
+  $('.navigation--primary').find('.navigation--primary__inner__item').each(function () {
+    if ($(this).find('> button').length > 0) {
+      var sectionText = $(this).find('> button').text().trim();
+      sectionText = sectionText.replace(/\//g, '-');
+      sectionText = sectionText.replace(/\s+/g, '-').toLowerCase();
+      $(this).find('.dropdown-item').each(function () {
+        setDataAttributes($(this), 'data-nav', 'header-nav-' + sectionText + '-');
+      });
+    } else {
+      setDataAttributes($(this).find('a'), 'data-nav', 'header-nav-');
+    }
+  });
+  $('.global--header').each(function () {
+    $(this).find('.component--branding').attr('data-nav', 'header-nav-logo');
+  });
+  $('.global--footer').each(function () {
+    $(this).find('.image--logo').attr('data-nav', 'footer-nav-logo');
+    setDataAttributes($(this).find('a'), 'data-nav', 'footer-nav-');
+  });
+
+  for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
+    var navigationLinks = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
+    setDataAttributes(navigationLinks, 'data-content', 'accordion-');
+  }
+
+  for (var i = 0; i < document.getElementsByClassName("navigation--mobile-rail__content").length; i++) {
+    var _navigationLinks = document.getElementsByClassName("navigation--mobile-rail__content")[i].querySelectorAll('a');
+
+    setDataAttributes(_navigationLinks, 'data-nav', 'nav-left-');
+>>>>>>> master
+  }
 })(jQuery);
 
 (function ($) {
@@ -96,6 +189,7 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
+<<<<<<< HEAD
   function initComponentSnippet() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $('.component--snippet__block__code__wrapper__snippet').each(function () {
@@ -241,6 +335,8 @@ if (window.Element && !Element.prototype.closest) {
 }
 
 (function ($) {
+=======
+>>>>>>> master
   function init_style_controls() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     var mql = window.matchMedia('all and (max-width: 992px)');
@@ -260,8 +356,11 @@ if (window.Element && !Element.prototype.closest) {
           $('#custom-styles-toggle').hide();
           $('.component--style-controls').removeClass('component--style-controls--open');
           $('body').css('padding-top', 0);
+          $('.component--style-controls').find('.select2-selection--single').attr('tabindex', '-1');
         } else {
           $('#custom-styles-toggle').show();
+          $('.component--style-controls').find('.select2-selection--single').attr('tabindex', '0');
+          $('.component--style-controls').find('.select2-selection--single')[0].focus();
         }
       }
     });
@@ -270,9 +369,15 @@ if (window.Element && !Element.prototype.closest) {
 
       if ($('.component--style-controls').hasClass('component--style-controls--open')) {
         $('body').css('padding-top', $('.component--style-controls').outerHeight() + 'px');
+        $('.component--style-controls').find('.select2-selection--single').attr('tabindex', '0');
+        $('.component--style-controls').find('.select2-selection--single')[0].focus();
       } else {
         $('body').css('padding-top', 0);
+        $('.component--style-controls').find('.select2-selection--single').attr('tabindex', '-1');
       }
+    });
+    $('.skip-to--close').on('focus', function () {
+      $('#custom-styles-toggle').focus();
     });
     var state = {
       "headings": "public-sans",
@@ -396,6 +501,116 @@ if (window.Element && !Element.prototype.closest) {
   }
 })(jQuery);
 
+<<<<<<< HEAD
+=======
+(function ($) {
+  function initComponentScrollspySection() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if ($('.scrollspy').length) {
+      $('.scrollspy').scrollSpy();
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentScrollspySection = {
+        attach: function attach(context) {
+          $('body', context).once('nds-component-scrollspy-section').each(function () {
+            initComponentScrollspySection(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentScrollspySection();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentSnippet() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.component--snippet__block__code__wrapper__snippet').each(function () {
+      if ($("#components").length || $("#migration-guide").length) {
+        var codeSnippet = escapeHtml($(this).html());
+        $(this).empty();
+        $(this).append(codeSnippet);
+        $(this).wrapInner('<pre><code class="language-markup"></code></pre>');
+        var block = $(this).find('code');
+        Prism.highlightElement(block[0]);
+        $('.component--snippet__block__code__wrapper').show();
+        $('.component--snippet__block__code__loader').hide();
+      } else {
+        var block = $(this).find('code');
+        Prism.highlightElement(block[0]);
+        $('.component--snippet__block__code__wrapper').show();
+        $('.component--snippet__block__code__loader').hide();
+      }
+    });
+    $('.component--snippet').find('.component--snippet__block__code__wrapper__button__copy').on('click', function () {
+      var $copyText = $(this).siblings('.component--snippet__block__code__wrapper__button__copied');
+      $copyText.css('opacity', 0);
+      copyToClipboard($(this).parentsUntil('.component--snippet').parent().find('pre'));
+      $copyText.css('opacity', 1);
+      setTimeout(function () {
+        $copyText.css('opacity', 0);
+      }, 2000);
+    });
+    $('.component--snippet__block__pattern__toggle').on('click', function () {
+      $(this).siblings('.component--snippet__block__pattern__content').toggleClass('open');
+      $(this).toggleClass('open');
+    }); // Specific Component Handling:
+
+    $('.component--snippet').find('.component--uswds-banner__toggle').on('click', function () {
+      if ($(this).attr('aria-expanded') == 'true') {
+        $(this).attr('aria-expanded', 'false');
+        $(this).siblings(".component--uswds-banner__content").hide();
+      } else {
+        $(this).attr('aria-expanded', 'true');
+        $(this).siblings(".component--uswds-banner__content").show();
+      }
+    });
+  }
+
+  function copyToClipboard($element) {
+    var copyText = $element.text();
+    var textArea = document.createElement('textarea');
+    textArea.classList.add("hidden-textarea");
+    textArea.textContent = copyText;
+    document.body.append(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+  }
+
+  function escapeHtml(unsafe) {
+    return unsafe.replace(/ "/g, '"').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;").replace(/(^[ \t]*\n)/gm, "");
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentSnippet = {
+        attach: function attach(context) {
+          $('body', context).once('nds-component-snippet').each(function () {
+            initComponentSnippet(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentSnippet();
+    });
+  }
+})(jQuery);
+
+>>>>>>> master
 (function ($) {
   function init_build_controls(context) {
     var mql = window.matchMedia('all and (max-width: 991px)');
@@ -908,6 +1123,243 @@ if (window.Element && !Element.prototype.closest) {
       }
     });
   }
+<<<<<<< HEAD
+=======
+})(jQuery);
+
+(function ($) {
+  function initComponentModal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.component--modal').length) {
+      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      var modalsList = document.getElementsByClassName("component--modal");
+
+      var _loop = function _loop() {
+        var firstFocusableElement = modalsList[i].querySelectorAll(focusableElements)[0];
+        var focusableContent = modalsList[i].querySelectorAll(focusableElements);
+        var lastFocusableElement = focusableContent[focusableContent.length - 1];
+        document.addEventListener('keydown', function (e) {
+          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+          if (!isTabPressed) {
+            return;
+          }
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
+          }
+        });
+        firstFocusableElement.focus();
+      };
+
+      for (var i = 0; i < modalsList.length; i++) {
+        _loop();
+      }
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentModal = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-modal').each(function () {
+            initComponentModal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentModal();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentMedia() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentMedia = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentMedia();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
+(function ($) {
+  // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+  function initComponentUSWDSBanner() {
+    if (document.querySelectorAll('#uswds-banner-toggle').length > 0) {
+      document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+        if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+          document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+          document.getElementById("uswds-banner-content").style.display = 'none';
+        } else {
+          document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+          document.getElementById("uswds-banner-content").style.display = 'block';
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentUSWDSBanner = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-uswds-banner').each(function () {
+            initComponentUSWDSBanner(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentUSWDSBanner();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.parallax').length) {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
+(function ($) {
+  // initNavigationDrawer - Functionality to support the NDS mobile drawer.
+  function initNavigationDrawer() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.navigation--drawer').length > 0) {
+      var wWidth = windowWidth();
+      document.querySelector('#global-mobile-menu').addEventListener("click", function (e) {
+        document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
+        var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+        overlay.style.display = 'block';
+        document.querySelector('.navigation--drawer__top__button-close').focus();
+        var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+        for (var i = 0; i < tabElements.length; i++) {
+          tabElements[i].setAttribute('tabindex', '0');
+        }
+      });
+      document.querySelector('.navigation--drawer--overlay').addEventListener("click", function (e) {
+        closeMenu();
+      });
+      document.querySelector('.navigation--drawer__top__button-close').addEventListener("click", function (e) {
+        closeMenu();
+      });
+
+      window.onresize = function (e) {
+        if (wWidth != windowWidth()) {
+          wWidth = windowWidth();
+          closeMenu();
+        }
+      }; // 508 Compliance Focus Helpers
+
+
+      document.querySelector('.skip-to--top').addEventListener("focus", function (e) {
+        document.querySelector('.navigation--drawer__top__button-close').focus();
+      });
+      document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
+        var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
+
+        if (hasClass(tabElements[tabElements.length - 1], "ext-link-icon")) {
+          tabElements[tabElements.length - 2].focus();
+        } else {
+          tabElements[tabElements.length - 1].focus();
+        }
+      });
+    }
+  } // closeMenu - Helper function to close the mobile drawer.
+
+
+  function closeMenu() {
+    document.querySelector('#global-mobile-menu').focus();
+    document.querySelector('#main-navigation-mobile').classList.remove("drawer--open");
+    var overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
+    overlay.style.display = 'none';
+    var tabElements = document.querySelector('#main-navigation-mobile').querySelectorAll('button, a');
+
+    for (var i = 0; i < tabElements.length; i++) {
+      tabElements[i].setAttribute('tabindex', '-1');
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationDrawer = {
+        attach: function attach(context) {
+          $("body", context).once('nds-navigation-drawer').each(function () {
+            initNavigationDrawer(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationDrawer();
+    });
+  }
+>>>>>>> master
 })(jQuery); // Part of NDS Lite
 
 

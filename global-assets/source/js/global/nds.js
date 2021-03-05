@@ -271,10 +271,24 @@
       setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
     }
 
+    for (var i = 0; i < document.getElementsByClassName("global--header").length; i++) {
+      var logoLinks = document.getElementsByClassName("global--header")[i].querySelectorAll('.component--branding');
+
+      for (var i = 0; i < logoLinks.length; i++) {
+        logoLinks[i].setAttribute('data-nav', 'header-nav-logo');
+      }
+    }
+
     for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
       var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
 
       setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+
+      var _logoLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('.image--logo');
+
+      for (var i = 0; i < _logoLinks.length; i++) {
+        _logoLinks[i].setAttribute('data-nav', 'footer-nav-logo');
+      }
     }
 
     for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
@@ -508,7 +522,12 @@
       });
       document.querySelector('.skip-to--back').addEventListener("focus", function (e) {
         var tabElements = document.querySelector('.navigation--drawer__inner').querySelectorAll('button, a');
-        tabElements[tabElements.length - 1].focus();
+
+        if (hasClass(tabElements[tabElements.length - 1], "ext-link-icon")) {
+          tabElements[tabElements.length - 2].focus();
+        } else {
+          tabElements[tabElements.length - 1].focus();
+        }
       });
     }
   } // closeMenu - Helper function to close the mobile drawer.
