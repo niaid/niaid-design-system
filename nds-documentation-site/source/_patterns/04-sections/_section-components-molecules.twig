@@ -993,7 +993,12 @@
                 ]
             }
         %}
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "navigation-dropdown"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/02-molecules/navigation/navigation-dropdown/demo/navigation-dropdown.twig" %}
             {% endblock %}
