@@ -185,6 +185,13 @@
                 border-bottom-right-radius: $corner-radius;
             }
         }
+        &.navigation--dropdown {
+            .navigation--dropdown {
+                &__menu {
+                    border-radius: 0 0 $corner-radius $corner-radius;
+                }
+            }
+        }
     }
     &.style--shadows {
         .block-nds {
@@ -380,6 +387,13 @@
             @include media-breakpoint-up('lg') {
                 border-bottom-left-radius: $corner-radius;
                 border-bottom-right-radius: $corner-radius;
+            }
+        }
+        &.navigation--dropdown {
+            .navigation--dropdown {
+                &__menu {
+                    border-radius: 0 0 $corner-radius $corner-radius;
+                }
             }
         }
     }

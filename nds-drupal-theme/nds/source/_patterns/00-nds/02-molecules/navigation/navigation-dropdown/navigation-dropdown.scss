@@ -11,6 +11,13 @@
             background: $color-theme-1-3-2;
             border: $s-1px solid $color-theme-1-3-2;
         }
+        &:visited {
+            color: $white;
+            &:hover,
+            &:focus {
+                color: $white;
+            }
+        }
     }
     &__menu {
         position: absolute;
@@ -18,12 +25,15 @@
         left: 0;
         background: $color-theme-1-3-2;
         color: $white;
+        overflow: hidden;
+        z-index: $z-index-dropdown;
         a {
             display: block;
             text-align: left;
             color: $white;
             padding: $s-0-50 $s-2;
             border-bottom: 0;
+            white-space: nowrap;
             &:hover,
             &:focus {
                 background: $color-theme-1-3-1;
