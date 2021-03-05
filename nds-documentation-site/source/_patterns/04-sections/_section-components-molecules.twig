@@ -981,6 +981,39 @@
             {% endblock %}
         {% endembed %}
 
+        <h4>Navigation Dropdown</h4>
+        <p>The Navigation Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_text": "In order to use this component, you must include the following libraries in addition to the NDS Global JS:",
+                "block_dependencies_data": [
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-dropdown/demo/navigation-dropdown.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_dropdown_content %&#125;: The block holding the dropdown link options These links should be plain with only a text label and href value.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_dropdown_classes: Additional classes for the navigation component.</li>
+                    <li>navigation_dropdown_id: Navigation component ID.</li>
+                    <li>navigation_dropdown_toggle_href: Optional URL for the dropdown toggle button. Passing a value to this parameter will automatically make the dropdown hover-activated.</li>
+                    <li>navigation_dropdown_toggle_text: The text to appear on the dropdown button.</li>
+                    <li>navigation_dropdown_toggle_aria_label: Required ARIA label to explain the section to be opened/closed.</li>
+                    <li>navigation_dropdown_active_class: Optional class used in the primary navigation component to signal that the current dropdown is selected.</li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+
         <h4>Breadcrumbs</h4>
         <p>Breadcrumbs are used to help users identify where they are within the menu system of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with

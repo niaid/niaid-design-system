@@ -14,7 +14,7 @@
     &__content {
         padding: 4rem 4rem 8rem 4rem;
         text-align: center;
-        z-index: 1;
+        z-index: $z-index-above-baseline;
         img {
             height: 4rem;
         }

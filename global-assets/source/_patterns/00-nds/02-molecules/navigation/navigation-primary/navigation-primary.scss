@@ -1,7 +1,7 @@
 .navigation--primary {
     background: $color-theme-1-3-1;
     position: relative;
-    z-index: 101;
+    z-index: $z-index-navigation-primary;
     display: none;
     &__inner {
         text-align: center;
@@ -28,23 +28,41 @@
                 &:after {
                     display: none;
                 }
-                &+.navigation--primary__inner__item {
+                & + .navigation--primary__inner__item {
                     &:after {
                         display: none;
                     }
                 }
             }
-            a,
-            button {
+            & > a,
+            .navigation--dropdown__toggle {
+                padding: $s-0-50 $s-2;
+            }
+            & > a {
                 background: transparent;
                 background-color: transparent;
                 line-height: inherit;
                 display: inline-block;
-                padding: $s-0-50 $s-2;
                 color: $white;
                 border: 0;
                 position: relative;
                 cursor: pointer;
+                &:hover,
+                &:focus {
+                    border: 0;
+                    background: $color-theme-1-3-2;
+                }
+                &:visited {
+                    color: $white;
+                    &:hover,
+                    &:focus {
+                        color: $white;
+                    }
+                }
+                &:visited:hover,
+                &:visited:focus {
+                    color: $white !important;
+                }
                 &.active {
                     &:before {
                         width: 100%;
@@ -62,52 +80,6 @@
                         }
                     }
                 }
-                &:hover,
-                &:focus {
-                    border: 0;
-                    background: $color-theme-1-3-2;
-                }
-                &:visited {
-                    color: $white;
-                    &:hover,
-                    &:focus {
-                        color: $white;
-                    }
-                }
-            }
-            .dropdown-menu {
-                margin: 0;
-                border: 0;
-                border-radius: 0;
-                background: $color-theme-1-3-2;
-                color: $white;
-                .dropdown-item {
-                    display: block;
-                    &:after {
-                        display: none;
-                    }
-                    &:hover,
-                    &:focus {
-                        background: $color-theme-1-3-1;
-                        color: $white;
-                    }
-                    &.active {
-                        background-color: transparent;
-                        &:before {
-                            display: none;
-                        }
-                        &:hover,
-                        &:focus {
-                            background: $color-theme-1-3-1;
-                        }
-                    }
-                }
-            }
-        }
-        a {
-            &:visited:hover,
-            &:visited:focus {
-                color: $white !important;
             }
         }
     }
