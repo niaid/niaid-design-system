@@ -1,0 +1,17 @@
+{% set navigation_dropdown_classes = navigation_dropdown_classes|default() %}
+{% set navigation_dropdown_id = navigation_dropdown_id|default() %}
+{% set navigation_dropdown_toggle_href = navigation_dropdown_toggle_href|default() %}
+{% set navigation_dropdown_toggle_text = navigation_dropdown_toggle_text|default() %}
+{% set navigation_dropdown_toggle_aria_label = navigation_dropdown_toggle_aria_label|default() %}
+{% set navigation_dropdown_active_class = navigation_dropdown_active_class|default() %}
+
+{% if navigation_dropdown_toggle_href is not empty %}
+    {% set navigation_dropdown_classes = navigation_dropdown_classes ~ ' hover' %}
+{% endif %}
+
+<div class="navigation-nds navigation--dropdown {{ navigation_dropdown_classes }}">
+    <{{ navigation_dropdown_toggle_href != "" ? 'a' : 'button' }}{% if navigation_dropdown_toggle_href is not empty %} href="{{ links.getStarted }}"{% endif %} id="{{ navigation_dropdown_id }}" type="button" class="navigation--dropdown__toggle {{ navigation_dropdown_active_class }}" aria-haspopup="true" aria-expanded="false" aria-label="{{ navigation_dropdown_toggle_aria_label }}" data-display="static">{{ navigation_dropdown_toggle_text }}</{{ navigation_dropdown_toggle_href != "" ? 'a' : 'button' }}>
+    <div class="navigation--dropdown__menu" aria-labelledby="{{ navigation_dropdown_id }}">
+        {% block navigation_dropdown_content %}{% endblock %}
+    </div>
+</div>

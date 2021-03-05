@@ -37,7 +37,11 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
+<<<<<<< HEAD
+ id="text-heading" type="text"    >
+=======
  id="text-heading" type="text" tabindex="-1"    >
+>>>>>>> master
                                     <option value="public-sans">Public Sans</option>
                 <option value="roboto">Roboto</option>
                 <option value="martel">Martel</option>
@@ -57,7 +61,11 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
+<<<<<<< HEAD
+ id="text-body" type="text"    >
+=======
  id="text-body" type="text" tabindex="-1"    >
+>>>>>>> master
                                     <option value="public-sans">Public Sans</option>
                 <option value="roboto">Roboto</option>
             
@@ -75,7 +83,11 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
+<<<<<<< HEAD
+ id="color-select" type="text"    >
+=======
  id="color-select" type="text" tabindex="-1"    >
+>>>>>>> master
                                     <option value="theme-1">Theme 1</option>
                 <option value="theme-2">Theme 2</option>
                 <option value="theme-3">Theme 3</option>
@@ -83,7 +95,13 @@
             </select>
 </div></div>    </div>
     <div class="component--style-controls__control">
-        
+       
+
+<div class="input-group-nds input-group--select ">
+    
+
+<label class="input-nds input--label " for="shadows" title="Shadows">Shadows
+    </label>    
 
 <div class="input-group-nds input-group--select ">
     
@@ -94,7 +112,11 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
+<<<<<<< HEAD
+ id="shadows" type="text"    >
+=======
  id="shadows" type="text" tabindex="-1"    >
+>>>>>>> master
                                     <option value="flat">Flat</option>
                 <option value="shadows">Material</option>
             
@@ -112,14 +134,21 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
+<<<<<<< HEAD
+ id="corners" type="text"    >
+=======
  id="corners" type="text" tabindex="-1"    >
+>>>>>>> master
                                     <option value="straight">Sharp</option>
                 <option selected="selected" value="semirounded">Semi-Rounded</option>
                 <option value="rounded">Fully-Rounded</option>
             
             </select>
 </div></div>    </div>
+<<<<<<< HEAD
+=======
     <a class="skip-to skip-to--close" href="#" tabindex="-1">Skip to Close Button</a>
+>>>>>>> master
 </div>
 
 
@@ -186,7 +215,11 @@
                 
 
 
+<<<<<<< HEAD
+<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" >
+=======
 <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
+>>>>>>> master
             
 
 <i class="icon-nds icon--default fab fa-github "></i>
@@ -203,24 +236,18 @@
 
 <nav class="navigation-nds navigation--primary " id="main-navigation">
             <div class="navigation--primary__inner">
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Getting Started Section">
-                    Getting Started
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/getting-started/">Overview</a>
+            <div class="navigation--primary__inner__item dropdown">
+                <a data-display="static" href="/getting-started/" id="dMenuGettingStarted" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-label="Toggle Getting Started Section">Getting Started</a>
+                <div class="dropdown-menu" aria-labelledby="dMenuGettingStarted">
                     <a class="dropdown-item" href="/getting-started/#section-quick-start">Quick Start</a>
                     <a class="dropdown-item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
                     <a class="dropdown-item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
                     <a class="dropdown-item" href="/getting-started/#section-resources">Resources</a>
                 </div>
             </div>
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Design Section">
-                    Design
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/design/">Overview</a>
+            <div class="navigation--primary__inner__item dropdown">
+                <a data-display="static" href="/design/" id="dMenuDesign" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-label="Toggle Design Section">Design</a>
+                <div class="dropdown-menu" aria-labelledby="dMenuDesign">
                     <a class="dropdown-item" href="/design/#section-typography">Typography</a>
                     <a class="dropdown-item" href="/design/#section-icons">Icons</a>
                     <a class="dropdown-item" href="/design/#section-colors">Colors</a>
@@ -230,12 +257,9 @@
                     <a class="dropdown-item" href="/design/#section-corners">Corners</a>
                 </div>
             </div>
-            <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Development Section">
-                    Development
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/development/">Overview</a>
+            <div data-display="static" class="navigation--primary__inner__item dropdown">
+                <a href="/development/" id="dMenuDevelopment" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-label="Toggle Development Section">Development</a>
+                <div class="dropdown-menu" aria-labelledby="dMenuDevelopment">
                     <a class="dropdown-item" href="/development/#section-atomic-design">Atomic Design</a>
                     <a class="dropdown-item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
                     <a class="dropdown-item" href="/development/#section-libraries">Libraries</a>
@@ -314,10 +338,14 @@
                 <a tabindex="-1" class="" href="/builder/">Theme Builder</a>
             </div>
             <div class="navigation--drawer__inner__download">
-                 
+                
 
 
+<<<<<<< HEAD
+<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" >
+=======
 <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
+>>>>>>> master
             
 
 <i class="icon-nds icon--default fab fa-github "></i>
@@ -351,7 +379,11 @@
 
 <a class="button-nds waves-effect waves-light button--primary button--get-started" href="/getting-started/" role="button" data-content="body-anchor-get-started">Get Started</a>            
 
+<<<<<<< HEAD
+<a class="button-nds waves-effect waves-light button--secondary button--learn-more" href="/about-nds/" role="button" >Learn More</a>        </div>
+=======
 <a class="button-nds waves-effect waves-light button--secondary button--learn-more" href="/about-nds/" role="button" data-content="body-anchor-learn-more">Learn More</a>        </div>
+>>>>>>> master
     </div>
 </div>        <div class="main" role="main">
                 

@@ -263,6 +263,13 @@
                 border-bottom: 0;
             }
         }
+        &.navigation--dropdown {
+            .navigation--dropdown {
+                &__menu {
+                    @include md-16dp;
+                }
+            }
+        }
     }
     /* Organisms */
     .global-nds {

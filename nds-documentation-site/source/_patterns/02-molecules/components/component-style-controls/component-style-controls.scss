@@ -5,7 +5,7 @@
     transform: translateY(-100%);
     display: flex;
     background: $white;
-    z-index: 100000;
+    z-index: $z-index-dropdown - 1;
     width: 100vw;
     transition: transform .3s;
     &__control {
