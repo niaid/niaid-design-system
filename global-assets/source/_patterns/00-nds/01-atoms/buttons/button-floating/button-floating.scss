@@ -30,24 +30,4 @@
             width: $s-8;
         }
     }
-    &.button--secondary {
-        color: $color-theme-1-1-1;
-        background: transparent;
-        &:hover,
-        &:focus {
-            background: $color-theme-1-1-1;
-            color: $white;
-            border: $s-1px solid $color-theme-1-1-1;
-        }
-    }
-    &.button--negative {
-        color: $status-error;
-        background: transparent;
-        &:hover,
-        &:focus {
-            background: $status-error;
-            color: $white;
-            border: $s-1px solid $status-error;
-        }
-    }
 }

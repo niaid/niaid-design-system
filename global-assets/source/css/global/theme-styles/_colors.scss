@@ -2,31 +2,26 @@
     /* Atoms */
     button {
         background: $color-theme-2-1-1;
-        border: $s-1px solid $color-theme-2-1-1;
         &:hover,
         &:focus,
         &:active {
             background: $color-theme-2-1-2;
-            border: $s-1px solid $color-theme-2-1-2;
         }
         &.button--secondary {
             color: $color-theme-2-1-1;
+            box-shadow: inset 0 0 0 $s-1px $color-theme-2-1-1;
             background: transparent;
             &:hover,
             &:focus {
                 background: $color-theme-2-1-1;
-                color: $white;
-                border: $s-1px solid $color-theme-2-1-1;
             }
         }
         &.button--tertiary {
             background: $color-theme-2-2-1;
-            border: $s-1px solid $color-theme-2-2-1;
             &:hover,
             &:focus,
             &:active {
                 background: $color-theme-2-2-2;
-                border: $s-1px solid $color-theme-2-2-2;
             }
         }
         &.button--negative {
@@ -43,40 +38,33 @@
     .button-nds {
         &.button--primary {
             background: $color-theme-2-1-1;
-            border: $s-1px solid $color-theme-2-1-1;
             &:hover,
             &:focus {
                 background: $color-theme-2-1-2;
-                border: $s-1px solid $color-theme-2-1-2;
             }
         }
         &.button--secondary {
             color: $color-theme-2-1-1;
-            border: $s-1px solid $color-theme-2-1-1;
+            box-shadow: inset 0 0 0 $s-1px $color-theme-2-1-1;
             &:hover,
             &:focus {
                 color: $white;
                 background: $color-theme-2-1-1;
-                border: $s-1px solid $color-theme-2-1-1;
             }
         }
         &.button--tertiary {
             background: $color-theme-2-2-1;
-            border: $s-1px solid $color-theme-2-2-1;
             &:hover,
             &:focus {
                 background: $color-theme-2-2-2;
-                border: $s-1px solid $color-theme-2-2-2;
             }
         }
         &.button--negative {
             color: $status-error;
-            border: $s-1px solid $status-error;
             &:hover,
             &:focus {
                 color: $white;
                 background: $status-error;
-                border: $s-1px solid $status-error;
             }
         }
         &.button--floating,
@@ -90,7 +78,6 @@
                 &:focus {
                     background: $color-theme-2-1-1;
                     color: $white;
-                    border: $s-1px solid $color-theme-2-1-1;
                 }
             }
             &.button--negative {
@@ -100,7 +87,6 @@
                 &:focus {
                     background: $status-error;
                     color: $white;
-                    border: $s-1px solid $status-error;
                 }
             }
         }
@@ -187,7 +173,6 @@
         &.text--chip {
             &:hover,
             &:focus {
-                border: $s-1px solid $color-theme-2-2-1;
                 background: $color-theme-2-2-1;
             }
         }
@@ -356,31 +341,26 @@
     /* Atoms */
     button {
         background: $color-theme-3-1-1;
-        border: $s-1px solid $color-theme-3-1-1;
         &:hover,
         &:focus,
         &:active {
             background: $color-theme-3-1-2;
-            border: $s-1px solid $color-theme-3-1-2;
         }
         &.button--secondary {
             color: $color-theme-3-1-1;
+            box-shadow: inset 0 0 0 $s-1px $color-theme-3-1-1;
             background: transparent;
             &:hover,
             &:focus {
                 background: $color-theme-3-1-1;
-                color: $white;
-                border: $s-1px solid $color-theme-3-1-1;
             }
         }
         &.button--tertiary {
             background: $color-theme-3-2-1;
-            border: $s-1px solid $color-theme-3-2-1;
             &:hover,
             &:focus,
             &:active {
                 background: $color-theme-3-2-2;
-                border: $s-1px solid $color-theme-3-2-2;
             }
         }
         &.button--negative {
@@ -397,40 +377,33 @@
     .button-nds {
         &.button--primary {
             background: $color-theme-3-1-1;
-            border: $s-1px solid $color-theme-3-1-1;
             &:hover,
             &:focus {
                 background: $color-theme-3-1-2;
-                border: $s-1px solid $color-theme-3-1-2;
             }
         }
         &.button--secondary {
             color: $color-theme-3-1-1;
-            border: $s-1px solid $color-theme-3-1-1;
+            box-shadow: inset 0 0 0 $s-1px $color-theme-3-1-1;
             &:hover,
             &:focus {
                 color: $white;
                 background: $color-theme-3-1-1;
-                border: $s-1px solid $color-theme-3-1-1;
             }
         }
         &.button--tertiary {
             background: $color-theme-3-2-1;
-            border: $s-1px solid $color-theme-3-2-1;
             &:hover,
             &:focus {
                 background: $color-theme-3-2-2;
-                border: $s-1px solid $color-theme-3-2-2;
             }
         }
         &.button--negative {
             color: $status-error;
-            border: $s-1px solid $status-error;
             &:hover,
             &:focus {
                 color: $white;
                 background: $status-error;
-                border: $s-1px solid $status-error;
             }
         }
         &.button--floating,
@@ -444,7 +417,6 @@
                 &:focus {
                     background: $color-theme-3-1-1;
                     color: $white;
-                    border: $s-1px solid $color-theme-3-1-1;
                 }
             }
             &.button--negative {
@@ -454,7 +426,6 @@
                 &:focus {
                     background: $status-error;
                     color: $white;
-                    border: $s-1px solid $status-error;
                 }
             }
         }
@@ -541,7 +512,6 @@
         &.text--chip {
             &:hover,
             &:focus {
-                border: $s-1px solid $color-theme-3-2-1;
                 background: $color-theme-3-2-1;
             }
         }
