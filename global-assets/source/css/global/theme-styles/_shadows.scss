@@ -7,6 +7,10 @@
     button {
         @include md-2dp;
         @extend .hoverable;
+        &:hover,
+        &:focus {
+            background: $color-theme-1-1-1;
+        }
         &.disabled,
         &:disabled,
         &[disabled] {
@@ -15,6 +19,17 @@
             &:focus {
                 box-shadow: none !important;
             }
+        }
+        &.button--secondary {
+            color: $color-theme-1-1-1;
+            background: $white;
+        }
+        &.button--tertiary {
+            background: $color-theme-1-2-1;
+        }
+        &.button--negative {
+            color: $status-error;
+            background: $white;
         }
     }
     .button-nds {
@@ -291,43 +306,46 @@
         }
     }
     &.style--colors--theme-2 {
-        .button--primary {
+        .button-nds,
+        button {
             &:hover,
             &:focus {
                 background: $color-theme-2-1-1;
             }
-        }
-        .button--secondary {
-            @include md-2dp;
-            @extend .hoverable;
-            &:hover,
-            &:focus {
-                background: $white;
+            &.button--secondary {
+                @include md-2dp;
+                @extend .hoverable;
                 color: $color-theme-2-1-1;
+                background: $white;
             }
-        }
-        .button--tertiary {
-            &:hover,
-            &:focus {
+            &.button--tertiary {
                 background: $color-theme-2-2-1;
             }
-        }
-        .button--negative {
-            &:hover,
-            &:focus {
-                background: $white;
+            &.button--negative {
                 color: $status-error;
+                background: $white;
             }
         }
-        .button--floating,
-        .button--image,
-        .button--icon,
-        .button--external {
+        .button-nds {
+            &.button--primary {
+                &:hover,
+                &:focus {
+                    background: $color-theme-2-1-1;
+                }
+            }
             &.button--secondary {
+                @include md-2dp;
+                @extend .hoverable;
                 &:hover,
                 &:focus {
                     background: $white;
                     color: $color-theme-2-1-1;
+                }
+            }
+            &.button--tertiary {
+                &:hover,
+                &:focus {
+                    background: $color-theme-2-2-1;
                 }
             }
             &.button--negative {
@@ -335,6 +353,25 @@
                 &:focus {
                     background: $white;
                     color: $status-error;
+                }
+            }
+            &.button--floating,
+            &.button--image,
+            &.button--icon,
+            &.button--external {
+                &.button--secondary {
+                    &:hover,
+                    &:focus {
+                        background: $white;
+                        color: $color-theme-2-1-1;
+                    }
+                }
+                &.button--negative {
+                    &:hover,
+                    &:focus {
+                        background: $white;
+                        color: $status-error;
+                    }
                 }
             }
         }
@@ -380,43 +417,46 @@
         }
     }
     &.style--colors--theme-3 {
-        .button--primary {
+        .button-nds,
+        button {
             &:hover,
             &:focus {
                 background: $color-theme-3-1-1;
             }
-        }
-        .button--secondary {
-            @include md-2dp;
-            @extend .hoverable;
-            &:hover,
-            &:focus {
-                background: $white;
+            &.button--secondary {
+                @include md-2dp;
+                @extend .hoverable;
                 color: $color-theme-3-1-1;
+                background: $white;
             }
-        }
-        .button--tertiary {
-            &:hover,
-            &:focus {
+            &.button--tertiary {
                 background: $color-theme-3-2-1;
             }
-        }
-        .button--negative {
-            &:hover,
-            &:focus {
-                background: $white;
+            &.button--negative {
                 color: $status-error;
+                background: $white;
             }
         }
-        .button--floating,
-        .button--image,
-        .button--icon,
-        .button--external {
+        .button-nds {
+            &.button--primary {
+                &:hover,
+                &:focus {
+                    background: $color-theme-3-1-1;
+                }
+            }
             &.button--secondary {
+                @include md-2dp;
+                @extend .hoverable;
                 &:hover,
                 &:focus {
                     background: $white;
                     color: $color-theme-3-1-1;
+                }
+            }
+            &.button--tertiary {
+                &:hover,
+                &:focus {
+                    background: $color-theme-3-2-1;
                 }
             }
             &.button--negative {
@@ -424,6 +464,25 @@
                 &:focus {
                     background: $white;
                     color: $status-error;
+                }
+            }
+            &.button--floating,
+            &.button--image,
+            &.button--icon,
+            &.button--external {
+                &.button--secondary {
+                    &:hover,
+                    &:focus {
+                        background: $white;
+                        color: $color-theme-3-1-1;
+                    }
+                }
+                &.button--negative {
+                    &:hover,
+                    &:focus {
+                        background: $white;
+                        color: $status-error;
+                    }
                 }
             }
         }

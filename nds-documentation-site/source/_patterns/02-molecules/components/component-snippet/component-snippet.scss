@@ -60,6 +60,9 @@
                     }
                     &__copy {
                         padding: .5rem;
+                        .button--icon__text {
+                            padding-left: $s-0-25;
+                        }
                     }
                 }
             }
