@@ -59,7 +59,10 @@
                         position: relative;
                     }
                     &__copy {
-                        padding: .5rem;
+                        padding: $s-0-50;
+                        .button--icon__text {
+                            padding-left: $s-0-25;
+                        }
                     }
                 }
             }
