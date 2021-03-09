@@ -1,0 +1,32 @@
+{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+    {
+        "layouts_site_id": "about"
+    }
+%}
+    {% block header %}
+        {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" with
+            {
+                "layouts_main_id": 'main',
+                "layouts_main_left": '3',
+                "layouts_main_main": '9',
+                "layouts_main_right": '3'
+            }
+        %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                    {% block body_content %}
+                        <button>This button is a test of your intelligence</button>
+                        <button data-content="Ha-test-loser">This button is a test of your intelligence</button>
+                        {% include "@nds/01-atoms/buttons/button-external/demo/button-external.twig" %}
+                        {% include "@nds/01-atoms/buttons/button-icon/demo/button-icon.twig" %}
+                        {% include "@nds/01-atoms/buttons/button-image/demo/button-image.twig" %}
+                        {% include "@nds/01-atoms/buttons/button-share/demo/button-share.twig" %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

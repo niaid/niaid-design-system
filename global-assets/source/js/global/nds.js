@@ -1,6 +1,85 @@
 "use strict";
 
-// Part of NDS Lite
+// Generic Utilities
+var getNextSibling = function getNextSibling(elem, selector) {
+  var sibling = elem.nextElementSibling;
+
+  while (sibling) {
+    if (sibling.matches(selector)) return sibling;
+    sibling = sibling.nextElementSibling;
+  }
+};
+
+function windowWidth() {
+  var docElemProp = window.document.documentElement.clientWidth,
+      body = window.document.body;
+  return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
+}
+
+function hasClass(element, className) {
+  return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+} // Part of NDS Lite
+
+
+(function ($) {
+  // initLinkExternal - Adds external link icons to links that qualify as external.
+  function initLinkExternal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var externalLinks = document.querySelectorAll('a');
+
+    for (var i = 0; i < externalLinks.length; i++) {
+      if (externalLinks[i].innerHTML != "") {
+        var url = externalLinks[i].getAttribute('href');
+        var hostname = externalLinks[i].hostname;
+
+        if (url && hostname !== location.hostname) {
+          url = url.toLowerCase();
+
+          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+            externalLinks[i].setAttribute('target', '_blank');
+            var linkIcon = document.createElement('a');
+            linkIcon.setAttribute('href', url);
+            linkIcon.setAttribute('class', "ext-link-icon");
+            linkIcon.setAttribute('aria-label', "External Link");
+            externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+          }
+        }
+      }
+    }
+  } // initLinkExternalMailto - Adds envelope icons to mailto links.
+
+
+  function initLinkExternalMailto() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+    for (var i = 0; i < mailtoLinks.length; i++) {
+      mailtoLinks[i].classList.add('link--external--mail');
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initLinks = {
+        attach: function attach(context) {
+          $("body", context).once('nds-links').each(function () {
+            initLinkExternal(context);
+            initLinkExternalMailto(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initLinkExternal();
+      initLinkExternalMailto();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
 (function ($) {
   // initInputNDS - Functionality to support keyboard accessibility on radio and checkbox inputs.
   function initInputNDS() {
@@ -31,38 +110,6 @@
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initInputNDS();
-    });
-  }
-})(jQuery); // Dependencies
-//  - Bootstrap Datepicker
-//  - jQuery
-
-
-(function ($) {
-  function initInputDatePicker() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('.input--date-picker').each(function () {
-      if ($(this).find('input').attr('nds-date-picker') == 'true') {
-        $(this).find('input').datepicker();
-      }
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputDatePicker = {
-        attach: function attach(context) {
-          $('body', context).once('nds-input-date-picker').each(function () {
-            initInputDatePicker(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputDatePicker();
     });
   }
 })(jQuery); // Dependencies
@@ -135,54 +182,28 @@
       initInputSelect();
     });
   }
-})(jQuery); // Part of NDS Lite
+})(jQuery); // Dependencies
+//  - Bootstrap Datepicker
+//  - jQuery
 
 
 (function ($) {
-  // initLinkExternal - Adds external link icons to links that qualify as external.
-  function initLinkExternal() {
+  function initInputDatePicker() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var externalLinks = document.querySelectorAll('a');
-
-    for (var i = 0; i < externalLinks.length; i++) {
-      if (externalLinks[i].innerHTML != "") {
-        var url = externalLinks[i].getAttribute('href');
-        var hostname = externalLinks[i].hostname;
-
-        if (url && hostname !== location.hostname) {
-          url = url.toLowerCase();
-
-          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-            externalLinks[i].setAttribute('target', '_blank');
-            var linkIcon = document.createElement('a');
-            linkIcon.setAttribute('href', url);
-            linkIcon.setAttribute('class', "ext-link-icon");
-            linkIcon.setAttribute('aria-label', "External Link");
-            externalLinks[i].insertAdjacentElement('afterend', linkIcon);
-          }
-        }
+    $('.input--date-picker').each(function () {
+      if ($(this).find('input').attr('nds-date-picker') == 'true') {
+        $(this).find('input').datepicker();
       }
-    }
-  } // initLinkExternalMailto - Adds envelope icons to mailto links.
-
-
-  function initLinkExternalMailto() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
-
-    for (var i = 0; i < mailtoLinks.length; i++) {
-      mailtoLinks[i].classList.add('link--external--mail');
-    }
+    });
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initLinks = {
+      Drupal.behaviors.initInputDatePicker = {
         attach: function attach(context) {
-          $("body", context).once('nds-links').each(function () {
-            initLinkExternal(context);
-            initLinkExternalMailto(context);
+          $('body', context).once('nds-input-date-picker').each(function () {
+            initInputDatePicker(context);
           });
         }
       };
@@ -190,8 +211,7 @@
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initLinkExternal();
-      initLinkExternalMailto();
+      initInputDatePicker();
     });
   }
 })(jQuery); // Dependencies
@@ -264,6 +284,8 @@
     for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
       var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
       setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+      var bodyButtons = document.getElementsByClassName("layouts--body")[i].querySelectorAll('button, .button--external, .button--floating, .button--icon, .button--image, .button--share');
+      analyzeButtons(bodyButtons);
     }
 
     for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
@@ -301,13 +323,39 @@
 
   function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
     for (var i = 0; i < els.length; i++) {
-      var linkText = els[i].textContent.trim();
+      computeDataAttribute(els[i], dataAttributeName, dataAttributeValuePrefix);
+    }
+  }
 
-      if (linkText !== "") {
-        linkText = linkText.replace(/\//g, '-');
-        linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-        els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+  function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
+    var linkText = el.textContent.trim();
+
+    if (linkText !== "") {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      el.setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    }
+  }
+
+  function analyzeButtons(buttonList) {
+    if (buttonList.length > 0) {
+      for (var i = 0; i < buttonList.length; i++) {
+        if (buttonList[i].hasAttribute('data-content')) {
+          tagChildren(buttonList[i]);
+        } else {
+          computeDataAttribute(buttonList[i], 'data-content', 'body-anchor-');
+          tagChildren(buttonList[i]);
+        }
       }
+    }
+  }
+
+  function tagChildren(buttonList) {
+    var dataAttributeValue = buttonList.getAttribute('data-content');
+    var buttonChildren = buttonList.querySelectorAll('i, span, div, img');
+
+    for (var j = 0; j < buttonChildren.length; j++) {
+      buttonChildren[j].setAttribute('data-content', dataAttributeValue);
     }
   }
 
@@ -481,8 +529,36 @@
       initComponentUSWDSBanner();
     });
   }
-})(jQuery); // Part of NDS Lite
+})(jQuery);
 
+$(document).ready(function () {
+  $(".navigation--dropdown.hover").on('mouseover', function () {
+    openDropdown($(this));
+  });
+  $(".navigation--dropdown.hover").on('mouseout', function () {
+    closeDropdown($(this));
+  });
+  $(".navigation--dropdown").on('focusin', function (e) {
+    openDropdown($(this));
+  });
+  $(".navigation--dropdown").on('focusout', function (e) {
+    if (this.contains(e.relatedTarget)) {
+      return;
+    }
+
+    closeDropdown($(this));
+  });
+
+  function openDropdown($el) {
+    $el.addClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
+  }
+
+  function closeDropdown($el) {
+    $el.removeClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
+  }
+}); // Part of NDS Lite
 
 (function ($) {
   // initNavigationDrawer - Functionality to support the NDS mobile drawer.
@@ -563,32 +639,3 @@
     });
   }
 })(jQuery);
-
-$(document).ready(function () {
-  $(".navigation--dropdown.hover").on('mouseover', function () {
-    openDropdown($(this));
-  });
-  $(".navigation--dropdown.hover").on('mouseout', function () {
-    closeDropdown($(this));
-  });
-  $(".navigation--dropdown").on('focusin', function (e) {
-    openDropdown($(this));
-  });
-  $(".navigation--dropdown").on('focusout', function (e) {
-    if (this.contains(e.relatedTarget)) {
-      return;
-    }
-
-    closeDropdown($(this));
-  });
-
-  function openDropdown($el) {
-    $el.addClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
-  }
-
-  function closeDropdown($el) {
-    $el.removeClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
-  }
-});

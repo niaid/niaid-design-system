@@ -66,36 +66,7 @@
             }
         %}
             {% block component_snippet_code %}
-                <div class="container-fluid demo">
-                    <div class="row">
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
-                                {
-                                    "button_external_text": "Button",
-                                    "button_external_href": "#"
-                                }
-                            %}
-                        </div>
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
-                                {
-                                    "button_external_classes": "button--secondary",
-                                    "button_external_text": "Button",
-                                    "button_external_href": "#"
-                                }
-                            %}
-                        </div>
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
-                                {
-                                    "button_external_classes": "button--tertiary",
-                                    "button_external_text": "Button",
-                                    "button_external_href": "#"
-                                }
-                            %}
-                        </div>
-                    </div>
-                </div>
+                {% include "@nds/01-atoms/buttons/button-external/demo/button-external.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Parameters</h5>
@@ -152,36 +123,7 @@
             }
         %}
             {% block component_snippet_code %}
-                <div class="container-fluid demo">
-                    <div class="row">
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-                                {
-                                    "button_icon_icon": "question-circle",
-                                    "button_icon_text": "Button"
-                                }
-                            %}
-                        </div>
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-                                {
-                                    "button_icon_classes": "button--secondary",
-                                    "button_icon_icon": "question-circle",
-                                    "button_icon_text": "Button"
-                                }
-                            %}
-                        </div>
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
-                                {
-                                    "button_icon_classes": "button--tertiary",
-                                    "button_icon_icon": "question-circle",
-                                    "button_icon_text": "Button"
-                                }
-                            %}
-                        </div>
-                    </div>
-                </div>
+                {% include "@nds/01-atoms/buttons/button-icon/demo/button-icon.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Parameters</h5>
@@ -219,39 +161,7 @@
             }
         %}
             {% block component_snippet_code %}
-                <div class="container-fluid demo">
-                    <div class="row">
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
-                                {
-                                    "button_image_src": "global/sample/avatar_circle.png",
-                                    "button_image_alt": "Example of an avatar or headshot image.",
-                                    "button_image_text": "Follow Jane"
-                                }
-                            %}
-                        </div>
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
-                                {
-                                    "button_image_classes": "button--secondary",
-                                    "button_image_src": "global/sample/avatar_circle.png",
-                                    "button_image_alt": "Example of an avatar or headshot image.",
-                                    "button_image_text": "Follow Jane"
-                                }
-                            %}
-                        </div>
-                        <div class="col">
-                            {% include "@nds/01-atoms/buttons/button-image/_button-image-main.twig" with
-                                {
-                                    "button_image_classes": "button--tertiary",
-                                    "button_image_src": "global/sample/avatar_circle.png",
-                                    "button_image_alt": "Example of an avatar or headshot image.",
-                                    "button_image_text": "Follow Jane"
-                                }
-                            %}
-                        </div>
-                    </div>
-                </div>
+                {% include "@nds/01-atoms/buttons/button-image/demo/button-image.twig" %}
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Parameters</h5>

@@ -10,6 +10,9 @@ function initDataAttributes() {
     for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
         let bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
         setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
+
+        let bodyButtonIcons = document.getElementsByClassName("layouts--body")[i].querySelectorAll('.button--icon');
+        analyzeButtons(bodyButtonIcons);
     }
 
     $('.navigation--primary').find('.navigation--primary__inner__item').each(function() {
@@ -54,6 +57,20 @@ function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
             linkText = linkText.replace(/\//g, '-');
             linkText = linkText.replace(/\s+/g, '-').toLowerCase();
             els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+        }
+    }
+}
+
+function analyzeButtons(buttonList) {
+    if (buttonList.length > 0) {
+        for (let i = 0; i < buttonList.length; i++) {
+            if (buttonList[i].hasAttribute('data-content')) {
+                let dataAttributeValue = buttonList[i].getAttribute('data-content');
+                let buttonChildren = buttonList[i].querySelectorAll('i, span, div');
+                for (let j = 0; j < buttonChildren.length; j++) {
+                    buttonChildren[j].setAttribute('data-content', dataAttributeValue);
+                }
+            }
         }
     }
 }
