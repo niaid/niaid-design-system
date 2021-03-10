@@ -1,26 +1,6 @@
 "use strict";
 
-// Generic Utilities
-var getNextSibling = function getNextSibling(elem, selector) {
-  var sibling = elem.nextElementSibling;
-
-  while (sibling) {
-    if (sibling.matches(selector)) return sibling;
-    sibling = sibling.nextElementSibling;
-  }
-};
-
-function windowWidth() {
-  var docElemProp = window.document.documentElement.clientWidth,
-      body = window.document.body;
-  return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
-}
-
-function hasClass(element, className) {
-  return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
-} // Part of NDS Lite
-
-
+// Part of NDS Lite
 (function ($) {
   // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
   function initDataAttributes() {
@@ -39,8 +19,8 @@ function hasClass(element, className) {
       // Branding Component
       var logoLinks = globalHeaders[_i].querySelectorAll('.component--branding');
 
-      for (var j = 0; j < logoLinks.length; j++) {
-        logoLinks[j].setAttribute('data-nav', 'header-nav-logo');
+      for (var _j = 0; _j < logoLinks.length; _j++) {
+        logoLinks[_j].setAttribute('data-nav', 'header-nav-logo');
       } // Generic
 
 
@@ -55,11 +35,11 @@ function hasClass(element, className) {
     for (var i = 0; i < primaryNavigations.length; i++) {
       var navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
 
-      for (var _j = 0; _j < navigationLinks.length; _j++) {
-        var navItem = navigationLinks[_j].children[0];
+      for (var _j2 = 0; _j2 < navigationLinks.length; _j2++) {
+        var navItem = navigationLinks[_j2].children[0];
 
         if (hasClass(navItem, 'navigation--dropdown')) {
-          var sectionName = navigationLinks[_j].children[0].children[0].textContent.trim();
+          var sectionName = navigationLinks[_j2].children[0].children[0].textContent.trim();
 
           if (sectionName !== "") {
             sectionName = sectionName.replace(/\//g, '-');
@@ -80,8 +60,8 @@ function hasClass(element, className) {
       // Branding Component
       var _logoLinks = globalFooters[i].querySelectorAll('.image--logo');
 
-      for (var i = 0; i < _logoLinks.length; i++) {
-        _logoLinks[i].setAttribute('data-nav', 'footer-nav-logo');
+      for (var j = 0; j < _logoLinks.length; j++) {
+        _logoLinks[j].setAttribute('data-nav', 'footer-nav-logo');
       } // Footer Links
 
 
@@ -97,8 +77,11 @@ function hasClass(element, className) {
       var _navigationLinks2 = accordionCards[i].querySelectorAll('button');
 
       setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-    } // Mobile Rail
+    } // Floating Buttons
 
+
+    var floatingButtons = document.getElementsByClassName("button--floating");
+    setDataAttributes(floatingButtons, 'data-nav', 'header-nav-'); // Mobile Rail
 
     var mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
 
@@ -152,7 +135,7 @@ function hasClass(element, className) {
 
   function tagChildren(el, dataAttributeName) {
     var dataAttributeValue = el.getAttribute(dataAttributeName);
-    var childElements = el.querySelectorAll('i, span, div, img');
+    var childElements = el.querySelectorAll('i, span, div, img, strong');
 
     for (var j = 0; j < childElements.length; j++) {
       childElements[j].setAttribute(dataAttributeName, dataAttributeValue);
@@ -192,6 +175,65 @@ function hasClass(element, className) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initDataAttributes();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initComponentModal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.component--modal').length) {
+      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      var modalsList = document.getElementsByClassName("component--modal");
+
+      var _loop = function _loop() {
+        var firstFocusableElement = modalsList[i].querySelectorAll(focusableElements)[0];
+        var focusableContent = modalsList[i].querySelectorAll(focusableElements);
+        var lastFocusableElement = focusableContent[focusableContent.length - 1];
+        document.addEventListener('keydown', function (e) {
+          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+
+          if (!isTabPressed) {
+            return;
+          }
+
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
+          }
+        });
+        firstFocusableElement.focus();
+      };
+
+      for (var i = 0; i < modalsList.length; i++) {
+        _loop();
+      }
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentModal = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-modal').each(function () {
+            initComponentModal(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentModal();
     });
   }
 })(jQuery);
@@ -257,65 +299,6 @@ function hasClass(element, className) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentUSWDSBanner();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initComponentModal() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.component--modal').length) {
-      var focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-      var modalsList = document.getElementsByClassName("component--modal");
-
-      var _loop = function _loop() {
-        var firstFocusableElement = modalsList[i].querySelectorAll(focusableElements)[0];
-        var focusableContent = modalsList[i].querySelectorAll(focusableElements);
-        var lastFocusableElement = focusableContent[focusableContent.length - 1];
-        document.addEventListener('keydown', function (e) {
-          var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-
-          if (!isTabPressed) {
-            return;
-          }
-
-          if (e.shiftKey) {
-            if (document.activeElement === firstFocusableElement) {
-              lastFocusableElement.focus();
-              e.preventDefault();
-            }
-          } else {
-            if (document.activeElement === lastFocusableElement) {
-              firstFocusableElement.focus();
-              e.preventDefault();
-            }
-          }
-        });
-        firstFocusableElement.focus();
-      };
-
-      for (var i = 0; i < modalsList.length; i++) {
-        _loop();
-      }
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentModal = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-modal').each(function () {
-            initComponentModal(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentModal();
     });
   }
 })(jQuery);

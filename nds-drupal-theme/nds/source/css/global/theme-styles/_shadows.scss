@@ -197,6 +197,11 @@
                 }
             }
         }
+        &.component--uswds-banner {
+            .component--uswds-banner__toggle {
+                @include md-0dp;
+            }
+        }
     }
     .form-nds {
         .form-text {

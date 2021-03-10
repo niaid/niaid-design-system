@@ -1,6 +1,30 @@
-{% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
-    {
-        "button_external_text": "Open Application",
-        "button_external_href": "#"
-    }
-%}
+<div class="container-fluid demo">
+    <div class="row">
+        <div class="col">
+            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
+                {
+                    "button_external_text": "Button",
+                    "button_external_href": "#"
+                }
+            %}
+        </div>
+        <div class="col">
+            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
+                {
+                    "button_external_classes": "button--secondary",
+                    "button_external_text": "Button",
+                    "button_external_href": "#"
+                }
+            %}
+        </div>
+        <div class="col">
+            {% include "@nds/01-atoms/buttons/button-external/_button-external-main.twig" with
+                {
+                    "button_external_classes": "button--tertiary",
+                    "button_external_text": "Button",
+                    "button_external_href": "#"
+                }
+            %}
+        </div>
+    </div>
+</div>
