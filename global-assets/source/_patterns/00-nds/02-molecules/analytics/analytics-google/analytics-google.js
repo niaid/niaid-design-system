@@ -50,8 +50,8 @@
         for (var i = 0; i < globalFooters.length; i++) {
             // Branding Component
             let logoLinks = globalFooters[i].querySelectorAll('.image--logo');
-            for (var i = 0; i < logoLinks.length; i++) {
-                logoLinks[i].setAttribute('data-nav', 'footer-nav-logo');
+            for (var j = 0; j < logoLinks.length; j++) {
+                logoLinks[j].setAttribute('data-nav', 'footer-nav-logo');
             }
 
             // Footer Links
@@ -65,6 +65,10 @@
             let navigationLinks = accordionCards[i].querySelectorAll('button');
             setDataAttributes(navigationLinks, 'data-content', 'accordion-');
         }
+
+        // Floating Buttons
+        let floatingButtons = document.getElementsByClassName("button--floating");
+        setDataAttributes(floatingButtons, 'data-nav', 'header-nav-');
 
         // Mobile Rail
         let mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
