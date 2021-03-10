@@ -12,25 +12,27 @@
         component_uswds_banner_classes: Additional banner classes.
         component_uswds_banner_id: Component ID.
 
-    Last Updated: February 18, 2021
+    Last Updated: March 9, 2021
 #}
 
 {% set component_uswds_banner_classes = component_uswds_banner_classes|default() %}
 {% set component_uswds_banner_id = component_uswds_banner_id|default() %}
 
 <aside class="component-nds component--uswds-banner {{ component_uswds_banner_classes }}" aria-label="Official Government Website"{% if component_uswds_banner_id is not empty %} id="{{ component_uswds_banner_id }}"{% endif %}>
-    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
         {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
             {
                 "image_default_src": 'global/uswds/us_flag_small.png',
-                "image_default_alt": 'U.S. flag'
+                "image_default_alt": 'U.S. flag',
+                "image_default_attributes": "data-nav=header-nav-uswds-banner"
             }
         %}
-        <span>An official website of the United States government. Here's how you know.</span>
+        <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
         {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
             {
                 "icon_default_type": "chevron-right",
-                "icon_default_weight": "s"
+                "icon_default_weight": "s",
+                "icon_default_attributes": "data-nav=header-nav-uswds-banner"
             }
         %}
     </button>
