@@ -24,7 +24,186 @@ function windowWidth() {
 
 function hasClass(element, className) {
   return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
-}
+} // Part of NDS Lite
+
+
+(function ($) {
+  // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+  function initDataAttributes() {
+    // Generic Body
+    var bodyLayouts = document.getElementsByClassName("layouts--body");
+
+    for (var i = 0; i < bodyLayouts.length; i++) {
+      var bodyElements = bodyLayouts[i].querySelectorAll('a, button');
+      setDataAttributes(bodyElements, 'data-content', 'body-anchor-');
+    } // Header
+
+
+    var globalHeaders = document.getElementsByClassName("global--header");
+
+    for (var _i = 0; _i < globalHeaders.length; _i++) {
+      // Branding Component
+      var logoLinks = globalHeaders[_i].querySelectorAll('.component--branding');
+
+      for (var _j = 0; _j < logoLinks.length; _j++) {
+        logoLinks[_j].setAttribute('data-nav', 'header-nav-logo');
+      } // Generic
+
+
+      var headerElements = globalHeaders[_i].querySelectorAll('a, button');
+
+      setDataAttributes(headerElements, 'data-nav', 'header-nav-');
+    } // Primary Navigation
+
+
+    var primaryNavigations = document.getElementsByClassName("navigation--primary");
+
+    for (var i = 0; i < primaryNavigations.length; i++) {
+      var navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
+
+      for (var _j2 = 0; _j2 < navigationLinks.length; _j2++) {
+        var navItem = navigationLinks[_j2].children[0];
+
+        if (hasClass(navItem, 'navigation--dropdown')) {
+          var sectionName = navigationLinks[_j2].children[0].children[0].textContent.trim();
+
+          if (sectionName !== "" && navItem.closest('.component--snippet') == null) {
+            sectionName = sectionName.replace(/\//g, '-');
+            sectionName = sectionName.replace(/\s+/g, '-').toLowerCase();
+            var dropdownItems = navItem.querySelectorAll('.navigation--dropdown__menu > a');
+            setDataAttributes(dropdownItems, 'data-nav', 'header-nav-' + sectionName + '-');
+          }
+        } else {
+          computeDataAttribute(navItem, 'data-nav', 'header-nav-');
+        }
+      }
+    } // Footer
+
+
+    var globalFooters = document.getElementsByClassName("global--footer");
+
+    for (var i = 0; i < globalFooters.length; i++) {
+      // Branding Component
+      var _logoLinks = globalFooters[i].querySelectorAll('.image--logo');
+
+      for (var j = 0; j < _logoLinks.length; j++) {
+        _logoLinks[j].setAttribute('data-nav', 'footer-nav-logo');
+      } // Footer Links
+
+
+      var _navigationLinks = globalFooters[i].querySelectorAll('a, button');
+
+      setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+    } // Accordion Button
+
+
+    var accordionCards = document.getElementsByClassName("component--accordion__card");
+
+    for (var i = 0; i < accordionCards.length; i++) {
+      var _navigationLinks2 = accordionCards[i].querySelectorAll('button');
+
+      setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+    } // Floating Button
+
+
+    var floatingButtons = document.getElementsByClassName("button--floating");
+    setDataAttributes(floatingButtons, 'data-nav', 'header-nav-'); // Mobile Rail
+
+    var mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
+
+    for (var i = 0; i < mobileRails.length; i++) {
+      var _navigationLinks3 = mobileRails[i].querySelectorAll('a');
+
+      setDataAttributes(_navigationLinks3, 'data-nav', 'nav-left-');
+    }
+  } // setDataAttributes - Helper function to add data attributes to elements.
+
+
+  function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+    if (els.length > 0 && els !== undefined) {
+      for (var i = 0; i < els.length; i++) {
+        if (els[i].hasAttribute(dataAttributeName)) {
+          tagChildren(els[i], dataAttributeName);
+        } else {
+          computeDataAttribute(els[i], dataAttributeName, dataAttributeValuePrefix);
+        }
+      }
+    }
+  }
+
+  function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
+    var linkText = el.textContent.trim();
+
+    if (linkText !== "" && el.closest('.component--snippet') == null) {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      el.setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+      tagChildren(el, dataAttributeName);
+    } else {
+      if (hasClass(el, 'button--share')) {
+        var typeArray = el.classList[2].split('button--share--');
+        var type = typeArray[typeArray.length - 1];
+        var prefix = '';
+
+        if (dataAttributeValuePrefix == "header-nav-") {
+          prefix = 'header-nav-social-share-';
+        } else if (dataAttributeValuePrefix == "footer-nav-") {
+          prefix = 'footer-nav-social-share-';
+        } else {
+          prefix = 'body-social-share-';
+        }
+
+        el.setAttribute(dataAttributeName, prefix + type);
+        tagChildren(el, dataAttributeName);
+      }
+    }
+  }
+
+  function tagChildren(el, dataAttributeName) {
+    var dataAttributeValue = el.getAttribute(dataAttributeName);
+    var childElements = el.querySelectorAll('i, span, div, img, strong');
+
+    for (var j = 0; j < childElements.length; j++) {
+      childElements[j].setAttribute(dataAttributeName, dataAttributeValue);
+    }
+  }
+
+  if (window.Element && !Element.prototype.closest) {
+    Element.prototype.closest = function (s) {
+      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+          i,
+          el = this;
+
+      do {
+        i = matches.length;
+
+        while (--i >= 0 && matches.item(i) !== el) {}
+
+        ;
+      } while (i < 0 && (el = el.parentElement));
+
+      return el;
+    };
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initDataAttributes = {
+        attach: function attach(context) {
+          $("body", context).once('nds-data-attributes').each(function () {
+            initDataAttributes(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initDataAttributes();
+    });
+  }
+})(jQuery);
 
 (function ($) {
   function initComponentScrollspySection() {
@@ -294,185 +473,6 @@ function hasClass(element, className) {
       if (!$("#builder").length) {
         init_style_controls();
       }
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-(function ($) {
-  // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-  function initDataAttributes() {
-    // Generic Body
-    var bodyLayouts = document.getElementsByClassName("layouts--body");
-
-    for (var i = 0; i < bodyLayouts.length; i++) {
-      var bodyElements = bodyLayouts[i].querySelectorAll('a, button');
-      setDataAttributes(bodyElements, 'data-content', 'body-anchor-');
-    } // Header
-
-
-    var globalHeaders = document.getElementsByClassName("global--header");
-
-    for (var _i = 0; _i < globalHeaders.length; _i++) {
-      // Branding Component
-      var logoLinks = globalHeaders[_i].querySelectorAll('.component--branding');
-
-      for (var _j = 0; _j < logoLinks.length; _j++) {
-        logoLinks[_j].setAttribute('data-nav', 'header-nav-logo');
-      } // Generic
-
-
-      var headerElements = globalHeaders[_i].querySelectorAll('a, button');
-
-      setDataAttributes(headerElements, 'data-nav', 'header-nav-');
-    } // Primary Navigation
-
-
-    var primaryNavigations = document.getElementsByClassName("navigation--primary");
-
-    for (var i = 0; i < primaryNavigations.length; i++) {
-      var navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
-
-      for (var _j2 = 0; _j2 < navigationLinks.length; _j2++) {
-        var navItem = navigationLinks[_j2].children[0];
-
-        if (hasClass(navItem, 'navigation--dropdown')) {
-          var sectionName = navigationLinks[_j2].children[0].children[0].textContent.trim();
-
-          if (sectionName !== "" && navItem.closest('.component--snippet') == null) {
-            sectionName = sectionName.replace(/\//g, '-');
-            sectionName = sectionName.replace(/\s+/g, '-').toLowerCase();
-            var dropdownItems = navItem.querySelectorAll('.navigation--dropdown__menu > a');
-            setDataAttributes(dropdownItems, 'data-nav', 'header-nav-' + sectionName + '-');
-          }
-        } else {
-          computeDataAttribute(navItem, 'data-nav', 'header-nav-');
-        }
-      }
-    } // Footer
-
-
-    var globalFooters = document.getElementsByClassName("global--footer");
-
-    for (var i = 0; i < globalFooters.length; i++) {
-      // Branding Component
-      var _logoLinks = globalFooters[i].querySelectorAll('.image--logo');
-
-      for (var j = 0; j < _logoLinks.length; j++) {
-        _logoLinks[j].setAttribute('data-nav', 'footer-nav-logo');
-      } // Footer Links
-
-
-      var _navigationLinks = globalFooters[i].querySelectorAll('a, button');
-
-      setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-    } // Accordion Button
-
-
-    var accordionCards = document.getElementsByClassName("component--accordion__card");
-
-    for (var i = 0; i < accordionCards.length; i++) {
-      var _navigationLinks2 = accordionCards[i].querySelectorAll('button');
-
-      setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-    } // Floating Button
-
-
-    var floatingButtons = document.getElementsByClassName("button--floating");
-    setDataAttributes(floatingButtons, 'data-nav', 'header-nav-'); // Mobile Rail
-
-    var mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
-
-    for (var i = 0; i < mobileRails.length; i++) {
-      var _navigationLinks3 = mobileRails[i].querySelectorAll('a');
-
-      setDataAttributes(_navigationLinks3, 'data-nav', 'nav-left-');
-    }
-  } // setDataAttributes - Helper function to add data attributes to elements.
-
-
-  function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-    if (els.length > 0 && els !== undefined) {
-      for (var i = 0; i < els.length; i++) {
-        if (els[i].hasAttribute(dataAttributeName)) {
-          tagChildren(els[i], dataAttributeName);
-        } else {
-          computeDataAttribute(els[i], dataAttributeName, dataAttributeValuePrefix);
-        }
-      }
-    }
-  }
-
-  function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
-    var linkText = el.textContent.trim();
-
-    if (linkText !== "" && el.closest('.component--snippet') == null) {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      el.setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-      tagChildren(el, dataAttributeName);
-    } else {
-      if (hasClass(el, 'button--share')) {
-        var typeArray = el.classList[2].split('button--share--');
-        var type = typeArray[typeArray.length - 1];
-        var prefix = '';
-
-        if (dataAttributeValuePrefix == "header-nav-") {
-          prefix = 'header-nav-social-share-';
-        } else if (dataAttributeValuePrefix == "footer-nav-") {
-          prefix = 'footer-nav-social-share-';
-        } else {
-          prefix = 'body-social-share-';
-        }
-
-        el.setAttribute(dataAttributeName, prefix + type);
-        tagChildren(el, dataAttributeName);
-      }
-    }
-  }
-
-  function tagChildren(el, dataAttributeName) {
-    var dataAttributeValue = el.getAttribute(dataAttributeName);
-    var childElements = el.querySelectorAll('i, span, div, img, strong');
-
-    for (var j = 0; j < childElements.length; j++) {
-      childElements[j].setAttribute(dataAttributeName, dataAttributeValue);
-    }
-  }
-
-  if (window.Element && !Element.prototype.closest) {
-    Element.prototype.closest = function (s) {
-      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-          i,
-          el = this;
-
-      do {
-        i = matches.length;
-
-        while (--i >= 0 && matches.item(i) !== el) {}
-
-        ;
-      } while (i < 0 && (el = el.parentElement));
-
-      return el;
-    };
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initDataAttributes = {
-        attach: function attach(context) {
-          $("body", context).once('nds-data-attributes').each(function () {
-            initDataAttributes(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initDataAttributes();
     });
   }
 })(jQuery);
@@ -1034,263 +1034,6 @@ $(document).ready(function () {
       }
     });
   }
-})(jQuery); // Part of NDS Lite
-
-
-(function ($) {
-  // initInputNDS - Functionality to support keyboard accessibility on radio and checkbox inputs.
-  function initInputNDS() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var inputElements = document.querySelectorAll('.input--radio, .input--checkbox');
-
-    for (var i = 0; i < inputElements.length; i++) {
-      inputElements[i].addEventListener('keydown', function (e) {
-        if (e.code === "Enter" || e.keyCode === "13" || e.code === "Space" || e.keyCode === "23") {
-          e.target.querySelector('input').click();
-        }
-      });
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputNDS = {
-        attach: function attach(context) {
-          $("body", context).once('nds-input').each(function () {
-            initInputNDS(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputNDS();
-    });
-  }
-})(jQuery); // Dependencies
-//  - Bootstrap Datepicker
-//  - jQuery
-
-
-(function ($) {
-  function initInputDatePicker() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('.input--date-picker').each(function () {
-      if ($(this).find('input').attr('nds-date-picker') == 'true') {
-        $(this).find('input').datepicker();
-      }
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputDatePicker = {
-        attach: function attach(context) {
-          $('body', context).once('nds-input-date-picker').each(function () {
-            initInputDatePicker(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputDatePicker();
-    });
-  }
-})(jQuery); // Dependencies
-//  - Select2
-//  - jQuery
-
-
-(function ($) {
-  function initInputSelect() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('[data-toggle="tooltip"]').tooltip();
-    $('select').each(function () {
-      if ($(this).attr('nds-select') == 'true') {
-        $(this).select2({
-          minimumResultsForSearch: 10
-        });
-
-        if ($(this).val() != "") {
-          $(this).siblings('.select2-container').addClass('no-clear selection-made');
-        }
-      }
-    });
-    $('select').change(function (e, p) {
-      if ($(this).attr('nds-select') == 'true') {
-        if (!e.target.multiple) {
-          $(this).siblings('.select2-container').addClass('selection-made');
-
-          if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
-            $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
-          }
-        } else {
-          $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
-        }
-      }
-    }); // Listener to Add Accessibility Compliance to Open Modals
-
-    $('select').on('select2:open', function (e) {
-      $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
-      $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
-    }); // Add Accessibility Compliane to Loaded Select Field
-
-    $('.select2-selection--single').find('.select2-selection__rendered').attr('aria-label', 'Click to select option.');
-    $('.select2-selection--multiple').attr('aria-label', 'Click to select option(s).'); // Remove selection on click of "X"
-
-    $(document).on('click', '.single-clear', function (e) {
-      e.stopPropagation();
-      var $selectField = $(this).parent().siblings('select');
-      $selectField.prop('selectedIndex', 0);
-      var placeholder = $selectField.attr("data-placeholder");
-      $(this).parent().removeClass('selection-made');
-      $(this).siblings('.selection').find('.select2-selection__rendered').text(placeholder);
-      $(this).remove();
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputSelect = {
-        attach: function attach(context) {
-          $('body', context).once('nds-input-select').each(function () {
-            initInputSelect(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputSelect();
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-(function ($) {
-  // initLinkExternal - Adds external link icons to links that qualify as external.
-  function initLinkExternal() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var externalLinks = document.querySelectorAll('a');
-
-    for (var i = 0; i < externalLinks.length; i++) {
-      if (externalLinks[i].innerHTML != "") {
-        var url = externalLinks[i].getAttribute('href');
-        var hostname = externalLinks[i].hostname;
-
-        if (url && hostname !== location.hostname) {
-          url = url.toLowerCase();
-
-          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-            externalLinks[i].setAttribute('target', '_blank');
-            var linkIcon = document.createElement('a');
-            linkIcon.setAttribute('href', url);
-            linkIcon.setAttribute('class', "ext-link-icon");
-            linkIcon.setAttribute('aria-label', "External Link");
-            externalLinks[i].insertAdjacentElement('afterend', linkIcon);
-          }
-        }
-      }
-    }
-  } // initLinkExternalMailto - Adds envelope icons to mailto links.
-
-
-  function initLinkExternalMailto() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
-
-    for (var i = 0; i < mailtoLinks.length; i++) {
-      mailtoLinks[i].classList.add('link--external--mail');
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initLinks = {
-        attach: function attach(context) {
-          $("body", context).once('nds-links').each(function () {
-            initLinkExternal(context);
-            initLinkExternalMailto(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initLinkExternal();
-      initLinkExternalMailto();
-    });
-  }
-})(jQuery); // Dependencies
-//  - DataTables
-//  - jQuery
-
-
-(function ($) {
-  function initTableDefault() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    /* KEY
-        Sorting: Add data-tablesort="true" to the <table> tag.
-        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
-    */
-    $("table").each(function () {
-      if ($(this).attr('nds-datatable') == 'true') {
-        var defaultConfigs = {
-          "responsive": true,
-          "paging": false,
-          "info": false,
-          "autoWidth": false,
-          "searching": false
-        };
-
-        if (!($(this).attr('data-tablesort') == "true")) {
-          defaultConfigs['ordering'] = false;
-        } else {
-          // Determine Column Type
-          var columns = [];
-          $(this).find('thead').find('th').each(function (i) {
-            if ($(this).attr('data-column-num') == "true") {
-              columns.push({
-                "type": "natural",
-                "targets": i
-              });
-            }
-          });
-          defaultConfigs['columnDefs'] = columns;
-        }
-
-        $(this).dataTable(defaultConfigs);
-      }
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initTableDefault = {
-        attach: function attach(context) {
-          $("body", context).once('nds-table-default').each(function () {
-            initTableDefault(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initTableDefault();
-    });
-  }
 })(jQuery);
 
 (function ($) {
@@ -1554,4 +1297,260 @@ $(document).ready(function () {
     $el.removeClass('is-open');
     $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
   }
-});
+}); // Part of NDS Lite
+
+(function ($) {
+  // initInputNDS - Functionality to support keyboard accessibility on radio and checkbox inputs.
+  function initInputNDS() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var inputElements = document.querySelectorAll('.input--radio, .input--checkbox');
+
+    for (var i = 0; i < inputElements.length; i++) {
+      inputElements[i].addEventListener('keydown', function (e) {
+        if (e.code === "Enter" || e.keyCode === "13" || e.code === "Space" || e.keyCode === "23") {
+          e.target.querySelector('input').click();
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputNDS = {
+        attach: function attach(context) {
+          $("body", context).once('nds-input').each(function () {
+            initInputNDS(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputNDS();
+    });
+  }
+})(jQuery); // Dependencies
+//  - Bootstrap Datepicker
+//  - jQuery
+
+
+(function ($) {
+  function initInputDatePicker() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.input--date-picker').each(function () {
+      if ($(this).find('input').attr('nds-date-picker') == 'true') {
+        $(this).find('input').datepicker();
+      }
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputDatePicker = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-date-picker').each(function () {
+            initInputDatePicker(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputDatePicker();
+    });
+  }
+})(jQuery); // Dependencies
+//  - Select2
+//  - jQuery
+
+
+(function ($) {
+  function initInputSelect() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('[data-toggle="tooltip"]').tooltip();
+    $('select').each(function () {
+      if ($(this).attr('nds-select') == 'true') {
+        $(this).select2({
+          minimumResultsForSearch: 10
+        });
+
+        if ($(this).val() != "") {
+          $(this).siblings('.select2-container').addClass('no-clear selection-made');
+        }
+      }
+    });
+    $('select').change(function (e, p) {
+      if ($(this).attr('nds-select') == 'true') {
+        if (!e.target.multiple) {
+          $(this).siblings('.select2-container').addClass('selection-made');
+
+          if (!$(this).siblings('.select2-container').find('.single-clear').length && $(this).attr('data-select-all-times') != "true") {
+            $(this).siblings('.select2-container').append('<button aria-label="Remove Chip" class="single-clear" tabindex="0"></button>');
+          }
+        } else {
+          $(this).find('option:selected').length > 0 ? $(this).siblings('.select2-container').addClass('selection-made-multi') : $(this).siblings('.select2-container').removeClass('selection-made-multi');
+        }
+      }
+    }); // Listener to Add Accessibility Compliance to Open Modals
+
+    $('select').on('select2:open', function (e) {
+      $('.select2-container').find('.select2-search__field').attr('aria-label', 'Search for choices');
+      $('.select2-container').find('.select2-results__options').attr('aria-label', 'Available choices');
+    }); // Add Accessibility Compliane to Loaded Select Field
+
+    $('.select2-selection--single').find('.select2-selection__rendered').attr('aria-label', 'Click to select option.');
+    $('.select2-selection--multiple').attr('aria-label', 'Click to select option(s).'); // Remove selection on click of "X"
+
+    $(document).on('click', '.single-clear', function (e) {
+      e.stopPropagation();
+      var $selectField = $(this).parent().siblings('select');
+      $selectField.prop('selectedIndex', 0);
+      var placeholder = $selectField.attr("data-placeholder");
+      $(this).parent().removeClass('selection-made');
+      $(this).siblings('.selection').find('.select2-selection__rendered').text(placeholder);
+      $(this).remove();
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputSelect = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-select').each(function () {
+            initInputSelect(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputSelect();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
+(function ($) {
+  // initLinkExternal - Adds external link icons to links that qualify as external.
+  function initLinkExternal() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var externalLinks = document.querySelectorAll('a');
+
+    for (var i = 0; i < externalLinks.length; i++) {
+      if (externalLinks[i].innerHTML != "") {
+        var url = externalLinks[i].getAttribute('href');
+        var hostname = externalLinks[i].hostname;
+
+        if (url && hostname !== location.hostname) {
+          url = url.toLowerCase();
+
+          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+            externalLinks[i].setAttribute('target', '_blank');
+            var linkIcon = document.createElement('a');
+            linkIcon.setAttribute('href', url);
+            linkIcon.setAttribute('class', "ext-link-icon");
+            linkIcon.setAttribute('aria-label', "External Link");
+            externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+          }
+        }
+      }
+    }
+  } // initLinkExternalMailto - Adds envelope icons to mailto links.
+
+
+  function initLinkExternalMailto() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+    for (var i = 0; i < mailtoLinks.length; i++) {
+      mailtoLinks[i].classList.add('link--external--mail');
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initLinks = {
+        attach: function attach(context) {
+          $("body", context).once('nds-links').each(function () {
+            initLinkExternal(context);
+            initLinkExternalMailto(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initLinkExternal();
+      initLinkExternalMailto();
+    });
+  }
+})(jQuery); // Dependencies
+//  - DataTables
+//  - jQuery
+
+
+(function ($) {
+  function initTableDefault() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    /* KEY
+        Sorting: Add data-tablesort="true" to the <table> tag.
+        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
+    */
+    $("table").each(function () {
+      if ($(this).attr('nds-datatable') == 'true') {
+        var defaultConfigs = {
+          "responsive": true,
+          "paging": false,
+          "info": false,
+          "autoWidth": false,
+          "searching": false
+        };
+
+        if (!($(this).attr('data-tablesort') == "true")) {
+          defaultConfigs['ordering'] = false;
+        } else {
+          // Determine Column Type
+          var columns = [];
+          $(this).find('thead').find('th').each(function (i) {
+            if ($(this).attr('data-column-num') == "true") {
+              columns.push({
+                "type": "natural",
+                "targets": i
+              });
+            }
+          });
+          defaultConfigs['columnDefs'] = columns;
+        }
+
+        $(this).dataTable(defaultConfigs);
+      }
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initTableDefault = {
+        attach: function attach(context) {
+          $("body", context).once('nds-table-default').each(function () {
+            initTableDefault(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initTableDefault();
+    });
+  }
+})(jQuery);

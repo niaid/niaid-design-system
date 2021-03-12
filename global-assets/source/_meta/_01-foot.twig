@@ -1,7 +1,6 @@
-        {% if prodBuild != "true" %}
-            <!-- Pattern Lab Footer -->
-            {{ patternLabFoot | raw }}
-        {% endif %}
+        <!-- build:remove -->
+        {{ patternLabFoot | raw }}
+        <!-- endbuild -->
 
         {% if jsIncludes.jquery %}<script src="{{ jsPath }}libraries/jquery/jquery.min.js"></script>{% endif %}
         {% if jsIncludes.select2 %}<script src="{{ jsPath }}libraries/select2/select2.full.min.js"></script>{% endif %}

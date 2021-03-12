@@ -1,6 +1,6 @@
 /* Gulp File
     Last Modified by: Jacob Caccamo
-    October 9, 2020
+    March 12, 2020
 */
 
 const gulp = require('gulp');
@@ -15,6 +15,7 @@ const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 const babel = require('gulp-babel');
 const replace = require('gulp-replace');
+const htmlreplace = require('gulp-html-replace')
 
 // copyFonts - Copy Font Awesome from node_modules into project.
 function copyFonts() {
@@ -111,7 +112,7 @@ gulp.task('serveProject', function() {
 gulp.task('default', gulp.series(copyFonts, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
 // GULP: buildProd - Compile your project assets and build public_html folder for deploy.
-gulp.task('buildProd', gulp.series(compileSass, compileJS, compilePatternLab, computePaths, moveAssets));
+gulp.task('build', gulp.series(compileSass, compileJS, compilePatternLab, computePaths, moveAssets));
 
 // buildDist - Build public_html folder for deploy.
 var pages = [];
@@ -154,6 +155,7 @@ function moveAssets() {
                 .pipe(replace('../../js', relativePath + 'js'))
                 .pipe(replace('../../images', relativePath + 'assets'))
                 .pipe(replace('../../assets', relativePath + 'assets'))
+                .pipe(htmlreplace({ remove : '' }))
                 .pipe(gulp.dest('./public_html/'));
         }
         else {
@@ -164,6 +166,7 @@ function moveAssets() {
                 .pipe(replace('../../js', relativePath + 'js'))
                 .pipe(replace('../../images', relativePath + 'assets'))
                 .pipe(replace('../../assets', relativePath + 'assets'))
+                .pipe(htmlreplace({ remove : '' }))
                 .pipe(gulp.dest('./public_html/' + pages[i].targetPath));
         }
     }
