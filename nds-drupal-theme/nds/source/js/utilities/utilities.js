@@ -11,3 +11,7 @@ function windowWidth() {
     var docElemProp = window.document.documentElement.clientWidth, body = window.document.body;
     return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
 }
+
+function hasClass(element, className) {
+    return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
+}

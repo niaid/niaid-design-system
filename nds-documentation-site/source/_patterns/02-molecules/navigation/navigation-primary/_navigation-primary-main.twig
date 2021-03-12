@@ -6,43 +6,61 @@
     {% block navigation_primary_content %}
         <div class="navigation--primary__inner">
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="{{ navigationPrimaryActiveLink == "get-started" ? "active" : "" }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Getting Started Section">
-                    Getting Started
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ links.getStarted }}">Overview</a>
-                    <a class="dropdown-item" href="{{ links.getStarted ~ '#section-quick-start' }}">Quick Start</a>
-                    <a class="dropdown-item" href="{{ links.getStarted ~ '#section-static-site-builder' }}">Static Site Builder</a>
-                    <a class="dropdown-item" href="{{ links.getStarted ~ '#section-nds-drupal-theme' }}">NDS Drupal Theme</a>
-                    <a class="dropdown-item" href="{{ links.getStarted ~ '#section-resources' }}">Resources</a>
-                </div>
+                {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
+                    {
+                        "navigation_dropdown_id": "dMenuGettingStarted",
+                        "navigation_dropdown_active_class": navigationPrimaryActiveLink == "get-started" ? "active" : "",
+                        "navigation_dropdown_toggle_text": "Getting Started",
+                        "navigation_dropdown_toggle_href": links.getStarted,
+                        "navigation_dropdown_toggle_aria_label": "Open Getting Started Section"
+                    }
+                %}
+                    {% block navigation_dropdown_content %}
+                        <a href="{{ links.getStarted ~ '#section-quick-start' }}">Quick Start</a>
+                        <a href="{{ links.getStarted ~ '#section-static-site-builder' }}">Static Site Builder</a>
+                        <a href="{{ links.getStarted ~ '#section-nds-drupal-theme' }}">NDS Drupal Theme</a>
+                        <a href="{{ links.getStarted ~ '#section-resources' }}">Resources</a>
+                    {% endblock %}
+                {% endembed %}
             </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="{{ navigationPrimaryActiveLink == "design" ? "active" : "" }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Design Section">
-                    Design
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ links.design }}">Overview</a>
-                    <a class="dropdown-item" href="{{ links.design ~ '#section-typography' }}">Typography</a>
-                    <a class="dropdown-item" href="{{ links.design ~ '#section-icons' }}">Icons</a>
-                    <a class="dropdown-item" href="{{ links.design ~ '#section-colors' }}">Colors</a>
-                    <a class="dropdown-item" href="{{ links.design ~ '#section-forms' }}">Forms &amp; Input</a>
-                    <a class="dropdown-item" href="{{ links.design ~ '#section-layout' }}">Layout &amp; Spacing</a>
-                    <a class="dropdown-item" href="{{ links.design ~ '#section-shadows' }}">Shadows</a>
-                    <a class="dropdown-item" href="{{ links.design ~ '#section-corners' }}">Corners</a>
-                </div>
+                {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
+                    {
+                        "navigation_dropdown_id": "dMenuDesign",
+                        "navigation_dropdown_active_class": navigationPrimaryActiveLink == "design" ? "active" : "",
+                        "navigation_dropdown_toggle_text": "Design",
+                        "navigation_dropdown_toggle_href": links.design,
+                        "navigation_dropdown_toggle_aria_label": "Open Design Section"
+                    }
+                %}
+                    {% block navigation_dropdown_content %}
+                        <a href="{{ links.design ~ '#section-typography' }}">Typography</a>
+                        <a href="{{ links.design ~ '#section-icons' }}">Icons</a>
+                        <a href="{{ links.design ~ '#section-colors' }}">Colors</a>
+                        <a href="{{ links.design ~ '#section-forms' }}">Forms &amp; Input</a>
+                        <a href="{{ links.design ~ '#section-layout' }}">Layout &amp; Spacing</a>
+                        <a href="{{ links.design ~ '#section-shadows' }}">Shadows</a>
+                        <a href="{{ links.design ~ '#section-corners' }}">Corners</a>
+                    {% endblock %}
+                {% endembed %}
             </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="{{ navigationPrimaryActiveLink == "development" ? "active" : "" }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Development Section">
-                    Development
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{{ links.development }}">Overview</a>
-                    <a class="dropdown-item" href="{{ links.development ~ '#section-atomic-design' }}">Atomic Design</a>
-                    <a class="dropdown-item" href="{{ links.development ~ '#section-technologies' }}">Technologies &amp; Frameworks</a>
-                    <a class="dropdown-item" href="{{ links.development ~ '#section-libraries' }}">Libraries</a>
-                    <a class="dropdown-item" href="{{ links.development ~ '#section-themes' }}">Themes</a>
-                </div>
+                {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
+                    {
+                        "navigation_dropdown_id": "dMenuDevelopment",
+                        "navigation_dropdown_active_class": navigationPrimaryActiveLink == "development" ? "active" : "",
+                        "navigation_dropdown_toggle_text": "Development",
+                        "navigation_dropdown_toggle_href": links.development,
+                        "navigation_dropdown_toggle_aria_label": "Open Development Section"
+                    }
+                %}
+                    {% block navigation_dropdown_content %}
+                        <a href="{{ links.development ~ '#section-atomic-design' }}">Atomic Design</a>
+                        <a href="{{ links.development ~ '#section-technologies' }}">Technologies &amp; Frameworks</a>
+                        <a href="{{ links.development ~ '#section-libraries' }}">Libraries</a>
+                        <a href="{{ links.development ~ '#section-themes' }}">Themes</a>
+                    {% endblock %}
+                {% endembed %}
             </div>
             <div class="navigation--primary__inner__item">
                 <a class="{{ navigationPrimaryActiveLink == "components" ? "active" : "" }}" href="{{ links.components }}">Components</a>

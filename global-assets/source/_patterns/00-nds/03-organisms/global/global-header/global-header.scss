@@ -1,6 +1,6 @@
 .global--header {
     position: relative;
-    z-index: 160;
+    z-index: $z-index-header;
     background: $page-background;
     padding: $s-1-50;
     display: flex;

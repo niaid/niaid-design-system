@@ -3,6 +3,7 @@ package-lock.json
 node_modules/**/*
 global-assets/node_modules/**/*
 global-assets/vendor/**/*
+global-assets/public/
 global-assets/dist/**/*
 global-assets/public/**/*
 !global-assets/dist/.gitignore

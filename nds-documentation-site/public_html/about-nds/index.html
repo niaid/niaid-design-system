@@ -37,7 +37,7 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
- id="text-heading" type="text"    >
+ id="text-heading" type="text" tabindex="-1"    >
                                     <option value="public-sans">Public Sans</option>
                 <option value="roboto">Roboto</option>
                 <option value="martel">Martel</option>
@@ -57,7 +57,7 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
- id="text-body" type="text"    >
+ id="text-body" type="text" tabindex="-1"    >
                                     <option value="public-sans">Public Sans</option>
                 <option value="roboto">Roboto</option>
             
@@ -75,7 +75,7 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
- id="color-select" type="text"    >
+ id="color-select" type="text" tabindex="-1"    >
                                     <option value="theme-1">Theme 1</option>
                 <option value="theme-2">Theme 2</option>
                 <option value="theme-3">Theme 3</option>
@@ -94,7 +94,7 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
- id="shadows" type="text"    >
+ id="shadows" type="text" tabindex="-1"    >
                                     <option value="flat">Flat</option>
                 <option value="shadows">Material</option>
             
@@ -112,13 +112,14 @@
 <div class="input-nds input--select ">
     <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true"        
 
- id="corners" type="text"    >
+ id="corners" type="text" tabindex="-1"    >
                                     <option value="straight">Sharp</option>
                 <option selected="selected" value="semirounded">Semi-Rounded</option>
                 <option value="rounded">Fully-Rounded</option>
             
             </select>
 </div></div>    </div>
+    <a class="skip-to skip-to--close" href="#" tabindex="-1">Skip to Close Button</a>
 </div>
 
 
@@ -127,14 +128,14 @@
             
 
 <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
         
 
 	
-<img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" />        <span>An official website of the United States government. Here's how you know.</span>
+<img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner/>        <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
         
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
+<i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
     </button>
     <div id="uswds-banner-content" class="component--uswds-banner__content container">
         <div class="row">
@@ -185,10 +186,10 @@
                 
 
 
-<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" >
+<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
             
 
-<i class="icon-nds icon--default fab fa-github "></i>
+<i class="icon-nds icon--default fab fa-github " ></i>
                 <span class="button--icon__text icon--left">NDS on GitHub</span>
         </a>    </div>
     
@@ -197,50 +198,53 @@
 <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu" >
             
 
-<i class="icon-nds icon--default fal fa-bars "></i>
+<i class="icon-nds icon--default fal fa-bars " ></i>
             </button></div>                
 
 <nav class="navigation-nds navigation--primary " id="main-navigation">
             <div class="navigation--primary__inner">
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Getting Started Section">
-                    Getting Started
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/getting-started/">Overview</a>
-                    <a class="dropdown-item" href="/getting-started/#section-quick-start">Quick Start</a>
-                    <a class="dropdown-item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
-                    <a class="dropdown-item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
-                    <a class="dropdown-item" href="/getting-started/#section-resources">Resources</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/getting-started/" id="dMenuGettingStarted" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Getting Started Section" data-display="static">Getting Started</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuGettingStarted">
+                                <a href="/getting-started/#section-quick-start">Quick Start</a>
+                        <a href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                        <a href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
+                        <a href="/getting-started/#section-resources">Resources</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Design Section">
-                    Design
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/design/">Overview</a>
-                    <a class="dropdown-item" href="/design/#section-typography">Typography</a>
-                    <a class="dropdown-item" href="/design/#section-icons">Icons</a>
-                    <a class="dropdown-item" href="/design/#section-colors">Colors</a>
-                    <a class="dropdown-item" href="/design/#section-forms">Forms &amp; Input</a>
-                    <a class="dropdown-item" href="/design/#section-layout">Layout &amp; Spacing</a>
-                    <a class="dropdown-item" href="/design/#section-shadows">Shadows</a>
-                    <a class="dropdown-item" href="/design/#section-corners">Corners</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/design/" id="dMenuDesign" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Design Section" data-display="static">Design</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuDesign">
+                                <a href="/design/#section-typography">Typography</a>
+                        <a href="/design/#section-icons">Icons</a>
+                        <a href="/design/#section-colors">Colors</a>
+                        <a href="/design/#section-forms">Forms &amp; Input</a>
+                        <a href="/design/#section-layout">Layout &amp; Spacing</a>
+                        <a href="/design/#section-shadows">Shadows</a>
+                        <a href="/design/#section-corners">Corners</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Development Section">
-                    Development
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/development/">Overview</a>
-                    <a class="dropdown-item" href="/development/#section-atomic-design">Atomic Design</a>
-                    <a class="dropdown-item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
-                    <a class="dropdown-item" href="/development/#section-libraries">Libraries</a>
-                    <a class="dropdown-item" href="/development/#section-themes">Themes</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/development/" id="dMenuDevelopment" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Development Section" data-display="static">Development</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuDevelopment">
+                                <a href="/development/#section-atomic-design">Atomic Design</a>
+                        <a href="/development/#section-technologies">Technologies &amp; Frameworks</a>
+                        <a href="/development/#section-libraries">Libraries</a>
+                        <a href="/development/#section-themes">Themes</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
                 <a class="" href="/components/">Components</a>
             </div>
@@ -258,7 +262,7 @@
 <button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary button--icon--small" aria-label="Close Global Menu" tabindex=-1>
             
 
-<i class="icon-nds icon--default fal fa-arrow-to-left "></i>
+<i class="icon-nds icon--default fal fa-arrow-to-left " ></i>
             </button>    </div>
             <div class="navigation--drawer__inner">
             <div class="navigation--drawer__inner__section">
@@ -313,13 +317,13 @@
                 <a tabindex="-1" class="" href="/builder/">Theme Builder</a>
             </div>
             <div class="navigation--drawer__inner__download">
-                 
+                
 
 
-<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" >
+<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
             
 
-<i class="icon-nds icon--default fab fa-github "></i>
+<i class="icon-nds icon--default fab fa-github " ></i>
                 <span class="button--icon__text icon--left">NDS on GitHub</span>
         </a>            </div>
         </div>
@@ -331,7 +335,7 @@
     <div class="button--floating__icon">
         
 
-<i class="icon-nds icon--default fal fa-palette "></i>
+<i class="icon-nds icon--default fal fa-palette " ></i>
     </div>
     <div class="button--floating__text">Customize Page Theme</div>
 </button>            <div class="main" role="main">
@@ -361,7 +365,7 @@
 <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light  button--icon--small" >
             
 
-<i class="icon-nds icon--default fab fa-github "></i>
+<i class="icon-nds icon--default fab fa-github " ></i>
                 <span class="button--icon__text icon--left">NDS on GitHub</span>
         </a>        </div></div>                        <hr class="my-4">
                         
@@ -375,7 +379,7 @@
                 <span class="button--icon__text icon--right">Getting Started</span>
                 
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
+<i class="icon-nds icon--default fas fa-chevron-right " ></i>
     </a>        </div>
     </div>                    </div>            
         </div>
@@ -418,7 +422,7 @@
             <p>
                 
 
-<i class="icon-nds icon--default fas fa-bolt "></i>
+<i class="icon-nds icon--default fas fa-bolt " ></i>
                 <span>Powered by the <a href="https://designsystem.niaid.nih.gov/">NIAID Design System</a></span>
             </p>
         </div>

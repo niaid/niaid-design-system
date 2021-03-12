@@ -1,0 +1,34 @@
+{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
+    {
+        "layouts_site_id": "index"
+    }
+%}
+    {% block header %}
+        {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
+        {% include "@nds/03-organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "Your Website Name"
+            }
+        %}
+    {% endblock %}
+    {% block global_navigation %}
+        {% include "@nds/02-molecules/navigation/navigation-primary/demo/navigation-primary.twig" %}
+        {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" %}
+            {% block left_column %}<span></span>{% endblock %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                    {% block body_content %}
+                        <h1 id="main-content">Home Page</h1>
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+            {% block right_column %}<span></span>{% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% include "@nds/03-organisms/global/global-footer/demo/global-footer.twig" %}
+    {% endblock %}
+{% endembed %}

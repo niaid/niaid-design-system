@@ -31,14 +31,14 @@
             
 
 <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
         
 
 	
-<img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" />        <span>An official website of the United States government. Here's how you know.</span>
+<img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner/>        <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
         
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
+<i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
     </button>
     <div id="uswds-banner-content" class="component--uswds-banner__content container">
         <div class="row">
@@ -89,10 +89,10 @@
                 
 
 
-<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" >
+<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
             
 
-<i class="icon-nds icon--default fab fa-github "></i>
+<i class="icon-nds icon--default fab fa-github " ></i>
                 <span class="button--icon__text icon--left">NDS on GitHub</span>
         </a>    </div>
     
@@ -101,50 +101,53 @@
 <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu" >
             
 
-<i class="icon-nds icon--default fal fa-bars "></i>
+<i class="icon-nds icon--default fal fa-bars " ></i>
             </button></div>                
 
 <nav class="navigation-nds navigation--primary " id="main-navigation">
             <div class="navigation--primary__inner">
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Getting Started Section">
-                    Getting Started
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/getting-started/">Overview</a>
-                    <a class="dropdown-item" href="/getting-started/#section-quick-start">Quick Start</a>
-                    <a class="dropdown-item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
-                    <a class="dropdown-item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
-                    <a class="dropdown-item" href="/getting-started/#section-resources">Resources</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/getting-started/" id="dMenuGettingStarted" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Getting Started Section" data-display="static">Getting Started</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuGettingStarted">
+                                <a href="/getting-started/#section-quick-start">Quick Start</a>
+                        <a href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                        <a href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
+                        <a href="/getting-started/#section-resources">Resources</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Design Section">
-                    Design
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/design/">Overview</a>
-                    <a class="dropdown-item" href="/design/#section-typography">Typography</a>
-                    <a class="dropdown-item" href="/design/#section-icons">Icons</a>
-                    <a class="dropdown-item" href="/design/#section-colors">Colors</a>
-                    <a class="dropdown-item" href="/design/#section-forms">Forms &amp; Input</a>
-                    <a class="dropdown-item" href="/design/#section-layout">Layout &amp; Spacing</a>
-                    <a class="dropdown-item" href="/design/#section-shadows">Shadows</a>
-                    <a class="dropdown-item" href="/design/#section-corners">Corners</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/design/" id="dMenuDesign" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Design Section" data-display="static">Design</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuDesign">
+                                <a href="/design/#section-typography">Typography</a>
+                        <a href="/design/#section-icons">Icons</a>
+                        <a href="/design/#section-colors">Colors</a>
+                        <a href="/design/#section-forms">Forms &amp; Input</a>
+                        <a href="/design/#section-layout">Layout &amp; Spacing</a>
+                        <a href="/design/#section-shadows">Shadows</a>
+                        <a href="/design/#section-corners">Corners</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Development Section">
-                    Development
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/development/">Overview</a>
-                    <a class="dropdown-item" href="/development/#section-atomic-design">Atomic Design</a>
-                    <a class="dropdown-item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
-                    <a class="dropdown-item" href="/development/#section-libraries">Libraries</a>
-                    <a class="dropdown-item" href="/development/#section-themes">Themes</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/development/" id="dMenuDevelopment" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Development Section" data-display="static">Development</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuDevelopment">
+                                <a href="/development/#section-atomic-design">Atomic Design</a>
+                        <a href="/development/#section-technologies">Technologies &amp; Frameworks</a>
+                        <a href="/development/#section-libraries">Libraries</a>
+                        <a href="/development/#section-themes">Themes</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
                 <a class="" href="/components/">Components</a>
             </div>
@@ -162,7 +165,7 @@
 <button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary button--icon--small" aria-label="Close Global Menu" tabindex=-1>
             
 
-<i class="icon-nds icon--default fal fa-arrow-to-left "></i>
+<i class="icon-nds icon--default fal fa-arrow-to-left " ></i>
             </button>    </div>
             <div class="navigation--drawer__inner">
             <div class="navigation--drawer__inner__section">
@@ -217,13 +220,13 @@
                 <a tabindex="-1" class="active" href="/builder/">Theme Builder</a>
             </div>
             <div class="navigation--drawer__inner__download">
-                 
+                
 
 
-<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" >
+<a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
             
 
-<i class="icon-nds icon--default fab fa-github "></i>
+<i class="icon-nds icon--default fab fa-github " ></i>
                 <span class="button--icon__text icon--left">NDS on GitHub</span>
         </a>            </div>
         </div>
@@ -236,22 +239,13 @@
         
 <div class="layouts-nds layouts--main fixed-left" id="builder__main">
             <div class="layouts--main__column layouts--main__first col-xl-3 col-lg-4">
-                            
-
-<div class="navigation-nds navigation--mobile-rail ">
-    
-
-<div class="component-nds component--accordion " id="navigation--mobile-rail">
-                <div id="navigation--mobile-rail__button">
-                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Theme Builder Menu</button>
-            </div>
-            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
-                                                            
+                                                    <h1 class="sr-only">Theme Builder</h1>
+                        
 <div class="builder-nds builder--side-drawer ">
     
 <div class="builder-nds builder--controls-accordion ">
     <button class="builder--controls-accordion__button" type="button" data-toggle="collapse" data-target="#prodID" aria-expanded="true" aria-controls="prodID">
-        <h2 class="builder--controls-accordion__button__title">Product Identity</h2>
+        <h2 class="builder--controls-accordion__button__title" id="main-content">Product Identity</h2>
         <div class="builder--controls-accordion__button__arrow">
             <div class="builder--controls-accordion__button__arrow__icon"></div>
         </div>
@@ -464,7 +458,7 @@
                                 <button type="button" class="component--modal__wrapper__content__header__close" data-dismiss="modal" aria-label="Close">
                     
 
-<i class="icon-nds icon--default fas fa-times "></i>
+<i class="icon-nds icon--default fas fa-times " ></i>
                 </button>
             </div>
                             <div class="component--modal__wrapper__content__body">
@@ -482,9 +476,7 @@
 
 <button class="button-nds waves-effect waves-light button--tertiary button--share-theme" role="button" >Share This Theme</button>    <div class="builder--side-drawer__copied">Theme Link Copied to Clipboard</div>
     <div class="builder--side-drawer__link"></div>
-</div>                    
-                            </div>
-        </div></div>            
+</div>                                
         </div>
                 <div class="layouts--main__column layouts--main__second col-xl-9 col-lg-8">
                             
@@ -510,7 +502,7 @@
 <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu" >
             
 
-<i class="icon-nds icon--default fas fa-bars "></i>
+<i class="icon-nds icon--default fas fa-bars " ></i>
             </button>                    
 
 <a href="/" class="component-nds component--branding ">
@@ -539,7 +531,7 @@
  id="form-sample-search-input-id-1" type="text" name="form-sample-search-input-name-1" placeholder="Searching for something..." aria-label="Sample Search Form">
     
 
-<i class="icon-nds icon--default fas fa-search "></i>
+<i class="icon-nds icon--default fas fa-search " ></i>
 </div>            <input class="form-submit" type="submit" value="Search">
         </form>
     </div>                    
@@ -548,7 +540,7 @@
 <button id="global-header-search--open" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Search" >
             
 
-<i class="icon-nds icon--default fas fa-search "></i>
+<i class="icon-nds icon--default fas fa-search " ></i>
             </button>                </div>                        
 
 <nav class="navigation-nds navigation--primary " id="main-navigation">
@@ -557,32 +549,23 @@
                 <a class="" href="#">Section 1</a>
             </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 2
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="#" id="navigation-primary-dropdown-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Section 2" data-display="static">Section 2</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="navigation-primary-dropdown-example">
+                                <a href="#">Item A</a>
+                        <a href="#">Item B</a>
+                        <a href="#">Item C</a>
+                        <a href="#">Item D</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 3
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
+                <a class="" href="#">Section 3</a>
             </div>
             <div class="navigation--primary__inner__item">
                 <a class="" href="#">Section 4</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="" href="#">Section 5</a>
             </div>
         </div>
     </nav>                        
@@ -612,10 +595,10 @@
 <div class="navigation-nds navigation--breadcrumbs ">
                     <a href="#"><span>Level 1</span></a>                    
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
+<i class="icon-nds icon--default fas fa-chevron-right " ></i>
                             <a href="#"><span>Level 2</span></a>                    
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
+<i class="icon-nds icon--default fas fa-chevron-right " ></i>
                             <a href="#"><span>Level 3</span></a>            </div>        <h1 class="block--header__title">Penatibus Elementum Integer Volutpat Condimentum</h1>
             
 
@@ -627,7 +610,7 @@
 <a href="#"  class="button-nds button--share button--share--facebook " aria-label="Share on Facebook" >
     
 
-<i class="icon-nds icon--default fab fa-facebook-f "></i>
+<i class="icon-nds icon--default fab fa-facebook-f " ></i>
 </a>        </div>
             <div class="block--share__wrapper">
             
@@ -636,7 +619,7 @@
 <a href="#"  class="button-nds button--share button--share--twitter " aria-label="Share on Twitter" >
     
 
-<i class="icon-nds icon--default fab fa-twitter "></i>
+<i class="icon-nds icon--default fab fa-twitter " ></i>
 </a>        </div>
             <div class="block--share__wrapper">
             
@@ -645,7 +628,7 @@
 <a href="#"  class="button-nds button--share button--share--linkedin " aria-label="Share on Linkedin" >
     
 
-<i class="icon-nds icon--default fab fa-linkedin-in "></i>
+<i class="icon-nds icon--default fab fa-linkedin-in " ></i>
 </a>        </div>
     </div>    </div>
 <p>Nunc cubilia vehicula facilisi hac volutpat sodales faucibus egestas gravida enim sociis ad quam quisque morbi id molestie gravida ullamcorper. Class mattis nisi eu per ridiculus nec a porta porta luctus felis fusce habitant platea sollicitudin Curae; aptent viverra nulla maecenas rutrum cras.</p>
@@ -725,7 +708,7 @@
             <p>
                 
 
-<i class="icon-nds icon--default fas fa-bolt "></i>
+<i class="icon-nds icon--default fas fa-bolt " ></i>
                 <span>Powered by the <a href="https://designsystem.niaid.nih.gov/">NIAID Design System</a></span>
             </p>
         </div>
@@ -745,7 +728,7 @@
 <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu" >
             
 
-<i class="icon-nds icon--default fas fa-bars "></i>
+<i class="icon-nds icon--default fas fa-bars " ></i>
             </button>            
 
 <a href="/" class="component-nds component--branding ">
@@ -774,7 +757,7 @@
  id="form-sample-search-input-id-2" type="text" name="form-sample-search-input-name-2" placeholder="Searching for something...">
     
 
-<i class="icon-nds icon--default fas fa-search "></i>
+<i class="icon-nds icon--default fas fa-search " ></i>
 </div>            <input class="form-submit" type="submit" value="Search">
         </form>
     </div>            
@@ -783,7 +766,7 @@
 <button id="global-header-search--open" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Search" >
             
 
-<i class="icon-nds icon--default fas fa-search "></i>
+<i class="icon-nds icon--default fas fa-search " ></i>
             </button>        </div>    
 
 <nav class="navigation-nds navigation--primary " id="main-navigation">
@@ -792,32 +775,23 @@
                 <a class="" href="#">Section 1</a>
             </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 2
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="#" id="navigation-primary-dropdown-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Section 2" data-display="static">Section 2</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="navigation-primary-dropdown-example">
+                                <a href="#">Item A</a>
+                        <a href="#">Item B</a>
+                        <a href="#">Item C</a>
+                        <a href="#">Item D</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 3
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
+                <a class="" href="#">Section 3</a>
             </div>
             <div class="navigation--primary__inner__item">
                 <a class="" href="#">Section 4</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="" href="#">Section 5</a>
             </div>
         </div>
     </nav>    <div class="container-fluid builder--style-tile__body">
@@ -879,7 +853,7 @@
  id="input-text-example-2" type="text" name="input-text-example" required>
     
 
-<i class="icon-nds icon--default fas fa-lock "></i>
+<i class="icon-nds icon--default fas fa-lock " ></i>
 </div></div>        </div>
     </div>
     <div class="row">
@@ -899,7 +873,7 @@
  id="input-text-example-3" type="text" name="input-text-example" placeholder="Enter value..." required>
     
 
-<i class="icon-nds icon--default fas fa-filter "></i>
+<i class="icon-nds icon--default fas fa-filter " ></i>
 </div></div>        </div>
         <div class="col-6">
             
@@ -917,7 +891,7 @@
  id="input-text-example-4" type="text" name="input-text-example" placeholder="Password" required>
     
 
-<i class="icon-nds icon--default fas fa-lock "></i>
+<i class="icon-nds icon--default fas fa-lock " ></i>
 </div></div>        </div>
     </div>
     <div class="row">
@@ -934,7 +908,7 @@
  id="form-sample-search-input-id" type="text" name="form-sample-search-input-name" placeholder="Searching for something..." aria-label="Sample Search Form">
     
 
-<i class="icon-nds icon--default fas fa-search "></i>
+<i class="icon-nds icon--default fas fa-search " ></i>
 </div>            <input class="form-submit" type="submit" value="Search">
         </form>
     </div>        </div>
@@ -949,41 +923,41 @@
 <label class="input-nds input--label " for="form-group-example" title="Choose Type(s) of Diseases/Conditions">Choose Type(s) of Diseases/Conditions
     </label>                        
 
-<div class="input-nds input--checkbox " tabindex="1">
+<div class="input-nds input--checkbox " tabindex="0">
     <input
         
 
- id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required    >
+ id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required    tabindex="-1">
     
 
 <label class="input-nds input--label " for="coronaviruses" title="Coronaviruses">Coronaviruses
     </label></div>                    
 
-<div class="input-nds input--checkbox " tabindex="1">
+<div class="input-nds input--checkbox " tabindex="0">
     <input
         
 
- id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg"    >
+ id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg"    tabindex="-1">
     
 
 <label class="input-nds input--label " for="ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
     </label></div>                    
 
-<div class="input-nds input--checkbox " tabindex="1">
+<div class="input-nds input--checkbox " tabindex="0">
     <input
         
 
- id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy"    >
+ id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy"    tabindex="-1">
     
 
 <label class="input-nds input--label " for="food-allergy" title="Food Allergy">Food Allergy
     </label></div>                    
 
-<div class="input-nds input--checkbox " tabindex="1">
+<div class="input-nds input--checkbox " tabindex="0">
     <input
         
 
- id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids"    >
+ id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids"    tabindex="-1">
     
 
 <label class="input-nds input--label " for="hiv-aids" title="HIV/AIDS">HIV/AIDS
@@ -997,41 +971,41 @@
 <label class="input-nds input--label " for="radio-disease-conditions" title="Choose Type of Diseases/Condition">Choose Type of Diseases/Condition
     </label>                        
 
-<div class="input-nds input--radio " tabindex="1">
+<div class="input-nds input--radio " tabindex="0">
     <input
         
 
- id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required    >
+ id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required    tabindex="-1">
     
 
 <label class="input-nds input--label " for="r-coronaviruses" title="Coronaviruses">Coronaviruses
     </label></div>                    
 
-<div class="input-nds input--radio " tabindex="1">
+<div class="input-nds input--radio " tabindex="0">
     <input
         
 
- id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg"    >
+ id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg"    tabindex="-1">
     
 
 <label class="input-nds input--label " for="r-ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
     </label></div>                    
 
-<div class="input-nds input--radio " tabindex="1">
+<div class="input-nds input--radio " tabindex="0">
     <input
         
 
- id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy"    >
+ id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy"    tabindex="-1">
     
 
 <label class="input-nds input--label " for="r-food-allergy" title="Food Allergy">Food Allergy
     </label></div>                    
 
-<div class="input-nds input--radio " tabindex="1">
+<div class="input-nds input--radio " tabindex="0">
     <input
         
 
- id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids"    >
+ id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids"    tabindex="-1">
     
 
 <label class="input-nds input--label " for="r-hiv-aids" title="HIV/AIDS">HIV/AIDS
@@ -1049,6 +1023,20 @@
 
 <div class="block-nds block--default  block--default--accent">
             <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
+    </div>
+
+<div class="spacer h-1"></div>
+
+<div class="block-nds block--default block--default--image ">
+            <div class="block--default__image">
+            
+
+	
+<img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Placeholder image" />        </div>
+        <div class="block--default__content">
+            <h2><a href="#">Default Block with Image</a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
     </div>                </div>
                 <div class="display-row">
                     <table nds-datatable="true" id="table-example" style="width:100%">
@@ -1272,7 +1260,7 @@
             <p>
                 
 
-<i class="icon-nds icon--default fas fa-bolt "></i>
+<i class="icon-nds icon--default fas fa-bolt " ></i>
                 <span>Powered by the <a href="https://designsystem.niaid.nih.gov/">NIAID Design System</a></span>
             </p>
         </div>
@@ -1318,7 +1306,7 @@
             <p>
                 
 
-<i class="icon-nds icon--default fas fa-bolt "></i>
+<i class="icon-nds icon--default fas fa-bolt " ></i>
                 <span>Powered by the <a href="https://designsystem.niaid.nih.gov/">NIAID Design System</a></span>
             </p>
         </div>

@@ -48,7 +48,7 @@
                 </label>
 
                 <div class="input-nds input--select ">
-                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="text-heading" type="text">
+                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="text-heading" type="text" tabindex="-1">
                         <option value="public-sans">Public Sans</option>
                         <option value="roboto">Roboto</option>
                         <option value="martel">Martel</option>
@@ -68,7 +68,7 @@
                 </label>
 
                 <div class="input-nds input--select ">
-                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="text-body" type="text">
+                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="text-body" type="text" tabindex="-1">
                         <option value="public-sans">Public Sans</option>
                         <option value="roboto">Roboto</option>
 
@@ -86,7 +86,7 @@
                 </label>
 
                 <div class="input-nds input--select ">
-                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="color-select" type="text">
+                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="color-select" type="text" tabindex="-1">
                         <option value="theme-1">Theme 1</option>
                         <option value="theme-2">Theme 2</option>
                         <option value="theme-3">Theme 3</option>
@@ -105,7 +105,7 @@
                 </label>
 
                 <div class="input-nds input--select ">
-                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="shadows" type="text">
+                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="shadows" type="text" tabindex="-1">
                         <option value="flat">Flat</option>
                         <option value="shadows">Material</option>
 
@@ -123,7 +123,7 @@
                 </label>
 
                 <div class="input-nds input--select ">
-                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="corners" type="text">
+                    <select class="input--select__field" nds-select="true" data-placeholder="" data-select-all-times="true" id="corners" type="text" tabindex="-1">
                         <option value="straight">Sharp</option>
                         <option selected="selected" value="semirounded">Semi-Rounded</option>
                         <option value="rounded">Fully-Rounded</option>
@@ -132,6 +132,7 @@
                 </div>
             </div>
         </div>
+        <a class="skip-to skip-to--close" href="#" tabindex="-1">Skip to Close Button</a>
     </div>
 
 
@@ -140,14 +141,14 @@
 
 
         <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-            <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+            <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
 
 
 
-                <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" /> <span>An official website of the United States government. Here's how you know.</span>
+                <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner /> <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
 
 
-                <i class="icon-nds icon--default fas fa-chevron-right "></i>
+                <i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
             </button>
             <div id="uswds-banner-content" class="component--uswds-banner__content container">
                 <div class="row">
@@ -203,7 +204,7 @@
 
 
 
-                <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub">
+                <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
 
 
                     <i class="icon-nds icon--default fab fa-github "></i>
@@ -223,42 +224,48 @@
         <nav class="navigation-nds navigation--primary " id="main-navigation">
             <div class="navigation--primary__inner">
                 <div class="navigation--primary__inner__item">
-                    <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Getting Started Section">
-                        Getting Started
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/getting-started/">Overview</a>
-                        <a class="dropdown-item" href="/getting-started/#section-quick-start">Quick Start</a>
-                        <a class="dropdown-item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
-                        <a class="dropdown-item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
-                        <a class="dropdown-item" href="/getting-started/#section-resources">Resources</a>
+
+
+
+                    <div class="navigation-nds navigation--dropdown  hover">
+                        <a href="/getting-started/" id="dMenuGettingStarted" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Getting Started Section" data-display="static">Getting Started</a>
+                        <div class="navigation--dropdown__menu" aria-labelledby="dMenuGettingStarted">
+                            <a href="/getting-started/#section-quick-start">Quick Start</a>
+                            <a href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                            <a href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
+                            <a href="/getting-started/#section-resources">Resources</a>
+                        </div>
                     </div>
                 </div>
                 <div class="navigation--primary__inner__item">
-                    <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Design Section">
-                        Design
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/design/">Overview</a>
-                        <a class="dropdown-item" href="/design/#section-typography">Typography</a>
-                        <a class="dropdown-item" href="/design/#section-icons">Icons</a>
-                        <a class="dropdown-item" href="/design/#section-colors">Colors</a>
-                        <a class="dropdown-item" href="/design/#section-forms">Forms &amp; Input</a>
-                        <a class="dropdown-item" href="/design/#section-layout">Layout &amp; Spacing</a>
-                        <a class="dropdown-item" href="/design/#section-shadows">Shadows</a>
-                        <a class="dropdown-item" href="/design/#section-corners">Corners</a>
+
+
+
+                    <div class="navigation-nds navigation--dropdown  hover">
+                        <a href="/design/" id="dMenuDesign" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Design Section" data-display="static">Design</a>
+                        <div class="navigation--dropdown__menu" aria-labelledby="dMenuDesign">
+                            <a href="/design/#section-typography">Typography</a>
+                            <a href="/design/#section-icons">Icons</a>
+                            <a href="/design/#section-colors">Colors</a>
+                            <a href="/design/#section-forms">Forms &amp; Input</a>
+                            <a href="/design/#section-layout">Layout &amp; Spacing</a>
+                            <a href="/design/#section-shadows">Shadows</a>
+                            <a href="/design/#section-corners">Corners</a>
+                        </div>
                     </div>
                 </div>
                 <div class="navigation--primary__inner__item">
-                    <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Development Section">
-                        Development
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/development/">Overview</a>
-                        <a class="dropdown-item" href="/development/#section-atomic-design">Atomic Design</a>
-                        <a class="dropdown-item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
-                        <a class="dropdown-item" href="/development/#section-libraries">Libraries</a>
-                        <a class="dropdown-item" href="/development/#section-themes">Themes</a>
+
+
+
+                    <div class="navigation-nds navigation--dropdown  hover">
+                        <a href="/development/" id="dMenuDevelopment" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Development Section" data-display="static">Development</a>
+                        <div class="navigation--dropdown__menu" aria-labelledby="dMenuDevelopment">
+                            <a href="/development/#section-atomic-design">Atomic Design</a>
+                            <a href="/development/#section-technologies">Technologies &amp; Frameworks</a>
+                            <a href="/development/#section-libraries">Libraries</a>
+                            <a href="/development/#section-themes">Themes</a>
+                        </div>
                     </div>
                 </div>
                 <div class="navigation--primary__inner__item">
@@ -337,7 +344,7 @@
 
 
 
-                    <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub">
+                    <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
 
 
                         <i class="icon-nds icon--default fab fa-github "></i>
@@ -410,7 +417,7 @@
                     <div class="layouts-nds layouts--body ">
 
                         <div id="section-components-atoms" class="component-nds component--scrollspy-section scrollspy section ">
-                            <h1>Components</h1>
+                            <h1 id="main-content">Components</h1>
                             <p>NDS components can be used on any type of project. We have provided information on available NDS components and, where relevant, additional documentation to support your development. Simply include the global NDS JS and CSS files in your website to get started!</p>
 
                             <div class="block--files container-fluid ">
@@ -563,7 +570,7 @@
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
                                             <p>The Default Button pattern supports both buttons and links. Links are created automatically if the button_default_href attribute is passed. If omitted, the resulting output will be a button element.</p>
-                                            <p>To use one of the styles below, pass the "button_default_type" parameter the desired style ("primary", "secondary", "tertiary", or "negative").</p>
+                                            <p>To use one of the styles below, pass the "button_default_type" parameter to the desired style ("primary", "secondary", "tertiary", or "negative").</p>
                                             <p>These button styles can also be applied to other button components by passing the desired classes (i.e. button--primary) to the pattern. See below for examples of using various button styles on other button components.</p>
                                             <h5>Parameters</h5>
                                             <ul>
@@ -624,7 +631,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -681,7 +687,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -858,7 +863,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -918,7 +922,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -986,7 +989,7 @@
 
 
 
-                                                            <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" /> <span class="button--image__text">Follow Jane</span>
+                                                            <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Example of an avatar or headshot image." /> <span class="button--image__text">Follow Jane</span>
                                                         </button>
                                                     </div>
                                                     <div class="col">
@@ -996,7 +999,7 @@
 
 
 
-                                                            <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" /> <span class="button--image__text">Follow Jane</span>
+                                                            <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Example of an avatar or headshot image." /> <span class="button--image__text">Follow Jane</span>
                                                         </button>
                                                     </div>
                                                     <div class="col">
@@ -1006,12 +1009,11 @@
 
 
 
-                                                            <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" /> <span class="button--image__text">Follow Jane</span>
+                                                            <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Example of an avatar or headshot image." /> <span class="button--image__text">Follow Jane</span>
                                                         </button>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -1043,7 +1045,7 @@
 
 
 
-                                                                <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" /> <span class="button--image__text">Follow Jane</span>
+                                                                <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Example of an avatar or headshot image." /> <span class="button--image__text">Follow Jane</span>
                                                             </button>
                                                         </div>
                                                         <div class="col">
@@ -1053,7 +1055,7 @@
 
 
 
-                                                                <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" /> <span class="button--image__text">Follow Jane</span>
+                                                                <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Example of an avatar or headshot image." /> <span class="button--image__text">Follow Jane</span>
                                                             </button>
                                                         </div>
                                                         <div class="col">
@@ -1063,12 +1065,11 @@
 
 
 
-                                                                <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Jane Public" /> <span class="button--image__text">Follow Jane</span>
+                                                                <img class="image-nds image--default " src="../assets/global/sample/avatar_circle.png" alt="Example of an avatar or headshot image." /> <span class="button--image__text">Follow Jane</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -1364,7 +1365,7 @@
 
                             <p>If you have access to Font Awesome Pro, a "Light" icon style (fal) and a Duotone icon style (fad) are also supported.</p>
 
-                            <p>NDS makes using Font Awesome icons easy through its icon-default pattern. This pattern has two key parameters: icon_default_type, and icon_default_weight. For the icon_default_type, simply pass the name of the icon (without the fa-). For weight, pass only the letter corresponding to the desired icon weight:</p>
+                            <p>NDS makes using Font Awesome icons easy through its icon-default pattern. This pattern has two key parameters: icon_default_type and icon_default_weight. For the icon_default_type, simply pass the name of the icon (without the fa-). For weight, pass only the letter corresponding to the desired icon weight:</p>
 
                             <ul>
                                 <li>Solid - <code>s</code></li>
@@ -1469,6 +1470,7 @@
                                                     </ul>
                                                 </li>
                                                 <li>icon_default_sr_text: Optional text for screen readers only.</li>
+                                                <li>icon_default_attributes: Additional icon attributes.</li>
                                             </ul>
 
                                         </div>
@@ -2771,7 +2773,7 @@
 
                         <div id="section-components-atoms-tables" class="component-nds component--scrollspy-section scrollspy section ">
                             <h3>Tables</h3>
-                            <p>Tables on the web can be challenging in terms of accessibility and responsive. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables to improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initialize the responsive functionality of Datatables.</p>
+                            <p>Tables on the web can be challenging in terms of accessibility and responsiveness. NDS employs <a href="https://datatables.net/">DataTables</a> to create properly formatted, simple tables to improve the experience of tables across devices. Adding the custom attribute nds-datatable="true" to the table tag will initialize the responsive functionality of Datatables.</p>
 
                             <div class="block-nds block--dependencies ">
                                 <div class="block--dependencies__label">Dependencies:</div>
@@ -2922,7 +2924,7 @@
 
 
                                             <blockquote class="text-nds text--blockquote ">
-                                                <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
+                                                <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document that is set off from the main text as a paragraph, or block of text and typically distinguished visually using indentation and a different typeface or smaller size font.</p>
                                             </blockquote>
 
                                         </div>
@@ -2950,7 +2952,7 @@
 
 
                                                 <blockquote class="text-nds text--blockquote ">
-                                                    <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
+                                                    <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document that is set off from the main text as a paragraph, or block of text and typically distinguished visually using indentation and a different typeface or smaller size font.</p>
                                                 </blockquote>
 
                                             </div>
@@ -3441,6 +3443,21 @@
                                             <div class="block-nds block--default  block--default--accent">
                                                 <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
                                             </div>
+
+                                            <div class="spacer h-1"></div>
+
+                                            <div class="block-nds block--default block--default--image ">
+                                                <div class="block--default__image">
+
+
+
+                                                    <img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Placeholder image" />
+                                                </div>
+                                                <div class="block--default__content">
+                                                    <h2><a href="#">Default Block with Image</a></h2>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -3473,6 +3490,21 @@
 
                                                 <div class="block-nds block--default  block--default--accent">
                                                     <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
+                                                </div>
+
+                                                <div class="spacer h-1"></div>
+
+                                                <div class="block-nds block--default block--default--image ">
+                                                    <div class="block--default__image">
+
+
+
+                                                        <img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Placeholder image" />
+                                                    </div>
+                                                    <div class="block--default__content">
+                                                        <h2><a href="#">Default Block with Image</a></h2>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
@@ -3832,7 +3864,7 @@
                                 </div>
                             </div>
                             <h4>Alert Block</h4>
-                            <p>Alerts are used to display important, need to know information to site users. NDS offers four alert severity blocks. Alerts are for high priority messaging that requires immediate notification only. Only one alert can show at any time.</p>
+                            <p>Alerts are used to display important, need to know information to site users. NDS offers four alert severity blocks. Alerts are only for high priority messaging that requires immediate notification. Only one alert can show at any time.</p>
                             <p>Examples of Alerts include:</p>
                             <ul>
                                 <li>System outages</li>
@@ -3842,10 +3874,10 @@
                             </ul>
                             <p>Alert severity standards are defined below:</p>
                             <ul>
-                                <li>Severity One (Red): </li>
-                                <li>Severity Two (Orange): </li>
-                                <li>Severity Three (Yellow): </li>
-                                <li>Severity Four (Green): </li>
+                                <li>Severity One (Red)</li>
+                                <li>Severity Two (Orange)</li>
+                                <li>Severity Three (Yellow)</li>
+                                <li>Severity Four (Green)</li>
                             </ul>
 
                             <p class="text-nds text--uswds ">
@@ -4171,7 +4203,7 @@
                                 </div>
                             </div>
                             <h4>Hero Block</h4>
-                            <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a parallax effect courtest of the <a href="https://materializecss.com/parallax.html">Materialize library.</a></p>
+                            <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a parallax effect courtesy of the <a href="https://materializecss.com/parallax.html">Materialize library.</a></p>
                             <p>When selecting imagery for the Hero block, we recommend images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
                             <p>The Hero Block pattern optionally includes the ability to add breadcrumbs to the top.</p>
 
@@ -4817,14 +4849,14 @@
 
 
                                             <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-                                                <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+                                                <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
 
 
 
-                                                    <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" /> <span>An official website of the United States government. Here's how you know.</span>
+                                                    <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner /> <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
 
 
-                                                    <i class="icon-nds icon--default fas fa-chevron-right "></i>
+                                                    <i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
                                                 </button>
                                                 <div id="uswds-banner-content" class="component--uswds-banner__content container">
                                                     <div class="row">
@@ -4880,14 +4912,14 @@
 
 
                                                 <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-                                                    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+                                                    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
 
 
 
-                                                        <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" /> <span>An official website of the United States government. Here's how you know.</span>
+                                                        <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner /> <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
 
 
-                                                        <i class="icon-nds icon--default fas fa-chevron-right "></i>
+                                                        <i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
                                                     </button>
                                                     <div id="uswds-banner-content" class="component--uswds-banner__content container">
                                                         <div class="row">
@@ -5442,32 +5474,32 @@
                                                 <label class="input-nds input--label " for="form-group-example" title="Choose Type(s) of Diseases/Conditions">Choose Type(s) of Diseases/Conditions
                                                 </label>
 
-                                                <div class="input-nds input--checkbox " tabindex="1">
-                                                    <input id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required>
+                                                <div class="input-nds input--checkbox " tabindex="0">
+                                                    <input id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required tabindex="-1">
 
 
                                                     <label class="input-nds input--label " for="coronaviruses" title="Coronaviruses">Coronaviruses
                                                     </label>
                                                 </div>
 
-                                                <div class="input-nds input--checkbox " tabindex="1">
-                                                    <input id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg">
+                                                <div class="input-nds input--checkbox " tabindex="0">
+                                                    <input id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg" tabindex="-1">
 
 
                                                     <label class="input-nds input--label " for="ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
                                                     </label>
                                                 </div>
 
-                                                <div class="input-nds input--checkbox " tabindex="1">
-                                                    <input id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy">
+                                                <div class="input-nds input--checkbox " tabindex="0">
+                                                    <input id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy" tabindex="-1">
 
 
                                                     <label class="input-nds input--label " for="food-allergy" title="Food Allergy">Food Allergy
                                                     </label>
                                                 </div>
 
-                                                <div class="input-nds input--checkbox " tabindex="1">
-                                                    <input id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids">
+                                                <div class="input-nds input--checkbox " tabindex="0">
+                                                    <input id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids" tabindex="-1">
 
 
                                                     <label class="input-nds input--label " for="hiv-aids" title="HIV/AIDS">HIV/AIDS
@@ -5504,32 +5536,32 @@
                                                     <label class="input-nds input--label " for="form-group-example" title="Choose Type(s) of Diseases/Conditions">Choose Type(s) of Diseases/Conditions
                                                     </label>
 
-                                                    <div class="input-nds input--checkbox " tabindex="1">
-                                                        <input id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required>
+                                                    <div class="input-nds input--checkbox " tabindex="0">
+                                                        <input id="coronaviruses" type="checkbox" name="form-group-example" value="coronaviruses" required tabindex="-1">
 
 
                                                         <label class="input-nds input--label " for="coronaviruses" title="Coronaviruses">Coronaviruses
                                                         </label>
                                                     </div>
 
-                                                    <div class="input-nds input--checkbox " tabindex="1">
-                                                        <input id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg">
+                                                    <div class="input-nds input--checkbox " tabindex="0">
+                                                        <input id="ebola-marburg" type="checkbox" name="form-group-example" value="ebola-marburg" tabindex="-1">
 
 
                                                         <label class="input-nds input--label " for="ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
                                                         </label>
                                                     </div>
 
-                                                    <div class="input-nds input--checkbox " tabindex="1">
-                                                        <input id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy">
+                                                    <div class="input-nds input--checkbox " tabindex="0">
+                                                        <input id="food-allergy" type="checkbox" name="form-group-example" value="food-allergy" tabindex="-1">
 
 
                                                         <label class="input-nds input--label " for="food-allergy" title="Food Allergy">Food Allergy
                                                         </label>
                                                     </div>
 
-                                                    <div class="input-nds input--checkbox " tabindex="1">
-                                                        <input id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids">
+                                                    <div class="input-nds input--checkbox " tabindex="0">
+                                                        <input id="hiv-aids" type="checkbox" name="form-group-example" value="hiv-aids" tabindex="-1">
 
 
                                                         <label class="input-nds input--label " for="hiv-aids" title="HIV/AIDS">HIV/AIDS
@@ -5596,32 +5628,32 @@
                                                 <label class="input-nds input--label " for="radio-disease-conditions" title="Choose Type of Diseases/Condition">Choose Type of Diseases/Condition
                                                 </label>
 
-                                                <div class="input-nds input--radio " tabindex="1">
-                                                    <input id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required>
+                                                <div class="input-nds input--radio " tabindex="0">
+                                                    <input id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required tabindex="-1">
 
 
                                                     <label class="input-nds input--label " for="r-coronaviruses" title="Coronaviruses">Coronaviruses
                                                     </label>
                                                 </div>
 
-                                                <div class="input-nds input--radio " tabindex="1">
-                                                    <input id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg">
+                                                <div class="input-nds input--radio " tabindex="0">
+                                                    <input id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg" tabindex="-1">
 
 
                                                     <label class="input-nds input--label " for="r-ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
                                                     </label>
                                                 </div>
 
-                                                <div class="input-nds input--radio " tabindex="1">
-                                                    <input id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy">
+                                                <div class="input-nds input--radio " tabindex="0">
+                                                    <input id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy" tabindex="-1">
 
 
                                                     <label class="input-nds input--label " for="r-food-allergy" title="Food Allergy">Food Allergy
                                                     </label>
                                                 </div>
 
-                                                <div class="input-nds input--radio " tabindex="1">
-                                                    <input id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids">
+                                                <div class="input-nds input--radio " tabindex="0">
+                                                    <input id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids" tabindex="-1">
 
 
                                                     <label class="input-nds input--label " for="r-hiv-aids" title="HIV/AIDS">HIV/AIDS
@@ -5658,32 +5690,32 @@
                                                     <label class="input-nds input--label " for="radio-disease-conditions" title="Choose Type of Diseases/Condition">Choose Type of Diseases/Condition
                                                     </label>
 
-                                                    <div class="input-nds input--radio " tabindex="1">
-                                                        <input id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required>
+                                                    <div class="input-nds input--radio " tabindex="0">
+                                                        <input id="r-coronaviruses" type="radio" name="radio-disease-conditions" value="coronaviruses" required tabindex="-1">
 
 
                                                         <label class="input-nds input--label " for="r-coronaviruses" title="Coronaviruses">Coronaviruses
                                                         </label>
                                                     </div>
 
-                                                    <div class="input-nds input--radio " tabindex="1">
-                                                        <input id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg">
+                                                    <div class="input-nds input--radio " tabindex="0">
+                                                        <input id="r-ebola-marburg" type="radio" name="radio-disease-conditions" value="ebola-marburg" tabindex="-1">
 
 
                                                         <label class="input-nds input--label " for="r-ebola-marburg" title="Ebola &amp; Marburg">Ebola &amp; Marburg
                                                         </label>
                                                     </div>
 
-                                                    <div class="input-nds input--radio " tabindex="1">
-                                                        <input id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy">
+                                                    <div class="input-nds input--radio " tabindex="0">
+                                                        <input id="r-food-allergy" type="radio" name="radio-disease-conditions" value="food-allergy" tabindex="-1">
 
 
                                                         <label class="input-nds input--label " for="r-food-allergy" title="Food Allergy">Food Allergy
                                                         </label>
                                                     </div>
 
-                                                    <div class="input-nds input--radio " tabindex="1">
-                                                        <input id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids">
+                                                    <div class="input-nds input--radio " tabindex="0">
+                                                        <input id="r-hiv-aids" type="radio" name="radio-disease-conditions" value="hiv-aids" tabindex="-1">
 
 
                                                         <label class="input-nds input--label " for="r-hiv-aids" title="HIV/AIDS">HIV/AIDS
@@ -6211,32 +6243,24 @@
                                                         <a class="" href="#">Section 1</a>
                                                     </div>
                                                     <div class="navigation--primary__inner__item">
-                                                        <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Section 2
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Item A</a>
-                                                            <a class="dropdown-item" href="#">Item B</a>
-                                                            <a class="dropdown-item" href="#">Item C</a>
-                                                            <a class="dropdown-item" href="#">Item D</a>
+
+
+
+                                                        <div class="navigation-nds navigation--dropdown  hover">
+                                                            <a href="#" id="navigation-primary-dropdown-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Section 2" data-display="static">Section 2</a>
+                                                            <div class="navigation--dropdown__menu" aria-labelledby="navigation-primary-dropdown-example">
+                                                                <a href="#">Item A</a>
+                                                                <a href="#">Item B</a>
+                                                                <a href="#">Item C</a>
+                                                                <a href="#">Item D</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="navigation--primary__inner__item">
-                                                        <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Section 3
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Item A</a>
-                                                            <a class="dropdown-item" href="#">Item B</a>
-                                                            <a class="dropdown-item" href="#">Item C</a>
-                                                            <a class="dropdown-item" href="#">Item D</a>
-                                                        </div>
+                                                        <a class="" href="#">Section 3</a>
                                                     </div>
                                                     <div class="navigation--primary__inner__item">
                                                         <a class="" href="#">Section 4</a>
-                                                    </div>
-                                                    <div class="navigation--primary__inner__item">
-                                                        <a class="" href="#">Section 5</a>
                                                     </div>
                                                 </div>
                                             </nav>
@@ -6270,32 +6294,24 @@
                                                             <a class="" href="#">Section 1</a>
                                                         </div>
                                                         <div class="navigation--primary__inner__item">
-                                                            <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                Section 2
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Item A</a>
-                                                                <a class="dropdown-item" href="#">Item B</a>
-                                                                <a class="dropdown-item" href="#">Item C</a>
-                                                                <a class="dropdown-item" href="#">Item D</a>
+
+
+
+                                                            <div class="navigation-nds navigation--dropdown  hover">
+                                                                <a href="#" id="navigation-primary-dropdown-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Section 2" data-display="static">Section 2</a>
+                                                                <div class="navigation--dropdown__menu" aria-labelledby="navigation-primary-dropdown-example">
+                                                                    <a href="#">Item A</a>
+                                                                    <a href="#">Item B</a>
+                                                                    <a href="#">Item C</a>
+                                                                    <a href="#">Item D</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="navigation--primary__inner__item">
-                                                            <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                Section 3
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Item A</a>
-                                                                <a class="dropdown-item" href="#">Item B</a>
-                                                                <a class="dropdown-item" href="#">Item C</a>
-                                                                <a class="dropdown-item" href="#">Item D</a>
-                                                            </div>
+                                                            <a class="" href="#">Section 3</a>
                                                         </div>
                                                         <div class="navigation--primary__inner__item">
                                                             <a class="" href="#">Section 4</a>
-                                                        </div>
-                                                        <div class="navigation--primary__inner__item">
-                                                            <a class="" href="#">Section 5</a>
                                                         </div>
                                                     </div>
                                                 </nav>
@@ -6322,8 +6338,8 @@
                                         </button>
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Overview</h5>
-                                            <p>Although it is possible to use the NDS out-of-the-box component for Primary Navigation, it is likely you will need to customize the pattern for your particular site. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes without altering the original NDS component.</p>
-                                            <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup, using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
+                                            <p>Although it is possible to use the NDS out-of-the-box component for Primary Navigation, it is likely you will need to customize the pattern for your particular site. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory and paste it into your 02-molecules/ directory. Then you can freely make changes without altering the original NDS component.</p>
+                                            <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
                                             <h5>Blocks</h5>
                                             <ul>
                                                 <li>&#123;% block navigation_primary_content %&#125;: The block holding the navigation markup.</li>
@@ -6332,6 +6348,112 @@
                                             <ul>
                                                 <li>navigation_primary_classes: Additional classes for the navigation component.</li>
                                                 <li>navigation_primary_id: Navigation component ID.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Navigation Dropdown</h4>
+                            <p>The Navigation Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
+
+                            <div class="block-nds block--dependencies ">
+                                <div class="block--dependencies__label">Dependencies:</div>
+                                <p>In order to use this component, you must include the following libraries in addition to the NDS Global JS:</p>
+
+
+                                <span class="text-nds text--badge ">jQuery</span>
+                            </div>
+                            <div class="component-nds component--snippet  no-render">
+                                <div class="component--snippet__block">
+                                    <div class="component--snippet__block__code">
+                                        <div class="component--snippet__block__code__loader">
+
+
+                                            <div class="icon-nds icon--loader " role="alert" aria-label="Loading" aria-busy="true">
+                                                <div class="preloader-wrapper small active">
+                                                    <div class="spinner-layer">
+                                                        <div class="circle-clipper left">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="gap-patch">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="circle-clipper right">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="component--snippet__block__code__wrapper">
+                                            <div class="component--snippet__block__code__wrapper__snippet">
+                                                <div class="container-fluid demo">
+                                                    <div class="row">
+                                                        <div class="col">
+
+
+
+                                                            <div class="navigation-nds navigation--dropdown ">
+                                                                <button id="navigation-dropdown-click-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Dropdown" data-display="static">Click Dropdown</button>
+                                                                <div class="navigation--dropdown__menu" aria-labelledby="navigation-dropdown-click-example">
+                                                                    <a href="#">Dropdown Item A</a>
+                                                                    <a href="#">Dropdown Item B</a>
+                                                                    <a href="#">Dropdown Item C</a>
+                                                                    <a href="#">Dropdown Item D</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+
+
+
+                                                            <div class="navigation-nds navigation--dropdown  hover">
+                                                                <a href="#" id="navigation-dropdown-hover-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Dropdown" data-display="static">Hover Dropdown</a>
+                                                                <div class="navigation--dropdown__menu" aria-labelledby="navigation-dropdown-hover-example">
+                                                                    <a href="#">Dropdown Item A</a>
+                                                                    <a href="#">Dropdown Item B</a>
+                                                                    <a href="#">Dropdown Item C</a>
+                                                                    <a href="#">Dropdown Item D</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="component--snippet__block__code__wrapper__button">
+                                                <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
+
+
+
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-navigation-dropdown>
+
+
+                                                    <i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                                                    <span class="button--icon__text icon--left">Copy</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle" data-content="accordion-navigation-dropdown"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block navigation_dropdown_content %&#125;: The block holding the dropdown link options These links should be plain with only a text label and href value.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>navigation_dropdown_classes: Additional classes for the navigation component.</li>
+                                                <li>navigation_dropdown_id: Navigation component ID.</li>
+                                                <li>navigation_dropdown_toggle_href: Optional URL for the dropdown toggle button. Passing a value to this parameter will automatically make the dropdown hover-activated.</li>
+                                                <li>navigation_dropdown_toggle_text: The text to appear on the dropdown button.</li>
+                                                <li>navigation_dropdown_toggle_aria_label: Required ARIA label to explain the section to be opened/closed.</li>
+                                                <li>navigation_dropdown_active_class: Optional class used in the primary navigation component to signal that the current dropdown is selected.</li>
                                             </ul>
 
                                         </div>
@@ -6634,7 +6756,7 @@
                                                     </div>
                                                     <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
                                                 </div>
-                                                <div class="navigation--drawer--overlay" tabindex="0"></div>
+                                                <div class="navigation--drawer--overlay" tabindex="-1"></div>
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
@@ -6823,7 +6945,7 @@
                                                     </a>
 
 
-                                                    <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu">
+                                                    <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu" data-nav=header-nav-global-menu-button>
 
 
                                                         <i class="icon-nds icon--default fas fa-bars "></i>
@@ -7141,7 +7263,7 @@
                                 </div>
                             </div>
                             <h4>Featured Content Cards View</h4>
-                            <p>Featured Content Cards are excellent for highlighting information, but too many can be overwhelming and reduce the relative importance of each card. We recommend no more thantwo or three cards be used with the Featured Content Cards View.</p>
+                            <p>Featured Content Cards are excellent for highlighting information, but too many can be overwhelming and reduce the relative importance of each card. We recommend no more than two or three cards be used with the Featured Content Cards View.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">

@@ -103,6 +103,18 @@ $layout-main-max-width: 1800px;
 $layout-body-max-width: 1200px;
 $layout-type-max-width: 88ex;
 
+/**** Z-Index ****/
+$z-index-below-baseline: -100;
+$z-index-baseline: 0;
+$z-index-above-baseline: 100;
+$z-index-mobile-rail: 200;
+$z-index-navigation-primary: 300;
+$z-index-header: 400;
+$z-index-drawer: 500;
+$z-index-button-floating: 600;
+$z-index-modal: 700;
+$z-index-dropdown: 800;
+
 /**** SPACING & SIZING ****/
 $base-size-pixels: 16;
 $base-spacer: 1rem;

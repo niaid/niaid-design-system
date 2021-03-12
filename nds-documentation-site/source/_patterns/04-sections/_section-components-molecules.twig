@@ -137,7 +137,7 @@
         {% endembed %}
 
         <h4>Alert Block</h4>
-        <p>Alerts are used to display important, need to know information to site users. NDS offers four alert severity blocks. Alerts are for high priority messaging that requires immediate notification only. Only one alert can show at any time.</p>
+        <p>Alerts are used to display important, need to know information to site users. NDS offers four alert severity blocks. Alerts are only for high priority messaging that requires immediate notification. Only one alert can show at any time.</p>
         <p>Examples of Alerts include:</p>
         <ul>
             <li>System outages</li>
@@ -147,10 +147,10 @@
         </ul>
         <p>Alert severity standards are defined below:</p>
         <ul>
-            <li>Severity One (Red): </li>
-            <li>Severity Two (Orange): </li>
-            <li>Severity Three (Yellow): </li>
-            <li>Severity Four (Green): </li>
+            <li>Severity One (Red)</li>
+            <li>Severity Two (Orange)</li>
+            <li>Severity Three (Yellow)</li>
+            <li>Severity Four (Green)</li>
         </ul>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
@@ -224,7 +224,7 @@
         {% endembed %}
         
         <h4>Hero Block</h4>
-        <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a parallax effect courtest of the <a href="https://materializecss.com/parallax.html">Materialize library.</a></p>
+        <p>The Hero Block can be used to add substantial visual interest to web pages. The pattern features a parallax effect courtesy of the <a href="https://materializecss.com/parallax.html">Materialize library.</a></p>
         <p>When selecting imagery for the Hero block, we recommend images that do not feature people and faces. Due to the responsive requirement of websites today, using people-based images could result in faces being occluded or cut off on various screensizes. NDS recommends pattern-based imagery or imagery with simple subjects.</p>
         <p>The Hero Block pattern optionally includes the ability to add breadcrumbs to the top.</p>
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
@@ -967,8 +967,8 @@
             {% endblock %}
             {% block component_snippet_pattern_info %}
                 <h5>Overview</h5>
-                <p>Although it is possible to use the NDS out-of-the-box component for Primary Navigation, it is likely you will need to customize the pattern for your particular site. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory, and paste it into your 02-molecules/ directory. Then you can freely make changes without altering the original NDS component.</p>
-                <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup, using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
+                <p>Although it is possible to use the NDS out-of-the-box component for Primary Navigation, it is likely you will need to customize the pattern for your particular site. To make your own custom pattern, simply copy the navigation-primary component from inside the 00-nds/ directory and paste it into your 02-molecules/ directory. Then you can freely make changes without altering the original NDS component.</p>
+                <p>You will need to supply the primary navigation pattern with content using the "navigation_primary_content" block. You can pass links or dropdown markup using the proper NDS structure and classes. <strong>Reference the demo pattern to see examples of links and dropdowns with the proper structure and classes.</strong></p>
                 <h5>Blocks</h5>
                 <ul>
                     <li>&#123;% block navigation_primary_content %&#125;: The block holding the navigation markup.</li>
@@ -977,6 +977,44 @@
                 <ul>
                     <li>navigation_primary_classes: Additional classes for the navigation component.</li>
                     <li>navigation_primary_id: Navigation component ID.</li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Navigation Dropdown</h4>
+        <p>The Navigation Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_text": "In order to use this component, you must include the following libraries in addition to the NDS Global JS:",
+                "block_dependencies_data": [
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "navigation-dropdown"
+            }
+        %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-dropdown/demo/navigation-dropdown.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_dropdown_content %&#125;: The block holding the dropdown link options These links should be plain with only a text label and href value.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_dropdown_classes: Additional classes for the navigation component.</li>
+                    <li>navigation_dropdown_id: Navigation component ID.</li>
+                    <li>navigation_dropdown_toggle_href: Optional URL for the dropdown toggle button. Passing a value to this parameter will automatically make the dropdown hover-activated.</li>
+                    <li>navigation_dropdown_toggle_text: The text to appear on the dropdown button.</li>
+                    <li>navigation_dropdown_toggle_aria_label: Required ARIA label to explain the section to be opened/closed.</li>
+                    <li>navigation_dropdown_active_class: Optional class used in the primary navigation component to signal that the current dropdown is selected.</li>
                 </ul>
             {% endblock %}
         {% endembed %}

@@ -5,7 +5,7 @@
         @extend .button-nds;
         @extend .button--secondary;
         position: relative;
-        z-index: 20;
+        z-index: $z-index-mobile-rail;
         width: 100%;
         text-align: center;
         background: transparent;
