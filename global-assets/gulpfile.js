@@ -116,9 +116,10 @@ gulp.task('buildProd', gulp.series(compileSass, compileJS, compilePatternLab, co
 // buildDist - Build public_html folder for deploy.
 var pages = [];
 function computePaths() {
-    return gulp.src('./source/_patterns/06-dist/**/*.twig').pipe(tap(function(file, t) {
+    return gulp.src('./source/_patterns/05-pages/**/*.twig').pipe(tap(function(file, t) {
         if (file.path.split('source/').length > 1) {
-            let distPath = file.path.split('source/_patterns/06-dist/')[1];
+            let distPath = file.path.split('source/_patterns/05-pages/')[1];
+            let depth = distPath.split("/").length - 1;
             let fileName = distPath.split('/');
             fileName = fileName[fileName.length - 1];
             let pageName = fileName.split('.twig')[0];
@@ -126,13 +127,15 @@ function computePaths() {
             if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
             let patternLabPath = targetPath.replace('/', '-');
             let page = {};
+            page['depth'] = depth;
             page['pageName'] = pageName;
             page['patternLabPath'] = patternLabPath;
             page['targetPath'] = targetPath;
             pages.push(page);
         }
         else {
-            var path = file.path.split("\\source\\_patterns\\06-dist\\");
+            // TODO
+            var path = file.path.split("\\source\\_patterns\\05-pages\\");
         }
     }));
 }
@@ -140,13 +143,28 @@ function computePaths() {
 function moveAssets() {
     // Move HTML to Proper Positions
     for (let i = 0; i < pages.length; i++) {
+        // Build Relative Path
+        let relativePath = ""; if (pages[i].depth === 0) { relativePath = "./"; } else { for (let j = 0; j < pages[i].depth; j++) { relativePath += "../"; }}
+
         if (pages[i].targetPath === "/") {
-            var path = "./public/patterns/06-dist-index/06-dist-index.html";
-            gulp.src(path).pipe(rename({ basename: 'index', extname: '.html' })).pipe(gulp.dest('./public_html/'));
+            var path = "./public/patterns/05-pages-index/05-pages-index.html";
+            gulp.src(path)
+                .pipe(rename({ basename: 'index', extname: '.html' }))
+                .pipe(replace('../../css', relativePath + 'css'))
+                .pipe(replace('../../js', relativePath + 'js'))
+                .pipe(replace('../../images', relativePath + 'assets'))
+                .pipe(replace('../../assets', relativePath + 'assets'))
+                .pipe(gulp.dest('./public_html/'));
         }
         else {
-            var path = "./public/patterns/06-dist-" + pages[i].patternLabPath + "-" + pages[i].pageName + "/06-dist-" + pages[i].patternLabPath + "-" + pages[i].pageName + ".html";
-            gulp.src(path).pipe(rename({ basename: 'index', extname: '.html' })).pipe(gulp.dest('./public_html/' + pages[i].targetPath));
+            var path = "./public/patterns/05-pages-" + pages[i].patternLabPath + "-" + pages[i].pageName + "/05-pages-" + pages[i].patternLabPath + "-" + pages[i].pageName + ".html";
+            gulp.src(path)
+                .pipe(rename({ basename: 'index', extname: '.html' }))
+                .pipe(replace('../../css', relativePath + 'css'))
+                .pipe(replace('../../js', relativePath + 'js'))
+                .pipe(replace('../../images', relativePath + 'assets'))
+                .pipe(replace('../../assets', relativePath + 'assets'))
+                .pipe(gulp.dest('./public_html/' + pages[i].targetPath));
         }
     }
 
