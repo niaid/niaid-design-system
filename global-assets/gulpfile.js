@@ -15,7 +15,8 @@ const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 const babel = require('gulp-babel');
 const replace = require('gulp-replace');
-const htmlreplace = require('gulp-html-replace')
+const htmlreplace = require('gulp-html-replace');
+const del = require('del');
 
 // copyFonts - Copy Font Awesome from node_modules into project.
 function copyFonts() {
@@ -95,6 +96,14 @@ function compilePatternLab(cb) {
     });
 }
 
+// cleanDistributionDirectories - Cleans out any distribution items before a fresh build is created.
+gulp.task('cleanDistributionDirectories', (cb) => {
+    let dirs = [
+        './public_html/**/*'
+    ];
+    return del(dirs, {'force': true}, cb);
+});
+
 // GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
     browserSync.init({
@@ -112,7 +121,7 @@ gulp.task('serveProject', function() {
 gulp.task('default', gulp.series(copyFonts, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
 // GULP: buildProd - Compile your project assets and build public_html folder for deploy.
-gulp.task('build', gulp.series(compileSass, compileJS, compilePatternLab, computePaths, moveAssets));
+gulp.task('build', gulp.series('cleanDistributionDirectories', compileSass, compileJS, compilePatternLab, computePaths, moveAssets));
 
 // buildDist - Build public_html folder for deploy.
 var pages = [];
