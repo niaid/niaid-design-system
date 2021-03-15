@@ -128,7 +128,7 @@ var pages = [];
 function computePaths() {
     return gulp.src('./source/_patterns/05-pages/**/*.twig').pipe(tap(function(file, t) {
         if (file.path.split('source/').length > 1) {
-            addPage(file);
+            addPage(file.path);
         }
         else {
             let escaped = file.path.replace(/\\/g, "/");
@@ -139,7 +139,8 @@ function computePaths() {
 
 // addPage - Helper function for the computePaths() function. Determines the path and destination of the page.
 function addPage(file) {
-    let distPath = file.path.split('source/_patterns/05-pages/')[1], fileName = distPath.split('/'), targetPath;
+    let distPath = file.split('source/_patterns/05-pages/')[1];
+    let fileName = distPath.split('/'), targetPath;
     fileName = fileName[fileName.length - 1];
     if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
     pages.push({ "depth": distPath.split("/").length - 1, "pageName": fileName.split('.twig')[0], "patternLabPath": targetPath.replace('/', '-'), "targetPath": targetPath });
