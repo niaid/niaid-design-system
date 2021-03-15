@@ -21,8 +21,8 @@
         &.button--primary {
             &:hover,
             &:focus {
-                background: $color-theme-1-1-1;
-                border: $s-1px solid $color-theme-1-1-1;
+                background: var(--color-theme-primary);
+                border: $s-1px solid var(--color-theme-primary);
             }
         }
         &.button--secondary {
@@ -32,7 +32,7 @@
             &:focus {
                 background: $white;
                 border: $s-1px solid $white;
-                color: $color-theme-1-1-1;
+                color: var(--color-theme-primary);
             }
             &:active {
                 background-color: $white !important;
@@ -41,8 +41,8 @@
         &.button--tertiary {
             &:hover,
             &:focus {
-                background: $color-theme-1-2-1;
-                border: $s-1px solid $color-theme-1-2-1;
+                background: var(--color-theme-secondary);
+                border: $s-1px solid var(--color-theme-secondary);
             }
         }
         &.button--negative {
@@ -141,7 +141,7 @@
         background: $white;
         &.block--default {
             &.block--default--accent {
-                border-left: $s-0-25 solid $color-theme-1-accent;
+                border-left: $s-0-25 solid var(--color-theme-accent);
             }
         }
         &.block--alert {
@@ -190,7 +190,7 @@
                             border: $s-1px solid $white;
                             background: $white;
                             &:after {
-                                color: $color-theme-1-1-1;
+                                color: var(--color-theme-primary);
                             }
                         }
                     }
@@ -249,8 +249,8 @@
                         &.active,
                         &.is-active {
                             a {
-                                background: $color-theme-1-1-1;
-                                border: $s-1px solid $color-theme-1-1-1;
+                                background: var(--color-theme-primary);
+                                border: $s-1px solid var(--color-theme-primary);
                                 @include md-0dp;
                                 &:hover,
                                 &:focus {
@@ -293,196 +293,6 @@
             .block-nds {
                 @include md-0dp;
                 background: transparent;
-            }
-        }
-    }
-    &.style--colors--theme-2 {
-        .button--primary {
-            &:hover,
-            &:focus {
-                background: $color-theme-2-1-1;
-                border: $s-1px solid $color-theme-2-1-1;
-            }
-        }
-        .button--secondary {
-            border: $s-1px solid $white;
-            &:hover,
-            &:focus {
-                background: $white;
-                color: $color-theme-2-1-1;
-                border: $s-1px solid $white;
-            }
-        }
-        .button--tertiary {
-            &:hover,
-            &:focus {
-                background: $color-theme-2-2-1;
-                border: $s-1px solid $color-theme-2-2-1;
-            }
-        }
-        .button--negative {
-            border: $s-1px solid $white;
-            &:hover,
-            &:focus {
-                background: $white;
-                color: $status-error;
-                border: $s-1px solid $white;
-            }
-        }
-        .button--floating,
-        .button--image,
-        .button--icon,
-        .button--external {
-            &.button--secondary {
-                &:hover,
-                &:focus {
-                    background: $white;
-                    color: $color-theme-2-1-1;
-                    border: $s-1px solid $white;
-                }
-            }
-            &.button--negative {
-                &:hover,
-                &:focus {
-                    background: $white;
-                    color: $status-error;
-                    border: $s-1px solid $white;
-                }
-            }
-        }
-        .block-nds {
-            &.block--default {
-                &.block--default--accent {
-                    border-left: $s-0-25 solid $color-theme-2-accent;
-                }
-            }
-        }
-        .component-nds {
-            &.component--accordion {
-                .component--accordion__card {
-                    &__header {
-                        &__button {
-                            &:hover,
-                            &:focus {
-                                &:after {
-                                    color: $color-theme-2-1-1;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .navigation-nds {
-            &.navigation--pagination {
-                .pager {
-                    .pager__items {
-                        .pager__item {
-                            &.active,
-                            &.is-active {
-                                a {
-                                    background: $color-theme-2-1-1;
-                                    border: $s-1px solid $color-theme-2-1-1;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &.style--colors--theme-3 {
-        .button--primary {
-            &:hover,
-            &:focus {
-                background: $color-theme-3-1-1;
-                border: $s-1px solid $color-theme-3-1-1;
-            }
-        }
-        .button--secondary {
-            border: $s-1px solid $white;
-            &:hover,
-            &:focus {
-                background: $white;
-                color: $color-theme-3-1-1;
-                border: $s-1px solid $white;
-            }
-        }
-        .button--tertiary {
-            &:hover,
-            &:focus {
-                background: $color-theme-3-2-1;
-                border: $s-1px solid $color-theme-3-2-1;
-            }
-        }
-        .button--negative {
-            border: $s-1px solid $white;
-            &:hover,
-            &:focus {
-                background: $white;
-                color: $status-error;
-                border: $s-1px solid $white;
-            }
-        }
-        .button--floating,
-        .button--image,
-        .button--icon,
-        .button--external {
-            &.button--secondary {
-                &:hover,
-                &:focus {
-                    background: $white;
-                    color: $color-theme-3-1-1;
-                    border: $s-1px solid $white;
-                }
-            }
-            &.button--negative {
-                &:hover,
-                &:focus {
-                    background: $white;
-                    color: $status-error;
-                    border: $s-1px solid $white;
-                }
-            }
-        }
-        .block-nds {
-            &.block--default {
-                &.block--default--accent {
-                    border-left: $s-0-25 solid $color-theme-3-accent;
-                }
-            }
-        }
-        .component-nds {
-            &.component--accordion {
-                .component--accordion__card {
-                    &__header {
-                        &__button {
-                            &:hover,
-                            &:focus {
-                                &:after {
-                                    color: $color-theme-3-1-1;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .navigation-nds {
-            &.navigation--pagination {
-                .pager {
-                    .pager__items {
-                        .pager__item {
-                            &.active,
-                            &.is-active {
-                                a {
-                                    border: $s-1px solid $color-theme-3-1-1;
-                                    background: $color-theme-3-1-1;
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
     }

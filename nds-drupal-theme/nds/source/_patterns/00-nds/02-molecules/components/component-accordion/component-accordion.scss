@@ -31,7 +31,7 @@
                     position: absolute;
                     margin-right: $s-1;
                     right: 0;
-                    color: $color-theme-1-1-1;
+                    color: var(--color-theme-primary);
                     top: 50%;
                     transform: translateY(-50%);
                 }

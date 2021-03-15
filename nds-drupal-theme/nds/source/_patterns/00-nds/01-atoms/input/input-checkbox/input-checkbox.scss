@@ -34,7 +34,7 @@
     }
     input:checked~label {
         &:before {
-            background: $color-theme-1-1-1;
+            background: var(--color-theme-primary);
             border: 0;
         }
         &:after {

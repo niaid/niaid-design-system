@@ -2,7 +2,7 @@
     .preloader-wrapper {
         .spinner-layer {
             display: flex;
-            border-color: $color-theme-1-2-1;
+            border-color: var(--color-theme-secondary);
         }
     }
 }

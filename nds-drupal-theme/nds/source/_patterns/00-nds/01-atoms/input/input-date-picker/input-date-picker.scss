@@ -71,12 +71,12 @@
         .decade {
             &.active,
             &.focused {
-                background-color: $color-theme-1-1-1 !important;
+                background-color: var(--color-theme-primary) !important;
                 background-image: none !important;
                 color: $white;
                 &:hover,
                 &:focus {
-                    background-color: $color-theme-1-1-1 !important;
+                    background-color: var(--color-theme-primary) !important;
                     background-image: none !important;
                 }
             }
