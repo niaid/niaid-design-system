@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../css/custom/prism/prism.css" />
 
     <link rel="icon" href="../assets/global/favicons/favicon.ico" type="image/x-icon"/>
-    <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');</script>
 
           <link rel="stylesheet" href="../css/nds-min.css" media="all" />
         
@@ -525,10 +524,13 @@
 
         <p>For Drupal-based projects, you may need to clear the Drupal cache to see your changes.</p>
 
+        <h3>Working with JavaScript in NDS</h3>
+        <p>NDS provides global and commponent functionality through JS files located in the 00-nds/ folder. There may be instances where you would like to exclude certain pieces of this functionality or would like to replace it with your own. In either case, create a file with the same name and path outside of the 00-nds/ folder and, optionally, write your own JavaScript to replace it (leaving the file blank will simply exclude the functionality). For example, to exclude or replace the 00-nds/02-molecules/analytics/analytics-google/analytics-google.js file, create the analytics/analytics-google/ directories inside of _patterns/02-molecules/. Then, create a analytics-google.js file inside and write your own analytics code (or leave it blank).</p>
+
         
 
 <div class="block-nds block--default  ">
-                    <h4>Developing with NIAID Design System</h4>
+                    <h4>Developing with the NIAID Design System</h4>
                 <p>Get more information on how NDS is structured.</p>
                 
 

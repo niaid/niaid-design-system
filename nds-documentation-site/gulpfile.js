@@ -41,7 +41,7 @@ gulp.task('compileSass', () => {
         }))
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed', includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"] }).on('error', sass.logError))
-        .pipe(postcss(plugins))
+        // .pipe(postcss(plugins))
         .pipe(sourcemaps.write('./source/maps'))
         .pipe(gulp.dest('./source/css'))
         .pipe(cache.clear())
@@ -178,7 +178,7 @@ gulp.task('serveProject', () => {
 gulp.task('default', gulp.series('cleanNDS', 'cleanIgnoredSourceDirectories', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab', 'serveProject'));
 
 // GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('buildProd', gulp.series('cleanDistributionDirectories', 'compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
+gulp.task('build', gulp.series('cleanDistributionDirectories', 'compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
