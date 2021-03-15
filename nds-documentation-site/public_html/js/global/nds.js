@@ -69,6 +69,185 @@ $(document).ready(function () {
       init_layouts_tabs();
     });
   }
+})(jQuery); // Part of NDS Lite
+
+
+(function ($) {
+  // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+  function initDataAttributes() {
+    // Generic Body
+    var bodyLayouts = document.getElementsByClassName("layouts--body");
+
+    for (var i = 0; i < bodyLayouts.length; i++) {
+      var bodyElements = bodyLayouts[i].querySelectorAll('a, button');
+      setDataAttributes(bodyElements, 'data-content', 'body-anchor-');
+    } // Header
+
+
+    var globalHeaders = document.getElementsByClassName("global--header");
+
+    for (var _i = 0; _i < globalHeaders.length; _i++) {
+      // Branding Component
+      var logoLinks = globalHeaders[_i].querySelectorAll('.component--branding');
+
+      for (var _j = 0; _j < logoLinks.length; _j++) {
+        logoLinks[_j].setAttribute('data-nav', 'header-nav-logo');
+      } // Generic
+
+
+      var headerElements = globalHeaders[_i].querySelectorAll('a, button');
+
+      setDataAttributes(headerElements, 'data-nav', 'header-nav-');
+    } // Primary Navigation
+
+
+    var primaryNavigations = document.getElementsByClassName("navigation--primary");
+
+    for (var i = 0; i < primaryNavigations.length; i++) {
+      var navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
+
+      for (var _j2 = 0; _j2 < navigationLinks.length; _j2++) {
+        var navItem = navigationLinks[_j2].children[0];
+
+        if (hasClass(navItem, 'navigation--dropdown')) {
+          var sectionName = navigationLinks[_j2].children[0].children[0].textContent.trim();
+
+          if (sectionName !== "" && navItem.closest('.component--snippet') == null) {
+            sectionName = sectionName.replace(/\//g, '-');
+            sectionName = sectionName.replace(/\s+/g, '-').toLowerCase();
+            var dropdownItems = navItem.querySelectorAll('.navigation--dropdown__menu > a');
+            setDataAttributes(dropdownItems, 'data-nav', 'header-nav-' + sectionName + '-');
+          }
+        } else {
+          computeDataAttribute(navItem, 'data-nav', 'header-nav-');
+        }
+      }
+    } // Footer
+
+
+    var globalFooters = document.getElementsByClassName("global--footer");
+
+    for (var i = 0; i < globalFooters.length; i++) {
+      // Branding Component
+      var _logoLinks = globalFooters[i].querySelectorAll('.image--logo');
+
+      for (var j = 0; j < _logoLinks.length; j++) {
+        _logoLinks[j].setAttribute('data-nav', 'footer-nav-logo');
+      } // Footer Links
+
+
+      var _navigationLinks = globalFooters[i].querySelectorAll('a, button');
+
+      setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+    } // Accordion Button
+
+
+    var accordionCards = document.getElementsByClassName("component--accordion__card");
+
+    for (var i = 0; i < accordionCards.length; i++) {
+      var _navigationLinks2 = accordionCards[i].querySelectorAll('button');
+
+      setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+    } // Floating Button
+
+
+    var floatingButtons = document.getElementsByClassName("button--floating");
+    setDataAttributes(floatingButtons, 'data-nav', 'header-nav-'); // Mobile Rail
+
+    var mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
+
+    for (var i = 0; i < mobileRails.length; i++) {
+      var _navigationLinks3 = mobileRails[i].querySelectorAll('a');
+
+      setDataAttributes(_navigationLinks3, 'data-nav', 'nav-left-');
+    }
+  } // setDataAttributes - Helper function to add data attributes to elements.
+
+
+  function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+    if (els.length > 0 && els !== undefined) {
+      for (var i = 0; i < els.length; i++) {
+        if (els[i].hasAttribute(dataAttributeName)) {
+          tagChildren(els[i], dataAttributeName);
+        } else {
+          computeDataAttribute(els[i], dataAttributeName, dataAttributeValuePrefix);
+        }
+      }
+    }
+  }
+
+  function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
+    var linkText = el.textContent.trim();
+
+    if (linkText !== "" && el.closest('.component--snippet') == null) {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      el.setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+      tagChildren(el, dataAttributeName);
+    } else {
+      if (hasClass(el, 'button--share')) {
+        var typeArray = el.classList[2].split('button--share--');
+        var type = typeArray[typeArray.length - 1];
+        var prefix = '';
+
+        if (dataAttributeValuePrefix == "header-nav-") {
+          prefix = 'header-nav-social-share-';
+        } else if (dataAttributeValuePrefix == "footer-nav-") {
+          prefix = 'footer-nav-social-share-';
+        } else {
+          prefix = 'body-social-share-';
+        }
+
+        el.setAttribute(dataAttributeName, prefix + type);
+        tagChildren(el, dataAttributeName);
+      }
+    }
+  }
+
+  function tagChildren(el, dataAttributeName) {
+    var dataAttributeValue = el.getAttribute(dataAttributeName);
+    var childElements = el.querySelectorAll('i, span, div, img, strong');
+
+    for (var j = 0; j < childElements.length; j++) {
+      childElements[j].setAttribute(dataAttributeName, dataAttributeValue);
+    }
+  }
+
+  if (window.Element && !Element.prototype.closest) {
+    Element.prototype.closest = function (s) {
+      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+          i,
+          el = this;
+
+      do {
+        i = matches.length;
+
+        while (--i >= 0 && matches.item(i) !== el) {}
+
+        ;
+      } while (i < 0 && (el = el.parentElement));
+
+      return el;
+    };
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initDataAttributes = {
+        attach: function attach(context) {
+          $("body", context).once('nds-data-attributes').each(function () {
+            initDataAttributes(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initDataAttributes();
+    });
+  }
 })(jQuery);
 
 (function ($) {
@@ -339,185 +518,6 @@ $(document).ready(function () {
       if (!$("#builder").length) {
         init_style_controls();
       }
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-(function ($) {
-  // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-  function initDataAttributes() {
-    // Generic Body
-    var bodyLayouts = document.getElementsByClassName("layouts--body");
-
-    for (var i = 0; i < bodyLayouts.length; i++) {
-      var bodyElements = bodyLayouts[i].querySelectorAll('a, button');
-      setDataAttributes(bodyElements, 'data-content', 'body-anchor-');
-    } // Header
-
-
-    var globalHeaders = document.getElementsByClassName("global--header");
-
-    for (var _i = 0; _i < globalHeaders.length; _i++) {
-      // Branding Component
-      var logoLinks = globalHeaders[_i].querySelectorAll('.component--branding');
-
-      for (var _j = 0; _j < logoLinks.length; _j++) {
-        logoLinks[_j].setAttribute('data-nav', 'header-nav-logo');
-      } // Generic
-
-
-      var headerElements = globalHeaders[_i].querySelectorAll('a, button');
-
-      setDataAttributes(headerElements, 'data-nav', 'header-nav-');
-    } // Primary Navigation
-
-
-    var primaryNavigations = document.getElementsByClassName("navigation--primary");
-
-    for (var i = 0; i < primaryNavigations.length; i++) {
-      var navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
-
-      for (var _j2 = 0; _j2 < navigationLinks.length; _j2++) {
-        var navItem = navigationLinks[_j2].children[0];
-
-        if (hasClass(navItem, 'navigation--dropdown')) {
-          var sectionName = navigationLinks[_j2].children[0].children[0].textContent.trim();
-
-          if (sectionName !== "" && navItem.closest('.component--snippet') == null) {
-            sectionName = sectionName.replace(/\//g, '-');
-            sectionName = sectionName.replace(/\s+/g, '-').toLowerCase();
-            var dropdownItems = navItem.querySelectorAll('.navigation--dropdown__menu > a');
-            setDataAttributes(dropdownItems, 'data-nav', 'header-nav-' + sectionName + '-');
-          }
-        } else {
-          computeDataAttribute(navItem, 'data-nav', 'header-nav-');
-        }
-      }
-    } // Footer
-
-
-    var globalFooters = document.getElementsByClassName("global--footer");
-
-    for (var i = 0; i < globalFooters.length; i++) {
-      // Branding Component
-      var _logoLinks = globalFooters[i].querySelectorAll('.image--logo');
-
-      for (var j = 0; j < _logoLinks.length; j++) {
-        _logoLinks[j].setAttribute('data-nav', 'footer-nav-logo');
-      } // Footer Links
-
-
-      var _navigationLinks = globalFooters[i].querySelectorAll('a, button');
-
-      setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-    } // Accordion Button
-
-
-    var accordionCards = document.getElementsByClassName("component--accordion__card");
-
-    for (var i = 0; i < accordionCards.length; i++) {
-      var _navigationLinks2 = accordionCards[i].querySelectorAll('button');
-
-      setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
-    } // Floating Button
-
-
-    var floatingButtons = document.getElementsByClassName("button--floating");
-    setDataAttributes(floatingButtons, 'data-nav', 'header-nav-'); // Mobile Rail
-
-    var mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
-
-    for (var i = 0; i < mobileRails.length; i++) {
-      var _navigationLinks3 = mobileRails[i].querySelectorAll('a');
-
-      setDataAttributes(_navigationLinks3, 'data-nav', 'nav-left-');
-    }
-  } // setDataAttributes - Helper function to add data attributes to elements.
-
-
-  function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-    if (els.length > 0 && els !== undefined) {
-      for (var i = 0; i < els.length; i++) {
-        if (els[i].hasAttribute(dataAttributeName)) {
-          tagChildren(els[i], dataAttributeName);
-        } else {
-          computeDataAttribute(els[i], dataAttributeName, dataAttributeValuePrefix);
-        }
-      }
-    }
-  }
-
-  function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
-    var linkText = el.textContent.trim();
-
-    if (linkText !== "" && el.closest('.component--snippet') == null) {
-      linkText = linkText.replace(/\//g, '-');
-      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-      el.setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
-      tagChildren(el, dataAttributeName);
-    } else {
-      if (hasClass(el, 'button--share')) {
-        var typeArray = el.classList[2].split('button--share--');
-        var type = typeArray[typeArray.length - 1];
-        var prefix = '';
-
-        if (dataAttributeValuePrefix == "header-nav-") {
-          prefix = 'header-nav-social-share-';
-        } else if (dataAttributeValuePrefix == "footer-nav-") {
-          prefix = 'footer-nav-social-share-';
-        } else {
-          prefix = 'body-social-share-';
-        }
-
-        el.setAttribute(dataAttributeName, prefix + type);
-        tagChildren(el, dataAttributeName);
-      }
-    }
-  }
-
-  function tagChildren(el, dataAttributeName) {
-    var dataAttributeValue = el.getAttribute(dataAttributeName);
-    var childElements = el.querySelectorAll('i, span, div, img, strong');
-
-    for (var j = 0; j < childElements.length; j++) {
-      childElements[j].setAttribute(dataAttributeName, dataAttributeValue);
-    }
-  }
-
-  if (window.Element && !Element.prototype.closest) {
-    Element.prototype.closest = function (s) {
-      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-          i,
-          el = this;
-
-      do {
-        i = matches.length;
-
-        while (--i >= 0 && matches.item(i) !== el) {}
-
-        ;
-      } while (i < 0 && (el = el.parentElement));
-
-      return el;
-    };
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initDataAttributes = {
-        attach: function attach(context) {
-          $("body", context).once('nds-data-attributes').each(function () {
-            initDataAttributes(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initDataAttributes();
     });
   }
 })(jQuery);
@@ -1323,35 +1323,6 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
-    });
-  }
-})(jQuery);
-
-(function ($) {
   function initComponentModal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -1408,6 +1379,35 @@ $(document).ready(function () {
       initComponentModal();
     });
   }
+})(jQuery);
+
+(function ($) {
+  function initComponentMedia() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentMedia = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentMedia();
+    });
+  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -1444,36 +1444,8 @@ $(document).ready(function () {
       initComponentUSWDSBanner();
     });
   }
-})(jQuery);
+})(jQuery); // Part of NDS Lite
 
-$(document).ready(function () {
-  $(".navigation--dropdown.hover").on('mouseover', function () {
-    openDropdown($(this));
-  });
-  $(".navigation--dropdown.hover").on('mouseout', function () {
-    closeDropdown($(this));
-  });
-  $(".navigation--dropdown").on('focusin', function (e) {
-    openDropdown($(this));
-  });
-  $(".navigation--dropdown").on('focusout', function (e) {
-    if (this.contains(e.relatedTarget)) {
-      return;
-    }
-
-    closeDropdown($(this));
-  });
-
-  function openDropdown($el) {
-    $el.addClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
-  }
-
-  function closeDropdown($el) {
-    $el.removeClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
-  }
-}); // Part of NDS Lite
 
 (function ($) {
   // initNavigationDrawer - Functionality to support the NDS mobile drawer.
@@ -1554,3 +1526,32 @@ $(document).ready(function () {
     });
   }
 })(jQuery);
+
+$(document).ready(function () {
+  $(".navigation--dropdown.hover").on('mouseover', function () {
+    openDropdown($(this));
+  });
+  $(".navigation--dropdown.hover").on('mouseout', function () {
+    closeDropdown($(this));
+  });
+  $(".navigation--dropdown").on('focusin', function (e) {
+    openDropdown($(this));
+  });
+  $(".navigation--dropdown").on('focusout', function (e) {
+    if (this.contains(e.relatedTarget)) {
+      return;
+    }
+
+    closeDropdown($(this));
+  });
+
+  function openDropdown($el) {
+    $el.addClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
+  }
+
+  function closeDropdown($el) {
+    $el.removeClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
+  }
+});

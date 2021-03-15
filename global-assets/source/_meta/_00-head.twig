@@ -10,14 +10,12 @@
 
     <link rel="icon" href="{{ imagePath }}global/favicons/favicon.ico" type="image/x-icon"/>
 
-    {% if prodBuild != "true" %}<link rel="stylesheet" href="{{ cssPath }}nds-min.css?{{ cacheBuster }}" media="all" />{% else %}<link rel="stylesheet" href="{{ cssPath }}nds-min.css" media="all" />{% endif %}
-    {% if prodBuild != "true" %}<link rel="stylesheet" href="{{ cssPath }}libraries/pattern-lab/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />{% endif %}
+    <link rel="stylesheet" href="{{ cssPath }}nds-min.css" media="all" />
 
-    {% if prodBuild != "true" %}
-      <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-        {{ patternLabHead | raw }}
-      <!-- End Pattern Lab -->
-    {% endif %}
+    <!-- build:remove -->
+    <link rel="stylesheet" href="{{ cssPath }}libraries/pattern-lab/pattern-scaffolding.css" media="all" />
+    {{ patternLabHead | raw }}
+    <!-- endbuild -->
     
   </head>
   <body class="{{ bodyClass }}">
