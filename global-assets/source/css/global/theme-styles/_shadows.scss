@@ -197,6 +197,11 @@
                 }
             }
         }
+        &.component--uswds-banner {
+            .component--uswds-banner__toggle {
+                @include md-0dp;
+            }
+        }
     }
     .form-nds {
         .form-text {
@@ -261,6 +266,13 @@
         &.navigation--mobile-rail {
             .navigation--mobile-rail__button {
                 border-bottom: 0;
+            }
+        }
+        &.navigation--dropdown {
+            .navigation--dropdown {
+                &__menu {
+                    @include md-16dp;
+                }
             }
         }
     }

@@ -1,4 +1,5 @@
 {% set component_snippet_classes = component_snippet_classes|default() %}
+{% set component_snippet_name = component_snippet_name|default() %}
 {% set component_snippet_code = block('component_snippet_code') %}
 {% set component_snippet_code_alternate_render = block('component_snippet_code_alternate_render') %}
 {% set component_snippet_pattern_info = block('component_snippet_pattern_info') %}
@@ -35,7 +36,8 @@
                         {
                             "button_icon_classes": "component--snippet__block__code__wrapper__button__copy",
                             "button_icon_icon": "clipboard-list",
-                            "button_icon_text": "Copy"
+                            "button_icon_text": "Copy",
+                            "button_icon_attributes": "data-content=body-anchor-copy-" ~ component_snippet_name
                         }
                     %}
                 </div>
@@ -43,7 +45,7 @@
         </div>
         {% if component_snippet_pattern_info|trim is not empty %}
             <div class="component--snippet__block__pattern">
-                <button class="component--snippet__block__pattern__toggle"><strong>Pattern Lab Information</strong>
+                <button class="component--snippet__block__pattern__toggle" data-content="accordion-{{ component_snippet_name }}"><strong>Pattern Lab Information</strong>
                     {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
                         {
                             "icon_default_type": "chevron-right",

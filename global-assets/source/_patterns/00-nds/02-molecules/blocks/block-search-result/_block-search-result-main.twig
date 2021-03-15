@@ -18,7 +18,7 @@
         blocks_search_result_href: Search result target destination URL.
         blocks_search_result_date_last_reviewed: Optional date last reviewed of the search result content.
 
-    Last Updated: January 22, 2021
+    Last Updated: March 9, 2021
 #}
 
 {% set blocks_search_result_classes = blocks_search_result_classes|default() %}
@@ -30,7 +30,7 @@
 
 {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" with
     {
-        "block_default_classes": "block--search-result " ~  blocks_search_results_classes,
+        "block_default_classes": "block--search-result " ~  blocks_search_result_classes,
         "block_default_id": blocks_search_result_id
     }
 %}

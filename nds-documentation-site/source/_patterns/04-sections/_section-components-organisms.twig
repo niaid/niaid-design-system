@@ -20,13 +20,14 @@
         <p>The header is one of the first things users will see when visiting your site. Therefore, it is important to ensure that NDS websites communicate a clear and consistent brand through their headers. Headers typically consist of site branding and key navigation. The NDS Header component demo includes a menu button, site branding, a search field, and a button used to toggle the mobile menu. Since every website is different, you will likely need to create your own copy of the Header component to suit your website. Remember that custom components should be placed outside the 00-nds/ directory.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
-                "text_uswds_component_name": "Headers",
+                "text_uswds_component_name": "headers",
                 "text_uswds_href": "https://designsystem.digital.gov/components/header/"
             }
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "global-header"
             }
         %}
             {% block component_snippet_code %}
@@ -60,13 +61,14 @@
         <p>Website footers are often used to provide supplemental information to site users, such as contact information or related resources. The NDS footer demo provides suggested links for inclusion in the footer, however these can change based on the site's needs.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
             {
-                "text_uswds_component_name": "Footers",
+                "text_uswds_component_name": "footers",
                 "text_uswds_href": "https://designsystem.digital.gov/components/footer/"
             }
         %}
         {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
             {
-                "component_snippet_show_rendered": "no"
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "global-footer"
             }
         %}
             {% block component_snippet_code %}
@@ -109,7 +111,11 @@
         <p>The term "view" comes from Drupal terminology and refers to a collection of Blocks or Components. NDS offers two types of views out of the box &mdash; a generic listing view and a view for featured content.</p>
         <h4>Listing View</h4>
         <p>The Listing View is a very versatile component that allows users to present sets of content. For instance, search results are the perfect use case for this component. The Listing View optionally supports a heading and a "See All" button following the display.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "views-listing"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/03-organisms/views/view-listing/demo/view-listing.twig" %}
             {% endblock %}
@@ -139,8 +145,12 @@
         {% endembed %}
 
         <h4>Featured Content Cards View</h4>
-        <p>Featured Content Cards are excellent for highlighting information, but too many can be overwhelming and reduce the relative importance of each card. We recommend no more thantwo or three cards be used with the Featured Content Cards View.</p>
-        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" %}
+        <p>Featured Content Cards are excellent for highlighting information, but too many can be overwhelming and reduce the relative importance of each card. We recommend no more than two or three cards be used with the Featured Content Cards View.</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "views-featured-content-cards"
+            }
+        %}
             {% block component_snippet_code %}
                 {% include "@nds/03-organisms/views/view-featured-content-cards/demo/view-featured-content-cards.twig" %}
             {% endblock %}

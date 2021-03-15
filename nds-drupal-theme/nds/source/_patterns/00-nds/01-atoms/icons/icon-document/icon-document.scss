@@ -34,5 +34,9 @@
     }
     &.icon--document--button {
         @extend .hoverable;
+        &:hover,
+        &:focus {
+            border: 0;
+        }
     }
 }

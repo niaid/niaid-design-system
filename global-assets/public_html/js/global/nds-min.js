@@ -1,0 +1,1 @@
+"use strict";var getNextSibling=function(n,t){for(var e=n.nextElementSibling;e;){if(e.matches(t))return e;e=e.nextElementSibling}};function windowWidth(){var n=window.document.documentElement.clientWidth,t=window.document.body;return"CSS1Compat"===window.document.compatMode&&n||t&&t.clientWidth||n}function hasClass(n,t){return(" "+n.className+" ").indexOf(" "+t+" ")>-1}

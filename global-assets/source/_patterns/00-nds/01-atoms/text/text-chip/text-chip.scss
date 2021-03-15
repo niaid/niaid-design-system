@@ -1,7 +1,7 @@
 .text--chip {
     @extend .button-nds;
     @extend .button--tertiary;
-    padding: $s-1;
+    padding: $s-1 $s-1-25;
     display: inline-flex;
     cursor: default;
     a {

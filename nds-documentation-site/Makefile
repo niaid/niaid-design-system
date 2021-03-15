@@ -18,7 +18,11 @@ deploy-staging: build
 deploy-prod: build
 	aws s3 sync ./public_html s3://nds.niaid.nih.gov --exclude ".git/*" --delete
 
-# THIS COMMAND IS NOT RECOMMENDED - USE CAREFULLY
+# THESE COMMANDS ARE NOT RECOMMENDED - USE CAREFULLY
 deploy-all: build
+	aws s3 sync ./public_html s3://staging.nds.niaid.nih.gov --exclude ".git/*" --delete
+	aws s3 sync ./public_html s3://nds.niaid.nih.gov --exclude ".git/*" --delete
+
+deploy-only:
 	aws s3 sync ./public_html s3://staging.nds.niaid.nih.gov --exclude ".git/*" --delete
 	aws s3 sync ./public_html s3://nds.niaid.nih.gov --exclude ".git/*" --delete

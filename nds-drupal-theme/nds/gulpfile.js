@@ -141,10 +141,6 @@ function buildDist() {
     gulp.src('./source/css/libraries/*.css')
         .pipe(gulp.dest('./public_html/css/libraries'));
     console.log("Finished Copying CSS");
-    // Fix USWDS Image Paths
-    gulp.src('./public_html/css/libraries/uswds/uswds-banner.min.css')
-        .pipe(replace('../img/', '../images/global/uswds/'))
-        .pipe(gulp.dest('./public_html/css/libraries/uswds/'));
 
     // Copy JS
     console.log("Starting Copy of JS");

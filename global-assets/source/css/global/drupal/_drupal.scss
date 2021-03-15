@@ -35,8 +35,14 @@
     }
 }
 
-// NDS Component Reset
+.align-right,
+.align-left {
+    @include media-breakpoint-up(md) {
+        max-width: 50%;
+    }
+}
 
+// NDS Component Reset
 .block-nds {
     & > article {
         & > *:first-child {

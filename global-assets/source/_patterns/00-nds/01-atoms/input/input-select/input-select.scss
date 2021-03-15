@@ -224,7 +224,7 @@
 }
 
 .select2-dropdown {
-    z-index: 100000;
+    z-index: $z-index-dropdown;
     overflow: hidden;
     border-radius: 0;
     .select2-results__options {

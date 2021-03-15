@@ -5,7 +5,7 @@
     right: $s-2;
     height: $s-4;
     width: 3.95rem;
-    z-index: 999;
+    z-index: $z-index-button-floating;
     padding: 0;
     overflow: hidden;
     transition: .3s ease-in-out !important;

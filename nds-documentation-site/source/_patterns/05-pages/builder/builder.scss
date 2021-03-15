@@ -40,6 +40,15 @@
                     display: none;
                 }
             }
+            .navigation--mobile-rail__button {
+                background: $white;
+                border-bottom: $s-1px solid $white;
+                &:hover,
+                &:focus {
+                    background: $color-theme-1-1-1;
+                    border-bottom: $s-1px solid $color-theme-1-1-1;
+                }
+            }
         }
     }
     > .global--footer {

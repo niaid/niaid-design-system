@@ -5,16 +5,16 @@
     transform: translateY(-100%);
     display: flex;
     background: $white;
-    z-index: 100000;
+    z-index: $z-index-dropdown - 1;
     width: 100vw;
     transition: transform .3s;
     &__control {
         flex: 1 1 20%;
         max-width: 20%;
-        .input--select {
+        .input-group--select {
             width: 100%;
-            margin: 1rem 0;
-            padding: 0 1rem;
+            margin: $s-0-75 0 $s-1 0;
+            padding: 0 $s-1;
         }
     }
     &--open {

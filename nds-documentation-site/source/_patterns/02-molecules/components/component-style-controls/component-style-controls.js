@@ -16,9 +16,12 @@
                     $('#custom-styles-toggle').hide();
                     $('.component--style-controls').removeClass('component--style-controls--open');
                     $('body').css('padding-top', 0);
+                    $('.component--style-controls').find('.select2-selection--single').attr('tabindex', '-1');
                 }
                 else {
                     $('#custom-styles-toggle').show();
+                    $('.component--style-controls').find('.select2-selection--single').attr('tabindex', '0');
+                    $('.component--style-controls').find('.select2-selection--single')[0].focus();
                 }
             }
         });
@@ -27,10 +30,17 @@
             $('.component--style-controls').toggleClass('component--style-controls--open');
             if ($('.component--style-controls').hasClass('component--style-controls--open')) {
                 $('body').css('padding-top', $('.component--style-controls').outerHeight() + 'px');
+                $('.component--style-controls').find('.select2-selection--single').attr('tabindex', '0');
+                $('.component--style-controls').find('.select2-selection--single')[0].focus();
             }
             else {
                 $('body').css('padding-top', 0);
+                $('.component--style-controls').find('.select2-selection--single').attr('tabindex', '-1');
             }
+        });
+
+        $('.skip-to--close').on('focus', function() {
+            $('#custom-styles-toggle').focus();
         });
 
         var state = {

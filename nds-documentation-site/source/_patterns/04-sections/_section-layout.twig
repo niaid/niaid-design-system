@@ -31,7 +31,7 @@
             <li><code>x</code> - left and right</li>
             <li><code>y</code> - top and bottom</li>
         </ul>
-        <p>Note: Specifying {sides} is not required. If this value is omitted for margin or padding, the style will be applied to all sides (i.e. margin: $m-3).</p>
+        <p>Note: Specifying {sides} is not required. If this value is omitted for margin or padding, the style will be applied to all sides (Example: .m-3 -> margin: 3rem).</p>
 
         <p><code>{size}</code> - Token unit of spacing. The following table shows the available size values:</p>
 
@@ -119,6 +119,6 @@
         <p><i>Examples: </i><code>.m-0-50</code><code>.t-x-5-75</code></p>
 
         <h4 id="sass-tokens">Sizing &amp; Spacing in SASS</h4>
-        <p>All token spacing/sizing values can be used in SASS as variables using the following syntax: <code>$s-{property}-{size}-{interval}</code>. Similarly to the classes, the <code>{interval}</code> value is optional.</p>
+        <p>All token spacing/sizing values can be used in SASS as variables using the following syntax: <code>$s-{size}-{interval}</code>. Similarly to the classes, the <code>-{interval}</code> value is optional.</p>
     {% endblock %}
 {% endembed %}

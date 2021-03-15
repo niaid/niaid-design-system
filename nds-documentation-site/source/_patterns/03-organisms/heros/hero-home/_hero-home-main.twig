@@ -22,22 +22,19 @@
                     "button_default_type": "primary",
                     "button_default_classes": "button--get-started",
                     "button_default_href": links.getStarted,
-                    "button_default_label": "Get Started"
+                    "button_default_label": "Get Started",
+                    "button_default_attributes": 'data-content="body-anchor-get-started"'
                 }
             %}
             {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
                 {
                     "button_default_type": "secondary",
                     "button_default_classes": "button--learn-more",
-                    "button_default_href": links.design,
-                    "button_default_label": "Learn More"
+                    "button_default_href": links.about,
+                    "button_default_label": "Learn More",
+                    "button_default_attributes": 'data-content="body-anchor-learn-more"'
                 }
             %}
         </div>
-        {# <div class="hero--home__content__flair">
-            <div class="hero--home__content__flair__pill"></div>
-            <div class="hero--home__content__flair__pill"></div>
-            <div class="hero--home__content__flair__pill"></div>
-        </div> #}
     </div>
 </div>

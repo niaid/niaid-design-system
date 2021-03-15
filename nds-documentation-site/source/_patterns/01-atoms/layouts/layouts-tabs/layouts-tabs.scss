@@ -10,7 +10,7 @@
         font-size: 1.25rem;
         padding: .75rem 3rem;
         margin-bottom: -0.0625rem;
-        z-index: 1;
+        z-index: $z-index-above-baseline;
         position: relative;
         cursor: pointer;
         &.active-tab {
@@ -28,7 +28,7 @@
     &__window {
         >.layouts--body {
             @include md-16dp;
-            z-index: 0;
+            z-index: $z-index-baseline;
             position: relative;
         }
     }
