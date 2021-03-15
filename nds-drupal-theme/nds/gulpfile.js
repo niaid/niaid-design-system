@@ -15,7 +15,8 @@ const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 const babel = require('gulp-babel');
 const replace = require('gulp-replace');
-const htmlreplace = require('gulp-html-replace')
+const htmlreplace = require('gulp-html-replace');
+const del = require('del');
 
 // copyFonts - Copy Font Awesome from node_modules into project.
 function copyFonts() {
@@ -95,6 +96,14 @@ function compilePatternLab(cb) {
     });
 }
 
+// cleanDistributionDirectories - Cleans out any distribution items before a fresh build is created.
+gulp.task('cleanDistributionDirectories', (cb) => {
+    let dirs = [
+        './public_html/**/*'
+    ];
+    return del(dirs, {'force': true}, cb);
+});
+
 // GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
     browserSync.init({
@@ -111,36 +120,33 @@ gulp.task('serveProject', function() {
 // GULP: default - Running gulp compiles the your static site and serves it locally.
 gulp.task('default', gulp.series(copyFonts, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
 
-// GULP: buildProd - Compile your project assets and build public_html folder for deploy.
-gulp.task('build', gulp.series(compileSass, compileJS, compilePatternLab, computePaths, moveAssets));
+// GULP: build - Compile your project assets and build public_html folder for deploy.
+gulp.task('build', gulp.series('cleanDistributionDirectories', compileSass, compileJS, compilePatternLab, computePaths, moveAssets));
 
-// buildDist - Build public_html folder for deploy.
+// computePaths - Creates distribution paths based on page name and location.
 var pages = [];
 function computePaths() {
     return gulp.src('./source/_patterns/05-pages/**/*.twig').pipe(tap(function(file, t) {
         if (file.path.split('source/').length > 1) {
-            let distPath = file.path.split('source/_patterns/05-pages/')[1];
-            let depth = distPath.split("/").length - 1;
-            let fileName = distPath.split('/');
-            fileName = fileName[fileName.length - 1];
-            let pageName = fileName.split('.twig')[0];
-            let targetPath;
-            if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
-            let patternLabPath = targetPath.replace('/', '-');
-            let page = {};
-            page['depth'] = depth;
-            page['pageName'] = pageName;
-            page['patternLabPath'] = patternLabPath;
-            page['targetPath'] = targetPath;
-            pages.push(page);
+            addPage(file);
         }
         else {
-            // TODO
-            var path = file.path.split("\\source\\_patterns\\05-pages\\");
+            let escaped = file.path.replace(/\\/g, "/");
+            addPage(escaped);
         }
     }));
 }
 
+// addPage - Helper function for the computePaths() function. Determines the path and destination of the page.
+function addPage(file) {
+    let distPath = file.path.split('source/_patterns/05-pages/')[1], fileName = distPath.split('/'), targetPath;
+    fileName = fileName[fileName.length - 1];
+    if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
+    pages.push({ "depth": distPath.split("/").length - 1, "pageName": fileName.split('.twig')[0], "patternLabPath": targetPath.replace('/', '-'), "targetPath": targetPath });
+    return;
+}
+
+// moveAssets - Move all distribution assets to the public_html/ folder.
 function moveAssets() {
     // Move HTML to Proper Positions
     for (let i = 0; i < pages.length; i++) {
@@ -172,27 +178,24 @@ function moveAssets() {
     }
 
     // Copy CSS
-    console.log("Starting Copy of CSS");
+    console.log("Copy CSS");
     gulp.src('./source/css/nds-min.css')
         .pipe(gulp.dest('./public_html/css'));
     gulp.src('./source/css/libraries/*.css')
         .pipe(gulp.dest('./public_html/css/libraries'));
-    console.log("Finished Copying CSS");
 
     // Copy JS
-    console.log("Starting Copy of JS");
+    console.log("Copy JS");
     gulp.src('./source/js/**/*')
         .pipe(gulp.dest('./public_html/js'));
-    console.log("Finished Copying JS");
 
     // Copy Images
-    console.log("Starting Copy of Images");
+    console.log("Copy Images");
     gulp.src('./source/images/**/*')
         .pipe(gulp.dest('./public_html/assets'));
-    console.log("Finished Copying Images");
 
     // Copy Fonts
-    console.log("Starting Copy of Fonts");
+    console.log("Copy Fonts");
     return gulp.src('./source/webfonts/**/*')
         .pipe(gulp.dest('./public_html/webfonts'));
 }

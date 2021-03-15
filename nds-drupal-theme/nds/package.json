@@ -1,17 +1,14 @@
 {
-  "name": "niaid-theme-builder",
-  "version": "1.0.0",
+  "name": "niaid-design-system",
+  "version": "1.0.1",
   "description": "NIAID Design System",
   "main": "public/index.html",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "bootstrap": "^4.5.2",
     "bootstrap-datepicker": "^1.9.0",
-    "browser-sync": "^2.26.3",
     "datatables.net": "^1.10.20",
     "datatables.net-responsive-dt": "^2.2.3",
-    "gulp-minify": "^3.1.0",
-    "gulp-rename": "^1.4.0",
     "install": "^0.10.2",
     "jquery": "^3.5.1",
     "match-media": "^0.2.0",
@@ -22,11 +19,15 @@
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
+    "browser-sync": "^2.26.3",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-html-replace": "^1.6.2",
+    "gulp-minify": "^3.1.0",
     "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
@@ -39,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git-codecommit.us-east-1.amazonaws.com/v1/repos/covid-prevention-network"
+    "url": "https://github.com/niaid/niaid-design-system"
   },
   "author": "Jacob Caccamo",
   "license": "ISC"

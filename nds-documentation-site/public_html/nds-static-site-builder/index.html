@@ -501,16 +501,19 @@
 
         <p>For Drupal-based projects, you may need to clear the Drupal cache to see your changes.</p>
 
+        <h3>Working with JavaScript in NDS</h3>
+        <p>NDS provides global and commponent functionality through JS files located in the 00-nds/ folder. There may be instances where you would like to exclude certain pieces of this functionality or would like to replace it with your own. In either case, create a file with the same name and path outside of the 00-nds/ folder and, optionally, write your own JavaScript to replace it (leaving the file blank will simply exclude the functionality). For example, to exclude or replace the 00-nds/02-molecules/analytics/analytics-google/analytics-google.js file, create the analytics/analytics-google/ directories inside of _patterns/02-molecules/. Then, create a analytics-google.js file inside and write your own analytics code (or leave it blank).</p>
+
         
 
 <div class="block-nds block--default  ">
-                    <h4>Developing with NIAID Design System</h4>
+                    <h4>Developing with the NIAID Design System</h4>
                 <p>Get more information on how NDS is structured.</p>
                 
 
 <a class="button-nds waves-effect waves-light button--primary " href="/development/" role="button" >Develop with NDS</a>            </div>    </div>
                         <h3>Creating Pages</h3>
-                        <p>The 05-pages/ directory houses all of your website's pages. The index.twig file that comes with the Static Site Builder download is your home page, which you may edit to your liking. To create new pages, simply create a new folder in 05-pages/ and add a .twig file <strong>of the same name. The Static Site Buider uses the name of the page directory/.twig file for the production path. For instance, if you created clinical-trials/clinical-trials.twig folder and file, the production path to this page would be /clinical-trials. Some information for your page, such as a meta title and description, is configured in a .json file of the same name. View the index.json file for reference.</p>
+                        <p>The 05-pages/ directory houses all of your website's pages. The index.twig file that comes with the Static Site Builder download is your home page, which you may edit to your liking. To create new pages, simply create a new folder in 05-pages/ and add a .twig file <strong>of the same name</strong>. The Static Site Buider uses the name of the page directory/.twig file for the production path. For instance, if you created clinical-trials/clinical-trials.twig folder and file, the production path to this page would be /clinical-trials. Some information for your page, such as a meta title and description, is configured in a .json file of the same name. View the index.json file for reference.</p>
 
                         
 <div id="section-building-nds-production" class="component-nds component--scrollspy-section scrollspy section ">
@@ -518,7 +521,20 @@
                                 <p>When you are satisfied with your site pages, the Static Site Builder allows you to build a distribution folder (public_html/) with all the necessary, web-ready assets. To do so, simply run:</p>
                                 <code>gulp build</code><br>
                                 <p>After running the "build" command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
-                            </div>
+
+                                
+
+    
+<div class="block-nds block--status-message message--warning " >
+    <div class="block--status-message__icon">
+        
+
+<i class="icon-nds icon--default fas fa-exclamation-triangle " ></i>
+    </div>
+    <div class="block--status-message__content">
+                                                <p>The public_html/ directory gets deleted and rebuilt on each run of "gulp build." Do not make modifications inside of public_html/, or your changes will be lost.</p>
+                                        </div>
+</div>                            </div>
                         
 <div class="mb-4">
     

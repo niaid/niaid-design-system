@@ -17,16 +17,14 @@
     {% endblock %}
     {% block main %}
         {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" %}
-            {% block left_column %}<span></span>{% endblock %}
             {% block main_column %}
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
                         <h1 id="main-content">Hello Home Page!</h1>
-                        <p>Congratulations! You have successfully installed and generated your website!</p>
+                        <p>Congratulations! You have successfully installed and generated your website using the NDS Static Site Builder!</p>
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
-            {% block right_column %}<span></span>{% endblock %}
         {% endembed %}
     {% endblock %}
     {% block footer %}
