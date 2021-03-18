@@ -43,10 +43,7 @@
     "gulp-tap": "^2.0.0",
     "gulp-zip": "^5.0.2",
     "jshint": "^2.9.6",
-    "merge-stream": "^2.0.0",
-    "postcss": "^8.2.8",
-    "postcss-css-variables": "^0.17.0",
-    "postcss-nested": "^5.0.5"
+    "merge-stream": "^2.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

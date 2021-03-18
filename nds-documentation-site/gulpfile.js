@@ -14,9 +14,6 @@ const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
 const exec = require('child_process').exec;
 const babel = require('gulp-babel');
-const postcss = require('gulp-postcss');
-const cssvariables = require("postcss-css-variables");
-const nested = require('postcss-nested');
 const cache = require('gulp-cache');
 const zip = require('gulp-zip');
 const del = require('del');
@@ -28,7 +25,6 @@ var merge = require('merge-stream');
 // compileSass - Compile CSS for NDS Documentation
 gulp.task('compileSass', () => {
     console.log("Compiling Sass...");
-    var plugins = [nested, cssvariables];
     return gulp.src('source/css/style.scss')
         .pipe(sassGlob())
         .pipe(concat('nds.css'))
@@ -38,7 +34,6 @@ gulp.task('compileSass', () => {
         }))
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed', includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"] }).on('error', sass.logError))
-        .pipe(postcss(plugins))
         .pipe(sourcemaps.write('./source/maps'))
         .pipe(gulp.dest('./source/css'))
         .pipe(cache.clear())
