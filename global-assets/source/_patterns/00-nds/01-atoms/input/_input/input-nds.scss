@@ -3,18 +3,9 @@
     input {
         line-height: $line-height-default;
     }
-    &::-webkit-input-placeholder {
-        color: $input-placeholder;
-    }
-    
-    &::-moz-placeholder {
-        color: $input-placeholder;
-    }
-    
-    &::-ms-placeholder {
-        color: $input-placeholder;
-    }
-    
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &::-ms-placeholder,
     &::placeholder {
         color: $input-placeholder;
     }
