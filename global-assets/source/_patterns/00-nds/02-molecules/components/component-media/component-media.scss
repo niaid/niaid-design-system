@@ -1,8 +1,10 @@
 .component--media {
+    margin: $s-1 0;
     width: 100%;
     max-width: 100%;
-    .image--default {
-        width: 100%;
+    .image--default,
+    img {
+        max-width: 100%;
     }
     .component--media__text {
         display: flex;
@@ -11,9 +13,15 @@
             width: 0;
         }
     }
+    &--full {
+        .image--default,
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
     &--left,
     &--right {
-        margin: $s-1 0;
         @include media-breakpoint-up(md) {
             max-width: 50%;
         }
