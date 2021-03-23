@@ -3,6 +3,20 @@
     // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
     function initDataAttributes() {
 
+        // Accordion Button
+        let accordionCards = document.getElementsByClassName("component--accordion__card");
+        for (var i = 0; i < accordionCards.length; i++) {
+            let navigationLinks = accordionCards[i].querySelectorAll('button');
+            setDataAttributes(navigationLinks, 'data-content', 'accordion-');
+        }
+
+        // Tabs
+        let navigationTabs = document.getElementsByClassName("navigation--tabs");
+        for (var i = 0; i < navigationTabs.length; i++) {
+            let tabs = navigationTabs[i].querySelectorAll('.navigation--tabs__tab');
+            setDataAttributes(tabs, 'data-content', 'nav-');
+        }
+
         // Generic Body
         let bodyLayouts = document.getElementsByClassName("layouts--body");
         for (var i = 0; i < bodyLayouts.length; i++) {
@@ -59,14 +73,7 @@
             setDataAttributes(navigationLinks, 'data-nav', 'footer-nav-');
         }
 
-        // Accordion Button
-        let accordionCards = document.getElementsByClassName("component--accordion__card");
-        for (var i = 0; i < accordionCards.length; i++) {
-            let navigationLinks = accordionCards[i].querySelectorAll('button');
-            setDataAttributes(navigationLinks, 'data-content', 'accordion-');
-        }
-
-        // Floating Button
+        // Floating Buttons
         let floatingButtons = document.getElementsByClassName("button--floating");
         setDataAttributes(floatingButtons, 'data-nav', 'header-nav-');
 
