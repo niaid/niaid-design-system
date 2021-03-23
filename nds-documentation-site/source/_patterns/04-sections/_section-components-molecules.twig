@@ -981,8 +981,8 @@
             {% endblock %}
         {% endembed %}
 
-        <h4>Navigation Dropdown</h4>
-        <p>The Navigation Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
+        <h4>Dropdown</h4>
+        <p>The Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
         {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
             {
                 "block_dependencies_text": "In order to use this component, you must include the following libraries in addition to the NDS Global JS:",
@@ -1144,6 +1144,30 @@
                 <h5>Includes</h5>
                 <ul>
                     <li>Molecules -> Components -> component-accordion</li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Tabs</h4>
+        <p>The Navigation Tabs component is used to move between sections of a single page or across several different pages. The active tab has the class "active".</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "navigation-tabs"
+            }
+        %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-tabs/demo/navigation-tabs.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_tabs_content %&#125;: The block holding the markup for the tabs.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_tabs_classes: Additional classes for the navigation component.</li>
+                    <li>navigation_tabs_data: An array of tab objects. Structure: {"text": "", "href": "", "class": "", "attributes": ""}. The "href" key can be empty. Use the "class" key to pass "active" to the active tab.</li>
+                    <li>navigation_tabs_attributes: Optional attributes for the tabs &lt;nav&gt; element.</li>
                 </ul>
             {% endblock %}
         {% endembed %}
