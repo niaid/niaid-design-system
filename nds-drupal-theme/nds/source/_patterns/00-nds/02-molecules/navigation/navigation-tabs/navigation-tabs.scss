@@ -1,0 +1,10 @@
+.navigation--tabs {
+    &__tab {
+        display: inline-flex;
+        padding: $s-0-50 $s-1-50;
+        border-bottom: $s-0-25 solid transparent;
+        &.active {
+            border-bottom: $s-0-25 solid $type-link;
+        }
+    }
+}

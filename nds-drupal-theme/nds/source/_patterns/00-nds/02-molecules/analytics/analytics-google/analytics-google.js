@@ -3,6 +3,20 @@
     // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
     function initDataAttributes() {
 
+        // Accordion Button
+        let accordionCards = document.getElementsByClassName("component--accordion__card");
+        for (var i = 0; i < accordionCards.length; i++) {
+            let navigationLinks = accordionCards[i].querySelectorAll('button');
+            setDataAttributes(navigationLinks, 'data-content', 'accordion-');
+        }
+
+        // Tabs
+        let navigationTabs = document.getElementsByClassName("navigation--tabs");
+        for (var i = 0; i < navigationTabs.length; i++) {
+            let tabs = navigationTabs[i].querySelectorAll('.navigation--tabs__tab');
+            setDataAttributes(tabs, 'data-content', 'nav-');
+        }
+
         // Generic Body
         let bodyLayouts = document.getElementsByClassName("layouts--body");
         for (var i = 0; i < bodyLayouts.length; i++) {
@@ -57,13 +71,6 @@
             // Footer Links
             let navigationLinks = globalFooters[i].querySelectorAll('a, button');
             setDataAttributes(navigationLinks, 'data-nav', 'footer-nav-');
-        }
-
-        // Accordion Button
-        let accordionCards = document.getElementsByClassName("component--accordion__card");
-        for (var i = 0; i < accordionCards.length; i++) {
-            let navigationLinks = accordionCards[i].querySelectorAll('button');
-            setDataAttributes(navigationLinks, 'data-content', 'accordion-');
         }
 
         // Floating Buttons
@@ -126,20 +133,6 @@
         for (let j = 0; j < childElements.length; j++) {
             childElements[j].setAttribute(dataAttributeName, dataAttributeValue);
         }
-    }
-
-    if (window.Element && !Element.prototype.closest) {
-        Element.prototype.closest =
-        function(s) {
-            var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-                i,
-                el = this;
-            do {
-                i = matches.length;
-                while (--i >= 0 && matches.item(i) !== el) {};
-            } while ((i < 0) && (el = el.parentElement));
-            return el;
-        };
     }
 
     if (typeof Drupal !== 'undefined') {

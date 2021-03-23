@@ -1,6 +1,27 @@
 "use strict";
 
 // Generic Utilities
+document.addEventListener("DOMContentLoaded", function (e) {
+  // Polyfill for "Closest" method.
+  if (window.Element && !Element.prototype.closest) {
+    Element.prototype.closest = function (s) {
+      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+          i,
+          el = this;
+
+      do {
+        i = matches.length;
+
+        while (--i >= 0 && matches.item(i) !== el) {}
+
+        ;
+      } while (i < 0 && (el = el.parentElement));
+
+      return el;
+    };
+  }
+});
+
 var getNextSibling = function getNextSibling(elem, selector) {
   var sibling = elem.nextElementSibling;
 
@@ -83,7 +104,23 @@ function hasClass(element, className) {
 (function ($) {
   // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
   function initDataAttributes() {
-    // Generic Body
+    // Accordion Button
+    var accordionCards = document.getElementsByClassName("component--accordion__card");
+
+    for (var i = 0; i < accordionCards.length; i++) {
+      var navigationLinks = accordionCards[i].querySelectorAll('button');
+      setDataAttributes(navigationLinks, 'data-content', 'accordion-');
+    } // Tabs
+
+
+    var navigationTabs = document.getElementsByClassName("navigation--tabs");
+
+    for (var i = 0; i < navigationTabs.length; i++) {
+      var tabs = navigationTabs[i].querySelectorAll('.navigation--tabs__tab');
+      setDataAttributes(tabs, 'data-content', 'nav-');
+    } // Generic Body
+
+
     var bodyLayouts = document.getElementsByClassName("layouts--body");
 
     for (var i = 0; i < bodyLayouts.length; i++) {
@@ -112,13 +149,13 @@ function hasClass(element, className) {
     var primaryNavigations = document.getElementsByClassName("navigation--primary");
 
     for (var i = 0; i < primaryNavigations.length; i++) {
-      var navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
+      var _navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
 
-      for (var _j2 = 0; _j2 < navigationLinks.length; _j2++) {
-        var navItem = navigationLinks[_j2].children[0];
+      for (var _j2 = 0; _j2 < _navigationLinks.length; _j2++) {
+        var navItem = _navigationLinks[_j2].children[0];
 
         if (hasClass(navItem, 'navigation--dropdown')) {
-          var sectionName = navigationLinks[_j2].children[0].children[0].textContent.trim();
+          var sectionName = _navigationLinks[_j2].children[0].children[0].textContent.trim();
 
           if (sectionName !== "") {
             sectionName = sectionName.replace(/\//g, '-');
@@ -144,18 +181,9 @@ function hasClass(element, className) {
       } // Footer Links
 
 
-      var _navigationLinks = globalFooters[i].querySelectorAll('a, button');
+      var _navigationLinks2 = globalFooters[i].querySelectorAll('a, button');
 
-      setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
-    } // Accordion Button
-
-
-    var accordionCards = document.getElementsByClassName("component--accordion__card");
-
-    for (var i = 0; i < accordionCards.length; i++) {
-      var _navigationLinks2 = accordionCards[i].querySelectorAll('button');
-
-      setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+      setDataAttributes(_navigationLinks2, 'data-nav', 'footer-nav-');
     } // Floating Buttons
 
 
@@ -219,24 +247,6 @@ function hasClass(element, className) {
     for (var j = 0; j < childElements.length; j++) {
       childElements[j].setAttribute(dataAttributeName, dataAttributeValue);
     }
-  }
-
-  if (window.Element && !Element.prototype.closest) {
-    Element.prototype.closest = function (s) {
-      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-          i,
-          el = this;
-
-      do {
-        i = matches.length;
-
-        while (--i >= 0 && matches.item(i) !== el) {}
-
-        ;
-      } while (i < 0 && (el = el.parentElement));
-
-      return el;
-    };
   }
 
   if (typeof Drupal !== 'undefined') {

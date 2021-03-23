@@ -6354,8 +6354,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <h4>Navigation Dropdown</h4>
-                            <p>The Navigation Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
+                            <h4>Dropdown</h4>
+                            <p>The Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
 
                             <div class="block-nds block--dependencies ">
                                 <div class="block--dependencies__label">Dependencies:</div>
@@ -6873,6 +6873,86 @@
                                             <h5>Includes</h5>
                                             <ul>
                                                 <li>Molecules -> Components -> component-accordion</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Tabs</h4>
+                            <p>The Navigation Tabs component is used to move between sections of a single page or across several different pages. The active tab has the class "active".</p>
+
+                            <div class="component-nds component--snippet  ">
+                                <div class="component--snippet__block">
+                                    <div class="component--snippet__block__code">
+                                        <div class="component--snippet__block__code__rendered">
+
+
+                                            <nav class="navigation-nds navigation--tabs ">
+                                                <a class="navigation--tabs__tab active" href="#">Tab One</a>
+                                                <a class="navigation--tabs__tab " href="#">Tab Two</a>
+                                                <a class="navigation--tabs__tab " href="#">Tab Three</a>
+                                            </nav>
+                                        </div>
+                                        <div class="component--snippet__block__code__loader">
+
+
+                                            <div class="icon-nds icon--loader " role="alert" aria-label="Loading" aria-busy="true">
+                                                <div class="preloader-wrapper small active">
+                                                    <div class="spinner-layer">
+                                                        <div class="circle-clipper left">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="gap-patch">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="circle-clipper right">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="component--snippet__block__code__wrapper">
+                                            <div class="component--snippet__block__code__wrapper__snippet">
+
+
+                                                <nav class="navigation-nds navigation--tabs ">
+                                                    <a class="navigation--tabs__tab active" href="#">Tab One</a>
+                                                    <a class="navigation--tabs__tab " href="#">Tab Two</a>
+                                                    <a class="navigation--tabs__tab " href="#">Tab Three</a>
+                                                </nav>
+                                            </div>
+                                            <div class="component--snippet__block__code__wrapper__button">
+                                                <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
+
+
+
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-navigation-tabs>
+
+
+                                                    <i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                                                    <span class="button--icon__text icon--left">Copy</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle" data-content="accordion-navigation-tabs"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block navigation_tabs_content %&#125;: The block holding the markup for the tabs.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>navigation_tabs_classes: Additional classes for the navigation component.</li>
+                                                <li>navigation_tabs_data: An array of tab objects. Structure: {"text": "", "href": "", "class": "", "attributes": ""}. The "href" key can be empty. Use the "class" key to pass "active" to the active tab.</li>
+                                                <li>navigation_tabs_attributes: Optional attributes for the tabs &lt;nav&gt; element.</li>
                                             </ul>
 
                                         </div>
