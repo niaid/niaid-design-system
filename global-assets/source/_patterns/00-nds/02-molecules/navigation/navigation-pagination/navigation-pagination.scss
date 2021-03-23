@@ -7,12 +7,13 @@
             height: $s-1px;
         }
         .pager__items {
+            display: flex;
             padding: 0;
             list-style: none;
             text-align: left;
             .pager__item {
                 padding: 0;
-                margin-right: $s-0-50;
+                margin-right: $s-0-75;
                 display: inline-flex;
                 a {
                     @extend .button-nds;
