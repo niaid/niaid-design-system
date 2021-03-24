@@ -269,7 +269,17 @@
                     </div>
                 </div>
                 <div class="navigation--primary__inner__item">
-                    <a class="active" href="/components/">Components</a>
+
+
+
+                    <div class="navigation-nds navigation--dropdown  hover">
+                        <a href="/components/" id="dMenuComponents" type="button" class="navigation--dropdown__toggle active" aria-haspopup="true" aria-expanded="false" aria-label="Open Component Section" data-display="static">Components</a>
+                        <div class="navigation--dropdown__menu" aria-labelledby="dMenuComponents">
+                            <a href="/components/#section-components-atoms">Atoms</a>
+                            <a href="/components/#section-components-molecules">Molecules</a>
+                            <a href="/components/#section-components-organisms">Organisms</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="navigation--primary__inner__item">
                     <a class="" href="/builder/">Theme Builder</a>
@@ -295,9 +305,9 @@
                 <div class="navigation--drawer__inner__section">
                     <div class="navigation--drawer__inner__section__button-wrapper" id="navGettingStarted">
                         <a href="/getting-started/" tabindex="-1">Getting Started</a>
-                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" tabindex="-1" aria-label="Toggle Getting Started Section"></button>
+                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navGettingStartedCollapse" aria-expanded="false" aria-controls="navGettingStartedCollapse" tabindex="-1" aria-label="Toggle Getting Started Section"></button>
                     </div>
-                    <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseOne" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
+                    <div class="navigation--drawer__inner__section__dropdown collapse" id="navGettingStartedCollapse" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/">Overview</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-quick-start">Quick Start</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
@@ -308,9 +318,9 @@
                 <div class="navigation--drawer__inner__section">
                     <div class="navigation--drawer__inner__section__button-wrapper" id="navDesign">
                         <a href="/design/" tabindex="-1">Design</a>
-                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" tabindex="-1" aria-label="Toggle Design Section"></button>
+                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navDesignCollapse" aria-expanded="false" aria-controls="navDesignCollapse" tabindex="-1" aria-label="Toggle Design Section"></button>
                     </div>
-                    <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseTwo" class="collapse" aria-labelledby="navDesign" data-parent="#main-navigation-mobile">
+                    <div class="navigation--drawer__inner__section__dropdown collapse" id="navDesignCollapse" class="collapse" aria-labelledby="navDesign" data-parent="#main-navigation-mobile">
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/design/">Overview</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-typography">Typography</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-icons">Icons</a>
@@ -324,9 +334,9 @@
                 <div class="navigation--drawer__inner__section">
                     <div class="navigation--drawer__inner__section__button-wrapper" id="navDevelopment">
                         <a href="/development/" tabindex="-1">Development</a>
-                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" tabindex="-1" aria-label="Toggle Development Section"></button>
+                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navDevelopmentCollapse" aria-expanded="false" aria-controls="navDevelopmentCollapse" tabindex="-1" aria-label="Toggle Development Section"></button>
                     </div>
-                    <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseThree" class="collapse" aria-labelledby="navDevelopment" data-parent="#main-navigation-mobile">
+                    <div class="navigation--drawer__inner__section__dropdown collapse" id="navDevelopmentCollapse" class="collapse" aria-labelledby="navDevelopment" data-parent="#main-navigation-mobile">
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/development/">Overview</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-atomic-design">Atomic Design</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
@@ -335,7 +345,15 @@
                     </div>
                 </div>
                 <div class="navigation--drawer__inner__section">
-                    <a tabindex="-1" class="active" href="/components/">Components</a>
+                    <div class="navigation--drawer__inner__section__button-wrapper" id="navComponent">
+                        <a href="/components/" tabindex="-1">Components</a>
+                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navComponentCollapse" aria-expanded="false" aria-controls="navComponentCollapse" tabindex="-1" aria-label="Toggle Components Section"></button>
+                    </div>
+                    <div class="navigation--drawer__inner__section__dropdown collapse" id="navComponentCollapse" class="collapse" aria-labelledby="navComponent" data-parent="#main-navigation-mobile">
+                        <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-atoms">Atoms</a>
+                        <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-molecules">Molecules</a>
+                        <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-organisms">Organisms</a>
+                    </div>
                 </div>
                 <div class="navigation--drawer__inner__section">
                     <a tabindex="-1" class="" href="/builder/">Theme Builder</a>
@@ -6444,7 +6462,7 @@
                                         <div class="component--snippet__block__pattern__content">
                                             <h5>Blocks</h5>
                                             <ul>
-                                                <li>&#123;% block navigation_dropdown_content %&#125;: The block holding the dropdown link options These links should be plain with only a text label and href value.</li>
+                                                <li>&#123;% block navigation_dropdown_content %&#125;: The block holding the dropdown link options. These links should be plain with only a text label and href value.</li>
                                             </ul>
                                             <h5>Parameters</h5>
                                             <ul>
@@ -6880,7 +6898,7 @@
                                 </div>
                             </div>
                             <h4>Tabs</h4>
-                            <p>The Navigation Tabs component is used to move between sections of a single page or across several different pages. The active tab has the class "active".</p>
+                            <p>The Navigation Tabs component is used to move between sections of a single page or across several different pages. The active tab has the class "active."</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
