@@ -41,6 +41,9 @@ $status-success: $success;
 $status-information: #4865E3;
 $status-warning: $warning;
 
+/**** COLORS > MISC ****/
+$border-light: #D6D6D6;
+
 /**** COLORS > INPUT ****/
 $input-border: #717171;
 $input-placeholder: #9AA6B5;
@@ -80,8 +83,15 @@ $color-theme-3-3-2: #0D2E44;
 $color-theme-3-accent: #79A9D1;
 
 /**** TYPE ****/
+$line-height-heading: 1.3;
 $line-height-small: 1.5;
 $line-height-default: 2.0;
+
+/**** TYPE > FONT STACK ****/
+$font-stack-public-sans: "Public Sans", "Roboto", sans-serif;
+$font-stack-roboto: "Roboto", "Public Sans", sans-serif;
+$font-stack-merriweather: "Merriweather", "Martel", serif;
+$font-stack-martel: "Martel", "Merriweather", serif;
 
 /**** TYPE > FONT WEIGHT ****/
 $font-weight-thin: 100;

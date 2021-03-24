@@ -1,7 +1,7 @@
 table {
     width: 100%;
     margin: $s-1 0;
-    border: $s-1px solid $input-border;
+    border: $s-1px solid $border-light;
     border-collapse: separate;
     border-radius: 0;
     border-spacing: 0px;
@@ -36,7 +36,7 @@ table {
         border-collapse: separate;
         border-radius: 0 0 0 0;
         tr {
-            background: $type-body;
+            background: $type-heading;
         }
     }
     thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
