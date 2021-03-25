@@ -8,6 +8,9 @@
     }
     &__text {
         padding: .25rem;
+        &__label {
+            line-height: $line-height-small;
+        }
         &__hex {
             @extend .sub-label;
         }

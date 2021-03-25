@@ -7,7 +7,11 @@ button {
     padding: $s-1 $s-2;
     line-height: normal;
     border-radius: 0;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
+    @include media-breakpoint-up(sm) {
+        white-space: nowrap;
+    }
     &:visited {
         color: $white;
         &:hover,

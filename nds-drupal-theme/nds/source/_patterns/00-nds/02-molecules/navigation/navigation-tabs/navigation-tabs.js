@@ -1,20 +1,21 @@
 (function($) {
     function initNavigationTabs(context = document) {
-        document.querySelectorAll('.navigation--tabs__tab').forEach(function(clickedTab) {
-            clickedTab.addEventListener('click', function(event) {
+        let tabs = document.querySelectorAll('.navigation--tabs__tab');
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener('click', function() {
                 let activeClass = 'active';
                 let tabParent = this.closest('.navigation--tabs');
-                let tabs = tabParent.querySelectorAll('.navigation--tabs__tab');
+                let relatedTabs = tabParent.querySelectorAll('.navigation--tabs__tab');
                 if (!hasClass(this, activeClass)) {
-                    for (let i = 0; i < tabs.length; i++) {
-                        if (hasClass(tabs[i], activeClass)) {
-                            tabs[i].classList.remove(activeClass);
+                    for (let j = 0; j < relatedTabs.length; j++) {
+                        if (hasClass(relatedTabs[j], activeClass)) {
+                            relatedTabs[j].classList.remove(activeClass);
                         }
                     }
                     this.classList.add(activeClass);
                 }
             });
-        });
+        }
     }
 
     if (typeof Drupal !== 'undefined') {
