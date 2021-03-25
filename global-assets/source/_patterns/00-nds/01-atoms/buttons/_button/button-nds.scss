@@ -25,14 +25,14 @@ button {
 button:disabled,
 button[disabled] {
     @extend .button-nds;
-    background: $page-background-alternate !important;
-    color: $type-body !important;
-    border-color: transparent !important;
+    background: $type-body !important;
+    color: $white !important;
+    border-color: $type-body !important;
     cursor: not-allowed !important;
     opacity: 1;
     &:hover,
     &:focus {
-        background: $page-background-alternate !important;
-        color: $type-body !important;
+        background: $type-body !important;
+        color: $white !important;
     }
 }
