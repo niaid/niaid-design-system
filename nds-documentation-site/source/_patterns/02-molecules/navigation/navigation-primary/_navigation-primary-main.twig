@@ -63,7 +63,21 @@
                 {% endembed %}
             </div>
             <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "components" ? "active" : "" }}" href="{{ links.components }}">Components</a>
+                {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
+                    {
+                        "navigation_dropdown_id": "dMenuComponents",
+                        "navigation_dropdown_active_class": navigationPrimaryActiveLink == "components" ? "active" : "",
+                        "navigation_dropdown_toggle_text": "Components",
+                        "navigation_dropdown_toggle_href": links.components,
+                        "navigation_dropdown_toggle_aria_label": "Open Component Section"
+                    }
+                %}
+                    {% block navigation_dropdown_content %}
+                        <a href="{{ links.components ~ '#section-components-atoms' }}">Atoms</a>
+                        <a href="{{ links.components ~ '#section-components-molecules' }}">Molecules</a>
+                        <a href="{{ links.components ~ '#section-components-organisms' }}">Organisms</a>
+                    {% endblock %}
+                {% endembed %}
             </div>
             <div class="navigation--primary__inner__item">
                 <a class="{{ navigationPrimaryActiveLink == "builder" ? "active" : "" }}" href="{{ links.themeBuilder }}">Theme Builder</a>

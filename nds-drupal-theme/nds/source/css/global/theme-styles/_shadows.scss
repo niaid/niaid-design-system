@@ -265,7 +265,12 @@
         }
         &.navigation--mobile-rail {
             .navigation--mobile-rail__button {
+                background: $white;
                 border-bottom: 0;
+                &:hover,
+                &:focus {
+                    border-bottom: 0;
+                }
             }
         }
         &.navigation--dropdown {

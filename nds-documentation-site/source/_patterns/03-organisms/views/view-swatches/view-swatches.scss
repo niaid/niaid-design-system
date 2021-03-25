@@ -4,6 +4,9 @@
         margin: 0;
         > div {
             padding: 0 .25rem;
+            @include media-breakpoint-down(sm) {
+                margin: 1rem 0;
+            }
         }
     }
 }
