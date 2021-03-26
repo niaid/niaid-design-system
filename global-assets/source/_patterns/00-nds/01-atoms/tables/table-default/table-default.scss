@@ -77,7 +77,7 @@ table {
                             @extend .fas;
                             content: fa-content($fa-var-chevron-left);
                             font-size: $s-0-75;
-                            line-height: 1.0;
+                            line-height: $line-height-single;
                             display: flex;
                             justify-content: center;
                             align-items: center;
