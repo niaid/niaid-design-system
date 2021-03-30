@@ -68,16 +68,6 @@
         <p>The images/ directory holds some generic placeholder images as well as global images, such as document icons. Place any project-specific images needed into this folder.</p>
         <h5>Public Directory</h5>
         <p>When Pattern Lab compiles, a locally-hosted style guide is opened in a browser. This style guide comes from the ./public folder wherein all patterns are converted to web-ready HTML.</p>
-        <p>When building a static website, the production HTML should be copied from within the ./public/patterns/ directory. The gulpfile.js file that ships with NDS has sample code to pull your final pages into a production-ready folder.</p>
-        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
-            {
-                "component_media_src": 'build-paths.png',
-                "component_media_alt": 'Sample Gulpfile.js code to help pull pages into a production-ready folder.',
-                "component_media_credit": 'NIAID',
-                "component_media_caption": "The gulpfile.js file provides an example of how to pull your final pages into a production-ready folder.",
-                "component_media_lightbox": "yes"
-            }
-        %}
         <h5>Core &amp; Config Directories</h5>
         <p>The core/ and config/ directories are out-of-the-box directories that Pattern Lab needs to run properly. Generally, users of NDS do not need to edit the files found in these directories. However, the default Pattern Lab settings can be modified in the config/config.yml file. For more information, <a href="https://patternlab.io/docs/editing-the-configuration-options/">visit the Pattern Lab documentation page on configuration options.</a></p>
     {% endblock %}
