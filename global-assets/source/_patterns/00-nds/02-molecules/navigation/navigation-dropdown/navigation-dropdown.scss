@@ -13,6 +13,7 @@
             border: $s-1px solid $color-theme-1-3-2;
         }
     }
+    .dropdown-menu,
     &__menu {
         position: absolute;
         display: none;
@@ -41,6 +42,7 @@
                 background: $color-theme-1-3-2;
                 border: $s-1px solid $color-theme-1-3-2;
             }
+            .dropdown-menu,
             &__menu {
                 display: block;
             }
