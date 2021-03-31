@@ -31,8 +31,11 @@ button[disabled] {
     cursor: not-allowed !important;
     opacity: 1;
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
         background: $type-body !important;
         color: $white !important;
+        border-color: $type-body !important;
+        outline: none !important;
     }
 }

@@ -46,24 +46,17 @@
             }
         }
         &.button--negative {
-            background: $white;
-            border: $s-1px solid $white;
             &:hover,
             &:focus {
-                background: $white;
-                border: $s-1px solid $white;
-                color: $status-error;
-            }
-            &:active {
-                background-color: $white !important;
+                background: $status-error;
+                border: $s-1px solid $status-error;
             }
         }
         &.button--floating,
         &.button--image,
         &.button--icon,
         &.button--external {
-            &.button--secondary,
-            &.button--negative {
+            &.button--secondary {
                 background: $white;
             }
         }
@@ -326,12 +319,10 @@
             }
         }
         .button--negative {
-            border: $s-1px solid $white;
             &:hover,
             &:focus {
-                background: $white;
-                color: $status-error;
-                border: $s-1px solid $white;
+                background: $status-error;
+                border: $s-1px solid $status-error;
             }
         }
         .button--floating,
@@ -343,14 +334,6 @@
                 &:focus {
                     background: $white;
                     color: $color-theme-2-1-1;
-                    border: $s-1px solid $white;
-                }
-            }
-            &.button--negative {
-                &:hover,
-                &:focus {
-                    background: $white;
-                    color: $status-error;
                     border: $s-1px solid $white;
                 }
             }
@@ -421,12 +404,10 @@
             }
         }
         .button--negative {
-            border: $s-1px solid $white;
             &:hover,
             &:focus {
-                background: $white;
-                color: $status-error;
-                border: $s-1px solid $white;
+                background: $status-error;
+                border: $s-1px solid $status-error;
             }
         }
         .button--floating,
@@ -438,14 +419,6 @@
                 &:focus {
                     background: $white;
                     color: $color-theme-3-1-1;
-                    border: $s-1px solid $white;
-                }
-            }
-            &.button--negative {
-                &:hover,
-                &:focus {
-                    background: $white;
-                    color: $status-error;
                     border: $s-1px solid $white;
                 }
             }
