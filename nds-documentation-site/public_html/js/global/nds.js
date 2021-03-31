@@ -1062,38 +1062,6 @@ $(document).ready(function () {
       }
     });
   }
-})(jQuery); // Dependencies
-//  - Bootstrap Datepicker
-//  - jQuery
-
-
-(function ($) {
-  function initInputDatePicker() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $('.input--date-picker').each(function () {
-      if ($(this).find('input').attr('nds-date-picker') == 'true') {
-        $(this).find('input').datepicker();
-      }
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initInputDatePicker = {
-        attach: function attach(context) {
-          $('body', context).once('nds-input-date-picker').each(function () {
-            initInputDatePicker(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initInputDatePicker();
-    });
-  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -1127,6 +1095,38 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initInputNDS();
+    });
+  }
+})(jQuery); // Dependencies
+//  - Bootstrap Datepicker
+//  - jQuery
+
+
+(function ($) {
+  function initInputDatePicker() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $('.input--date-picker').each(function () {
+      if ($(this).find('input').attr('nds-date-picker') == 'true') {
+        $(this).find('input').datepicker();
+      }
+    });
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initInputDatePicker = {
+        attach: function attach(context) {
+          $('body', context).once('nds-input-date-picker').each(function () {
+            initInputDatePicker(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initInputDatePicker();
     });
   }
 })(jQuery); // Dependencies
@@ -1322,6 +1322,35 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.parallax').length) {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initComponentMedia() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -1446,22 +1475,43 @@ $(document).ready(function () {
 })(jQuery);
 
 (function ($) {
-  function initBlockHero() {
+  function initNavigationDropdown() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $(".navigation--dropdown.hover").on('mouseover', function () {
+      openDropdown($(this));
+    });
+    $(".navigation--dropdown.hover").on('mouseout', function () {
+      closeDropdown($(this));
+    });
+    $(".navigation--dropdown").on('focusin', function (e) {
+      openDropdown($(this));
+    });
+    $(".navigation--dropdown").on('focusout', function (e) {
+      if (this.contains(e.relatedTarget)) {
+        return;
+      }
 
-    if (document.querySelectorAll('.parallax').length) {
-      var elems = document.querySelectorAll('.parallax');
-      var instances = M.Parallax.init(elems);
-    }
+      closeDropdown($(this));
+    });
+  }
+
+  function openDropdown($el) {
+    $el.addClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
+  }
+
+  function closeDropdown($el) {
+    $el.removeClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
+      Drupal.behaviors.initNavigationDropdown = {
         attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
+          $("body", context).once('nds-navigation-dropdown').each(function () {
+            initNavigationDropdown(context);
           });
         }
       };
@@ -1469,7 +1519,7 @@ $(document).ready(function () {
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initBlockHero();
+      initNavigationDropdown();
     });
   }
 })(jQuery); // Part of NDS Lite
@@ -1551,56 +1601,6 @@ $(document).ready(function () {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationDrawer();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initNavigationDropdown() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $(".navigation--dropdown.hover").on('mouseover', function () {
-      openDropdown($(this));
-    });
-    $(".navigation--dropdown.hover").on('mouseout', function () {
-      closeDropdown($(this));
-    });
-    $(".navigation--dropdown").on('focusin', function (e) {
-      openDropdown($(this));
-    });
-    $(".navigation--dropdown").on('focusout', function (e) {
-      if (this.contains(e.relatedTarget)) {
-        return;
-      }
-
-      closeDropdown($(this));
-    });
-  }
-
-  function openDropdown($el) {
-    $el.addClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
-  }
-
-  function closeDropdown($el) {
-    $el.removeClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationDropdown = {
-        attach: function attach(context) {
-          $("body", context).once('nds-navigation-dropdown').each(function () {
-            initNavigationDropdown(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationDropdown();
     });
   }
 })(jQuery);
