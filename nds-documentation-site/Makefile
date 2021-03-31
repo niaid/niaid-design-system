@@ -5,24 +5,14 @@ S3_BUCKET_PATH=nds.niaid.nih.gov
 # Cache clear parameters
 paths?="/*"
 
-.PHONY: build deploy
+buildStaging:
+	gulp buildStaging
 
-default: build
+buildProd:
+	gulp buildProd
 
-build:
-	gulp build
-
-deploy-staging: build
+deploy-staging: buildStaging
 	aws s3 sync ./public_html s3://staging.nds.niaid.nih.gov --exclude ".git/*" --delete
 
-deploy-prod: build
-	aws s3 sync ./public_html s3://nds.niaid.nih.gov --exclude ".git/*" --delete
-
-# THESE COMMANDS ARE NOT RECOMMENDED - USE CAREFULLY
-deploy-all: build
-	aws s3 sync ./public_html s3://staging.nds.niaid.nih.gov --exclude ".git/*" --delete
-	aws s3 sync ./public_html s3://nds.niaid.nih.gov --exclude ".git/*" --delete
-
-deploy-only:
-	aws s3 sync ./public_html s3://staging.nds.niaid.nih.gov --exclude ".git/*" --delete
+deploy-prod: buildProd
 	aws s3 sync ./public_html s3://nds.niaid.nih.gov --exclude ".git/*" --delete
