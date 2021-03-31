@@ -10,4 +10,7 @@
     &.layouts--body--no-vertical-padding {
         padding-top: 0;
     }
+    &--no-shadows {
+        @include md-0dp(!important);
+    }
 }

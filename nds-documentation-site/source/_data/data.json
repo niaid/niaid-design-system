@@ -1,11 +1,11 @@
 {
-    "ndsVersion": "v 1.0.1",
+    "ndsVersion": "v 1.0.2",
     "prodBuild": "false",
     "cssPath": "../../css/",
     "jsPath": "../../js/",
     "imagePath": "../../images/",
     "assetsPath": "../../images/",
-    "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans",
+    "bodyClass": "style--corners--semirounded style--shadows",
     "cssIncludes": {
         "select2": true,
         "bootstrapDatepicker": true

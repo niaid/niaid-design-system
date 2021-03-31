@@ -76,7 +76,18 @@
                 <a tabindex="-1" class="{{ navigationPrimaryActiveLink == "builder" ? "active" : "" }}" href="{{ links.themeBuilder }}">Theme Builder</a>
             </div>
             <div class="navigation--drawer__inner__download">
-                {% include "@atoms/buttons/button-github/_button-github-main.twig" %}
+                {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+                    {
+                        "button_icon_classes": "button--github",
+                        "button_icon_icon": "github",
+                        "button_icon_icon_weight": "b",
+                        "button_icon_icon_size": "large",
+                        "button_icon_text": "NDS on GitHub",
+                        "button_icon_href": "https://github.com/niaid/niaid-design-system",
+                        "button_icon_aria_label": "NDS on GitHub",
+                        "button_icon_attributes": "tabindex=-1"
+                    }
+                %}
             </div>
         </div>
         <a class="skip-to skip-to--top" href="#" tabindex="-1">Skip to Front</a>
