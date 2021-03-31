@@ -25,11 +25,15 @@
             &--pdf {
                 color: $icon-doc-pdf;
             }
-        }
-    }
-    .icon--default {
-        &--application {
-            font-size: $s-1-25;
+            &--image,
+            &--video,
+            &--application,
+            &--file {
+                color: $type-link;
+            }
+            &--application {
+                font-size: $s-1-25;
+            }
         }
     }
     &.icon--document--button {
