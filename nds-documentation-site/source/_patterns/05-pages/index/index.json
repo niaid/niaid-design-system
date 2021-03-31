@@ -1,5 +1,5 @@
 {
-    "bodyClass": "style--colors--theme-1 style--corners--semirounded style--headings--public-sans style--body--public-sans style--hero",
+    "bodyClass": "style--hero style--corners--semirounded style--shadows",
     "columns": {
         "main": 9
     }

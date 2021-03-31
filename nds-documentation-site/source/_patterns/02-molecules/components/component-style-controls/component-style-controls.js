@@ -47,7 +47,7 @@
             "headings": "public-sans",
             "body": "public-sans",
             "colors": "theme-1",
-            "shadows": "false",
+            "shadows": "true",
             "corners": "semirounded"
         }
 
@@ -70,7 +70,7 @@
             }
             else {
                 $('body').removeClass("style--shadows");
-                $.removeCookie(cookieName, { path: '/' });
+                $.cookie(cookieName, false, { expires: 30, path: '/' });
             }
         });
         $('#corners').on('change', function() {
@@ -96,10 +96,9 @@
             let tempState = state;
 
             // Shadows:
-            if ($.cookie("NDS_DOC_SITE_PROP--shadows")) {
-                $('body').addClass("style--shadows");
-                $.cookie("NDS_DOC_SITE_PROP--shadows", true, { expires: 30, path: '/' });
-                $('#shadows option[value="shadows"]').prop('selected', true);
+            if ($.cookie("NDS_DOC_SITE_PROP--shadows") === 'false') {
+                $('body').removeClass("style--shadows");
+                $('#shadows option[value="flat"]').prop('selected', true);
             }
 
             // All other styles:

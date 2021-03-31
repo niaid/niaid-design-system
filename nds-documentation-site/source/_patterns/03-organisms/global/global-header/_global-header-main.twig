@@ -20,7 +20,17 @@
                 "button_icon_text": "Download NDS"
             }
         %} #}
-        {% include "@atoms/buttons/button-github/_button-github-main.twig" %}
+        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+            {
+                "button_icon_classes": "button--github",
+                "button_icon_icon": "github",
+                "button_icon_icon_weight": "b",
+                "button_icon_icon_size": "large",
+                "button_icon_text": "NDS on GitHub",
+                "button_icon_href": "https://github.com/niaid/niaid-design-system",
+                "button_icon_aria_label": "NDS on GitHub"
+            }
+        %}
     </div>
     {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
         {

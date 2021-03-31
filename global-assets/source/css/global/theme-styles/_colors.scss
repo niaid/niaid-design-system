@@ -13,7 +13,8 @@
             color: $color-theme-2-1-1;
             background: transparent;
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 background: $color-theme-2-1-1;
                 color: $white;
                 border: $s-1px solid $color-theme-2-1-1;
@@ -30,13 +31,13 @@
             }
         }
         &.button--negative {
-            color: $status-error;
-            background: transparent;
+            background: $status-error;
+            border: $s-1px solid $status-error;
             &:hover,
-            &:focus {
-                background: $status-error;
-                color: $white;
-                border: $s-1px solid $status-error;
+            &:focus,
+            &:active {
+                background: $status-error-hover;
+                border: $s-1px solid $status-error-hover;
             }
         }
     }
@@ -45,7 +46,8 @@
             background: $color-theme-2-1-1;
             border: $s-1px solid $color-theme-2-1-1;
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 background: $color-theme-2-1-2;
                 border: $s-1px solid $color-theme-2-1-2;
             }
@@ -54,7 +56,8 @@
             color: $color-theme-2-1-1;
             border: $s-1px solid $color-theme-2-1-1;
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 color: $white;
                 background: $color-theme-2-1-1;
                 border: $s-1px solid $color-theme-2-1-1;
@@ -64,19 +67,20 @@
             background: $color-theme-2-2-1;
             border: $s-1px solid $color-theme-2-2-1;
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 background: $color-theme-2-2-2;
                 border: $s-1px solid $color-theme-2-2-2;
             }
         }
         &.button--negative {
-            color: $status-error;
+            background: $status-error;
             border: $s-1px solid $status-error;
             &:hover,
-            &:focus {
-                color: $white;
-                background: $status-error;
-                border: $s-1px solid $status-error;
+            &:focus,
+            &:active {
+                background: $status-error-hover;
+                border: $s-1px solid $status-error-hover;
             }
         }
         &.button--floating,
@@ -87,20 +91,11 @@
                 color: $color-theme-2-1-1;
                 background: transparent;
                 &:hover,
-                &:focus {
+                &:focus,
+                &:active {
                     background: $color-theme-2-1-1;
                     color: $white;
                     border: $s-1px solid $color-theme-2-1-1;
-                }
-            }
-            &.button--negative {
-                color: $status-error;
-                background: transparent;
-                &:hover,
-                &:focus {
-                    background: $status-error;
-                    color: $white;
-                    border: $s-1px solid $status-error;
                 }
             }
         }
@@ -384,13 +379,13 @@
             }
         }
         &.button--negative {
-            color: $status-error;
-            background: transparent;
+            background: $status-error;
+            border: $s-1px solid $status-error;
             &:hover,
-            &:focus {
-                background: $status-error;
-                color: $white;
-                border: $s-1px solid $status-error;
+            &:focus,
+            &:active {
+                background: $status-error-hover;
+                border: $s-1px solid $status-error-hover;
             }
         }
     }
@@ -424,13 +419,13 @@
             }
         }
         &.button--negative {
-            color: $status-error;
+            background: $status-error;
             border: $s-1px solid $status-error;
             &:hover,
-            &:focus {
-                color: $white;
-                background: $status-error;
-                border: $s-1px solid $status-error;
+            &:focus,
+            &:active {
+                background: $status-error-hover;
+                border: $s-1px solid $status-error-hover;
             }
         }
         &.button--floating,
@@ -445,16 +440,6 @@
                     background: $color-theme-3-1-1;
                     color: $white;
                     border: $s-1px solid $color-theme-3-1-1;
-                }
-            }
-            &.button--negative {
-                color: $status-error;
-                background: transparent;
-                &:hover,
-                &:focus {
-                    background: $status-error;
-                    color: $white;
-                    border: $s-1px solid $status-error;
                 }
             }
         }
