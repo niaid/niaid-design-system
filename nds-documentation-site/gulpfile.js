@@ -169,11 +169,21 @@ gulp.task('serveProject', () => {
     gulp.watch('../global-assets/source/_patterns/**/*', gulp.series('cleanNDS', 'copyGlobalPatterns', 'compileSass', 'compileJS', 'compilePatternLab'));
 });
 
+// GULP: addStagingBanner - Adds a banner to designate the staging version of the documentation website.
+gulp.task('addStagingBanner', () => {
+    return gulp.src('./public_html/**/*.html')
+        .pipe(replace('<!--STAGING-BANNER-->', '<div class="staging-banner">NDS STAGING</div>'))
+        .pipe(gulp.dest('./public_html/'));
+});
+
 // GULP: default - Running gulp compiles the NDS Documentaiton site and serves it locally.
 gulp.task('default', gulp.series('cleanNDS', 'cleanIgnoredSourceDirectories', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab', 'serveProject'));
 
+// GULP - buildStaging - Build the NDS Documentation site for deploy to staging.
+gulp.task('buildStaging', gulp.series('cleanDistributionDirectories', 'compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets, 'addStagingBanner'));
+
 // GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('build', gulp.series('cleanDistributionDirectories', 'compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
+gulp.task('buildProd', gulp.series('cleanDistributionDirectories', 'compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
 
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
 function buildNDSDocumentationSite() {
