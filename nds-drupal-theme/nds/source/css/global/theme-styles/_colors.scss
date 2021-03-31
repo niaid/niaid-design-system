@@ -12,6 +12,9 @@
         &.button--secondary {
             color: $color-theme-2-1-1;
             background: transparent;
+            &:visited {
+                color: $color-theme-2-1-1;
+            }
             &:hover,
             &:focus,
             &:active {
@@ -55,6 +58,9 @@
         &.button--secondary {
             color: $color-theme-2-1-1;
             border: $s-1px solid $color-theme-2-1-1;
+            &:visited {
+                color: $color-theme-2-1-1;
+            }
             &:hover,
             &:focus,
             &:active {
@@ -90,6 +96,9 @@
             &.button--secondary {
                 color: $color-theme-2-1-1;
                 background: transparent;
+                &:visited {
+                    color: $color-theme-2-1-1;
+                }
                 &:hover,
                 &:focus,
                 &:active {
@@ -361,8 +370,12 @@
         &.button--secondary {
             color: $color-theme-3-1-1;
             background: transparent;
+            &:visited {
+                color: $color-theme-3-1-1;
+            }
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 background: $color-theme-3-1-1;
                 color: $white;
                 border: $s-1px solid $color-theme-3-1-1;
@@ -394,7 +407,8 @@
             background: $color-theme-3-1-1;
             border: $s-1px solid $color-theme-3-1-1;
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 background: $color-theme-3-1-2;
                 border: $s-1px solid $color-theme-3-1-2;
             }
@@ -402,8 +416,12 @@
         &.button--secondary {
             color: $color-theme-3-1-1;
             border: $s-1px solid $color-theme-3-1-1;
+            &:visited {
+                color: $color-theme-3-1-1;
+            }
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 color: $white;
                 background: $color-theme-3-1-1;
                 border: $s-1px solid $color-theme-3-1-1;
@@ -413,7 +431,8 @@
             background: $color-theme-3-2-1;
             border: $s-1px solid $color-theme-3-2-1;
             &:hover,
-            &:focus {
+            &:focus,
+            &:active {
                 background: $color-theme-3-2-2;
                 border: $s-1px solid $color-theme-3-2-2;
             }
@@ -435,8 +454,12 @@
             &.button--secondary {
                 color: $color-theme-3-1-1;
                 background: transparent;
+                &:visited {
+                    color: $color-theme-3-1-1;
+                }
                 &:hover,
-                &:focus {
+                &:focus,
+                &:active {
                     background: $color-theme-3-1-1;
                     color: $white;
                     border: $s-1px solid $color-theme-3-1-1;

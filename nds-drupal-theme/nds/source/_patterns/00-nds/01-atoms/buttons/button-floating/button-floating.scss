@@ -33,6 +33,9 @@
     &.button--secondary {
         color: $color-theme-1-1-1;
         background: transparent;
+        &:visited {
+            color: $color-theme-1-1-1;
+        }
         &:hover,
         &:focus,
         &:active {
