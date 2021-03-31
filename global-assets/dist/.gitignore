@@ -1,5 +1,6 @@
 .DS_Store
 package-lock.json
-node_modules/**/*
-vendor/**/*
-public/**/*
+node_modules/
+vendor/
+public/
+public_html/

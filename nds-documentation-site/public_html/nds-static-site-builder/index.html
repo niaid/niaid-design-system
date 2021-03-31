@@ -128,14 +128,14 @@
             
 
 <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
         
 
 	
-<img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" />        <span>An official website of the United States government. Here's how you know.</span>
+<img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner/>        <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
         
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
+<i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
     </button>
     <div id="uswds-banner-content" class="component--uswds-banner__content container">
         <div class="row">
@@ -182,14 +182,14 @@
     <div class="text--product-identity__top">Design System</div>
     <div class="text--product-identity__bottom"></div>
 </div></a>    <div>
-        <span class="global--header__version">v 1.0.0</span>
+        <span class="global--header__version">v 1.0.1</span>
                 
 
 
 <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
             
 
-<i class="icon-nds icon--default fab fa-github "></i>
+<i class="icon-nds icon--default fab fa-github " ></i>
                 <span class="button--icon__text icon--left">NDS on GitHub</span>
         </a>    </div>
     
@@ -198,53 +198,65 @@
 <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu" >
             
 
-<i class="icon-nds icon--default fal fa-bars "></i>
+<i class="icon-nds icon--default fal fa-bars " ></i>
             </button></div>                
 
 <nav class="navigation-nds navigation--primary " id="main-navigation">
             <div class="navigation--primary__inner">
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Getting Started Section">
-                    Getting Started
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/getting-started/">Overview</a>
-                    <a class="dropdown-item" href="/getting-started/#section-quick-start">Quick Start</a>
-                    <a class="dropdown-item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
-                    <a class="dropdown-item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
-                    <a class="dropdown-item" href="/getting-started/#section-resources">Resources</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/getting-started/" id="dMenuGettingStarted" type="button" class="navigation--dropdown__toggle active" aria-haspopup="true" aria-expanded="false" aria-label="Open Getting Started Section" data-display="static">Getting Started</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuGettingStarted">
+                                <a href="/getting-started/#section-quick-start">Quick Start</a>
+                        <a href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                        <a href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
+                        <a href="/getting-started/#section-resources">Resources</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Design Section">
-                    Design
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/design/">Overview</a>
-                    <a class="dropdown-item" href="/design/#section-typography">Typography</a>
-                    <a class="dropdown-item" href="/design/#section-icons">Icons</a>
-                    <a class="dropdown-item" href="/design/#section-colors">Colors</a>
-                    <a class="dropdown-item" href="/design/#section-forms">Forms &amp; Input</a>
-                    <a class="dropdown-item" href="/design/#section-layout">Layout &amp; Spacing</a>
-                    <a class="dropdown-item" href="/design/#section-shadows">Shadows</a>
-                    <a class="dropdown-item" href="/design/#section-corners">Corners</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/design/" id="dMenuDesign" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Design Section" data-display="static">Design</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuDesign">
+                                <a href="/design/#section-typography">Typography</a>
+                        <a href="/design/#section-icons">Icons</a>
+                        <a href="/design/#section-colors">Colors</a>
+                        <a href="/design/#section-forms">Forms &amp; Input</a>
+                        <a href="/design/#section-layout">Layout &amp; Spacing</a>
+                        <a href="/design/#section-shadows">Shadows</a>
+                        <a href="/design/#section-corners">Corners</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Development Section">
-                    Development
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/development/">Overview</a>
-                    <a class="dropdown-item" href="/development/#section-atomic-design">Atomic Design</a>
-                    <a class="dropdown-item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
-                    <a class="dropdown-item" href="/development/#section-libraries">Libraries</a>
-                    <a class="dropdown-item" href="/development/#section-themes">Themes</a>
-                </div>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/development/" id="dMenuDevelopment" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Development Section" data-display="static">Development</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuDevelopment">
+                                <a href="/development/#section-atomic-design">Atomic Design</a>
+                        <a href="/development/#section-technologies">Technologies &amp; Frameworks</a>
+                        <a href="/development/#section-libraries">Libraries</a>
+                        <a href="/development/#section-themes">Themes</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
-                <a class="" href="/components/">Components</a>
-            </div>
+                
+
+    
+<div class="navigation-nds navigation--dropdown  hover">
+    <a href="/components/" id="dMenuComponents" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Component Section" data-display="static">Components</a>
+    <div class="navigation--dropdown__menu" aria-labelledby="dMenuComponents">
+                                <a href="/components/#section-components-atoms">Atoms</a>
+                        <a href="/components/#section-components-molecules">Molecules</a>
+                        <a href="/components/#section-components-organisms">Organisms</a>
+                        </div>
+</div>            </div>
             <div class="navigation--primary__inner__item">
                 <a class="" href="/builder/">Theme Builder</a>
             </div>
@@ -259,7 +271,7 @@
 <button class="button-nds button--icon waves-effect waves-light navigation--drawer__top__button-close button--secondary button--icon--small" aria-label="Close Global Menu" tabindex=-1>
             
 
-<i class="icon-nds icon--default fal fa-arrow-to-left "></i>
+<i class="icon-nds icon--default fal fa-arrow-to-left " ></i>
             </button>    </div>
             <div class="navigation--drawer__inner">
             <div class="navigation--drawer__inner__section">
@@ -268,9 +280,9 @@
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navGettingStarted">
                     <a href="/getting-started/" tabindex="-1">Getting Started</a>
-                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" tabindex="-1" aria-label="Toggle Getting Started Section"></button>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navGettingStartedCollapse" aria-expanded="false" aria-controls="navGettingStartedCollapse" tabindex="-1" aria-label="Toggle Getting Started Section"></button>
                 </div>
-                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseOne" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="navGettingStartedCollapse" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/">Overview</a>
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-quick-start">Quick Start</a>
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
@@ -281,9 +293,9 @@
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navDesign">
                     <a href="/design/" tabindex="-1">Design</a>
-                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" tabindex="-1" aria-label="Toggle Design Section"></button>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navDesignCollapse" aria-expanded="false" aria-controls="navDesignCollapse" tabindex="-1" aria-label="Toggle Design Section"></button>
                 </div>
-                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseTwo" class="collapse" aria-labelledby="navDesign" data-parent="#main-navigation-mobile">
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="navDesignCollapse" class="collapse" aria-labelledby="navDesign" data-parent="#main-navigation-mobile">
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/design/">Overview</a>
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-typography">Typography</a>
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-icons">Icons</a>
@@ -297,9 +309,9 @@
             <div class="navigation--drawer__inner__section">
                 <div class="navigation--drawer__inner__section__button-wrapper" id="navDevelopment">
                     <a href="/development/" tabindex="-1">Development</a>
-                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" tabindex="-1" aria-label="Toggle Development Section"></button>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navDevelopmentCollapse" aria-expanded="false" aria-controls="navDevelopmentCollapse" tabindex="-1" aria-label="Toggle Development Section"></button>
                 </div>
-                <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseThree" class="collapse" aria-labelledby="navDevelopment" data-parent="#main-navigation-mobile">
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="navDevelopmentCollapse" class="collapse" aria-labelledby="navDevelopment" data-parent="#main-navigation-mobile">
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/development/">Overview</a>
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-atomic-design">Atomic Design</a>
                     <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
@@ -308,19 +320,27 @@
                 </div>
             </div>
             <div class="navigation--drawer__inner__section">
-                <a tabindex="-1" class="" href="/components/">Components</a>
+                <div class="navigation--drawer__inner__section__button-wrapper" id="navComponent">
+                    <a href="/components/" tabindex="-1">Components</a>
+                    <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navComponentCollapse" aria-expanded="false" aria-controls="navComponentCollapse" tabindex="-1" aria-label="Toggle Components Section"></button>
+                </div>
+                <div class="navigation--drawer__inner__section__dropdown collapse" id="navComponentCollapse" class="collapse" aria-labelledby="navComponent" data-parent="#main-navigation-mobile">
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-atoms">Atoms</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-molecules">Molecules</a>
+                    <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-organisms">Organisms</a>
+                </div>
             </div>
             <div class="navigation--drawer__inner__section">
                 <a tabindex="-1" class="" href="/builder/">Theme Builder</a>
             </div>
             <div class="navigation--drawer__inner__download">
-                 
+                
 
 
 <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light button--github button--icon--large" aria-label="NDS on GitHub" tabindex=-1>
             
 
-<i class="icon-nds icon--default fab fa-github "></i>
+<i class="icon-nds icon--default fab fa-github " ></i>
                 <span class="button--icon__text icon--left">NDS on GitHub</span>
         </a>            </div>
         </div>
@@ -332,7 +352,7 @@
     <div class="button--floating__icon">
         
 
-<i class="icon-nds icon--default fal fa-palette "></i>
+<i class="icon-nds icon--default fal fa-palette " ></i>
     </div>
     <div class="button--floating__text">Customize Page Theme</div>
 </button>            <div class="main" role="main">
@@ -380,7 +400,7 @@
 <div class="navigation-nds navigation--breadcrumbs ">
                     <a href="/getting-started/"><span>Getting Started</span></a>                    
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
+<i class="icon-nds icon--default fas fa-chevron-right " ></i>
                             <span>Static Site Builder</span></a>            </div>                                </aside>
                                 <h1 id="main-content">Static Site Builder</h1>
                                 <p>With the NIAID Design System Static Site Builder, creating a responsive and compliant website is quick and easy. The Static Site Builder leverages a technology called <a href="https://patternlab.io/">Pattern Lab</a> to manage web components and the content.</p>
@@ -417,7 +437,7 @@
 <a href="../assets/nds-static-site-builder.zip" class="button-nds button--icon waves-effect waves-light  button--icon--small" download>
             
 
-<i class="icon-nds icon--default fas fa-download "></i>
+<i class="icon-nds icon--default fas fa-download " ></i>
                 <span class="button--icon__text icon--left">Download NDS</span>
         </a>                                </p>
                                 <p class="step mt-4">2. Unzip and Open the Directory in Your Preferred Code Editor.</p>
@@ -464,8 +484,8 @@
         
 
     
-
-<div class="component-nds component--media ">
+    
+<div class="component-nds component--media  component--media--right">
     <div class="component--media__media">
                     
 
@@ -498,111 +518,40 @@
 
         <p>For Drupal-based projects, you may need to clear the Drupal cache to see your changes.</p>
 
+        <h3>Working with JavaScript in NDS</h3>
+        <p>NDS provides global and commponent functionality through JS files located in the 00-nds/ folder. There may be instances where you would like to exclude certain pieces of this functionality or would like to replace it with your own. In either case, create a file with the same name and path outside of the 00-nds/ folder and, optionally, write your own JavaScript to replace it (leaving the file blank will simply exclude the functionality). For example, to exclude or replace the 00-nds/02-molecules/analytics/analytics-google/analytics-google.js file, create the analytics/analytics-google/ directories inside of _patterns/02-molecules/. Then, create a analytics-google.js file inside and write your own analytics code (or leave it blank).</p>
+
         
 
 <div class="block-nds block--default  ">
-                    <h4>Developing with NIAID Design System</h4>
+                    <h4>Developing with the NIAID Design System</h4>
                 <p>Get more information on how NDS is structured.</p>
                 
 
 <a class="button-nds waves-effect waves-light button--primary " href="/development/" role="button" >Develop with NDS</a>            </div>    </div>
+                        <h3>Creating Pages</h3>
+                        <p>The 05-pages/ directory houses all of your website's pages. The index.twig file that comes with the Static Site Builder download is your home page, which you may edit to your liking. To create new pages, simply create a new folder in 05-pages/ and add a .twig file <strong>of the same name</strong>. The Static Site Buider uses the name of the page directory/.twig file for the production path. For instance, if you created clinical-trials/clinical-trials.twig folder and file, the production path to this page would be /clinical-trials. Some information for your page, such as a meta title and description, is configured in a .json file of the same name. View the index.json file for reference.</p>
+
                         
 <div id="section-building-nds-production" class="component-nds component--scrollspy-section scrollspy section ">
-                                    <h2>Building NDS for Production</h2>
-                                <p>When you are satisfied with your site, the Static Site Builder allows you to build a distribution folder (public_html/) with all the necessary, web-ready assets. The steps below explain how to generate your distribution code.</p>
-                                <p class="step">1. Create a Distribution Pattern Folder.</p>
-                                <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
+                                    <h2 id="build-for-production">Building NDS for Production</h2>
+                                <p>When you are satisfied with your site pages, the Static Site Builder allows you to build a distribution folder (public_html/) with all the necessary, web-ready assets. To do so, simply run:</p>
+                                <code>gulp build</code><br>
+                                <p>After running the "build" command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
+
                                 
 
     
-    
-<div class="component-nds component--media m-b-2 component--media--right">
-    <div class="component--media__media">
-                    
+<div class="block-nds block--status-message message--warning " >
+    <div class="block--status-message__icon">
+        
 
-	
-<img class="image-nds image--default materialboxed" src="../assets/dist.png" alt="A screenshot of the _patterns directory in Visual Studio Code." />            </div>
-    <div class="component--media__text">
-        <div class="component--media__text__content-wrapper">
-                            
-
-<div class="text-nds text--image-credit-caption ">
-            <div class="text--image-credit-caption__caption">
-            <p class="text--image-credit-caption__caption__text">Create a 06-dist/ directory.</p>
-        </div>
-                <div class="text--image-credit-caption__credit">
-            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
-            <span class="text--image-credit-caption__credit__text">NIAID</span>
-        </div>
-    </div>                    </div>
+<i class="icon-nds icon--default fas fa-exclamation-triangle " ></i>
     </div>
-</div>
-                                <p>For each page of your static site, create a new folder (typically with the same name as the corresponding 05-pages/ directory) and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
-                                
-
-    
-
-<div class="component-nds component--media ">
-    <div class="component--media__media">
-                    
-
-	
-<img class="image-nds image--default materialboxed" src="../assets/json.png" alt="A screenshot of a JSON file to make production configurations." />            </div>
-    <div class="component--media__text">
-        <div class="component--media__text__content-wrapper">
-                            
-
-<div class="text-nds text--image-credit-caption ">
-            <div class="text--image-credit-caption__caption">
-            <p class="text--image-credit-caption__caption__text">Use the JSON file in the 06-dist/ page folders to make configurations for production pages.</p>
-        </div>
-                <div class="text--image-credit-caption__credit">
-            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
-            <span class="text--image-credit-caption__credit__text">NIAID</span>
-        </div>
-    </div>                    </div>
-    </div>
-</div>
-                                <p class="step">2. Configure the Production JSON Files</p>
-                                <p>The JSON file in each page's 06-dist folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
-                                <ul>
-                                    <li>Configure the variable paths (cssPath, jsPath, etc.) to your desired structure.</p>
-                                    <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>
-                                    <li>If using an NDS-based navigation element, use the "navigationPrimaryActiveLink" parameter to add active page styling.</li>
-                                </ul>
-                                <p>You may also add your own parameters for use in custom patterns.</p>
-
-                                <p class="step">3. Configure Gulp Paths to Your Production Pages</p>
-                                <p>Once your 06-dist/ directory is setup, compile Pattern Lab. Next, open your gulpfile.js, and find the "buildPaths" variable declaration. For every page you want to deploy, add a new object. For pageName, add the name of the folder/file for that page in 06-dist/. For target_dest, specify the ultimate path you want that page to file under.</p>
-                                
-
-    
-
-<div class="component-nds component--media ">
-    <div class="component--media__media">
-                    
-
-	
-<img class="image-nds image--default materialboxed" src="../assets/build-paths-gulp.png" alt="A screenshot of the Gulpfile.js file. Specifically, it shows the code to configure the paths for your production pages." />            </div>
-    <div class="component--media__text">
-        <div class="component--media__text__content-wrapper">
-                            
-
-<div class="text-nds text--image-credit-caption ">
-            <div class="text--image-credit-caption__caption">
-            <p class="text--image-credit-caption__caption__text">A sample buildPaths variable declaration.</p>
-        </div>
-                <div class="text--image-credit-caption__credit">
-            <span class="text--image-credit-caption__credit__label-text">Credit:</span> 
-            <span class="text--image-credit-caption__credit__text">NIAID</span>
-        </div>
-    </div>                    </div>
-    </div>
-</div>
-                                <p class="step">4. Build the Distribution Directory</p>
-                                <code>gulp buildProd</code><br>
-                                <p>After running the buildProd command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
-                            </div>
+    <div class="block--status-message__content">
+                                                <p>The public_html/ directory gets deleted and rebuilt on each run of "gulp build." Do not make modifications inside of public_html/, or your changes will be lost.</p>
+                                        </div>
+</div>                            </div>
                         
 <div class="mb-4">
     
@@ -619,7 +568,7 @@
 <a href="../assets/nds-bundled-js.zip" class="button-nds button--icon waves-effect waves-light button--secondary button--icon--small" download>
             
 
-<i class="icon-nds icon--default fab fa-js "></i>
+<i class="icon-nds icon--default fab fa-js " ></i>
                 <span class="button--icon__text icon--left">Download NDS Global JS &amp; Libraries</span>
         </a>        </div>
         <div class="block--files__col col-md-6">
@@ -629,7 +578,7 @@
 <a href="../assets/nds-css.zip" class="button-nds button--icon waves-effect waves-light button--secondary button--icon--small" download>
             
 
-<i class="icon-nds icon--default fab fa-css3 "></i>
+<i class="icon-nds icon--default fab fa-css3 " ></i>
                 <span class="button--icon__text icon--left">Download NDS Global CSS</span>
         </a>        </div>
     </div>
@@ -644,7 +593,7 @@
 <a href="../assets/public-sans.zip" class="button-nds button--icon waves-effect waves-light button--secondary button--icon--small" download>
             
 
-<i class="icon-nds icon--default fas fa-file-archive "></i>
+<i class="icon-nds icon--default fas fa-file-archive " ></i>
                 <span class="button--icon__text icon--left">Download Public Sans</span>
         </a>            <span class="block--fonts__credit">Provided by USWDS</span>
         </div>
@@ -655,7 +604,7 @@
 <a href="../assets/roboto.zip" class="button-nds button--icon waves-effect waves-light button--secondary button--icon--small" download>
             
 
-<i class="icon-nds icon--default fas fa-file-archive "></i>
+<i class="icon-nds icon--default fas fa-file-archive " ></i>
                 <span class="button--icon__text icon--left">Download Roboto</span>
         </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
         </div>
@@ -668,7 +617,7 @@
 <a href="../assets/martel.zip" class="button-nds button--icon waves-effect waves-light button--secondary button--icon--small" download>
             
 
-<i class="icon-nds icon--default fas fa-file-archive "></i>
+<i class="icon-nds icon--default fas fa-file-archive " ></i>
                 <span class="button--icon__text icon--left">Download Martel</span>
         </a>            <span class="block--fonts__credit">Provided by Google Fonts</span>
         </div>
@@ -679,7 +628,7 @@
 <a href="../assets/merriweather.zip" class="button-nds button--icon waves-effect waves-light button--secondary button--icon--small" download>
             
 
-<i class="icon-nds icon--default fas fa-file-archive "></i>
+<i class="icon-nds icon--default fas fa-file-archive " ></i>
                 <span class="button--icon__text icon--left">Download Merriweather</span>
         </a>            <span class="block--fonts__credit">Provided by USWDS</span>
         </div>
@@ -720,7 +669,7 @@
 <a href="https://github.com/niaid/niaid-design-system" class="button-nds button--icon waves-effect waves-light  button--icon--small" >
             
 
-<i class="icon-nds icon--default fab fa-github "></i>
+<i class="icon-nds icon--default fab fa-github " ></i>
                 <span class="button--icon__text icon--left">NDS on GitHub</span>
         </a>        </div></div>
                         <hr class="my-4">
@@ -735,7 +684,7 @@
 <a href="/getting-started/" class="button-nds button--icon waves-effect waves-light button--secondary button--icon--small" >
             
 
-<i class="icon-nds icon--default fas fa-chevron-left "></i>
+<i class="icon-nds icon--default fas fa-chevron-left " ></i>
                 <span class="button--icon__text icon--left">Getting Started</span>
         </a>        </div>
                 <div class="block--directions__next">
@@ -747,7 +696,7 @@
                 <span class="button--icon__text icon--right">Design</span>
                 
 
-<i class="icon-nds icon--default fas fa-chevron-right "></i>
+<i class="icon-nds icon--default fas fa-chevron-right " ></i>
     </a>        </div>
     </div>                    </div>            
         </div>
@@ -793,7 +742,7 @@
             <p>
                 
 
-<i class="icon-nds icon--default fas fa-bolt "></i>
+<i class="icon-nds icon--default fas fa-bolt " ></i>
                 <span>Powered by the <a href="https://designsystem.niaid.nih.gov/">NIAID Design System</a></span>
             </p>
         </div>

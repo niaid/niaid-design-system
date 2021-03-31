@@ -9,32 +9,28 @@
                 <a class="{{ navigationPrimaryActiveLink == "section-1" ? "active" : "" }}" href="#">Section 1</a>
             </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="{{ navigationPrimaryActiveLink == "section-2" ? "active" : "" }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 2
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
+                {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
+                    {
+                        "navigation_dropdown_id": "navigation-primary-dropdown-example",
+                        "navigation_dropdown_active_class": navigationPrimaryActiveLink == "section-2" ? "active" : "",
+                        "navigation_dropdown_toggle_text": "Section 2",
+                        "navigation_dropdown_toggle_href": "#",
+                        "navigation_dropdown_toggle_aria_label": "Open Section 2"
+                    }
+                %}
+                    {% block navigation_dropdown_content %}
+                        <a href="#">Item A</a>
+                        <a href="#">Item B</a>
+                        <a href="#">Item C</a>
+                        <a href="#">Item D</a>
+                    {% endblock %}
+                {% endembed %}
             </div>
             <div class="navigation--primary__inner__item">
-                <button data-display="static" type="button" class="{{ navigationPrimaryActiveLink == "section-3" ? "active" : "" }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Section 3
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Item A</a>
-                    <a class="dropdown-item" href="#">Item B</a>
-                    <a class="dropdown-item" href="#">Item C</a>
-                    <a class="dropdown-item" href="#">Item D</a>
-                </div>
+                <a class="{{ navigationPrimaryActiveLink == "section-3" ? "active" : "" }}" href="#">Section 3</a>
             </div>
             <div class="navigation--primary__inner__item">
                 <a class="{{ navigationPrimaryActiveLink == "section-4" ? "active" : "" }}" href="#">Section 4</a>
-            </div>
-            <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "section-5" ? "active" : "" }}" href="#">Section 5</a>
             </div>
         </div>
     {% endblock %}

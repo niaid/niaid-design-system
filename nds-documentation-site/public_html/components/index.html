@@ -141,14 +141,14 @@
 
 
         <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-            <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+            <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
 
 
 
-                <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" /> <span>An official website of the United States government. Here's how you know.</span>
+                <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner /> <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
 
 
-                <i class="icon-nds icon--default fas fa-chevron-right "></i>
+                <i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
             </button>
             <div id="uswds-banner-content" class="component--uswds-banner__content container">
                 <div class="row">
@@ -200,7 +200,7 @@
                 </div>
             </a>
             <div>
-                <span class="global--header__version">v 1.0.0</span>
+                <span class="global--header__version">v 1.0.1</span>
 
 
 
@@ -224,46 +224,62 @@
         <nav class="navigation-nds navigation--primary " id="main-navigation">
             <div class="navigation--primary__inner">
                 <div class="navigation--primary__inner__item">
-                    <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Getting Started Section">
-                        Getting Started
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/getting-started/">Overview</a>
-                        <a class="dropdown-item" href="/getting-started/#section-quick-start">Quick Start</a>
-                        <a class="dropdown-item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
-                        <a class="dropdown-item" href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
-                        <a class="dropdown-item" href="/getting-started/#section-resources">Resources</a>
+
+
+
+                    <div class="navigation-nds navigation--dropdown  hover">
+                        <a href="/getting-started/" id="dMenuGettingStarted" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Getting Started Section" data-display="static">Getting Started</a>
+                        <div class="navigation--dropdown__menu" aria-labelledby="dMenuGettingStarted">
+                            <a href="/getting-started/#section-quick-start">Quick Start</a>
+                            <a href="/getting-started/#section-static-site-builder">Static Site Builder</a>
+                            <a href="/getting-started/#section-nds-drupal-theme">NDS Drupal Theme</a>
+                            <a href="/getting-started/#section-resources">Resources</a>
+                        </div>
                     </div>
                 </div>
                 <div class="navigation--primary__inner__item">
-                    <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Design Section">
-                        Design
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/design/">Overview</a>
-                        <a class="dropdown-item" href="/design/#section-typography">Typography</a>
-                        <a class="dropdown-item" href="/design/#section-icons">Icons</a>
-                        <a class="dropdown-item" href="/design/#section-colors">Colors</a>
-                        <a class="dropdown-item" href="/design/#section-forms">Forms &amp; Input</a>
-                        <a class="dropdown-item" href="/design/#section-layout">Layout &amp; Spacing</a>
-                        <a class="dropdown-item" href="/design/#section-shadows">Shadows</a>
-                        <a class="dropdown-item" href="/design/#section-corners">Corners</a>
+
+
+
+                    <div class="navigation-nds navigation--dropdown  hover">
+                        <a href="/design/" id="dMenuDesign" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Design Section" data-display="static">Design</a>
+                        <div class="navigation--dropdown__menu" aria-labelledby="dMenuDesign">
+                            <a href="/design/#section-typography">Typography</a>
+                            <a href="/design/#section-icons">Icons</a>
+                            <a href="/design/#section-colors">Colors</a>
+                            <a href="/design/#section-forms">Forms &amp; Input</a>
+                            <a href="/design/#section-layout">Layout &amp; Spacing</a>
+                            <a href="/design/#section-shadows">Shadows</a>
+                            <a href="/design/#section-corners">Corners</a>
+                        </div>
                     </div>
                 </div>
                 <div class="navigation--primary__inner__item">
-                    <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle Development Section">
-                        Development
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/development/">Overview</a>
-                        <a class="dropdown-item" href="/development/#section-atomic-design">Atomic Design</a>
-                        <a class="dropdown-item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
-                        <a class="dropdown-item" href="/development/#section-libraries">Libraries</a>
-                        <a class="dropdown-item" href="/development/#section-themes">Themes</a>
+
+
+
+                    <div class="navigation-nds navigation--dropdown  hover">
+                        <a href="/development/" id="dMenuDevelopment" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Development Section" data-display="static">Development</a>
+                        <div class="navigation--dropdown__menu" aria-labelledby="dMenuDevelopment">
+                            <a href="/development/#section-atomic-design">Atomic Design</a>
+                            <a href="/development/#section-technologies">Technologies &amp; Frameworks</a>
+                            <a href="/development/#section-libraries">Libraries</a>
+                            <a href="/development/#section-themes">Themes</a>
+                        </div>
                     </div>
                 </div>
                 <div class="navigation--primary__inner__item">
-                    <a class="active" href="/components/">Components</a>
+
+
+
+                    <div class="navigation-nds navigation--dropdown  hover">
+                        <a href="/components/" id="dMenuComponents" type="button" class="navigation--dropdown__toggle active" aria-haspopup="true" aria-expanded="false" aria-label="Open Component Section" data-display="static">Components</a>
+                        <div class="navigation--dropdown__menu" aria-labelledby="dMenuComponents">
+                            <a href="/components/#section-components-atoms">Atoms</a>
+                            <a href="/components/#section-components-molecules">Molecules</a>
+                            <a href="/components/#section-components-organisms">Organisms</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="navigation--primary__inner__item">
                     <a class="" href="/builder/">Theme Builder</a>
@@ -289,9 +305,9 @@
                 <div class="navigation--drawer__inner__section">
                     <div class="navigation--drawer__inner__section__button-wrapper" id="navGettingStarted">
                         <a href="/getting-started/" tabindex="-1">Getting Started</a>
-                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" tabindex="-1" aria-label="Toggle Getting Started Section"></button>
+                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navGettingStartedCollapse" aria-expanded="false" aria-controls="navGettingStartedCollapse" tabindex="-1" aria-label="Toggle Getting Started Section"></button>
                     </div>
-                    <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseOne" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
+                    <div class="navigation--drawer__inner__section__dropdown collapse" id="navGettingStartedCollapse" class="collapse" aria-labelledby="navGettingStarted" data-parent="#main-navigation-mobile">
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/">Overview</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-quick-start">Quick Start</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/getting-started/#section-static-site-builder">Static Site Builder</a>
@@ -302,9 +318,9 @@
                 <div class="navigation--drawer__inner__section">
                     <div class="navigation--drawer__inner__section__button-wrapper" id="navDesign">
                         <a href="/design/" tabindex="-1">Design</a>
-                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" tabindex="-1" aria-label="Toggle Design Section"></button>
+                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navDesignCollapse" aria-expanded="false" aria-controls="navDesignCollapse" tabindex="-1" aria-label="Toggle Design Section"></button>
                     </div>
-                    <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseTwo" class="collapse" aria-labelledby="navDesign" data-parent="#main-navigation-mobile">
+                    <div class="navigation--drawer__inner__section__dropdown collapse" id="navDesignCollapse" class="collapse" aria-labelledby="navDesign" data-parent="#main-navigation-mobile">
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/design/">Overview</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-typography">Typography</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/design/#section-icons">Icons</a>
@@ -318,9 +334,9 @@
                 <div class="navigation--drawer__inner__section">
                     <div class="navigation--drawer__inner__section__button-wrapper" id="navDevelopment">
                         <a href="/development/" tabindex="-1">Development</a>
-                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" tabindex="-1" aria-label="Toggle Development Section"></button>
+                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navDevelopmentCollapse" aria-expanded="false" aria-controls="navDevelopmentCollapse" tabindex="-1" aria-label="Toggle Development Section"></button>
                     </div>
-                    <div class="navigation--drawer__inner__section__dropdown collapse" id="collapseThree" class="collapse" aria-labelledby="navDevelopment" data-parent="#main-navigation-mobile">
+                    <div class="navigation--drawer__inner__section__dropdown collapse" id="navDevelopmentCollapse" class="collapse" aria-labelledby="navDevelopment" data-parent="#main-navigation-mobile">
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/development/">Overview</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-atomic-design">Atomic Design</a>
                         <a class="navigation--drawer__inner__section__dropdown__item" href="/development/#section-technologies">Technologies &amp; Frameworks</a>
@@ -329,7 +345,15 @@
                     </div>
                 </div>
                 <div class="navigation--drawer__inner__section">
-                    <a tabindex="-1" class="active" href="/components/">Components</a>
+                    <div class="navigation--drawer__inner__section__button-wrapper" id="navComponent">
+                        <a href="/components/" tabindex="-1">Components</a>
+                        <button class="navigation--drawer__inner__section__button-wrapper__button button-nds button--secondary" data-toggle="collapse" data-target="#navComponentCollapse" aria-expanded="false" aria-controls="navComponentCollapse" tabindex="-1" aria-label="Toggle Components Section"></button>
+                    </div>
+                    <div class="navigation--drawer__inner__section__dropdown collapse" id="navComponentCollapse" class="collapse" aria-labelledby="navComponent" data-parent="#main-navigation-mobile">
+                        <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-atoms">Atoms</a>
+                        <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-molecules">Molecules</a>
+                        <a class="navigation--drawer__inner__section__dropdown__item" href="/components/#section-components-organisms">Organisms</a>
+                    </div>
                 </div>
                 <div class="navigation--drawer__inner__section">
                     <a tabindex="-1" class="" href="/builder/">Theme Builder</a>
@@ -372,7 +396,7 @@
 
                         <div class="component-nds component--accordion " id="navigation--mobile-rail">
                             <div id="navigation--mobile-rail__button">
-                                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Design Menu</button>
+                                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">Open Components Menu</button>
                             </div>
                             <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
 
@@ -546,7 +570,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-button-default>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-button-default>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -625,7 +649,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -682,14 +705,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-button-external>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-button-external>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -779,7 +801,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-button-floating>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-button-floating>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -859,7 +881,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -919,14 +940,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-button-icon>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-button-icon>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -1012,7 +1032,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -1069,14 +1088,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-button-image>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-button-image>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -1310,7 +1328,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-button-share>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-button-share>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -1444,7 +1462,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-icon-default>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-icon-default>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -1470,6 +1488,7 @@
                                                     </ul>
                                                 </li>
                                                 <li>icon_default_sr_text: Optional text for screen readers only.</li>
+                                                <li>icon_default_attributes: Additional icon attributes.</li>
                                             </ul>
 
                                         </div>
@@ -1541,7 +1560,7 @@
                                                             <div class="icon--document__wrapper">
 
 
-                                                                <i class="icon-nds icon--default far fa-file-image "></i>
+                                                                <i class="icon-nds icon--default far fa-file-image icon--document__wrapper__icon icon--document__wrapper__icon--image"></i>
                                                             </div>
                                                         </a>
                                                     </div>
@@ -1553,7 +1572,7 @@
                                                             <div class="icon--document__wrapper">
 
 
-                                                                <i class="icon-nds icon--default far fa-file-video "></i>
+                                                                <i class="icon-nds icon--default far fa-file-video icon--document__wrapper__icon icon--document__wrapper__icon--video"></i>
                                                             </div>
                                                         </a>
                                                     </div>
@@ -1639,7 +1658,7 @@
                                                                 <div class="icon--document__wrapper">
 
 
-                                                                    <i class="icon-nds icon--default far fa-file-image "></i>
+                                                                    <i class="icon-nds icon--default far fa-file-image icon--document__wrapper__icon icon--document__wrapper__icon--image"></i>
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -1651,7 +1670,7 @@
                                                                 <div class="icon--document__wrapper">
 
 
-                                                                    <i class="icon-nds icon--default far fa-file-video "></i>
+                                                                    <i class="icon-nds icon--default far fa-file-video icon--document__wrapper__icon icon--document__wrapper__icon--video"></i>
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -1663,7 +1682,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-icon-document>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-icon-document>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -1764,7 +1783,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-icon-circle>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-icon-circle>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -1865,7 +1884,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-icon-loader>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-icon-loader>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -1941,7 +1960,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-image-default>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-image-default>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2018,7 +2037,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-image-logo>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-image-logo>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2093,7 +2112,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-layout-site>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-layout-site>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2166,7 +2185,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-layout-main>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-layout-main>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2257,7 +2276,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-layout-body>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-layout-body>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2340,7 +2359,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-link-default>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-link-default>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2409,7 +2428,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-link-external>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-link-external>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2471,7 +2490,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-link-icon>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-link-icon>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2639,7 +2658,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-list-links>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-list-links>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2690,7 +2709,7 @@
 
 
                             <h4>YouTube Video</h4>
-                            <p>This components makes it easy to embed YouTube videos on your website.</p>
+                            <p>The Media YouTube Video component makes it easy to embed YouTube videos on your website.</p>
 
                             <div class="component-nds component--snippet  ">
                                 <div class="component--snippet__block">
@@ -2734,7 +2753,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-media-youtube>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-media-youtube>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2897,7 +2916,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-table-default>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-table-default>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -2960,7 +2979,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-text-blockquote>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-text-blockquote>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3034,7 +3053,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-text-badge>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-text-badge>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3110,7 +3129,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-text-chip>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-text-chip>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3202,7 +3221,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-text-heading-icon>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-text-heading-icon>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3306,7 +3325,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-text-image-credit-caption>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-text-image-credit-caption>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3386,7 +3405,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-text-search-results>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-text-search-results>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3442,6 +3461,21 @@
                                             <div class="block-nds block--default  block--default--accent">
                                                 <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
                                             </div>
+
+                                            <div class="spacer h-1"></div>
+
+                                            <div class="block-nds block--default block--default--image ">
+                                                <div class="block--default__image">
+
+
+
+                                                    <img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Placeholder image" />
+                                                </div>
+                                                <div class="block--default__content">
+                                                    <h2><a href="#">Default Block with Image</a></h2>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="component--snippet__block__code__loader">
 
@@ -3475,13 +3509,28 @@
                                                 <div class="block-nds block--default  block--default--accent">
                                                     <p>More information about this resource is available at <a href="#">3D Reconstruction via Stereoscopy for Study Mosquito Swarms</a></p>
                                                 </div>
+
+                                                <div class="spacer h-1"></div>
+
+                                                <div class="block-nds block--default block--default--image ">
+                                                    <div class="block--default__image">
+
+
+
+                                                        <img class="image-nds image--default " src="../assets/global/sample/fpo_4x3.png" alt="Placeholder image" />
+                                                    </div>
+                                                    <div class="block--default__content">
+                                                        <h2><a href="#">Default Block with Image</a></h2>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="component--snippet__block__code__wrapper__button">
                                                 <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-default>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-default>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3571,7 +3620,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-search-result>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-search-result>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3683,7 +3732,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-search-chips>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-search-chips>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3796,7 +3845,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-featured-content-card>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-featured-content-card>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -3945,7 +3994,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-alert>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-alert>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -4131,7 +4180,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-status-block>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-status-block>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -4266,7 +4315,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-hero>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-hero>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -4403,7 +4452,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-share>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-share>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -4499,7 +4548,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-block-wtph>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-block-wtph>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -4653,7 +4702,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-component-accordions>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-component-accordions>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -4758,7 +4807,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-component-branding>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-component-branding>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -4818,14 +4867,14 @@
 
 
                                             <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-                                                <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+                                                <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
 
 
 
-                                                    <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" /> <span>An official website of the United States government. Here's how you know.</span>
+                                                    <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner /> <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
 
 
-                                                    <i class="icon-nds icon--default fas fa-chevron-right "></i>
+                                                    <i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
                                                 </button>
                                                 <div id="uswds-banner-content" class="component--uswds-banner__content container">
                                                     <div class="row">
@@ -4881,14 +4930,14 @@
 
 
                                                 <aside class="component-nds component--uswds-banner " aria-label="Official Government Website">
-                                                    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false">
+                                                    <button id="uswds-banner-toggle" class="component--uswds-banner__toggle" aria-label="Toggle the official government website banner." aria-expanded="false" data-nav='header-nav-uswds-banner'>
 
 
 
-                                                        <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" /> <span>An official website of the United States government. Here's how you know.</span>
+                                                        <img class="image-nds image--default " src="../assets/global/uswds/us_flag_small.png" alt="U.S. flag" data-nav=header-nav-uswds-banner /> <span data-nav='header-nav-uswds-banner'>An official website of the United States government. Here's how you know.</span>
 
 
-                                                        <i class="icon-nds icon--default fas fa-chevron-right "></i>
+                                                        <i class="icon-nds icon--default fas fa-chevron-right " data-nav=header-nav-uswds-banner></i>
                                                     </button>
                                                     <div id="uswds-banner-content" class="component--uswds-banner__content container">
                                                         <div class="row">
@@ -4925,7 +4974,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-component-uswds-banner>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-component-uswds-banner>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -5054,7 +5103,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-component-media>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-component-media>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -5082,7 +5131,7 @@
                                                 <li>component_media_credit_label: The label to appear before the credit text (Default: "Credit:").</li>
                                                 <li>component_media_float: The direction to float the component (optional).
                                                     <ul>
-                                                        <li>Options: "left", "right".</li>
+                                                        <li>Options: "left", "right", "full" (100% width of body content).</li>
                                                     </ul>
                                                 </li>
                                                 <li>component_media_lightbox: A parameter to determine if the image should include the Materialize lightbox feature.
@@ -5201,7 +5250,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-component-modal>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-component-modal>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -5368,7 +5417,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-input-group-text>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-input-group-text>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -5543,7 +5592,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-input-group-checkbox>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-input-group-checkbox>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -5697,7 +5746,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-input-group-radio>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-input-group-radio>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -5863,7 +5912,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-input-group-select>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-input-group-select>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6009,7 +6058,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-input-group-date-picker>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-input-group-date-picker>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6136,7 +6185,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-forms-search>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-forms-search>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6212,32 +6261,24 @@
                                                         <a class="" href="#">Section 1</a>
                                                     </div>
                                                     <div class="navigation--primary__inner__item">
-                                                        <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Section 2
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Item A</a>
-                                                            <a class="dropdown-item" href="#">Item B</a>
-                                                            <a class="dropdown-item" href="#">Item C</a>
-                                                            <a class="dropdown-item" href="#">Item D</a>
+
+
+
+                                                        <div class="navigation-nds navigation--dropdown  hover">
+                                                            <a href="#" id="navigation-primary-dropdown-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Section 2" data-display="static">Section 2</a>
+                                                            <div class="navigation--dropdown__menu" aria-labelledby="navigation-primary-dropdown-example">
+                                                                <a href="#">Item A</a>
+                                                                <a href="#">Item B</a>
+                                                                <a href="#">Item C</a>
+                                                                <a href="#">Item D</a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="navigation--primary__inner__item">
-                                                        <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Section 3
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Item A</a>
-                                                            <a class="dropdown-item" href="#">Item B</a>
-                                                            <a class="dropdown-item" href="#">Item C</a>
-                                                            <a class="dropdown-item" href="#">Item D</a>
-                                                        </div>
+                                                        <a class="" href="#">Section 3</a>
                                                     </div>
                                                     <div class="navigation--primary__inner__item">
                                                         <a class="" href="#">Section 4</a>
-                                                    </div>
-                                                    <div class="navigation--primary__inner__item">
-                                                        <a class="" href="#">Section 5</a>
                                                     </div>
                                                 </div>
                                             </nav>
@@ -6271,32 +6312,24 @@
                                                             <a class="" href="#">Section 1</a>
                                                         </div>
                                                         <div class="navigation--primary__inner__item">
-                                                            <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                Section 2
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Item A</a>
-                                                                <a class="dropdown-item" href="#">Item B</a>
-                                                                <a class="dropdown-item" href="#">Item C</a>
-                                                                <a class="dropdown-item" href="#">Item D</a>
+
+
+
+                                                            <div class="navigation-nds navigation--dropdown  hover">
+                                                                <a href="#" id="navigation-primary-dropdown-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Section 2" data-display="static">Section 2</a>
+                                                                <div class="navigation--dropdown__menu" aria-labelledby="navigation-primary-dropdown-example">
+                                                                    <a href="#">Item A</a>
+                                                                    <a href="#">Item B</a>
+                                                                    <a href="#">Item C</a>
+                                                                    <a href="#">Item D</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="navigation--primary__inner__item">
-                                                            <button data-display="static" type="button" class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                Section 3
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item" href="#">Item A</a>
-                                                                <a class="dropdown-item" href="#">Item B</a>
-                                                                <a class="dropdown-item" href="#">Item C</a>
-                                                                <a class="dropdown-item" href="#">Item D</a>
-                                                            </div>
+                                                            <a class="" href="#">Section 3</a>
                                                         </div>
                                                         <div class="navigation--primary__inner__item">
                                                             <a class="" href="#">Section 4</a>
-                                                        </div>
-                                                        <div class="navigation--primary__inner__item">
-                                                            <a class="" href="#">Section 5</a>
                                                         </div>
                                                     </div>
                                                 </nav>
@@ -6306,7 +6339,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-navigation-primary>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-navigation-primary>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6333,6 +6366,112 @@
                                             <ul>
                                                 <li>navigation_primary_classes: Additional classes for the navigation component.</li>
                                                 <li>navigation_primary_id: Navigation component ID.</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Dropdown</h4>
+                            <p>The Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
+
+                            <div class="block-nds block--dependencies ">
+                                <div class="block--dependencies__label">Dependencies:</div>
+                                <p>In order to use this component, you must include the following libraries in addition to the NDS Global JS:</p>
+
+
+                                <span class="text-nds text--badge ">jQuery</span>
+                            </div>
+                            <div class="component-nds component--snippet  no-render">
+                                <div class="component--snippet__block">
+                                    <div class="component--snippet__block__code">
+                                        <div class="component--snippet__block__code__loader">
+
+
+                                            <div class="icon-nds icon--loader " role="alert" aria-label="Loading" aria-busy="true">
+                                                <div class="preloader-wrapper small active">
+                                                    <div class="spinner-layer">
+                                                        <div class="circle-clipper left">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="gap-patch">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="circle-clipper right">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="component--snippet__block__code__wrapper">
+                                            <div class="component--snippet__block__code__wrapper__snippet">
+                                                <div class="container-fluid demo">
+                                                    <div class="row">
+                                                        <div class="col">
+
+
+
+                                                            <div class="navigation-nds navigation--dropdown ">
+                                                                <button id="navigation-dropdown-click-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Dropdown" data-display="static">Click Dropdown</button>
+                                                                <div class="navigation--dropdown__menu" aria-labelledby="navigation-dropdown-click-example">
+                                                                    <a href="#">Dropdown Item A</a>
+                                                                    <a href="#">Dropdown Item B</a>
+                                                                    <a href="#">Dropdown Item C</a>
+                                                                    <a href="#">Dropdown Item D</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+
+
+
+                                                            <div class="navigation-nds navigation--dropdown  hover">
+                                                                <a href="#" id="navigation-dropdown-hover-example" type="button" class="navigation--dropdown__toggle " aria-haspopup="true" aria-expanded="false" aria-label="Open Dropdown" data-display="static">Hover Dropdown</a>
+                                                                <div class="navigation--dropdown__menu" aria-labelledby="navigation-dropdown-hover-example">
+                                                                    <a href="#">Dropdown Item A</a>
+                                                                    <a href="#">Dropdown Item B</a>
+                                                                    <a href="#">Dropdown Item C</a>
+                                                                    <a href="#">Dropdown Item D</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="component--snippet__block__code__wrapper__button">
+                                                <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
+
+
+
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-navigation-dropdown>
+
+
+                                                    <i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                                                    <span class="button--icon__text icon--left">Copy</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle" data-content="accordion-navigation-dropdown"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block navigation_dropdown_content %&#125;: The block holding the dropdown link options. These links should be plain with only a text label and href value.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>navigation_dropdown_classes: Additional classes for the navigation component.</li>
+                                                <li>navigation_dropdown_id: Navigation component ID.</li>
+                                                <li>navigation_dropdown_toggle_href: Optional URL for the dropdown toggle button. Passing a value to this parameter will automatically make the dropdown hover-activated.</li>
+                                                <li>navigation_dropdown_toggle_text: The text to appear on the dropdown button.</li>
+                                                <li>navigation_dropdown_toggle_aria_label: Required ARIA label to explain the section to be opened/closed.</li>
+                                                <li>navigation_dropdown_active_class: Optional class used in the primary navigation component to signal that the current dropdown is selected.</li>
                                             </ul>
 
                                         </div>
@@ -6402,7 +6541,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-navigation-breadcrumbs>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-navigation-breadcrumbs>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6541,7 +6680,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-navigation-pagination>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-navigation-pagination>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6607,7 +6746,7 @@
                                             <div class="component--snippet__block__code__wrapper__snippet">
 
 
-                                                <div class="navigation-nds navigation--drawer " id="side-drawer">
+                                                <div class="navigation-nds navigation--drawer " id="main-navigation-mobile">
                                                     <div class="navigation--drawer__top">
                                                         <a class="skip-to skip-to--back" href="#" tabindex="-1">Skip to Back</a>
 
@@ -6642,7 +6781,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-navigation-drawer>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-navigation-drawer>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6724,7 +6863,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-navigation-mobile-rail>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-navigation-mobile-rail>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6752,6 +6891,86 @@
                                             <h5>Includes</h5>
                                             <ul>
                                                 <li>Molecules -> Components -> component-accordion</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Tabs</h4>
+                            <p>The Navigation Tabs component is used to move between sections of a single page or across several different pages. The active tab has the class "active."</p>
+
+                            <div class="component-nds component--snippet  ">
+                                <div class="component--snippet__block">
+                                    <div class="component--snippet__block__code">
+                                        <div class="component--snippet__block__code__rendered">
+
+
+                                            <nav class="navigation-nds navigation--tabs ">
+                                                <a class="navigation--tabs__tab active">Tab One</a>
+                                                <a class="navigation--tabs__tab ">Tab Two</a>
+                                                <a class="navigation--tabs__tab ">Tab Three</a>
+                                            </nav>
+                                        </div>
+                                        <div class="component--snippet__block__code__loader">
+
+
+                                            <div class="icon-nds icon--loader " role="alert" aria-label="Loading" aria-busy="true">
+                                                <div class="preloader-wrapper small active">
+                                                    <div class="spinner-layer">
+                                                        <div class="circle-clipper left">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="gap-patch">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                        <div class="circle-clipper right">
+                                                            <div class="circle"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="component--snippet__block__code__wrapper">
+                                            <div class="component--snippet__block__code__wrapper__snippet">
+
+
+                                                <nav class="navigation-nds navigation--tabs ">
+                                                    <a class="navigation--tabs__tab active">Tab One</a>
+                                                    <a class="navigation--tabs__tab ">Tab Two</a>
+                                                    <a class="navigation--tabs__tab ">Tab Three</a>
+                                                </nav>
+                                            </div>
+                                            <div class="component--snippet__block__code__wrapper__button">
+                                                <div class="component--snippet__block__code__wrapper__button__copied">Copied!</div>
+
+
+
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-navigation-tabs>
+
+
+                                                    <i class="icon-nds icon--default fas fa-clipboard-list "></i>
+                                                    <span class="button--icon__text icon--left">Copy</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="component--snippet__block__pattern">
+                                        <button class="component--snippet__block__pattern__toggle" data-content="accordion-navigation-tabs"><strong>Pattern Lab Information</strong>
+
+
+                                            <i class="icon-nds icon--default far fa-chevron-right "></i>
+                                        </button>
+                                        <div class="component--snippet__block__pattern__content">
+                                            <h5>Blocks</h5>
+                                            <ul>
+                                                <li>&#123;% block navigation_tabs_content %&#125;: The block holding the markup for the tabs.</li>
+                                            </ul>
+                                            <h5>Parameters</h5>
+                                            <ul>
+                                                <li>navigation_tabs_classes: Additional classes for the navigation component.</li>
+                                                <li>navigation_tabs_data: An array of tab objects. Structure: {"text": "", "href": "", "class": "", "attributes": ""}. The "href" key can be empty. Use the "class" key to pass "active" to the active tab.</li>
+                                                <li>navigation_tabs_attributes: Optional attributes for the tabs &lt;nav&gt; element.</li>
                                             </ul>
 
                                         </div>
@@ -6824,7 +7043,7 @@
                                                     </a>
 
 
-                                                    <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu">
+                                                    <button id="global-mobile-menu" class="button-nds button--icon waves-effect waves-light global--header__button button--secondary button--icon--small" aria-label="Open Global Menu" data-nav=header-nav-global-menu-button>
 
 
                                                         <i class="icon-nds icon--default fas fa-bars "></i>
@@ -6836,7 +7055,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-global-header>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-global-header>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -6958,7 +7177,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-global-footer>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-global-footer>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -7099,7 +7318,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-views-listing>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-views-listing>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>
@@ -7274,7 +7493,7 @@
 
 
 
-                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-anchor-copy-views-featured-content-cards>
+                                                <button class="button-nds button--icon waves-effect waves-light component--snippet__block__code__wrapper__button__copy button--icon--small" data-content=body-button-copy-views-featured-content-cards>
 
 
                                                     <i class="icon-nds icon--default fas fa-clipboard-list "></i>

@@ -458,7 +458,7 @@
                     <li>component_media_credit_label: The label to appear before the credit text (Default: "Credit:").</li>
                     <li>component_media_float: The direction to float the component (optional).
                         <ul>
-                            <li>Options: "left", "right".</li>
+                            <li>Options: "left", "right", "full" (100% width of body content).</li>
                         </ul>
                     </li>
                     <li>component_media_lightbox: A parameter to determine if the image should include the Materialize lightbox feature.
@@ -981,6 +981,44 @@
             {% endblock %}
         {% endembed %}
 
+        <h4>Dropdown</h4>
+        <p>The Dropdown component is used with the Primary Navigation component to offer an improved navigation experience. The dropdown can be used either as a click-to-open or hover-to-open component. Use the hover-to-open option when the site section itself has its own page (as opposed to simply being a label of the child content).</p>
+        {% include "@molecules/blocks/block-dependencies/_block-dependencies-main.twig" with
+            {
+                "block_dependencies_text": "In order to use this component, you must include the following libraries in addition to the NDS Global JS:",
+                "block_dependencies_data": [
+                    {
+                        "text": "jQuery"
+                    }
+                ]
+            }
+        %}
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_show_rendered": "no",
+                "component_snippet_name": "navigation-dropdown"
+            }
+        %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-dropdown/demo/navigation-dropdown.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_dropdown_content %&#125;: The block holding the dropdown link options. These links should be plain with only a text label and href value.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_dropdown_classes: Additional classes for the navigation component.</li>
+                    <li>navigation_dropdown_id: Navigation component ID.</li>
+                    <li>navigation_dropdown_toggle_href: Optional URL for the dropdown toggle button. Passing a value to this parameter will automatically make the dropdown hover-activated.</li>
+                    <li>navigation_dropdown_toggle_text: The text to appear on the dropdown button.</li>
+                    <li>navigation_dropdown_toggle_aria_label: Required ARIA label to explain the section to be opened/closed.</li>
+                    <li>navigation_dropdown_active_class: Optional class used in the primary navigation component to signal that the current dropdown is selected.</li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+
         <h4>Breadcrumbs</h4>
         <p>Breadcrumbs are used to help users identify where they are within the menu system of the site. Breadcrumbs will typically appear on pages one level deep in the menu system.</p>
         {% include "@atoms/text/text-uswds/_text-uswds-main.twig" with
@@ -1106,6 +1144,30 @@
                 <h5>Includes</h5>
                 <ul>
                     <li>Molecules -> Components -> component-accordion</li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+
+        <h4>Tabs</h4>
+        <p>The Navigation Tabs component is used to move between sections of a single page or across several different pages. The active tab has the class "active."</p>
+        {% embed "@molecules/components/component-snippet/_component-snippet-main.twig" with
+            {
+                "component_snippet_name": "navigation-tabs"
+            }
+        %}
+            {% block component_snippet_code %}
+                {% include "@nds/02-molecules/navigation/navigation-tabs/demo/navigation-tabs.twig" %}
+            {% endblock %}
+            {% block component_snippet_pattern_info %}
+                <h5>Blocks</h5>
+                <ul>
+                    <li>&#123;% block navigation_tabs_content %&#125;: The block holding the markup for the tabs.</li>
+                </ul>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>navigation_tabs_classes: Additional classes for the navigation component.</li>
+                    <li>navigation_tabs_data: An array of tab objects. Structure: {"text": "", "href": "", "class": "", "attributes": ""}. The "href" key can be empty. Use the "class" key to pass "active" to the active tab.</li>
+                    <li>navigation_tabs_attributes: Optional attributes for the tabs &lt;nav&gt; element.</li>
                 </ul>
             {% endblock %}
         {% endembed %}

@@ -1,4 +1,5 @@
 {
+    "ndsVersion": "v 1.0.1",
     "prodBuild": "false",
     "cssPath": "../../css/",
     "jsPath": "../../js/",

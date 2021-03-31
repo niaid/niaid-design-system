@@ -17,6 +17,24 @@
             }
         }
     }
+    .navigation--tabs {
+        &__tab {
+            position: relative;
+            &.active {
+                border-bottom: $s-0-25 solid transparent;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: -1 * $s-0-25;
+                    left: 0;
+                    width: 100%;
+                    height: $s-0-25;
+                    background: $type-link;
+                    border-radius: $s-5;
+                }
+            }
+        }
+    }
     .global--footer {
         &__prefooter {
             position: relative;
@@ -183,6 +201,13 @@
             .dropdown-menu {
                 border-bottom-left-radius: $corner-radius;
                 border-bottom-right-radius: $corner-radius;
+            }
+        }
+        &.navigation--dropdown {
+            .navigation--dropdown {
+                &__menu {
+                    border-radius: 0 0 $corner-radius $corner-radius;
+                }
             }
         }
     }
@@ -380,6 +405,13 @@
             @include media-breakpoint-up('lg') {
                 border-bottom-left-radius: $corner-radius;
                 border-bottom-right-radius: $corner-radius;
+            }
+        }
+        &.navigation--dropdown {
+            .navigation--dropdown {
+                &__menu {
+                    border-radius: 0 0 $corner-radius $corner-radius;
+                }
             }
         }
     }

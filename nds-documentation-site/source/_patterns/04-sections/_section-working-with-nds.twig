@@ -12,7 +12,8 @@
                 "component_media_alt": 'A screenshot of the _patterns folder in Visual Studio Code.',
                 "component_media_credit": 'NIAID',
                 "component_media_caption": "Custom components should be placed in the Atomic folders outside of the 00-nds/ directory.",
-                "component_media_lightbox": "yes"
+                "component_media_lightbox": "yes",
+                "component_media_float": "right"
             }
         %}
         <p>The global project CSS rules can be found in the css/ directory in source/. The css/global/ folder is similar to the 00-nds/ folder in that custom changes should not occur within the directory. Instead, make edits in the css/overrides/ directory. Here, you can create new files and write custom style rules.</p>
@@ -27,9 +28,12 @@
 
         <p>For Drupal-based projects, you may need to clear the Drupal cache to see your changes.</p>
 
+        <h3>Working with JavaScript in NDS</h3>
+        <p>NDS provides global and commponent functionality through JS files located in the 00-nds/ folder. There may be instances where you would like to exclude certain pieces of this functionality or would like to replace it with your own. In either case, create a file with the same name and path outside of the 00-nds/ folder and, optionally, write your own JavaScript to replace it (leaving the file blank will simply exclude the functionality). For example, to exclude or replace the 00-nds/02-molecules/analytics/analytics-google/analytics-google.js file, create the analytics/analytics-google/ directories inside of _patterns/02-molecules/. Then, create a analytics-google.js file inside and write your own analytics code (or leave it blank).</p>
+
         {% embed "@nds/02-molecules/blocks/block-default/_block-default-main.twig" %}
             {% block block_content %}
-                <h4>Developing with NIAID Design System</h4>
+                <h4>Developing with the NIAID Design System</h4>
                 <p>Get more information on how NDS is structured.</p>
                 {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
                     {

@@ -21,7 +21,7 @@
         component_media_caption: Caption text to appear below the image.
         component_media_credit: Credit text to appear below the image.
         component_media_credit_label: The label to appear before the credit text (Default: "Credit:").
-        component_media_float: The direction to float the component (optional). Options: "left", "right".
+        component_media_float: The direction to float the component (optional). Options: "left", "right", "full" (100% width of body content).
         component_media_lightbox: A parameter to determine if the image should include the Materialize lightbox feature. Options: "yes".
 
     Includes:
@@ -45,10 +45,13 @@
 {% endif %}
 
 {% if component_media_float == "left" %}
-    {% set component_media_classes = component_media_classes ~ " component--media--left"  %}
+    {% set component_media_classes = component_media_classes ~ " component--media--left" %}
 {% endif %}
 {% if component_media_float == "right" %}
-    {% set component_media_classes = component_media_classes ~ " component--media--right"  %}
+    {% set component_media_classes = component_media_classes ~ " component--media--right" %}
+{% endif %}
+{% if component_media_float == "full" %}
+    {% set component_media_classes = component_media_classes ~ " component--media--full" %}
 {% endif %}
 
 <div class="component-nds component--media {{ component_media_classes }}">

@@ -10,7 +10,7 @@ paths?="/*"
 default: build
 
 build:
-	gulp buildProd
+	gulp build
 
 deploy-staging: build
 	aws s3 sync ./public_html s3://staging.nds.niaid.nih.gov --exclude ".git/*" --delete

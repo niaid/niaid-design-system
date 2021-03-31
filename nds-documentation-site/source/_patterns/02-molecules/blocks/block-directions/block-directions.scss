@@ -1,5 +1,6 @@
 .block--directions {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     box-shadow: none !important;
     padding: 0;
@@ -9,6 +10,10 @@
     margin-right: 0;
     &__prev,
     &__next {
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+        margin: $s-1 0;
         > span {
             font-weight: $font-weight-semibold;
         }

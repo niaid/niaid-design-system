@@ -183,60 +183,29 @@
 
                         {% include "@sections/_section-working-with-nds.twig" %}
 
+                        <h3>Creating Pages</h3>
+                        <p>The 05-pages/ directory houses all of your website's pages. The index.twig file that comes with the Static Site Builder download is your home page, which you may edit to your liking. To create new pages, simply create a new folder in 05-pages/ and add a .twig file <strong>of the same name</strong>. The Static Site Buider uses the name of the page directory/.twig file for the production path. For instance, if you created clinical-trials/clinical-trials.twig folder and file, the production path to this page would be /clinical-trials. Some information for your page, such as a meta title and description, is configured in a .json file of the same name. View the index.json file for reference.</p>
+
                         {% embed "@molecules/components/component-scrollspy-section/_component-scrollspy-section-main.twig" with
                             {
                                 "component_scrollspy_section_id": "section-building-nds-production"
                             }
                         %}
                             {% block component_scrollspy_section_content %}
-                                <h2>Building NDS for Production</h2>
-                                <p>When you are satisfied with your site, the Static Site Builder allows you to build a distribution folder (public_html/) with all the necessary, web-ready assets. The steps below explain how to generate your distribution code.</p>
-                                <p class="step">1. Create a Distribution Pattern Folder.</p>
-                                <p>Start by creating a 06-dist/ folder under _patterns/ (source/_patterns/06-dist/).</p>
-                                {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
-                                    {
-                                        "component_media_classes": 'm-b-2',
-                                        "component_media_src": 'dist.png',
-                                        "component_media_alt": 'A screenshot of the _patterns directory in Visual Studio Code.',
-                                        "component_media_credit": 'NIAID',
-                                        "component_media_caption": "Create a 06-dist/ directory.",
-                                        "component_media_float": "right",
-                                        "component_media_lightbox": "yes"
-                                    }
-                                %}
-                                <p>For each page of your static site, create a new folder (typically with the same name as the corresponding 05-pages/ directory) and add a twig file, such as design.twig, and a JSON file with the same name, such as design.json.</p>
-                                {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
-                                    {
-                                        "component_media_src": 'json.png',
-                                        "component_media_alt": 'A screenshot of a JSON file to make production configurations.',
-                                        "component_media_credit": 'NIAID',
-                                        "component_media_caption": "Use the JSON file in the 06-dist/ page folders to make configurations for production pages.",
-                                        "component_media_lightbox": "yes"
-                                    }
-                                %}
-                                <p class="step">2. Configure the Production JSON Files</p>
-                                <p>The JSON file in each page's 06-dist folder is critical for defining production-specific information, including the paths for your CSS, JS, and image assets, page titles, and included scripts.</p>
-                                <ul>
-                                    <li>Configure the variable paths (cssPath, jsPath, etc.) to your desired structure.</p>
-                                    <li>Include or exclude certain JS libraries from the build by setting 'true' or 'false' values, respectively.</li>
-                                    <li>If using an NDS-based navigation element, use the "navigationPrimaryActiveLink" parameter to add active page styling.</li>
-                                </ul>
-                                <p>You may also add your own parameters for use in custom patterns.</p>
+                                <h2 id="build-for-production">Building NDS for Production</h2>
+                                <p>When you are satisfied with your site pages, the Static Site Builder allows you to build a distribution folder (public_html/) with all the necessary, web-ready assets. To do so, simply run:</p>
+                                <code>gulp build</code><br>
+                                <p>After running the "build" command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
 
-                                <p class="step">3. Configure Gulp Paths to Your Production Pages</p>
-                                <p>Once your 06-dist/ directory is setup, compile Pattern Lab. Next, open your gulpfile.js, and find the "buildPaths" variable declaration. For every page you want to deploy, add a new object. For pageName, add the name of the folder/file for that page in 06-dist/. For target_dest, specify the ultimate path you want that page to file under.</p>
-                                {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                                {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
                                     {
-                                        "component_media_src": 'build-paths-gulp.png',
-                                        "component_media_alt": 'A screenshot of the Gulpfile.js file. Specifically, it shows the code to configure the paths for your production pages.',
-                                        "component_media_credit": 'NIAID',
-                                        "component_media_caption": "A sample buildPaths variable declaration.",
-                                        "component_media_lightbox": "yes"
+                                        "block_status_message_type": "message--warning"
                                     }
                                 %}
-                                <p class="step">4. Build the Distribution Directory</p>
-                                <code>gulp buildProd</code><br>
-                                <p>After running the buildProd command, a public_html/ directory will be created with production ready assets. Upload the contents of this directory to your hosting platform.</p>
+                                    {% block block_status_message_content %}
+                                        <p>The public_html/ directory gets deleted and rebuilt on each run of "gulp build." Do not make modifications inside of public_html/, or your changes will be lost.</p>
+                                    {% endblock %}
+                                {% endembed %}
                             {% endblock %}
                         {% endembed %}
 

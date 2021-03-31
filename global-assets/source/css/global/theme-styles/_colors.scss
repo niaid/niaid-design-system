@@ -259,29 +259,14 @@
         &.navigation--primary {
             background: $color-theme-2-3-1;
             .navigation--primary__inner {
-                a,
-                button {
-                    background: transparent;
-                    background-color: transparent;
-                    border: 0;
-                    &:hover,
-                    &:focus {
+                &__item {
+                    & > a,
+                    .navigation--dropdown__toggle {
                         border: 0;
-                        background: $color-theme-2-3-2;
-                    }
-                }
-                .dropdown-menu {
-                    background: $color-theme-2-3-2;
-                    .dropdown-item {
                         &:hover,
                         &:focus {
-                            background: $color-theme-2-3-1;
-                        }
-                        &.active {
-                            &:hover,
-                            &:focus {
-                                background: $color-theme-2-3-1;
-                            }
+                            border: 0;
+                            background: $color-theme-2-3-2;
                         }
                     }
                 }
@@ -315,6 +300,34 @@
                                 color: $white;
                             }
                         }
+                    }
+                }
+            }
+        }
+        &.navigation--dropdown {
+            .navigation--dropdown__toggle,
+            .navigation--dropdown__toggle:visited {
+                background: $color-theme-2-3-1;
+                border: $s-1px solid $color-theme-2-3-1;
+                &:hover,
+                &:focus {
+                    background: $color-theme-2-3-2;
+                    border: $s-1px solid $color-theme-2-3-2;
+                }
+            }
+            .navigation--dropdown__menu {
+                background: $color-theme-2-3-2;
+                a {
+                    &:hover,
+                    &:focus {
+                        background: $color-theme-2-3-1;
+                    }
+                }
+            }
+            &.is-open {
+                .navigation--dropdown {
+                    &__toggle {
+                        background: $color-theme-2-3-2;
                     }
                 }
             }
@@ -600,29 +613,14 @@
         &.navigation--primary {
             background: $color-theme-3-3-1;
             .navigation--primary__inner {
-                a,
-                button {
-                    background: transparent;
-                    background-color: transparent;
-                    border: 0;
-                    &:hover,
-                    &:focus {
+                &__item {
+                    & > a,
+                    .navigation--dropdown__toggle {
                         border: 0;
-                        background: $color-theme-3-3-2;
-                    }
-                }
-                .dropdown-menu {
-                    background: $color-theme-3-3-2;
-                    .dropdown-item {
                         &:hover,
                         &:focus {
-                            background: $color-theme-3-3-1;
-                        }
-                        &.active {
-                            &:hover,
-                            &:focus {
-                                background: $color-theme-3-3-1;
-                            }
+                            border: 0;
+                            background: $color-theme-3-3-2;
                         }
                     }
                 }
@@ -656,6 +654,34 @@
                                 color: $white;
                             }
                         }
+                    }
+                }
+            }
+        }
+        &.navigation--dropdown {
+            .navigation--dropdown__toggle,
+            .navigation--dropdown__toggle:visited {
+                background: $color-theme-3-3-1;
+                border: $s-1px solid $color-theme-3-3-1;
+                &:hover,
+                &:focus {
+                    background: $color-theme-3-3-2;
+                    border: $s-1px solid $color-theme-3-3-2;
+                }
+            }
+            .navigation--dropdown__menu {
+                background: $color-theme-3-3-2;
+                a {
+                    &:hover,
+                    &:focus {
+                        background: $color-theme-3-3-1;
+                    }
+                }
+            }
+            &.is-open {
+                .navigation--dropdown {
+                    &__toggle {
+                        background: $color-theme-3-3-2;
                     }
                 }
             }

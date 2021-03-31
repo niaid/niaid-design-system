@@ -32,8 +32,11 @@
     .main {
         .container {
             @extend .m-y-2;
-            padding: 2rem;
+            padding: $s-1;
             background: $page-background-alternate;
+            @include media-breakpoint-up(sm) {
+                padding: $s-2;
+            }
             &--button {
                 .col-12 {
                     padding: 1rem;

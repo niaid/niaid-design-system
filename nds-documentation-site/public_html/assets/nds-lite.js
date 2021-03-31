@@ -1,6 +1,27 @@
 "use strict";
 
 // Generic Utilities
+document.addEventListener("DOMContentLoaded", function (e) {
+  // Polyfill for "Closest" method.
+  if (window.Element && !Element.prototype.closest) {
+    Element.prototype.closest = function (s) {
+      var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+          i,
+          el = this;
+
+      do {
+        i = matches.length;
+
+        while (--i >= 0 && matches.item(i) !== el) {}
+
+        ;
+      } while (i < 0 && (el = el.parentElement));
+
+      return el;
+    };
+  }
+});
+
 var getNextSibling = function getNextSibling(elem, selector) {
   var sibling = elem.nextElementSibling;
 
@@ -83,53 +104,148 @@ function hasClass(element, className) {
 (function ($) {
   // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
   function initDataAttributes() {
-    for (var i = 0; i < document.getElementsByClassName("layouts--body").length; i++) {
-      var bodyAnchorLinks = document.getElementsByClassName("layouts--body")[i].querySelectorAll('a');
-      setDataAttributes(bodyAnchorLinks, 'data-content', 'body-anchor-');
-    }
+    // Accordion Button
+    var accordionCards = document.getElementsByClassName("component--accordion__card");
 
-    for (var i = 0; i < document.getElementsByClassName("navigation--primary").length; i++) {
-      var navigationLinks = document.getElementsByClassName("navigation--primary")[i].querySelectorAll('a');
-      setDataAttributes(navigationLinks, 'data-nav', 'header-nav-');
-    }
+    for (var i = 0; i < accordionCards.length; i++) {
+      var navigationLinks = accordionCards[i].querySelectorAll('button');
+      setDataAttributes(navigationLinks, 'data-content', 'accordion-');
+    } // Tabs
 
-    for (var i = 0; i < document.getElementsByClassName("global--header").length; i++) {
-      var logoLinks = document.getElementsByClassName("global--header")[i].querySelectorAll('.component--branding');
 
-      for (var i = 0; i < logoLinks.length; i++) {
-        logoLinks[i].setAttribute('data-nav', 'header-nav-logo');
+    var navigationTabs = document.getElementsByClassName("navigation--tabs");
+
+    for (var i = 0; i < navigationTabs.length; i++) {
+      var tabs = navigationTabs[i].querySelectorAll('.navigation--tabs__tab');
+      setDataAttributes(tabs, 'data-content', 'nav-');
+    } // Generic Body
+
+
+    var bodyLayouts = document.getElementsByClassName("layouts--body");
+
+    for (var i = 0; i < bodyLayouts.length; i++) {
+      var bodyElements = bodyLayouts[i].querySelectorAll('a, button');
+      setDataAttributes(bodyElements, 'data-content', 'body-anchor-');
+    } // Header
+
+
+    var globalHeaders = document.getElementsByClassName("global--header");
+
+    for (var _i = 0; _i < globalHeaders.length; _i++) {
+      // Branding Component
+      var logoLinks = globalHeaders[_i].querySelectorAll('.component--branding');
+
+      for (var _j = 0; _j < logoLinks.length; _j++) {
+        logoLinks[_j].setAttribute('data-nav', 'header-nav-logo');
+      } // Generic
+
+
+      var headerElements = globalHeaders[_i].querySelectorAll('a, button');
+
+      setDataAttributes(headerElements, 'data-nav', 'header-nav-');
+    } // Primary Navigation
+
+
+    var primaryNavigations = document.getElementsByClassName("navigation--primary");
+
+    for (var i = 0; i < primaryNavigations.length; i++) {
+      var _navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
+
+      for (var _j2 = 0; _j2 < _navigationLinks.length; _j2++) {
+        var navItem = _navigationLinks[_j2].children[0];
+
+        if (hasClass(navItem, 'navigation--dropdown')) {
+          var sectionName = _navigationLinks[_j2].children[0].children[0].textContent.trim();
+
+          if (sectionName !== "") {
+            sectionName = sectionName.replace(/\//g, '-');
+            sectionName = sectionName.replace(/\s+/g, '-').toLowerCase();
+            var dropdownItems = navItem.querySelectorAll('.navigation--dropdown__menu > a');
+            setDataAttributes(dropdownItems, 'data-nav', 'header-nav-' + sectionName + '-');
+          }
+        } else {
+          computeDataAttribute(navItem, 'data-nav', 'header-nav-');
+        }
       }
-    }
+    } // Footer
 
-    for (var i = 0; i < document.getElementsByClassName("global--footer").length; i++) {
-      var _navigationLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('a');
 
-      setDataAttributes(_navigationLinks, 'data-nav', 'footer-nav-');
+    var globalFooters = document.getElementsByClassName("global--footer");
 
-      var _logoLinks = document.getElementsByClassName("global--footer")[i].querySelectorAll('.image--logo');
+    for (var i = 0; i < globalFooters.length; i++) {
+      // Branding Component
+      var _logoLinks = globalFooters[i].querySelectorAll('.image--logo');
 
-      for (var i = 0; i < _logoLinks.length; i++) {
-        _logoLinks[i].setAttribute('data-nav', 'footer-nav-logo');
-      }
-    }
+      for (var j = 0; j < _logoLinks.length; j++) {
+        _logoLinks[j].setAttribute('data-nav', 'footer-nav-logo');
+      } // Footer Links
 
-    for (var i = 0; i < document.getElementsByClassName("component--accordion__card").length; i++) {
-      var _navigationLinks2 = document.getElementsByClassName("component--accordion__card")[i].querySelectorAll('button');
 
-      setDataAttributes(_navigationLinks2, 'data-content', 'accordion-');
+      var _navigationLinks2 = globalFooters[i].querySelectorAll('a, button');
+
+      setDataAttributes(_navigationLinks2, 'data-nav', 'footer-nav-');
+    } // Floating Buttons
+
+
+    var floatingButtons = document.getElementsByClassName("button--floating");
+    setDataAttributes(floatingButtons, 'data-nav', 'header-nav-'); // Mobile Rail
+
+    var mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
+
+    for (var i = 0; i < mobileRails.length; i++) {
+      var _navigationLinks3 = mobileRails[i].querySelectorAll('a');
+
+      setDataAttributes(_navigationLinks3, 'data-nav', 'nav-left-');
     }
   } // setDataAttributes - Helper function to add data attributes to elements.
 
 
   function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-    for (var i = 0; i < els.length; i++) {
-      var linkText = els[i].textContent.trim();
-
-      if (linkText !== "") {
-        linkText = linkText.replace(/\//g, '-');
-        linkText = linkText.replace(/\s+/g, '-').toLowerCase();
-        els[i].setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+    if (els.length > 0 && els !== undefined) {
+      for (var i = 0; i < els.length; i++) {
+        if (els[i].hasAttribute(dataAttributeName)) {
+          tagChildren(els[i], dataAttributeName);
+        } else {
+          computeDataAttribute(els[i], dataAttributeName, dataAttributeValuePrefix);
+        }
       }
+    }
+  }
+
+  function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
+    var linkText = el.textContent.trim();
+
+    if (linkText !== "") {
+      linkText = linkText.replace(/\//g, '-');
+      linkText = linkText.replace(/\s+/g, '-').toLowerCase();
+      el.setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
+      tagChildren(el, dataAttributeName);
+    } else {
+      if (hasClass(el, 'button--share')) {
+        var typeArray = el.classList[2].split('button--share--');
+        var type = typeArray[typeArray.length - 1];
+        var prefix = '';
+
+        if (dataAttributeValuePrefix == "header-nav-") {
+          prefix = 'header-nav-social-share-';
+        } else if (dataAttributeValuePrefix == "footer-nav-") {
+          prefix = 'footer-nav-social-share-';
+        } else {
+          prefix = 'body-social-share-';
+        }
+
+        el.setAttribute(dataAttributeName, prefix + type);
+        tagChildren(el, dataAttributeName);
+      }
+    }
+  }
+
+  function tagChildren(el, dataAttributeName) {
+    var dataAttributeValue = el.getAttribute(dataAttributeName);
+    var childElements = el.querySelectorAll('i, span, div, img, strong');
+
+    for (var j = 0; j < childElements.length; j++) {
+      childElements[j].setAttribute(dataAttributeName, dataAttributeValue);
     }
   }
 

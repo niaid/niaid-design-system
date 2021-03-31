@@ -4,11 +4,11 @@
     overflow: hidden;
     border: 0;
     padding: 0;
-    z-index: 0;
+    z-index: $z-index-baseline;
     .parallax-container {
         position: relative;
         overflow: hidden;
-        min-height: 10rem;
+        min-height: $s-10;
         background-color: rgba(0,0,0,.7);
         .parallax {
             position: absolute;
@@ -16,7 +16,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            z-index: -1;
+            z-index: $z-index-below-baseline;
             div,
             article {
                 height: 100%;
