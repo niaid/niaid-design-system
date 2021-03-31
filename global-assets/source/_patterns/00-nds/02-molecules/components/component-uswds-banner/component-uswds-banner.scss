@@ -1,7 +1,7 @@
 .component--uswds-banner {
     background-color: $type-heading;
     padding: 0;
-    line-height: 1.5;
+    line-height: $line-height-small;
     &__toggle {
         .image--default {
             margin-right: $s-0-50;

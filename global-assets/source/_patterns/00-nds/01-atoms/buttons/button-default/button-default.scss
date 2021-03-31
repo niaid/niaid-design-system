@@ -14,7 +14,8 @@ button {
         color: $color-theme-1-1-1;
         background: transparent;
         &:hover,
-        &:focus {
+        &:focus,
+        &:active {
             background: $color-theme-1-1-1;
             color: $white;
         }
@@ -30,12 +31,13 @@ button {
         }
     }
     &.button--negative {
-        color: $status-error;
-        background: transparent;
+        background: $status-error;
+        border: $s-1px solid $status-error;
         &:hover,
-        &:focus {
-            background: $status-error;
-            color: $white;
+        &:focus,
+        &:active {
+            background: $status-error-hover;
+            border: $s-1px solid $status-error-hover;
         }
     }
     & + .ext-link-icon {
@@ -47,13 +49,11 @@ button {
     border: $s-1px solid $color-theme-1-1-1;
     color: $color-theme-1-1-1;
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
         background: $color-theme-1-1-1;
         color: $white;
         border: $s-1px solid $color-theme-1-1-1;
-    }
-    &:visited {
-        color: $color-theme-1-1-1;
     }
 }
 
@@ -71,15 +71,14 @@ button {
 }
 
 .button--negative {
+    background: $status-error;
     border: $s-1px solid $status-error;
-    color: $status-error;
+    color: $white;
     &:hover,
-    &:focus {
-        background: $status-error;
+    &:focus,
+    &:active {
         color: $white;
-        border: $s-1px solid $status-error;
-    }
-    &:visited {
-        color: $status-error;
+        background: $status-error-hover;
+        border: $s-1px solid $status-error-hover;
     }
 }

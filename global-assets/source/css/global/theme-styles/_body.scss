@@ -5,7 +5,7 @@
     p,
     ul,
     ol {
-        font-family: "Public Sans", "Roboto", sans-serif;
+        font-family: $font-stack-public-sans;
     }
 }
 
@@ -16,6 +16,6 @@
     p,
     ul,
     ol {
-        font-family: "Roboto", sans-serif;
+        font-family: $font-stack-roboto;
     }
 }

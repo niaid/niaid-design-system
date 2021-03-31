@@ -39,7 +39,7 @@
 .align-left {
     @extend .component--media;
     @include media-breakpoint-up(md) {
-        max-width: 50%;
+        max-width: 50% !important;
     }
 }
 .align-left {

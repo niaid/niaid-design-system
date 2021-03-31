@@ -5,9 +5,9 @@
     h4, .h4,
     h5, .h5,
     h6, .h6 {
-        font-family: "Public Sans", "Roboto", sans-serif;
+        font-family: $font-stack-public-sans;
         a {
-            font-family: "Public Sans", "Roboto", sans-serif;
+            font-family: $font-stack-public-sans;
         }
     }
 }
@@ -19,9 +19,9 @@
     h4, .h4,
     h5, .h5,
     h6, .h6 {
-        font-family: "Roboto", "Public Sans", sans-serif;
+        font-family: $font-stack-roboto;
         a {
-            font-family: "Roboto", "Public Sans", sans-serif;
+            font-family: $font-stack-roboto;
         }
     }
 }
@@ -33,14 +33,10 @@
     h4, .h4,
     h5, .h5,
     h6, .h6 {
-        font-weight: $font-weight-light;
-        font-family: "Merriweather", "Martel", serif;
+        font-family: $font-stack-merriweather;
         a {
-            font-family: "Merriweather", "Martel", serif;
+            font-family: $font-stack-merriweather;
         }
-    }
-    h5 {
-        font-weight: $font-weight-bold;
     }
 }
 
@@ -51,9 +47,9 @@
     h4, .h4,
     h5, .h5,
     h6, .h6 {
-        font-family: "Martel", "Merriweather", serif;
+        font-family: $font-stack-martel;
         a {
-            font-family: "Martel", "Merriweather", serif;
+            font-family: $font-stack-martel;
         }
     }
 }
