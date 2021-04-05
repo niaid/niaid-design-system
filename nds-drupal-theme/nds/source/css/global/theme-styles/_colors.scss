@@ -265,8 +265,10 @@
             .navigation--primary__inner {
                 &__item {
                     & > a,
+                    & > button,
                     .navigation--dropdown__toggle {
                         border: 0;
+                        background: transparent;
                         &:hover,
                         &:focus {
                             border: 0;
@@ -623,8 +625,10 @@
             .navigation--primary__inner {
                 &__item {
                     & > a,
+                    & > button,
                     .navigation--dropdown__toggle {
                         border: 0;
+                        background: transparent;
                         &:hover,
                         &:focus {
                             border: 0;

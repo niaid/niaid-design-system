@@ -153,6 +153,111 @@ gulp.task('cleanDistributionDirectories', (cb) => {
     return del(dirs, {'force': true}, cb);
 });
 
+// copyAssetsToDrupalTheme - Move a copy of the NDS files into the NDS-based Drupal theme.
+gulp.task('copyAssetsToDrupalTheme', () => {
+    console.log("Move Pattern Lab to Drupal Theme");
+    return gulp.src('../global-assets/dist/**/*', {dot: true})
+        .pipe(gulp.dest('../nds-drupal-theme/nds/'));
+});
+
+// GULP: compileGlobalCSS - A function to concatenate and compile the component CSS files into single .css distribution file.
+gulp.task('compileGlobalCSS', () => {
+    // SASS
+    return gulp.src('../global-assets/source/css/style.scss')
+        .pipe(sassGlob())
+        .pipe(concat('nds.css'))
+        .pipe(rename({
+            basename: 'nds-min',
+            extname: '.css'
+        }))
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ["../global-assets/node_modules/bootstrap/scss", "../global-assets/node_modules/font-awesome/scss"]
+        }).on('error', sass.logError))
+        .pipe(gulp.dest('../global-assets/source/css/'))
+        .pipe(gulp.dest('./public_html/assets'));
+});
+
+// GULP: compileGlobalJS - A function to concatenate and compile the component JS files into single .js distribution file.
+gulp.task('compileGlobalJS', () => {
+    // JS
+    return gulp.src('../global-assets/source/_patterns/**/*.js')
+        .pipe(concat('nds.js'))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(minify())
+        .pipe(gulp.dest('../global-assets/source/js/global/'))
+        .pipe(gulp.dest('./public_html/assets'));
+});
+
+// buildDist - Copies global files from global-assets into a distribution folder.
+gulp.task('buildDist', () => {
+    var paths = [
+        { src: '../global-assets/source/webfonts/**/*', dest: '../global-assets/dist/source/webfonts/' },
+        { src: '../global-assets/source/css/**/*', dest: '../global-assets/dist/source/css/' },
+        { src: '../global-assets/source/js/**/*', dest: '../global-assets/dist/source/js/' },
+        { src: '../global-assets/source/_patterns/**/*', dest: '../global-assets/dist/source/_patterns/' },
+        { src: '../global-assets/source/_data/**/*', dest: '../global-assets/dist/source/_data/' },
+        { src: '../global-assets/source/_meta/**/*', dest: '../global-assets/dist/source/_meta/' },
+        { src: '../global-assets/source/images/**/*', dest: '../global-assets/dist/source/images/' },
+        { src: '../global-assets/config/**/*', dest: '../global-assets/dist/config' },
+        { src: '../global-assets/core/**/*', dest: '../global-assets/dist/core' },
+        { src: '../global-assets/package.json', dest: '../global-assets/dist/' },
+        { src: '../global-assets/composer.json', dest: '../global-assets/dist/' },
+        { src: '../global-assets/LICENSE', dest: '../global-assets/dist/' },
+        { src: '../global-assets/Readme.md', dest: '../global-assets/dist/' },
+        { src: '../global-assets/gulpfile.js', dest: '../global-assets/dist/' }
+    ];
+
+    var tasks = paths.map(function (path) {
+        return gulp.src(path.src).pipe(gulp.dest(path.dest));
+    });
+
+    return merge(tasks);
+});
+
+// zipAssets - Zips webfont pacakges, the NDS Drupal Theme, and the distribution folder created in buildDist.
+gulp.task('zipAssets', () => {
+    // Zip Font Folders
+    console.log("Zipping Font Folders");
+    gulp.src('../global-assets/source/webfonts/martel/**', {dot: true})
+        .pipe(zip('martel.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
+    gulp.src('../global-assets/source/webfonts/merriweather/**', {dot: true})
+        .pipe(zip('merriweather.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
+    gulp.src('../global-assets/source/webfonts/public-sans/**', {dot: true})
+        .pipe(zip('public-sans.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
+    gulp.src('../global-assets/source/webfonts/roboto/**', {dot: true})
+        .pipe(zip('roboto.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
+
+    // Zip Drupal Theme
+    console.log("Zipping Drupal Theme");
+    gulp.src('../nds-drupal-theme/**', {dot: true})
+        .pipe(zip('nds-drupal-theme.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
+
+    // Zip Static Site Builder
+    console.log("Zipping Pattern Lab");
+    return gulp.src('../global-assets/dist/**', {dot: true})
+        .pipe(zip('nds-static-site-builder.zip'))
+        .pipe(gulp.dest('./public_html/assets/'));
+});
+
+// formatComponents - A function to beautify the Component code snippets for production. Add any page with the component--snippet pattern.
+gulp.task('formatComponents', () => {
+    gulp.src('./public/patterns/06-dist-migration-guide-migration-guide/06-dist-migration-guide-migration-guide.html')
+        .pipe(beautify())
+        .pipe(gulp.dest('./public/patterns/06-dist-migration-guide-migration-guide/'));
+
+    return gulp.src('./public/patterns/06-dist-components-components/06-dist-components-components.html')
+        .pipe(beautify())
+        .pipe(gulp.dest('./public/patterns/06-dist-components-components/'));
+});
+
 // GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', () => {
     browserSync.init({
@@ -169,24 +274,8 @@ gulp.task('serveProject', () => {
     gulp.watch('../global-assets/source/_patterns/**/*', gulp.series('cleanNDS', 'copyGlobalPatterns', 'compileSass', 'compileJS', 'compilePatternLab'));
 });
 
-// GULP: addStagingBanner - Adds a banner to designate the staging version of the documentation website.
-gulp.task('addStagingBanner', () => {
-    return gulp.src('./public_html/**/*.html')
-        .pipe(replace('<!--STAGING-BANNER-->', '<div class="staging-banner">NDS STAGING</div>'))
-        .pipe(gulp.dest('./public_html/'));
-});
-
-// GULP: default - Running gulp compiles the NDS Documentaiton site and serves it locally.
-gulp.task('default', gulp.series('cleanNDS', 'cleanIgnoredSourceDirectories', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab', 'serveProject'));
-
-// GULP - buildStaging - Build the NDS Documentation site for deploy to staging.
-gulp.task('buildStaging', gulp.series('cleanDistributionDirectories', 'compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets, 'addStagingBanner'));
-
-// GULP - buildProd - Build the NDS Documentation site for deploy.
-gulp.task('buildProd', gulp.series('cleanDistributionDirectories', 'compileSass', 'computeIncludedJSFiles', 'compileJS', compileNDSLite, 'compilePatternLab', formatComponents, buildNDSDocumentationSite, compileGlobalAssets, buildDist, copyAssetsToDrupalTheme, bundleGlobals, zipAssets));
-
 // buildNDSDocumentationSite - Move assets for the NDS Documentation Site to the public_html folder for deployment.
-function buildNDSDocumentationSite() {
+gulp.task('buildNDSDocumentationSite', () => {
     // Define Names of Pages to Build for Production (Use the name of the Twig file in the 06-dist folder) to Compiled Pages & Desired Distribution Paths.
     var buildPaths = [
         {
@@ -278,137 +367,51 @@ function buildNDSDocumentationSite() {
     console.log("Starting Copy Webfonts");
     return gulp.src('./source/webfonts/**/*')
         .pipe(gulp.dest('./public_html/webfonts'));
-}
-
-// copyAssetsToDrupalTheme - Move a copy of the NDS files into the NDS-based Drupal theme.
-function copyAssetsToDrupalTheme() {
-    console.log("Move Pattern Lab to Drupal Theme");
-    return gulp.src('../global-assets/dist/**/*', {dot: true})
-        .pipe(gulp.dest('../nds-drupal-theme/nds/'));
-}
-
-// compileGlobalAssets - A function to concatenate and compile the component CSS and JS files into single .css and .js distribution files.
-function compileGlobalAssets() {
-    // SASS
-    gulp.src('../global-assets/source/css/style.scss')
-        .pipe(sassGlob())
-        .pipe(concat('nds.css'))
-        .pipe(rename({
-            basename: 'nds-min',
-            extname: '.css'
-        }))
-        .pipe(sass({
-            outputStyle: 'compressed',
-            includePaths: ["../global-assets/node_modules/bootstrap/scss", "../global-assets/node_modules/font-awesome/scss"]
-        }).on('error', sass.logError))
-        .pipe(gulp.dest('../global-assets/source/css'))
-        .pipe(gulp.dest('./public_html/assets'));
-
-    // JS
-    return gulp.src('../global-assets/source/_patterns/**/*.js')
-        .pipe(concat('nds.js'))
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(minify())
-        .pipe(gulp.dest('../global-assets/source/js/global/'))
-        .pipe(gulp.dest('./public_html/assets'));
-}
-
-// buildDist - Copies global files from global-assets into a distribution folder.
-function buildDist() {
-    var paths = [
-        { src: '../global-assets/source/webfonts/**/*', dest: '../global-assets/dist/source/webfonts/' },
-        { src: '../global-assets/source/css/**/*', dest: '../global-assets/dist/source/css/' },
-        { src: '../global-assets/source/js/**/*', dest: '../global-assets/dist/source/js/' },
-        { src: '../global-assets/source/_patterns/**/*', dest: '../global-assets/dist/source/_patterns/' },
-        { src: '../global-assets/source/_data/**/*', dest: '../global-assets/dist/source/_data/' },
-        { src: '../global-assets/source/_meta/**/*', dest: '../global-assets/dist/source/_meta/' },
-        { src: '../global-assets/source/images/**/*', dest: '../global-assets/dist/source/images/' },
-        { src: '../global-assets/config/**/*', dest: '../global-assets/dist/config' },
-        { src: '../global-assets/core/**/*', dest: '../global-assets/dist/core' },
-        { src: '../global-assets/package.json', dest: '../global-assets/dist/' },
-        { src: '../global-assets/composer.json', dest: '../global-assets/dist/' },
-        { src: '../global-assets/LICENSE', dest: '../global-assets/dist/' },
-        { src: '../global-assets/Readme.md', dest: '../global-assets/dist/' },
-        { src: '../global-assets/gulpfile.js', dest: '../global-assets/dist/' }
-    ];
-
-    var tasks = paths.map(function (path) {
-        return gulp.src(path.src).pipe(gulp.dest(path.dest));
-    });
-
-    return merge(tasks);
-}
-
-// zipAssets - Zips webfont pacakges, the NDS Drupal Theme, and the distribution folder created in buildDist.
-function zipAssets() {
-    // Zip Font Folders
-    console.log("Zipping Font Folders");
-    gulp.src('../global-assets/source/webfonts/martel/**', {dot: true})
-        .pipe(zip('martel.zip'))
-        .pipe(gulp.dest('./public_html/assets/'));
-    gulp.src('../global-assets/source/webfonts/merriweather/**', {dot: true})
-        .pipe(zip('merriweather.zip'))
-        .pipe(gulp.dest('./public_html/assets/'));
-    gulp.src('../global-assets/source/webfonts/public-sans/**', {dot: true})
-        .pipe(zip('public-sans.zip'))
-        .pipe(gulp.dest('./public_html/assets/'));
-    gulp.src('../global-assets/source/webfonts/roboto/**', {dot: true})
-        .pipe(zip('roboto.zip'))
-        .pipe(gulp.dest('./public_html/assets/'));
-
-    // Zip Drupal Theme
-    console.log("Zipping Drupal Theme");
-    gulp.src('../nds-drupal-theme/**', {dot: true})
-        .pipe(zip('nds-drupal-theme.zip'))
-        .pipe(gulp.dest('./public_html/assets/'));
-
-    // Zip Static Site Builder
-    console.log("Zipping Pattern Lab");
-    return gulp.src('../global-assets/dist/**', {dot: true})
-        .pipe(zip('nds-static-site-builder.zip'))
-        .pipe(gulp.dest('./public_html/assets/'));
-}
-
-// formatComponents - A function to beautify the Component code snippets for production.
-function formatComponents() {
-    gulp.src('./public/patterns/06-dist-migration-guide-migration-guide/06-dist-migration-guide-migration-guide.html')
-        .pipe(beautify())
-        .pipe(gulp.dest('./public/patterns/06-dist-migration-guide-migration-guide/'));
-
-    return gulp.src('./public/patterns/06-dist-components-components/06-dist-components-components.html')
-        .pipe(beautify())
-        .pipe(gulp.dest('./public/patterns/06-dist-components-components/'));
-}
+});
 
 // bundleGlobals - A function to build a zip files for JS and CSS.
-function bundleGlobals() {
+gulp.task('bundleGlobals', () => {
     // CSS
     gulp.src(['./public_html/assets/nds-min.css'])
         .pipe(zip('nds-css.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
     // JS
-    gulp.src(['./public_html/assets/nds-lite.js', './public_html/assets/nds-lite-min.js'])
-        .pipe(zip('nds-lite-js.zip'))
-        .pipe(gulp.dest('./public_html/assets/'));
+    // gulp.src(['./public_html/assets/nds-lite.js', './public_html/assets/nds-lite-min.js'])
+    //     .pipe(zip('nds-lite-js.zip'))
+    //     .pipe(gulp.dest('./public_html/assets/'));
     return gulp.src(['../global-assets/source/js/global', '../global-assets/source/js/libraries'])
         .pipe(zip('nds-bundled-js.zip'))
         .pipe(gulp.dest('./public_html/assets/'));
-}
+});
 
-gulp.task('compileNDSLite', gulp.series(compileNDSLite));
+// GULP: addStagingBanner - Adds a banner to designate the staging version of the documentation website.
+gulp.task('addStagingBanner', () => {
+    return gulp.src('./public_html/**/*.html')
+        .pipe(replace('<!--STAGING-BANNER-->', '<div class="staging-banner"><span>NDS STAGING</span><span>NDS STAGING</span><span>NDS STAGING</span></div>'))
+        .pipe(gulp.dest('./public_html/'));
+});
 
-// compileNDSLite - Reads files from config-nds-lite.json and builds nds-lite.min.js
-function compileNDSLite() {
-    console.log(ndsLiteFiles);
-    return gulp.src(ndsLiteFiles, {base: './'})
-        .pipe(concat('nds-lite.js'))
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(minify())
-        .pipe(sourcemaps.write('../global-assets/dist/source/js/global/'))
-        .pipe(gulp.dest('../global-assets/dist/source/js/global/'))
-        .pipe(gulp.dest('./public_html/assets/'));
-}
+// GULP AGGREGATES
+
+// GULP: transfer - Transfers official NDS assets to appropriate locations.
+gulp.task('transfer', gulp.series('copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns'));
+
+// GULP: compile - Compiles the project assets.
+gulp.task('compile', gulp.series('compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab'));
+
+// GULP: compileGlobalAssets - Compiles the global NDS assets.
+gulp.task('compileGlobalAssets', gulp.series('compileGlobalCSS', 'compileGlobalJS'));
+
+// GULP: build - Build series for deploying NDS to the web.
+gulp.task('build', gulp.series('cleanDistributionDirectories', 'transfer', 'compile', 'formatComponents', 'buildNDSDocumentationSite', 'compileGlobalAssets', 'buildDist', 'copyAssetsToDrupalTheme', 'bundleGlobals', 'zipAssets'));
+
+// COMMANDS
+
+// GULP: default - Running gulp compiles the NDS Documentaiton site and serves it locally.
+gulp.task('default', gulp.series('cleanNDS', 'cleanIgnoredSourceDirectories', 'transfer', 'compile', 'serveProject'));
+
+// GULP - buildStaging - Build the NDS Documentation site for deploy to staging.
+gulp.task('buildStaging', gulp.series('build', 'addStagingBanner'));
+
+// GULP - buildProd - Build the NDS Documentation site for deploy.
+gulp.task('buildProd', gulp.series('build'));
