@@ -1,9 +1,0 @@
-.navigation--primary {
-    display: none;
-    @include media-breakpoint-up(md) {
-        display: none;
-    }
-    @media only screen and (min-width: $mobile-breakpoint) {
-        display: block;
-    }
-}
