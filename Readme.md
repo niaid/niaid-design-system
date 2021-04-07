@@ -43,7 +43,7 @@ There are three main ways to use NDS listed below. To get started please visit o
 
 ### DevOps
 * [Souley Coulibaly](https://github.com/souleyNIAID) - DevOps Lead
-* Vikram Mareddy - DevOps SME
+* [Vikram Mareddy](https://github.com/vikram-nih) - DevOps SME
 
 ### Analytics
 * Leah Spix - Analytics Lead
