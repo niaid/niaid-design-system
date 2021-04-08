@@ -19,13 +19,13 @@ const htmlreplace = require('gulp-html-replace');
 const del = require('del');
 
 // copyFonts - Copy Font Awesome from node_modules into project.
-function copyFonts() {
+gulp.task('copyFonts', () => {
     return gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*')
         .pipe(gulp.dest('./source/webfonts/font-awesome'));
-}
+});
 
 // compileSass - Compile CSS for your static site.
-function compileSass() {
+gulp.task('compileSass', () => {
     console.log("Compiling Sass...");
     return gulp.src('source/css/style.scss')
         .pipe(sassGlob())
@@ -41,7 +41,7 @@ function compileSass() {
         }).on('error', sass.logError))
         .pipe(sourcemaps.write('./source/maps'))
         .pipe(gulp.dest('./source/css'));
-}
+});
 
 // compileJS - Compile JS for your static site.
 // This logic replaces any scripts on build in the 00-nds folder with scripts of the same name in the custom directories (01-atoms, etc.).
@@ -74,7 +74,7 @@ gulp.task('computeIncludedJSFiles', function() {
         }
     }));
 });
-function compileJS() {
+gulp.task('compileJS', () => {
     console.log(includedJS);
     console.log("Compiling JS...");
     return gulp.src(includedJS, {base: './source/'})
@@ -85,47 +85,21 @@ function compileJS() {
         .pipe(minify())
         .pipe(sourcemaps.write('./source/js/global/'))
         .pipe(gulp.dest('./source/js/global/'));
-}
+});
 
-// compilePatternLab - Compile Pattern Lab for your static site.
-function compilePatternLab(cb) {
+// GULP: compilePatternLab - Compile Pattern Lab for your static site.
+gulp.task('compilePatternLab', (cb) => {
     console.log("Compiling Pattern Lab...")
     return exec('php core/console --generate', function(err, stdout, stderr) {
         browserSync.reload();
         cb(err);
     });
-}
-
-// cleanDistributionDirectories - Cleans out any distribution items before a fresh build is created.
-gulp.task('cleanDistributionDirectories', (cb) => {
-    let dirs = [
-        './public_html/**/*'
-    ];
-    return del(dirs, {'force': true}, cb);
 });
 
-// GULP: serveProject - Serves project locally and watches files for changes.
-gulp.task('serveProject', function() {
-    browserSync.init({
-        server: {
-            baseDir: './',
-        },
-        startPath: './public/',
-        open: true
-    });
-
-    gulp.watch(['./source/_patterns/**/*', './source/css/**/*.scss'], gulp.series(compileSass, compileJS, compilePatternLab));
-});
-
-// GULP: default - Running gulp compiles the your static site and serves it locally.
-gulp.task('default', gulp.series(copyFonts, compileSass, 'computeIncludedJSFiles', compileJS, compilePatternLab, 'serveProject'));
-
-// GULP: build - Compile your project assets and build public_html folder for deploy.
-gulp.task('build', gulp.series('cleanDistributionDirectories', compileSass, compileJS, compilePatternLab, computePaths, moveAssets));
-
-// computePaths - Creates distribution paths based on page name and location.
+// GULP: computePaths - Creates distribution paths based on page name and location.
 var pages = [];
-function computePaths() {
+gulp.task('computePaths', () => {
+    pages = [];
     return gulp.src('./source/_patterns/05-pages/**/*.twig').pipe(tap(function(file, t) {
         if (file.path.split('source/').length > 1) {
             addPage(file.path);
@@ -135,20 +109,18 @@ function computePaths() {
             addPage(escaped);
         }
     }));
-}
+});
 
-// addPage - Helper function for the computePaths() function. Determines the path and destination of the page.
-function addPage(file) {
-    let distPath = file.split('source/_patterns/05-pages/')[1];
-    let fileName = distPath.split('/'), targetPath;
-    fileName = fileName[fileName.length - 1];
-    if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
-    pages.push({ "depth": distPath.split("/").length - 1, "pageName": fileName.split('.twig')[0], "patternLabPath": targetPath.replace('/', '-'), "targetPath": targetPath });
-    return;
-}
+// cleanDistributionDirectories - Cleans out any distribution items before a fresh build is created.
+gulp.task('cleanDistributionDirectories', (cb) => {
+    let dirs = [
+        './public_html/**/*'
+    ];
+    return del(dirs, {'force': true}, cb);
+});
 
-// moveAssets - Move all distribution assets to the public_html/ folder.
-function moveAssets() {
+// GULP: moveAssets - Move all distribution assets to the public_html/ folder.
+gulp.task('moveAssets', () => {
     // Move HTML to Proper Positions
     for (let i = 0; i < pages.length; i++) {
         // Build Relative Path
@@ -199,4 +171,48 @@ function moveAssets() {
     console.log("Copy Fonts");
     return gulp.src('./source/webfonts/**/*')
         .pipe(gulp.dest('./public_html/webfonts'));
+});
+
+// GULP: serveProject - Serves project locally and watches files for changes.
+gulp.task('serveProject', function() {
+    browserSync.init({
+        server: {
+            baseDir: './',
+        },
+        startPath: './public/',
+        open: true
+    });
+
+    gulp.watch(['./source/_patterns/**/*', './source/css/**/*.scss'], gulp.series('compile'));
+});
+
+// GULP AGGREGATES
+
+// GULP: transfer - Transfers official NDS assets to appropriate locations.
+gulp.task('transfer', gulp.series('copyFonts'));
+
+// GULP: compile - Compiles the local project assets.
+gulp.task('compile', gulp.series('compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab'));
+
+// GULP: clean - Clean out any necessary directories before building.
+gulp.task('clean', gulp.series('cleanDistributionDirectories'));
+
+// COMMANDS
+
+// GULP: default - Running gulp compiles the your static site and serves it locally.
+gulp.task('default', gulp.series('transfer', 'compile', 'serveProject'));
+
+// GULP: build - Compile your project assets and build public_html folder for deploy.
+gulp.task('build', gulp.series('clean', 'compile', 'computePaths', 'moveAssets'));
+
+// HELPER FUNCTIONS
+
+// addPage - Helper function for the computePaths() function. Determines the path and destination of the page.
+function addPage(file) {
+    let distPath = file.split('source/_patterns/05-pages/')[1];
+    let fileName = distPath.split('/'), targetPath;
+    fileName = fileName[fileName.length - 1];
+    if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
+    pages.push({ "depth": distPath.split("/").length - 1, "pageName": fileName.split('.twig')[0], "patternLabPath": targetPath.replace('/', '-'), "targetPath": targetPath });
+    return;
 }
