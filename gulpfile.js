@@ -154,7 +154,7 @@ gulp.task('moveAssets', () => {
     console.log("Copy CSS");
     gulp.src('./source/css/nds-min.css')
         .pipe(gulp.dest('./public_html/css'));
-    gulp.src('./source/css/libraries/*.css')
+    gulp.src('./source/css/libraries/**/*')
         .pipe(gulp.dest('./public_html/css/libraries'));
 
     // Copy JS
