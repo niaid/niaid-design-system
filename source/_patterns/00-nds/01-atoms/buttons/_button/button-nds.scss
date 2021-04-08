@@ -9,6 +9,7 @@ button {
     border-radius: 0;
     white-space: normal;
     text-align: center;
+    font-size: $s-1;
     @include media-breakpoint-up(sm) {
         white-space: nowrap;
     }
