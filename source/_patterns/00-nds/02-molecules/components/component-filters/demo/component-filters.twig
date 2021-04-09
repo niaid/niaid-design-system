@@ -526,5 +526,15 @@
                 <option value="Zimbabwe">Zimbabwe</option>
             {% endblock %}
         {% endembed %}
+
+        {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
+            {
+                "input_group_text_id": "input-group-text-filter-example",
+                "input_group_text_name": "input-group-text-filter-example",
+                "input_group_text_placeholder": "Enter Text...",
+                "input_group_text_label": "Filter with Label",
+                "input_group_text_aria_label": "Text Field Example"
+            }
+        %}
     {% endblock %}
 {% endembed %}
