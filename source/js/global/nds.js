@@ -210,22 +210,22 @@ function hasClass(element, className) {
 })(jQuery);
 
 (function ($) {
-  function initBlockHero() {
+  function initComponentMedia() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-    if (document.querySelectorAll('.parallax').length) {
-      var elems = document.querySelectorAll('.parallax');
-      var instances = M.Parallax.init(elems);
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
     }
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
+      Drupal.behaviors.initComponentMedia = {
         attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
           });
         }
       };
@@ -233,7 +233,7 @@ function hasClass(element, className) {
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initBlockHero();
+      initComponentMedia();
     });
   }
 })(jQuery);
@@ -295,35 +295,6 @@ function hasClass(element, className) {
       initComponentModal();
     });
   }
-})(jQuery);
-
-(function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
-    });
-  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -363,43 +334,22 @@ function hasClass(element, className) {
 })(jQuery);
 
 (function ($) {
-  function initNavigationDropdown() {
+  function initBlockHero() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $(".navigation--dropdown.hover").on('mouseover', function () {
-      openDropdown($(this));
-    });
-    $(".navigation--dropdown.hover").on('mouseout', function () {
-      closeDropdown($(this));
-    });
-    $(".navigation--dropdown").on('focusin', function (e) {
-      openDropdown($(this));
-    });
-    $(".navigation--dropdown").on('focusout', function (e) {
-      if (this.contains(e.relatedTarget)) {
-        return;
-      }
 
-      closeDropdown($(this));
-    });
-  }
-
-  function openDropdown($el) {
-    $el.addClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
-  }
-
-  function closeDropdown($el) {
-    $el.removeClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
+    if (document.querySelectorAll('.parallax').length) {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    }
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initNavigationDropdown = {
+      Drupal.behaviors.initBlockHero = {
         attach: function attach(context) {
-          $("body", context).once('nds-navigation-dropdown').each(function () {
-            initNavigationDropdown(context);
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
           });
         }
       };
@@ -407,7 +357,7 @@ function hasClass(element, className) {
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initNavigationDropdown();
+      initBlockHero();
     });
   }
 })(jQuery); // Part of NDS Lite
@@ -494,36 +444,43 @@ function hasClass(element, className) {
 })(jQuery);
 
 (function ($) {
-  function initNavigationTabs() {
+  function initNavigationDropdown() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var tabs = document.querySelectorAll('.navigation--tabs__tab');
+    $(".navigation--dropdown.hover").on('mouseover', function () {
+      openDropdown($(this));
+    });
+    $(".navigation--dropdown.hover").on('mouseout', function () {
+      closeDropdown($(this));
+    });
+    $(".navigation--dropdown").on('focusin', function (e) {
+      openDropdown($(this));
+    });
+    $(".navigation--dropdown").on('focusout', function (e) {
+      if (this.contains(e.relatedTarget)) {
+        return;
+      }
 
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].addEventListener('click', function () {
-        var activeClass = 'active';
-        var tabParent = this.closest('.navigation--tabs');
-        var relatedTabs = tabParent.querySelectorAll('.navigation--tabs__tab');
+      closeDropdown($(this));
+    });
+  }
 
-        if (!hasClass(this, activeClass)) {
-          for (var j = 0; j < relatedTabs.length; j++) {
-            if (hasClass(relatedTabs[j], activeClass)) {
-              relatedTabs[j].classList.remove(activeClass);
-            }
-          }
+  function openDropdown($el) {
+    $el.addClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
+  }
 
-          this.classList.add(activeClass);
-        }
-      });
-    }
+  function closeDropdown($el) {
+    $el.removeClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initNavigationTabs = {
+      Drupal.behaviors.initNavigationDropdown = {
         attach: function attach(context) {
-          $("body", context).once('nds-navigation-tabs').each(function () {
-            initNavigationTabs(context);
+          $("body", context).once('nds-navigation-dropdown').each(function () {
+            initNavigationDropdown(context);
           });
         }
       };
@@ -531,7 +488,7 @@ function hasClass(element, className) {
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initNavigationTabs();
+      initNavigationDropdown();
     });
   }
 })(jQuery); // Part of NDS Lite
@@ -599,6 +556,49 @@ function hasClass(element, className) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initInputDatePicker();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initNavigationTabs() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var tabs = document.querySelectorAll('.navigation--tabs__tab');
+
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', function () {
+        var activeClass = 'active';
+        var tabParent = this.closest('.navigation--tabs');
+        var relatedTabs = tabParent.querySelectorAll('.navigation--tabs__tab');
+
+        if (!hasClass(this, activeClass)) {
+          for (var j = 0; j < relatedTabs.length; j++) {
+            if (hasClass(relatedTabs[j], activeClass)) {
+              relatedTabs[j].classList.remove(activeClass);
+            }
+          }
+
+          this.classList.add(activeClass);
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationTabs = {
+        attach: function attach(context) {
+          $("body", context).once('nds-navigation-tabs').each(function () {
+            initNavigationTabs(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationTabs();
     });
   }
 })(jQuery); // Dependencies
