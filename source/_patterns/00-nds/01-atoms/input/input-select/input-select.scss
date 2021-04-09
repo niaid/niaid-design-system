@@ -6,14 +6,14 @@
             height: auto;
             padding: .625rem 4rem .625rem 1rem;
             background: $white;
-            border: 0$s-1px solid $input-border;
+            border: $s-1px solid $input-border;
             border-radius: 0;
             &__arrow {
                 display: none;
             }
             &__rendered {
                 display: inline-flex;
-                line-height: normal;
+                line-height: $line-height-default;
                 padding: 0;
                 color: $input-placeholder;
                 .select2-selection__placeholder {
@@ -48,7 +48,6 @@
                 }
                 .select2-selection__rendered {
                     display: block;
-                    height: 100%;
                     margin: 0;
                     max-width: none;
                     .select2-search--inline {
@@ -64,18 +63,6 @@
                                 font-size: .8rem;
                             }
                         }
-                        ::-webkit-input-placeholder {
-                            color:$input-placeholder !important;
-                        }
-                        ::-moz-placeholder {
-                            color:$input-placeholder !important;
-                        }
-                        ::-ms-placeholder {
-                            color:$input-placeholder !important;
-                        }
-                        ::placeholder {
-                            color:$input-placeholder !important;
-                        }
                     }
                     .select2-selection__choice {
                         position: relative;
@@ -83,7 +70,7 @@
                         font-style: normal;
                         border-radius: 0;
                         font-size: 1rem;
-                        padding: .792rem 2.5rem .792rem 1rem;
+                        padding: .375rem 2.5rem .375rem 1rem;
                         background-image: none !important;
                         background: $color-theme-1-2-1;
                         color: $white !important;
@@ -91,8 +78,8 @@
                         .select2-selection__choice__remove {
                             position: absolute;
                             color: $color-theme-1-2-1;
-                            top: 50%!important;
-                            transform: translateY(-50%)!important;
+                            top: 50% !important;
+                            transform: translateY(-50%) !important;
                             right: 0;
                             @extend %fa-icon;
                             @extend .fas;
@@ -103,7 +90,7 @@
                             }
                             &:before {
                                 content: fa-content($fa-var-times);
-                                font-weight: 900;
+                                font-weight: $font-weight-black;
                                 color: $white;
                             }
                         }
@@ -121,8 +108,8 @@
                     padding: .25rem 4rem .25rem .25rem;
                     .select2-selection__rendered {
                         font-style: normal;
-                        font-size: 1rem;
-                        padding: .792rem 2.5rem .792rem 1rem;
+                        font-size: $s-1;
+                        padding: .375rem 2.5rem .375rem 1rem;
                         background-image: none !important;
                         background: $color-theme-1-2-1;
                         color: $white !important;
@@ -145,8 +132,8 @@
                 height: auto !important;
                 width: auto !important;
                 top: 50% !important;
+                right: $s-5 !important;
                 transform: translateY(-50%) !important;
-                right: 5rem !important;
                 @extend %fa-icon;
                 @extend .fas;
                 font-size: initial !important;
@@ -188,11 +175,11 @@
                     @extend .fas;
                     content: fa-content($fa-var-filter);
                     color: $type-body;
-                    font-weight: 900;
+                    font-weight: $font-weight-black;
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
-                    left: 1rem;
+                    left: $s-1;
                     font-style: normal;
                     font-size: .8rem;
                 }
