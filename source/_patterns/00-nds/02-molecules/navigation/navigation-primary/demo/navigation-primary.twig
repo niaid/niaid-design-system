@@ -6,7 +6,21 @@
     {% block navigation_primary_content %}
         <div class="navigation--primary__inner">
             <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "section-1" ? "active" : "" }}" href="#">Section 1</a>
+                {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
+                    {
+                        "navigation_dropdown_id": "navigation-primary-dropdown-click-example",
+                        "navigation_dropdown_active_class": navigationPrimaryActiveLink == "section-1" ? "active" : "",
+                        "navigation_dropdown_toggle_text": "Section 1",
+                        "navigation_dropdown_toggle_aria_label": "Open Dropdown"
+                    }
+                %}
+                    {% block navigation_dropdown_content %}
+                        <a href="#">Dropdown Item A</a>
+                        <a href="#">Dropdown Item B</a>
+                        <a href="#">Dropdown Item C</a>
+                        <a href="#">Dropdown Item D</a>
+                    {% endblock %}
+                {% endembed %}
             </div>
             <div class="navigation--primary__inner__item">
                 {% embed "@nds/02-molecules/navigation/navigation-dropdown/_navigation-dropdown-main.twig" with
