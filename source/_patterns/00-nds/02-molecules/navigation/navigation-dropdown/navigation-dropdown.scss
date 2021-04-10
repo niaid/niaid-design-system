@@ -6,6 +6,7 @@
         background: $color-theme-1-3-1;
         border: $s-1px solid $color-theme-1-3-1;
         padding: $s-1 $s-2;
+        -webkit-appearance: none;
         &:hover,
         &:focus {
             color: $white;
