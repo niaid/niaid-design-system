@@ -5,5 +5,6 @@
     }
     &__tooltip {
         border-bottom: $s-1px solid transparent;
+        -webkit-appearance: none;
     }
 }
