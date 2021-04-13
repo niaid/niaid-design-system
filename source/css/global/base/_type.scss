@@ -1,17 +1,17 @@
 .font--public-sans {
-    font-family: $font-stack-public-sans;
+    font-family: $font-stack-public-sans !important;
 }
 
 .font--roboto {
-    font-family: $font-stack-roboto;    
+    font-family: $font-stack-roboto !important;    
 }
 
 .font--martel {
-    font-family: $font-stack-martel;
+    font-family: $font-stack-martel !important;
 }
 
 .font--merriweather {
-    font-family: $font-stack-merriweather;
+    font-family: $font-stack-merriweather !important;
 }
 
 a {
