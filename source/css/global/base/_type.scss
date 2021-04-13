@@ -1,3 +1,19 @@
+.font--public-sans {
+    font-family: $font-stack-public-sans;
+}
+
+.font--roboto {
+    font-family: $font-stack-roboto;    
+}
+
+.font--martel {
+    font-family: $font-stack-martel;
+}
+
+.font--merriweather {
+    font-family: $font-stack-merriweather;
+}
+
 a {
     color: $type-link;
     border-bottom: $s-1px solid $type-link-underline;
