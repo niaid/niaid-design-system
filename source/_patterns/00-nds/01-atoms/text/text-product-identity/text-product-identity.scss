@@ -1,0 +1,27 @@
+.text--product-identity {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: $line-height-small;
+    @include media-breakpoint-up(md) {
+        min-width: 10rem;
+    }
+    &__top,
+    &__bottom {
+        color: $type-heading;
+        font-size: $s-1-25;
+        &.bold {
+            font-weight: $font-weight-bold !important;
+        }
+        &.italics {
+            font-style: italic !important;
+        }
+    }
+    &.both-top-bottom {
+        .text--product-identity {
+            &__top,
+            &__bottom {
+                font-size: $s-1;
+            }
+        }
+    }
+}

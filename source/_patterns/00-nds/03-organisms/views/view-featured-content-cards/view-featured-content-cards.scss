@@ -1,0 +1,11 @@
+.view--featured-content-cards {
+    background: $page-background-alternate;
+    padding: $s-1 $s-2;
+    .row {
+        margin: 0 (-1 * $s-2);
+        & > div {
+            margin: $s-1 0;
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.style--body--public-sans {
+    button,
+    input,
+    a,
+    p,
+    ul,
+    ol {
+        font-family: $font-stack-public-sans;
+    }
+}
+
+.style--body--roboto {
+    button,
+    input,
+    a,
+    p,
+    ul,
+    ol {
+        font-family: $font-stack-roboto;
+    }
+}

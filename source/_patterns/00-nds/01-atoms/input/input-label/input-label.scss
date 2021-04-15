@@ -1,0 +1,10 @@
+.input--label {
+    line-height: $line-height-small;
+    & + .input--text {
+        display: block;
+    }
+    &__tooltip {
+        border-bottom: $s-1px solid transparent;
+        -webkit-appearance: none;
+    }
+}

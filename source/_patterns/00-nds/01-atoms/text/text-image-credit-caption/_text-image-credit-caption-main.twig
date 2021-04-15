@@ -1,0 +1,39 @@
+{#
+    ---
+    title: Credit & Caption Text
+    ---
+
+    Type: Atoms -> Text
+
+    Description:
+        We strongly suggest captioning and crediting your images to bolster accessibility and properly cite sources. The easiest way to use this pattern is by leveraging the Media Component (molecule: component-media), negating the need to use this pattern on its own.
+
+    Parameters:
+        text_image_credit_caption_classes: Additional credit and caption classes.
+        text_image_credit_caption_id: Credit and caption ID.
+        text_image_credit_caption_caption: Caption text.
+        text_image_credit_caption_credit: Credit text.
+        text_image_credit_caption_credit_label: Label for the credit. Default: "Credit:".
+
+    Last Updated: January 22, 2021
+#}
+
+{% set text_image_credit_caption_classes = text_image_credit_caption_classes|default() %}
+{% set text_image_credit_caption_id = text_image_credit_caption_id|default() %}
+{% set text_image_credit_caption_caption = text_image_credit_caption_caption|default() %}
+{% set text_image_credit_caption_credit = text_image_credit_caption_credit|default() %}
+{% set text_image_credit_caption_credit_label = text_image_credit_caption_credit_label|default('Credit:') %}
+
+<div class="text-nds text--image-credit-caption {{ text_image_credit_caption_classes }}"{% if text_image_credit_caption_id is not empty %} id="{{ text_image_credit_caption_id }}"{% endif %}>
+    {% if text_image_credit_caption_caption is not empty %}
+        <div class="text--image-credit-caption__caption">
+            <p class="text--image-credit-caption__caption__text">{{ text_image_credit_caption_caption|raw }}</p>
+        </div>
+    {% endif %}
+    {% if text_image_credit_caption_credit is not empty %}
+        <div class="text--image-credit-caption__credit">
+            <span class="text--image-credit-caption__credit__label-text">{{ text_image_credit_caption_credit_label }}</span> 
+            <span class="text--image-credit-caption__credit__text">{{ text_image_credit_caption_credit|raw }}</span>
+        </div>
+    {% endif %}
+</div>

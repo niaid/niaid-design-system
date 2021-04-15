@@ -1,0 +1,94 @@
+.global--footer {
+    $footer-background: $type-heading;
+    background: $footer-background;
+    min-height: $s-3-50;
+    position: relative;
+    padding: 0;
+    border-top: $s-0-25 solid $color-theme-1-accent;
+    * {
+        color: $white;
+    }
+    a {
+        border-bottom-color: $white;
+        &:hover,
+        &:focus {
+            color: $white;
+            border-bottom-color: transparent;
+        }
+        &:visited {
+            color: $white;
+        }
+    }
+    &__content {
+        max-width: $layout-body-max-width;
+        margin: 0 auto;
+        padding: $s-2;
+        .link--carot {
+            border-bottom: $s-1px solid transparent;
+            &:hover,
+            &:focus {
+                border-bottom: $s-1px solid $white;
+            }
+            &:after {
+                color: $color-theme-1-accent;
+                @extend %fa-icon;
+                @extend .fas;
+                content: fa-content($fa-var-chevron-right);
+                font-size: $s-0-75;
+                padding-left: $s-0-50;
+                border-bottom: $s-0-25 solid $footer-background;
+            }
+        }
+        &__column {
+            padding: 0;
+            @include media-breakpoint-up(md) {
+                padding: $s-1;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @include media-breakpoint-up(md) {
+                    margin-top: 0;
+                }
+            }
+            ul {
+                list-style: none;
+                padding-left: 0;
+                li {
+                    line-height: $line-height-small;
+                    margin-bottom: $s-0-75;
+                }
+            }
+            .image--logo {
+                &__image {
+                    max-width: 100%;
+                    height: $s-3-50;
+                }
+            }
+        }
+    }
+    &__tagline {
+        display: none; // Currently Disabled
+        justify-content: center;
+        align-items: center;
+        font-size: $s-0-75;
+        padding: 0 $s-2;
+        &:before, &:after {
+            content: "";
+            height: $s-1px;
+            width: $s-3;
+            background: $white;
+            display: none;
+            @include media-breakpoint-up(sm) {
+                display: block;
+            }
+        }
+        &:before {
+            margin-right: $s-1;
+        }
+        &:after {
+            margin-left: $s-1;
+        }
+        .icon--default {
+            margin-right: $s-0-50;
+        }
+    }
+}

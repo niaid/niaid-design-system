@@ -1,0 +1,41 @@
+.button-nds,
+button {
+    cursor: pointer;
+    font-weight: $font-weight-regular;
+    text-decoration: none;
+    border: 0;
+    padding: $s-1 $s-2;
+    line-height: normal;
+    border-radius: 0;
+    white-space: normal;
+    text-align: center;
+    @include media-breakpoint-up(sm) {
+        white-space: nowrap;
+    }
+    &:visited {
+        color: $white;
+        &:hover,
+        &:focus {
+            color: $white;
+        }
+    }
+}
+
+.disabled,
+button:disabled,
+button[disabled] {
+    @extend .button-nds;
+    background: $type-body !important;
+    color: $white !important;
+    border-color: $type-body !important;
+    cursor: not-allowed !important;
+    opacity: 1;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $type-body !important;
+        color: $white !important;
+        border-color: $type-body !important;
+        outline: none !important;
+    }
+}

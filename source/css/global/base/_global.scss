@@ -1,0 +1,8 @@
+html,
+body {
+    line-height: $line-height-default;
+    font-size: $base-size-pixels * 1px;
+    background: $page-background;
+    font-family: $font-stack-public-sans;
+    color: $type-body;
+}

@@ -1,9 +1,0 @@
-.fixed-left {
-    .navigation--mobile-rail {
-        @include media-breakpoint-up(lg) {
-            height: 100vh;
-            overflow-y: auto;
-            border-right: 0.0625rem solid $border;
-        }
-    }
-}

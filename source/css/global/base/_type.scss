@@ -1,0 +1,61 @@
+.font--public-sans {
+    font-family: $font-stack-public-sans !important;
+}
+
+.font--roboto {
+    font-family: $font-stack-roboto !important;    
+}
+
+.font--martel {
+    font-family: $font-stack-martel !important;
+}
+
+.font--merriweather {
+    font-family: $font-stack-merriweather !important;
+}
+
+a {
+    color: $type-link;
+    border-bottom: $s-1px solid $type-link-underline;
+    &:hover,
+    &:focus {
+        color: $type-link;
+        text-decoration: none;
+        border-bottom: $s-1px solid transparent;
+    }
+    &:visited {
+        color: $type-link-visited;
+        &:hover,
+        &:focus {
+            color: $type-link-visited;
+        }
+    }
+}
+
+p,
+ul,
+ol {
+    margin-top: $s-1;
+    margin-bottom: $s-1;
+    max-width: $layout-type-max-width;
+}
+
+ul {
+    list-style-type: circle;
+    li {
+        margin-bottom: .25em;
+        >ul {
+            margin-top: 0;
+        }
+    }
+}
+
+code {
+    border-radius: $border-radius;
+    color: $type-link;
+    display: inline-flex;
+    padding: $s-0-75;
+    background: $page-background-alternate;
+    margin-bottom: $s-0-50;
+    line-height: normal;
+}

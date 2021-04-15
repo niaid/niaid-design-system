@@ -1,0 +1,55 @@
+.style--headings--public-sans {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+        font-family: $font-stack-public-sans;
+        a {
+            font-family: $font-stack-public-sans;
+        }
+    }
+}
+
+.style--headings--roboto {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+        font-family: $font-stack-roboto;
+        a {
+            font-family: $font-stack-roboto;
+        }
+    }
+}
+
+.style--headings--merriweather {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+        font-family: $font-stack-merriweather;
+        a {
+            font-family: $font-stack-merriweather;
+        }
+    }
+}
+
+.style--headings--martel {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+        font-family: $font-stack-martel;
+        a {
+            font-family: $font-stack-martel;
+        }
+    }
+}

@@ -1,0 +1,179 @@
+/**** VARIABLES ****/
+
+/**** COLORS ****/
+/**** COLORS > GLOBAL ****/
+$white: #FFF;
+$black: #000;
+$niaid-blue: #20558A;
+$error: #D23342;
+$warning: #FFC10A;
+$success: #17805F;
+
+/**** COLORS > LAYOUT ****/
+$page-background: #FDFDFD;
+$page-background-alternate: #F5F6FA;
+
+/**** COLORS > TYPE ****/
+$type-heading: #2F2F2F;
+$type-body: #404B56;
+$type-link: #246CD3;
+$type-link-underline: #717171;
+$type-link-visited: #6F57B5;
+
+/**** COLORS > DOCUMENT ICONS ****/
+$icon-doc-word: #2C5897;
+$icon-doc-excel: #1D6F42;
+$icon-doc-powerpoint: #D04423;
+$icon-doc-pdf: #F40F02;
+
+/**** COLORS > MEDIA ****/
+$media-audio-background: #F1F3F4;
+
+/**** COLORS > ALERT SEVERITY ****/
+$alert-severity-1: $error;
+$alert-severity-2: $warning;
+$alert-severity-3: #F8FF55;
+$alert-severity-4: $success;
+
+/**** COLORS > STATUS ****/
+$status-error: $error;
+$status-error-hover: #A72532;
+$status-success: $success;
+$status-information: #4865E3;
+$status-warning: $warning;
+
+/**** COLORS > MISC ****/
+$border-light: #D6D6D6;
+
+/**** COLORS > INPUT ****/
+$input-border: #717171;
+$input-placeholder: #9AA6B5;
+
+/**** COLORS > BRANDS ****/
+$brands-facebook: #3B5998;
+$brands-twitter: #00ACEE;
+$brands-linkedin: #0E76A8;
+$brands-youtube: #FF0000;
+$brands-pinterest: #C92228;
+$brands-flickr: #FF0084;
+$brands-google-plus: #D34836;
+
+/**** COLORS > THEMES ****/
+$color-theme-1-1-1: #157B8D;
+$color-theme-1-1-2: #0E5763;
+$color-theme-1-2-1: #497951;
+$color-theme-1-2-2: #3D6543;
+$color-theme-1-3-1: #262626;
+$color-theme-1-3-2: #000;
+$color-theme-1-accent: #75C3AC;
+
+$color-theme-2-1-1: #586FAB;
+$color-theme-2-1-2: #425380;
+$color-theme-2-2-1: #247BA0;
+$color-theme-2-2-2: #17526B;
+$color-theme-2-3-1: #244D56;
+$color-theme-2-3-2: #173339;
+$color-theme-2-accent: #FAB952;
+
+$color-theme-3-1-1: #14675A;
+$color-theme-3-1-2: #0D443C;
+$color-theme-3-2-1: #423E63;
+$color-theme-3-2-2: #2A2840;
+$color-theme-3-3-1: #123B56;
+$color-theme-3-3-2: #0D2E44;
+$color-theme-3-accent: #79A9D1;
+
+/**** TYPE ****/
+$line-height-single: 1.0;
+$line-height-heading: 1.3;
+$line-height-small: 1.5;
+$line-height-default: 2.0;
+
+/**** TYPE > FONT STACK ****/
+$font-stack-public-sans: "Public Sans", "Roboto", sans-serif;
+$font-stack-roboto: "Roboto", "Public Sans", sans-serif;
+$font-stack-merriweather: "Merriweather", "Martel", serif;
+$font-stack-martel: "Martel", "Merriweather", serif;
+
+/**** TYPE > FONT WEIGHT ****/
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+/**** BORDER RADIUS ****/
+$border-radius-sharp: 0;
+$border-radius-semi: .3125rem;
+$border-radius-full: 1rem;
+
+/**** BREAKPOINTS & SIZING ****/
+$layout-mobile-menu-breakpoint: 950px;
+$layout-main-max-width: 1800px;
+$layout-body-max-width: 1200px;
+$layout-type-max-width: 88ex;
+
+/**** Z-Index ****/
+$z-index-below-baseline: -100;
+$z-index-baseline: 0;
+$z-index-above-baseline: 100;
+$z-index-mobile-rail: 200;
+$z-index-navigation-primary: 300;
+$z-index-header: 400;
+$z-index-drawer: 500;
+$z-index-button-floating: 600;
+$z-index-modal: 700;
+$z-index-dropdown: 800;
+
+/**** SPACING & SIZING ****/
+$base-size-pixels: 16;
+$base-spacer: 1rem;
+
+$s-1px: $base-spacer / $base-size-pixels;
+$s-2px: ($base-spacer * 2) / $base-size-pixels;
+$s-0: 0;
+$s-0-25: $base-spacer * .25;
+$s-0-50: $base-spacer * .5;
+$s-0-75: $base-spacer * .75;
+$s-1: $base-spacer;
+$s-1-25: $s-1 + $s-0-25;
+$s-1-50: $s-1 + $s-0-50;
+$s-1-75: $s-1 + $s-0-75;
+$s-2: $base-spacer * 2;
+$s-2-25: $s-2 + $s-0-25;
+$s-2-50: $s-2 + $s-0-50;
+$s-2-75: $s-2 + $s-0-75;
+$s-3: $base-spacer * 3;
+$s-3-25: $s-3 + $s-0-25;
+$s-3-50: $s-3 + $s-0-50;
+$s-3-75: $s-3 + $s-0-75;
+$s-4: $base-spacer * 4;
+$s-4-25: $s-4 + $s-0-25;
+$s-4-50: $s-4 + $s-0-50;
+$s-4-75: $s-4 + $s-0-75;
+$s-5: $base-spacer * 5;
+$s-5-25: $s-5 + $s-0-25;
+$s-5-50: $s-5 + $s-0-50;
+$s-5-75: $s-5 + $s-0-75;
+$s-6: $base-spacer * 6;
+$s-6-25: $s-6 + $s-0-25;
+$s-6-50: $s-6 + $s-0-50;
+$s-6-75: $s-6 + $s-0-75;
+$s-7: $base-spacer * 7;
+$s-7-25: $s-7 + $s-0-25;
+$s-7-50: $s-7 + $s-0-50;
+$s-7-75: $s-7 + $s-0-75;
+$s-8: $base-spacer * 8;
+$s-8-25: $s-8 + $s-0-25;
+$s-8-50: $s-8 + $s-0-50;
+$s-8-75: $s-8 + $s-0-75;
+$s-9: $base-spacer * 9;
+$s-9-25: $s-9 + $s-0-25;
+$s-9-50: $s-9 + $s-0-50;
+$s-9-75: $s-9 + $s-0-75;
+$s-10: $base-spacer * 10;
+$s-10-25: $s-10 + $s-0-25;
+$s-10-50: $s-10 + $s-0-50;
+$s-10-75: $s-10 + $s-0-75;

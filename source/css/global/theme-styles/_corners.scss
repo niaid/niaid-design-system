@@ -1,0 +1,415 @@
+.style--corners--semirounded, .style--corners--rounded {
+    .input--checkbox {
+        .input--label {
+            &:before {
+                border-radius: $border-radius-semi;
+            }
+        }
+    }
+    .block-facet--checkbox {
+        ul {
+            .facet-item {
+                label {
+                    &:before {
+                        border-radius: $border-radius-semi;
+                    }
+                }
+            }
+        }
+    }
+    .navigation--tabs {
+        &__tab {
+            position: relative;
+            &.active {
+                border-bottom: $s-0-25 solid transparent;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    bottom: -1 * $s-0-25;
+                    left: 0;
+                    width: 100%;
+                    height: $s-0-25;
+                    background: $type-link;
+                    border-radius: $s-5;
+                }
+            }
+        }
+    }
+    .global--footer {
+        &__prefooter {
+            position: relative;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                height: 4px;
+                width: 4px;
+                border-radius: 100%;
+                top: -4px;
+            }
+            &:before {
+                left: -2px;
+            }
+            &:after {
+                right: -2px;
+            }
+        }
+    }
+}
+
+.style--corners--semirounded {
+    $corner-radius: $border-radius-semi;
+    /* Atoms */
+    .button-nds,
+    button {
+        border-radius: $corner-radius;
+    }
+    .icon-nds {
+        &.icon--document {
+            border-radius: $corner-radius;
+        }
+    }
+    .image--embedded {
+        &__image {
+            border-radius: $corner-radius;
+        }
+    }
+    .input-nds {
+        border-radius: $corner-radius;
+        &.input--select {
+            .select2-container {
+                .select2-selection  {
+                    border-radius: $corner-radius;
+                    &.select2-selection--multiple {
+                        .select2-selection__rendered {
+                            .select2-selection__choice {
+                                border-radius: $corner-radius * .75;
+                            }
+                        }
+                    }
+                    &[aria-expanded="true"] {
+                        border-radius: $corner-radius $corner-radius 0 0;
+                    }
+                }
+                .select2-selection__choice {
+                    border-radius: $corner-radius * .75;
+                }
+                &.selection-made {
+                    .select2-selection__rendered {
+                        border-radius: $corner-radius * .75;
+                    }
+                }
+            }
+        }
+        &.input--date-picker {
+            .input--date-picker__field {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+    .select2-container {
+        .select2-dropdown {
+            border-radius: 0 0 $corner-radius $corner-radius;
+        }
+    }
+    table {
+        border-radius: $corner-radius;
+        thead {
+            border-radius: $corner-radius $corner-radius 0 0;
+        }
+        thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+            border-radius: $corner-radius 0 0 0;
+        }
+        thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+            border-radius: 0 0 0 $corner-radius;
+        }
+    }
+    .text-nds {
+        &.text--badge {
+            border-radius: $corner-radius;
+        }
+    }
+    /* Molecules */
+    .block-nds {
+        border-radius: $corner-radius;
+        &.block--hero {
+            border-radius: 0;
+        }
+        &.block--featured-content-card {
+            .block--featured-content-card__image {
+                img {
+                    border-top-left-radius: $corner-radius * .75;
+                    border-top-right-radius: $corner-radius * .75;
+                }
+            }
+        }
+        &.block--wtph {
+            border-radius: 0;
+        }
+        &.block--mission-statement {
+            .block--mission-statement__header {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+    .component-nds {
+        &.component--media {
+            img {
+                border-radius: $corner-radius;
+            }
+        }
+        &.component--modal {
+            .component--modal__wrapper {
+                &__content {
+                    border-radius: $corner-radius;
+                }
+            }
+        }
+    }
+    .form-nds {
+        .form-text {
+            border-top-left-radius: $corner-radius;
+            border-bottom-left-radius: $corner-radius;
+        }
+        .form-submit {
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: $corner-radius !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: $corner-radius !important;
+        }
+    }
+    .navigation-nds {
+        &.navigation--local {
+            @include media-breakpoint-up('lg') {
+                border-bottom-left-radius: $corner-radius;
+                border-bottom-right-radius: $corner-radius;
+            }
+        }
+        &.navigation--primary {
+            button {
+                &:hover,
+                &:focus,
+                &:active {
+                    border-radius: 0;
+                }
+            }
+            .dropdown-menu {
+                border-bottom-left-radius: $corner-radius;
+                border-bottom-right-radius: $corner-radius;
+            }
+        }
+        &.navigation--dropdown {
+            .navigation--dropdown {
+                &__menu {
+                    border-radius: 0 0 $corner-radius $corner-radius;
+                }
+            }
+        }
+    }
+    &.style--shadows {
+        .block-nds {
+            &.block--wtph {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+}
+
+.style--corners--rounded {
+    $corner-radius: $border-radius-full;
+    $corner-radius-full: 100rem;
+    /* Atoms */
+    .button-nds,
+    button {
+        border-radius: $corner-radius-full;
+        &.button--floating {
+            border-radius: $corner-radius-full;
+        }
+    }
+    .icon-nds {
+        &.icon--document {
+            border-radius: $corner-radius-full;
+        }
+    }
+    .image--embedded {
+        &__image {
+            border-radius: $corner-radius;
+        }
+    }
+    .input-nds {
+        border-radius: $corner-radius-full;
+        &.input--text {
+            padding: $s-0-50 $s-1-50;
+        }
+        &.input--select {
+            .select2-container {
+                .select2-selection  {
+                    padding: .625rem $s-4 .625rem $s-1-50;
+                    border-radius: $corner-radius-full;
+                    &.select2-selection--multiple {
+                        .select2-selection__rendered {
+                            .select2-selection__choice {
+                                border-radius: $corner-radius-full;
+                            }
+                        }
+                    }
+                    &[aria-expanded="true"] {
+                        border-radius: 1.5rem 1.5em 0 0;
+                    }
+                }
+                .select2-selection__choice {
+                    border-radius: $corner-radius-full;
+                }
+                &.selection-made {
+                    .select2-selection {
+                        &.select2-selection--single {
+                            padding: $s-0-25 $s-4 $s-0-25 $s-0-25;
+                        }
+                    }
+                    .select2-selection__rendered {
+                        border-radius: $corner-radius-full;
+                    }
+                }
+                &.selection-made-multi {
+                    .select2-selection  {
+                        padding: $s-0-25 $s-4 $s-0-25 $s-0-25;
+                    }
+                }
+            }
+        }
+        &.input--date-picker {
+            .input--date-picker__field {
+                border-radius: $corner-radius-full;
+            }
+        }
+    }
+    .select2-container {
+        .select2-dropdown {
+            border-radius: 0 0 $corner-radius $corner-radius;
+        }
+    }
+    .input--text--icon {
+        .icon--default {
+            left: $s-1-25;
+        }
+        .input--text {
+            padding-left: $s-3;
+        }
+    }
+    table {
+        border-radius: $corner-radius;
+        thead {
+            border-radius: $corner-radius $corner-radius 0 0;
+        }
+        thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+            border-radius: $corner-radius 0 0 0;
+        }
+        thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+            border-radius: 0 0 0 $corner-radius;
+        }
+    }
+    .text-nds {
+        &.text--badge {
+            border-radius: $corner-radius-full;
+        }
+    }
+    /* Molecules */
+    .block-nds {
+        border-radius: $corner-radius;
+        &.block--hero {
+            border-radius: 0;
+        }
+        &.block--featured-content-card {
+            .block--featured-content-card__image {
+                img {
+                    border-top-left-radius: $corner-radius * .75;
+                    border-top-right-radius: $corner-radius * .75;
+                }
+            }
+        }
+        &.block--wtph {
+            border-radius: 0;
+        }
+        &.block--mission-statement {
+            .block--mission-statement__header {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+    .component-nds {
+        &.component--accordion {
+            .component--accordion__card {
+                &__header {
+                    &__button {
+                        border-radius: $corner-radius;
+                    }
+                }
+            }
+        }
+        &.component--media {
+            img {
+                border-radius: $corner-radius;
+            }
+        }
+        &.component--modal {
+            .component--modal__wrapper {
+                &__content {
+                    border-radius: $corner-radius;
+                }
+            }
+        }
+    }
+    .form-nds {
+        .form-text {
+            border-top-left-radius: $corner-radius-full;
+            border-bottom-left-radius: $corner-radius-full;
+        }
+        .form-submit {
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: $corner-radius-full !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: $corner-radius-full !important;
+        }
+        &.form--search {
+            .input--text {
+                border-top-left-radius: $corner-radius-full !important;
+                border-bottom-left-radius: $corner-radius-full !important;
+            }
+        }
+    }
+    .navigation-nds {
+        &.navigation--primary {
+            button {
+                &:hover,
+                &:focus,
+                &:active {
+                    border-radius: 0;
+                }
+            }
+            .dropdown-menu {
+                border-bottom-left-radius: $corner-radius;
+                border-bottom-right-radius: $corner-radius;
+            }
+        }
+        &.navigation--local {
+            @include media-breakpoint-up('lg') {
+                border-bottom-left-radius: $corner-radius;
+                border-bottom-right-radius: $corner-radius;
+            }
+        }
+        &.navigation--dropdown {
+            .navigation--dropdown {
+                &__menu {
+                    border-radius: 0 0 $corner-radius $corner-radius;
+                }
+            }
+        }
+    }
+    &.style--shadows {
+        .block-nds {
+            &.block--wtph {
+                border-radius: $corner-radius;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.component--filters {
+    display: flex;
+    flex-wrap: wrap;
+    .input-nds,
+    .input-group-nds {
+        margin: $s-0-50 0;
+    }
+    .input-group--text,
+    .input--text {
+        width: 100%;
+    }
+    & > * {
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

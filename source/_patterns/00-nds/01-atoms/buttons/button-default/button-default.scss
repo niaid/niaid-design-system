@@ -1,0 +1,90 @@
+.button--primary,
+button {
+    background: $color-theme-1-1-1;
+    border: $s-1px solid $color-theme-1-1-1;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background: $color-theme-1-1-2;
+        border: $s-1px solid $color-theme-1-1-2;
+    }
+    &.button--secondary {
+        color: $color-theme-1-1-1;
+        background: transparent;
+        &:visited {
+            color: $color-theme-1-1-1;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-theme-1-1-1;
+            color: $white;
+        }
+    }
+    &.button--tertiary {
+        background: $color-theme-1-2-1;
+        border: $s-1px solid $color-theme-1-2-1;
+        &:hover,
+        &:focus,
+        &:active {
+            background: $color-theme-1-2-2;
+            border: $s-1px solid $color-theme-1-2-2;
+        }
+    }
+    &.button--negative {
+        background: $status-error;
+        border: $s-1px solid $status-error;
+        &:hover,
+        &:focus,
+        &:active {
+            background: $status-error-hover;
+            border: $s-1px solid $status-error-hover;
+        }
+    }
+    & + .ext-link-icon {
+        display: none;
+    }
+}
+
+.button--secondary {
+    border: $s-1px solid $color-theme-1-1-1;
+    color: $color-theme-1-1-1;
+    &:visited {
+        color: $color-theme-1-1-1;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        background: $color-theme-1-1-1;
+        color: $white;
+        border: $s-1px solid $color-theme-1-1-1;
+    }
+}
+
+.button--tertiary {
+    background: $color-theme-1-2-1;
+    border: $s-1px solid $color-theme-1-2-1;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background: $color-theme-1-2-2;
+        border: $s-1px solid $color-theme-1-2-2;
+    }
+}
+
+.button--negative {
+    background: $status-error;
+    border: $s-1px solid $status-error;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+        background: $status-error-hover;
+        border: $s-1px solid $status-error-hover;
+    }
+}
