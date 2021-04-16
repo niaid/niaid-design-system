@@ -41,6 +41,9 @@
     @include media-breakpoint-up(md) {
         max-width: 50% !important;
     }
+    .media {
+        display: block;
+    }
 }
 .align-left {
     float: left;
