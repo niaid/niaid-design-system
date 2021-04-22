@@ -1,5 +1,4 @@
 .navigation--mobile-rail {
-    height: 100%;
     position: relative;
     &__button {
         @extend .button-nds;
@@ -19,7 +18,7 @@
         }
     }
     &__content {
-        height: 100%;
+        height: auto;
         @include media-breakpoint-up(lg) {
             display: block !important;
         }
