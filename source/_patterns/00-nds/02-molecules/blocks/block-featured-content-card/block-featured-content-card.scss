@@ -3,9 +3,7 @@
     padding: 0;
     background: $white;
     border: $s-1px solid $input-border;
-    @include media-breakpoint-up(sm) {
-        height: 100%;
-    }
+    flex: 1;
     &__image {
         padding: $s-0-25;
         max-height: 15rem;

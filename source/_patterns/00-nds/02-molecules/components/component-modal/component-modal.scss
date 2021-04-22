@@ -1,15 +1,42 @@
 .component--modal {
     cursor: pointer;
     background: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-modal;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    padding: $s-3;
     &__wrapper {
-        @extend .modal-dialog;
+        position: relative;
+        width: 100%;
         margin: $s-3 auto;
+        pointer-events: none;
+        transform: none;
+        max-width: $layout-modal-max-width;
         &__content {
-            border-radius: 0;
             cursor: default;
-            @extend .modal-content;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: $white;
+            background-clip: padding-box;
+            border: $s-1px solid rgba(0,0,0,0.2);
+            border-radius: $border-radius-semi;
+            outline: 0;
             &__header {
-                @extend .modal-header;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                border-bottom: $s-1px solid $border-light;
+                border-top-left-radius: calc($border-radius-semi - $s-1px);
+                border-top-right-radius: calc($border-radius-semi - $s-1px);
                 padding: $s-1-50;
                 position: relative;
                 * {
@@ -38,17 +65,34 @@
                 }
             }
             &__body {
-                padding: $s-1 $s-2;
+                padding: $s-1-50;
                 img {
                     max-width: 100%;
                 }
             }
             &__footer {
-                @extend .modal-footer;
                 display: block;
                 align-items: stretch;
                 justify-content: flex-start;
+                flex-wrap: wrap;
+                padding: $s-1-50;
+                border-top: 1px solid $border-light;
+                border-bottom-right-radius: calc($border-radius-semi - $s-1px);
+                border-bottom-left-radius: calc($border-radius-semi - $s-1px);
             }
         }
+    }
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-index-modal - 50;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+    &.show {
+        opacity: .5;
     }
 }
