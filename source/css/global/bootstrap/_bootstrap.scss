@@ -2,17 +2,12 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
-@import "../../node_modules/bootstrap/scss/mixins/border-radius";
-@import "../../node_modules/bootstrap/scss/mixins/box-shadow";
-@import "../../node_modules/bootstrap/scss/mixins/caret";
-@import "../../node_modules/bootstrap/scss/mixins/gradients";
-@import "../../node_modules/bootstrap/scss/mixins/hover";
-@import "../../node_modules/bootstrap/scss/mixins/nav-divider";
-@import "../../node_modules/bootstrap/scss/mixins/transition";
+@import "../../node_modules/bootstrap/scss/mixins/border-radius"; // Modal
+@import "../../node_modules/bootstrap/scss/mixins/box-shadow"; // Modal
+@import "../../node_modules/bootstrap/scss/mixins/reset-text"; // Tooltip
+@import "../../node_modules/bootstrap/scss/mixins/transition"; // Modal
 
-@import "../../node_modules/bootstrap/scss/vendor/rfs";
+@import "../../node_modules/bootstrap/scss/vendor/rfs"; // Tooltip
 
-@import "../../node_modules/bootstrap/scss/card";
-@import "../../node_modules/bootstrap/scss/dropdown";
-@import "../../node_modules/bootstrap/scss/modal";
-@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/modal"; // Modal
+@import "../../node_modules/bootstrap/scss/tooltip"; // Tooltip
