@@ -10,12 +10,14 @@
     height: 100%;
     overflow: hidden;
     outline: 0;
+    padding: $s-3;
     &__wrapper {
         position: relative;
-        width: auto;
-        margin: $s-3;
+        width: 100%;
+        margin: $s-3 auto;
         pointer-events: none;
         transform: none;
+        max-width: $layout-modal-max-width;
         &__content {
             cursor: default;
             position: relative;
