@@ -5,6 +5,7 @@
         margin: 0 (-1 * $s-2);
         & > div {
             margin: $s-1 0;
+            display: flex;
         }
     }
 }
