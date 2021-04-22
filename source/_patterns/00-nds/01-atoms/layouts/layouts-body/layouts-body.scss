@@ -4,6 +4,9 @@
     margin: 0 auto;
     position: relative;
     padding: $s-2;
+    @include media-breakpoint-up('sm') {
+        padding: $s-3;
+    }
     @include media-breakpoint-up('lg') {
         padding: $s-4;
     }
