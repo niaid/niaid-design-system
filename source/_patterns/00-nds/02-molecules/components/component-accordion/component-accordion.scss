@@ -1,12 +1,10 @@
 .component--accordion {
     &__card {
-        @extend .card;
         overflow: visible;
         width: 100%;
         border: 0;
         margin-bottom: $s-0-50;
         &__header {
-            @extend .card-header;
             z-index: $z-index-above-baseline;
             padding: 0;
             border: 0;
@@ -52,7 +50,6 @@
             }
         }
         &__body {
-            @extend .card-body;
             @extend .block-nds;
             z-index: $z-index-baseline;
             padding: $s-2-25 $s-1-25 $s-1-25 $s-1-25;
@@ -68,4 +65,8 @@
             }
         }
     }
+}
+
+.collapse:not(.show) {
+    display: none;
 }
