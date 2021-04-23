@@ -2,8 +2,10 @@ html,
 body {
     line-height: $line-height-default;
     font-size: $base-size-pixels * 1px;
-    background: $page-background;
+    background-color: $page-background;
     font-family: $font-stack-public-sans;
     color: $type-body;
     margin: 0;
+    -webkit-text-size-adjust: 100%; // From Bootstrap
+    -webkit-tap-highlight-color: transparent; // From Bootstrap
 }
