@@ -161,7 +161,15 @@
         &.component--modal {
             .component--modal__wrapper {
                 &__content {
-                    border-radius: $corner-radius;
+                    border-radius: $border-radius-semi;
+                    &__headder {
+                        border-top-left-radius: calc(#{$border-radius-semi} - #{$s-1px});
+                        border-top-right-radius: calc(#{$border-radius-semi} - #{$s-1px});
+                    }
+                    &__footer {
+                        border-bottom-right-radius: calc(#{$border-radius-semi} - #{$s-1px});
+                        border-bottom-left-radius: calc(#{$border-radius-semi} - #{$s-1px});
+                    }
                 }
             }
         }
@@ -354,7 +362,15 @@
         &.component--modal {
             .component--modal__wrapper {
                 &__content {
-                    border-radius: $corner-radius;
+                    border-radius: $border-radius-full;
+                    &__headder {
+                        border-top-left-radius: calc(#{$border-radius-full} - #{$s-1px});
+                        border-top-right-radius: calc(#{$border-radius-full} - #{$s-1px});
+                    }
+                    &__footer {
+                        border-bottom-right-radius: calc(#{$border-radius-full} - #{$s-1px});
+                        border-bottom-left-radius: calc(#{$border-radius-full} - #{$s-1px});
+                    }
                 }
             }
         }

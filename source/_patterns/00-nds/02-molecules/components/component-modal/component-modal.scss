@@ -28,15 +28,12 @@
             background-color: $white;
             background-clip: padding-box;
             border: $s-1px solid rgba(0,0,0,0.2);
-            border-radius: $border-radius-semi;
             outline: 0;
             &__header {
                 display: flex;
                 align-items: flex-start;
                 justify-content: space-between;
                 border-bottom: $s-1px solid $border-light;
-                border-top-left-radius: calc($border-radius-semi - $s-1px);
-                border-top-right-radius: calc($border-radius-semi - $s-1px);
                 padding: $s-1-50;
                 position: relative;
                 * {
@@ -76,9 +73,7 @@
                 justify-content: flex-start;
                 flex-wrap: wrap;
                 padding: $s-1-50;
-                border-top: 1px solid $border-light;
-                border-bottom-right-radius: calc($border-radius-semi - $s-1px);
-                border-bottom-left-radius: calc($border-radius-semi - $s-1px);
+                border-top: $s-1px solid $border-light;
             }
         }
     }
