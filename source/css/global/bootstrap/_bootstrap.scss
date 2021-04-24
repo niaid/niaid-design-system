@@ -3,8 +3,11 @@
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
 @import "../../node_modules/bootstrap/scss/mixins/border-radius"; // Tooltip
+@import "../../node_modules/bootstrap/scss/mixins/lists"; // Headings
 @import "../../node_modules/bootstrap/scss/mixins/reset-text"; // Tooltip
 
-@import "../../node_modules/bootstrap/scss/vendor/rfs"; // Tooltip
+$enable-responsive-font-sizes: true;
+@import "../../node_modules/bootstrap/scss/vendor/rfs"; // Headings, Tooltip
 
+@import "../../node_modules/bootstrap/scss/type"; // Headings
 @import "../../node_modules/bootstrap/scss/tooltip"; // Tooltip
