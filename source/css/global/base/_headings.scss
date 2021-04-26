@@ -48,6 +48,13 @@ h6, .h6 {
 }
 
 // Bootstrap Display Classes
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+    color: $type-heading;
+}
+
 .display-1 {
     @include font-size($display1-size);
     font-weight: $display1-weight;
