@@ -56,22 +56,22 @@ h6, .h6 {
 }
 
 .display-1 {
-    @include font-size($display1-size);
-    font-weight: $display1-weight;
-    line-height: $display-line-height;
+    @include font-size($font-size-display-1);
+    font-weight: $display1-weight; // From Bootstrap
+    line-height: $display-line-height; // From Bootstrap
 }
 .display-2 {
-    @include font-size($display2-size);
-    font-weight: $display2-weight;
-    line-height: $display-line-height;
+    @include font-size($font-size-display-2);
+    font-weight: $display2-weight; // From Bootstrap
+    line-height: $display-line-height; // From Bootstrap
 }
 .display-3 {
-    @include font-size($display3-size);
-    font-weight: $display3-weight;
-    line-height: $display-line-height;
+    @include font-size($font-size-display-3);
+    font-weight: $display3-weight; // From Bootstrap
+    line-height: $display-line-height; // From Bootstrap
 }
 .display-4 {
-    @include font-size($display4-size);
-    font-weight: $display4-weight;
-    line-height: $display-line-height;
+    @include font-size($font-size-display-4);
+    font-weight: $display4-weight; // From Bootstrap
+    line-height: $display-line-height; // From Bootstrap
 }
