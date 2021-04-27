@@ -49,6 +49,8 @@
                     if (sectionName !== "") {
                         sectionName = sectionName.replace(/\//g, '-');
                         sectionName = sectionName.replace(/\s+/g, '-').toLowerCase();
+                        let dropdownToggle = navItem.querySelectorAll('.navigation--dropdown__toggle');
+                        setDataAttributes(dropdownToggle, 'data-nav', 'header-nav-' + sectionName + '-');
                         let dropdownItems = navItem.querySelectorAll('.navigation--dropdown__menu > a');
                         setDataAttributes(dropdownItems, 'data-nav', 'header-nav-' + sectionName + '-');
                     }
