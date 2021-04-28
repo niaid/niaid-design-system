@@ -2,9 +2,11 @@
 
 .block-facet--checkbox {
     @extend .block-nds;
-    padding: $s-2 $s-2 0 $s-2;
+    padding: 0 $s-2;
+    margin: $s-2 0;
     @include media-breakpoint-down(sm) {
-        padding: $s-1-50 $s-1-50 0 $s-1-50;
+        padding: 0 $s-1-50;
+        margin: $s-1-50 0;
     }
     border: 0;
     h1,

@@ -1,4 +1,5 @@
 .block--search-result {
+    h2,
     &__title {
         @include font-size($s-1-50);
         margin-bottom: $s-1;
