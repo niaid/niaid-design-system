@@ -3,7 +3,6 @@
 {% set hero = block('hero') %}
 {% set navigation = block('navigation') %}
 {% set main = block('main') %}
-{% set content = block('content') %}
 {% set footer = block('footer') %}
 
 {% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
@@ -14,73 +13,26 @@
     {% block header %}
         {% if header is not empty %}
             {{ header|raw }}
-        {% else %}
-            {% include "@nds/02-organisms/global/global-header/_global-header-main.twig" with
-                {
-                    "global_header_product_id_top": "COVID-19",
-                    "global_header_product_id_bottom": "Prevention Network"
-                }
-            %}
         {% endif %}
     {% endblock %}
     {% block global_navigation %}
         {% if navigation is not empty %}
             {{ navigation|raw }}
-        {% else %}
-            {% include "@nds/02-molecules/navigation/navigation-primary/_navigation-primary-main.twig" with
-                {
-                    "navigation_primary_id": "main-navigation"
-                }
-            %}
-            {% include "@nds/02-molecules/navigation/navigation-drawer/_navigation-drawer-main.twig" with
-                {
-                    "navigation_drawer_id": "main-navigation-mobile"
-                }
-            %}
         {% endif %}
     {% endblock %}
     {% block hero %}
         {% if hero is not empty %}
             {{ hero|raw }}
-        {% else %}
-            {% embed "@nds/02-molecules/blocks/block-hero/_block-hero-main.twig" with
-                {
-                    "block_hero_width": "col-xl-9"
-                }
-            %}
-                {% block block_hero_image %}
-                    <img src="" alt="">
-                {% endblock %}
-            {% endembed %}
         {% endif %}
     {% endblock %}
     {% block main %}
         {% if main is not empty %}
             {{ main|raw }}
-        {% else %}
-            {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" with
-                {
-                    "layouts_main_id": 'main',
-                    "layouts_main_main": 10
-                }
-            %}
-                {% block main_column %}
-                    {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
-                        {% block body_content %}
-                            {% if content is not empty %}
-                                {{ content|raw }}
-                            {% endif %}
-                        {% endblock %}
-                    {% endembed %}
-                {% endblock %}
-            {% endembed %}
         {% endif %}
     {% endblock %}
     {% block footer %}
         {% if footer is not empty %}
             {{ footer|raw }}
-        {% else %}
-            {% embed "@nds/03-organisms/global/global-footer/_global-footer-main.twig" %}{% endembed %}
         {% endif %}
     {% endblock %}
 {% endembed %}

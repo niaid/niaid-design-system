@@ -4,14 +4,14 @@
     background: none;
     padding: 0;
     &__label {
-        margin-bottom: $s-0-50;
+        margin-bottom: $s-0-25;
     }
     &__wrapper {
         display: flex;
         margin: 0 -1 * $s-0-50;
         &__clear,
         .text--chip {
-            margin: 0 $s-0-50;
+            margin: 0 $s-0-25;
         }
     }
     .ext-link-icon {

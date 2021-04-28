@@ -1,8 +1,4 @@
-{% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
-    {
-        "layouts_site_id": "index"
-    }
-%}
+{% embed "@nds/04-templates/generic/_generic-main.twig" %}
     {% block header %}
         {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
         {% include "@nds/03-organisms/global/global-header/_global-header-main.twig" with
@@ -11,7 +7,7 @@
             }
         %}
     {% endblock %}
-    {% block global_navigation %}
+    {% block navigation %}
         {% include "@nds/02-molecules/navigation/navigation-primary/demo/navigation-primary.twig" %}
         {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" %}
     {% endblock %}
@@ -22,6 +18,7 @@
                     {% block body_content %}
                         <h1 id="main-content">Hello Home Page!</h1>
                         <p>Congratulations! You have successfully installed and generated your website using the NDS Static Site Builder!</p>
+                        <p>Please visit the <a href="http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/">NIAID Design System website</a> for more information on building beautiful, policy-compliant websites.</p>
                     {% endblock %}
                 {% endembed %}
             {% endblock %}

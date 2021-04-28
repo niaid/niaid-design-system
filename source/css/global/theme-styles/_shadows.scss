@@ -193,13 +193,10 @@
             }
         }
     }
+    .block-facet--checkbox {
+        @include md-0dp;
+    }
     .form-nds {
-        .form-text {
-            @include md-1dp;
-            @extend .hoverable;
-            border: 0;
-            background: $white !important;
-        }
         .form--search {
             &__form {
                 input[type="submit"] {

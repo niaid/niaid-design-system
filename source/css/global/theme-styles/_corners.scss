@@ -386,12 +386,6 @@
             border-bottom-left-radius: 0 !important;
             border-bottom-right-radius: $corner-radius-full !important;
         }
-        &.form--search {
-            .input--text {
-                border-top-left-radius: $corner-radius-full !important;
-                border-bottom-left-radius: $corner-radius-full !important;
-            }
-        }
     }
     .navigation-nds {
         &.navigation--primary {
