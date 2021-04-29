@@ -9,6 +9,9 @@ button {
     border-radius: 0;
     white-space: normal;
     text-align: center;
+    font-size: $s-1;
+    vertical-align: middle;
+    user-select: none;
     @include media-breakpoint-up(sm) {
         white-space: nowrap;
     }
@@ -29,7 +32,6 @@ button[disabled] {
     color: $white !important;
     border-color: $type-body !important;
     cursor: not-allowed !important;
-    opacity: 1;
     &:hover,
     &:focus,
     &:active {

@@ -16,6 +16,7 @@
 
 a {
     color: $type-link;
+    text-decoration: none;
     border-bottom: $s-1px solid $type-link-underline;
     &:hover,
     &:focus {
@@ -44,10 +45,20 @@ ul {
     list-style-type: circle;
     li {
         margin-bottom: .25em;
-        >ul {
+        > ul {
             margin-top: 0;
         }
     }
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin-top: $s-1;
+    margin-bottom: $s-1;
+    border: 0;
+    border-top: $s-1px solid rgba(0,0,0,0.1);
 }
 
 code {

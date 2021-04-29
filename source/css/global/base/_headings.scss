@@ -9,7 +9,6 @@ h6, .h6 {
     margin-top: $s-2;
     margin-bottom: $s-1;
     color: $type-heading;
-    font-weight: $font-weight-light;
     line-height: $line-height-heading;
     a {
         border-bottom: 0;
@@ -20,34 +19,59 @@ h6, .h6 {
     }
 }
 
+// Bootstrap RFS Sizing Overrides
+h1, .h1 { @include font-size($font-size-heading-1); }
+h2, .h2 { @include font-size($font-size-heading-2); }
+h3, .h3 { @include font-size($font-size-heading-3); }
+h4, .h4 { @include font-size($font-size-heading-4); }
+h5, .h5 { @include font-size($font-size-heading-5); }
+h6, .h6 { @include font-size($font-size-heading-6); }
+
 h1, .h1 {
     margin-top: 0;
     margin-bottom: $s-2;
-    font-size: $s-2-75;
-    @media only screen and (min-width: 400px) {
-        font-size: $s-3;
-    }
+    font-weight: $font-weight-light;
 }
 
 h2, .h2 {
-    font-size: $s-2-50;
+    font-weight: $font-weight-light;
 }
 
 h3, .h3 {
-    font-size: $s-2;
+    font-weight: $font-weight-light;
 }
 
-h4, .h4 {
-    font-size: $s-1-50;
-    font-weight: $font-weight-regular;
-}
-
-h5, .h5 {
-    font-size: $s-1-25;
-    font-weight: $font-weight-bold;
-}
-
+h4, .h4,
+h5, .h5,
 h6, .h6 {
-    font-size: $s-1-25;
     font-weight: $font-weight-regular;
+}
+
+// Bootstrap Display Classes
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+    color: $type-heading;
+}
+
+.display-1 {
+    @include font-size($font-size-display-1);
+    font-weight: $display1-weight; // From Bootstrap
+    line-height: $display-line-height; // From Bootstrap
+}
+.display-2 {
+    @include font-size($font-size-display-2);
+    font-weight: $display2-weight; // From Bootstrap
+    line-height: $display-line-height; // From Bootstrap
+}
+.display-3 {
+    @include font-size($font-size-display-3);
+    font-weight: $display3-weight; // From Bootstrap
+    line-height: $display-line-height; // From Bootstrap
+}
+.display-4 {
+    @include font-size($font-size-display-4);
+    font-weight: $display4-weight; // From Bootstrap
+    line-height: $display-line-height; // From Bootstrap
 }

@@ -9,7 +9,7 @@
         color: $white;
     }
     h1 {
-        font-size: $s-1-75;
+        @include font-size($s-1-75);
         margin-bottom: $s-0-75;
         margin-top: 0;
         padding-top: 0;

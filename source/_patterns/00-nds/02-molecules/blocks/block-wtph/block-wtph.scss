@@ -1,12 +1,12 @@
 .block--wtph {
     border: 0;
     padding: $s-2;
-    border-top: $s-1px solid $input-border;
-    border-bottom: $s-1px solid $input-border;
+    border-top: $s-1px solid $border-light;
+    border-bottom: $s-1px solid $border-light;
     &__inner {
         text-align: center;
         &__title {
-            font-size: $s-1-50;
+            @include font-size($s-1-50);
             margin-top: 0;
             margin-bottom: $s-1-25;
         }

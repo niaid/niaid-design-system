@@ -1,6 +1,6 @@
 .block--search-result {
     &__title {
-        font-size: $s-1-50;
+        @include font-size($s-1-50);
         margin-bottom: $s-1;
     }
     &__last-reviewed {

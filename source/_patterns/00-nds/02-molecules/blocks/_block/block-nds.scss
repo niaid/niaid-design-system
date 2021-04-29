@@ -1,5 +1,5 @@
 .block-nds {
-    border: $s-1px solid $input-border;
+    border: $s-1px solid $border-light;
     padding: $s-2;
     @include media-breakpoint-down(sm) {
         padding: $s-1-50;

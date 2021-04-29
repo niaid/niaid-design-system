@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // BOOTSTRAP
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "global/bootstrap/bootstrap";
 
 // FONT AWESOME
 $fa-font-path: '../webfonts/font-awesome';
@@ -32,6 +32,9 @@ $fa-font-path: '../webfonts/font-awesome';
 //
 @import "global/base/headings.scss";
 @import "overrides/base/headings.scss";
+//
+@import "global/base/media.scss";
+@import "overrides/base/media.scss";
 //
 @import "global/base/type.scss";
 @import "overrides/base/type.scss";

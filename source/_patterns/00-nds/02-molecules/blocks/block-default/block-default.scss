@@ -17,10 +17,10 @@
         align-items: center;
     }
     h2 {
-        font-size: $s-1-75;
+        @include font-size($s-1-75);
     }
     h3 {
-        font-size: $s-1-50;
+        @include font-size($s-1-50);
     }
     h4 {
         font-weight: $font-weight-light;
@@ -47,6 +47,7 @@
         }
         img {
             width: 100%;
+            height: auto;
         }
     }
     &__content {
