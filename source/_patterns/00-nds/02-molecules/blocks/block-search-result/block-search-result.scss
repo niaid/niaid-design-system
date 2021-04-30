@@ -1,8 +1,10 @@
 .block--search-result {
+    & > *:last-child {
+        margin-bottom: 0;
+    }
     &__top {
         display: flex;
         flex-wrap: nowrap;
-        align-items: center;
         margin-bottom: $s-1;
         &__icon {
             margin-right: $s-1;
@@ -24,6 +26,5 @@
     }
     &__last-reviewed {
         margin-top: $s-1;
-        margin-bottom: 0;
     }
 }
