@@ -469,35 +469,6 @@ function hasClass(element, className) {
 })(jQuery);
 
 (function ($) {
-  function initBlockHero() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.parallax').length) {
-      var elems = document.querySelectorAll('.parallax');
-      var instances = M.Parallax.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initBlockHero = {
-        attach: function attach(context) {
-          $('body', context).once('nds-block-hero').each(function () {
-            initBlockHero(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initBlockHero();
-    });
-  }
-})(jQuery);
-
-(function ($) {
   function initComponentMedia() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -522,6 +493,71 @@ function hasClass(element, className) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentMedia();
+    });
+  }
+})(jQuery); // Part of NDS Lite
+
+
+(function ($) {
+  // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
+  function initComponentUSWDSBanner() {
+    if (document.querySelectorAll('#uswds-banner-toggle').length > 0) {
+      document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
+        if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
+          document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
+          document.getElementById("uswds-banner-content").style.display = 'none';
+        } else {
+          document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
+          document.getElementById("uswds-banner-content").style.display = 'block';
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentUSWDSBanner = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-uswds-banner').each(function () {
+            initComponentUSWDSBanner(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentUSWDSBanner();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initBlockHero() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.parallax').length) {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initBlockHero = {
+        attach: function attach(context) {
+          $('body', context).once('nds-block-hero').each(function () {
+            initBlockHero(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initBlockHero();
     });
   }
 })(jQuery);
@@ -581,42 +617,6 @@ function hasClass(element, className) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentModal();
-    });
-  }
-})(jQuery); // Part of NDS Lite
-
-
-(function ($) {
-  // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
-  function initComponentUSWDSBanner() {
-    if (document.querySelectorAll('#uswds-banner-toggle').length > 0) {
-      document.querySelector('#uswds-banner-toggle').addEventListener("click", function (e) {
-        if (document.getElementById("uswds-banner-toggle").getAttribute('aria-expanded') == 'true') {
-          document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'false');
-          document.getElementById("uswds-banner-content").style.display = 'none';
-        } else {
-          document.getElementById("uswds-banner-toggle").setAttribute('aria-expanded', 'true');
-          document.getElementById("uswds-banner-content").style.display = 'block';
-        }
-      });
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentUSWDSBanner = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-uswds-banner').each(function () {
-            initComponentUSWDSBanner(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentUSWDSBanner();
     });
   }
 })(jQuery); // Part of NDS Lite
@@ -703,6 +703,49 @@ function hasClass(element, className) {
 })(jQuery);
 
 (function ($) {
+  function initNavigationTabs() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var tabs = document.querySelectorAll('.navigation--tabs__tab');
+
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', function () {
+        var activeClass = 'active';
+        var tabParent = this.closest('.navigation--tabs');
+        var relatedTabs = tabParent.querySelectorAll('.navigation--tabs__tab');
+
+        if (!hasClass(this, activeClass)) {
+          for (var j = 0; j < relatedTabs.length; j++) {
+            if (hasClass(relatedTabs[j], activeClass)) {
+              relatedTabs[j].classList.remove(activeClass);
+            }
+          }
+
+          this.classList.add(activeClass);
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationTabs = {
+        attach: function attach(context) {
+          $("body", context).once('nds-navigation-tabs').each(function () {
+            initNavigationTabs(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationTabs();
+    });
+  }
+})(jQuery);
+
+(function ($) {
   function initNavigationDropdown() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     $(".navigation--dropdown.hover").on('mouseover', function () {
@@ -748,49 +791,6 @@ function hasClass(element, className) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationDropdown();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initNavigationTabs() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var tabs = document.querySelectorAll('.navigation--tabs__tab');
-
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].addEventListener('click', function () {
-        var activeClass = 'active';
-        var tabParent = this.closest('.navigation--tabs');
-        var relatedTabs = tabParent.querySelectorAll('.navigation--tabs__tab');
-
-        if (!hasClass(this, activeClass)) {
-          for (var j = 0; j < relatedTabs.length; j++) {
-            if (hasClass(relatedTabs[j], activeClass)) {
-              relatedTabs[j].classList.remove(activeClass);
-            }
-          }
-
-          this.classList.add(activeClass);
-        }
-      });
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationTabs = {
-        attach: function attach(context) {
-          $("body", context).once('nds-navigation-tabs').each(function () {
-            initNavigationTabs(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationTabs();
     });
   }
 })(jQuery);

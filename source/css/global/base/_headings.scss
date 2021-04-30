@@ -16,6 +16,12 @@ h6, .h6 {
         &:focus {
             text-decoration: underline;
         }
+        &.ext-link-icon {
+            &:after {
+                $icon-offset: -1 * $s-2px;
+                transform: translateY($icon-offset);
+            }
+        }
     }
 }
 
