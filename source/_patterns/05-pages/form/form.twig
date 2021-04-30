@@ -1,0 +1,81 @@
+{% embed "@nds/04-templates/generic/_generic-main.twig" %}
+    {% block header %}
+        {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
+        {% include "@nds/03-organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "Your Website Name"
+            }
+        %}
+    {% endblock %}
+    {% block navigation %}
+        {% include "@nds/02-molecules/navigation/navigation-primary/demo/navigation-primary.twig" %}
+        {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                    {% block body_content %}
+                        <h1 id="main-content">Example Contact Form</h1>
+                        <p>This page demonstrates how one can easily build forms using the NIAID Design System.</p>
+                        <div class="container-fluid p-0">
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
+                                        {
+                                            "input_group_text_id": "form-first-name",
+                                            "input_group_text_name": "form-first-name",
+                                            "input_group_text_placeholder": "Enter First Name",
+                                            "input_group_text_label": "First Name",
+                                            "input_group_text_aria_label": "First Name"
+                                        }
+                                    %}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
+                                        {
+                                            "input_group_text_id": "form-last-name",
+                                            "input_group_text_name": "form-last-name",
+                                            "input_group_text_placeholder": "Enter Last Name",
+                                            "input_group_text_label": "Last Name",
+                                            "input_group_text_aria_label": "Last Name"
+                                        }
+                                    %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
+                                        {
+                                            "input_group_text_id": "form-email",
+                                            "input_group_text_name": "form-email",
+                                            "input_group_text_icon": "envelope",
+                                            "input_group_text_placeholder": "Enter Email",
+                                            "input_group_text_label": "Email",
+                                            "input_group_text_aria_label": "Email"
+                                        }
+                                    %}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
+                                        {
+                                            "input_group_text_id": "form-phone",
+                                            "input_group_text_name": "form-phone",
+                                            "input_group_text_icon": "phone",
+                                            "input_group_text_placeholder": "Enter Phone Number",
+                                            "input_group_text_label": "Phone",
+                                            "input_group_text_aria_label": "Phone"
+                                        }
+                                    %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% include "@nds/03-organisms/global/global-footer/demo/global-footer.twig" %}
+    {% endblock %}
+{% endembed %}

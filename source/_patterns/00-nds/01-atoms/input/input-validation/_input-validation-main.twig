@@ -1,0 +1,21 @@
+{#
+    ---
+    title: Input Validation
+    ---
+
+    Type: Atoms -> Input
+
+    Description:
+        A pattern to display validation errors on form inputs.
+
+    Parameters:
+        input_validation_classes: Additional input validation classes.
+        input_validation_text: The validation error text.
+
+    Last Updated: April 30, 2021
+#}
+
+{% set input_validation_classes = input_validation_classes|default() %}
+{% set input_validation_text = input_validation_text|default("Error with Entry.") %}
+
+<div class="input-nds input--validation {{ input_validation_classes }}">{{ input_validation_text }}</div>

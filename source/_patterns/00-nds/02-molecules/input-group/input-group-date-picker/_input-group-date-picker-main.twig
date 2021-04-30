@@ -27,12 +27,13 @@
         input_group_date_picker_disabled: Bool indicating if the field is disabled. Options: true, false (Default).
         input_group_date_picker_readonly: Bool indicating if the field is readonly. Options: true, false (Default).
         input_group_date_picker_required: Bool indicating if the field is requred. Options: true, false (Default).
+        input_group_date_picker_validation: Validation message for field error.
 
     Includes:
         Atoms -> Input -> input-label
         Atoms -> Input -> input-date-picker
 
-    Last Updated: February 8, 2021
+    Last Updated: April 30, 2021
 #}
 
 {% set input_group_date_picker_classes = input_group_date_picker_classes|default() %}
@@ -48,6 +49,7 @@
 {% set input_group_date_picker_disabled = input_group_date_picker_disabled|default() %}
 {% set input_group_date_picker_readonly = input_group_date_picker_readonly|default() %}
 {% set input_group_date_picker_required = input_group_date_picker_required|default() %}
+{% set input_group_date_picker_validation = input_group_date_picker_validation|default() %}
 
 <div class="input-group-nds input-group--date-picker {{ input_group_date_picker_classes }}">
     {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
@@ -71,4 +73,5 @@
             "input_date_picker_required": input_group_date_picker_required
         }
     %}
+    {% include "@nds/01-atoms/input/input-validation/_input-validation-main.twig" with { "input_validation_text": input_group_date_picker_validation } %}
 </div>
