@@ -39,10 +39,12 @@ h1, .h1 {
     font-weight: $font-weight-semibold;
     &.display-1 {
         @include font-size($font-size-display-1);
+        font-weight: $font-weight-light;
         line-height: $display-line-height; // From Bootstrap
     }
     &.display-2 {
         @include font-size($font-size-display-2);
+        font-weight: $font-weight-light;
         line-height: $display-line-height; // From Bootstrap
     }
 }
