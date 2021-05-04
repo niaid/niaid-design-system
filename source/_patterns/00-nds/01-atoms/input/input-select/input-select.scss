@@ -4,7 +4,7 @@
         width: 100% !important;
         .select2-selection  {
             height: auto;
-            padding: .625rem 4rem .625rem 1rem;
+            padding: $s-0-50 $s-4 $s-0-50 $s-1;
             background: $white;
             border: $s-1px solid $input-border;
             border-radius: 0;
@@ -69,8 +69,8 @@
                         margin: 0 .25rem 0 0;
                         font-style: normal;
                         border-radius: 0;
-                        font-size: 1rem;
-                        padding: .375rem 2.5rem .375rem 1rem;
+                        font-size: $s-1;
+                        padding: $s-0-25 $s-2-50 $s-0-25 $s-1;
                         background-image: none !important;
                         background: $color-theme-1-2-1;
                         color: $white !important;
@@ -94,9 +94,6 @@
                                 color: $white;
                             }
                         }
-                        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                            padding: .4rem 2.5rem .4rem 1rem;
-                        }
                     }
                 }
             }
@@ -109,17 +106,12 @@
                     .select2-selection__rendered {
                         font-style: normal;
                         font-size: $s-1;
-                        padding: .375rem 2.5rem .375rem 1rem;
+                        padding: $s-0-25 $s-2-50 $s-0-25 $s-1;
                         background-image: none !important;
                         background: $color-theme-1-2-1;
                         color: $white !important;
                         border: 0 !important;
                         white-space: normal;
-                    }
-                    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-                        .select2-selection__rendered {
-                            padding: .4rem 2.5rem .4rem 1rem;
-                        }
                     }
                 }
             }
@@ -149,7 +141,7 @@
         }
         &.selection-made-multi {
             .select2-selection  {
-                padding: .25rem 4rem .25rem .25rem;
+                padding: $s-0-25 $s-4 $s-0-25 $s-0-25;
             }
         }
         &.select2-container--open {

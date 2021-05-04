@@ -1,9 +1,9 @@
 .component--filters {
     display: flex;
     flex-wrap: wrap;
-    .input-nds,
     .input-group-nds {
         margin: $s-0-50 0;
+        width: 100%;
     }
     .input-group--text,
     .input--text {

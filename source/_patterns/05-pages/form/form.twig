@@ -19,7 +19,7 @@
                         <h1 id="main-content">Example Contact Form</h1>
                         <p>This page demonstrates how one can easily build forms using the NIAID Design System.</p>
                         <div class="container-fluid p-0">
-                            <div class="row">
+                            <div class="row m-y-1">
                                 <div class="col-12 col-sm-6">
                                     {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
                                         {
@@ -43,7 +43,7 @@
                                     %}
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row m-y-1">
                                 <div class="col-12 col-sm-6">
                                     {% include "@nds/02-molecules/input-group/input-group-text/_input-group-text-main.twig" with
                                         {
@@ -67,6 +67,38 @@
                                             "input_group_text_aria_label": "Phone"
                                         }
                                     %}
+                                </div>
+                            </div>
+                            <div class="row m-y-1">
+                                <div class="col-12 col-sm-6">
+                                    {% include "@nds/02-molecules/input-group/input-group-date-picker/_input-group-date-picker-main.twig" with
+                                        {
+                                            "input_group_date_picker_id": "birthday",
+                                            "input_group_date_picker_label": "Birthday",
+                                            "input_group_date_picker_placeholder": "Choose a Date...",
+                                            "input_group_date_picker_aria_label": "Birthday"
+                                        }
+                                    %}
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    {% embed "@nds/02-molecules/input-group/input-group-select/_input-group-select-main.twig" with
+                                        {
+                                            "input_group_select_id": "favorite-fruit",
+                                            "input_group_select_label": "Favorite Fruit",
+                                            "input_group_select_placeholder": "Select a Fruit...",
+                                            "input_group_select_aria_label": "Favorite Fruit"
+                                        }
+                                    %}
+                                        {% block input_group_select_options %}
+                                            <option value=""></option>
+                                            <option value="Apple">Apple</option>
+                                            <option value="Banana">Banana</option>
+                                            <option value="Cherry">Cherry</option>
+                                            <option value="Date">Date</option>
+                                            <option value="Fig">Fig</option>
+                                            <option value="Guava">Guava</option>
+                                        {% endblock %}
+                                    {% endembed %}
                                 </div>
                             </div>
                         </div>

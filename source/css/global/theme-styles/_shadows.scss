@@ -92,14 +92,56 @@
         }
         &.input--text {
             @include md-2dp;
-            @extend .hoverable;
             border: $s-1px solid transparent;
+            &:hover {
+                @include md-8dp;
+                transition: box-shadow .25s;
+                -webkit-transition: box-shadow .25s;
+                -moz-transition: box-shadow .25s;
+            }
+            &:focus {
+                border: $s-1px solid $type-link;
+                // md-8dp + Focus Ring
+                -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0px 3px 14px 2px rgba(0, 0, 0, 0.12),
+                0 0 0 $s-1px $type-link !important;
+                -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0px 3px 14px 2px rgba(0, 0, 0, 0.12),
+                0 0 0 $s-1px $type-link !important;
+                box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 0 0 $s-1px $type-link,
+                0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+            }
         }
         &.input--date-picker {
             .input--date-picker__field {
                 @include md-2dp;
-                @extend .hoverable;
                 border: $s-1px solid transparent;
+                &:hover {
+                    @include md-8dp;
+                    transition: box-shadow .25s;
+                    -webkit-transition: box-shadow .25s;
+                    -moz-transition: box-shadow .25s;
+                }
+                &:focus {
+                    border: $s-1px solid $type-link;
+                    // md-8dp + Focus Ring
+                    -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                    0px 3px 14px 2px rgba(0, 0, 0, 0.12),
+                    0 0 0 $s-1px $type-link !important;
+                    -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                    0px 3px 14px 2px rgba(0, 0, 0, 0.12),
+                    0 0 0 $s-1px $type-link !important;
+                    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                    0 0 0 $s-1px $type-link,
+                    0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+                }
             }
         }
     }

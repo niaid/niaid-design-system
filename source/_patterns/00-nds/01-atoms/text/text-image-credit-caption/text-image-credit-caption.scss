@@ -5,7 +5,7 @@
     border-left: $s-2px solid $color-theme-1-accent;
     &__caption {
         padding-top: $s-0-25;
-        font-size: $s-0-75;
+        font-size: $s-1 - $s-2px - $s-1px;
         span,
         p,
         a {
