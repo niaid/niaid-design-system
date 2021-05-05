@@ -36,6 +36,6 @@
     }
     &.exit {
         transition: transform 1s;
-        transform: translateX(-100%) translateX($toast-offset);
+        transform: translateX(-100%) translateX($s-4);
     }
 }
