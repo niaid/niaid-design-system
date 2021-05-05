@@ -2,14 +2,12 @@
     @include md-24dp;
     position: fixed;
     z-index: $z-index-toast;
-    top: $s-3;
+    top: -100%;
     left: $s-3;
     max-width: 90vw;
     width: $s-20;
     background: $white;
     padding: $s-1;
-    $toast-offset: -1 * $s-4;
-    transform: translateY(-100%) translateY($toast-offset);
     &__title {
         font-weight: $font-weight-semibold;
         font-size: $s-1-25;
@@ -34,7 +32,7 @@
     &.show {
         display: block;
         transition: transform 1s;
-        transform: translateY(0);
+        transform: translateY(100%);
     }
     &.exit {
         transition: transform 1s;

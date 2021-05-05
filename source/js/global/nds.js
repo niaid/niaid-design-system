@@ -240,34 +240,24 @@ function hasClass(element, className) {
   }
 })(jQuery);
 
-(function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+function activateToast(toast) {
+  var toastDuration = toast.getAttribute('data-duration') * 1000;
 
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
+  if (!hasClass(toast, "show")) {
+    toast.classList.add('show');
+    setTimeout(function () {
+      toast.classList.remove('show');
+      toast.classList.add('exit');
+      setTimeout(function () {
+        destroyToast(toast);
+      }, 1000);
+    }, toastDuration);
   }
+}
 
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
-    });
-  }
-})(jQuery);
+function destroyToast(toast) {
+  toast.remove();
+}
 
 (function ($) {
   function initComponentModal() {
@@ -326,6 +316,35 @@ function hasClass(element, className) {
       initComponentModal();
     });
   }
+})(jQuery);
+
+(function ($) {
+  function initComponentMedia() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentMedia = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentMedia();
+    });
+  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -360,6 +379,56 @@ function hasClass(element, className) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initComponentUSWDSBanner();
+    });
+  }
+})(jQuery);
+
+(function ($) {
+  function initNavigationDropdown() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    $(".navigation--dropdown.hover").on('mouseover', function () {
+      openDropdown($(this));
+    });
+    $(".navigation--dropdown.hover").on('mouseout', function () {
+      closeDropdown($(this));
+    });
+    $(".navigation--dropdown").on('focusin', function (e) {
+      openDropdown($(this));
+    });
+    $(".navigation--dropdown").on('focusout', function (e) {
+      if (this.contains(e.relatedTarget)) {
+        return;
+      }
+
+      closeDropdown($(this));
+    });
+  }
+
+  function openDropdown($el) {
+    $el.addClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
+  }
+
+  function closeDropdown($el) {
+    $el.removeClass('is-open');
+    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationDropdown = {
+        attach: function attach(context) {
+          $("body", context).once('nds-navigation-dropdown').each(function () {
+            initNavigationDropdown(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationDropdown();
     });
   }
 })(jQuery); // Part of NDS Lite
@@ -441,56 +510,6 @@ function hasClass(element, className) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initNavigationDrawer();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initNavigationDropdown() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    $(".navigation--dropdown.hover").on('mouseover', function () {
-      openDropdown($(this));
-    });
-    $(".navigation--dropdown.hover").on('mouseout', function () {
-      closeDropdown($(this));
-    });
-    $(".navigation--dropdown").on('focusin', function (e) {
-      openDropdown($(this));
-    });
-    $(".navigation--dropdown").on('focusout', function (e) {
-      if (this.contains(e.relatedTarget)) {
-        return;
-      }
-
-      closeDropdown($(this));
-    });
-  }
-
-  function openDropdown($el) {
-    $el.addClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
-  }
-
-  function closeDropdown($el) {
-    $el.removeClass('is-open');
-    $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationDropdown = {
-        attach: function attach(context) {
-          $("body", context).once('nds-navigation-dropdown').each(function () {
-            initNavigationDropdown(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationDropdown();
     });
   }
 })(jQuery);
@@ -673,67 +692,6 @@ function hasClass(element, className) {
       initInputSelect();
     });
   }
-})(jQuery); // Dependencies
-//  - DataTables
-//  - jQuery
-
-
-(function ($) {
-  function initTableDefault() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    /* KEY
-        Sorting: Add data-tablesort="true" to the <table> tag.
-        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
-    */
-    $("table").each(function () {
-      if ($(this).attr('nds-datatable') == 'true') {
-        var defaultConfigs = {
-          "responsive": true,
-          "paging": false,
-          "info": false,
-          "autoWidth": false,
-          "searching": false
-        };
-
-        if (!($(this).attr('data-tablesort') == "true")) {
-          defaultConfigs['ordering'] = false;
-        } else {
-          // Determine Column Type
-          var columns = [];
-          $(this).find('thead').find('th').each(function (i) {
-            if ($(this).attr('data-column-num') == "true") {
-              columns.push({
-                "type": "natural",
-                "targets": i
-              });
-            }
-          });
-          defaultConfigs['columnDefs'] = columns;
-        }
-
-        $(this).dataTable(defaultConfigs);
-      }
-    });
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initTableDefault = {
-        attach: function attach(context) {
-          $("body", context).once('nds-table-default').each(function () {
-            initTableDefault(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initTableDefault();
-    });
-  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -793,44 +751,57 @@ function hasClass(element, className) {
       initLinkExternalMailto();
     });
   }
-})(jQuery);
+})(jQuery); // Dependencies
+//  - DataTables
+//  - jQuery
+
 
 (function ($) {
-  function initComponentToast() {
+  function initTableDefault() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
-    if (document.querySelectorAll('.component--toast').length) {
-      var toastsList = document.getElementsByClassName("component--toast");
+    /* KEY
+        Sorting: Add data-tablesort="true" to the <table> tag.
+        Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
+    */
+    $("table").each(function () {
+      if ($(this).attr('nds-datatable') == 'true') {
+        var defaultConfigs = {
+          "responsive": true,
+          "paging": false,
+          "info": false,
+          "autoWidth": false,
+          "searching": false
+        };
 
-      for (var i = 0; i < toastsList.length; i++) {
-        activateToast(toastsList[i]);
+        if (!($(this).attr('data-tablesort') == "true")) {
+          defaultConfigs['ordering'] = false;
+        } else {
+          // Determine Column Type
+          var columns = [];
+          $(this).find('thead').find('th').each(function (i) {
+            if ($(this).attr('data-column-num') == "true") {
+              columns.push({
+                "type": "natural",
+                "targets": i
+              });
+            }
+          });
+          defaultConfigs['columnDefs'] = columns;
+        }
+
+        $(this).dataTable(defaultConfigs);
       }
-    }
-  }
-
-  function activateToast(toast) {
-    var toastDuration = toast.getAttribute('data-duration') * 1000;
-    toast.classList.add('show');
-    setTimeout(function () {
-      toast.classList.remove('show');
-      toast.classList.add('exit');
-      setTimeout(function () {
-        destroyToast(toast);
-      }, 1000);
-    }, toastDuration);
-  }
-
-  function destroyToast(toast) {
-    toast.remove();
+    });
   }
 
   if (typeof Drupal !== 'undefined') {
     // Define Drupal behavior.
     (function ($, Drupal) {
-      Drupal.behaviors.initComponentToast = {
+      Drupal.behaviors.initTableDefault = {
         attach: function attach(context) {
-          $("body", context).once('nds-component-toast').each(function () {
-            initComponentToast(context);
+          $("body", context).once('nds-table-default').each(function () {
+            initTableDefault(context);
           });
         }
       };
@@ -838,7 +809,7 @@ function hasClass(element, className) {
   } else {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
-      initComponentToast();
+      initTableDefault();
     });
   }
 })(jQuery);
