@@ -138,6 +138,7 @@ $z-index-drawer: 500;
 $z-index-button-floating: 600;
 $z-index-dropdown: 700;
 $z-index-modal: 800;
+$z-index-toast: 900;
 
 /**** SPACING & SIZING ****/
 $base-size-pixels: 16;
@@ -189,3 +190,7 @@ $s-10: $base-spacer * 10;
 $s-10-25: $s-10 + $s-0-25;
 $s-10-50: $s-10 + $s-0-50;
 $s-10-75: $s-10 + $s-0-75;
+$s-20: $base-spacer * 20;
+$s-30: $base-spacer * 30;
+$s-40: $base-spacer * 40;
+$s-50: $base-spacer * 50;

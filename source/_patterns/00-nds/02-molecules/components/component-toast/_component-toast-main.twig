@@ -1,0 +1,38 @@
+{#
+    ---
+    title: Toast Component
+    ---
+
+    Type: Molecules -> Components
+
+    Description:
+        TODO
+
+    Blocks:
+        {% block component_toast_content %}: Content to appear in the toast.
+
+    Parameters:
+        component_toast_classes: Additional toast classes.
+        component_toast_title
+        component_toast_message
+        component_toast_status
+
+    Last Updated: May 5, 2021
+#}
+
+{% set component_toast_classes = component_toast_classes|default() %}
+{% set component_toast_title = component_toast_title|default() %}
+{% set component_toast_message = component_toast_message|default() %}
+{% set component_toast_status = component_toast_status|default() %}
+{% set component_toast_display_duration = component_toast_display_duration|default(2) %}
+
+{% if component_toast_status is not empty %}
+    {% set component_toast_classes = component_toast_classes ~ ' ' ~ component_toast_status %}
+{% endif %}
+
+<div class="component-nds component--toast {{ component_toast_classes }}" data-duration="{{ component_toast_display_duration }}">
+    {% block component_toast_content %}
+        {% if component_toast_title is not empty %}<div class="component--toast__title">{{ component_toast_title }}</div>{% endif %}
+        {% if component_toast_title is not empty %}<div class="component--toast__message">{{ component_toast_message }}</div>{% endif %}
+    {% endblock %}
+</div>

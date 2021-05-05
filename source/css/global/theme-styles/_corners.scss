@@ -173,6 +173,9 @@
                 }
             }
         }
+        &.component--toast {
+            border-radius: $corner-radius;
+        }
     }
     .form-nds {
         .form-text {
@@ -373,6 +376,9 @@
                     }
                 }
             }
+        }
+        &.component--toast {
+            border-radius: $corner-radius;
         }
     }
     .form-nds {
