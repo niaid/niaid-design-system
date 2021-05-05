@@ -24,7 +24,7 @@
 {% set component_toast_title = component_toast_title|default() %}
 {% set component_toast_message = component_toast_message|default() %}
 {% set component_toast_status = component_toast_status|default() %}
-{% set component_toast_display_duration = component_toast_display_duration|default(2) %}
+{% set component_toast_display_duration = component_toast_display_duration|default(3) %}
 
 {% if component_toast_status is not empty %}
     {% set component_toast_classes = component_toast_classes ~ ' ' ~ component_toast_status %}
