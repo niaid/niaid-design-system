@@ -1,0 +1,3 @@
+[submodule "niaid-design-system"]
+	path = niaid-design-system
+	url = git@github.com:niaid/niaid-design-system.git
