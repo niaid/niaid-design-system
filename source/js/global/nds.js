@@ -39,18 +39,6 @@ function windowWidth() {
 
 function hasClass(el, className) {
   return (' ' + el.className + ' ').indexOf(' ' + className + ' ') > -1;
-} // Credit: https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
-
-
-function insertAfter(newNode, referenceNode) {
-  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-} // Credit: https://stackoverflow.com/questions/494143/creating-a-new-dom-element-from-an-html-string-using-built-in-dom-methods-or-pro
-
-
-function createElementFromHTML(htmlString) {
-  var div = document.createElement('div');
-  div.innerHTML = htmlString.trim();
-  return div.firstChild;
 } // Part of NDS Lite
 
 
@@ -236,11 +224,7 @@ function createElementFromHTML(htmlString) {
     var href = link.getAttribute('href');
 
     if (href !== null && href !== "/" && href !== "#") {
-      console.log(href);
-
       for (var i = 0; i < documentTypes.length; i++) {
-        console.log('iter');
-
         if (href.includes('.' + documentTypes[i])) {
           addDocumentBadge(link, documentTypes[i]);
           return true;
@@ -253,9 +237,10 @@ function createElementFromHTML(htmlString) {
 
 
   function addDocumentBadge(link, type) {
-    // NDS Markup for the Text Badge Pattern
-    var badge = createElementFromHTML('<span class="text-nds text--badge text--badge--document">' + type.toUpperCase() + '</span>');
-    insertAfter(badge, link);
+    var badge = document.createElement('span');
+    badge.setAttribute('class', "text-nds text--badge text--badge--document");
+    badge.textContent = type.toUpperCase();
+    link.insertAdjacentElement('afterend', badge);
   }
 
   if (typeof Drupal !== 'undefined') {
@@ -511,6 +496,54 @@ function createElementFromHTML(htmlString) {
 })(jQuery);
 
 (function ($) {
+  function initComponentMedia() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+    if (document.querySelectorAll('.materialboxed').length) {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initComponentMedia = {
+        attach: function attach(context) {
+          $("body", context).once('nds-component-media').each(function () {
+            initComponentMedia(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initComponentMedia();
+    });
+  }
+})(jQuery);
+
+function activateToast(toast) {
+  var toastDuration = toast.getAttribute('data-duration') * 1000;
+
+  if (!hasClass(toast, "show")) {
+    toast.classList.add('show');
+    setTimeout(function () {
+      toast.classList.remove('show');
+      toast.classList.add('exit');
+      setTimeout(function () {
+        destroyToast(toast);
+      }, 1000);
+    }, toastDuration);
+  }
+}
+
+function destroyToast(toast) {
+  toast.remove();
+}
+
+(function ($) {
   function initComponentModal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
 
@@ -567,35 +600,6 @@ function createElementFromHTML(htmlString) {
       initComponentModal();
     });
   }
-})(jQuery);
-
-(function ($) {
-  function initComponentMedia() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-
-    if (document.querySelectorAll('.materialboxed').length) {
-      var elems = document.querySelectorAll('.materialboxed');
-      var instances = M.Materialbox.init(elems);
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initComponentMedia = {
-        attach: function attach(context) {
-          $("body", context).once('nds-component-media').each(function () {
-            initComponentMedia(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initComponentMedia();
-    });
-  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -633,25 +637,6 @@ function createElementFromHTML(htmlString) {
     });
   }
 })(jQuery);
-
-function activateToast(toast) {
-  var toastDuration = toast.getAttribute('data-duration') * 1000;
-
-  if (!hasClass(toast, "show")) {
-    toast.classList.add('show');
-    setTimeout(function () {
-      toast.classList.remove('show');
-      toast.classList.add('exit');
-      setTimeout(function () {
-        destroyToast(toast);
-      }, 1000);
-    }, toastDuration);
-  }
-}
-
-function destroyToast(toast) {
-  toast.remove();
-}
 
 (function ($) {
   function initBlockHero() {

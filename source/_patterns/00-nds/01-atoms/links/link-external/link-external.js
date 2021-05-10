@@ -39,9 +39,7 @@
     function initDocumentLink(link) {
         let href = link.getAttribute('href');
         if (href !== null && href !== "/" && href !== "#") {
-            console.log(href);
             for (let i = 0; i < documentTypes.length; i++) {
-                console.log('iter');
                 if (href.includes('.' + documentTypes[i])) {
                     addDocumentBadge(link, documentTypes[i]);
                     return true;
@@ -53,9 +51,10 @@
 
     // addDocumentBadge - Helper function that adds document badges to document links.
     function addDocumentBadge(link, type) {
-        // NDS Markup for the Text Badge Pattern
-        let badge = createElementFromHTML('<span class="text-nds text--badge text--badge--document">' + type.toUpperCase() + '</span>');
-        insertAfter(badge, link);
+        var badge = document.createElement('span');
+        badge.setAttribute('class', "text-nds text--badge text--badge--document");
+        badge.textContent = type.toUpperCase();
+        link.insertAdjacentElement('afterend', badge);
     }
 
     if (typeof Drupal !== 'undefined') {
