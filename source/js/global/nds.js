@@ -596,26 +596,7 @@ function createElementFromHTML(htmlString) {
       initComponentMedia();
     });
   }
-})(jQuery);
-
-function activateToast(toast) {
-  var toastDuration = toast.getAttribute('data-duration') * 1000;
-
-  if (!hasClass(toast, "show")) {
-    toast.classList.add('show');
-    setTimeout(function () {
-      toast.classList.remove('show');
-      toast.classList.add('exit');
-      setTimeout(function () {
-        destroyToast(toast);
-      }, 1000);
-    }, toastDuration);
-  }
-}
-
-function destroyToast(toast) {
-  toast.remove();
-} // Part of NDS Lite
+})(jQuery); // Part of NDS Lite
 
 
 (function ($) {
@@ -652,6 +633,25 @@ function destroyToast(toast) {
     });
   }
 })(jQuery);
+
+function activateToast(toast) {
+  var toastDuration = toast.getAttribute('data-duration') * 1000;
+
+  if (!hasClass(toast, "show")) {
+    toast.classList.add('show');
+    setTimeout(function () {
+      toast.classList.remove('show');
+      toast.classList.add('exit');
+      setTimeout(function () {
+        destroyToast(toast);
+      }, 1000);
+    }, toastDuration);
+  }
+}
+
+function destroyToast(toast) {
+  toast.remove();
+}
 
 (function ($) {
   function initBlockHero() {

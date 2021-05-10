@@ -43,7 +43,8 @@
             border: 0;
         }
     }
-    & + .ext-link-icon {
+    & + .ext-link-icon,
+    & + .text--badge--document {
         display: none;
     }
 }
