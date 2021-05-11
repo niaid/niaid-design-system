@@ -11,3 +11,9 @@
     padding: $s-0-25;
     line-height: $line-height-single;
 }
+
+.button-nds {
+    & + .text--badge--document {
+        display: none;
+    }
+}
