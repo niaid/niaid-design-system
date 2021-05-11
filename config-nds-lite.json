@@ -1,0 +1,8 @@
+[
+    "./source/js/utilities/utilities.js",
+    "./source/_patterns/00-nds/01-atoms/links/link-external/link-external.js",
+    "./source/_patterns/00-nds/02-molecules/analytics/analytics-google/analytics-google.js",
+    "./source/_patterns/00-nds/02-molecules/components/component-uswds-banner/component-uswds-banner.js",
+    "./source/_patterns/00-nds/01-atoms/input/_input/input-nds.js",
+    "./source/_patterns/00-nds/02-molecules/navigation/navigation-drawer/navigation-drawer.js"
+]

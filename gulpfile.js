@@ -283,3 +283,18 @@ function addPage(file) {
     pages.push({ "depth": distPath.split("/").length - 1, "pageName": fileName.split('.twig')[0], "patternLabPath": targetPath.replace('/', '-'), "targetPath": targetPath });
     return;
 }
+
+var json = JSON.parse(fs.readFileSync('config-nds-lite.json'));
+
+gulp.task('compileNDSLite', () => {
+    console.log(json);
+    console.log("Compiling JS...");
+    return gulp.src(json, {base: './source/'})
+        .pipe(concat('nds-lite.js'))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(minify())
+        .pipe(sourcemaps.write('./source/js/global'))
+        .pipe(gulp.dest('./source/js/global'));
+});
