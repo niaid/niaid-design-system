@@ -4,9 +4,7 @@
     a,
     p,
     ul,
-    ol,
-    span,
-    div {
+    ol {
         font-family: $font-stack-public-sans;
     }
     ::-webkit-input-placeholder {
@@ -20,6 +18,11 @@
         font-family: $font-stack-public-sans;
     }
     :-moz-placeholder {
+        font-family: $font-stack-public-sans;
+    }
+
+    // Pattern Specific
+    .select2-selection__placeholder {
         font-family: $font-stack-public-sans;
     }
 }
@@ -30,9 +33,7 @@
     a,
     p,
     ul,
-    ol,
-    span,
-    div {
+    ol {
         font-family: $font-stack-roboto;
     }
     ::-webkit-input-placeholder {
@@ -46,6 +47,11 @@
         font-family: $font-stack-roboto;
     }
     :-moz-placeholder {
+        font-family: $font-stack-roboto;
+    }
+
+    // Pattern Specific
+    .select2-selection__placeholder {
         font-family: $font-stack-roboto;
     }
 }
