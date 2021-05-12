@@ -4,4 +4,4 @@ composer.lock
 node_modules/
 vendor/
 public/
-public_html/
+dist/
