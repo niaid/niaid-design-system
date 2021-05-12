@@ -4,9 +4,14 @@
     a,
     p,
     ul,
-    ol {
+    ol,
+    ::-webkit-input-placeholder,
+    :-moz-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder,
+    :-moz-placeholder {
         font-family: $font-stack-public-sans;
-    }
+    } 
 }
 
 .style--body--roboto {
@@ -15,7 +20,12 @@
     a,
     p,
     ul,
-    ol {
+    ol,
+    ::-webkit-input-placeholder,
+    :-moz-placeholder,
+    ::-moz-placeholder,
+    :-ms-input-placeholder,
+    :-moz-placeholder {
         font-family: $font-stack-roboto;
     }
 }

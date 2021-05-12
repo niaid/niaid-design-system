@@ -153,7 +153,8 @@ function hasClass(el, className) {
         }
       }
     }
-  }
+  } // computeDataAttribute - Helper function to determine the value of the data attribute.
+
 
   function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
     var linkText = el.textContent.trim();
@@ -181,7 +182,8 @@ function hasClass(el, className) {
         tagChildren(el, dataAttributeName);
       }
     }
-  }
+  } // tagChildren - Helper function to tag child elements of the target.
+
 
   function tagChildren(el, dataAttributeName) {
     var dataAttributeValue = el.getAttribute(dataAttributeName);
@@ -512,6 +514,49 @@ function destroyToast(toast) {
       initNavigationDropdown();
     });
   }
+})(jQuery);
+
+(function ($) {
+  function initNavigationTabs() {
+    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+    var tabs = document.querySelectorAll('.navigation--tabs__tab');
+
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', function () {
+        var activeClass = 'active';
+        var tabParent = this.closest('.navigation--tabs');
+        var relatedTabs = tabParent.querySelectorAll('.navigation--tabs__tab');
+
+        if (!hasClass(this, activeClass)) {
+          for (var j = 0; j < relatedTabs.length; j++) {
+            if (hasClass(relatedTabs[j], activeClass)) {
+              relatedTabs[j].classList.remove(activeClass);
+            }
+          }
+
+          this.classList.add(activeClass);
+        }
+      });
+    }
+  }
+
+  if (typeof Drupal !== 'undefined') {
+    // Define Drupal behavior.
+    (function ($, Drupal) {
+      Drupal.behaviors.initNavigationTabs = {
+        attach: function attach(context) {
+          $("body", context).once('nds-navigation-tabs').each(function () {
+            initNavigationTabs(context);
+          });
+        }
+      };
+    })(jQuery, Drupal);
+  } else {
+    // If Drupal isn't loaded, add JS for Pattern Lab.
+    $(document).ready(function () {
+      initNavigationTabs();
+    });
+  }
 })(jQuery); // Part of NDS Lite
 
 
@@ -794,49 +839,6 @@ function destroyToast(toast) {
     // If Drupal isn't loaded, add JS for Pattern Lab.
     $(document).ready(function () {
       initTableDefault();
-    });
-  }
-})(jQuery);
-
-(function ($) {
-  function initNavigationTabs() {
-    var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
-    var tabs = document.querySelectorAll('.navigation--tabs__tab');
-
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].addEventListener('click', function () {
-        var activeClass = 'active';
-        var tabParent = this.closest('.navigation--tabs');
-        var relatedTabs = tabParent.querySelectorAll('.navigation--tabs__tab');
-
-        if (!hasClass(this, activeClass)) {
-          for (var j = 0; j < relatedTabs.length; j++) {
-            if (hasClass(relatedTabs[j], activeClass)) {
-              relatedTabs[j].classList.remove(activeClass);
-            }
-          }
-
-          this.classList.add(activeClass);
-        }
-      });
-    }
-  }
-
-  if (typeof Drupal !== 'undefined') {
-    // Define Drupal behavior.
-    (function ($, Drupal) {
-      Drupal.behaviors.initNavigationTabs = {
-        attach: function attach(context) {
-          $("body", context).once('nds-navigation-tabs').each(function () {
-            initNavigationTabs(context);
-          });
-        }
-      };
-    })(jQuery, Drupal);
-  } else {
-    // If Drupal isn't loaded, add JS for Pattern Lab.
-    $(document).ready(function () {
-      initNavigationTabs();
     });
   }
 })(jQuery);
