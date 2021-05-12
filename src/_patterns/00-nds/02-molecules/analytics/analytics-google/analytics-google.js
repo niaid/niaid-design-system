@@ -1,7 +1,9 @@
-// Part of NDS Lite
-(function($) {
-    // initDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
-    function initDataAttributes() {
+var moduleNDS_analytics = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
+    // addDataAttributes - Adds Data Attributes to certain elements for Google Analytics tracking purposes.
+    function addDataAttributes() {
 
         // Accordion Button
         let accordionCards = document.getElementsByClassName("component--accordion__card");
@@ -139,21 +141,13 @@
         }
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initDataAttributes = {
-                attach: function(context) {
-                    $("body", context).once('nds-data-attributes').each(function() {
-                        initDataAttributes(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initDataAttributes();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        addDataAttributes();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());

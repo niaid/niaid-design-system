@@ -1,5 +1,7 @@
-// Part of NDS Lite
-(function($) {
+var moduleNDS_uswdsBanner = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
     // initComponentUSWDSBanner - Toggles the USWDS Banner Component open and closed.
     function initComponentUSWDSBanner() {
         if (document.querySelectorAll('#uswds-banner-toggle').length > 0) {
@@ -16,21 +18,13 @@
         }
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initComponentUSWDSBanner = {
-                attach: function(context) {
-                    $("body", context).once('nds-component-uswds-banner').each(function() {
-                        initComponentUSWDSBanner(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initComponentUSWDSBanner();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initComponentUSWDSBanner();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());

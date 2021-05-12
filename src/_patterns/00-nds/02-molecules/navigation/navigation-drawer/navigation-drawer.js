@@ -1,7 +1,9 @@
-// Part of NDS Lite
-(function($) {
-    // initNavigationDrawer - Functionality to support the NDS mobile drawer.
-    function initNavigationDrawer(context = document) {
+var moduleNDS_drawer = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
+    // initializeNavigationDrawer - Functionality to support the NDS mobile drawer.
+    function initializeNavigationDrawer() {
         if (document.querySelectorAll('.navigation--drawer').length > 0) {
             var wWidth = windowWidth();
 
@@ -59,21 +61,13 @@
         }
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initNavigationDrawer = {
-                attach: function(context) {
-                    $("body", context).once('nds-navigation-drawer').each(function() {
-                        initNavigationDrawer(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initNavigationDrawer();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initializeNavigationDrawer();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());
