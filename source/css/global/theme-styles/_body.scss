@@ -5,13 +5,23 @@
     p,
     ul,
     ol,
-    ::-webkit-input-placeholder,
+    span,
+    div {
+        font-family: $font-stack-public-sans;
+    }
+    ::-webkit-input-placeholder {
+        font-family: $font-stack-public-sans;
+    }
     :-moz-placeholder,
-    ::-moz-placeholder,
-    :-ms-input-placeholder,
+    ::-moz-placeholder {
+        font-family: $font-stack-public-sans;
+    }
+    :-ms-input-placeholder {
+        font-family: $font-stack-public-sans;
+    }
     :-moz-placeholder {
         font-family: $font-stack-public-sans;
-    } 
+    }
 }
 
 .style--body--roboto {
@@ -21,10 +31,20 @@
     p,
     ul,
     ol,
-    ::-webkit-input-placeholder,
+    span,
+    div {
+        font-family: $font-stack-roboto;
+    }
+    ::-webkit-input-placeholder {
+        font-family: $font-stack-roboto;
+    }
     :-moz-placeholder,
-    ::-moz-placeholder,
-    :-ms-input-placeholder,
+    ::-moz-placeholder {
+        font-family: $font-stack-roboto;
+    }
+    :-ms-input-placeholder {
+        font-family: $font-stack-roboto;
+    }
     :-moz-placeholder {
         font-family: $font-stack-roboto;
     }
