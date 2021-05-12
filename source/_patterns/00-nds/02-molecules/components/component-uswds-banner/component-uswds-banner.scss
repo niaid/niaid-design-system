@@ -1,5 +1,4 @@
 .component--uswds-banner {
-    margin: 0;
     background-color: $type-heading;
     padding: 0;
     line-height: $line-height-small;
@@ -12,6 +11,7 @@
         border-radius: 0 !important;
         background: transparent !important;
         border: 0 !important;
+        margin: 0;
         padding: $s-0-25 $s-1-50;
         font-size: $s-0-75;
         text-align: left;
