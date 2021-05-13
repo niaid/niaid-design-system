@@ -6,6 +6,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
+const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const tap = require('gulp-tap');
@@ -42,6 +43,7 @@ gulp.task('compileSass', () => {
             outputStyle: 'compressed',
             includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"]
         }).on('error', sass.logError))
+        .pipe(autoprefixer())
         .pipe(sourcemaps.write('./src/maps'))
         .pipe(gulp.dest('./src/css'));
 });
