@@ -5,3 +5,7 @@ node_modules/
 vendor/
 public/
 dist/
+
+src/css/nds-min.css
+src/js/nds-min.js
+src/js/nds.js

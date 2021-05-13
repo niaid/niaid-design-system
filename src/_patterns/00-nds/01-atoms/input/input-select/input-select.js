@@ -1,9 +1,8 @@
-// Dependencies
-//  - Select2
-//  - jQuery
-
-(function($) {
-    function initInputSelect(context = document) {
+var moduleNDS_select = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
+    function initInputSelect() {
         $('[data-toggle="tooltip"]').tooltip();
         
         $('select').each(function() {
@@ -53,21 +52,13 @@
         });
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initInputSelect = {
-                attach: function(context) {
-                    $('body', context).once('nds-input-select').each(function() {
-                        initInputSelect(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initInputSelect();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initInputSelect();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());

@@ -2,8 +2,12 @@
 //  - DataTables
 //  - jQuery
 
-(function($) {
-    function initTableDefault(context = document) {
+var moduleNDS_tables = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
+    // initTableDefault - Initializes Datatables library.
+    function initTableDefault() {
 
         /* KEY
             Sorting: Add data-tablesort="true" to the <table> tag.
@@ -40,21 +44,13 @@
         });
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initTableDefault = {
-                attach: function(context) {
-                    $("body", context).once('nds-table-default').each(function() {
-                        initTableDefault(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initTableDefault();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initTableDefault();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());

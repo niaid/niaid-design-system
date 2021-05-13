@@ -1,5 +1,9 @@
-(function($) {
-    function initNavigationTabs(context = document) {
+var moduleNDS_tabs = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
+    // initNavigationTabs - Initializes tabs.
+    function initNavigationTabs() {
         let tabs = document.querySelectorAll('.navigation--tabs__tab');
         for (let i = 0; i < tabs.length; i++) {
             tabs[i].addEventListener('click', function() {
@@ -18,21 +22,13 @@
         }
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initNavigationTabs = {
-                attach: function(context) {
-                    $("body", context).once('nds-navigation-tabs').each(function() {
-                        initNavigationTabs(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initNavigationTabs();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initNavigationTabs();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());

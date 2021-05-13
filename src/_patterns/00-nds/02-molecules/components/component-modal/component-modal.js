@@ -1,5 +1,12 @@
-(function($) {
-    function initComponentModal(context = document) {
+// Dependencies
+//  - Bootstrap
+
+var moduleNDS_modal = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
+    //  initComponentModal - Initializes the modal component.
+    function initComponentModal() {
         if (document.querySelectorAll('.component--modal').length) {
             let focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
@@ -32,21 +39,13 @@
         }
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initComponentModal = {
-                attach: function(context) {
-                    $("body", context).once('nds-component-modal').each(function() {
-                        initComponentModal(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initComponentModal();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initComponentModal();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());

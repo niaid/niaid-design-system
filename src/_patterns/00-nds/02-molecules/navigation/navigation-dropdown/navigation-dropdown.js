@@ -1,5 +1,12 @@
-(function($) {
-    function initNavigationDropdown(context = document) {
+// Dependencies
+//  - jQuery
+
+var moduleNDS_dropdown = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
+    // initNavigationDropdown - Initializes the dropdown component.
+    function initNavigationDropdown() {
         $(".navigation--dropdown.hover").on('mouseover', function() {
             openDropdown($(this));
         });
@@ -18,31 +25,25 @@
         });
     }
 
+    // openDropdown - Helper function to open the dropdown.
     function openDropdown($el) {
         $el.addClass('is-open');
         $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'true');
     }
 
+    // removeClass - Helper function to close the dropdown.
     function closeDropdown($el) {
         $el.removeClass('is-open');
         $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initNavigationDropdown = {
-                attach: function(context) {
-                    $("body", context).once('nds-navigation-dropdown').each(function() {
-                        initNavigationDropdown(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initNavigationDropdown();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initNavigationDropdown();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());

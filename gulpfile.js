@@ -48,7 +48,7 @@ gulp.task('compileSass', () => {
 
 // compileJS - Compile JS for your static site.
 // This logic replaces any scripts on build in the 00-nds folder with scripts of the same name in the custom directories (01-atoms, etc.).
-var includedJS = ['./src/js/global/app.js', './src/js/utilities/utilities.js'];
+var includedJS = ['./src/js/global/init.js', './src/js/utilities/utilities.js'];
 gulp.task('computeIncludedJSFiles', function() {
     var overridesJS = [];
     return gulp.src('./src/_patterns/**/*.js').pipe(tap(function(file, t) {
@@ -86,8 +86,8 @@ gulp.task('compileJS', () => {
             presets: ['@babel/env']
         }))
         .pipe(minify())
-        .pipe(sourcemaps.write('./src/js/global/'))
-        .pipe(gulp.dest('./src/js/global/'));
+        .pipe(sourcemaps.write('./src/js/'))
+        .pipe(gulp.dest('./src/js/'));
 });
 
 // GULP: compilePatternLab - Compile Pattern Lab for your static site.

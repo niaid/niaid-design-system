@@ -1,10 +1,11 @@
-// Part of NDS Lite
-(function($) {
-
+var moduleNDS_links = (function() {
+    'use strict';
+    
     const documentTypes = ['pdf', 'PDF', 'doc', 'docx', 'DOC', 'DOCX', 'ppt', 'PPT', 'pptx', 'PPTX', 'xls', 'XLS', 'xlsx', 'XLSX', 'zip', 'ZIP'];
 
+    /* =================== PRIVATE METHODS ================= */
     // initLinkExternal - Adds external link icons to links that qualify as external.
-    function initLinkExternal(context = document) {
+    function initLinkExternal() {
         let externalLinks = document.querySelectorAll('a');
         for (var i = 0; i < externalLinks.length; i++) {
             if (externalLinks[i].innerHTML != "") {
@@ -28,7 +29,7 @@
     }
 
     // initLinkExternalMailto - Adds envelope icons to mailto links.
-    function initLinkExternalMailto(context = document) {
+    function initLinkExternalMailto() {
         let mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
         for (var i = 0; i < mailtoLinks.length; i++) {
             mailtoLinks[i].classList.add('link--external--mail');   
@@ -57,23 +58,14 @@
         link.insertAdjacentElement('afterend', badge);
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initLinks = {
-                attach: function(context) {
-                    $("body", context).once('nds-links').each(function() {
-                        initLinkExternal(context);
-                        initLinkExternalMailto(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            initLinkExternal();
-            initLinkExternalMailto();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initLinkExternal();
+        initLinkExternalMailto();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());
