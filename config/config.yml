@@ -17,7 +17,7 @@ styleGuideExcludes: ''
 cacheBusterOn: 'true'
 exportDir: export
 publicDir: public
-sourceDir: source
+sourceDir: src
 defaultPattern: all
 defaultShowPatternInfo: false
 ishMinimum: '240'
