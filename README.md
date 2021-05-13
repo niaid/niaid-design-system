@@ -23,6 +23,13 @@ You will need the following installed on your local machine:
 * Composer
 * Gulp
 
+### Setup Local Environment
+
+1. Install the above technologies.
+2. Run: npm i
+3. Run: composer install (When prompted to install a default theme, type "n" and then return.)
+4. Run: gulp
+
 ### Ways to Use NDS
 There are three main ways to use NDS listed below. To get started please visit our documentation site:
 * [NDS Components](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/components)

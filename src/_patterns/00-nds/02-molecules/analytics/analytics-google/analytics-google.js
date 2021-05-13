@@ -1,3 +1,5 @@
+// Part of NDS Lite
+
 var moduleNDS_analytics = (function() {
     'use strict';
     
@@ -89,20 +91,6 @@ var moduleNDS_analytics = (function() {
         }
     }
 
-    // setDataAttributes - Helper function to add data attributes to elements.
-    function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
-        if (els.length > 0 && els !== undefined) {
-            for (let i = 0; i < els.length; i++) {
-                if (els[i].hasAttribute(dataAttributeName)) {
-                    tagChildren(els[i], dataAttributeName);
-                }
-                else {
-                    computeDataAttribute(els[i], dataAttributeName, dataAttributeValuePrefix);
-                }
-            }
-        }
-    }
-
     // computeDataAttribute - Helper function to determine the value of the data attribute.
     function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
         var linkText = el.textContent.trim();
@@ -146,8 +134,23 @@ var moduleNDS_analytics = (function() {
         addDataAttributes();
     }
 
+    // setDataAttributes - Public function to add data attributes to elements. Pass the set of elements to tag, the name of the data attribute, and the prefix name for the data attribute.
+    function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
+        if (els.length > 0 && els !== undefined) {
+            for (let i = 0; i < els.length; i++) {
+                if (els[i].hasAttribute(dataAttributeName)) {
+                    tagChildren(els[i], dataAttributeName);
+                }
+                else {
+                    computeDataAttribute(els[i], dataAttributeName, dataAttributeValuePrefix);
+                }
+            }
+        }
+    }
+
     /* =============== EXPORT PUBLIC METHODS =============== */
     return {
-      init: init
+      init: init,
+      setDataAttributes: setDataAttributes
     };
 }());
