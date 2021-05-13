@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     moduleNDS_datepicker.init();
     moduleNDS_select.init();
     moduleNDS_tables.init();
-    // moduleNDS_analytics.init();
+    moduleNDS_analytics.init();
     moduleNDS_hero.init();
     moduleNDS_media.init();
     moduleNDS_modal.init();
