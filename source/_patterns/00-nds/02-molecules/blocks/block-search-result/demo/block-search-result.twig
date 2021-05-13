@@ -1,7 +1,25 @@
 {% embed "@nds/02-molecules/blocks/block-search-result/_block-search-result-main.twig" with
     {
         "blocks_search_result_title": "Search Result Title",
-        "blocks_search_result_href": "#",
+        "blocks_search_result_href": "https://nds.niaid.nih.gov/",
+        "blocks_search_result_date_last_reviewed": "January 20, 2020"
+    }
+%}
+    {% block blocks_search_result_description %}
+        <p>Nunc cubilia vehicula facilisi hac volutpat sodales faucibus egestas gravida enim sociis ad quam quisque morbi id molestie gravida ullamcorper.</p>
+    {% endblock %}
+{% endembed %}
+{% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+    {
+        "spacer_classes": "h-1"
+    }
+%}
+{% embed "@nds/02-molecules/blocks/block-search-result/_block-search-result-main.twig" with
+    {
+        "blocks_search_result_title": "Search Result Title",
+        "blocks_search_result_document_type": "word",
+        "blocks_search_result_document_metadata": "Word Document | 13KB",
+        "blocks_search_result_href": "https://nds.niaid.nih.gov/word",
         "blocks_search_result_date_last_reviewed": "January 20, 2020"
     }
 %}

@@ -105,17 +105,15 @@ $font-weight-bold: 700;
 $font-weight-black: 900;
 
 /**** TYPE > FONT SIZES ****/
-$font-size-heading-1: 2.5rem;
+$font-size-heading-1: 2.75rem;
 $font-size-heading-2: 2rem;
 $font-size-heading-3: 1.75rem;
 $font-size-heading-4: 1.5rem;
 $font-size-heading-5: 1.25rem;
 $font-size-heading-6: 1rem;
 
-$font-size-display-1: 6rem;
-$font-size-display-2: 5.5rem;
-$font-size-display-3: 4rem;
-$font-size-display-4: 3rem;
+$font-size-display-1: 4rem;
+$font-size-display-2: 3rem;
 
 /**** BORDER RADIUS ****/
 $border-radius-sharp: 0;
@@ -140,6 +138,7 @@ $z-index-drawer: 500;
 $z-index-button-floating: 600;
 $z-index-dropdown: 700;
 $z-index-modal: 800;
+$z-index-toast: 900;
 
 /**** SPACING & SIZING ****/
 $base-size-pixels: 16;
@@ -191,3 +190,7 @@ $s-10: $base-spacer * 10;
 $s-10-25: $s-10 + $s-0-25;
 $s-10-50: $s-10 + $s-0-50;
 $s-10-75: $s-10 + $s-0-75;
+$s-20: $base-spacer * 20;
+$s-30: $base-spacer * 30;
+$s-40: $base-spacer * 40;
+$s-50: $base-spacer * 50;

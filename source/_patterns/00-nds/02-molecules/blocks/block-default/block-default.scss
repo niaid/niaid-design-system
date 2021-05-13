@@ -8,6 +8,12 @@
     & > *:last-child {
         margin-bottom: 0;
     }
+    h2 {
+        @include font-size($s-1-75);
+    }
+    h3 {
+        @include font-size($s-1-50);
+    }
     .button--primary,
     .button--secondary,
     .button--tertiary,
@@ -15,16 +21,6 @@
     button {
         display: inline-flex;
         align-items: center;
-    }
-    h2 {
-        @include font-size($s-1-75);
-    }
-    h3 {
-        @include font-size($s-1-50);
-    }
-    h4 {
-        font-weight: $font-weight-light;
-        font-style: italic;
     }
     ul, li, p {
         max-width: none;

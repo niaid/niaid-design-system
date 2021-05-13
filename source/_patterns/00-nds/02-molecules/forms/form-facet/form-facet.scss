@@ -2,6 +2,12 @@
 
 .block-facet--checkbox {
     @extend .block-nds;
+    padding: 0 $s-2;
+    margin: $s-2 0;
+    @include media-breakpoint-down(sm) {
+        padding: 0 $s-1-50;
+        margin: $s-1-50 0;
+    }
     border: 0;
     h1,
     h2,
@@ -10,7 +16,7 @@
     h5,
     h6 {
         margin-top: 0;
-        @include font-size($s-1-75);
+        @include font-size($s-1-50);
     }
     .facets-widget-checkbox {
         & > *:first-child {

@@ -101,6 +101,7 @@
         }
     }
 
+    // computeDataAttribute - Helper function to determine the value of the data attribute.
     function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
         var linkText = el.textContent.trim();
         if (linkText !== "") {
@@ -129,6 +130,7 @@
         }
     }
 
+    // tagChildren - Helper function to tag child elements of the target.
     function tagChildren(el, dataAttributeName) {
         let dataAttributeValue = el.getAttribute(dataAttributeName);
         let childElements = el.querySelectorAll('i, span, div, img, strong');

@@ -1,7 +1,28 @@
 .block--search-result {
-    &__title {
-        @include font-size($s-1-50);
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+    &__top {
+        display: flex;
+        flex-wrap: nowrap;
         margin-bottom: $s-1;
+        &__icon {
+            margin-right: $s-1-50;
+        }
+        &__text {
+            h2,
+            &__title {
+                @include font-size($s-1-50);
+                margin: 0;
+            }
+            &__url {
+                color: $success;
+                font-size: $s-0-75;
+            }
+            &__metadata {
+                font-size: $s-0-75;
+            }
+        }
     }
     &__last-reviewed {
         margin-top: $s-1;

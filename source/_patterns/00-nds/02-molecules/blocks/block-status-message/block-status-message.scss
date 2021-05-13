@@ -1,21 +1,31 @@
 .block--status-message {
     position: relative;
     background: $white;
-    padding: $s-1 $s-1 $s-1 $s-2-50;
-    margin-left: $s-1-25;
+    padding: $s-2 $s-1 $s-1 $s-1;
+    margin: $s-1-25 0 0 0;
+    @include media-breakpoint-up(md) {
+        padding: $s-1 $s-1 $s-1 $s-2-50;
+        margin: 0 0 0 $s-1-25;
+    }
     &__icon {
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: $s-1-25;
         height: $s-2-50;
         width: $s-2-50;
         border-radius: 100%;
         color: $body-color;
         position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translate(-50%, -50%);
-        font-size: $s-1-25;
+        top: 0;
+        left: $s-1-25;
+        transform: translate(0, -50%);
+        @include media-breakpoint-up(md) {
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+        
     }
     &__content {
         & > *:first-child {

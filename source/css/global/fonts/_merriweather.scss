@@ -18,7 +18,34 @@
     url("../webfonts/merriweather/Latin-Merriweather-Regular.woff2") format("woff2");
 }
 
+// Merriweather - Medium
+@font-face {
+    font-family: "Merriweather";
+    font-weight: 500;
+    src: url("../webfonts/merriweather/Latin-Merriweather-Regular.ttf") format("truetype"),
+    url("../webfonts/merriweather/Latin-Merriweather-Regular.woff") format("woff"),
+    url("../webfonts/merriweather/Latin-Merriweather-Regular.woff2") format("woff2");
+}
+
+// Merriweather - Semibold
+@font-face {
+    font-family: "Merriweather";
+    font-weight: 600;
+    src: url("../webfonts/merriweather/Latin-Merriweather-Bold.ttf") format("truetype"),
+    url("../webfonts/merriweather/Latin-Merriweather-Bold.woff") format("woff"),
+    url("../webfonts/merriweather/Latin-Merriweather-Bold.woff2") format("woff2");
+}
+
 // Merriweather - Bold
+@font-face {
+    font-family: "Merriweather";
+    font-weight: 700;
+    src: url("../webfonts/merriweather/Latin-Merriweather-Bold.ttf") format("truetype"),
+    url("../webfonts/merriweather/Latin-Merriweather-Bold.woff") format("woff"),
+    url("../webfonts/merriweather/Latin-Merriweather-Bold.woff2") format("woff2");
+}
+
+// Merriweather - Extra Bold
 @font-face {
     font-family: "Merriweather";
     font-weight: 800;

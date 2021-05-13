@@ -19,11 +19,13 @@
         input_group_radio_label: Input label.
         input_group_radio_label_classes: Additional classes for the input field label.
         input_group_radio_tooltip: Optional tooltip text for the input field (Dependencies: Bootstrap 4, jQuery).
+        input_group_radio_validation: Validation message for field error.
 
     Includes:
         Atoms -> Input -> input-label
+        Atoms -> Input -> input-validation
 
-    Last Updated: January 22, 2021
+    Last Updated: April 30, 2021
 #}
 
 {% set input_group_radio_classes = input_group_radio_classes|default() %}
@@ -31,6 +33,7 @@
 {% set input_group_radio_label = input_group_radio_label|default() %}
 {% set input_group_radio_label_classes = input_group_radio_label_classes|default() %}
 {% set input_group_radio_tooltip = input_group_radio_tooltip|default() %}
+{% set input_group_radio_validation = input_group_radio_validation|default() %}
 
 <div id="{{ input_group_radio_id }}" class="input-group-nds input-group--radio {{ input_group_radio_classes }}" role="radiogroup">
     {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
@@ -42,4 +45,5 @@
         }
     %}
     {% block input_radio_options %}{% endblock %}
+    {% include "@nds/01-atoms/input/input-validation/_input-validation-main.twig" with { "input_validation_text": input_group_radio_validation } %}
 </div>

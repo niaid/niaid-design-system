@@ -4,4 +4,7 @@
     @include media-breakpoint-down(sm) {
         padding: $s-1-50;
     }
+    h2, h3 {
+        font-weight: $font-weight-light;
+    }
 }

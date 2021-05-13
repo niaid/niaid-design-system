@@ -30,6 +30,6 @@ function windowWidth() {
     return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
 }
 
-function hasClass(element, className) {
-    return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
+function hasClass(el, className) {
+    return (' ' + el.className + ' ').indexOf(' ' + className + ' ') > -1;
 }

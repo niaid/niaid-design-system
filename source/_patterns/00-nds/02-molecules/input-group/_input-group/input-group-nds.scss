@@ -5,3 +5,18 @@
         margin-bottom: $s-0-25;
     }
 }
+
+// Apply the "error" class to a pattern of with the class "input-group-nds".
+.error {
+    .input--text {
+        border: $s-1px solid $error !important;
+        outline: 0 !important;
+        box-shadow: 0 0 0 $s-1px $error !important;
+        & + .icon--default {
+            color: $error;
+        }
+    }
+    .input--validation {
+        display: block;
+    }
+}

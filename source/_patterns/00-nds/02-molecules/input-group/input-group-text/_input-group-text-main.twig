@@ -29,12 +29,14 @@
         input_group_text_required: Bool indicating if the field is requred. Options: true, false (Default).
         input_group_text_icon: Optional name of Font Awesome icon to appear in the field.
         input_group_text_icon_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only).
+        input_group_text_validation: Validation message for field error.
 
     Includes:
         Atoms -> Input -> input-label
         Atoms -> Input -> input-text
+        Atoms -> Input -> input-validation
 
-    Last Updated: February 8, 2021
+    Last Updated: April 30, 2021
 #}
 
 
@@ -53,6 +55,7 @@
 {% set input_group_text_required = input_group_text_required|default() %}
 {% set input_group_text_icon = input_group_text_icon|default() %}
 {% set input_group_text_icon_weight = input_group_text_icon_weight|default('s') %}
+{% set input_group_text_validation = input_group_text_validation|default() %}
 
 <div class="input-group-nds input-group--text {{ input_group_text_classes }}">
     {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
@@ -79,4 +82,5 @@
             "input_text_required": input_group_text_required
         }
     %}
+    {% include "@nds/01-atoms/input/input-validation/_input-validation-main.twig" with { "input_validation_text": input_group_text_validation } %}
 </div>

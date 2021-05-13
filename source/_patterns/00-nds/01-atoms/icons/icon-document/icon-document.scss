@@ -4,7 +4,7 @@
     height: $s-4;
     width: $s-4;
     padding: 0;
-    border: 0;
+    border: $s-1px solid $border-light;
     &__wrapper {
         display: flex;
         position: relative;
@@ -42,5 +42,9 @@
         &:focus {
             border: 0;
         }
+    }
+    & + .ext-link-icon,
+    & + .text--badge--document {
+        display: none;
     }
 }

@@ -37,8 +37,8 @@ function windowWidth() {
   return window.document.compatMode === "CSS1Compat" && docElemProp || body && body.clientWidth || docElemProp;
 }
 
-function hasClass(element, className) {
-  return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+function hasClass(el, className) {
+  return (' ' + el.className + ' ').indexOf(' ' + className + ' ') > -1;
 } // Part of NDS Lite
 
 
@@ -180,26 +180,29 @@ function hasClass(element, className) {
 
 
 (function ($) {
-  // initLinkExternal - Adds external link icons to links that qualify as external.
+  var documentTypes = ['pdf', 'PDF', 'doc', 'docx', 'DOC', 'DOCX', 'ppt', 'PPT', 'pptx', 'PPTX', 'xls', 'XLS', 'xlsx', 'XLSX', 'zip', 'ZIP']; // initLinkExternal - Adds external link icons to links that qualify as external.
+
   function initLinkExternal() {
     var context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
     var externalLinks = document.querySelectorAll('a');
 
     for (var i = 0; i < externalLinks.length; i++) {
       if (externalLinks[i].innerHTML != "") {
-        var url = externalLinks[i].getAttribute('href');
-        var hostname = externalLinks[i].hostname;
+        if (!initDocumentLink(externalLinks[i])) {
+          var url = externalLinks[i].getAttribute('href');
+          var hostname = externalLinks[i].hostname;
 
-        if (url && hostname !== location.hostname) {
-          url = url.toLowerCase();
+          if (url && hostname !== location.hostname) {
+            url = url.toLowerCase();
 
-          if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
-            externalLinks[i].setAttribute('target', '_blank');
-            var linkIcon = document.createElement('a');
-            linkIcon.setAttribute('href', url);
-            linkIcon.setAttribute('class', "ext-link-icon");
-            linkIcon.setAttribute('aria-label', "External Link");
-            externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+            if ((url.indexOf('http://') > -1 || url.indexOf('https://') > -1) && url.indexOf('localhost:3002') <= 0) {
+              externalLinks[i].setAttribute('target', '_blank');
+              var linkIcon = document.createElement('a');
+              linkIcon.setAttribute('href', url);
+              linkIcon.setAttribute('class', "ext-link-icon");
+              linkIcon.setAttribute('aria-label', "External Link");
+              externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+            }
           }
         }
       }
@@ -214,6 +217,30 @@ function hasClass(element, className) {
     for (var i = 0; i < mailtoLinks.length; i++) {
       mailtoLinks[i].classList.add('link--external--mail');
     }
+  } // initDocumentLink - Helper function that determines if a document badge should be added to a link.
+
+
+  function initDocumentLink(link) {
+    var href = link.getAttribute('href');
+
+    if (href !== null && href !== "/" && href !== "#") {
+      for (var i = 0; i < documentTypes.length; i++) {
+        if (href.includes('.' + documentTypes[i])) {
+          addDocumentBadge(link, documentTypes[i]);
+          return true;
+        }
+      }
+    }
+
+    return false;
+  } // addDocumentBadge - Helper function that adds document badges to document links.
+
+
+  function addDocumentBadge(link, type) {
+    var badge = document.createElement('span');
+    badge.setAttribute('class', "text-nds text--badge text--badge--document");
+    badge.textContent = type.toUpperCase();
+    link.insertAdjacentElement('afterend', badge);
   }
 
   if (typeof Drupal !== 'undefined') {
@@ -358,6 +385,8 @@ function hasClass(element, className) {
           if (sectionName !== "") {
             sectionName = sectionName.replace(/\//g, '-');
             sectionName = sectionName.replace(/\s+/g, '-').toLowerCase();
+            var dropdownToggle = navItem.querySelectorAll('.navigation--dropdown__toggle');
+            setDataAttributes(dropdownToggle, 'data-nav', 'header-nav-' + sectionName + '-');
             var dropdownItems = navItem.querySelectorAll('.navigation--dropdown__menu > a');
             setDataAttributes(dropdownItems, 'data-nav', 'header-nav-' + sectionName + '-');
           }
@@ -408,7 +437,8 @@ function hasClass(element, className) {
         }
       }
     }
-  }
+  } // computeDataAttribute - Helper function to determine the value of the data attribute.
+
 
   function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
     var linkText = el.textContent.trim();
@@ -436,7 +466,8 @@ function hasClass(element, className) {
         tagChildren(el, dataAttributeName);
       }
     }
-  }
+  } // tagChildren - Helper function to tag child elements of the target.
+
 
   function tagChildren(el, dataAttributeName) {
     var dataAttributeValue = el.getAttribute(dataAttributeName);
@@ -581,7 +612,26 @@ function hasClass(element, className) {
       initComponentModal();
     });
   }
-})(jQuery); // Part of NDS Lite
+})(jQuery);
+
+function activateToast(toast) {
+  var toastDuration = toast.getAttribute('data-duration') * 1000;
+
+  if (!hasClass(toast, "show")) {
+    toast.classList.add('show');
+    setTimeout(function () {
+      toast.classList.remove('show');
+      toast.classList.add('exit');
+      setTimeout(function () {
+        destroyToast(toast);
+      }, 1000);
+    }, toastDuration);
+  }
+}
+
+function destroyToast(toast) {
+  toast.remove();
+} // Part of NDS Lite
 
 
 (function ($) {

@@ -31,13 +31,15 @@
         input_group_select_readonly: Bool indicating if the field is readonly. Options: true, false (Default).
         input_group_select_required: Bool indicating if the field is requred. Options: true, false (Default).
         input_group_select_always_selected: Bool indicating if the field should always have one option selected. Options: true, false (Default).
+        input_group_select_validation: Validation message for field error.
         input_group_select_multiple: Bool indicating if the field can have multiple selections. Options: true, false (Default).
 
     Includes:
         Atoms -> Input -> input-label
         Atoms -> Input -> input-select
+        Atoms -> Input -> input-validation
 
-    Last Updated: February 8, 2021
+    Last Updated: April 30, 2021
 #}
 
 {% set input_group_select_classes = input_group_select_classes|default() %}
@@ -55,6 +57,7 @@
 {% set input_group_select_required = input_group_select_required|default(false) %}
 {% set input_group_select_always_selected = input_group_select_always_selected|default(false) %}
 {% set input_group_select_multiple = input_group_select_multiple|default(false) %}
+{% set input_group_select_validation = input_group_select_validation|default() %}
 {% set input_group_select_options = block('input_group_select_options') %}
 
 <div class="input-group-nds input-group--select {{ input_group_select_classes }}">
@@ -85,4 +88,5 @@
             {{ input_group_select_options|raw }}
         {% endblock %}
     {% endembed %}
+    {% include "@nds/01-atoms/input/input-validation/_input-validation-main.twig" with { "input_validation_text": input_group_select_validation } %}
 </div>

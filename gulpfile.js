@@ -17,6 +17,9 @@ const babel = require('gulp-babel');
 const replace = require('gulp-replace');
 const htmlreplace = require('gulp-html-replace');
 const del = require('del');
+var fs = require("fs");
+
+let srcPath = "./niaid-design-system/";
 
 // copyFonts - Copy Font Awesome from node_modules into project.
 gulp.task('copyFonts', () => {
@@ -173,6 +176,67 @@ gulp.task('moveAssets', () => {
         .pipe(gulp.dest('./public_html/webfonts'));
 });
 
+// GULP: cleanNDSSource - Cleans out any gitignored directories before fresh copies from Global Assets are added.
+gulp.task('cleanNDSSource', (cb) => {
+    let dirs = [
+        './source/_patterns/00-nds/**/*',
+        './source/css/global/**/*',
+        './source/css/libraries/**/*',
+        './source/images/global/**/*',
+        './source/js/global/**/*',
+        './source/js/libraries/**/*',
+        './source/js/utilities/**/*'
+    ];
+    return del(dirs, {'force': true, dot: true}, cb);
+});
+
+// GULP: initializeGitSubmodule - Checks to see if NDS is installed. If not, it installs the NDS submodule.
+gulp.task('initializeGitSubmodule', (cb) => {
+    if (!fs.existsSync('./niaid-design-system/')) {
+        console.log("Initializing NDS Submodule");
+        return exec('git submodule add git@github.com:niaid/niaid-design-system.git', function(err, stdout, stderr) {
+            console.log(stdout);
+            cb(err);
+        });
+    }
+    console.log("NDS Submodule Already Installed, Skipping...")
+    return gulp.src('.');
+});
+
+// GULP: updateGitSubmodules - Pulls latest code for each submodule dependency.
+gulp.task('updateGitSubmodules', (cb) => {
+    return exec('git submodule update niaid-design-system', function(err, stdout, stderr) {
+        console.log(stdout);
+        cb(err);
+    });
+});
+
+// GULP: copyGlobalSass - Copy CSS into NDS Documentation
+gulp.task('copyGlobalSass', () => {
+    console.log("Transferring Assets from Global SASS...");
+    gulp.src(srcPath + 'source/css/libraries/**/*').pipe(gulp.dest('./source/css/libraries/'));
+    return gulp.src(srcPath + 'source/css/global/**/*').pipe(gulp.dest('./source/css/global/'));
+});
+
+// GULP: copyGlobalJS - Copy JS into NDS Documentation
+gulp.task('copyGlobalJS', () => {
+    console.log("Transferring Assets from Global JS...");
+    return gulp.src(srcPath + 'source/js/**/*').pipe(gulp.dest('./source/js/'));
+});
+
+// GULP: copyGlobalPatterns - Copy Patterns into NDS Documentation
+gulp.task('copyGlobalPatterns', () => {
+    console.log("Transferring Assets from Global Patterns...");
+    console.log("Copying Patterns...");
+    return gulp.src(srcPath + 'source/_patterns/00-nds/**/*').pipe(gulp.dest('./source/_patterns/00-nds/'));
+});
+
+// GULP: copyGlobalImages - Copy Images into NDS Documentation
+gulp.task('copyGlobalImages', () => {
+    console.log("Transferring Assets from Global Images...");
+    return gulp.src(srcPath + 'source/images/**/*').pipe(gulp.dest('./source/images/'));
+});
+
 // GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
     browserSync.init({
@@ -204,6 +268,9 @@ gulp.task('default', gulp.series('transfer', 'compile', 'serveProject'));
 
 // GULP: build - Compile your project assets and build public_html folder for deploy.
 gulp.task('build', gulp.series('clean', 'compile', 'computePaths', 'moveAssets'));
+
+// GULP: update - Update to the latest release of NDS. Warning: This will overwrite files in the _patterns/00-nds/ directory, as well as the global/ and libraries/ folders of css/ and js/
+gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'updateGitSubmodules', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns'));
 
 // HELPER FUNCTIONS
 

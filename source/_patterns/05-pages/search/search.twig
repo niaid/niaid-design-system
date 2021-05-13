@@ -1,0 +1,49 @@
+{% embed "@nds/04-templates/generic/_generic-main.twig" %}
+    {% block header %}
+        {% include "@nds/02-molecules/components/component-uswds-banner/_component-uswds-banner-main.twig" %}
+        {% include "@nds/03-organisms/global/global-header/_global-header-main.twig" with
+            {
+                "global_header_product_id_top": "Your Website Name"
+            }
+        %}
+    {% endblock %}
+    {% block navigation %}
+        {% include "@nds/02-molecules/navigation/navigation-primary/demo/navigation-primary.twig" %}
+        {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" %}
+    {% endblock %}
+    {% block main %}
+        {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" %}
+            {% block left_column %}
+                {% include "@nds/02-molecules/forms/form-facet/demo/form-facet.twig" %}
+                {% include "@nds/02-molecules/forms/form-facet/demo/form-facet.twig" %}
+            {% endblock %}
+            {% block main_column %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
+                    {% block body_content %}
+                        <h1 id="main-content">Search Page</h1>
+                        {% include "@nds/02-molecules/forms/form-search/demo/form-search.twig" %}
+                        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with {"spacer_classes": "h-1"} %}
+                        {% include "@nds/02-molecules/blocks/block-search-chips/demo/block-search-chips.twig" %}
+                        {% include "@nds/01-atoms/text/text-search-results/demo/text-search-results.twig" %}
+                        {% embed "@nds/03-organisms/views/view-listing/_view-listing-main.twig" %}
+                            {% block view_listing_content %}
+                                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+                                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+                                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+                                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+                                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+                                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+                                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+                                {% include "@nds/02-molecules/blocks/block-search-result/demo/block-search-result.twig" %}
+                            {% endblock %}
+                        {% endembed %}
+                        {% include "@nds/02-molecules/navigation/navigation-pagination/demo/navigation-pagination.twig" %}
+                    {% endblock %}
+                {% endembed %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+    {% block footer %}
+        {% include "@nds/03-organisms/global/global-footer/demo/global-footer.twig" %}
+    {% endblock %}
+{% endembed %}

@@ -4,3 +4,16 @@
     background: $type-heading;
     color: $white;
 }
+
+.text--badge--document {
+    font-size: $s-0-75;
+    margin: 0 $s-0-25;
+    padding: $s-0-25;
+    line-height: $line-height-single;
+}
+
+.button-nds {
+    & + .text--badge--document {
+        display: none;
+    }
+}
