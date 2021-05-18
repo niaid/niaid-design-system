@@ -10,8 +10,8 @@
                     {
                         "navigation_dropdown_id": "navigation-primary-dropdown-click-example",
                         "navigation_dropdown_active_class": navigationPrimaryActiveLink == "section-1" ? "active" : "",
-                        "navigation_dropdown_toggle_text": "Section 1",
-                        "navigation_dropdown_toggle_aria_label": "Open Dropdown"
+                        "navigation_dropdown_toggle_text": "Click",
+                        "navigation_dropdown_toggle_aria_label": "Open Click Menu"
                     }
                 %}
                     {% block navigation_dropdown_content %}
@@ -27,9 +27,9 @@
                     {
                         "navigation_dropdown_id": "navigation-primary-dropdown-example",
                         "navigation_dropdown_active_class": navigationPrimaryActiveLink == "section-2" ? "active" : "",
-                        "navigation_dropdown_toggle_text": "Section 2",
+                        "navigation_dropdown_toggle_text": "Hover",
                         "navigation_dropdown_toggle_href": "#",
-                        "navigation_dropdown_toggle_aria_label": "Open Section 2"
+                        "navigation_dropdown_toggle_aria_label": "Open Hover Menu"
                     }
                 %}
                     {% block navigation_dropdown_content %}
@@ -41,10 +41,10 @@
                 {% endembed %}
             </div>
             <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "section-3" ? "active" : "" }}" href="#">Section 3</a>
+                <a class="{{ navigationPrimaryActiveLink == "section-3" ? "active" : "" }}" href="#">Section</a>
             </div>
             <div class="navigation--primary__inner__item">
-                <a class="{{ navigationPrimaryActiveLink == "section-4" ? "active" : "" }}" href="#">Section 4</a>
+                <a class="{{ navigationPrimaryActiveLink == "section-4" ? "active" : "" }}" href="#">Section</a>
             </div>
         </div>
     {% endblock %}

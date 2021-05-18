@@ -38,6 +38,7 @@
 .align-right,
 .align-left {
     @extend .component--media;
+    clear: both;
     @include media-breakpoint-up(md) {
         max-width: 50% !important;
     }
@@ -47,13 +48,15 @@
 }
 .align-left {
     float: left;
-    clear: right;
-    margin-right: $s-2 !important;
+    @include media-breakpoint-up(md) {
+        margin-right: $s-2 !important;
+    }
 }
 .align-right {
     float: right;
-    clear: left;
-    margin-left: $s-2 !important;
+    @include media-breakpoint-up(md) {
+        margin-left: $s-2 !important;
+    }
 }
 
 // NDS Component Reset

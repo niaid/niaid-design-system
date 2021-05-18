@@ -22,19 +22,22 @@
     }
     &--left,
     &--right {
+        clear: both;
         @include media-breakpoint-up(md) {
             max-width: 50%;
         }
     }
     &--left {
         float: left;
-        clear: right;
-        margin-right: $s-2;
+        @include media-breakpoint-up(md) {
+            margin-right: $s-2;
+        }
     }
     &--right {
         float: right;
-        clear: left;
-        margin-left: $s-2;
+        @include media-breakpoint-up(md) {
+            margin-left: $s-2;
+        }
     }
     /* Drupal Overrides */
     .field--name-field-media-caption,
