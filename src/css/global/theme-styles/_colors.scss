@@ -242,7 +242,7 @@
                 &__header {
                     &__button {
                         background: $white;
-                        border: $s-1px solid $type-link;
+                        border: $s-1px solid $border-light;
                         &:after {
                             color: $color-theme-2-1-1;
                         }
@@ -602,7 +602,7 @@
                 &__header {
                     &__button {
                         background: $white;
-                        border: $s-1px solid $type-link;
+                        border: $s-1px solid $border-light;
                         &:after {
                             color: $color-theme-3-1-1;
                         }
