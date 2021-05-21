@@ -185,7 +185,6 @@ gulp.task('cleanNDSSource', (cb) => {
         './src/css/global/**/*',
         './src/css/libraries/**/*',
         './src/images/global/**/*',
-        './src/js/global/**/*',
         './src/js/libraries/**/*',
         './src/js/utilities/**/*'
     ];
@@ -223,7 +222,11 @@ gulp.task('copyGlobalSass', () => {
 // GULP: copyGlobalJS - Copy JS into NDS Documentation
 gulp.task('copyGlobalJS', () => {
     console.log("Transferring Assets from Global JS...");
-    return gulp.src(srcPath + 'src/js/**/*').pipe(gulp.dest('./src/js/'));
+    if (!fs.existsSync('./src/js/global/')) {
+        gulp.src(srcPath + 'src/js/global/**/*').pipe(gulp.dest('./src/js/global/'));
+    }
+    gulp.src(srcPath + 'src/js/libraries/**/*').pipe(gulp.dest('./src/js/libraries/'));
+    return gulp.src(srcPath + 'src/js/utilities/**/*').pipe(gulp.dest('./src/utilities/libraries/'));
 });
 
 // GULP: copyGlobalPatterns - Copy Patterns into NDS Documentation
@@ -264,6 +267,9 @@ gulp.task('compile', gulp.series('compileSass', 'computeIncludedJSFiles', 'compi
 gulp.task('clean', gulp.series('cleanDistributionDirectories'));
 
 // COMMANDS
+
+// GULP: init - Initializes the NDS Project.
+gulp.task('init', gulp.series('initializeGitSubmodule', 'updateGitSubmodules', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'copyGlobalPatternLab', 'copyGlobalFonts'));
 
 // GULP: default - Running gulp compiles the your static site and serves it locally.
 gulp.task('default', gulp.series('transfer', 'compile', 'serveProject'));
