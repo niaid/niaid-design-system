@@ -226,7 +226,7 @@ gulp.task('copyGlobalJS', () => {
         gulp.src(srcPath + 'src/js/global/**/*').pipe(gulp.dest('./src/js/global/'));
     }
     gulp.src(srcPath + 'src/js/libraries/**/*').pipe(gulp.dest('./src/js/libraries/'));
-    return gulp.src(srcPath + 'src/js/utilities/**/*').pipe(gulp.dest('./src/utilities/libraries/'));
+    return gulp.src(srcPath + 'src/js/utilities/**/*').pipe(gulp.dest('./src/js/utilities/'));
 });
 
 // GULP: copyGlobalPatterns - Copy Patterns into NDS Documentation
