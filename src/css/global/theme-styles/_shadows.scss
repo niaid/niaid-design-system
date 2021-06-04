@@ -2,7 +2,7 @@
     /* Atoms */
     .button-nds,
     button {
-        @include md-2dp;
+        @include shadow-1;
         @extend .hoverable;
         &.disabled,
         &:disabled,
@@ -62,11 +62,11 @@
     }
     .icon-nds {
         &.icon--circle {
-            @include md-2dp;
+            @include shadow-1;
             border: 0;
         }
         &.icon--document {
-            @include md-2dp;
+            @include shadow-1;
             border: 0;
             &.icon--document--button {
                 @extend .hoverable;
@@ -77,24 +77,24 @@
         &.input--select {
             .select2-container {
                 .select2-selection  {
-                    @include md-2dp;
+                    @include shadow-1;
                     @extend .hoverable;
                     border: $s-1px solid transparent !important;
                 }
                 .single-clear {
-                    @include md-0dp;
+                    @include shadow-0;
                     &:hover,
                     &:focus {
-                        @include md-0dp;
+                        @include shadow-0;
                     }
                 }
             }
         }
         &.input--text {
-            @include md-2dp;
+            @include shadow-1;
             border: $s-1px solid transparent;
             &:hover {
-                @include md-8dp;
+                @include shadow-2;
                 transition: box-shadow .25s;
                 -webkit-transition: box-shadow .25s;
                 -moz-transition: box-shadow .25s;
@@ -118,10 +118,10 @@
         }
         &.input--date-picker {
             .input--date-picker__field {
-                @include md-2dp;
+                @include shadow-1;
                 border: $s-1px solid transparent;
                 &:hover {
-                    @include md-8dp;
+                    @include shadow-2;
                     transition: box-shadow .25s;
                     -webkit-transition: box-shadow .25s;
                     -moz-transition: box-shadow .25s;
@@ -147,28 +147,25 @@
     }
     .select2-container {
         .select2-dropdown {
-            @include md-16dp;
+            @include shadow-2;
             border: 0;
         }
     }
-    .layouts--body {
-        @include md-16dp;
-    }
     table {
-        @include md-1dp;
+        @include shadow-1;
         border: 0;
     }
     .text-nds {
         &.text--chip {
             &:hover,
             &:focus {
-                @include md-2dp;
+                @include shadow-1;
             }
         }
     }
     /* Molecules */
     .block-nds {
-        @include md-2dp;
+        @include shadow-1;
         border-width: 0;
         background: $white;
         &.block--default {
@@ -177,7 +174,7 @@
             }
         }
         &.block--alert {
-            @include md-0dp;
+            @include shadow-0;
             background: $alert-severity-1;
             &.severity--2 {
                 background: $alert-severity-2;
@@ -197,17 +194,17 @@
         &.block--colors,
         &.block--search-chips,
         &.block--share {
-            @include md-0dp;
+            @include shadow-0;
             background: transparent;
         }
         &.block--status-message {
             .block--status-message__icon {
-                @include md-2dp;
+                @include shadow-1;
             }
         }
     }
     .social--icon {
-        @include md-2dp;
+        @include shadow-1;
         @extend .hoverable;
     }
     .component-nds {
@@ -231,12 +228,12 @@
         }
         &.component--uswds-banner {
             .component--uswds-banner__toggle {
-                @include md-0dp;
+                @include shadow-0;
             }
         }
     }
     .block-facet--checkbox {
-        @include md-0dp;
+        @include shadow-0;
     }
     .form-nds {
         .form--search {
@@ -252,9 +249,8 @@
     }
     .navigation-nds {
         &.navigation--primary {
-            @include md-8dp;
             button {
-                @include md-0dp;
+                @include shadow-0;
                 &:hover,
                 &:focus,
                 &:active {
@@ -263,10 +259,10 @@
             }
         }
         &.navigation--local {
-            @include md-1dp;
+            @include shadow-1;
             background: $page-background;
             @include media-breakpoint-up('lg') {
-                @include md-16dp;
+                @include shadow-2;
                 border-bottom-width: .3125rem;
                 border-bottom-style: solid;
             }
@@ -280,7 +276,7 @@
                             a {
                                 background: $color-theme-1-1-1;
                                 border: $s-1px solid $color-theme-1-1-1;
-                                @include md-0dp;
+                                @include shadow-0;
                                 &:hover,
                                 &:focus {
                                     color: $white;
@@ -305,7 +301,7 @@
         &.navigation--dropdown {
             .navigation--dropdown {
                 &__menu {
-                    @include md-16dp;
+                    @include shadow-2;
                 }
             }
         }
@@ -314,18 +310,17 @@
     .global-nds {
         &.global--header {
             border-bottom: 0;
-            @include md-8dp;
+            @include shadow-2;
             @include media-breakpoint-up('md') {
-                @include md-0dp;
+                @include shadow-0;
             }
             &__button {
                 border: 0;
             }
         }
         &.global--footer {
-            @include md-8dp;
             .block-nds {
-                @include md-0dp;
+                @include shadow-0;
                 background: transparent;
             }
         }

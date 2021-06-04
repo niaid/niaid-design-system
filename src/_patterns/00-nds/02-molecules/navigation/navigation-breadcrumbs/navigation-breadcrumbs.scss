@@ -1,6 +1,7 @@
 .navigation--breadcrumbs {
-    font-weight: $font-weight-light;
+    font-weight: $font-weight-semibold;
     font-size: $s-0-75;
+    color: $type-heading;
     a {
         &:hover,
         &:focus {
@@ -8,9 +9,12 @@
         }
     }
     .icon--default {
-        font-size: $s-0-75;
+        font-size: $s-0-50;
         width: auto;
         color: $type-body;
         margin: 0 $s-0-50;
+    }
+    & + h1 {
+        margin-top: $s-2;
     }
 }

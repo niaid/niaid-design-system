@@ -1,5 +1,5 @@
 .component--toast {
-    @include md-24dp;
+    @include shadow-2;
     position: fixed;
     z-index: $z-index-toast;
     top: $s-3;

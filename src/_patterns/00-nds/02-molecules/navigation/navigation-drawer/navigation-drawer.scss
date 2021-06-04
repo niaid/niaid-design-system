@@ -35,7 +35,7 @@
         }
     }
     &.drawer--open {
-        @include md-16dp;
+        @include shadow-2;
         transform: translateY(0);
     }
 }
