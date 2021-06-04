@@ -38,6 +38,9 @@
                 padding-left: $s-0-50;
                 border-bottom: $s-0-25 solid $footer-background;
             }
+            & + .ext-link-icon {
+                display: none;
+            }
         }
         &__column {
             padding: 0;

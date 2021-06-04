@@ -185,7 +185,6 @@ gulp.task('cleanNDSSource', (cb) => {
         './src/css/global/**/*',
         './src/css/libraries/**/*',
         './src/images/global/**/*',
-        './src/js/global/**/*',
         './src/js/libraries/**/*',
         './src/js/utilities/**/*'
     ];
@@ -207,7 +206,7 @@ gulp.task('initializeGitSubmodule', (cb) => {
 
 // GULP: updateGitSubmodules - Pulls latest code for each submodule dependency.
 gulp.task('updateGitSubmodules', (cb) => {
-    return exec('git submodule update niaid-design-system', function(err, stdout, stderr) {
+    return exec('git submodule update --init --remote --recursive', function(err, stdout, stderr) {
         console.log(stdout);
         cb(err);
     });
@@ -223,7 +222,8 @@ gulp.task('copyGlobalSass', () => {
 // GULP: copyGlobalJS - Copy JS into NDS Documentation
 gulp.task('copyGlobalJS', () => {
     console.log("Transferring Assets from Global JS...");
-    return gulp.src(srcPath + 'src/js/**/*').pipe(gulp.dest('./src/js/'));
+    gulp.src(srcPath + 'src/js/libraries/**/*').pipe(gulp.dest('./src/js/libraries/'));
+    return gulp.src(srcPath + 'src/js/utilities/**/*').pipe(gulp.dest('./src/js/utilities/'));
 });
 
 // GULP: copyGlobalPatterns - Copy Patterns into NDS Documentation
