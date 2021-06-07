@@ -19,12 +19,12 @@
         &__featured {
             font-weight: $font-weight-semibold;
             font-size: $s-0-75;
-            margin-top: -1 * $s-0-50;
             margin-bottom: $s-0-50;
             display: block;
             color: $color-theme-1-1-1;
         }
         &__description {
+            line-height: $line-height-small;
             margin-bottom: 0;
         }
     }

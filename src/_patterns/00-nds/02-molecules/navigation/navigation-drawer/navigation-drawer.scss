@@ -24,10 +24,10 @@
     &__inner {
         &__section {
             padding: $s-0-50 $s-2;
-            border-bottom: $s-1px solid $input-border;
+            border-bottom: $s-1px solid $border-light;
             width: 16rem;
             &:first-child {
-                border-top: $s-1px solid $input-border;
+                border-top: $s-1px solid $border-light;
             }
             a {
                 border-bottom: $s-1px solid transparent;
