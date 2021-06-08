@@ -206,7 +206,7 @@ gulp.task('initializeGitSubmodule', (cb) => {
 
 // GULP: updateGitSubmodules - Pulls latest code for each submodule dependency.
 gulp.task('updateGitSubmodules', (cb) => {
-    return exec('git submodule update --remote ../niaid-design-system', function(err, stdout, stderr) {
+    return exec('git submodule update --init --remote ../niaid-design-system', function(err, stdout, stderr) {
         console.log(stdout);
         cb(err);
     });
