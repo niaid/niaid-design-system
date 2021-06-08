@@ -14,8 +14,8 @@ var moduleNDS_tables = (function() {
             Numeric Sort Support for a Column: Add data-column-num="true" to the <th> tag of the appropriate column.
         */
 
-        $("table").each(function() {
-            if ($(this).attr('nds-datatable') == 'true') {
+        jQuery("table").each(function() {
+            if (jQuery(this).attr('nds-datatable') == 'true') {
                 var defaultConfigs = {
                     "responsive": true,
                     "paging": false,
@@ -24,14 +24,14 @@ var moduleNDS_tables = (function() {
                     "searching": false
                 };
 
-                if (!($(this).attr('data-tablesort') == "true")) {
+                if (!(jQuery(this).attr('data-tablesort') == "true")) {
                     defaultConfigs['ordering'] = false;
                 } else {
                     // Determine Column Type
                     var columns = [];
 
-                    $(this).find('thead').find('th').each(function(i) {
-                        if ($(this).attr('data-column-num') == "true") {
+                    jQuery(this).find('thead').find('th').each(function(i) {
+                        if (jQuery(this).attr('data-column-num') == "true") {
                             columns.push({ "type": "natural", "targets": i });
                         }
                     });
@@ -39,7 +39,7 @@ var moduleNDS_tables = (function() {
                     defaultConfigs['columnDefs'] = columns;
                 }
 
-                $(this).dataTable(defaultConfigs);
+                jQuery(this).dataTable(defaultConfigs);
             }
         });
     }

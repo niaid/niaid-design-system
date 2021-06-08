@@ -7,21 +7,21 @@ var moduleNDS_dropdown = (function() {
     /* =================== PRIVATE METHODS ================= */
     // initNavigationDropdown - Initializes the dropdown component.
     function initNavigationDropdown() {
-        $(".navigation--dropdown.hover").on('mouseover', function() {
-            openDropdown($(this));
+        jQuery(".navigation--dropdown.hover").on('mouseover', function() {
+            openDropdown(jQuery(this));
         });
-        $(".navigation--dropdown.hover").on('mouseout', function() {
-            closeDropdown($(this));
+        jQuery(".navigation--dropdown.hover").on('mouseout', function() {
+            closeDropdown(jQuery(this));
         });
 
-        $(".navigation--dropdown").on('focusin', function(e) {
-            openDropdown($(this));
+        jQuery(".navigation--dropdown").on('focusin', function(e) {
+            openDropdown(jQuery(this));
         });
-        $(".navigation--dropdown").on('focusout', function(e) {
+        jQuery(".navigation--dropdown").on('focusout', function(e) {
             if (this.contains(e.relatedTarget)) {
                 return;
             }
-            closeDropdown($(this));
+            closeDropdown(jQuery(this));
         });
     }
 
