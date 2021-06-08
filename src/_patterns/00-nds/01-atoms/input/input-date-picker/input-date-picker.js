@@ -8,9 +8,9 @@ var moduleNDS_datepicker = (function() {
     /* =================== PRIVATE METHODS ================= */
     // initInputDatePicker - Initializes the Date Picker component through the Bootstrap Datetimepicker library.
     function initInputDatePicker() {
-        $('.input--date-picker').each(function() {
-            if ($(this).find('input').attr('nds-date-picker') == 'true') {
-                $(this).find('input').datepicker();
+        jQuery('.input--date-picker').each(function() {
+            if (jQuery(this).find('input').attr('nds-date-picker') == 'true') {
+                jQuery(this).find('input').datepicker();
             }
         });
     }
