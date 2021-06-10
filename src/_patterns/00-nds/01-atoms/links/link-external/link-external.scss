@@ -1,0 +1,28 @@
+.ext-link-icon {
+    border-bottom: 0;
+    &:hover,
+    &:focus {
+        border-bottom: 0;
+    }
+    &:after {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-external-link-alt) !important;
+        font-size: $s-0-75;
+        margin-left: $s-0-25;
+    }
+}
+
+.link--external--mail {
+    position: relative;
+    margin-right: $s-1-25;
+    &:after {
+        @extend %fa-icon;
+        @extend .far;
+        content: fa-content($fa-var-envelope) !important;
+        position: absolute;
+        bottom: 0;
+        margin-left: $s-0-25;
+        font-size: $s-0-75;
+    }
+}

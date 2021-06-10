@@ -1,0 +1,21 @@
+{% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+    {
+        "button_default_type": "secondary",
+        "button_default_id": "toast-demo",
+        "button_default_label": "Toast Demo"
+    }
+%}
+
+<script>
+    document.querySelector('#toast-demo').addEventListener("click", function(e) {
+        const toast = '<div class="component-nds component--toast success" data-duration="2"><div class="component--toast__title">Success</div><div class="component--toast__message">Your email was sent.</div></div>';
+        document.body.insertAdjacentHTML('beforeend', toast);
+        setTimeout(function() {
+            let toastElements = document.getElementsByClassName('component--toast');
+            console.log(toastElements);
+            for (var i = 0; i < toastElements.length; i++) {
+                moduleNDS_toast.activateToast(toastElements[i]);
+            }
+        });
+    });
+</script>

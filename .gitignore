@@ -4,4 +4,8 @@ composer.lock
 node_modules/
 vendor/
 public/
-public_html/
+dist/
+
+src/css/nds-min.css
+src/js/nds-min.js
+src/js/nds.js
