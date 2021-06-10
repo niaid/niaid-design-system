@@ -50,7 +50,7 @@ gulp.task('compileSass', () => {
 
 // compileJS - Compile JS for your static site.
 // This logic replaces any scripts on build in the 00-nds folder with scripts of the same name in the custom directories (01-atoms, etc.).
-var includedJS = ['./src/js/global/init.js', './src/js/utilities/utilities.js'];
+var includedJS = ['./src/js/utilities/utilities.js', './src/js/global/init.js'];
 gulp.task('computeIncludedJSFiles', function() {
     var overridesJS = [];
     return gulp.src('./src/_patterns/**/*.js').pipe(tap(function(file, t) {
