@@ -11,7 +11,8 @@
         padding: $s-4;
     }
     &.layouts--body--no-vertical-padding {
-        padding-top: 0;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
     &--no-shadows {
         @include md-0dp(!important);
