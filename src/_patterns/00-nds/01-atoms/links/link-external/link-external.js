@@ -16,6 +16,9 @@ var moduleNDS_links = (function() {
                         url = url.toLowerCase();
                         if (((url.indexOf('http://') > -1) || (url.indexOf('https://')) > -1) && (url.indexOf('localhost:3002') <= 0)) {
                             externalLinks[i].setAttribute('target', '_blank');
+                            if (externalLinks[i].closest('.global--footer')) {
+                                externalLinks[i].classList.add('ext-link-footer');
+                            }
                             var linkIcon = document.createElement('a');
                             linkIcon.setAttribute('href', url);
                             linkIcon.setAttribute('class', "ext-link-icon");
