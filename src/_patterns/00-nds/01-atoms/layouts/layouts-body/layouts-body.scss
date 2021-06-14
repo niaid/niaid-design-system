@@ -10,7 +10,7 @@
     @include media-breakpoint-up('lg') {
         padding: $s-4;
     }
-    &.layouts--body--no-vertical-padding {
+    &.layouts--body--no-top-padding {
         padding-top: 0 !important;
         padding-bottom: 0 !important;
     }
