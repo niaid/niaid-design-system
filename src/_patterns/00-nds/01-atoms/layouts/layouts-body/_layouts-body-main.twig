@@ -17,14 +17,14 @@
 
     Parameters:
         layouts_body_classes: Additional layout classes.
-        layouts_body_vertical_padding: A class indicating if vertical padding should be present or not. Options: "yes" (Default), "no".
+        layouts_body_top_padding: A class indicating if top padding should be present or not. Options: "yes" (Default), "no".
 
-    Last Updated: January 22, 2021
+    Last Updated: June 14, 2021
 #}
 
 {% set layouts_body_classes = layouts_body_classes|default() %}
-{% set layouts_body_vertical_padding = layouts_body_vertical_padding|default('yes') %}
+{% set layouts_body_top_padding = layouts_body_top_padding|default('yes') %}
 
-<div class="layouts-nds layouts--body {{ layouts_body_classes }}{{ layouts_body_vertical_padding != 'yes' ? 'layouts--body--no-vertical-padding' }}">
+<div class="layouts-nds layouts--body {{ layouts_body_classes }}{{ layouts_body_top_padding != 'yes' ? 'layouts--body--no-top-padding' }}">
     {% block body_content %}{% endblock %}
 </div>
