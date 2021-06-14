@@ -219,22 +219,20 @@
     }
     .navigation-nds {
         &.navigation--primary {
-            @include md-8dp;
+            @include shadow-navigation;
             button {
                 @include shadow-none;
                 &:hover,
                 &:focus,
                 &:active {
-                    box-shadow: none;
+                    @include shadow-none;
                 }
             }
         }
         &.navigation--local {
-            @include md-1dp;
             background: $page-background;
             @include media-breakpoint-up('lg') {
-                @include md-16dp;
-                border-bottom-width: .3125rem;
+                border-bottom-width: $s-0-25;
                 border-bottom-style: solid;
             }
         }
