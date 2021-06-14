@@ -15,6 +15,7 @@
         padding-left: $s-2;
         position: relative;
         margin: 0;
+        font-weight: $font-weight-regular;
         &:before {
             position: absolute;
             content: "";

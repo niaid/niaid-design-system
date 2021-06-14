@@ -17,6 +17,11 @@
             }
         }
     }
+    .block-nds {
+        &.block--wtph {
+            border-radius: 0 !important;
+        }
+    }
     .navigation--tabs {
         &__tab {
             position: relative;
