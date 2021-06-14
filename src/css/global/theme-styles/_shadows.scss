@@ -2,8 +2,7 @@
     /* Atoms */
     .button-nds,
     button {
-        @include md-2dp;
-        @extend .hoverable;
+        @include shadow-hover;
         &.disabled,
         &:disabled,
         &[disabled] {
@@ -25,14 +24,11 @@
             }
         }
         &.button--secondary {
-            background: $white;
-            border: $s-1px solid $white;
             &:hover,
             &:focus,
             &:active {
-                background: $white;
-                border: $s-1px solid $white;
-                color: $color-theme-1-1-1;
+                background: $color-theme-1-1-1;
+                border: $s-1px solid $color-theme-1-1-1;
             }
         }
         &.button--tertiary {
@@ -51,34 +47,13 @@
                 border: $s-1px solid $status-error;
             }
         }
-        &.button--floating,
-        &.button--image,
-        &.button--icon,
-        &.button--external {
-            &.button--secondary {
-                background: $white;
-            }
-        }
-    }
-    .icon-nds {
-        &.icon--circle {
-            @include shadow-block;
-            border: 0;
-        }
-        &.icon--document {
-            @include shadow-block;
-            border: 0;
-            &.icon--document--button {
-                @include shadow-block-hover;
-            }
-        }
     }
     .input-nds {
         &.input--select {
             .select2-container {
                 .select2-selection  {
                     @include shadow-block;
-                    @include shadow-block-hover;
+                    @include shadow-hover;
                     border: $s-1px solid transparent !important;
                 }
                 .single-clear {
@@ -92,7 +67,7 @@
         }
         &.input--text {
             @include shadow-block;
-            @include shadow-block-hover;
+            @include shadow-hover;
             border: $s-1px solid transparent;
             &:focus {
                 border: $s-1px solid $type-link;
@@ -108,7 +83,7 @@
         &.input--date-picker {
             .input--date-picker__field {
                 @include shadow-block;
-                @include shadow-block-hover;
+                @include shadow-hover;
                 border: $s-1px solid transparent;
                 &:focus {
                     border: $s-1px solid $type-link;
@@ -181,7 +156,7 @@
                 &__header {
                     &__button {
                         @include shadow-block;
-                        @include shadow-block-hover;
+                        @include shadow-hover;
                         border: $s-1px solid $white;
                         color: $type-link;
                         &:hover,
@@ -304,13 +279,11 @@
             }
         }
         .button--secondary {
-            border: $s-1px solid $white;
             &:hover,
             &:focus,
             &:active {
-                background: $white;
-                color: $color-theme-2-1-1;
-                border: $s-1px solid $white;
+                background: $color-theme-2-1-1;
+                border: $s-1px solid $color-theme-2-1-1;
             }
         }
         .button--tertiary {
@@ -327,20 +300,6 @@
             &:active {
                 background: $status-error;
                 border: $s-1px solid $status-error;
-            }
-        }
-        .button--floating,
-        .button--image,
-        .button--icon,
-        .button--external {
-            &.button--secondary {
-                &:hover,
-                &:focus,
-                &:active {
-                    background: $white;
-                    color: $color-theme-2-1-1;
-                    border: $s-1px solid $white;
-                }
             }
         }
         .block-nds {
@@ -394,13 +353,11 @@
             }
         }
         .button--secondary {
-            border: $s-1px solid $white;
             &:hover,
             &:focus,
             &:active {
-                background: $white;
-                color: $color-theme-3-1-1;
-                border: $s-1px solid $white;
+                background: $color-theme-3-1-1;
+                border: $s-1px solid $color-theme-3-1-1;
             }
         }
         .button--tertiary {
@@ -417,20 +374,6 @@
             &:active {
                 background: $status-error;
                 border: $s-1px solid $status-error;
-            }
-        }
-        .button--floating,
-        .button--image,
-        .button--icon,
-        .button--external {
-            &.button--secondary {
-                &:hover,
-                &:focus,
-                &:active {
-                    background: $white;
-                    color: $color-theme-3-1-1;
-                    border: $s-1px solid $white;
-                }
             }
         }
         .block-nds {

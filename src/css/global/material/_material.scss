@@ -588,7 +588,8 @@
         box-shadow: $shadow-block-box-shadow;
     }
 }
-@mixin shadow-block-hover($important:"") {
+
+@mixin shadow-hover($important:"") {
     transition: box-shadow .25s;
     -webkit-transition: box-shadow .25s;
     -moz-transition: box-shadow .25s;
