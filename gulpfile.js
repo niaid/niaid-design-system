@@ -44,7 +44,7 @@ gulp.task('compileSass', () => {
             includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"]
         }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write('./src/maps'))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('./src/css'));
 });
 
@@ -88,7 +88,8 @@ gulp.task('compileJS', () => {
             presets: ['@babel/env']
         }))
         .pipe(minify())
-        .pipe(sourcemaps.write('./src/js/'))
+        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.write('./maps/'))
         .pipe(gulp.dest('./src/js/'));
 });
 
