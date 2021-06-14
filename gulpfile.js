@@ -18,7 +18,11 @@ const babel = require('gulp-babel');
 const replace = require('gulp-replace');
 const htmlreplace = require('gulp-html-replace');
 const del = require('del');
+var gulpif = require('gulp-if');
 var fs = require("fs");
+var argv = require('yargs').argv;
+
+let isProduction = (argv.production === undefined) ? false : true;
 
 let srcPath = "./niaid-design-system/";
 
@@ -44,7 +48,7 @@ gulp.task('compileSass', () => {
             includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"]
         }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
         .pipe(gulp.dest('./src/css'));
 });
 
@@ -89,7 +93,7 @@ gulp.task('compileJS', () => {
         }))
         .pipe(minify())
         .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write('./maps/'))
+        .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
         .pipe(gulp.dest('./src/js/'));
 });
 
@@ -165,7 +169,7 @@ gulp.task('moveAssets', () => {
 
     // Copy JS
     console.log("Copy JS");
-    gulp.src('./src/js/**/*')
+    gulp.src(['./src/js/**/*', '!./src/js/maps', '!./src/js/maps/**'])
         .pipe(gulp.dest('./dist/js'));
 
     // Copy Images
