@@ -1,26 +1,26 @@
 /* Gulp File
     Last Modified by: Jacob Caccamo
-    April 8, 2020
+    June 14, 2021
 */
 
 const gulp = require('gulp');
-const sass = require('gulp-sass');
-const sassGlob = require('gulp-sass-glob');
-const autoprefixer = require('gulp-autoprefixer');
-const sourcemaps = require('gulp-sourcemaps');
-const concat = require('gulp-concat');
-const tap = require('gulp-tap');
-const rename = require('gulp-rename');
-const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
-const exec = require('child_process').exec;
-const babel = require('gulp-babel');
-const replace = require('gulp-replace');
-const htmlreplace = require('gulp-html-replace');
 const del = require('del');
-var gulpif = require('gulp-if');
-var fs = require("fs");
-var argv = require('yargs').argv;
+const sassGlob = require('gulp-sass-glob');
+const sourcemaps = require('gulp-sourcemaps');
+const argv = require('yargs').argv;
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const gulpif = require('gulp-if');
+const htmlreplace = require('gulp-html-replace');
+const minify = require('gulp-minify');
+const exec = require('child_process').exec;
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const tap = require('gulp-tap');
+const fs = require("fs");
 
 let isProduction = (argv.production === undefined) ? false : true;
 
