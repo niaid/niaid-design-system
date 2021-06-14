@@ -6,6 +6,7 @@
     &__caption {
         padding-top: $s-0-25;
         font-size: $s-1 - $s-2px;
+        line-height: $line-height-medium;
         span,
         p,
         a {
@@ -25,7 +26,7 @@
             padding: 0;
             font-style: italic;
             font-weight: $font-weight-light;
-            font-size: $s-0-75;
+            font-size: $s-0-75 - $s-1px;
         }
         .ext-link-icon:after {
             font-style: normal;
