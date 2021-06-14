@@ -15,28 +15,32 @@
     Includes:
         Atoms -> Buttons -> button-default
 
-    Last Updated: January 22, 2021
+    Last Updated: June 14, 2021
 #}
 
 {% set block_wtph_classes = block_wtph_classes|default() %}
 {% set block_wtph_id = block_wtph_id|default() %}
 
 <div class="block-nds block--wtph {{ block_wtph_classes }}"{% if block_wtph_id is not empty %} id="{{ block_wtph_id }}"{% endif %}>
-    <div class="block--wtph__inner">
-        <h2 class="block--wtph__inner__title">Was This Page Helpful?</h2>
-        {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
-            {
-                "button_default_classes": "block--wtph__inner__button",
-                "button_default_type": "secondary",
-                "button_default_label": "Yes"
-            }
-        %}
-        {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
-            {
-                "button_default_classes": "block--wtph__inner__button",
-                "button_default_type": "secondary",
-                "button_default_label": "No"
-            }
-        %}
+    <h2 class="block--wtph__title">Was This Page Helpful?</h2>
+    <div class="block--wtph__buttons">
+        <button class="block--wtph__buttons__button block--wtph__buttons__button--yes">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+                {
+                    "icon_default_type": "thumbs-up",
+                    "icon_default_weight": "r"
+                }
+            %}
+            <span>Yes</span>
+        </button>
+        <button class="block--wtph__buttons__button block--wtph__buttons__button--no">
+            {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
+                {
+                    "icon_default_type": "thumbs-down",
+                    "icon_default_weight": "r"
+                }
+            %}
+            <span>No</span>
+        </button>
     </div> 
 </div>

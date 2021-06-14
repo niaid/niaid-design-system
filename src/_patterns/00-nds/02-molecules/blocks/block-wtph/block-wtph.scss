@@ -3,15 +3,46 @@
     padding: $s-2;
     border-top: $s-1px solid $border-light;
     border-bottom: $s-1px solid $border-light;
-    &__inner {
-        text-align: center;
-        &__title {
-            @include font-size($s-1-50);
-            margin-top: 0;
-            margin-bottom: $s-1-25;
-        }
+    text-align: center;
+    &__title {
+        @include font-size($s-1-50);
+        margin-top: 0;
+        margin-bottom: $s-1-25;
+    }
+    &__buttons {
         &__button {
-            margin: 0 $s-0-50;
+            @include md-0dp(!important);
+            border-width: $s-2px;
+            border-color: $type-link;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 0;
+            margin: 0 $s-0-25;
+            height: $s-3;
+            min-width: $s-3;
+            background: transparent;
+            color: $type-link;
+            .icon--default {
+                font-size: $s-1-50;
+            }
+            span {
+                overflow: hidden;
+                width: 0;
+            }
+            &:hover,
+            &:focus {
+                @include md-0dp(!important);
+                background: $type-link;
+                border-width: $s-2px;
+                border-color: $type-link;
+                padding: 0 $s-1;
+                span {
+                    width: auto;
+                    margin-left: $s-0-50;
+                }
+            }
         }
     }
 }

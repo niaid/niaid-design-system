@@ -202,6 +202,11 @@
                 @include md-2dp;
             }
         }
+        &.block--wtph {
+            @include md-0dp;
+            border-top: $s-1px solid $border-light;
+            border-bottom: $s-1px solid $border-light;
+        }
     }
     .social--icon {
         @include md-2dp;
