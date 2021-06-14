@@ -125,7 +125,8 @@
         }
     }
     .text-nds {
-        &.text--badge {
+        &.text--badge,
+        &.text--chip {
             border-radius: $corner-radius;
         }
     }
@@ -320,7 +321,8 @@
         }
     }
     .text-nds {
-        &.text--badge {
+        &.text--badge,
+        &.text--chip {
             border-radius: $corner-radius-full;
         }
     }

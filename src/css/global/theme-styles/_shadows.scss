@@ -62,14 +62,14 @@
     }
     .icon-nds {
         &.icon--circle {
-            @include md-2dp;
+            @include shadow-block;
             border: 0;
         }
         &.icon--document {
-            @include md-2dp;
+            @include shadow-block;
             border: 0;
             &.icon--document--button {
-                @extend .hoverable;
+                @include shadow-block-hover;
             }
         }
     }
@@ -77,70 +77,48 @@
         &.input--select {
             .select2-container {
                 .select2-selection  {
-                    @include md-2dp;
-                    @extend .hoverable;
+                    @include shadow-block;
+                    @include shadow-block-hover;
                     border: $s-1px solid transparent !important;
                 }
                 .single-clear {
-                    @include md-0dp;
+                    @include shadow-none;
                     &:hover,
                     &:focus {
-                        @include md-0dp;
+                        @include shadow-none;
                     }
                 }
             }
         }
         &.input--text {
-            @include md-2dp;
+            @include shadow-block;
+            @include shadow-block-hover;
             border: $s-1px solid transparent;
-            &:hover {
-                @include md-8dp;
-                transition: box-shadow .25s;
-                -webkit-transition: box-shadow .25s;
-                -moz-transition: box-shadow .25s;
-            }
             &:focus {
                 border: $s-1px solid $type-link;
-                // md-8dp + Focus Ring
-                -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-                0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-                0px 3px 14px 2px rgba(0, 0, 0, 0.12),
+                // shadow-block-hover + Focus Ring
+                -webkit-box-shadow: 0 10px 24px 0 rgba(0,0,0,0.24),
                 0 0 0 $s-1px $type-link !important;
-                -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-                0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-                0px 3px 14px 2px rgba(0, 0, 0, 0.12),
+                -moz-box-shadow: 0 10px 24px 0 rgba(0,0,0,0.24),
                 0 0 0 $s-1px $type-link !important;
-                box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-                0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-                0 0 0 $s-1px $type-link,
-                0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+                box-shadow: 0 10px 24px 0 rgba(0,0,0,0.24),
+                0 0 0 $s-1px $type-link !important;
             }
         }
         &.input--date-picker {
             .input--date-picker__field {
-                @include md-2dp;
+                @include shadow-block;
+                @include shadow-block-hover;
                 border: $s-1px solid transparent;
-                &:hover {
-                    @include md-8dp;
-                    transition: box-shadow .25s;
-                    -webkit-transition: box-shadow .25s;
-                    -moz-transition: box-shadow .25s;
-                }
                 &:focus {
                     border: $s-1px solid $type-link;
-                    // md-8dp + Focus Ring
-                    -webkit-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-                    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-                    0px 3px 14px 2px rgba(0, 0, 0, 0.12),
+                    // shadow-block-hover + Focus Ring
+                    -webkit-box-shadow: 0 10px 24px 0 rgba(0,0,0,0.24),
                     0 0 0 $s-1px $type-link !important;
-                    -moz-box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-                    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-                    0px 3px 14px 2px rgba(0, 0, 0, 0.12),
+                    -moz-box-shadow: 0 10px 24px 0 rgba(0,0,0,0.24),
                     0 0 0 $s-1px $type-link !important;
-                    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-                    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-                    0 0 0 $s-1px $type-link,
-                    0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+                    box-shadow: 0 10px 24px 0 rgba(0,0,0,0.24),
+                    0 0 0 $s-1px $type-link !important;
                 }
             }
         }
@@ -151,22 +129,10 @@
             border: 0;
         }
     }
-    table {
-        @include md-1dp;
-        border: 0;
-    }
-    .text-nds {
-        &.text--chip {
-            &:hover,
-            &:focus {
-                @include md-2dp;
-            }
-        }
-    }
     /* Molecules */
     .block-nds {
-        @include md-2dp;
-        border-width: 0;
+        @include shadow-block;
+        border-color: transparent;
         background: $white;
         &.block--default {
             &.block--default--accent {
@@ -174,7 +140,7 @@
             }
         }
         &.block--alert {
-            @include md-0dp;
+            @include shadow-none;
             background: $alert-severity-1;
             &.severity--2 {
                 background: $alert-severity-2;
@@ -186,20 +152,17 @@
                 background: $alert-severity-4;
             }
         }
-        &.block--callout {
-            background: $white;
-        } 
         &.block--header,
         &.block--inputs,
         &.block--colors,
         &.block--search-chips,
         &.block--share {
-            @include md-0dp;
+            @include shadow-none;
             background: transparent;
         }
         &.block--status-message {
             .block--status-message__icon {
-                @include md-2dp;
+                @include shadow-block;
             }
         }
     }
@@ -212,6 +175,8 @@
             .component--accordion__card {
                 &__header {
                     &__button {
+                        @include shadow-block;
+                        @include shadow-block-hover;
                         border: $s-1px solid $white;
                         color: $type-link;
                         &:hover,
@@ -228,12 +193,12 @@
         }
         &.component--uswds-banner {
             .component--uswds-banner__toggle {
-                @include md-0dp;
+                @include shadow-none;
             }
         }
     }
     .block-facet--checkbox {
-        @include md-0dp;
+        @include shadow-none;
     }
     .form-nds {
         .form--search {
@@ -251,7 +216,7 @@
         &.navigation--primary {
             @include md-8dp;
             button {
-                @include md-0dp;
+                @include shadow-none;
                 &:hover,
                 &:focus,
                 &:active {
@@ -277,7 +242,7 @@
                             a {
                                 background: $color-theme-1-1-1;
                                 border: $s-1px solid $color-theme-1-1-1;
-                                @include md-0dp;
+                                @include shadow-none;
                                 &:hover,
                                 &:focus {
                                     color: $white;
@@ -313,16 +278,15 @@
             border-bottom: 0;
             @include md-8dp;
             @include media-breakpoint-up('md') {
-                @include md-0dp;
+                @include shadow-none;
             }
             &__button {
                 border: 0;
             }
         }
         &.global--footer {
-            @include md-8dp;
             .block-nds {
-                @include md-0dp;
+                @include shadow-none;
                 background: transparent;
             }
         }
