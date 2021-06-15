@@ -42,8 +42,8 @@ $fa-font-path: '../webfonts/font-awesome';
 @import "global/fonts/_fonts.scss";
 @import "overrides/fonts/*.scss";
 //
-@import "global/material/*.scss";
-@import "overrides/material/*.scss";
+@import "global/shadows/*.scss";
+@import "overrides/shadows/*.scss";
 //
 @import "global/drupal/*.scss";
 @import "overrides/drupal/*.scss";
