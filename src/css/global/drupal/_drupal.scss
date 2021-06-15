@@ -61,7 +61,8 @@
 
 // NDS Component Reset
 .block-nds {
-    & > article {
+    & > article,
+    & > .field__item {
         & > *:first-child {
             margin-top: 0;
         }
