@@ -166,11 +166,21 @@ gulp.task('moveAssets', () => {
         .pipe(gulp.dest('./dist/css'));
     gulp.src('./src/css/libraries/**/*')
         .pipe(gulp.dest('./dist/css/libraries'));
+    if (!isProduction) {
+        gulp.src('./src/css/maps/**/*')
+            .pipe(gulp.dest('./dist/css/maps'));
+    }
 
     // Copy JS
     console.log("Copy JS");
-    gulp.src(['./src/js/**/*', '!./src/js/maps', '!./src/js/maps/**'])
-        .pipe(gulp.dest('./dist/js'));
+    if (isProduction) {
+        gulp.src(['./src/js/**/*', '!./src/js/maps', '!./src/js/maps/**'])
+            .pipe(gulp.dest('./dist/js'));
+    }
+    else {
+        gulp.src('./src/js/**/*')
+            .pipe(gulp.dest('./dist/js'));
+    }
 
     // Copy Images
     console.log("Copy Images");
