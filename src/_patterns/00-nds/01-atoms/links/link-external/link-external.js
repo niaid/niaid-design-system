@@ -39,6 +39,13 @@ var moduleNDS_links = (function() {
         }
     }
 
+    function initLinkExternalTelephone() {
+        let telLinks = document.querySelectorAll('a[href^="tel:"]');
+        for (var i = 0; i < telLinks.length; i++) {
+            telLinks[i].classList.add('link--external--phone');   
+        }
+    }
+
     // initDocumentLink - Helper function that determines if a document badge should be added to a link.
     function initDocumentLink(link) {
         let href = link.getAttribute('href');
@@ -65,6 +72,7 @@ var moduleNDS_links = (function() {
     function init() {
         initLinkExternal();
         initLinkExternalMailto();
+        initLinkExternalTelephone();
     }
 
     /* =============== EXPORT PUBLIC METHODS =============== */

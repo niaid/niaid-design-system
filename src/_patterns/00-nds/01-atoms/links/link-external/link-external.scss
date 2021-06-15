@@ -13,16 +13,30 @@
     }
 }
 
-.link--external--mail {
+.link--external--mail,
+.link--external--phone {
     position: relative;
-    margin-right: $s-1-25;
+    margin-right: $s-1-25 - $s-2px;
     &:after {
         @extend %fa-icon;
-        @extend .far;
-        content: fa-content($fa-var-envelope) !important;
         position: absolute;
-        bottom: 0;
+        top: 50%;
+        transform: translateY(-50%);
         margin-left: $s-0-25;
         font-size: $s-0-75;
+    }
+}
+
+.link--external--mail {
+    &:after {
+        @extend .far;
+        content: fa-content($fa-var-envelope) !important;
+    }
+}
+
+.link--external--phone {
+    &:after {
+        @extend .fas;
+        content: fa-content($fa-var-phone) !important;
     }
 }
