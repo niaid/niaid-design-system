@@ -2,7 +2,7 @@
     /* Atoms */
     .button-nds,
     button {
-        @include shadow-hover;
+        @include hoverable;
         &.disabled,
         &:disabled,
         &[disabled] {
@@ -52,8 +52,8 @@
         &.input--select {
             .select2-container {
                 .select2-selection  {
-                    @include shadow-block;
-                    @include shadow-hover;
+                    @include shadow-low;
+                    @include hoverable;
                     border: $s-1px solid transparent !important;
                 }
                 .single-clear {
@@ -66,8 +66,8 @@
             }
         }
         &.input--text {
-            @include shadow-block;
-            @include shadow-hover;
+            @include shadow-low;
+            @include hoverable;
             border: $s-1px solid transparent;
             &:focus {
                 border: $s-1px solid $type-link;
@@ -82,8 +82,8 @@
         }
         &.input--date-picker {
             .input--date-picker__field {
-                @include shadow-block;
-                @include shadow-hover;
+                @include shadow-low;
+                @include hoverable;
                 border: $s-1px solid transparent;
                 &:focus {
                     border: $s-1px solid $type-link;
@@ -100,13 +100,13 @@
     }
     .select2-container {
         .select2-dropdown {
-            @include md-16dp;
+            @include shadow-high;
             border: 0;
         }
     }
     /* Molecules */
     .block-nds {
-        @include shadow-block;
+        @include shadow-low;
         border-color: transparent;
         background: $white;
         &.block--default {
@@ -137,26 +137,22 @@
         }
         &.block--status-message {
             .block--status-message__icon {
-                @include shadow-block;
+                @include shadow-low;
             }
         }
         &.block--wtph {
-            @include md-0dp;
+            @include shadow-none;
             border-top: $s-1px solid $border-light;
             border-bottom: $s-1px solid $border-light;
         }
-    }
-    .social--icon {
-        @include md-2dp;
-        @extend .hoverable;
     }
     .component-nds {
         &.component--accordion {
             .component--accordion__card {
                 &__header {
                     &__button {
-                        @include shadow-block;
-                        @include shadow-hover;
+                        @include shadow-low;
+                        @include hoverable;
                         border: $s-1px solid $white;
                         color: $type-link;
                         &:hover,
@@ -194,7 +190,7 @@
     }
     .navigation-nds {
         &.navigation--primary {
-            @include shadow-navigation;
+            @include shadow-high;
             button {
                 @include shadow-none;
                 &:hover,
@@ -245,7 +241,7 @@
         &.navigation--dropdown {
             .navigation--dropdown {
                 &__menu {
-                    @include md-16dp;
+                    @include shadow-high;
                 }
             }
         }
@@ -254,7 +250,7 @@
     .global-nds {
         &.global--header {
             border-bottom: 0;
-            @include md-8dp;
+            @include shadow-high;
             @include media-breakpoint-up('md') {
                 @include shadow-none;
             }

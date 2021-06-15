@@ -15,6 +15,6 @@
         padding-bottom: 0 !important;
     }
     &--no-shadows {
-        @include md-0dp(!important);
+        @include shadow-none(!important);
     }
 }
