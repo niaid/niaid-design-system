@@ -127,6 +127,10 @@
                 background: $alert-severity-4;
             }
         }
+        &.block--callout {
+            background: $white;
+        } 
+        &.block--error,
         &.block--header,
         &.block--inputs,
         &.block--colors,
