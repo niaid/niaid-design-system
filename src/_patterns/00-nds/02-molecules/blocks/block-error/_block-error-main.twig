@@ -35,6 +35,11 @@
                 "image_default_alt": block_error_img_alt
             }
         %}
+        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+            {
+                "spacer_classes": "h-2"
+            }
+        %}
     {% endblock %}
     {% block block_error_content %}
         <h1 id="main-content">The page you’re looking for isn’t available.</h1>
