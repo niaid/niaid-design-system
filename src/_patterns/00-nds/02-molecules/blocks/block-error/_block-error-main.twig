@@ -1,0 +1,55 @@
+{#
+    ---
+    title: Error Block
+    ---
+
+    Type: Molecules -> Blocks
+
+    Description:
+        The error block is used predominiately as a display for 404 and 403-type errors. It includes two block regions for full content customizability.
+
+    Blocks:
+        {% block block_error_image %}: A block to include an image, the default of which is the 404 or 403 NDS image.
+        {% block block_error_content %}: A block for the error content and instructional text.
+
+    Parameters:
+        block_error_classes: Additional block classes.
+        block_error_id: Block ID.
+        block_error_img_src: The path to an optional image. Default: 
+        block_error_img_alt: The alternative text associated with the image. Default: "404"
+
+    Last Updated: June 16, 2021
+#}
+
+{% set block_error_classes = block_error_classes|default() %}
+{% set block_error_id = block_error_id|default() %}
+{% set block_error_img_src = block_error_img_src|default('global/misc/404.png') %}
+{% set block_error_img_alt = block_error_img_alt|default('404') %}
+
+<div class="block-nds block--error {{ block_default_classes }}"{% if block_default_id is not empty %} id="{{ block_default_id }}"{% endif %}>
+    {% block block_error_image %}
+        {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
+            {
+                "image_default_classes": "block--error__image",
+                "image_default_src": block_error_img_src,
+                "image_default_alt": block_error_img_alt
+            }
+        %}
+    {% endblock %}
+    {% block block_error_content %}
+        <h1 id="main-content">The page you’re looking for isn’t available.</h1>
+        <p>It's possible that the page is temporarily unavailable, has been moved, renamed, or no longer exists.</p>
+        {% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+            {
+                "spacer_classes": "h-1-50"
+            }
+        %}
+        {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+            {
+                "button_default_type": "secondary",
+                "button_default_href": "/",
+                "button_default_label": "Back to Home"
+            }
+        %}
+    {% endblock %}
+</div>
