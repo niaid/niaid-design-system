@@ -14,7 +14,6 @@
     Parameters:
         navigation_mobile_rail_classes: Additional classes for the mobile rail component.
         navigation_mobile_rail_button_text: The text to appear on the mobile rail toggle button.
-        navigation_mobile_rail_button_text: The text to appear on the mobile rail toggle button.
 
     Includes:
         Molecules -> Components -> component--accordion
@@ -24,7 +23,6 @@
 
 {% set navigation_mobile_rail_classes = navigation_mobile_rail_classes|default() %}
 {% set navigation_mobile_rail_button_text = navigation_mobile_rail_button_text|default() %}
-{% set navigation_mobile_rail_content = block('navigation_mobile_rail_content') %}
 
 <div class="navigation-nds navigation--mobile-rail {{ navigation_mobile_rail_classes }}">
     {% embed "@nds/02-molecules/components/component-accordion/_component-accordion-main.twig" with
@@ -37,9 +35,7 @@
                 <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">{{ navigation_mobile_rail_button_text }}</button>
             </div>
             <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
-                {% if navigation_mobile_rail_content is not empty %}
-                    {{ navigation_mobile_rail_content|raw }}
-                {% endif %}
+                {% block navigation_mobile_rail_content %}{% endblock %}
             </div>
         {% endblock %}
     {% endembed %}
