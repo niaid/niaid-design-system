@@ -42,6 +42,19 @@ var moduleNDS_analytics = (function() {
             setDataAttributes(headerElements, 'data-nav', 'header-nav-');
         }
 
+        // Facets (Filters)
+        let facets = document.getElementsByClassName("facet-item");
+        for (var i = 0; i < facets.length; i++) {
+            let facetLink = facets[i].querySelector('a');
+            let facetName = facets[i].querySelector('.facet-item__value').textContent.trim();
+            if (facetName !== "") {
+                facetName = facetName.replace(/\//g, '-');
+                facetName = facetName.replace(/\s+/g, '-').toLowerCase();
+                facetLink.setAttribute('data-content', 'filter-' + facetName);
+                tagChildren(facetLink, 'data-content');
+            }
+        }
+
         // Primary Navigation
         let primaryNavigations = document.getElementsByClassName("navigation--primary");
         for (var i = 0; i < primaryNavigations.length; i++) {
