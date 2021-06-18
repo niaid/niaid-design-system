@@ -42,6 +42,19 @@ var moduleNDS_analytics = (function() {
             setDataAttributes(headerElements, 'data-nav', 'header-nav-');
         }
 
+        // Facets (Filters)
+        let facets = document.getElementsByClassName("facet-item");
+        for (var i = 0; i < facets.length; i++) {
+            let facetLink = facets[i].querySelector('a');
+            let facetName = facets[i].querySelector('.facet-item__value').textContent.trim();
+            if (facetName !== "") {
+                facetName = facetName.replace(/\//g, '-');
+                facetName = facetName.replace(/\s+/g, '-').toLowerCase();
+                facetLink.setAttribute('data-content', 'filter-' + facetName);
+                tagChildren(facetLink, 'data-content');
+            }
+        }
+
         // Primary Navigation
         let primaryNavigations = document.getElementsByClassName("navigation--primary");
         for (var i = 0; i < primaryNavigations.length; i++) {
@@ -83,12 +96,18 @@ var moduleNDS_analytics = (function() {
         let floatingButtons = document.getElementsByClassName("button--floating");
         setDataAttributes(floatingButtons, 'data-nav', 'header-nav-');
 
-        // Mobile Rail
-        let mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
-        for (var i = 0; i < mobileRails.length; i++) {
-            let navigationLinks = mobileRails[i].querySelectorAll('a');
-            setDataAttributes(navigationLinks, 'data-nav', 'nav-left-');
-        }
+         // Mobile Rail
+         let mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
+         for (var i = 0; i < mobileRails.length; i++) {
+             let navigationLinks = mobileRails[i].querySelectorAll('a');
+             let targetedNavigationLinks = [];
+             for (let j = 0; j < navigationLinks.length; j++) {
+                 if (!navigationLinks[j].hasAttribute('data-content')) {
+                     targetedNavigationLinks.push(navigationLinks[j]);
+                 }
+             }
+             setDataAttributes(targetedNavigationLinks, 'data-nav', 'nav-left-');
+         }
     }
 
     // computeDataAttribute - Helper function to determine the value of the data attribute.
