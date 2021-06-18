@@ -23,6 +23,9 @@
 
 {% set navigation_mobile_rail_classes = navigation_mobile_rail_classes|default() %}
 {% set navigation_mobile_rail_button_text = navigation_mobile_rail_button_text|default() %}
+{% set navigation_mobile_rail_content %}
+   {% block navigation_mobile_rail_content %}{% endblock %}
+{% endset %}
 
 <div class="navigation-nds navigation--mobile-rail {{ navigation_mobile_rail_classes }}">
     {% embed "@nds/02-molecules/components/component-accordion/_component-accordion-main.twig" with
