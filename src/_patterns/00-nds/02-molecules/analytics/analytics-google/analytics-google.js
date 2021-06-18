@@ -96,12 +96,18 @@ var moduleNDS_analytics = (function() {
         let floatingButtons = document.getElementsByClassName("button--floating");
         setDataAttributes(floatingButtons, 'data-nav', 'header-nav-');
 
-        // Mobile Rail
-        let mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
-        for (var i = 0; i < mobileRails.length; i++) {
-            let navigationLinks = mobileRails[i].querySelectorAll('a');
-            setDataAttributes(navigationLinks, 'data-nav', 'nav-left-');
-        }
+         // Mobile Rail
+         let mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
+         for (var i = 0; i < mobileRails.length; i++) {
+             let navigationLinks = mobileRails[i].querySelectorAll('a');
+             let targetedNavigationLinks = [];
+             for (let j = 0; j < navigationLinks.length; j++) {
+                 if (!navigationLinks[j].hasAttribute('data-content')) {
+                     targetedNavigationLinks.push(navigationLinks[j]);
+                 }
+             }
+             setDataAttributes(targetedNavigationLinks, 'data-nav', 'nav-left-');
+         }
     }
 
     // computeDataAttribute - Helper function to determine the value of the data attribute.
