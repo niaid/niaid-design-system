@@ -25,21 +25,17 @@
 {% set block_hero_classes = block_hero_classes|default() %}
 {% set block_hero_id = block_hero_id|default() %}
 {% set block_hero_overlay_color = block_hero_overlay_color|default() %}
-{% set block_hero_image = block("block_hero_image") %}
-{% set block_hero_breadcrumbs = block("block_hero_breadcrumbs") %}
 
 <div id="block--hero" class="block-nds block--hero {{ block_hero_classes }}"{% if block_hero_id is not empty %} id="{{ block_hero_id }}"{% endif %}>
     <div class="block--hero__content">
         <div class="parallax-container {{ block_hero_overlay_color }}">
             <div class="parallax">
-                {% if block_hero_image|trim is not empty %}
-                    {{ block_hero_image|raw }}
-                {% endif %}
+                {% block block_hero_image %}{% endblock %}
             </div>
-            {% if block_hero_breadcrumbs is not empty %}
+            {% if block('block_hero_breadcrumbs') %}
                 <div class="block--hero__content__breadcrumbs row">
                     <div class="col-xl-12">
-                        {{ block_hero_breadcrumbs|raw }}
+                        {% block block_hero_breadcrumbs %}{% endblock %}
                     </div>
                 </div>
             {% endif %}
