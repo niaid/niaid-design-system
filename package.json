@@ -5,6 +5,11 @@
   "main": "public/index.html",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "@pattern-lab/cli": "^5.14.3",
+    "@pattern-lab/core": "^5.14.3",
+    "@pattern-lab/engine-twig-php": "^5.14.3",
+    "@pattern-lab/starterkit-twig-demo": "^5.14.2",
+    "@pattern-lab/uikit-workshop": "^5.14.3",
     "bootstrap": "^4.6.0",
     "bootstrap-datepicker": "^1.9.0",
     "datatables.net": "^1.10.24",
@@ -39,7 +44,15 @@
     "yargs": "^16.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "patternlab build --config ./patternlab-config.json",
+    "build:uikit": "cross-env-shell PL_CONFIG_PATH='${INIT_CWD}/.patternlabrc.js' npm run build --prefix node_modules/@pattern-lab/uikit-workshop -- --patternlabrc '$PL_CONFIG_PATH'",
+    "dev": "node ./node_modules/@pattern-lab/uikit-workshop/build-tools.js",
+    "help": "patternlab --help",
+    "install": "patternlab install --config ./patternlab-config.json",
+    "serve": "patternlab serve --config ./patternlab-config.json",
+    "start": "npm run serve",
+    "version": "patternlab --version"
   },
   "repository": {
     "type": "git",

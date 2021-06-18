@@ -100,7 +100,7 @@ gulp.task('compileJS', () => {
 // GULP: compilePatternLab - Compile Pattern Lab for your static site.
 gulp.task('compilePatternLab', (cb) => {
     console.log("Compiling Pattern Lab...")
-    return exec('php core/console --generate', function(err, stdout, stderr) {
+    return exec('npm run build', function(err, stdout, stderr) {
         browserSync.reload();
         cb(err);
     });
