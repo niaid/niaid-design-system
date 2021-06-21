@@ -46,12 +46,15 @@ var moduleNDS_analytics = (function() {
         let facets = document.getElementsByClassName("facet-item");
         for (var i = 0; i < facets.length; i++) {
             let facetLink = facets[i].querySelector('a');
+            let facetLabel = facets[i].querySelector('label');
             let facetName = facets[i].querySelector('.facet-item__value').textContent.trim();
             if (facetName !== "") {
                 facetName = facetName.replace(/\//g, '-');
                 facetName = facetName.replace(/\s+/g, '-').toLowerCase();
                 facetLink.setAttribute('data-content', 'filter-' + facetName);
+                facetLabel.setAttribute('data-content', 'filter-' + facetName);
                 tagChildren(facetLink, 'data-content');
+                tagChildren(facetLabel, 'data-content');
             }
         }
 

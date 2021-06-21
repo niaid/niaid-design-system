@@ -39,23 +39,23 @@
 {% set global_footer_column_right = global_footer_column_right|default('col-md-4') %}
 
 <footer id="footer" class="global-nds global--footer container-fluid {{ global_footer_classes }}">
-    {% if block('global_footer_prefooter_content') %}
+    {% if block('global_footer_prefooter_content')|trim != "" %}
         <div class="global--footer__prefooter row">
             {% block global_footer_prefooter_content %}{% endblock %}
         </div>
     {% endif %}
     <div class="global--footer__content row">
-        {% if block('global_footer_content_left') %}
+        {% if block('global_footer_content_left')|trim != "" %}
             <div class="global--footer__content__column {{ global_footer_column_left }}">
                 {% block global_footer_content_left %}{% endblock %}
             </div>
         {% endif %}
-        {% if block('global_footer_content_middle') %}
+        {% if block('global_footer_content_middle')|trim != "" %}
             <div class="global--footer__content__column {{ global_footer_column_middle }}">
                 {% block global_footer_content_middle %}{% endblock %}
             </div>
         {% endif %}
-        {% if block('global_footer_content_right') %}
+        {% if block('global_footer_content_right')|trim != "" %}
             <div class="global--footer__content__column {{ global_footer_column_right }}">
                 {% block global_footer_content_right %}{% endblock %}
             </div>

@@ -51,12 +51,12 @@
                     %}
                 </button>
             </div>
-            {% if block('component_modal_content') %}
+            {% if block('component_modal_content')|trim != "" %}
                 <div class="component--modal__wrapper__content__body">
                     {% block component_modal_content %}{% endblock %}
                 </div>
             {% endif %}
-            {% if block('component_modal_footer') %}
+            {% if block('component_modal_footer')|trim != "" %}
                 <div class="component--modal__wrapper__content__footer">
                     {% block component_modal_footer %}{% endblock %}
                 </div>
