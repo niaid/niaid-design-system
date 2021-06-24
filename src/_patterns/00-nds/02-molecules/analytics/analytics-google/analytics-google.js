@@ -56,6 +56,18 @@ var moduleNDS_analytics = (function() {
                 tagChildren(facetLink, 'data-content');
                 tagChildren(facetLabel, 'data-content');
             }
+
+            // Filter Title
+            let facetParent = facets[i].closest("ul.item-list__checkbox");
+            if (facetParent != null) {
+                let titleName = facetParent.getAttribute('data-drupal-facet-alias');
+                if (titleName != null) {
+                    facetLink.setAttribute('data-filter-title', titleName);
+                    facetLabel.setAttribute('data-filter-title', titleName);
+                    tagChildren(facetLink, 'data-filter-title');
+                    tagChildren(facetLabel, 'data-filter-title');
+                }
+            }
         }
 
         // Primary Navigation
