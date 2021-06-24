@@ -151,9 +151,6 @@
             border: 0;
         }
     }
-    .layouts--body {
-        @include md-16dp;
-    }
     table {
         @include md-1dp;
         border: 0;
@@ -192,6 +189,7 @@
         &.block--callout {
             background: $white;
         } 
+        &.block--error,
         &.block--header,
         &.block--inputs,
         &.block--colors,
@@ -204,6 +202,11 @@
             .block--status-message__icon {
                 @include md-2dp;
             }
+        }
+        &.block--wtph {
+            @include md-0dp;
+            border-top: $s-1px solid $border-light;
+            border-bottom: $s-1px solid $border-light;
         }
     }
     .social--icon {

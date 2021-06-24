@@ -27,7 +27,7 @@
 {% set navigation_breadcrumbs_data = navigation_breadcrumbs_data|default() %}
 {% set navigation_breadcrumbs_icon_weight = navigation_breadcrumbs_icon_weight|default('s') %}
 
-<div class="navigation-nds navigation--breadcrumbs {{ navigation_breadcrumbs_classes }}"{% if navigation_breadcrumbs_id is not empty %} id="{{ navigation_breadcrumbs_id }}"{% endif %}>
+<aside class="navigation-nds navigation--breadcrumbs {{ navigation_breadcrumbs_classes }}"{% if navigation_breadcrumbs_id is not empty %} id="{{ navigation_breadcrumbs_id }}"{% endif %}>
     {% for crumb in navigation_breadcrumbs_data %}
         {% if crumb.url is not empty %}
             {% set crumb = crumb|merge({'href': crumb.url}) %}
@@ -42,4 +42,4 @@
             %}
         {% endif %}
     {% endfor %}
-</div>
+</aside>

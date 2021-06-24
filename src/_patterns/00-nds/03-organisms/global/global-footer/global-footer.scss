@@ -18,6 +18,13 @@
         &:visited {
             color: $white;
         }
+        &.ext-link-footer {
+            border-bottom-color: transparent;
+            &:hover,
+            &:focus {
+                border-bottom-color: $white;
+            }
+        }
     }
     &__content {
         max-width: $layout-body-max-width;

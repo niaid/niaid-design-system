@@ -1,9 +1,19 @@
 {% set generic_page_id = generic_page_id|default() %}
-{% set header = block('header') %}
-{% set hero = block('hero') %}
-{% set navigation = block('navigation') %}
-{% set main = block('main') %}
-{% set footer = block('footer') %}
+{% set header %}
+   {% block header %}{% endblock %}
+{% endset %}
+{% set navigation %}
+   {% block navigation %}{% endblock %}
+{% endset %}
+{% set hero %}
+   {% block hero %}{% endblock %}
+{% endset %}
+{% set main %}
+   {% block main %}{% endblock %}
+{% endset %}
+{% set footer %}
+   {% block footer %}{% endblock %}
+{% endset %}
 
 {% embed "@nds/01-atoms/layouts/layouts-site/_layouts-site-main.twig" with
     {
@@ -11,28 +21,18 @@
     }
 %}
     {% block header %}
-        {% if header is not empty %}
-            {{ header|raw }}
-        {% endif %}
+        {{ header }}
     {% endblock %}
     {% block global_navigation %}
-        {% if navigation is not empty %}
-            {{ navigation|raw }}
-        {% endif %}
+        {{ navigation }}
     {% endblock %}
     {% block hero %}
-        {% if hero is not empty %}
-            {{ hero|raw }}
-        {% endif %}
+        {{ hero }}
     {% endblock %}
     {% block main %}
-        {% if main is not empty %}
-            {{ main|raw }}
-        {% endif %}
+        {{ main }}
     {% endblock %}
     {% block footer %}
-        {% if footer is not empty %}
-            {{ footer|raw }}
-        {% endif %}
+        {{ footer }}
     {% endblock %}
 {% endembed %}

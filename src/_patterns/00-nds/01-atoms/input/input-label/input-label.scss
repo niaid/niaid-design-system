@@ -1,4 +1,5 @@
 .input--label {
+    font-weight: $font-weight-semibold;
     line-height: $line-height-small;
     & + .input--text {
         display: block;

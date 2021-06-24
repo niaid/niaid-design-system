@@ -16,6 +16,9 @@ var moduleNDS_links = (function() {
                         url = url.toLowerCase();
                         if (((url.indexOf('http://') > -1) || (url.indexOf('https://')) > -1) && (url.indexOf('localhost:3002') <= 0)) {
                             externalLinks[i].setAttribute('target', '_blank');
+                            if (externalLinks[i].closest('.global--footer')) {
+                                externalLinks[i].classList.add('ext-link-footer');
+                            }
                             var linkIcon = document.createElement('a');
                             linkIcon.setAttribute('href', url);
                             linkIcon.setAttribute('class', "ext-link-icon");
@@ -33,6 +36,13 @@ var moduleNDS_links = (function() {
         let mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
         for (var i = 0; i < mailtoLinks.length; i++) {
             mailtoLinks[i].classList.add('link--external--mail');   
+        }
+    }
+
+    function initLinkExternalTelephone() {
+        let telLinks = document.querySelectorAll('a[href^="tel:"]');
+        for (var i = 0; i < telLinks.length; i++) {
+            telLinks[i].classList.add('link--external--phone');   
         }
     }
 
@@ -62,6 +72,7 @@ var moduleNDS_links = (function() {
     function init() {
         initLinkExternal();
         initLinkExternalMailto();
+        initLinkExternalTelephone();
     }
 
     /* =============== EXPORT PUBLIC METHODS =============== */

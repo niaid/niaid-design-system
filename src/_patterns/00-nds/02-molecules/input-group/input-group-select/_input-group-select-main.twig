@@ -39,7 +39,7 @@
         Atoms -> Input -> input-select
         Atoms -> Input -> input-validation
 
-    Last Updated: April 30, 2021
+    Last Updated: June 18, 2021
 #}
 
 {% set input_group_select_classes = input_group_select_classes|default() %}
@@ -58,7 +58,9 @@
 {% set input_group_select_always_selected = input_group_select_always_selected|default(false) %}
 {% set input_group_select_multiple = input_group_select_multiple|default(false) %}
 {% set input_group_select_validation = input_group_select_validation|default() %}
-{% set input_group_select_options = block('input_group_select_options') %}
+{% set input_group_select_options %}
+   {% block input_group_select_options %}{% endblock %}
+{% endset %}
 
 <div class="input-group-nds input-group--select {{ input_group_select_classes }}">
     {% include "@nds/01-atoms/input/input-label/_input-label-main.twig" with
@@ -85,7 +87,7 @@
         }
     %}
         {% block input_select_input %}
-            {{ input_group_select_options|raw }}
+            {{ input_group_select_options }}
         {% endblock %}
     {% endembed %}
     {% include "@nds/01-atoms/input/input-validation/_input-validation-main.twig" with { "input_validation_text": input_group_select_validation } %}

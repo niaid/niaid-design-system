@@ -1,5 +1,4 @@
 .DS_Store
-package-lock.json
 composer.lock
 node_modules/
 vendor/
@@ -7,5 +6,8 @@ public/
 dist/
 
 src/css/nds-min.css
+src/css/maps
+
 src/js/nds-min.js
 src/js/nds.js
+src/js/maps

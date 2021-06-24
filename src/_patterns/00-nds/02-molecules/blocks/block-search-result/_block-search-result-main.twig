@@ -31,7 +31,6 @@
 {% set blocks_search_result_show_url = blocks_search_result_show_url|default('true') %}
 {% set blocks_search_result_document_type = blocks_search_result_document_type|default() %}
 {% set blocks_search_result_document_metadata = blocks_search_result_document_metadata|default() %}
-{% set blocks_search_result_description = block('blocks_search_result_description') %}
 {% set blocks_search_result_date_last_reviewed = blocks_search_result_date_last_reviewed|default() %}
 
 <div class="block-nds block--search-result {{ blocks_search_result_classes }}"{% if blocks_search_result_id is not empty %} id="{{ blocks_search_result_id }}"{% endif %}>
@@ -52,9 +51,7 @@
             {% if blocks_search_result_document_metadata is not empty %}<div class="block--search-result__top__text__metadata">{{ blocks_search_result_document_metadata }}</div>{% endif %}
         </div>
     </div>
-    {% if blocks_search_result_description|trim is not empty %}
-        {{ blocks_search_result_description|raw }}
-    {% endif %}
+    {% block blocks_search_result_description %}{% endblock %}
     {% if blocks_search_result_date_last_reviewed is not empty %}
         <p class="block--search-result__last-reviewed">Last Reviewed: {{ blocks_search_result_date_last_reviewed }}</p>
     {% endif %}

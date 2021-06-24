@@ -1,24 +1,28 @@
 /* Gulp File
     Last Modified by: Jacob Caccamo
-    April 8, 2020
+    June 14, 2021
 */
 
 const gulp = require('gulp');
-const sass = require('gulp-sass');
-const sassGlob = require('gulp-sass-glob');
-const autoprefixer = require('gulp-autoprefixer');
-const sourcemaps = require('gulp-sourcemaps');
-const concat = require('gulp-concat');
-const tap = require('gulp-tap');
-const rename = require('gulp-rename');
-const minify = require('gulp-minify');
 const browserSync = require('browser-sync').create();
-const exec = require('child_process').exec;
-const babel = require('gulp-babel');
-const replace = require('gulp-replace');
-const htmlreplace = require('gulp-html-replace');
 const del = require('del');
-var fs = require("fs");
+const sassGlob = require('gulp-sass-glob');
+const sourcemaps = require('gulp-sourcemaps');
+const argv = require('yargs').argv;
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const gulpif = require('gulp-if');
+const htmlreplace = require('gulp-html-replace');
+const minify = require('gulp-minify');
+const exec = require('child_process').exec;
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const tap = require('gulp-tap');
+const fs = require("fs");
+
+let isProduction = (argv.production === undefined) ? false : true;
 
 let srcPath = "./niaid-design-system/";
 
@@ -44,7 +48,7 @@ gulp.task('compileSass', () => {
             includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"]
         }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write('./src/maps'))
+        .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
         .pipe(gulp.dest('./src/css'));
 });
 
@@ -88,7 +92,8 @@ gulp.task('compileJS', () => {
             presets: ['@babel/env']
         }))
         .pipe(minify())
-        .pipe(sourcemaps.write('./src/js/'))
+        .pipe(sourcemaps.init())
+        .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
         .pipe(gulp.dest('./src/js/'));
 });
 
@@ -161,11 +166,21 @@ gulp.task('moveAssets', () => {
         .pipe(gulp.dest('./dist/css'));
     gulp.src('./src/css/libraries/**/*')
         .pipe(gulp.dest('./dist/css/libraries'));
+    if (!isProduction) {
+        gulp.src('./src/css/maps/**/*')
+            .pipe(gulp.dest('./dist/css/maps'));
+    }
 
     // Copy JS
     console.log("Copy JS");
-    gulp.src('./src/js/**/*')
-        .pipe(gulp.dest('./dist/js'));
+    if (isProduction) {
+        gulp.src(['./src/js/**/*', '!./src/js/maps', '!./src/js/maps/**'])
+            .pipe(gulp.dest('./dist/js'));
+    }
+    else {
+        gulp.src('./src/js/**/*')
+            .pipe(gulp.dest('./dist/js'));
+    }
 
     // Copy Images
     console.log("Copy Images");
@@ -206,7 +221,7 @@ gulp.task('initializeGitSubmodule', (cb) => {
 
 // GULP: updateGitSubmodules - Pulls latest code for each submodule dependency.
 gulp.task('updateGitSubmodules', (cb) => {
-    return exec('git submodule update --init --remote ../niaid-design-system', function(err, stdout, stderr) {
+    return exec('git submodule update --init --remote ./niaid-design-system', function(err, stdout, stderr) {
         console.log(stdout);
         cb(err);
     });
