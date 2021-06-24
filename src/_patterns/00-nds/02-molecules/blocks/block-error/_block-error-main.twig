@@ -24,7 +24,7 @@
 {% set block_error_classes = block_error_classes|default() %}
 {% set block_error_id = block_error_id|default() %}
 {% set block_error_img_src = block_error_img_src|default('global/misc/404.png') %}
-{% set block_error_img_alt = block_error_img_alt|default('404') %}
+{% set block_error_img_alt = block_error_img_alt|default('404: Page Not Found') %}
 
 <div class="block-nds block--error {{ block_default_classes }}"{% if block_default_id is not empty %} id="{{ block_default_id }}"{% endif %}>
     {% block block_error_image %}
