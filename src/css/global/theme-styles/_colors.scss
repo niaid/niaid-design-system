@@ -1,3 +1,21 @@
+.style--colors--theme-2,
+.style--colors--theme-3 {
+    .block-nds {
+        &.block--wtph {
+            .block--wtph__buttons {
+                &__button {
+                    border-color: $type-link;
+                    background: transparent;
+                    &:hover,
+                    &:focus {
+                        color: $type-link;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .style--colors--theme-2 {
     /* Atoms */
     button {
