@@ -135,6 +135,7 @@ gulp.task('moveAssets', () => {
     for (let i = 0; i < pages.length; i++) {
         // Build Relative Path
         let relativePath = ""; if (pages[i].depth === 0) { relativePath = "./"; } else { for (let j = 0; j < pages[i].depth; j++) { relativePath += "../"; }}
+        // console.log(pages[i], relativePath);
 
         if (pages[i].targetPath === "/") {
             var path = "./public/patterns/pages-index/pages-index.html";
@@ -293,10 +294,16 @@ gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'upd
 
 // addPage - Helper function for the computePaths() function. Determines the path and destination of the page.
 function addPage(file) {
-    let distPath = file.split('src/_patterns/05-pages/')[1];
-    let fileName = distPath.split('/'), targetPath;
-    fileName = fileName[fileName.length - 1];
+    console.log(file);
+    let distPath = file.split('src/_patterns/05-pages/')[1]; console.log("distPath", distPath);
+    let fileDepth = distPath.split("/").length - 1; console.log("fileDepth", fileDepth);
+    let fileName = distPath.split('/'); fileName = fileName[fileName.length - 1]; console.log("fileName", fileName);
+    let pageName = fileName.split('.twig')[0]; console.log("PageName", pageName);
+    let targetPath;
     if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
-    pages.push({ "depth": distPath.split("/").length - 1, "pageName": fileName.split('.twig')[0], "patternLabPath": targetPath.replace('/', '-'), "targetPath": targetPath });
+    console.log("targetPath", targetPath);
+    let patternLabPath = targetPath.replace('/', '-'); console.log("patternLabPath", patternLabPath);
+    pages.push({ "depth": fileDepth, "pageName": pageName, "patternLabPath": patternLabPath, "targetPath": targetPath });
+    console.log('////////////////////////////////////////')
     return;
 }

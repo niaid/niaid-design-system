@@ -80,7 +80,7 @@
   ],
   "patternExportAll": false,
   "patternExportDirectory": "pattern_exports",
-  "patternExportPatternPartials": [],
+  "patternExportPatternPartials": ["pages-error-404"],
   "patternExportPreserveDirectoryStructure": true,
   "patternExportRaw": false,
   "patternMergeVariantArrays": true,
@@ -111,36 +111,42 @@
       "namespaces": [
         {
           "id": "nds",
+          "recursive": true,
           "paths": [
             "src/_patterns/00-nds"
           ]
         },
         {
           "id": "atoms",
+          "recursive": true,
           "paths": [
             "src/_patterns/01-atoms"
           ]
         },
         {
           "id": "molecules",
+          "recursive": true,
           "paths": [
             "src/_patterns/02-molecules"
           ]
         },
         {
           "id": "organisms",
+          "recursive": true,
           "paths": [
             "src/_patterns/03-organisms"
           ]
         },
         {
           "id": "templates",
+          "recursive": true,
           "paths": [
             "src/_patterns/04-templates"
           ]
         },
         {
           "id": "pages",
+          "recursive": true,
           "paths": [
             "src/_patterns/05-pages"
           ]
