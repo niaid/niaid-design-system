@@ -1,8 +1,8 @@
 .DS_Store
-composer.lock
 node_modules/
 public/
 dist/
+dependencyGraph.json
 
 src/css/nds-min.css
 src/css/maps
