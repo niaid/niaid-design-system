@@ -294,16 +294,20 @@ gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'upd
 
 // addPage - Helper function for the computePaths() function. Determines the path and destination of the page.
 function addPage(file) {
-    console.log(file);
-    let distPath = file.split('src/_patterns/05-pages/')[1]; console.log("distPath", distPath);
-    let fileDepth = distPath.split("/").length - 1; console.log("fileDepth", fileDepth);
-    let fileName = distPath.split('/'); fileName = fileName[fileName.length - 1]; console.log("fileName", fileName);
-    let pageName = fileName.split('.twig')[0]; console.log("PageName", pageName);
-    let targetPath;
-    if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
-    console.log("targetPath", targetPath);
-    let patternLabPath = targetPath.replace('/', '-'); console.log("patternLabPath", patternLabPath);
-    pages.push({ "depth": fileDepth, "pageName": pageName, "patternLabPath": patternLabPath, "targetPath": targetPath });
-    console.log('////////////////////////////////////////')
+    let targetPath, patternLabPath;
+    let distPath = file.split('src/_patterns/05-pages/')[1];
+    let depth = distPath.split("/").length - 1;
+    let pageName = distPath.split('/');
+    pageName = pageName[pageName.length - 1];
+    pageName = pageName.split('.twig')[0];
+    if (distPath === "index.twig") {
+        targetPath = "/";
+        patternLabPath = targetPath;
+    } else {
+        console.log("distPath.split('/' + pageName + '.twig')", distPath.split('/' + pageName + '.twig')); 
+        targetPath = distPath.split('/' + pageName + '.twig')[0];
+        patternLabPath = targetPath.replace(/\//g, '-');
+    };
+    pages.push({ "depth": depth, "pageName": pageName, "patternLabPath": patternLabPath, "targetPath": targetPath });
     return;
 }
