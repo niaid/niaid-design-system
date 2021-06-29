@@ -26,15 +26,12 @@
     Includes:
         Atoms -> Icons -> icon-default
 
-    Last Updated: January 22, 2021
+    Last Updated: June 18, 2021
 #}
 
 {% set component_modal_trigger_classes = component_modal_trigger_classes|default() %}
 {% set component_modal_id = component_modal_id|default() %}
 {% set component_modal_classes = component_modal_classes|default() %}
-{% set component_modal_header = block("component_modal_header") %}
-{% set component_modal_content = block("component_modal_content") %}
-{% set component_modal_footer = block("component_modal_footer") %}
 
 <div class="component--modal--trigger {{ component_modal_trigger_classes }}" data-toggle="modal" data-target="#{{ component_modal_id }}">
     {% block component_modal_trigger %}{% endblock %}
@@ -44,9 +41,7 @@
     <div class="component--modal__wrapper" role="document">
         <div class="component--modal__wrapper__content">
             <div class="component--modal__wrapper__content__header">
-                {% if component_modal_header|trim is not empty %}
-                    {{ component_modal_header|raw }}
-                {% endif %}
+                {% block component_modal_header %}{% endblock %}
                 <button type="button" class="component--modal__wrapper__content__header__close" data-dismiss="modal" aria-label="Close">
                     {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
                         {
@@ -56,14 +51,14 @@
                     %}
                 </button>
             </div>
-            {% if component_modal_content|trim is not empty %}
+            {% if block('component_modal_content')|trim != "" %}
                 <div class="component--modal__wrapper__content__body">
-                    {{ component_modal_content|raw }}
+                    {% block component_modal_content %}{% endblock %}
                 </div>
             {% endif %}
-            {% if component_modal_footer|trim is not empty %}
+            {% if block('component_modal_footer')|trim != "" %}
                 <div class="component--modal__wrapper__content__footer">
-                    {{ component_modal_footer|raw }}
+                    {% block component_modal_footer %}{% endblock %}
                 </div>
             {% endif %}
         </div>

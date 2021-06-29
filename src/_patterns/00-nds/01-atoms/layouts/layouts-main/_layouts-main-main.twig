@@ -23,7 +23,7 @@
         layouts_main_right: The number of columns (based on Bootstrap) for the right column. Options: "1" through "12".
         layouts_main_breakpoint: The Bootstrap breakpoint for the layout columns. Options: "sm", "md", "lg" (Default), "xl".
 
-    Last Updated: January 22, 2021
+    Last Updated: June 18, 2021
 #}
 
 {% set layouts_main_classes = layouts_main_classes|default() %}
@@ -33,24 +33,20 @@
 {% set layouts_main_right = layouts_main_right|default(3) %}
 {% set layouts_main_breakpoint = layouts_main_breakpoint|default('lg') %}
 
-{% set layouts_main_left_column = block("left_column") %}
-{% set layouts_main_main_column = block("main_column") %}
-{% set layouts_main_right_column = block("right_column") %}
-
 <div class="layouts-nds layouts--main {{ layouts_main_classes }}"{% if layouts_main_id is not empty %} id="{{ layouts_main_id }}"{% endif %}>
-    {% if layouts_main_left_column|trim is not empty %}
+    {% if block('left_column')|trim != "" %}
         <div class="layouts--main__column layouts--main__first col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_left is not empty %}-{{ layouts_main_left }}{% endif %}">
-            {{ layouts_main_left_column|raw }}
+            {% block left_column %}{% endblock %}
         </div>
     {% endif %}
-    {% if layouts_main_main_column is not empty %}
+    {% if block('main_column')|trim != "" %}
         <div class="layouts--main__column layouts--main__second col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_main is not empty %}-{{ layouts_main_main }}{% endif %}">
-            {{ layouts_main_main_column|raw }}
+            {% block main_column %}{% endblock %}
         </div>
     {% endif %}
-    {% if layouts_main_right_column is not empty %}
+    {% if block('right_column')|trim != "" %}
         <div class="layouts--main__column layouts--main__third col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_right is not empty %}-{{ layouts_main_right }}{% endif %}">
-            {{ layouts_main_right_column|raw }}
+            {% block right_column %}{% endblock %}
         </div>
     {% endif %}
 </div>

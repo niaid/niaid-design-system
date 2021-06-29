@@ -1,52 +1,73 @@
 {# This Pattern relies on Drupal markup for facets using the Facets Module #}
 
-<div id="block-category" class="block-facet--checkbox block block-facets block-facet-blockpolicy-facet-category">
+<div class="facet-inactive block-facet--checkbox block block-facets block-facet-blockpolicy-facet-category" id="block-category">
     <div class="facets-widget-checkbox">
-        <h3>Facet Header</h3>
-        <ul data-drupal-facet-id="policy_facet_category" data-drupal-facet-alias="category" class="js-facets-checkbox-links item-list__checkbox js-facets-widget">
+        <h3>Category</h3>
+        <ul data-drupal-facet-id="policy_facet_category" data-drupal-facet-alias="category" class="facet-inactive js-facets-checkbox-links item-list__checkbox js-facets-widget">
             <li class="facet-item">
-                <input type="checkbox" class="facets-checkbox" id="category-1" checked="checked">
-                <label for="category-1">
-                    <span class="facet-item__value">Accessibility</span>
-                    <span class="facet-item__count">(9)</span>
+                <input type="checkbox" class="facets-checkbox" id="category-1">
+                <label for="category-1" data-content="filter-accessibility">
+                    <span class="facet-item__value" data-content="filter-accessibility">Accessibility</span>
+                    <span class="facet-item__count" data-content="filter-accessibility">(5)</span>
                 </label>
-                <a href="/search/policy" rel="nofollow" class="is-active" data-drupal-facet-item-id="category-1" data-drupal-facet-item-value="1" style="display: none;">
-                    <span class="facet-item__status js-facet-deactivate">(-)</span>
-                    <span class="facet-item__value">Accessibility</span>
-                    <span class="facet-item__count">(9)</span>
+                <a href="/policies?f%5B0%5D=category%3A1" rel="nofollow" data-drupal-facet-item-id="category-1" data-drupal-facet-item-value="1" data-drupal-facet-item-count="5" data-content="filter-accessibility" style="display: none;" id="anch_16">
+                    <span class="facet-item__value" data-content="filter-accessibility">Accessibility</span>
+                    <span class="facet-item__count" data-content="filter-accessibility">(5)</span>
                 </a>
             </li>
             <li class="facet-item">
                 <input type="checkbox" class="facets-checkbox" id="category-2">
-                <label for="category-2">
-                    <span class="facet-item__value">Analytics &amp; Usability</span>
-                    <span class="facet-item__count">(2)</span>
+                <label for="category-2" data-content="filter-analytics-&amp;-usability">
+                    <span class="facet-item__value" data-content="filter-analytics-&amp;-usability">Analytics &amp; Usability</span>
+                    <span class="facet-item__count" data-content="filter-analytics-&amp;-usability">(5)</span>
                 </label>
-                <a href="/search/policy?f%5B0%5D=category%3A1&amp;f%5B1%5D=category%3A2" rel="nofollow" data-drupal-facet-item-id="category-2" data-drupal-facet-item-value="2" style="display: none;">
-                    <span class="facet-item__value">Analytics &amp; Usability</span>
-                    <span class="facet-item__count">(2)</span>
+                <a href="/policies?f%5B0%5D=category%3A2" rel="nofollow" data-drupal-facet-item-id="category-2" data-drupal-facet-item-value="2" data-drupal-facet-item-count="5" data-content="filter-analytics-&amp;-usability" style="display: none;" id="anch_17">
+                    <span class="facet-item__value" data-content="filter-analytics-&amp;-usability">Analytics &amp; Usability</span>
+                    <span class="facet-item__count" data-content="filter-analytics-&amp;-usability">(5)</span>
                 </a>
             </li>
             <li class="facet-item">
                 <input type="checkbox" class="facets-checkbox" id="category-3">
-                <label for="category-3">
-                    <span class="facet-item__value">Branding &amp; Visuals</span>
-                    <span class="facet-item__count">(4)</span>
+                <label for="category-3" data-content="filter-branding-&amp;-visuals">
+                    <span class="facet-item__value" data-content="filter-branding-&amp;-visuals">Branding &amp; Visuals</span>
+                    <span class="facet-item__count" data-content="filter-branding-&amp;-visuals">(8)</span>
                 </label>
-                <a href="/search/policy?f%5B0%5D=category%3A1&amp;f%5B1%5D=category%3A3" rel="nofollow" data-drupal-facet-item-id="category-3" data-drupal-facet-item-value="3" style="display: none;">
-                    <span class="facet-item__value">Branding &amp; Visuals</span>
-                    <span class="facet-item__count">(4)</span>
+                <a href="/policies?f%5B0%5D=category%3A3" rel="nofollow" data-drupal-facet-item-id="category-3" data-drupal-facet-item-value="3" data-drupal-facet-item-count="8" data-content="filter-branding-&amp;-visuals" style="display: none;" id="anch_18">
+                    <span class="facet-item__value" data-content="filter-branding-&amp;-visuals">Branding &amp; Visuals</span>
+                    <span class="facet-item__count" data-content="filter-branding-&amp;-visuals">(8)</span>
                 </a>
             </li>
             <li class="facet-item">
                 <input type="checkbox" class="facets-checkbox" id="category-4">
-                <label for="category-4">
-                    <span class="facet-item__value">Content</span>
-                    <span class="facet-item__count">(3)</span>
+                <label for="category-4" data-content="filter-content">
+                    <span class="facet-item__value" data-content="filter-content">Content</span>
+                    <span class="facet-item__count" data-content="filter-content">(24)</span>
                 </label>
-                <a href="/search/policy?f%5B0%5D=category%3A1&amp;f%5B1%5D=category%3A4" rel="nofollow" data-drupal-facet-item-id="category-4" data-drupal-facet-item-value="4" style="display: none;">
-                    <span class="facet-item__value">Content</span>
-                    <span class="facet-item__count">(3)</span>
+                <a href="/policies?f%5B0%5D=category%3A4" rel="nofollow" data-drupal-facet-item-id="category-4" data-drupal-facet-item-value="4" data-drupal-facet-item-count="24" data-content="filter-content" style="display: none;" id="anch_19">
+                    <span class="facet-item__value" data-content="filter-content">Content</span>
+                    <span class="facet-item__count" data-content="filter-content">(24)</span>
+                </a>
+            </li>
+            <li class="facet-item">
+                <input type="checkbox" class="facets-checkbox" id="category-5">
+                <label for="category-5" data-content="filter-technology-&amp;-security">
+                    <span class="facet-item__value" data-content="filter-technology-&amp;-security">Technology &amp; Security</span>
+                    <span class="facet-item__count" data-content="filter-technology-&amp;-security">(20)</span>
+                </label>
+                <a href="/policies?f%5B0%5D=category%3A5" rel="nofollow" data-drupal-facet-item-id="category-5" data-drupal-facet-item-value="5" data-drupal-facet-item-count="20" data-content="filter-technology-&amp;-security" style="display: none;" id="anch_20">
+                    <span class="facet-item__value" data-content="filter-technology-&amp;-security">Technology &amp; Security</span>
+                    <span class="facet-item__count" data-content="filter-technology-&amp;-security">(20)</span>
+                </a>
+            </li>
+            <li class="facet-item">
+                <input type="checkbox" class="facets-checkbox" id="category-6">
+                <label for="category-6" data-content="filter-third-party-applications">
+                    <span class="facet-item__value" data-content="filter-third-party-applications">Third-Party Applications</span>
+                    <span class="facet-item__count" data-content="filter-third-party-applications">(5)</span>
+                </label>
+                <a href="/policies?f%5B0%5D=category%3A6" rel="nofollow" data-drupal-facet-item-id="category-6" data-drupal-facet-item-value="6" data-drupal-facet-item-count="5" data-content="filter-third-party-applications" style="display: none;" id="anch_21">
+                    <span class="facet-item__value" data-content="filter-third-party-applications">Third-Party Applications</span>
+                    <span class="facet-item__count" data-content="filter-third-party-applications">(5)</span>
                 </a>
             </li>
         </ul>
