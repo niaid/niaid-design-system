@@ -240,6 +240,7 @@
     }
     .block-facet--checkbox {
         @include md-0dp;
+        background: transparent;
     }
     .form-nds {
         .form--search {
