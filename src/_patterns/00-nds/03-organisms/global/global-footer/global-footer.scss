@@ -31,7 +31,7 @@
         margin: 0 auto;
         padding: $s-2;
         .link--carot {
-            border-bottom: $s-1px solid transparent;
+            border-bottom: $border-transparent;
             &:hover,
             &:focus {
                 border-bottom: $s-1px solid $white;

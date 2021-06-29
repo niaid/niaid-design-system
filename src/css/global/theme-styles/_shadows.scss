@@ -54,7 +54,7 @@
                 .select2-selection  {
                     @include shadow-low;
                     @include hoverable;
-                    border: $s-1px solid transparent !important;
+                    border: $border-transparent !important;
                 }
                 .single-clear {
                     @include shadow-none;
@@ -68,7 +68,7 @@
         &.input--text {
             @include shadow-low;
             @include hoverable;
-            border: $s-1px solid transparent;
+            border: $border-transparent;
             &:focus {
                 border: $s-1px solid $type-link;
                 // shadow-block-hover + Focus Ring
@@ -84,7 +84,7 @@
             .input--date-picker__field {
                 @include shadow-low;
                 @include hoverable;
-                border: $s-1px solid transparent;
+                border: $border-transparent;
                 &:focus {
                     border: $s-1px solid $type-link;
                     // shadow-block-hover + Focus Ring

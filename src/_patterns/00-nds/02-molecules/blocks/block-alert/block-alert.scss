@@ -18,7 +18,7 @@
         border-bottom: $s-1px solid $white;
         &:hover,
         &:focus {
-            border-bottom: $s-1px solid transparent;
+            border-bottom: $border-transparent;
             color: $white;
         }
         &:visited {
@@ -55,7 +55,7 @@
             border-bottom: $s-1px solid $black;
             &:hover,
             &:focus {
-                border-bottom: $s-1px solid transparent;
+                border-bottom: $border-transparent;
                 color: $black;
             }
             &:visited {

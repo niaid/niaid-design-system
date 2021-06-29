@@ -24,13 +24,13 @@
     &__inner {
         &__section {
             padding: $s-0-50 $s-2;
-            border-bottom: $s-1px solid $border-light;
+            border-bottom: $border-block;
             width: 16rem;
             &:first-child {
-                border-top: $s-1px solid $border-light;
+                border-top: $border-block;
             }
             a {
-                border-bottom: $s-1px solid transparent;
+                border-bottom: $border-transparent;
             }
         }
     }
