@@ -33,6 +33,10 @@
     }
 %}
     {% block block_content %}
+        <div class="block--default__content">
+            <h2><a href="#">Default Block with Image</a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
         <div class="block--default__image">
             {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
                 {
@@ -40,10 +44,6 @@
                     "image_default_alt": 'Placeholder image'
                 }
             %}
-        </div>
-        <div class="block--default__content">
-            <h2><a href="#">Default Block with Image</a></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     {% endblock %}
 {% endembed %}
