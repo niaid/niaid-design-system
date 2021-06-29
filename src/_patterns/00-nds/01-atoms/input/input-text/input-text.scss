@@ -1,7 +1,7 @@
 .input--text {
     padding: $s-0-50 $s-1;
     width: 100%;
-    border: $s-1px solid $input-border;
+    border: $border-input;
     color: $type-body;
     &:focus {
         border: $s-1px solid $type-link;

@@ -33,7 +33,7 @@
                 display: flex;
                 align-items: flex-start;
                 justify-content: space-between;
-                border-bottom: $s-1px solid $border-light;
+                border-bottom: $border-block;
                 padding: $s-1-50;
                 position: relative;
                 * {
@@ -49,7 +49,7 @@
                     padding: 0;
                     color: $status-error !important;
                     background: $white !important;
-                    border: $s-1px solid transparent !important;
+                    border: $border-transparent !important;
                     right: -1 * $s-1-50;
                     top: -1 * $s-1-50;
                     &:hover,
@@ -73,7 +73,7 @@
                 justify-content: flex-start;
                 flex-wrap: wrap;
                 padding: $s-1-50;
-                border-top: $s-1px solid $border-light;
+                border-top: $border-block;
             }
         }
     }
