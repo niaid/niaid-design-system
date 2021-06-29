@@ -193,17 +193,6 @@
         }
     }
     .navigation-nds {
-        &.navigation--primary {
-            @include shadow-high;
-            button {
-                @include shadow-none;
-                &:hover,
-                &:focus,
-                &:active {
-                    @include shadow-none;
-                }
-            }
-        }
         &.navigation--local {
             background: $page-background;
             @include media-breakpoint-up('lg') {
