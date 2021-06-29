@@ -80,7 +80,9 @@
   ],
   "patternExportAll": false,
   "patternExportDirectory": "pattern_exports",
-  "patternExportPatternPartials": ["pages-error-404"],
+  "patternExportPatternPartials": [
+    "pages-error-404"
+  ],
   "patternExportPreserveDirectoryStructure": true,
   "patternExportRaw": false,
   "patternMergeVariantArrays": true,
