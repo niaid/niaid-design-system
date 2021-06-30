@@ -1,6 +1,6 @@
 $shadow-none: none;
-$shadow-low: 0 10px 24px 0 rgba(150,150,150,0.24);
-$shadow-high: 0 10px 24px 0 rgba(0,0,0,0.24);
+$shadow-low: 0 0 24px 0 rgba(150,150,150,0.12), 0 10px 24px 0 rgba(150,150,150,0.24);
+$shadow-high: 0 0 24px 0 rgba(150,150,150,0.12), 0 10px 24px 0 rgba(0,0,0,0.24);
 
 @mixin shadow-none($important:"") {
     @if ($important != "") {
