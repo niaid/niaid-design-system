@@ -179,6 +179,7 @@
     }
     .block-facet--checkbox {
         @include shadow-none;
+        background: transparent;
     }
     .form-nds {
         .form--search {
