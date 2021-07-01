@@ -26,7 +26,7 @@ You will need the following installed on your local machine:
 ### Setup Local Environment
 
 1. Install the above technologies.
-2. Run: npm i
+2. Run: npm ci
 3. Run: composer install (When prompted to install a default theme, type "n" and then return.)
 4. Run: gulp
 
