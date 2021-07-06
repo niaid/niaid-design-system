@@ -1,0 +1,19 @@
+{% include "@nds/02-molecules/navigation/navigation-local/_navigation-local-main.twig" with
+    {
+        "navigation_local_heading_text": "Development",
+        "navigation_local_items": [
+            {
+                "title": "Apple",
+                "url": "#",
+                "below": [
+                    {
+                        "title": "Banana",
+                        "url": "#"
+                    }
+                ]
+            }
+        ],
+        "navigation_local_item__attributes": attributes,
+        "component_local_navigation_level_2_text": localNavTitle
+    }
+%}
