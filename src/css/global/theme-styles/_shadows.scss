@@ -47,6 +47,9 @@
                 border: $s-1px solid $status-error;
             }
         }
+        &.button--floating {
+            @include shadow-high;
+        }
     }
     .input-nds {
         &.input--select {
