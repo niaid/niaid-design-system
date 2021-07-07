@@ -41,13 +41,12 @@ ol {
     max-width: $layout-type-max-width;
 }
 
-ul {
-    list-style-type: circle;
+ul, ol {
     li {
-        margin-bottom: .25em;
-        > ul {
-            margin-top: 0;
-        }
+        margin: $s-0-25 0;
+    }
+    ul, ol {
+        margin: 0;
     }
 }
 
@@ -59,7 +58,7 @@ hr {
     margin-bottom: $s-1;
     border: 0;
     text-align: left;
-    border-top: $s-1px solid rgba(0,0,0,0.1);
+    border-top: $border-block;
 }
 
 code {
