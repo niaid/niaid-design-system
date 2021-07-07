@@ -303,7 +303,6 @@ function addPage(file) {
         targetPath = "/";
         patternLabPath = targetPath;
     } else {
-        console.log("distPath.split('/' + pageName + '.twig')", distPath.split('/' + pageName + '.twig')); 
         targetPath = distPath.split('/' + pageName + '.twig')[0];
         patternLabPath = targetPath.replace(/\//g, '-');
     };
