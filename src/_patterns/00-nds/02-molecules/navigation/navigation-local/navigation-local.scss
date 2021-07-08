@@ -1,13 +1,11 @@
 .navigation--local {
+    padding: $s-1;
     &__title {
-        font-size: 1rem;
-        margin: .5rem 0;
+        font-size: $s-1;
+        margin: $s-0-50 0;
     }
     hr {
-        margin: .5rem 0;
-    }
-    .is-active {
-        font-weight: $fw-bold;
+        margin: $s-0-50 0;
     }
     .cursor-pointer {
         cursor: pointer;
@@ -22,22 +20,18 @@
             border-radius: 0;
             border: 0;
             background: none;
-            &.active-page {
-                font-weight: $font-weight-semibold;
-            }
             .card-header-text {
                 display: inline-flex;
                 .p-card-header {
-                    padding: .5rem;
+                    padding: $s-0-50 0;
                     text-align: left;
                     .text-link,
                     a {
-                        color: $link-color !important;
                         width: 100%;
-                        border-bottom: 1px solid transparent;
+                        border-bottom: $border-transparent;
                         &:hover,
                         &:focus {
-                            @include link-border;
+                            border-bottom: $border-transparent;
                         }
                     }
                     p {
@@ -50,19 +44,39 @@
                 margin-left: auto;
                 .arrow {
                     text-align: left;
-                    padding-left: 10px;
-                    padding-right: 10px;
+                    padding-left: $s-0-50;
+                    padding-right: $s-0-50;
                     .accordion-arrow {
                         position: relative;
                         margin: 0 auto;
                         top: 50%;
                         transform: translateY(-50%);
-                        color: $orange;
-                        @include fa-icon;
+                        color: $type-link;
                         display: block;
-                        @extend .fal;
                         border: 0;
                         cursor: pointer;
+                        @extend %fa-icon;
+                        @extend .fas;
+                    }
+                }
+            }
+            &.is-active {
+                border-radius: $border-radius-semi;
+                background: $type-link;
+                .p-card-header {
+                    padding-left: 1rem;
+                    .text-link,
+                    a,
+                    p {
+                        color: $white !important;
+                    }
+                }
+                & + .collapse {
+                    margin-top: 1rem;
+                }
+                .card-header-button {
+                    .accordion-arrow {
+                        color: $white;
                     }
                 }
             }
@@ -80,28 +94,29 @@
         .collapse,
         .collapsing {
             .card-body {
-                padding: 0;
+                padding: 0 0 0 $s-1;
+                border-left: $s-0-25 solid $type-link;
             }
         }
-        .level-0 {
-            .p-card-header {
-                margin-left: 0rem !important;
-            }
-        }
-        .level-1 {
-            .p-card-header {
-                margin-left: .5rem !important;
-            }
-        }
-        .level-2 {
-            .p-card-header {
-                margin-left: 1rem !important;
-            }
-        }
-        .level-3 {
-            .p-card-header {
-                margin-left: 1.5rem !important;
-            }
-        }
+        // .level-0 {
+        //     .p-card-header {
+        //         margin-left: 0 !important;
+        //     }
+        // }
+        // .level-1 {
+        //     .p-card-header {
+        //         margin-left: $s-0-50 !important;
+        //     }
+        // }
+        // .level-2 {
+        //     .p-card-header {
+        //         margin-left: $s-1 !important;
+        //     }
+        // }
+        // .level-3 {
+        //     .p-card-header {
+        //         margin-left: $s-0-50 !important;
+        //     }
+        // }
     }
 }

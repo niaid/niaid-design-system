@@ -13,24 +13,32 @@
     {% import _self as menus %}
     {% if items %}
         {% set parent_id = parent_id * 1000 %}
-        <div{{ attributes.setAttribute('id', ('LN-accordion-' ~ parent_id)) }}>
+        <div id="LN-accordion-{{ parent_id }}">
             {% for item in items %}
                 {% set accordion_index = parent_id + loop.index %}
                 <div class="card cardlevel-{{ menu_level }}">
-                    {% set classes = ['card-header', 'level-' ~ menu_level, item.in_active_trail ? 'active-trail'] %}
+                    {% set classes = "card-header level-" ~ menu_level %}
+                    {% if item.active is defined and item.active %}
+                        {% set classes = classes ~ " is-active" %}
+                    {% endif %}
+                    {% if item.in_active_trail == "true" or item.attributes.hasClass('active-trail') %}
+                        {% set classes = classes ~ " active-trail" %}
+                        {% set expanded = "true" %}
+                    {% else %}
+                        {% set expanded = "false" %}
+                    {% endif %}
                     {% if item.below %}
                         {% set id = 'LN-sec-' ~ accordion_index %}
-                        {% set expanded = (item.in_active_trail or item.attributes.hasClass('active-trail')) ? 'true' : 'false' %}
-                        <div{{ item.attributes.addClass(classes).setAttribute('id', id).setAttribute('data-toggle', 'collapse').setAttribute('data-target', '#LN-clps-' ~ accordion_index).setAttribute('aria-expanded', expanded ).setAttribute('aria-label', 'Open ' ~ item.title ~ ' Menu' ).setAttribute('aria-controls', 'LN-clps-' ~ accordion_index).setAttribute('tabindex', '0') }}>
+                        <div class="{{ classes ~ " cursor-pointer" }}" id="{{ id }}" data-toggle="collapse" data-target="#LN-clps-{{ accordion_index }}" aria-expanded="{{ expanded }}" aria-label="Open {{ item.title }} Menu" aria-controls="LN-clps-{{ accordion_index }}" tabindex="0">
                     {% else %}
-                        <div{{ item.attributes.addClass(classes) }}>
+                        <div class="{{ classes }}">
                     {% endif %}
-                        <div class="card-header-text">
+                        <div class="card-header-text d-inline-flex">
                             <div class="p-card-header">
-                                {% if item.url|raw|striptags|trim is not empty %}
-                                    <a href="{{ item.url }}" onclick="event.stopPropagation();">{{ item.title }}</a>
+                                {% if item.url|render|striptags|trim is not empty %}
+                                    {{ link(item.title, item.url, {'onclick' : ['event.stopPropagation();']}) }}
                                 {% else %}
-                                    <p {% if item.below %}class="cursor-pointer"{% endif %}>{{ item.title }}</p>
+                                    <p>{{ item.title }}</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -43,7 +51,7 @@
                         {% endif %}
                     {% if item.below %}
                         </div>
-                            {% set show = (item.in_active_trail or item.attributes.hasClass('active-trail')) ? 'show' %}
+                            {% set show = (expanded == "true") ? 'show' %}
                             <div id="LN-clps-{{ accordion_index }}" class="collapse {{ show }}" aria-labelledby="LN-sec-{{ accordion_index }}" data-parent="#LN-accordion-{{ parent_id }}">
                                 <div class="card-body">
                                     {{ menus.menu_links(item.below, attributes, accordion_index, (menu_level + 1)) }}
