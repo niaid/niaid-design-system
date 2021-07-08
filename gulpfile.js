@@ -201,7 +201,8 @@ gulp.task('cleanNDSSource', (cb) => {
         './src/css/libraries/**/*',
         './src/images/global/**/*',
         './src/js/libraries/**/*',
-        './src/js/utilities/**/*'
+        './src/js/utilities/**/*',
+        './src/_twig-components/**/*'
     ];
     return del(dirs, {'force': true, dot: true}, cb);
 });
@@ -227,32 +228,39 @@ gulp.task('updateGitSubmodules', (cb) => {
     });
 });
 
-// GULP: copyGlobalSass - Copy CSS into NDS Documentation
+// GULP: copyGlobalSass - Copy CSS into Project
 gulp.task('copyGlobalSass', () => {
     console.log("Transferring Assets from Global SASS...");
     gulp.src(srcPath + 'src/css/libraries/**/*').pipe(gulp.dest('./src/css/libraries/'));
     return gulp.src(srcPath + 'src/css/global/**/*').pipe(gulp.dest('./src/css/global/'));
 });
 
-// GULP: copyGlobalJS - Copy JS into NDS Documentation
+// GULP: copyGlobalJS - Copy JS into Project
 gulp.task('copyGlobalJS', () => {
     console.log("Transferring Assets from Global JS...");
     gulp.src(srcPath + 'src/js/libraries/**/*').pipe(gulp.dest('./src/js/libraries/'));
     return gulp.src(srcPath + 'src/js/utilities/**/*').pipe(gulp.dest('./src/js/utilities/'));
 });
 
-// GULP: copyGlobalPatterns - Copy Patterns into NDS Documentation
+// GULP: copyGlobalPatterns - Copy Patterns into Project
 gulp.task('copyGlobalPatterns', () => {
     console.log("Transferring Assets from Global Patterns...");
     console.log("Copying Patterns...");
     return gulp.src(srcPath + 'src/_patterns/00-nds/**/*').pipe(gulp.dest('./src/_patterns/00-nds/'));
 });
 
-// GULP: copyGlobalImages - Copy Images into NDS Documentation
+// GULP: copyGlobalImages - Copy Images into Project
 gulp.task('copyGlobalImages', () => {
     console.log("Transferring Assets from Global Images...");
     return gulp.src(srcPath + 'src/images/**/*').pipe(gulp.dest('./src/images/'));
 });
+
+// GULP: copyGlobalTwigComponents - Copy Twig Components into Project
+gulp.task('copyGlobalTwigComponents', () => {
+    console.log("Transferring Assets from Global Twig Components ...");
+    return gulp.src(srcPath + 'src/_twig-components/**/*').pipe(gulp.dest('./src/_twig-components/'));
+});
+
 
 // GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
@@ -287,7 +295,7 @@ gulp.task('default', gulp.series('transfer', 'compile', 'serveProject'));
 gulp.task('build', gulp.series('clean', 'compile', 'computePaths', 'moveAssets'));
 
 // GULP: update - Update to the latest release of NDS. Warning: This will overwrite files in the _patterns/00-nds/ directory, as well as the global/ and libraries/ folders of css/ and js/
-gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'updateGitSubmodules', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns'));
+gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'updateGitSubmodules', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'copyGlobalTwigComponents'));
 
 // HELPER FUNCTIONS
 
