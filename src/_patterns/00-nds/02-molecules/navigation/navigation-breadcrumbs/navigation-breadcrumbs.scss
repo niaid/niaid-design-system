@@ -1,12 +1,12 @@
 .navigation--breadcrumbs {
     font-weight: $font-weight-semibold;
-    font-size: $s-0-75;
+    font-size: $s-0-75 + $s-2px;
     color: $type-heading;
     padding-top: $s-2;
     a {
         &:hover,
         &:focus {
-            border-bottom: $s-1px solid transparent;
+            border-bottom: $border-transparent;
         }
     }
     .icon--default {

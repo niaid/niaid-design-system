@@ -79,7 +79,7 @@
                 .select2-selection  {
                     @include md-2dp;
                     @extend .hoverable;
-                    border: $s-1px solid transparent !important;
+                    border: $border-transparent !important;
                 }
                 .single-clear {
                     @include md-0dp;
@@ -92,7 +92,7 @@
         }
         &.input--text {
             @include md-2dp;
-            border: $s-1px solid transparent;
+            border: $border-transparent;
             &:hover {
                 @include md-8dp;
                 transition: box-shadow .25s;
@@ -119,7 +119,7 @@
         &.input--date-picker {
             .input--date-picker__field {
                 @include md-2dp;
-                border: $s-1px solid transparent;
+                border: $border-transparent;
                 &:hover {
                     @include md-8dp;
                     transition: box-shadow .25s;
@@ -205,8 +205,8 @@
         }
         &.block--wtph {
             @include md-0dp;
-            border-top: $s-1px solid $border-light;
-            border-bottom: $s-1px solid $border-light;
+            border-top: $border-block;
+            border-bottom: $border-block;
         }
     }
     .social--icon {
@@ -240,6 +240,7 @@
     }
     .block-facet--checkbox {
         @include md-0dp;
+        background: transparent;
     }
     .form-nds {
         .form--search {

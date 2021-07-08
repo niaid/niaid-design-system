@@ -293,10 +293,19 @@ gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'upd
 
 // addPage - Helper function for the computePaths() function. Determines the path and destination of the page.
 function addPage(file) {
+    let targetPath, patternLabPath;
     let distPath = file.split('src/_patterns/05-pages/')[1];
-    let fileName = distPath.split('/'), targetPath;
-    fileName = fileName[fileName.length - 1];
-    if (distPath === fileName) { targetPath = "/"; } else { targetPath = distPath.split('/' + fileName)[0]; }
-    pages.push({ "depth": distPath.split("/").length - 1, "pageName": fileName.split('.twig')[0], "patternLabPath": targetPath.replace('/', '-'), "targetPath": targetPath });
+    let depth = distPath.split("/").length - 1;
+    let pageName = distPath.split('/');
+    pageName = pageName[pageName.length - 1];
+    pageName = pageName.split('.twig')[0];
+    if (distPath === "index.twig") {
+        targetPath = "/";
+        patternLabPath = targetPath;
+    } else {
+        targetPath = distPath.split('/' + pageName + '.twig')[0];
+        patternLabPath = targetPath.replace(/\//g, '-');
+    };
+    pages.push({ "depth": depth, "pageName": pageName, "patternLabPath": patternLabPath, "targetPath": targetPath });
     return;
 }

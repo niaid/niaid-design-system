@@ -8,10 +8,12 @@
     }
     &__wrapper {
         display: flex;
-        margin: 0 -1 * $s-0-50;
         &__clear,
         .text--chip {
             margin: 0 $s-0-25;
+        }
+        > :first-child {
+            margin-left: 0;
         }
     }
     .ext-link-icon {

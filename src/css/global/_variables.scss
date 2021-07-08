@@ -116,18 +116,6 @@ $font-size-heading-6: 1rem;
 $font-size-display-1: 4rem;
 $font-size-display-2: 3rem;
 
-/**** BORDER RADIUS ****/
-$border-radius-sharp: 0;
-$border-radius-semi: .3125rem;
-$border-radius-full: 1rem;
-
-/**** BREAKPOINTS & SIZING ****/
-$layout-mobile-menu-breakpoint: 950px;
-$layout-main-max-width: 1800px;
-$layout-body-max-width: 1280px;
-$layout-modal-max-width: 800px;
-$layout-type-max-width: 88ex;
-
 /**** Z-Index ****/
 $z-index-below-baseline: -100;
 $z-index-baseline: 0;
@@ -195,3 +183,20 @@ $s-20: $base-spacer * 20;
 $s-30: $base-spacer * 30;
 $s-40: $base-spacer * 40;
 $s-50: $base-spacer * 50;
+
+/**** BORDER ****/
+$border-transparent: $s-1px solid transparent;
+$border-block: $s-1px solid $border-light;
+$border-input: $s-1px solid $input-border;
+
+/**** BORDER RADIUS ****/
+$border-radius-sharp: 0;
+$border-radius-semi: .3125rem;
+$border-radius-full: 1rem;
+
+/**** BREAKPOINTS & SIZING ****/
+$layout-mobile-menu-breakpoint: 950px;
+$layout-main-max-width: 1800px;
+$layout-body-max-width: 1280px;
+$layout-modal-max-width: 800px;
+$layout-type-max-width: 88ex;

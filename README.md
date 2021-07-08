@@ -1,6 +1,6 @@
 # NIAID Design System (NDS)
 
-VERSION 1.0.6
+VERSION 1.0.7
 
 The [NIAID Design System](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/) was developed within the Office of Communications and Government Relations (OCGR) at the National Institute of Allergy and Infectious Diseases (NIAID) by Booz Allen Hamilton. The design system is designed to aid users with the process of creating policy-compliant websites that conform to design standards and guidance set by NIAID, NIH, HHS, and USWDS.
 
@@ -26,7 +26,7 @@ You will need the following installed on your local machine:
 ### Setup Local Environment
 
 1. Install the above technologies.
-2. Run: npm i
+2. Run: npm ci
 3. Run: composer install (When prompted to install a default theme, type "n" and then return.)
 4. Run: gulp
 
