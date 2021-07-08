@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     moduleNDS_links.init();
     moduleNDS_media.init();
     moduleNDS_modal.init();
+    moduleNDS_navigationLocal.init();
     moduleNDS_select.init();
     moduleNDS_tables.init();
     moduleNDS_tabs.init();
