@@ -1,27 +1,26 @@
-(function($) {
-    function init_local_nav(context) {
-        $('.card-header', context).keypress(function(e) {
-            if (e.which == 13) {
-                $(this).click();
-            }
-        });
+var moduleNDS_navigationLocal = (function() {
+    'use strict';
+    
+    /* =================== PRIVATE METHODS ================= */
+    // initializeNavigationLocal - Adds keyboard support for the local navigation component.
+    function initializeNavigationLocal() {
+        let localNavigationItems = document.querySelectorAll('.card-header');
+        for (let i = 0; i < localNavigationItems.length; i++) {
+            localNavigationItems[i].addEventListener('keydown', function(e) {
+                if (e.code === "Enter" || e.keyCode === "13" || e.code === "Space" || e.keyCode === "23") {
+                    e.target.click();
+                }
+            });
+        }
     }
 
-    if (typeof Drupal !== 'undefined') {
-        // Define Drupal behavior.
-        (function($, Drupal) {
-            Drupal.behaviors.initLocalNav = {
-                attach: function(context) {
-                    $(".page", context).once('niaid-local-navigation').each(function() {
-                        init_local_nav(context);
-                    });
-                },
-            };
-        })(jQuery, Drupal);
-    } else {
-        // If Drupal isn't loaded, add JS for Pattern Lab.
-        $(document).ready(function() {
-            init_local_nav();
-        });
+    /* =================== PUBLIC METHODS ================== */
+    function init() {
+        initializeNavigationLocal();
     }
-})(jQuery);
+
+    /* =============== EXPORT PUBLIC METHODS =============== */
+    return {
+      init: init
+    };
+}());
