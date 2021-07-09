@@ -195,12 +195,6 @@
         }
     }
     .navigation-nds {
-        &.navigation--local {
-            @include media-breakpoint-up('lg') {
-                border-bottom-left-radius: $corner-radius;
-                border-bottom-right-radius: $corner-radius;
-            }
-        }
         &.navigation--primary {
             button {
                 &:hover,
@@ -408,12 +402,6 @@
                 }
             }
             .dropdown-menu {
-                border-bottom-left-radius: $corner-radius;
-                border-bottom-right-radius: $corner-radius;
-            }
-        }
-        &.navigation--local {
-            @include media-breakpoint-up('lg') {
                 border-bottom-left-radius: $corner-radius;
                 border-bottom-right-radius: $corner-radius;
             }

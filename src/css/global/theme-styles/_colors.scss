@@ -297,12 +297,6 @@
                 }
             }
         }
-        &.navigation--local {
-            border-bottom-color: $color-theme-2-1-1;
-            .navigation--local__group__label__button__arrow {
-                color: $color-theme-2-1-1;
-            }
-        }
         &.navigation--mobile-rail {
             .navigation--mobile-rail__button {
                 color: $color-theme-2-1-1;
@@ -655,12 +649,6 @@
                         }
                     }
                 }
-            }
-        }
-        &.navigation--local {
-            border-bottom-color: $color-theme-3-1-1;
-            .navigation--local__group__label__button__arrow {
-                color: $color-theme-3-1-1;
             }
         }
         &.navigation--mobile-rail {

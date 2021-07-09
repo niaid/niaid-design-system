@@ -266,15 +266,6 @@
                 }
             }
         }
-        &.navigation--local {
-            @include md-1dp;
-            background: $page-background;
-            @include media-breakpoint-up('lg') {
-                @include md-16dp;
-                border-bottom-width: .3125rem;
-                border-bottom-style: solid;
-            }
-        }
         &.navigation--pagination {
             .pager {
                 .pager__items {
