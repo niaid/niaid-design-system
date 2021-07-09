@@ -75,7 +75,9 @@
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
-            {% block right_column %}<span></span>{% endblock %}
+            {% block right_column %}
+                {% include "@nds/02-molecules/navigation/navigation-page-contents/_navigation-page-contents-main.twig" %}
+            {% endblock %}
         {% endembed %}
     {% endblock %}
     {% block footer %}
