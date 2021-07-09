@@ -38,6 +38,11 @@
                     p {
                         margin: 0;
                     }
+                    .text-link,
+                    a,
+                    p {
+                        line-height: $line-height-small;
+                    }
                 }
             }
             .card-header-button {
@@ -95,29 +100,10 @@
         .collapse,
         .collapsing {
             .card-body {
+                margin: $s-0-25 0;
                 padding: 0 0 0 $s-1;
                 border-left: $s-0-25 solid $type-link;
             }
         }
-        // .level-0 {
-        //     .p-card-header {
-        //         margin-left: 0 !important;
-        //     }
-        // }
-        // .level-1 {
-        //     .p-card-header {
-        //         margin-left: $s-0-50 !important;
-        //     }
-        // }
-        // .level-2 {
-        //     .p-card-header {
-        //         margin-left: $s-1 !important;
-        //     }
-        // }
-        // .level-3 {
-        //     .p-card-header {
-        //         margin-left: $s-0-50 !important;
-        //     }
-        // }
     }
 }
