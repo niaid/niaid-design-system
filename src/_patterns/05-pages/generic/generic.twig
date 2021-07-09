@@ -12,7 +12,16 @@
         {% include "@nds/02-molecules/navigation/navigation-drawer/demo/navigation-drawer.twig" %}
     {% endblock %}
     {% block main %}
-        {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" %}
+        {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" with
+            {
+                "layouts_main_left": columns.left,
+                "layouts_main_main": columns.main,
+                "layouts_main_right": columns.right
+            }
+        %}
+            {% block left_column %}
+                {% include "@nds/02-molecules/navigation/navigation-local/demo/navigation-local.twig" %}
+            {% endblock %}
             {% block main_column %}
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" with
                     {
@@ -66,6 +75,7 @@
                     {% endblock %}
                 {% endembed %}
             {% endblock %}
+            {% block right_column %}<span></span>{% endblock %}
         {% endembed %}
     {% endblock %}
     {% block footer %}

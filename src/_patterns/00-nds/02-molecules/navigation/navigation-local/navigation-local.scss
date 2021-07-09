@@ -1,5 +1,5 @@
 .navigation--local {
-    padding: $s-1;
+    padding: $s-2 0 $s-2 $s-2;
     &__title {
         font-size: $s-1;
         margin: $s-0-50 0;
@@ -25,6 +25,7 @@
                 .p-card-header {
                     padding: $s-0-50 0;
                     text-align: left;
+                    font-size: $s-0-75;
                     .text-link,
                     a {
                         width: 100%;
