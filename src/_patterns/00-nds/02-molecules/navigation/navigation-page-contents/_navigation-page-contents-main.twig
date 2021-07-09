@@ -1,0 +1,10 @@
+{% set navigation_page_contents_classes = navigation_page_contents_classes|default() %}
+{% set navigation_page_contents_title = navigation_page_contents_title|default("On This Page") %}
+{% set navigation_page_contents_data = navigation_page_contents_data|default() %}
+{% set navigation_page_contents_data_target = navigation_page_contents_data_target|default() %}
+    
+<div class="navigation-nds navigation--page-contents {{ navigation_page_contents_classes }}" data-target="{{ navigation_page_contents_data_target }}">
+    <h2>{{ navigation_page_contents_title }}</h2>
+    <hr>
+    <ul class="navigation--page-contents__list section table-of-contents"></ul>
+</div>
