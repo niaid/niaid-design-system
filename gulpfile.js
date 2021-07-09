@@ -266,7 +266,7 @@ gulp.task('copyGlobalImages', () => {
 // GULP: copyGlobalFonts - Copy Fonts into NDS Drupal Theme
 gulp.task('copyGlobalFonts', () => {
     console.log("Transferring Assets from Global Fonts...");
-    return gulp.src(srcPath + 'src/webfonts/**/*').pipe(gulp.dest('./src/webfonts/'));
+    return gulp.src([srcPath + 'src/webfonts/**/*', '!' + srcPath + 'src/webfonts/font-awesome**/*']).pipe(gulp.dest('./src/webfonts/'));
 });
 
 // GULP: copyGlobalTwigComponents - Copy Twig Components into Project
