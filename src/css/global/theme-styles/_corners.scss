@@ -215,6 +215,9 @@
                 }
             }
         }
+        &.navigation--page-contents {
+            border-radius: $corner-radius;
+        }
     }
     &.style--shadows {
         .block-nds {
@@ -412,6 +415,9 @@
                     border-radius: 0 0 $corner-radius $corner-radius;
                 }
             }
+        }
+        &.navigation--page-contents {
+            border-radius: $corner-radius;
         }
     }
     &.style--shadows {
