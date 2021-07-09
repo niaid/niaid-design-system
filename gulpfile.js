@@ -26,11 +26,8 @@ let isProduction = (argv.production === undefined) ? false : true;
 
 let srcPath = "./niaid-design-system/";
 
-// copyFonts - Copy Font Awesome from node_modules into project.
-gulp.task('copyFonts', () => {
-    return gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*')
-        .pipe(gulp.dest('./src/webfonts/font-awesome'));
-});
+// Change to "fontawesome-pro" if you have access.
+let fontAwesome = "fontawesome-free";
 
 // compileSass - Compile CSS for your static site.
 gulp.task('compileSass', () => {
@@ -202,7 +199,12 @@ gulp.task('cleanNDSSource', (cb) => {
         './src/images/global/**/*',
         './src/js/libraries/**/*',
         './src/js/utilities/**/*',
-        './src/_twig-components/**/*'
+        './src/_twig-components/**/*',
+        './src/webfonts/font-awesome/**/*',
+        './src/webfonts/martel/**/*',
+        './src/webfonts/merriweather/**/*',
+        './src/webfonts/public-sans/**/*',
+        './src/webfonts/roboto/**/*'
     ];
     return del(dirs, {'force': true, dot: true}, cb);
 });
@@ -226,6 +228,12 @@ gulp.task('updateGitSubmodules', (cb) => {
         console.log(stdout);
         cb(err);
     });
+});
+
+// copyFontAwesome - Copy Font Awesome from node_modules into project.
+gulp.task('copyFontAwesome', () => {
+    return gulp.src('./node_modules/@fortawesome/' + fontAwesome + '/webfonts/*')
+        .pipe(gulp.dest('./src/webfonts/font-awesome'));
 });
 
 // GULP: copyGlobalSass - Copy CSS into Project
@@ -255,12 +263,17 @@ gulp.task('copyGlobalImages', () => {
     return gulp.src(srcPath + 'src/images/**/*').pipe(gulp.dest('./src/images/'));
 });
 
+// GULP: copyGlobalFonts - Copy Fonts into NDS Drupal Theme
+gulp.task('copyGlobalFonts', () => {
+    console.log("Transferring Assets from Global Fonts...");
+    return gulp.src(srcPath + 'src/webfonts/**/*').pipe(gulp.dest('./src/webfonts/'));
+});
+
 // GULP: copyGlobalTwigComponents - Copy Twig Components into Project
 gulp.task('copyGlobalTwigComponents', () => {
     console.log("Transferring Assets from Global Twig Components ...");
     return gulp.src(srcPath + 'src/_twig-components/**/*').pipe(gulp.dest('./src/_twig-components/'));
 });
-
 
 // GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
@@ -278,7 +291,7 @@ gulp.task('serveProject', function() {
 // GULP AGGREGATES
 
 // GULP: transfer - Transfers official NDS assets to appropriate locations.
-gulp.task('transfer', gulp.series('copyFonts'));
+gulp.task('transfer', gulp.series('copyFontAwesome', 'copyGlobalFonts', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'copyGlobalTwigComponents'));
 
 // GULP: compile - Compiles the local project assets.
 gulp.task('compile', gulp.series('compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab'));
@@ -289,13 +302,13 @@ gulp.task('clean', gulp.series('cleanDistributionDirectories'));
 // COMMANDS
 
 // GULP: default - Running gulp compiles the your static site and serves it locally.
-gulp.task('default', gulp.series('transfer', 'compile', 'serveProject'));
+gulp.task('default', gulp.series('compile', 'serveProject'));
 
 // GULP: build - Compile your project assets and build dist folder for deploy.
 gulp.task('build', gulp.series('clean', 'compile', 'computePaths', 'moveAssets'));
 
 // GULP: update - Update to the latest release of NDS. Warning: This will overwrite files in the _patterns/00-nds/ directory, as well as the global/ and libraries/ folders of css/ and js/
-gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'updateGitSubmodules', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'copyGlobalTwigComponents'));
+gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'updateGitSubmodules', 'transfer'));
 
 // HELPER FUNCTIONS
 
