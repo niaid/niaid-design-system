@@ -24,7 +24,10 @@ const fs = require("fs");
 
 let isProduction = (argv.production === undefined) ? false : true;
 
-let srcPath = "./niaid-design-system/";
+let pathToNDSSubmodule = "./";
+
+// Do Not Change srcPath Variable:
+let srcPath = pathToNDSSubmodule + "niaid-design-system/";
 
 // Change to "fontawesome-pro" if you have access.
 let fontAwesome = "fontawesome-free";
@@ -211,9 +214,10 @@ gulp.task('cleanNDSSource', (cb) => {
 
 // GULP: initializeGitSubmodule - Checks to see if NDS is installed. If not, it installs the NDS submodule.
 gulp.task('initializeGitSubmodule', (cb) => {
-    if (!fs.existsSync('./niaid-design-system/')) {
+    if (!fs.existsSync(srcPath)) {
         console.log("Initializing NDS Submodule");
-        return exec('git submodule add git@github.com:niaid/niaid-design-system.git', function(err, stdout, stderr) {
+        return exec('git submodule add git@github.com:niaid/niaid-design-system.git', { cwd: pathToNDSSubmodule },
+          function(err, stdout, stderr) {
             console.log(stdout);
             cb(err);
         });
@@ -224,7 +228,8 @@ gulp.task('initializeGitSubmodule', (cb) => {
 
 // GULP: updateGitSubmodules - Pulls latest code for each submodule dependency.
 gulp.task('updateGitSubmodules', (cb) => {
-    return exec('git submodule update --init --remote ./niaid-design-system', function(err, stdout, stderr) {
+    let command = 'git submodule update --init --remote ' + srcPath;
+    return exec(command, function(err, stdout, stderr) {
         console.log(stdout);
         cb(err);
     });
@@ -239,6 +244,12 @@ gulp.task('copyFontAwesome', () => {
 // GULP: copyGlobalSass - Copy CSS into Project
 gulp.task('copyGlobalSass', () => {
     console.log("Transferring Assets from Global SASS...");
+    if (!fs.existsSync('./src/css/style.scss')) {
+        gulp.src(srcPath + 'src/css/style.scss').pipe(gulp.dest('./src/css/'));
+    }
+    if (!fs.existsSync('./src/css/overrides/')) {
+        gulp.src(srcPath + 'src/css/overrides/**/*').pipe(gulp.dest('./src/css/overrides/'));
+    }
     gulp.src(srcPath + 'src/css/libraries/**/*').pipe(gulp.dest('./src/css/libraries/'));
     return gulp.src(srcPath + 'src/css/global/**/*').pipe(gulp.dest('./src/css/global/'));
 });
@@ -246,6 +257,9 @@ gulp.task('copyGlobalSass', () => {
 // GULP: copyGlobalJS - Copy JS into Project
 gulp.task('copyGlobalJS', () => {
     console.log("Transferring Assets from Global JS...");
+    if (!fs.existsSync('./src/js/global/')) {
+        gulp.src(srcPath + 'src/js/global/**/*').pipe(gulp.dest('./src/js/global/'));
+    }
     gulp.src(srcPath + 'src/js/libraries/**/*').pipe(gulp.dest('./src/js/libraries/'));
     return gulp.src(srcPath + 'src/js/utilities/**/*').pipe(gulp.dest('./src/js/utilities/'));
 });
@@ -266,7 +280,10 @@ gulp.task('copyGlobalImages', () => {
 // GULP: copyGlobalFonts - Copy Fonts into NDS Drupal Theme
 gulp.task('copyGlobalFonts', () => {
     console.log("Transferring Assets from Global Fonts...");
-    return gulp.src([srcPath + 'src/webfonts/**/*', '!' + srcPath + 'src/webfonts/font-awesome**/*']).pipe(gulp.dest('./src/webfonts/'));
+    gulp.src(srcPath + 'src/webfonts/martel/*').pipe(gulp.dest('./src/webfonts/martel/'));
+    gulp.src(srcPath + 'src/webfonts/merriweather/*').pipe(gulp.dest('./src/webfonts/merriweather/'));
+    gulp.src(srcPath + 'src/webfonts/roboto/*').pipe(gulp.dest('./src/webfonts/roboto/'));
+    return gulp.src(srcPath + 'src/webfonts/public-sans/*').pipe(gulp.dest('./src/webfonts/public-sans/'));
 });
 
 // GULP: copyGlobalTwigComponents - Copy Twig Components into Project
@@ -306,6 +323,9 @@ gulp.task('default', gulp.series('compile', 'serveProject'));
 
 // GULP: build - Compile your project assets and build dist folder for deploy.
 gulp.task('build', gulp.series('clean', 'compile', 'computePaths', 'moveAssets'));
+
+// GULP: init - Initializes the NDS Project.
+gulp.task('init', gulp.series('initializeGitSubmodule', 'updateGitSubmodules', 'transfer'));
 
 // GULP: update - Update to the latest release of NDS. Warning: This will overwrite files in the _patterns/00-nds/ directory, as well as the global/ and libraries/ folders of css/ and js/
 gulp.task('update', gulp.series('cleanNDSSource', 'initializeGitSubmodule', 'updateGitSubmodules', 'transfer'));
