@@ -34,6 +34,9 @@
                         &:focus {
                             border-bottom: $border-transparent;
                         }
+                        &:visited {
+                            color: $type-link !important;
+                        }
                     }
                     p {
                         margin: 0;
