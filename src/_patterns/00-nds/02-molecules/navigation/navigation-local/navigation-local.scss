@@ -3,8 +3,10 @@
     &__title {
         font-size: $s-1;
         margin: $s-0-50 0;
-        &:visited {
-            color: $type-link !important;
+        a {
+            &:visited {
+                color: $type-link !important;
+            }
         }
     }
     hr {
