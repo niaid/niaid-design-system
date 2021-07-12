@@ -3,6 +3,9 @@
     &__title {
         font-size: $s-1;
         margin: $s-0-50 0;
+        &:visited {
+            color: $type-link !important;
+        }
     }
     hr {
         margin: $s-0-50 0;
@@ -78,6 +81,9 @@
                     a,
                     p {
                         color: $white !important;
+                        &:visited {
+                            color: $white !important;
+                        }
                     }
                 }
                 & + .collapse {
