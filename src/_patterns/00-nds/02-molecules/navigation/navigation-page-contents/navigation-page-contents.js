@@ -20,31 +20,11 @@ var moduleNDS_pageContents = (function() {
         }
         $('.scrollspy').scrollSpy();
 
-        if ($(".navigation--page-contents").length) {
-            var mql = window.matchMedia('all and (min-width: 992px)');
-            var wWidth = $(window).width();
-
-            $('.layouts--main').each(function() {
-                if (mql.matches) {
-                    stickybits($(this).find('.navigation--page-contents'), { stickyBitStickyOffset: 32 });
-                }
-            });
-
-            $(window).on('resize', function() {
-                if (wWidth != $(this).width()) {
-                    wWidth = $(this).width();
-                    $('.fixed-right').each(function() {
-                        if (mql.matches) {
-                            stickybits($(this).find('.navigation--page-contents'), { stickyBitStickyOffset: 32 });
-                        }
-                        else {
-                            stickybits($(this).find('.navigation--page-contents')).cleanup();
-                            $(this).find('.navigation--page-contents').css('position', 'relative');
-                        }
-                    });
-                }
-            });
-        }
+        $('.navigation--page-contents').each(function() {
+            if ($(this).attr('data-sticky') == "true") { 
+                stickyElement(".navigation--page-contents", 32, "all and (min-width: 992px)");
+            }
+        });
     }
 
     /* =================== PUBLIC METHODS ================== */

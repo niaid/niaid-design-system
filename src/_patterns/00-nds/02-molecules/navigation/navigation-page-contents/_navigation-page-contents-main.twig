@@ -17,14 +17,16 @@
     Parameters:
         navigation_page_contents_classes: Additional classes for the navigation component.
         navigation_page_contents_title: The title of the navigation component. Default: On This Page
+        navigation_page_contents_sticky: A boolean to determine if the navigation is sticky. Default: "true".
 
-    Last Updated: July 8, 2021
+    Last Updated: July 16, 2021
 #}
 
 {% set navigation_page_contents_classes = navigation_page_contents_classes|default() %}
 {% set navigation_page_contents_title = navigation_page_contents_title|default("On This Page") %}
+{% set navigation_page_contents_sticky = navigation_page_contents_sticky|default("true") %}
     
-<div class="navigation-nds navigation--page-contents {{ navigation_page_contents_classes }}">
+<div class="navigation-nds navigation--page-contents {{ navigation_page_contents_classes }}" data-sticky={{ navigation_page_contents_sticky }}>
     <h2>{{ navigation_page_contents_title }}</h2>
     <hr>
     <ul class="navigation--page-contents__list section table-of-contents"></ul>

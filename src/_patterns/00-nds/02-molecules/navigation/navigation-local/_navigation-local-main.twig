@@ -15,8 +15,9 @@
         navigation_local_item_attributes: Additional item attributes that are used with Drupal. If not using Drupal, this field can be left empty.
         navigation_local_heading_text: The title of the local navigation section.
         navigation_local_heading_href: An optional URL for the local navigation title.
+        navigation_local_sticky: A boolean to determine if the navigation is sticky. Default: "true".
 
-    Last Updated: July 8, 2021
+    Last Updated: July 16, 2021
 #}
 
 {% set navigation_local_classes = navigation_local_classes|default() %}
@@ -25,6 +26,7 @@
 {% set navigation_local_item_attributes = navigation_local_item_attributes|default({}) %}
 {% set navigation_local_heading_text = navigation_local_heading_text|default() %}
 {% set navigation_local_heading_href = navigation_local_heading_href|default() %}
+{% set navigation_local_sticky = navigation_local_sticky|default("true") %}
 
 {% import _self as menus %}
 
@@ -85,7 +87,7 @@
     {% endif %}
 {% endmacro %}
 
-<div class="navigation-nds navigation--local {{ navigation_local_classes }}" id="{{ navigation_local_id }}">
+<div class="navigation-nds navigation--local {{ navigation_local_classes }}" id="{{ navigation_local_id }}" data-sticky={{ navigation_local_sticky }}>
     {% if navigation_local_heading_text is not empty %}
         <h2 class="navigation--local__title">{% if navigation_local_heading_href is not empty %}<a href="{{ navigation_local_heading_href }}">{% endif %}{{ navigation_local_heading_text }}{% if navigation_local_heading_href is not empty %}</a>{% endif %}</h2>
         <hr>

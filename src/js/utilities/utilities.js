@@ -33,3 +33,31 @@ function windowWidth() {
 function hasClass(el, className) {
     return (' ' + el.className + ' ').indexOf(' ' + className + ' ') > -1;
 }
+
+function stickyElement(elClass, offset, matchMediaDefinition) {
+    if ($(elClass).length) {
+        var mql = window.matchMedia(matchMediaDefinition);
+        var wWidth = $(window).width();
+
+        $('.layouts--main').each(function() {
+            if (mql.matches) {
+                stickybits($(this).find(elClass), { stickyBitStickyOffset: offset });
+            }
+        });
+
+        $(window).on('resize', function() {
+            if (wWidth != $(this).width()) {
+                wWidth = $(this).width();
+                $('.layouts--main').each(function() {
+                    if (mql.matches) {
+                        stickybits($(this).find(elClass), { stickyBitStickyOffset: offset });
+                    }
+                    else {
+                        stickybits($(this).find(elClass)).cleanup();
+                        $(this).find(elClass).css('position', 'relative');
+                    }
+                });
+            }
+        });
+    }
+}
