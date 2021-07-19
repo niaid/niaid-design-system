@@ -9,3 +9,27 @@ body {
     -webkit-text-size-adjust: 100%; // From Bootstrap
     -webkit-tap-highlight-color: transparent; // From Bootstrap
 }
+
+@media print {
+    html,
+    body,
+    .layouts--body {
+        background-color: transparent !important;
+    }
+
+    .button-nds,
+    table,
+    figure {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .button--floating,
+    .component--uswds-banner,
+    .navigation--page-contents,
+    .navigation--mobile-rail,
+    .global--header .button--icon,
+    .global--footer {
+        display: none !important;
+    }
+}
