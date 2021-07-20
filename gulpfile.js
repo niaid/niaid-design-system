@@ -1,6 +1,6 @@
 /* Gulp File
     Last Modified by: Jacob Caccamo
-    June 14, 2021
+    July 20, 2021
 */
 
 const gulp = require('gulp');
@@ -23,6 +23,7 @@ const tap = require('gulp-tap');
 const fs = require("fs");
 
 let isProduction = (argv.production === undefined) ? false : true;
+let createSourcemaps = false;
 
 let pathToNDSSubmodule = "./";
 
@@ -48,7 +49,7 @@ gulp.task('compileSass', () => {
             includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"]
         }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
+        .pipe(gulpif(createSourcemaps, sourcemaps.write('./maps')))
         .pipe(gulp.dest('./src/css'));
 });
 
@@ -93,7 +94,7 @@ gulp.task('compileJS', () => {
         }))
         .pipe(minify())
         .pipe(sourcemaps.init())
-        .pipe(gulpif(!isProduction, sourcemaps.write('./maps')))
+        .pipe(gulpif(createSourcemaps, sourcemaps.write('./maps')))
         .pipe(gulp.dest('./src/js/'));
 });
 
