@@ -15,6 +15,7 @@
         "materialize": true,
         "bootstrap": true,
         "dataTables": true,
-        "dateTimePicker": true
+        "dateTimePicker": true,
+        "stickybits": true
     }
 }

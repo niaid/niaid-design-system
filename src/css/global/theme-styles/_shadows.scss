@@ -197,13 +197,6 @@
         }
     }
     .navigation-nds {
-        &.navigation--local {
-            background: $page-background;
-            @include media-breakpoint-up('lg') {
-                border-bottom-width: $s-0-25;
-                border-bottom-style: solid;
-            }
-        }
         &.navigation--pagination {
             .pager {
                 .pager__items {

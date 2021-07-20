@@ -1,6 +1,6 @@
 {
   "name": "niaid-design-system",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "NIAID Design System",
   "main": "public/index.html",
   "dependencies": {
@@ -15,7 +15,8 @@
     "materialize-css": "^1.0.0",
     "npm": "^6.14.12",
     "popper.js": "^1.16.1",
-    "select2": "^4.1.0-rc.0"
+    "select2": "^4.1.0-rc.0",
+    "stickybits": "^3.7.9"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",

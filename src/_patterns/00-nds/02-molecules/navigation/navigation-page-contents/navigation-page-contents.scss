@@ -1,0 +1,83 @@
+.navigation--page-contents {
+    margin: $s-1-50 $s-1-50 $s-1-50 0;
+    padding: $s-1;
+    border: $border-block;
+    h2 {
+        margin-top: 0;
+        font-size: $s-1;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $s-0-25;
+    }
+    hr {
+        border-top: $border-block;
+        margin-top: $s-0-25;
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0;
+        &__item {
+            a {
+                color: $type-link;
+                font-weight: $font-weight-regular;
+                padding-left: 0;
+                margin-left: $s-1;
+                border-bottom: $border-transparent;
+                font-size: $s-1 - $s-2px;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                    border-bottom: $border-transparent;
+                    color: $type-link;
+                    padding-left: 0;
+                    border-left: 0;
+                }
+                &.active {
+                    margin-left: 0;
+                    border-left: $s-2px solid $color-theme-1-1-1;
+                    padding-left: $s-1;
+                    border-bottom: 0;
+                    &:hover,
+                    &:focus {
+                        padding-left: $s-1;
+                        border-left: $s-2px solid $color-theme-1-1-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navigation--mobile-rail {
+    &.js-is-sticky {
+        width: 25%; // Assumes that the left rail is col-3
+    }
+}
+
+.section {
+    & > .container,
+    & > .container-fluid,
+    & > .component--media,
+    & > table,
+    & > .block--directions,
+    & > .block--status-message,
+    & > .block-updates,
+    & > .block--default {
+        max-width: $layout-type-max-width;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    & > .component--media--left,
+    & > .component--media--right {
+        @include media-breakpoint-up(md) {
+            max-width: 50%;
+        }
+    }
+    & > .component--media--right {
+        margin-left: $s-2;
+    }
+    & > .component--media--left {
+        margin-right: $s-2;
+    }
+}
