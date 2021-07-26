@@ -19,6 +19,7 @@ var moduleNDS_pageContents = (function() {
             $(headings[i]).nextUntil("h2").addBack().wrapAll('<div id="' + headingID + '" class="component-nds component--scrollspy-section scrollspy section">');
         }
         $('.scrollspy').scrollSpy();
+        $('.navigation--page-contents').find('.icon--loader').hide();
 
         $('.navigation--page-contents').each(function() {
             if ($(this).attr('data-sticky') == "true") { 
