@@ -15,10 +15,15 @@
         }
     }
     &__content {
-        padding: $s-2 $s-2 0 $s-2;
+        padding: $s-2 $s-2 $s-1-50 $s-2;
+        border-bottom: $border-block;
         @include media-breakpoint-up(lg) {
+            $navigation-local-margin-lg: $s-2;
             display: block !important;
-            padding: $s-2 0 $s-2 $s-2;
+            padding: $navigation-local-margin-lg 0 ($navigation-local-margin-lg - $s-0-50) $navigation-local-margin-lg;
+            max-height: 100vh;
+            overflow-y: auto;
+            border-bottom: 0;
         }
         &__title {
             font-size: $s-1;

@@ -217,7 +217,9 @@
             }
         }
         &.navigation--page-contents {
-            border-radius: $corner-radius;
+            .navigation--page-contents__wrapper {
+                border-radius: $corner-radius;
+            }
         }
     }
     &.style--shadows {
@@ -419,7 +421,9 @@
             }
         }
         &.navigation--page-contents {
-            border-radius: $corner-radius;
+            .navigation--page-contents__wrapper {
+                border-radius: $corner-radius;
+            }
         }
     }
     &.style--shadows {

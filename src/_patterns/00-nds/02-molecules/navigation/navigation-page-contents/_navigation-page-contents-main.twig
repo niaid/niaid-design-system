@@ -30,12 +30,14 @@
 {% set navigation_page_contents_sticky = navigation_page_contents_sticky|default("true") %}
     
 <div class="navigation-nds navigation--page-contents {{ navigation_page_contents_classes }}" data-sticky={{ navigation_page_contents_sticky }}>
-    <h2>{{ navigation_page_contents_title }}</h2>
-    <hr>
-    {% include "@nds/01-atoms/icons/icon-loader/_icon-loader-main.twig" with
-        {
-            "icon_loader_size": "small"
-        }
-    %}
-    <ul class="navigation--page-contents__list section table-of-contents"></ul>
+    <div class="navigation--page-contents__wrapper">
+        <h2>{{ navigation_page_contents_title }}</h2>
+        <hr>
+        {% include "@nds/01-atoms/icons/icon-loader/_icon-loader-main.twig" with
+            {
+                "icon_loader_size": "small"
+            }
+        %}
+        <ul class="navigation--page-contents__wrapper__list section table-of-contents"></ul>
+    </div>
 </div>
