@@ -12,6 +12,12 @@
         border-top: $border-block;
         margin-top: $s-0-25;
     }
+    .icon--loader {
+        .preloader-wrapper {
+            display: block;
+            margin: 0 auto;
+        }
+    }
     &__list {
         list-style: none;
         padding: 0;
