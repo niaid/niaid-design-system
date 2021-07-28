@@ -11,6 +11,7 @@ button {
     text-align: center;
     font-size: $s-1;
     vertical-align: middle;
+    letter-spacing: $letter-spacing-button;
     user-select: none;
     @include media-breakpoint-up(sm) {
         white-space: nowrap;

@@ -1,4 +1,4 @@
-/* Headings */
+// HEADINGS
 
 h1, .h1,
 h2, .h2,
@@ -10,6 +10,7 @@ h6, .h6 {
     margin-bottom: $s-1;
     color: $type-heading;
     line-height: $line-height-heading;
+    letter-spacing: $letter-spacing-heading;
     a {
         border-bottom: 0;
         &:hover,
