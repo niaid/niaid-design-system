@@ -1,0 +1,26 @@
+.navigation--mobile-rail {
+    position: relative;
+    &__button {
+        @extend .button-nds;
+        @extend .button--secondary;
+        position: relative;
+        z-index: $z-index-mobile-rail;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        border-radius: 0 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-top: 0 !important;
+        cursor: pointer;
+        @include media-breakpoint-up(lg) {
+            display: none !important;
+        }
+    }
+    &__content {
+        height: auto;
+        @include media-breakpoint-up(lg) {
+            display: block !important;
+        }
+    }
+}
