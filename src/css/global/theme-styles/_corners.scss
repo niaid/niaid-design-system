@@ -130,7 +130,8 @@
         }
     }
     .text-nds {
-        &.text--badge {
+        &.text--badge,
+        &.text--chip {
             border-radius: $corner-radius;
         }
     }
@@ -216,7 +217,9 @@
             }
         }
         &.navigation--page-contents {
-            border-radius: $corner-radius;
+            .navigation--page-contents__wrapper {
+                border-radius: $corner-radius;
+            }
         }
     }
     &.style--shadows {
@@ -322,7 +325,8 @@
         }
     }
     .text-nds {
-        &.text--badge {
+        &.text--badge,
+        &.text--chip {
             border-radius: $corner-radius-full;
         }
     }
@@ -417,7 +421,9 @@
             }
         }
         &.navigation--page-contents {
-            border-radius: $corner-radius;
+            .navigation--page-contents__wrapper {
+                border-radius: $corner-radius;
+            }
         }
     }
     &.style--shadows {

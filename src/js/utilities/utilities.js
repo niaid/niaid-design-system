@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }
 });
 
-
 var getNextSibling = function (elem, selector) {
     var sibling = elem.nextElementSibling;
     while (sibling) {

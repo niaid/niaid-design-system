@@ -17,11 +17,11 @@
         navigation_local_heading_href: An optional URL for the local navigation title.
         navigation_local_sticky: A boolean to determine if the navigation is sticky. Default: "true".
 
-    Last Updated: July 16, 2021
+    Last Updated: July 20, 2021
 #}
 
 {% set navigation_local_classes = navigation_local_classes|default() %}
-{% set navigation_local_id = navigation_local_id|default() %}
+{% set navigation_local_id = navigation_local_id|default('local-navigation') %}
 {% set navigation_local_items = navigation_local_items|default() %}
 {% set navigation_local_item_attributes = navigation_local_item_attributes|default({}) %}
 {% set navigation_local_heading_text = navigation_local_heading_text|default() %}
@@ -88,9 +88,19 @@
 {% endmacro %}
 
 <div class="navigation-nds navigation--local {{ navigation_local_classes }}" id="{{ navigation_local_id }}" data-sticky={{ navigation_local_sticky }}>
-    {% if navigation_local_heading_text is not empty %}
-        <h2 class="navigation--local__title">{% if navigation_local_heading_href is not empty %}<a href="{{ navigation_local_heading_href }}">{% endif %}{{ navigation_local_heading_text }}{% if navigation_local_heading_href is not empty %}</a>{% endif %}</h2>
-        <hr>
-    {% endif %}
-    {{ menus.menu_links(navigation_local_items, navigation_local_item_attributes, 1, 0) }}
+    {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+        {
+            "button_default_classes": "navigation--local__button",
+            "button_default_type": "secondary",
+            "button_default_label": "Open the " ~ navigation_local_heading_text ~ " Menu",
+            "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
+        }
+    %}
+    <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-parent="#{{ navigation_local_id }}">
+        {% if navigation_local_heading_text is not empty %}
+            <h2 class="navigation--local__content__title">{% if navigation_local_heading_href is not empty %}<a href="{{ navigation_local_heading_href }}">{% endif %}{{ navigation_local_heading_text }}{% if navigation_local_heading_href is not empty %}</a>{% endif %}</h2>
+            <hr>
+        {% endif %}
+        {{ menus.menu_links(navigation_local_items, navigation_local_item_attributes, 1, 0) }}
+    </div>
 </div>

@@ -1,0 +1,56 @@
+$shadow-none: none;
+$shadow-low: 0 0 24px 0 rgba(150,150,150,0.12), 0 10px 24px 0 rgba(150,150,150,0.24);
+$shadow-high: 0 0 24px 0 rgba(150,150,150,0.12), 0 10px 24px 0 rgba(0,0,0,0.24);
+
+@mixin shadow-none($important:"") {
+    @if ($important != "") {
+        box-shadow: $shadow-none !important;
+    } @else {
+        box-shadow: $shadow-none;
+    }
+}
+
+@mixin shadow-low($important:"") {
+    @if ($important != "") {
+        -webkit-box-shadow: $shadow-low !important;
+        -moz-box-shadow: $shadow-low !important;
+        box-shadow: $shadow-low !important;
+    } @else {
+        -webkit-box-shadow: $shadow-low;
+        -moz-box-shadow: $shadow-low;
+        box-shadow: $shadow-low;
+    }
+}
+
+@mixin shadow-high($important:"") {
+    @if ($important != "") {
+        -webkit-box-shadow: $shadow-high !important;
+        -moz-box-shadow: $shadow-high !important;
+        box-shadow: $shadow-high !important;
+    } @else {
+        -webkit-box-shadow: $shadow-high;
+        -moz-box-shadow: $shadow-high;
+        box-shadow: $shadow-high;
+    }
+}
+
+@mixin hoverable($important:"") {
+    transition: box-shadow .25s;
+    -webkit-transition: box-shadow .25s;
+    -moz-transition: box-shadow .25s;
+    @if ($important != "") {
+        &:hover,
+        &:focus {
+            -webkit-box-shadow: $shadow-high !important;
+            -moz-box-shadow: $shadow-high !important;
+            box-shadow: $shadow-high !important;
+        }
+    } @else {
+        &:hover,
+        &:focus {
+            -webkit-box-shadow: $shadow-high;
+            -moz-box-shadow: $shadow-high;
+            box-shadow: $shadow-high;
+        }
+    }
+}
