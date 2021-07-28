@@ -110,7 +110,7 @@
     /* Molecules */
     .block-nds {
         @include shadow-low;
-        border-color: transparent;
+        border: 0;
         background: $white;
         &.block--default {
             &.block--default--accent {
