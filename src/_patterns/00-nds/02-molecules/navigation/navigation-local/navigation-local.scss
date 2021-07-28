@@ -28,6 +28,7 @@
         &__title {
             font-size: $s-1;
             margin: 0 0 $s-0-50 0;
+            letter-spacing: normal;
             a {
                 &:visited {
                     color: $type-link !important;

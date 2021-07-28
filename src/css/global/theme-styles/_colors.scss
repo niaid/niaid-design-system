@@ -281,17 +281,21 @@
     .navigation-nds {
         &.navigation--primary {
             background: $color-theme-2-3-1;
-            .navigation--primary__inner {
+            .navigation--primary {
                 &__item {
                     & > a,
                     & > button,
                     .navigation--dropdown__toggle {
-                        border: 0;
-                        background: transparent;
                         &:hover,
                         &:focus {
-                            border: 0;
                             background: $color-theme-2-3-2;
+                        }
+                        &.active {
+                            background: $color-theme-2-3-2;
+                            &:hover,
+                            &:focus {
+                                background: $color-theme-2-3-1;
+                            }
                         }
                     }
                 }
@@ -650,17 +654,21 @@
     .navigation-nds {
         &.navigation--primary {
             background: $color-theme-3-3-1;
-            .navigation--primary__inner {
+            .navigation--primary {
                 &__item {
                     & > a,
                     & > button,
                     .navigation--dropdown__toggle {
-                        border: 0;
-                        background: transparent;
                         &:hover,
                         &:focus {
-                            border: 0;
                             background: $color-theme-3-3-2;
+                        }
+                        &.active {
+                            background: $color-theme-3-3-2;
+                            &:hover,
+                            &:focus {
+                                background: $color-theme-3-3-1;
+                            }
                         }
                     }
                 }

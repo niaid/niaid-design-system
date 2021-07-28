@@ -117,7 +117,12 @@ $font-size-display-1: 4rem;
 $font-size-display-2: 3rem;
 
 /**** TYPE > Letter Spacing ****/
-$letter-spacing-heading: -.05rem;
+$letter-spacing-heading-h1: -.05rem;
+$letter-spacing-heading-h2: -.05rem;
+$letter-spacing-heading-h3: normal;
+$letter-spacing-heading-h4: normal;
+$letter-spacing-heading-h5: normal;
+$letter-spacing-heading-h6: normal;
 $letter-spacing-button: normal;
 
 /**** Z-Index ****/
