@@ -290,13 +290,6 @@
                         &:focus {
                             background: $color-theme-2-3-2;
                         }
-                        &.active {
-                            background: $color-theme-2-3-2;
-                            &:hover,
-                            &:focus {
-                                background: $color-theme-2-3-1;
-                            }
-                        }
                     }
                 }
             }
@@ -662,13 +655,6 @@
                         &:hover,
                         &:focus {
                             background: $color-theme-3-3-2;
-                        }
-                        &.active {
-                            background: $color-theme-3-3-2;
-                            &:hover,
-                            &:focus {
-                                background: $color-theme-3-3-1;
-                            }
                         }
                     }
                 }
