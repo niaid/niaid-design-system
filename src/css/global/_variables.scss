@@ -9,15 +9,28 @@ $error: #D23342;
 $warning: #FFC10A;
 $success: #17805F;
 
+/**** COLORS > GRAYSCALE ****/
+$grey-light: #FDFDFD;
+$grey-100: #E8E8E8;
+$grey-200: #D4D4D4;
+$grey-300: #BFBFBF;
+$grey-400: #ABABAB;
+$grey-500: #969696;
+$grey-600: #818181;
+$grey-700: #6D6D6D;
+$grey-800: #585858;
+$grey-900: #444444;
+$grey-dark: #2F2F2F;
+
 /**** COLORS > LAYOUT ****/
-$page-background: #FDFDFD;
+$page-background: $grey-light;
 $page-background-alternate: #F5F6FA;
 
 /**** COLORS > TYPE ****/
-$type-heading: #2F2F2F;
+$type-heading: $grey-dark;
 $type-body: #404B56;
 $type-link: #246CD3;
-$type-link-underline: #717171;
+$type-link-underline: $grey-700;
 $type-link-visited: #6F57B5;
 
 /**** COLORS > DOCUMENT ICONS ****/
@@ -43,10 +56,10 @@ $status-information: #4865E3;
 $status-warning: $warning;
 
 /**** COLORS > MISC ****/
-$border-light: #D6D6D6;
+$border-light: $grey-200;
 
 /**** COLORS > INPUT ****/
-$input-border: #717171;
+$input-border: $grey-700;
 $input-placeholder: #9AA6B5;
 
 /**** COLORS > BRANDS ****/

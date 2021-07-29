@@ -36,6 +36,7 @@
     }
     hr {
         background: $white;
+        border-top: $s-1px solid $white;
         margin: $s-0-75 0;
     }
     p {
@@ -46,27 +47,27 @@
     }
     &.severity--2, &.severity--3 {
         * {
-            color: $black;
+            color: $type-heading;
         }
         hr {
-            background: $black;
+            border-top: $s-1px solid $type-heading;
         }
         a {
-            border-bottom: $s-1px solid $black;
+            border-bottom: $s-1px solid $type-heading;
             &:hover,
             &:focus {
                 border-bottom: $border-transparent;
-                color: $black;
+                color: $type-heading;
             }
             &:visited {
-                color: $black;
+                color: $type-heading;
                 &:hover,
                 &:focus {
-                    color: $black;
+                    color: $type-heading;
                 }
                 & + .ext-link-icon {
                     &:after {
-                        color: $black;
+                        color: $type-heading;
                     }
                 }
             }
