@@ -188,7 +188,7 @@ var moduleNDS_analytics = (function() {
     /* =============== EXPORT PUBLIC METHODS =============== */
     return {
       init: init,
-      setDataAttributes: setDataAttributes,
-      formatAttributeValue: formatAttributeValue
+      formatAttributeValue: formatAttributeValue,
+      setDataAttributes: setDataAttributes
     };
 }());
