@@ -9,6 +9,27 @@ var moduleNDS_pageContents = (function() {
     /* =================== PRIVATE METHODS ================= */
     // initPageContents - Initializes the Page Contents functionality.
     function initPageContents() {
+        let wWidth = windowWidth();
+        let initialized = false;
+        
+        if (wWidth > 991) {
+            initialized = true;
+            computePageContents();
+        }
+
+        window.onresize = function(e) {
+            if (!initialized && wWidth != windowWidth()) {
+                wWidth = windowWidth();
+                if (wWidth > 991) {
+                    initialized = true;
+                    computePageContents();
+                }
+            }
+        };
+    }
+
+    // computePageContents - Computes the sections of a page from available H2's.
+    function computePageContents() {
         let headings = $('.layouts--body').children('h2');
         let $tocList = $('.navigation--page-contents__wrapper__list');
         for (let i = 0; i < headings.length; i++) {
