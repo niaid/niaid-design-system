@@ -1,0 +1,43 @@
+{#
+    ---
+    title: Navigation Page Contents
+    ---
+
+    Type: Molecules -> Navigation
+
+    Description:
+       The Page Contents component is a dynamic navigation option that shows users the sections of page broken out by headings (H2's). As users scroll, the Page Contents pattern updates to show which section of the page the user is actively on. This component appears on the right side of the page and has a sticky position applied through the Stickybits library.
+
+    Dependencies:
+        In order to use this component, you must include the following libraries in addition to the NDS Global JS:
+            - jQuery
+            - Materialize
+            - Stickybits
+
+    Parameters:
+        navigation_page_contents_classes: Additional classes for the navigation component.
+        navigation_page_contents_title: The title of the navigation component. Default: On This Page
+        navigation_page_contents_sticky: A boolean to determine if the navigation is sticky. Default: "true".
+
+    Includes:
+        Atoms -> Icons -> Icon Loader
+
+    Last Updated: July 26, 2021
+#}
+
+{% set navigation_page_contents_classes = navigation_page_contents_classes|default() %}
+{% set navigation_page_contents_title = navigation_page_contents_title|default("On This Page") %}
+{% set navigation_page_contents_sticky = navigation_page_contents_sticky|default("true") %}
+    
+<div class="navigation-nds navigation--page-contents {{ navigation_page_contents_classes }}" data-sticky={{ navigation_page_contents_sticky }}>
+    <div class="navigation--page-contents__wrapper">
+        <h2>{{ navigation_page_contents_title }}</h2>
+        <hr>
+        {% include "@nds/01-atoms/icons/icon-loader/_icon-loader-main.twig" with
+            {
+                "icon_loader_size": "small"
+            }
+        %}
+        <ul class="navigation--page-contents__wrapper__list section table-of-contents"></ul>
+    </div>
+</div>

@@ -73,7 +73,7 @@ var moduleNDS_analytics = (function() {
         // Primary Navigation
         let primaryNavigations = document.getElementsByClassName("navigation--primary");
         for (var i = 0; i < primaryNavigations.length; i++) {
-            let navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__inner__item');
+            let navigationLinks = primaryNavigations[i].querySelectorAll('.navigation--primary__item');
             for (let j = 0; j < navigationLinks.length; j++) {
                 let navItem = navigationLinks[j].children[0];
                 if (hasClass(navItem, 'navigation--dropdown')) {
@@ -111,26 +111,21 @@ var moduleNDS_analytics = (function() {
         let floatingButtons = document.getElementsByClassName("button--floating");
         setDataAttributes(floatingButtons, 'data-nav', 'header-nav-');
 
-         // Mobile Rail
-         let mobileRails = document.getElementsByClassName("navigation--mobile-rail__content");
-         for (var i = 0; i < mobileRails.length; i++) {
-             let navigationLinks = mobileRails[i].querySelectorAll('a');
-             let targetedNavigationLinks = [];
-             for (let j = 0; j < navigationLinks.length; j++) {
-                 if (!navigationLinks[j].hasAttribute('data-content')) {
-                     targetedNavigationLinks.push(navigationLinks[j]);
-                 }
-             }
-             setDataAttributes(targetedNavigationLinks, 'data-nav', 'nav-left-');
-         }
+        // Mobile Rail & Local Navigation
+        let leftNavigation = document.querySelectorAll(".navigation--mobile-rail__content a, .navigation--local a");
+        for (var i = 0; i < leftNavigation.length; i++) {
+            let targetedNavigationLinks = [];
+            if (!leftNavigation[i].hasAttribute('data-content')) {
+                targetedNavigationLinks.push(leftNavigation[i]);    
+            }
+            setDataAttributes(targetedNavigationLinks, 'data-nav', 'nav-left-');
+        }
     }
 
     // computeDataAttribute - Helper function to determine the value of the data attribute.
     function computeDataAttribute(el, dataAttributeName, dataAttributeValuePrefix) {
-        var linkText = el.textContent.trim();
+        var linkText = formatAttributeValue(el);
         if (linkText !== "") {
-            linkText = linkText.replace(/\//g, '-');
-            linkText = linkText.replace(/\s+/g, '-').toLowerCase();
             el.setAttribute(dataAttributeName, dataAttributeValuePrefix + linkText);
             tagChildren(el, dataAttributeName);
         }
@@ -168,6 +163,14 @@ var moduleNDS_analytics = (function() {
         addDataAttributes();
     }
 
+    // formatAttributeValue - Finds the text content of an element and formats the value for use in a data attribute.
+    function formatAttributeValue(el) {
+        let processedValue = el.textContent.trim();
+        processedValue = processedValue.replace(/\//g, '-');
+        processedValue = processedValue.replace(/\s+/g, '-').toLowerCase();
+        return processedValue;
+    }
+
     // setDataAttributes - Public function to add data attributes to elements. Pass the set of elements to tag, the name of the data attribute, and the prefix name for the data attribute.
     function setDataAttributes(els, dataAttributeName, dataAttributeValuePrefix) {
         if (els.length > 0 && els !== undefined) {
@@ -185,6 +188,7 @@ var moduleNDS_analytics = (function() {
     /* =============== EXPORT PUBLIC METHODS =============== */
     return {
       init: init,
+      formatAttributeValue: formatAttributeValue,
       setDataAttributes: setDataAttributes
     };
 }());

@@ -1,0 +1,155 @@
+.navigation--local {
+    &__button {
+        position: relative;
+        z-index: $z-index-mobile-rail;
+        width: 100%;
+        text-align: center;
+        background: transparent;
+        border-radius: 0 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-top: 0 !important;
+        cursor: pointer;
+        @include media-breakpoint-up(lg) {
+            display: none !important;
+        }
+    }
+    &__content {
+        padding: $s-2 $s-2 $s-1-50 $s-2;
+        border-bottom: $border-block;
+        @include media-breakpoint-up(lg) {
+            $navigation-local-margin-lg: $s-2;
+            display: block !important;
+            padding: $navigation-local-margin-lg 0 ($navigation-local-margin-lg - $s-0-50) $navigation-local-margin-lg;
+            max-height: 100vh;
+            overflow-y: auto;
+            border-bottom: 0;
+        }
+        &__title {
+            font-size: $s-1;
+            margin: 0 0 $s-0-50 0;
+            letter-spacing: normal;
+            a {
+                &:visited {
+                    color: $type-link !important;
+                }
+            }
+        }
+        hr {
+            margin: $s-0-50 0;
+        }
+        .cursor-pointer {
+            cursor: pointer;
+        }
+        .card {
+            border-radius: 0;
+            border: none;
+            .card-header {
+                display: flex;
+                align-items: center;
+                padding: 0;
+                border-radius: 0;
+                border: 0;
+                background: none;
+                .card-header-text {
+                    display: inline-flex;
+                    .p-card-header {
+                        padding: $s-0-50 0;
+                        text-align: left;
+                        font-size: $s-0-75;
+                        .text-link,
+                        a {
+                            width: 100%;
+                            border-bottom: $border-transparent;
+                            &:hover,
+                            &:focus {
+                                text-decoration: underline;
+                                border-bottom: $border-transparent;
+                            }
+                            &:visited {
+                                color: $type-link !important;
+                            }
+                        }
+                        p {
+                            margin: 0;
+                        }
+                        .text-link,
+                        a,
+                        p {
+                            line-height: $line-height-small;
+                        }
+                    }
+                }
+                .card-header-button {
+                    display: inline-flex;
+                    margin-left: auto;
+                    .arrow {
+                        text-align: left;
+                        padding-left: $s-0-50;
+                        padding-right: $s-0-50;
+                        .accordion-arrow {
+                            position: relative;
+                            margin: 0 auto;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            color: $type-link;
+                            display: block;
+                            border: 0;
+                            cursor: pointer;
+                            @extend %fa-icon;
+                            @extend .fas;
+                        }
+                    }
+                }
+                &.is-active {
+                    background: $type-link;
+                    margin-left: -1 * $s-1;
+                    border-radius: $border-radius-semi;
+                    .p-card-header {
+                        padding-left: $s-1;
+                        padding-right: $s-1;
+                        .text-link,
+                        a,
+                        p {
+                            color: $white !important;
+                            &:visited {
+                                color: $white !important;
+                            }
+                        }
+                    }
+                    & + .collapse {
+                        margin-top: -1 * $s-1;
+                    }
+                    .card-header-button {
+                        .accordion-arrow {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+            .card-header[aria-expanded="true"] .accordion-arrow {
+                &::before {
+                    content: fa-content($fa-var-chevron-down);
+                }
+            }
+            .card-header[aria-expanded="false"] .accordion-arrow {
+                &::before {
+                    content: fa-content($fa-var-chevron-right);
+                }
+            }
+            .collapse,
+            .collapsing {
+                .card-header {
+                    &.is-active {
+                        border-radius: 0 $border-radius-semi $border-radius-semi 0;
+                    }
+                }
+                .card-body {
+                    margin: $s-0-25 0;
+                    padding: 0 0 0 $s-1;
+                    border-left: $s-0-25 solid $type-link;
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 .component--media {
-    margin: $s-1 0;
+    $component-media-indent: $s-3;
+    margin: $s-1-50 0;
     width: auto;
     max-width: 100%;
     .image--default,
@@ -30,13 +31,13 @@
     &--left {
         float: left;
         @include media-breakpoint-up(md) {
-            margin-right: $s-2;
+            margin-right: $component-media-indent;
         }
     }
     &--right {
         float: right;
         @include media-breakpoint-up(md) {
-            margin-left: $s-2;
+            margin-left: $component-media-indent;
         }
     }
     /* Drupal Overrides */

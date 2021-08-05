@@ -13,6 +13,7 @@
             h2,
             &__title {
                 @include font-size($s-1-50);
+                letter-spacing: normal;
                 margin: 0;
             }
             &__url {

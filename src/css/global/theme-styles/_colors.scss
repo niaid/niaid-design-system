@@ -281,26 +281,17 @@
     .navigation-nds {
         &.navigation--primary {
             background: $color-theme-2-3-1;
-            .navigation--primary__inner {
+            .navigation--primary {
                 &__item {
                     & > a,
                     & > button,
                     .navigation--dropdown__toggle {
-                        border: 0;
-                        background: transparent;
                         &:hover,
                         &:focus {
-                            border: 0;
                             background: $color-theme-2-3-2;
                         }
                     }
                 }
-            }
-        }
-        &.navigation--local {
-            border-bottom-color: $color-theme-2-1-1;
-            .navigation--local__group__label__button__arrow {
-                color: $color-theme-2-1-1;
             }
         }
         &.navigation--mobile-rail {
@@ -353,6 +344,21 @@
                 .navigation--dropdown {
                     &__toggle {
                         background: $color-theme-2-3-2;
+                    }
+                }
+            }
+        }
+        &.navigation--page-contents {
+            &__list {
+                &__item {
+                    a {
+                        &.active {
+                            border-left: $s-2px solid $color-theme-2-1-1;
+                            &:hover,
+                            &:focus {
+                                border-left: $s-2px solid $color-theme-2-1-1;
+                            }
+                        }
                     }
                 }
             }
@@ -641,26 +647,17 @@
     .navigation-nds {
         &.navigation--primary {
             background: $color-theme-3-3-1;
-            .navigation--primary__inner {
+            .navigation--primary {
                 &__item {
                     & > a,
                     & > button,
                     .navigation--dropdown__toggle {
-                        border: 0;
-                        background: transparent;
                         &:hover,
                         &:focus {
-                            border: 0;
                             background: $color-theme-3-3-2;
                         }
                     }
                 }
-            }
-        }
-        &.navigation--local {
-            border-bottom-color: $color-theme-3-1-1;
-            .navigation--local__group__label__button__arrow {
-                color: $color-theme-3-1-1;
             }
         }
         &.navigation--mobile-rail {
@@ -713,6 +710,21 @@
                 .navigation--dropdown {
                     &__toggle {
                         background: $color-theme-3-3-2;
+                    }
+                }
+            }
+        }
+        &.navigation--page-contents {
+            &__list {
+                &__item {
+                    a {
+                        &.active {
+                            border-left: $s-2px solid $color-theme-3-1-1;
+                            &:hover,
+                            &:focus {
+                                border-left: $s-2px solid $color-theme-3-1-1;
+                            }
+                        }
                     }
                 }
             }

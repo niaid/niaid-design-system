@@ -40,8 +40,8 @@
                     margin: 0;
                 }
                 &__close {
-                    @include md-2dp;
-                    @extend .hoverable;
+                    @include shadow-low;
+                    @include hoverable;
                     position: absolute;
                     height: $s-3;
                     width: $s-3;

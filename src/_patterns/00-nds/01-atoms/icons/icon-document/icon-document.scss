@@ -37,7 +37,7 @@
         }
     }
     &.icon--document--button {
-        @extend .hoverable;
+        @include hoverable;
         &:hover,
         &:focus {
             border: 0;

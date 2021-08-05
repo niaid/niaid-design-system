@@ -9,15 +9,28 @@ $error: #D23342;
 $warning: #FFC10A;
 $success: #17805F;
 
+/**** COLORS > GRAYSCALE ****/
+$grey-light: #FDFDFD;
+$grey-100: #E8E8E8;
+$grey-200: #D4D4D4;
+$grey-300: #BFBFBF;
+$grey-400: #ABABAB;
+$grey-500: #969696;
+$grey-600: #818181;
+$grey-700: #6D6D6D;
+$grey-800: #585858;
+$grey-900: #444444;
+$grey-dark: #2F2F2F;
+
 /**** COLORS > LAYOUT ****/
-$page-background: #FDFDFD;
+$page-background: $grey-light;
 $page-background-alternate: #F5F6FA;
 
 /**** COLORS > TYPE ****/
-$type-heading: #2F2F2F;
+$type-heading: $grey-dark;
 $type-body: #404B56;
 $type-link: #246CD3;
-$type-link-underline: #717171;
+$type-link-underline: $grey-700;
 $type-link-visited: #6F57B5;
 
 /**** COLORS > DOCUMENT ICONS ****/
@@ -43,10 +56,10 @@ $status-information: #4865E3;
 $status-warning: $warning;
 
 /**** COLORS > MISC ****/
-$border-light: #D6D6D6;
+$border-light: $grey-200;
 
 /**** COLORS > INPUT ****/
-$input-border: #717171;
+$input-border: $grey-700;
 $input-placeholder: #9AA6B5;
 
 /**** COLORS > BRANDS ****/
@@ -60,27 +73,27 @@ $brands-google-plus: #D34836;
 
 /**** COLORS > THEMES ****/
 $color-theme-1-1-1: #157B8D;
-$color-theme-1-1-2: #0E5763;
+$color-theme-1-1-2: #0F5764;
 $color-theme-1-2-1: #497951;
-$color-theme-1-2-2: #3D6543;
+$color-theme-1-2-2: #345639;
 $color-theme-1-3-1: #262626;
-$color-theme-1-3-2: #000;
+$color-theme-1-3-2: #1B1B1B;
 $color-theme-1-accent: #75C3AC;
 
 $color-theme-2-1-1: #586FAB;
-$color-theme-2-1-2: #425380;
+$color-theme-2-1-2: #3E4E79;
 $color-theme-2-2-1: #247BA0;
-$color-theme-2-2-2: #17526B;
+$color-theme-2-2-2: #195771;
 $color-theme-2-3-1: #244D56;
-$color-theme-2-3-2: #173339;
+$color-theme-2-3-2: #19363D;
 $color-theme-2-accent: #FAB952;
 
 $color-theme-3-1-1: #14675A;
-$color-theme-3-1-2: #0D443C;
+$color-theme-3-1-2: #0E4940;
 $color-theme-3-2-1: #423E63;
-$color-theme-3-2-2: #2A2840;
+$color-theme-3-2-2: #2F2C46;
 $color-theme-3-3-1: #123B56;
-$color-theme-3-3-2: #0D2E44;
+$color-theme-3-3-2: #0D2A3D;
 $color-theme-3-accent: #79A9D1;
 
 /**** TYPE ****/
@@ -115,6 +128,15 @@ $font-size-heading-6: 1rem;
 
 $font-size-display-1: 4rem;
 $font-size-display-2: 3rem;
+
+/**** TYPE > Letter Spacing ****/
+$letter-spacing-heading-h1: -.05rem;
+$letter-spacing-heading-h2: -.05rem;
+$letter-spacing-heading-h3: normal;
+$letter-spacing-heading-h4: normal;
+$letter-spacing-heading-h5: normal;
+$letter-spacing-heading-h6: normal;
+$letter-spacing-button: normal;
 
 /**** Z-Index ****/
 $z-index-below-baseline: -100;
@@ -188,6 +210,7 @@ $s-50: $base-spacer * 50;
 $border-transparent: $s-1px solid transparent;
 $border-block: $s-1px solid $border-light;
 $border-input: $s-1px solid $input-border;
+$border-link: $s-1px solid $type-link-underline;
 
 /**** BORDER RADIUS ****/
 $border-radius-sharp: 0;

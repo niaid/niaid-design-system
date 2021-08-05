@@ -46,7 +46,7 @@
             </div>
         {% endif %}
         <div class="block--search-result__top__text">
-            <h2 class="block--search-result__top__text__title"><a href="{{ blocks_search_result_href }}">{{ blocks_search_result_title }}</a></h2>
+            <h2 class="block--search-result__top__text__title">{% if blocks_search_result_href is not empty %}<a href="{{ blocks_search_result_href }}">{% endif %}{{ blocks_search_result_title }}{% if blocks_search_result_href is not empty %}</a>{% endif %}</h2>
             {% if blocks_search_result_show_url == "true" %}<div class="block--search-result__top__text__url">{{ blocks_search_result_href }}</div>{% endif %}
             {% if blocks_search_result_document_metadata is not empty %}<div class="block--search-result__top__text__metadata">{{ blocks_search_result_document_metadata }}</div>{% endif %}
         </div>

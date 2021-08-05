@@ -1,3 +1,5 @@
+// TYPE
+
 .font--public-sans {
     font-family: $font-stack-public-sans !important;
 }
@@ -17,7 +19,7 @@
 a {
     color: $type-link;
     text-decoration: none;
-    border-bottom: $s-1px solid $type-link-underline;
+    border-bottom: $border-link;
     &:hover,
     &:focus {
         color: $type-link;
@@ -41,13 +43,12 @@ ol {
     max-width: $layout-type-max-width;
 }
 
-ul {
-    list-style-type: circle;
+ul, ol {
     li {
-        margin-bottom: .25em;
-        > ul {
-            margin-top: 0;
-        }
+        margin: $s-0-25 0;
+    }
+    ul, ol {
+        margin: 0;
     }
 }
 
@@ -59,7 +60,7 @@ hr {
     margin-bottom: $s-1;
     border: 0;
     text-align: left;
-    border-top: $s-1px solid rgba(0,0,0,0.1);
+    border-top: $border-block;
 }
 
 code {
