@@ -3,6 +3,9 @@
     padding: $navigation-page-contents-padding-lg $navigation-page-contents-padding-lg $navigation-page-contents-padding-lg 0;
     max-height: 100vh;
     overflow-y: auto;
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
     &__wrapper {
         padding: $s-1;
         border: $border-block;
