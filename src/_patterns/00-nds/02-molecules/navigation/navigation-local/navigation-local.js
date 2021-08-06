@@ -13,8 +13,8 @@ var moduleNDS_navigationLocal = (function() {
             });
         }
 
-        $('.navigation--local').each(function() {
-            if ($(this).attr('data-sticky') == "true") { 
+        jQuery('.navigation--local').each(function() {
+            if (jQuery(this).attr('data-sticky') == "true") { 
                 stickyElement(".navigation--local", 0, "all and (min-width: 992px)");
             }
         });
