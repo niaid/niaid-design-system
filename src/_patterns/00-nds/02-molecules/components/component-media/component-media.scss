@@ -29,14 +29,14 @@
         }
     }
     &--left {
-        float: left;
         @include media-breakpoint-up(md) {
+            float: left;
             margin-right: $component-media-indent;
         }
     }
     &--right {
-        float: right;
         @include media-breakpoint-up(md) {
+            float: right;
             margin-left: $component-media-indent;
         }
     }
