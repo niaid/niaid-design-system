@@ -1,4 +1,5 @@
 .style--shadows {
+    background: $page-background-alternate;
     /* Atoms */
     .button-nds,
     button {
@@ -99,6 +100,11 @@
                     0 0 0 $s-1px $type-link !important;
                 }
             }
+        }
+    }
+    .layouts-nds {
+        &.layouts--body {
+            @include shadow-medium;
         }
     }
     .select2-container {
@@ -218,6 +224,11 @@
                 }
             }
         }
+        &.navigation--local,
+        &.navigation--page-contents {
+            @include shadow-medium;
+            border: 0;
+        }
         &.navigation--mobile-rail {
             .navigation--mobile-rail__button {
                 background: $white;
@@ -240,8 +251,8 @@
     .global-nds {
         &.global--header {
             border-bottom: 0;
-            @include shadow-high;
-            @include media-breakpoint-up('md') {
+            @include shadow-low;
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 @include shadow-none;
             }
             &__button {

@@ -13,13 +13,13 @@
         border-right: 0 !important;
         border-top: 0 !important;
         cursor: pointer;
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: none !important;
         }
     }
     &__content {
         height: auto;
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: block !important;
         }
     }

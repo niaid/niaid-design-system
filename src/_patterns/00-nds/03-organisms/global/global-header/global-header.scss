@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: $s-1px solid $type-body;
-    @include media-breakpoint-up('lg') {
+    @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
         border-bottom: 0;
     }
     &__button {
@@ -17,12 +17,12 @@
         height: $s-3;
         width: $s-3;
         padding: 0;
-        @include media-breakpoint-up('md') {
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: none;
         }
     }
     .form--search {
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             .input--text {
                 min-width: 18rem;
             }

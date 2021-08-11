@@ -18,8 +18,11 @@
         display: block;
         width: $s-1px;
         height: 100%;
-        margin: 0 $s-0-75;
+        margin: 0 $s-0-50;
         background: $input-border;
+        @include media-breakpoint-up(sm) {
+            margin: 0 $s-0-75;
+        }
     }
     &__logo {
         &--mobile {

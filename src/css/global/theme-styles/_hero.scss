@@ -1,38 +1,28 @@
 .style--hero {
-    .page {
-        background: $page-background-alternate;
-    }
     .layouts--main {
         @include media-breakpoint-up(sm) {
-            margin-top: -$s-4;
+            margin-top: -$s-2;
         }
     }
     .block--hero {
         display: block;
     }
-    .navigation--local {
-        background: $page-background;
+    .navigation--page-contents {
+        margin-top: 0;
     }
 
     &.style--corners--semirounded {
         $corner-radius: $border-radius-semi;
         .layouts--body {
-            @include media-breakpoint-up(lg){
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 border-top-left-radius: $corner-radius;
                 border-top-right-radius: $corner-radius;
             }
         }
-        .navigation--local {
-            border-top-left-radius: $corner-radius;
-            border-top-right-radius: $corner-radius;
-            @include media-breakpoint-up('lg') {
+        .navigation--local,
+        .navigation--page-contents {
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 border-radius: $corner-radius;
-            }
-            &__accordion {
-                &__button {
-                    border-top-left-radius: $corner-radius;
-                    border-top-right-radius: $corner-radius;
-                }
             }
         }
     }
@@ -40,22 +30,15 @@
     &.style--corners--rounded {
         $corner-radius: $s-1;
         .layouts--body {
-            @include media-breakpoint-up(lg){
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 border-top-left-radius: $corner-radius;
                 border-top-right-radius: $corner-radius;
             }
         }
-        .navigation--local {
-            border-top-left-radius: $corner-radius;
-            border-top-right-radius: $corner-radius;
-            @include media-breakpoint-up('lg') {
+        .navigation--local,
+        .navigation--page-contents {
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 border-radius: $corner-radius;
-            }
-            &__accordion {
-                &__button {
-                    border-top-left-radius: $corner-radius;
-                    border-top-right-radius: $corner-radius;
-                }
             }
         }
     }

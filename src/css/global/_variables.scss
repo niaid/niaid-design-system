@@ -218,8 +218,7 @@ $border-radius-semi: .3125rem;
 $border-radius-full: 1rem;
 
 /**** BREAKPOINTS & SIZING ****/
-$layout-mobile-menu-breakpoint: 950px;
+$layout-mobile-menu-breakpoint: 'lg'; // 992px
 $layout-main-max-width: 1800px;
 $layout-body-max-width: 1280px;
 $layout-modal-max-width: 800px;
-$layout-type-max-width: 88ex;

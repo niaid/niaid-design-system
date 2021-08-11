@@ -1,4 +1,5 @@
 .navigation--local {
+    background: $page-background;
     &__button {
         position: relative;
         z-index: $z-index-mobile-rail;
@@ -10,17 +11,16 @@
         border-right: 0 !important;
         border-top: 0 !important;
         cursor: pointer;
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: none !important;
         }
     }
     &__content {
         padding: $s-2 $s-2 $s-1-50 $s-2;
         border-bottom: $border-block;
-        @include media-breakpoint-up(lg) {
-            $navigation-local-margin-lg: $s-2;
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: block !important;
-            padding: $navigation-local-margin-lg 0 ($navigation-local-margin-lg - $s-0-50) $navigation-local-margin-lg;
+            padding: $s-1-50;
             max-height: 100vh;
             overflow-y: auto;
             border-bottom: 0;

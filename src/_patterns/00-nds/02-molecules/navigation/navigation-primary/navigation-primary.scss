@@ -59,7 +59,7 @@
             }
         }
     }
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
         display: flex;
     }
 }
