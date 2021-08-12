@@ -242,7 +242,9 @@
                 }
             }
         }
+        &.navigation--local,
         &.navigation--mobile-rail {
+            .navigation--local__button,
             .navigation--mobile-rail__button {
                 @include shadow-low;
                 @include hoverable;
@@ -347,7 +349,9 @@
                     }
                 }
             }
+            &.navigation--local,
             &.navigation--mobile-rail {
+                .navigation--local__button,
                 .navigation--mobile-rail__button {
                     &:hover,
                     &:focus {
@@ -430,7 +434,9 @@
                     }
                 }
             }
+            &.navigation--local,
             &.navigation--mobile-rail {
+                .navigation--local__button,
                 .navigation--mobile-rail__button {
                     &:hover,
                     &:focus {

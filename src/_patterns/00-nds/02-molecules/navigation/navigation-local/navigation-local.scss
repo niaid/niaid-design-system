@@ -1,6 +1,8 @@
 .navigation--local {
     background: $page-background;
     &__button {
+        @extend .button-nds;
+        @extend .button--secondary;
         position: relative;
         z-index: $z-index-mobile-rail;
         width: 100%;

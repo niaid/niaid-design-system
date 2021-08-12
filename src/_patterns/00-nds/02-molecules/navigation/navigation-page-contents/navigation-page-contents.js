@@ -43,7 +43,7 @@ var moduleNDS_pageContents = (function() {
 
         jQuery('.navigation--page-contents').each(function() {
             if (jQuery(this).attr('data-sticky') == "true") { 
-                stickyElement(".navigation--page-contents", 0, "all and (min-width: 992px)");
+                stickyElement(".navigation--page-contents", 32, "all and (min-width: 992px)");
             }
         });
     }
