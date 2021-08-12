@@ -2,10 +2,9 @@
 
 .block-facet--checkbox {
     @extend .block-nds;
-    padding: 0 $s-2;
+    padding: 0;
     margin: $s-2 0;
     @include media-breakpoint-down(sm) {
-        padding: 0 $s-1-50;
         margin: $s-1-50 0;
     }
     border: 0;
@@ -30,49 +29,20 @@
         list-style: none;
         padding-left: 0;
         .facet-item {
+            margin: $s-0-50 0;
             input {
                 position: absolute;
                 opacity: 0;
                 height: 0;
                 width: 0;
             }
+            .input--label,
             label {
-                cursor: pointer;
-                padding-left: $s-2-50;
-                position: relative;
-                margin: 0;
-                &:before {
-                    position: absolute;
-                    content: "";
-                    top: 50%;
-                    transform: translateY(-50%);
-                    left: 0;
-                    height: $s-1-50;
-                    width: $s-1-50;
-                    background: $white;
-                    border: $border-input;
-                }
-                &:after {
-                    content: "";
-                    position: absolute;
-                    display: none;
-                }
+                @include input-checkbox-label;
+                display: block;
             }
             input:checked~label {
-                &:before {
-                    background: $color-theme-1-1-1;
-                    border: 0;
-                }
-                &:after {
-                    @extend %fa-icon;
-                    @extend .fas;
-                    color: $white;
-                    content: fa-content($fa-var-check);
-                    display: block;
-                    left: $s-0-25;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
+                @include input-checkbox-checked;
             }
         }
     }

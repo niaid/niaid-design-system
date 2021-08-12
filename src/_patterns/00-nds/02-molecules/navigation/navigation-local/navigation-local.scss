@@ -86,7 +86,6 @@
                     .arrow {
                         text-align: left;
                         padding-left: $s-0-50;
-                        padding-right: $s-0-50;
                         .accordion-arrow {
                             position: relative;
                             margin: 0 auto;
@@ -104,6 +103,7 @@
                 &.is-active {
                     background: $type-link;
                     margin-left: -1 * $s-1;
+                    margin-right: -1 * $s-1;
                     border-radius: $border-radius-semi;
                     .p-card-header {
                         padding-left: $s-1;
@@ -121,8 +121,11 @@
                         margin-top: -1 * $s-1;
                     }
                     .card-header-button {
-                        .accordion-arrow {
-                            color: $white;
+                        .arrow {
+                            padding-right: $s-1;
+                            .accordion-arrow {
+                                color: $white;
+                            }
                         }
                     }
                 }
@@ -142,6 +145,12 @@
                 .card-header {
                     &.is-active {
                         border-radius: 0 $border-radius-semi $border-radius-semi 0;
+                        margin-right: 0;
+                        .card-header-button {
+                            .arrow {
+                                padding-right: 0;
+                            }
+                        }
                     }
                 }
                 .card-body {

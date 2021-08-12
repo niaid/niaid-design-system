@@ -14,8 +14,16 @@
     {% block main %}
         {% embed "@nds/01-atoms/layouts/layouts-main/_layouts-main-main.twig" %}
             {% block left_column %}
-                {% include "@nds/02-molecules/forms/form-facet/demo/form-facet.twig" %}
-                {% include "@nds/02-molecules/forms/form-facet/demo/form-facet.twig" %}
+                {% embed "@nds/02-molecules/navigation/navigation-mobile-rail/_navigation-mobile-rail-main.twig" with
+                    {
+                        "navigation_mobile_rail_button_text": "Open Facets"
+                    }
+                %}
+                    {% block navigation_mobile_rail_content %}
+                        {% include "@nds/02-molecules/forms/form-facet/demo/form-facet.twig" %}
+                        {% include "@nds/02-molecules/forms/form-facet/demo/form-facet.twig" %}
+                    {% endblock %}
+                {% endembed %}
             {% endblock %}
             {% block main_column %}
                 {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
