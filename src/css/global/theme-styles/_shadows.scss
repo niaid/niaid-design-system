@@ -144,6 +144,7 @@
         &.block--inputs,
         &.block--colors,
         &.block--search-chips,
+        &.block--hero,
         &.block--share {
             @include shadow-none;
             background: transparent;
@@ -216,6 +217,9 @@
         }
     }
     .navigation-nds {
+        &.navigation--primary {
+            @include shadow-medium;
+        }
         &.navigation--pagination {
             .pager {
                 .pager__items {
@@ -269,7 +273,7 @@
     .global-nds {
         &.global--header {
             border-bottom: 0;
-            @include shadow-low;
+            @include shadow-medium;
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 @include shadow-none;
             }
