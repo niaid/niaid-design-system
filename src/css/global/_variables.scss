@@ -206,6 +206,8 @@ $s-30: $base-spacer * 30;
 $s-40: $base-spacer * 40;
 $s-50: $base-spacer * 50;
 
+$s-main-spacer: $s-2;
+
 /**** BORDER ****/
 $border-transparent: $s-1px solid transparent;
 $border-block: $s-1px solid $border-light;
