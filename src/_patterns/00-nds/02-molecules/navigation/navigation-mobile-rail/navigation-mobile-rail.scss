@@ -20,9 +20,11 @@
     &__content {
         height: auto;
         padding: 0 $s-2;
+        border-bottom: $border-block;
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             padding: 0;
             display: block !important;
+            border-bottom: 0;
         }
     }
 }

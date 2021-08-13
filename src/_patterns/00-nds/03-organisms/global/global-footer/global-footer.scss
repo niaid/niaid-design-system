@@ -67,6 +67,15 @@
                         font-size: $s-1;
                         padding-left: $s-0-50;
                     }
+                    &.ext-link-footer {
+                        &:after {
+                            display: none;
+                        }
+                        &:hover,
+                        &:focus {
+                            border-bottom: $border-transparent;
+                        }
+                    }
                 }
             }
             ul {
