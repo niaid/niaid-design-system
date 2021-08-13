@@ -193,6 +193,9 @@
     .form-nds {
         .form--search {
             &__form {
+                @include shadow-low;
+                @include hoverable;
+                border: $s-1px solid transparent;
                 .input--text--icon {
                     input,
                     .input--text {
@@ -204,6 +207,10 @@
                     &:focus {
                         border: 0;
                     }
+                }
+                &:focus-within {
+                    border: $s-1px solid $type-link;
+                    box-shadow: 0 0 0 $s-1px $type-link, 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
                 }
             }
         }

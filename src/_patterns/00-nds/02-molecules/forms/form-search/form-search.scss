@@ -6,9 +6,7 @@
         position: relative;
         display: flex;
         flex-wrap: none;
-        border: $s-1px solid transparent;
-        @include shadow-low;
-        @include hoverable;
+        border: $s-1px solid $input-border;
         &:focus-within {
             border: $s-1px solid $type-link;
             outline: 0;
@@ -20,6 +18,7 @@
             .input--text {
                 @include shadow-none(!important);
                 background: transparent;
+                border: $s-1px solid transparent !important;
                 &:focus {
                     border: $s-1px solid transparent !important;
                     @include shadow-none(!important);
