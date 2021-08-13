@@ -26,7 +26,7 @@
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: block !important;
             padding: $s-1-50 $s-1-50 $s-0-50 $s-1-50;
-            max-height: calc(100vh - (2 * #{$s-main-spacer}));
+            max-height: 100vh;
             overflow-y: auto;
             border-bottom: 0;
         }
@@ -162,6 +162,15 @@
                     margin: $s-0-25 0;
                     padding: 0 0 0 $s-1;
                     border-left: $s-0-25 solid $type-link;
+                }
+            }
+        }
+    }
+    &.hero-present {
+        .navigation--local {
+            &__content {
+                @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+                    max-height: calc(100vh - #{$s-2});
                 }
             }
         }
