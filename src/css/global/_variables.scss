@@ -1,4 +1,5 @@
 /**** VARIABLES ****/
+@use 'sass:math';
 
 /**** COLORS ****/
 /**** COLORS > GLOBAL ****/
@@ -155,8 +156,8 @@ $z-index-toast: 900;
 $base-size-pixels: 16;
 $base-spacer: 1rem;
 
-$s-1px: $base-spacer / $base-size-pixels;
-$s-2px: ($base-spacer * 2) / $base-size-pixels;
+$s-1px: math.div($base-spacer, $base-size-pixels);
+$s-2px: math.div(($base-spacer * 2), $base-size-pixels);
 $s-0: 0;
 $s-0-25: $base-spacer * .25;
 $s-0-50: $base-spacer * .5;
