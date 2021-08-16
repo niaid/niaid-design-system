@@ -1,15 +1,15 @@
 /* Gulp File
     Last Modified by: Jacob Caccamo
-    August 16, 2021
+    July 20, 2021
 */
 
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const del = require('del');
-const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const sourcemaps = require('gulp-sourcemaps');
 const argv = require('yargs').argv;
+const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
@@ -44,7 +44,10 @@ gulp.task('compileSass', () => {
             extname: '.css'
         }))
         .pipe(sourcemaps.init())
-        .pipe(sass.sync({ outputStyle: 'compressed', includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"] }).on('error', sass.logError))
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: ["./node_modules/bootstrap/scss", "./node_modules/font-awesome/scss"]
+        }).on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(gulpif(createSourcemaps, sourcemaps.write('./maps')))
         .pipe(gulp.dest('./src/css'));

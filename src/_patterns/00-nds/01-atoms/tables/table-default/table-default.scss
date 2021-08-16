@@ -1,5 +1,3 @@
-@use 'sass:math';
-
 table {
     width: 100%;
     margin: $s-1 0;
@@ -67,7 +65,7 @@ table {
                         position: relative;
                         &:before {
                             position: absolute;
-                            left: math.div(($s-3 - $s-1), 2);
+                            left: ($s-3 - $s-1) / 2;
                             top: 50%;
                             transform: translateY(-50%);
                             height: $before-size;

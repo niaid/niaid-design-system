@@ -1,5 +1,4 @@
 // SPACING & SIZING
-@use 'sass:math';
 
 $spacers: 10;
 $intervals: 25, 50, 75;
@@ -35,12 +34,12 @@ $map-mods: (
         }
         @each $interval in $intervals {
             .#{$abbreviation}-#{$i}-#{$interval} {
-                #{$rule}: $i * $base-spacer + math.div($interval, 100);
+                #{$rule}: $i * $base-spacer + ($interval / 100);
             }
             @each $mod in $mods {
                 .#{$abbreviation}-#{$mod}-#{$i}-#{$interval} {
                     @each $j in map-get($map-mods, $mod) {
-                        #{$rule}-#{$j}: $i * $base-spacer + math.div($interval, 100);
+                        #{$rule}-#{$j}: $i * $base-spacer + ($interval / 100);
                     }
                 }
             }
@@ -55,7 +54,7 @@ $map-mods: (
         }
         @each $interval in $intervals {
             .#{$abbreviation}-#{$i}-#{$interval} {
-                #{$rule}: $i * $base-spacer + math.div($interval, 100);
+                #{$rule}: $i * $base-spacer + ($interval / 100);
             }
         }
     }
@@ -66,8 +65,8 @@ $map-mods: (
 @include sizeUtil('h', 'height');
 @include sizeUtil('w', 'width');
 
-$s-1px: math.div($base-spacer, $base-size-pixels);
-$s-2px: math.div(($base-spacer * 2), $base-size-pixels);
+$s-1px: $base-spacer / $base-size-pixels;
+$s-2px: ($base-spacer * 2) / $base-size-pixels;
 
 // Smaller Units
 .m-1px {
