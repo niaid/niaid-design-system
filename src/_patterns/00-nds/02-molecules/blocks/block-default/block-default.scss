@@ -58,4 +58,12 @@
             margin-bottom: 0;
         }
     }
+    &.block--default--image--left {
+        .block--default__image {
+            @include media-breakpoint-up(md) {
+                padding-left: 0;
+                padding-right: $s-1-50;
+            }
+        }
+    }
 }
