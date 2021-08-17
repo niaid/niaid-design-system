@@ -3,15 +3,30 @@
     padding: 0;
     background: $white;
     flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
     &__image {
+        flex: 0 0 100%;
         max-height: 15rem;
         overflow: hidden;
+        @include media-breakpoint-up(md) {
+            flex: 0 1 40%;
+            max-width: 40%;
+        }
         img {
             width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            position: relative;
         }
     }
     &__text {
         padding: $s-1;
+        flex: 0 0 100%;
+        @include media-breakpoint-up(md) {
+            flex: 1 1 60%;
+        }
         &__title {
             margin-top: 0;
             font-size: $s-1-25;

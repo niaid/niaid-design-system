@@ -141,14 +141,6 @@
         &.block--hero {
             border-radius: 0;
         }
-        &.block--featured-content-card {
-            .block--featured-content-card__image {
-                img {
-                    border-top-left-radius: $corner-radius * .75;
-                    border-top-right-radius: $corner-radius * .75;
-                }
-            }
-        }
         &.block--wtph {
             border-radius: 0;
         }
@@ -338,14 +330,6 @@
         border-radius: $corner-radius;
         &.block--hero {
             border-radius: 0;
-        }
-        &.block--featured-content-card {
-            .block--featured-content-card__image {
-                img {
-                    border-top-left-radius: $corner-radius * .75;
-                    border-top-right-radius: $corner-radius * .75;
-                }
-            }
         }
         &.block--wtph {
             border-radius: 0;
