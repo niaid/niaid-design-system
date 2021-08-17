@@ -1,5 +1,3 @@
-@use 'sass:math';
-
 .layouts--main {
     @extend .row;
     margin: 0 auto;
@@ -7,13 +5,13 @@
     padding: 0;
     width: 100%;
     @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-        padding: 0 math.div($s-main-spacer, 2);
+        padding: 0 ($s-main-spacer / 2);
     }
     &__column {
         padding: 0;
         margin: 0 auto;
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-            padding: 0 math.div($s-main-spacer, 2);
+            padding: 0 ($s-main-spacer / 2);
         }
     }
 }
