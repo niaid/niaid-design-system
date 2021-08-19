@@ -97,10 +97,10 @@
             "button_default_classes": "navigation--local__button",
             "button_default_type": "secondary",
             "button_default_label": "Open the " ~ navigation_local_heading_text ~ " Menu",
-            "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
+            "button_default_attributes": 'data-bs-toggle="collapse" data-bs-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
         }
     %}
-    <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-parent="#{{ navigation_local_id }}">
+    <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-bs-parent="#{{ navigation_local_id }}">
         {% if navigation_local_heading_text is not empty %}
             <h2 class="navigation--local__content__title">{% if navigation_local_heading_href is not empty %}<a href="{{ navigation_local_heading_href }}">{% endif %}{{ navigation_local_heading_text }}{% if navigation_local_heading_href is not empty %}</a>{% endif %}</h2>
             <hr>
