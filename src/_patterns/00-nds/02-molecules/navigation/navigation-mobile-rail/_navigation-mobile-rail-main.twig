@@ -35,9 +35,9 @@
     %}
         {% block component_accordion_content %}
             <div id="navigation--mobile-rail__button">
-                <button class="navigation--mobile-rail__button" type="button" data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">{{ navigation_mobile_rail_button_text }}</button>
+                <button class="navigation--mobile-rail__button" type="button" data-bs-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">{{ navigation_mobile_rail_button_text }}</button>
             </div>
-            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
+            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-bs-parent="#navigation--mobile-rail">
                 {{ navigation_mobile_rail_content }}
             </div>
         {% endblock %}
