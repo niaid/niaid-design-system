@@ -3,6 +3,7 @@
     padding: 0;
     background: $white;
     flex: 1;
+    overflow: hidden;
     &__image {
         max-height: 15rem;
         overflow: hidden;

@@ -4,10 +4,11 @@
     }
     &__top {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         margin-bottom: $s-1;
         &__icon {
             margin-right: $s-1-50;
+            margin-bottom: $s-1;
         }
         &__text {
             h2,

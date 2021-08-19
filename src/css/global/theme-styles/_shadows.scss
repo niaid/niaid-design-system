@@ -1,4 +1,5 @@
 .style--shadows {
+    background: $page-background-alternate;
     /* Atoms */
     .button-nds,
     button {
@@ -101,6 +102,11 @@
             }
         }
     }
+    .layouts-nds {
+        &.layouts--body {
+            @include shadow-medium;
+        }
+    }
     .select2-container {
         .select2-dropdown {
             @include shadow-high;
@@ -138,6 +144,7 @@
         &.block--inputs,
         &.block--colors,
         &.block--search-chips,
+        &.block--hero,
         &.block--share {
             @include shadow-none;
             background: transparent;
@@ -187,16 +194,32 @@
     .form-nds {
         .form--search {
             &__form {
+                @include shadow-low;
+                @include hoverable;
+                border: $s-1px solid transparent;
+                .input--text--icon {
+                    input,
+                    .input--text {
+                        @include shadow-none(!important);
+                    }
+                }
                 input[type="submit"] {
                     &:hover,
                     &:focus {
                         border: 0;
                     }
                 }
+                &:focus-within {
+                    border: $s-1px solid $type-link;
+                    box-shadow: 0 0 0 $s-1px $type-link, 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+                }
             }
         }
     }
     .navigation-nds {
+        &.navigation--primary {
+            @include shadow-medium;
+        }
         &.navigation--pagination {
             .pager {
                 .pager__items {
@@ -218,15 +241,10 @@
                 }
             }
         }
-        &.navigation--mobile-rail {
-            .navigation--mobile-rail__button {
-                background: $white;
-                border-bottom: 0;
-                &:hover,
-                &:focus {
-                    border-bottom: 0;
-                }
-            }
+        &.navigation--local,
+        &.navigation--page-contents {
+            @include shadow-medium;
+            border: 0;
         }
         &.navigation--dropdown {
             .navigation--dropdown {
@@ -235,13 +253,28 @@
                 }
             }
         }
+        &.navigation--local,
+        &.navigation--mobile-rail {
+            .navigation--local__button,
+            .navigation--mobile-rail__button {
+                @include shadow-low;
+                @include hoverable;
+                background: $white;
+                border-bottom-color: transparent;
+                &:hover,
+                &:focus {
+                    color: $white;
+                    background: $color-theme-1-1-1;
+                }
+            }
+        }
     }
     /* Organisms */
     .global-nds {
         &.global--header {
             border-bottom: 0;
-            @include shadow-high;
-            @include media-breakpoint-up('md') {
+            @include shadow-medium;
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 @include shadow-none;
             }
             &__button {
@@ -327,6 +360,17 @@
                     }
                 }
             }
+            &.navigation--local,
+            &.navigation--mobile-rail {
+                .navigation--local__button,
+                .navigation--mobile-rail__button {
+                    &:hover,
+                    &:focus {
+                        color: $white;
+                        background: $color-theme-2-1-1;
+                    }
+                }
+            }
         }
     }
     &.style--colors--theme-3 {
@@ -398,6 +442,17 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+            &.navigation--local,
+            &.navigation--mobile-rail {
+                .navigation--local__button,
+                .navigation--mobile-rail__button {
+                    &:hover,
+                    &:focus {
+                        color: $white;
+                        background: $color-theme-3-1-1;
                     }
                 }
             }

@@ -1,31 +1,42 @@
 .form--search {
+    label {
+        width: 100%;
+    }
     &__form {
-        display: flex;
-        flex-wrap: wrap;
         position: relative;
-        label {
-            width: 100%;
+        display: flex;
+        flex-wrap: none;
+        border: $s-1px solid $input-border;
+        &:focus-within {
+            border: $s-1px solid $type-link;
+            outline: 0;
+            box-shadow: 0 0 0 $s-1px $type-link;
         }
         .input--text--icon {
-            display: inline-flex;
             flex-grow: 1;
-            input {
-                border-top-right-radius: 0 !important;
-                border-bottom-right-radius: 0 !important;
-                border-right: 0;
+            input,
+            .input--text {
+                @include shadow-none(!important);
+                background: transparent;
+                border: $s-1px solid transparent !important;
+                &:focus {
+                    border: $s-1px solid transparent !important;
+                    @include shadow-none(!important);
+                }
             }
         }
+        .form-submit,
         input[type="submit"] {
             @extend .button-nds;
             @extend .button--primary;
-            display: inline-flex;
+            display: block;
             line-height: normal;
-            padding:  $s-0-50 $s-1-50;
-            border-radius: 0;
+            padding: $s-0-50 $s-1-50;
             border: 0;
-            margin-left: -1 * $s-1px;
+            margin: $s-0-25;
             &:hover,
             &:focus {
+                @include shadow-none;
                 border: 0;
             }
         }

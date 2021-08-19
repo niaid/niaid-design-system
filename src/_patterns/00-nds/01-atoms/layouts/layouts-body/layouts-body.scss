@@ -3,7 +3,7 @@
     max-width: $layout-body-max-width;
     margin: 0 auto;
     position: relative;
-    padding: $s-2;
+    padding: $s-main-spacer;
     @include media-breakpoint-up('sm') {
         padding: $s-3;
     }

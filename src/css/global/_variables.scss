@@ -206,6 +206,8 @@ $s-30: $base-spacer * 30;
 $s-40: $base-spacer * 40;
 $s-50: $base-spacer * 50;
 
+$s-main-spacer: $s-2;
+
 /**** BORDER ****/
 $border-transparent: $s-1px solid transparent;
 $border-block: $s-1px solid $border-light;
@@ -218,8 +220,7 @@ $border-radius-semi: .3125rem;
 $border-radius-full: 1rem;
 
 /**** BREAKPOINTS & SIZING ****/
-$layout-mobile-menu-breakpoint: 950px;
+$layout-mobile-menu-breakpoint: 'lg'; // 992px
 $layout-main-max-width: 1800px;
 $layout-body-max-width: 1280px;
 $layout-modal-max-width: 800px;
-$layout-type-max-width: 88ex;

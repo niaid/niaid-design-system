@@ -1,5 +1,11 @@
 .navigation--local {
+    background: $page-background;
+    @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+        margin-bottom: $s-main-spacer;
+    }
     &__button {
+        @extend .button-nds;
+        @extend .button--secondary;
         position: relative;
         z-index: $z-index-mobile-rail;
         width: 100%;
@@ -10,17 +16,16 @@
         border-right: 0 !important;
         border-top: 0 !important;
         cursor: pointer;
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: none !important;
         }
     }
     &__content {
-        padding: $s-2 $s-2 $s-1-50 $s-2;
+        padding: $s-main-spacer $s-main-spacer $s-1 $s-main-spacer;
         border-bottom: $border-block;
-        @include media-breakpoint-up(lg) {
-            $navigation-local-margin-lg: $s-2;
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: block !important;
-            padding: $navigation-local-margin-lg 0 ($navigation-local-margin-lg - $s-0-50) $navigation-local-margin-lg;
+            padding: $s-1-50 $s-1-50 $s-0-50 $s-1-50;
             max-height: 100vh;
             overflow-y: auto;
             border-bottom: 0;
@@ -86,7 +91,6 @@
                     .arrow {
                         text-align: left;
                         padding-left: $s-0-50;
-                        padding-right: $s-0-50;
                         .accordion-arrow {
                             position: relative;
                             margin: 0 auto;
@@ -104,6 +108,7 @@
                 &.is-active {
                     background: $type-link;
                     margin-left: -1 * $s-1;
+                    margin-right: -1 * $s-1;
                     border-radius: $border-radius-semi;
                     .p-card-header {
                         padding-left: $s-1;
@@ -121,8 +126,11 @@
                         margin-top: -1 * $s-1;
                     }
                     .card-header-button {
-                        .accordion-arrow {
-                            color: $white;
+                        .arrow {
+                            padding-right: $s-1;
+                            .accordion-arrow {
+                                color: $white;
+                            }
                         }
                     }
                 }
@@ -142,12 +150,27 @@
                 .card-header {
                     &.is-active {
                         border-radius: 0 $border-radius-semi $border-radius-semi 0;
+                        margin-right: 0;
+                        .card-header-button {
+                            .arrow {
+                                padding-right: 0;
+                            }
+                        }
                     }
                 }
                 .card-body {
                     margin: $s-0-25 0;
                     padding: 0 0 0 $s-1;
                     border-left: $s-0-25 solid $type-link;
+                }
+            }
+        }
+    }
+    &.hero-present {
+        .navigation--local {
+            &__content {
+                @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+                    max-height: calc(100vh - #{$s-2});
                 }
             }
         }

@@ -13,9 +13,10 @@ var moduleNDS_navigationLocal = (function() {
             });
         }
 
-        $('.navigation--local').each(function() {
-            if ($(this).attr('data-sticky') == "true") { 
-                stickyElement(".navigation--local", 0, "all and (min-width: 992px)");
+        jQuery('.navigation--local').each(function() {
+            if (jQuery(this).attr('data-sticky') == "true") { 
+                jQuery(this).addClass('hero-present');
+                stickyElement(".navigation--local", jQuery('body').hasClass('style--hero') ? 32 : 0, "all and (min-width: 992px)");
             }
         });
     }

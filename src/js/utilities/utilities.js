@@ -1,4 +1,10 @@
 // Generic Utilities
+// DO NOT REMOVE
+
+// Global Variables
+var viewportPreviousWidth;
+var viewportWidthIsDifferent = false;
+var viewportMobileBreakpoint = 992;
 
 document.addEventListener("DOMContentLoaded", function(e) {
     // Polyfill for "Closest" method.
@@ -14,6 +20,18 @@ document.addEventListener("DOMContentLoaded", function(e) {
             return el;
         };
     }
+
+    // Set Initial Viewport Width
+    viewportPreviousWidth = windowWidth();
+    window.addEventListener('resize', function() {
+        if (viewportPreviousWidth != windowWidth()) {
+            viewportWidthIsDifferent = true;
+            viewportPreviousWidth = windowWidth();
+        }
+        else {
+            viewportWidthIsDifferent = false;
+        }
+    });
 });
 
 var getNextSibling = function (elem, selector) {
@@ -34,26 +52,24 @@ function hasClass(el, className) {
 }
 
 function stickyElement(elClass, offset, matchMediaDefinition) {
-    if ($(elClass).length) {
+    if (jQuery(elClass).length) {
         var mql = window.matchMedia(matchMediaDefinition);
-        var wWidth = $(window).width();
 
-        $('.layouts--main').each(function() {
+        jQuery('.layouts--main').each(function() {
             if (mql.matches) {
-                stickybits($(this).find(elClass), { stickyBitStickyOffset: offset });
+                stickybits(jQuery(this).find(elClass), { stickyBitStickyOffset: offset });
             }
         });
 
-        $(window).on('resize', function() {
-            if (wWidth != $(this).width()) {
-                wWidth = $(this).width();
-                $('.layouts--main').each(function() {
+        window.addEventListener('resize', function() {
+            if (viewportWidthIsDifferent) {
+                jQuery('.layouts--main').each(function() {
                     if (mql.matches) {
-                        stickybits($(this).find(elClass), { stickyBitStickyOffset: offset });
+                        stickybits(jQuery(this).find(elClass), { stickyBitStickyOffset: offset });
                     }
                     else {
-                        stickybits($(this).find(elClass)).cleanup();
-                        $(this).find(elClass).css('position', 'relative');
+                        stickybits(jQuery(this).find(elClass)).cleanup();
+                        jQuery(this).find(elClass).css('position', 'relative');
                     }
                 });
             }

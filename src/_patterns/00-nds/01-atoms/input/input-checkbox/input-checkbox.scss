@@ -1,3 +1,45 @@
+@mixin input-checkbox-label {
+    cursor: pointer;
+    padding-left: $s-2;
+    position: relative;
+    margin: 0;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-small;
+    &:before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        height: $s-1-50;
+        width: $s-1-50;
+        background: $white;
+        border: $border-input;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+}
+
+@mixin input-checkbox-checked {
+    &:before {
+        background: $color-theme-1-1-1;
+        border: 0;
+    }
+    &:after {
+        @extend %fa-icon;
+        @extend .fas;
+        color: $white;
+        content: fa-content($fa-var-check);
+        display: block;
+        left: $s-0-25;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
 .input--checkbox {
     position: relative;
     margin: $s-0-50 0;
@@ -10,43 +52,11 @@
         height: 0;
         width: 0;
     }
-    .input--label {
-        cursor: pointer;
-        padding-left: $s-2;
-        position: relative;
-        margin: 0;
-        font-weight: $font-weight-regular;
-        &:before {
-            position: absolute;
-            content: "";
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            height: $s-1-50;
-            width: $s-1-50;
-            background: $white;
-            border: $border-input;
-        }
-        &:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
+    .input--label,
+    label {
+        @include input-checkbox-label;
     }
     input:checked~label {
-        &:before {
-            background: $color-theme-1-1-1;
-            border: 0;
-        }
-        &:after {
-            @extend %fa-icon;
-            @extend .fas;
-            color: $white;
-            content: fa-content($fa-var-check);
-            display: block;
-            left: $s-0-25;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+        @include input-checkbox-checked;
     }
 }

@@ -1,0 +1,8 @@
+{
+    "bodyClass": "style--corners--semirounded style--shadows style--hero",
+    "columns": {
+        "left": 3,
+        "main": 7,
+        "right": 2
+    }
+}

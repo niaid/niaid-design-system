@@ -208,11 +208,8 @@
             border-left: $s-2px solid $color-theme-2-accent;
         }
         &.text--chip {
-            &:hover,
-            &:focus {
-                border: $s-1px solid $color-theme-2-2-1;
-                background: $color-theme-2-2-1;
-            }
+            background: $color-theme-2-2-1;
+            border: $s-1px solid $color-theme-2-2-1;
         }
     }
     .layouts--tabs {
@@ -574,11 +571,8 @@
             border-left: $s-2px solid $color-theme-3-accent;
         }
         &.text--chip {
-            &:hover,
-            &:focus {
-                border: $s-1px solid $color-theme-3-2-1;
-                background: $color-theme-3-2-1;
-            }
+            background: $color-theme-3-2-1;
+            border: $s-1px solid $color-theme-3-2-1;
         }
     }
     .layouts--tabs {

@@ -1,6 +1,6 @@
 {
   "name": "niaid-design-system",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "NIAID Design System",
   "main": "public/index.html",
   "dependencies": {

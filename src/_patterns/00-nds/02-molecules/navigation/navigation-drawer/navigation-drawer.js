@@ -5,8 +5,6 @@ var moduleNDS_drawer = (function() {
     // initializeNavigationDrawer - Functionality to support the NDS mobile drawer.
     function initializeNavigationDrawer() {
         if (document.querySelectorAll('.navigation--drawer').length > 0) {
-            var wWidth = windowWidth();
-
             document.querySelector('#global-mobile-menu').addEventListener("click", function(e) {
                 document.querySelector('#main-navigation-mobile').classList.add("drawer--open");
                 let overlay = getNextSibling(document.querySelector('#main-navigation-mobile'), '.navigation--drawer--overlay');
@@ -26,12 +24,11 @@ var moduleNDS_drawer = (function() {
                 closeMenu();
             });
 
-            window.onresize = function(e) {
-                if (wWidth != windowWidth()) {
-                    wWidth = windowWidth();
+            window.addEventListener('resize', function() {
+                if (viewportWidthIsDifferent) {
                     closeMenu();
                 }
-            };
+            });
 
             // 508 Compliance Focus Helpers
             document.querySelector('.skip-to--top').addEventListener("focus", function(e) {

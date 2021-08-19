@@ -58,6 +58,25 @@
                 @include media-breakpoint-up(md) {
                     margin-top: 0;
                 }
+                a {
+                    &:after {
+                        color: $white;
+                        @extend %fa-icon;
+                        @extend .fas;
+                        content: fa-content($fa-var-chevron-right);
+                        font-size: $s-1;
+                        padding-left: $s-0-50;
+                    }
+                    &.ext-link-footer {
+                        &:after {
+                            display: none;
+                        }
+                        &:hover,
+                        &:focus {
+                            border-bottom: $border-transparent;
+                        }
+                    }
+                }
             }
             ul {
                 list-style: none;

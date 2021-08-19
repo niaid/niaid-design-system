@@ -3,14 +3,12 @@
     border: 0;
     background: none;
     padding: 0;
-    &__label {
-        margin-bottom: $s-0-25;
-    }
     &__wrapper {
         display: flex;
+        flex-wrap: wrap;
         &__clear,
         .text--chip {
-            margin: 0 $s-0-25;
+            margin: $s-0-25;
         }
         > :first-child {
             margin-left: 0;
