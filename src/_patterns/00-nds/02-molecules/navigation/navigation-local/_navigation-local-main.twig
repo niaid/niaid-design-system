@@ -8,6 +8,10 @@
     Description:
         Local navigation allows users to move between pages of a website that fall under the same section. The navigation is located on the left side of the page for easy access. The current active page is highlighted.
 
+    Dependencies:
+        In order to use this component, you must include the following libraries in addition to the NDS Global JS:
+            - Bootstrap 5
+
     Parameters:
         navigation_local_classes: Additional classes for the navigation local component.
         navigation_local_id: The local navigation ID.
@@ -17,7 +21,7 @@
         navigation_local_heading_href: An optional URL for the local navigation title.
         navigation_local_sticky: A boolean to determine if the navigation is sticky. Default: "true".
 
-    Last Updated: July 20, 2021
+    Last Updated: August 17, 2021
 #}
 
 {% set navigation_local_classes = navigation_local_classes|default() %}
@@ -50,7 +54,7 @@
                     {% endif %}
                     {% if item.below %}
                         {% set id = 'LN-sec-' ~ accordion_index %}
-                        <div class="{{ classes ~ " cursor-pointer" }}" id="{{ id }}" data-toggle="collapse" data-target="#LN-clps-{{ accordion_index }}" aria-expanded="{{ expanded }}" aria-label="Open {{ item.title }} Menu" aria-controls="LN-clps-{{ accordion_index }}" tabindex="0">
+                        <div class="{{ classes ~ " cursor-pointer" }}" id="{{ id }}" data-bs-toggle="collapse" data-bs-target="#LN-clps-{{ accordion_index }}" aria-expanded="{{ expanded }}" aria-label="Open {{ item.title }} Menu" aria-controls="LN-clps-{{ accordion_index }}" tabindex="0">
                     {% else %}
                         <div class="{{ classes }}">
                     {% endif %}
@@ -73,7 +77,7 @@
                     {% if item.below %}
                         </div>
                             {% set show = (expanded == "true") ? 'show' %}
-                            <div id="LN-clps-{{ accordion_index }}" class="collapse {{ show }}" aria-labelledby="LN-sec-{{ accordion_index }}" data-parent="#LN-accordion-{{ parent_id }}">
+                            <div id="LN-clps-{{ accordion_index }}" class="collapse {{ show }}" aria-labelledby="LN-sec-{{ accordion_index }}" data-bs-parent="#LN-accordion-{{ parent_id }}">
                                 <div class="card-body">
                                     {{ menus.menu_links(item.below, attributes, accordion_index, (menu_level + 1)) }}
                                 </div>
