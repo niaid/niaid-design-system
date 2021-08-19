@@ -19,6 +19,32 @@ var moduleNDS_navigationLocal = (function() {
                 stickyElement(".navigation--local", jQuery('body').hasClass('style--hero') ? 32 : 0, "all and (min-width: 992px)");
             }
         });
+
+        jQuery('.card-header').on('click', function() {
+            if (jQuery(this).attr('data-bs-toggle') != "") {
+                let $newlyOpened = jQuery(this);
+                let headerLevel = $newlyOpened.attr('class').split('level-')[1][0];
+                let targetLevel = ".level-" + headerLevel;
+                jQuery(targetLevel).each(function($newlyOpened) {
+                    if (!$(this).is($newlyOpened)) {
+                        console.log($(this));
+                        closeMenuItem($(this));
+                    }
+                }); 
+            }
+        });
+    }
+
+    function closeMenuItem($item) {
+        if ($item != undefined || $item != null) {
+            console.log("Close Item");
+            console.log($item);
+            $item.attr('aria-expanded', 'false').removeClass('collapsed');
+            let dataTargetValue = $item.attr('data-bs-target');
+            console.log(dataTargetValue);
+            // let targetID = dataTargetValue.replace('#', '');
+            // jQuery(targetID).removeClass('show');
+        }
     }
 
     /* =================== PUBLIC METHODS ================== */
