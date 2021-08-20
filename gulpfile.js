@@ -138,7 +138,7 @@ gulp.task('moveAssets', () => {
         let relativePath = ""; if (pages[i].depth === 0) { relativePath = "./"; } else { for (let j = 0; j < pages[i].depth; j++) { relativePath += "../"; }}
 
         if (pages[i].targetPath === "/") {
-            var path = "./public/patterns/05-pages-index/05-pages-index.html";
+            var path = "./public/patterns/pages-index/pages-index.html";
             gulp.src(path)
                 .pipe(rename({ basename: 'index', extname: '.html' }))
                 .pipe(replace('../../css', relativePath + 'css'))
@@ -149,7 +149,9 @@ gulp.task('moveAssets', () => {
                 .pipe(gulp.dest('./dist/'));
         }
         else {
-            var path = "./public/patterns/05-pages-" + pages[i].patternLabPath + "-" + pages[i].pageName + "/05-pages-" + pages[i].patternLabPath + "-" + pages[i].pageName + ".html";
+            let depthOne = pages[i].patternLabPath + "-" + pages[i].pageName;
+            let deeperThanOne = pages[i].patternLabPath.split('-')[0] + "-" + pages[i].pageName;
+            var path = "./public/patterns/pages-" + (pages[i].depth > 1 ? deeperThanOne : depthOne) + "/pages-" + (pages[i].depth > 1 ? deeperThanOne : depthOne) + ".html";
             gulp.src(path)
                 .pipe(rename({ basename: 'index', extname: '.html' }))
                 .pipe(replace('../../css', relativePath + 'css'))
