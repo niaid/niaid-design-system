@@ -41,7 +41,7 @@ var moduleNDS_modal = (function() {
 
     /* =================== PUBLIC METHODS ================== */
     function init() {
-        // initComponentModal();
+        initComponentModal();
     }
 
     /* =============== EXPORT PUBLIC METHODS =============== */
