@@ -1,5 +1,6 @@
 .DS_Store
 composer.lock
+dependencyGraph.json
 node_modules/
 vendor/
 public/
