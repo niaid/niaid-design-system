@@ -205,7 +205,6 @@ gulp.task('cleanNDSSource', (cb) => {
         './src/images/global/**/*',
         './src/js/libraries/**/*',
         './src/js/utilities/**/*',
-        './src/_twig-components/**/*',
         './src/webfonts/font-awesome/**/*',
         './src/webfonts/martel/**/*',
         './src/webfonts/merriweather/**/*',
@@ -289,12 +288,6 @@ gulp.task('copyGlobalFonts', () => {
     return gulp.src(srcPath + 'src/webfonts/public-sans/*').pipe(gulp.dest('./src/webfonts/public-sans/'));
 });
 
-// GULP: copyGlobalTwigComponents - Copy Twig Components into Project
-gulp.task('copyGlobalTwigComponents', () => {
-    console.log("Transferring Assets from Global Twig Components ...");
-    return gulp.src(srcPath + 'src/_twig-components/**/*').pipe(gulp.dest('./src/_twig-components/'));
-});
-
 // GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
     browserSync.init({
@@ -311,7 +304,7 @@ gulp.task('serveProject', function() {
 // GULP AGGREGATES
 
 // GULP: transfer - Transfers official NDS assets to appropriate locations.
-gulp.task('transfer', gulp.series('copyFontAwesome', 'copyGlobalFonts', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'copyGlobalTwigComponents'));
+gulp.task('transfer', gulp.series('copyFontAwesome', 'copyGlobalFonts', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns'));
 
 // GULP: compile - Compiles the local project assets.
 gulp.task('compile', gulp.series('compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab'));
