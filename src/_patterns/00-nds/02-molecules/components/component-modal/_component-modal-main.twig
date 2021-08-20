@@ -33,16 +33,16 @@
 {% set component_modal_id = component_modal_id|default() %}
 {% set component_modal_classes = component_modal_classes|default() %}
 
-<div class="component--modal--trigger {{ component_modal_trigger_classes }}" data-toggle="modal" data-target="#{{ component_modal_id }}">
+<div class="component--modal--trigger {{ component_modal_trigger_classes }}" data-bs-toggle="modal" data-bs-target="#{{ component_modal_id }}">
     {% block component_modal_trigger %}{% endblock %}
 </div>
 
-<div class="component-nds component--modal {{ component_modal_classes }}" id="{{ component_modal_id }}" tabindex="-1" role="dialog" aria-labelledby="{{ component_modal_id }}" aria-hidden="true">
-    <div class="component--modal__wrapper" role="document">
+<div class="component-nds component--modal modal {{ component_modal_classes }}" id="{{ component_modal_id }}" tabindex="-1" role="dialog" aria-labelledby="{{ component_modal_id }}" aria-hidden="true">
+    <div class="component--modal__wrapper modal-dialog">
         <div class="component--modal__wrapper__content">
             <div class="component--modal__wrapper__content__header">
                 {% block component_modal_header %}{% endblock %}
-                <button type="button" class="component--modal__wrapper__content__header__close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="component--modal__wrapper__content__header__close" data-bs-dismiss="modal" aria-label="Close">
                     {% include "@nds/01-atoms/icons/icon-default/_icon-default-main.twig" with
                         {
                             "icon_default_type": "times",
