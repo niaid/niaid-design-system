@@ -39,7 +39,7 @@ There are three main ways to use NDS listed below. To get started please visit o
 ## Built With
 
 * [Pattern Lab](https://patternlab.io/) - Atomic Design System Framework
-* [Bootstrap 4](https://getbootstrap.com/) - Grid System Framework
+* [Bootstrap 5](https://getbootstrap.com/) - Grid System Framework
 * [Gulp](https://gulpjs.com/) - JS-Based Task Manager
 
 ## Team
