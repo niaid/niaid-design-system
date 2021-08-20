@@ -3,8 +3,8 @@
   <head>
     <title>{{ title }}</title>
     {% if metaDescription is not empty %}<meta name="description" content="{{ metaDescription }}">{% endif %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if cssIncludes.bootstrapDatepicker %}<link rel="stylesheet" href="{{ cssPath }}libraries/bootstrap-datepicker/bootstrap-datepicker.min.css" />{% endif %}
     {% if cssIncludes.select2 %}<link rel="stylesheet" href="{{ cssPath }}libraries/select2/select2.min.css" />{% endif %}
 
