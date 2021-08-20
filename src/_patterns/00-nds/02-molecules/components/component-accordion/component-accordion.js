@@ -1,5 +1,5 @@
 // Dependencies
-//  - Bootstrap 4
+//  - Bootstrap 5
 
 var moduleNDS_accordion = (function() {
     'use strict';
