@@ -21,30 +21,28 @@ var moduleNDS_navigationLocal = (function() {
         });
 
         jQuery('.card-header').on('click', function() {
-            if (jQuery(this).attr('data-bs-toggle') != "") {
-                let $newlyOpened = jQuery(this);
-                let headerLevel = $newlyOpened.attr('class').split('level-')[1][0];
+            let attr = jQuery(this).attr('data-bs-toggle');
+            if (typeof attr !== 'undefined' && attr !== false) {
+                let newlyOpenedId = jQuery(this).attr('id');
+                let headerLevel = jQuery(this).attr('class').split('level-')[1][0];
                 let targetLevel = ".level-" + headerLevel;
-                jQuery(targetLevel).each(function($newlyOpened) {
-                    if (!$(this).is($newlyOpened)) {
-                        console.log($(this));
-                        closeMenuItem($(this));
+                jQuery(targetLevel).each(function() {
+                    let currentItemID = jQuery(this).attr('id');
+                    if (typeof currentItemID !== 'undefined' && currentItemID !== false) {
+                        if (currentItemID != newlyOpenedId) {
+                            closeMenuItem(jQuery(this));
+                        }
                     }
                 }); 
             }
         });
     }
 
+    // closeMenuItem - Closes a particular accordion within the local navigation.
     function closeMenuItem($item) {
-        if ($item != undefined || $item != null) {
-            console.log("Close Item");
-            console.log($item);
-            $item.attr('aria-expanded', 'false').removeClass('collapsed');
-            let dataTargetValue = $item.attr('data-bs-target');
-            console.log(dataTargetValue);
-            // let targetID = dataTargetValue.replace('#', '');
-            // jQuery(targetID).removeClass('show');
-        }
+        $item.attr('aria-expanded', 'false').removeClass('collapsed');
+        let dataTargetValue = $item.attr('data-bs-target');
+        jQuery(dataTargetValue).removeClass('show');
     }
 
     /* =================== PUBLIC METHODS ================== */

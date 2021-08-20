@@ -42,6 +42,15 @@ ol {
     margin-bottom: $s-1;
 }
 
+a,
+p,
+ul,
+ol {
+    @include media-breakpoint-down(sm) {
+        @include word-wrap;
+    }
+}
+
 ul, ol {
     li {
         margin: $s-0-25 0;
