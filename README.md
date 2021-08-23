@@ -9,7 +9,7 @@ The [NIAID Design System](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaw
 Current Sites Running on NDS:
 * [Coronavirus Prevention Network (CoVPN)](https://coronaviruspreventionnetwork.org)
 * [ECM @ NIH](https://ecm.nih.gov/)
-* [NDS Documentation Site](http://ids-theme-builder.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/)
+* [NDS Documentation Site](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/)
 * NIAID Digital Policy Website
 
 ## Getting Started
@@ -20,14 +20,13 @@ You will need the following installed on your local machine:
 * Node.js
 * NPM
 * PHP
-* Composer
 * Gulp
 
 ### Setup Local Environment
 
 1. Install the above technologies.
 2. Run: npm ci
-3. Run: composer install (When prompted to install a default theme, type "n" and then return.)
+3. Run: gulp init
 4. Run: gulp
 
 ### Ways to Use NDS
