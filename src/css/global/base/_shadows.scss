@@ -1,69 +1,35 @@
+// SHADOWS
+
 $shadow-none: none;
 $shadow-md-2dp: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 $shadow-md-8dp: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 $shadow-md-16dp: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
 
-@mixin shadow-none($important:"") {
+@mixin shadow($shadow, $important:"") {
     @if ($important != "") {
-        box-shadow: $shadow-none !important;
+        -webkit-box-shadow: $shadow !important;
+        -moz-box-shadow: $shadow !important;
+        box-shadow: $shadow !important;
     } @else {
-        box-shadow: $shadow-none;
+        -webkit-box-shadow: $shadow;
+        -moz-box-shadow: $shadow;
+        box-shadow: $shadow;
     }
 }
 
-@mixin shadow-low($important:"") {
-    @if ($important != "") {
-        -webkit-box-shadow: $shadow-md-2dp !important;
-        -moz-box-shadow: $shadow-md-2dp !important;
-        box-shadow: $shadow-md-2dp !important;
-    } @else {
-        -webkit-box-shadow: $shadow-md-2dp;
-        -moz-box-shadow: $shadow-md-2dp;
-        box-shadow: $shadow-md-2dp;
-    }
-}
-
-@mixin shadow-medium($important:"") {
-    @if ($important != "") {
-        -webkit-box-shadow: $shadow-md-8dp !important;
-        -moz-box-shadow: $shadow-md-8dp !important;
-        box-shadow: $shadow-md-8dp !important;
-    } @else {
-        -webkit-box-shadow: $shadow-md-8dp;
-        -moz-box-shadow: $shadow-md-8dp;
-        box-shadow: $shadow-md-8dp;
-    }
-}
-
-@mixin shadow-high($important:"") {
-    @if ($important != "") {
-        -webkit-box-shadow: $shadow-md-16dp !important;
-        -moz-box-shadow: $shadow-md-16dp !important;
-        box-shadow: $shadow-md-16dp !important;
-    } @else {
-        -webkit-box-shadow: $shadow-md-16dp;
-        -moz-box-shadow: $shadow-md-16dp;
-        box-shadow: $shadow-md-16dp;
-    }
-}
-
-@mixin hoverable($important:"") {
+@mixin hoverable($shadow, $important:"") {
     transition: box-shadow .25s;
     -webkit-transition: box-shadow .25s;
     -moz-transition: box-shadow .25s;
     @if ($important != "") {
         &:hover,
         &:focus {
-            -webkit-box-shadow: $shadow-md-8dp !important;
-            -moz-box-shadow: $shadow-md-8dp !important;
-            box-shadow: $shadow-md-8dp !important;
+            @include shadow($shadow, "!important");
         }
     } @else {
         &:hover,
         &:focus {
-            -webkit-box-shadow: $shadow-md-8dp;
-            -moz-box-shadow: $shadow-md-8dp;
-            box-shadow: $shadow-md-8dp;
+            @include shadow($shadow);
         }
     }
 }

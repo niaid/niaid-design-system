@@ -11,6 +11,6 @@
         padding-top: 0 !important;
     }
     &--no-shadows {
-        @include shadow-none(!important);
+        @include shadow($shadow-none, !important);
     }
 }

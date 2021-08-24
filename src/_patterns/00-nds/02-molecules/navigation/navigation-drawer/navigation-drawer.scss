@@ -35,7 +35,7 @@
         }
     }
     &.drawer--open {
-        @include shadow-high;
+        @include shadow($shadow-md-16dp);
         transform: translateY(0);
     }
 }

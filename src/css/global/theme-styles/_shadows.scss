@@ -3,7 +3,7 @@
     /* Atoms */
     .button-nds,
     button {
-        @include hoverable;
+         @include hoverable($shadow-md-8dp);
         &.disabled,
         &:disabled,
         &[disabled] {
@@ -49,29 +49,29 @@
             }
         }
         &.button--floating {
-            @include shadow-high;
+            @include shadow($shadow-md-16dp);
         }
     }
     .input-nds {
         &.input--select {
             .select2-container {
                 .select2-selection  {
-                    @include shadow-low;
-                    @include hoverable;
+                    @include shadow($shadow-md-2dp);
+                     @include hoverable($shadow-md-8dp);
                     border: $border-transparent !important;
                 }
                 .single-clear {
-                    @include shadow-none;
+                    @include shadow($shadow-none);
                     &:hover,
                     &:focus {
-                        @include shadow-none;
+                        @include shadow($shadow-none);
                     }
                 }
             }
         }
         &.input--text {
-            @include shadow-low;
-            @include hoverable;
+            @include shadow($shadow-md-2dp);
+             @include hoverable($shadow-md-8dp);
             border: $border-transparent;
             &:focus {
                 border: $s-1px solid $type-link;
@@ -86,8 +86,8 @@
         }
         &.input--date-picker {
             .input--date-picker__field {
-                @include shadow-low;
-                @include hoverable;
+                @include shadow($shadow-md-2dp);
+                 @include hoverable($shadow-md-8dp);
                 border: $border-transparent;
                 &:focus {
                     border: $s-1px solid $type-link;
@@ -104,18 +104,18 @@
     }
     .layouts-nds {
         &.layouts--body {
-            @include shadow-medium;
+            @include shadow($shadow-md-8dp);
         }
     }
     .select2-container {
         .select2-dropdown {
-            @include shadow-high;
+            @include shadow($shadow-md-16dp);
             border: 0;
         }
     }
     /* Molecules */
     .block-nds {
-        @include shadow-low;
+        @include shadow($shadow-md-2dp);
         border: 0;
         background: $white;
         &.block--default {
@@ -124,7 +124,7 @@
             }
         }
         &.block--alert {
-            @include shadow-none;
+            @include shadow($shadow-none);
             background: $alert-severity-1;
             &.severity--2 {
                 background: $alert-severity-2;
@@ -146,16 +146,16 @@
         &.block--search-chips,
         &.block--hero,
         &.block--share {
-            @include shadow-none;
+            @include shadow($shadow-none);
             background: transparent;
         }
         &.block--status-message {
             .block--status-message__icon {
-                @include shadow-low;
+                @include shadow($shadow-md-2dp);
             }
         }
         &.block--wtph {
-            @include shadow-none;
+            @include shadow($shadow-none);
             border-top: $s-1px solid $border-light;
             border-bottom: $s-1px solid $border-light;
         }
@@ -165,8 +165,8 @@
             .component--accordion__card {
                 &__header {
                     &__button {
-                        @include shadow-low;
-                        @include hoverable;
+                        @include shadow($shadow-md-2dp);
+                         @include hoverable($shadow-md-8dp);
                         border: $s-1px solid $white;
                         color: $type-link;
                         &:hover,
@@ -183,24 +183,24 @@
         }
         &.component--uswds-banner {
             .component--uswds-banner__toggle {
-                @include shadow-none;
+                @include shadow($shadow-none);
             }
         }
     }
     .block-facet--checkbox {
-        @include shadow-none;
+        @include shadow($shadow-none);
         background: transparent;
     }
     .form-nds {
         .form--search {
             &__form {
-                @include shadow-low;
-                @include hoverable;
+                @include shadow($shadow-md-2dp);
+                 @include hoverable($shadow-md-8dp);
                 border: $s-1px solid transparent;
                 .input--text--icon {
                     input,
                     .input--text {
-                        @include shadow-none(!important);
+                        @include shadow($shadow-none, !important);
                     }
                 }
                 input[type="submit"] {
@@ -218,7 +218,7 @@
     }
     .navigation-nds {
         &.navigation--primary {
-            @include shadow-medium;
+            @include shadow($shadow-md-8dp);
         }
         &.navigation--pagination {
             .pager {
@@ -229,7 +229,7 @@
                             a {
                                 background: $color-theme-1-1-1;
                                 border: $s-1px solid $color-theme-1-1-1;
-                                @include shadow-none;
+                                @include shadow($shadow-none);
                                 &:hover,
                                 &:focus {
                                     color: $white;
@@ -243,13 +243,13 @@
         }
         &.navigation--local,
         &.navigation--page-contents {
-            @include shadow-medium;
+            @include shadow($shadow-md-8dp);
             border: 0;
         }
         &.navigation--dropdown {
             .navigation--dropdown {
                 &__menu {
-                    @include shadow-high;
+                    @include shadow($shadow-md-16dp);
                 }
             }
         }
@@ -257,8 +257,8 @@
         &.navigation--mobile-rail {
             .navigation--local__button,
             .navigation--mobile-rail__button {
-                @include shadow-low;
-                @include hoverable;
+                @include shadow($shadow-md-2dp);
+                 @include hoverable($shadow-md-8dp);
                 background: $white;
                 border-bottom-color: transparent;
                 &:hover,
@@ -273,9 +273,9 @@
     .global-nds {
         &.global--header {
             border-bottom: 0;
-            @include shadow-medium;
+            @include shadow($shadow-md-8dp);
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                @include shadow-none;
+                @include shadow($shadow-none);
             }
             &__button {
                 border: 0;
@@ -283,7 +283,7 @@
         }
         &.global--footer {
             .block-nds {
-                @include shadow-none;
+                @include shadow($shadow-none);
                 background: transparent;
             }
         }

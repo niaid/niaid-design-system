@@ -11,7 +11,7 @@
     }
     &__buttons {
         &__button {
-            @include shadow-none(!important);
+            @include shadow($shadow-none, !important);
             border-width: $s-2px;
             border-color: $type-link;
             display: inline-flex;
@@ -33,7 +33,7 @@
             }
             &:hover,
             &:focus {
-                @include shadow-none(!important);
+                @include shadow($shadow-none, !important);
                 background: $type-link;
                 border-width: $s-2px;
                 border-color: $type-link;

@@ -16,12 +16,12 @@
             flex-grow: 1;
             input,
             .input--text {
-                @include shadow-none(!important);
+                @include shadow($shadow-none, !important);
                 background: transparent;
                 border: $s-1px solid transparent !important;
                 &:focus {
                     border: $s-1px solid transparent !important;
-                    @include shadow-none(!important);
+                    @include shadow($shadow-none, !important);
                 }
             }
         }
@@ -36,7 +36,7 @@
             margin: $s-0-25;
             &:hover,
             &:focus {
-                @include shadow-none;
+                @include shadow($shadow-none);
                 border: 0;
             }
         }

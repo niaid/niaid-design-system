@@ -37,7 +37,7 @@
         }
     }
     &.icon--document--button {
-        @include hoverable;
+         @include hoverable($shadow-md-8dp);
         &:hover,
         &:focus {
             border: 0;

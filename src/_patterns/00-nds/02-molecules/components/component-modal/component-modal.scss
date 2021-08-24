@@ -40,8 +40,8 @@
                     margin: 0;
                 }
                 &__close {
-                    @include shadow-low;
-                    @include hoverable;
+                    @include shadow($shadow-md-2dp);
+                    @include hoverable($shadow-md-8dp);
                     position: absolute;
                     display: flex;
                     justify-content: center;
