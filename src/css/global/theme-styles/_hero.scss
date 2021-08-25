@@ -7,46 +7,13 @@
     .block--hero {
         display: block;
     }
-    .navigation--page-contents {
-        margin-top: 0;
-    }
-
-    &.style--corners--semirounded {
-        $corner-radius: $border-radius-semi;
-        .layouts--body {
-            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                border-top-left-radius: $corner-radius;
-                border-top-right-radius: $corner-radius;
-            }
-        }
-        .navigation--local,
-        .navigation--page-contents {
-            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                border-radius: $corner-radius;
-            }
-        }
-    }
-
+    &.style--corners--semirounded,
     &.style--corners--rounded {
         $corner-radius: $s-1;
-        .layouts--body {
+        .layouts--main {
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 border-top-left-radius: $corner-radius;
                 border-top-right-radius: $corner-radius;
-            }
-        }
-        .navigation--local,
-        .navigation--page-contents {
-            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                border-radius: $corner-radius;
-            }
-        }
-    }
-
-    &.style--shadows {
-        .block--hero {
-            .parallax-container {
-                padding-bottom: $s-4;
             }
         }
     }

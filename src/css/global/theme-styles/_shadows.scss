@@ -1,5 +1,4 @@
 .style--shadows {
-    background: $page-background-alternate;
     /* Atoms */
     .button-nds,
     button {
@@ -102,11 +101,6 @@
             }
         }
     }
-    .layouts-nds {
-        &.layouts--body {
-            @include shadow($shadow-md-8dp);
-        }
-    }
     .select2-container {
         .select2-dropdown {
             @include shadow($shadow-md-16dp);
@@ -115,7 +109,7 @@
     }
     /* Molecules */
     .block-nds {
-        @include shadow($shadow-md-2dp);
+        @include shadow($shadow-block);
         border: 0;
         background: $white;
         &.block--default {
@@ -156,6 +150,7 @@
         }
         &.block--wtph {
             @include shadow($shadow-none);
+            background: transparent;
             border-top: $s-1px solid $border-light;
             border-bottom: $s-1px solid $border-light;
         }
@@ -195,7 +190,7 @@
         .form--search {
             &__form {
                 @include shadow($shadow-md-2dp);
-                 @include hoverable($shadow-md-8dp);
+                @include hoverable($shadow-md-8dp);
                 border: $s-1px solid transparent;
                 .input--text--icon {
                     input,
@@ -211,15 +206,12 @@
                 }
                 &:focus-within {
                     border: $s-1px solid $type-link;
-                    box-shadow: 0 0 0 $s-1px $type-link, 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+                    box-shadow: 0 0 0 $s-1px $type-link, $shadow-md-8dp;
                 }
             }
         }
     }
     .navigation-nds {
-        &.navigation--primary {
-            @include shadow($shadow-md-8dp);
-        }
         &.navigation--pagination {
             .pager {
                 .pager__items {
@@ -241,11 +233,6 @@
                 }
             }
         }
-        &.navigation--local,
-        &.navigation--page-contents {
-            @include shadow($shadow-md-8dp);
-            border: 0;
-        }
         &.navigation--dropdown {
             .navigation--dropdown {
                 &__menu {
@@ -258,7 +245,7 @@
             .navigation--local__button,
             .navigation--mobile-rail__button {
                 @include shadow($shadow-md-2dp);
-                 @include hoverable($shadow-md-8dp);
+                @include hoverable($shadow-md-8dp);
                 background: $white;
                 border-bottom-color: transparent;
                 &:hover,
