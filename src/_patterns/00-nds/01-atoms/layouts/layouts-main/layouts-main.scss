@@ -5,7 +5,6 @@
     padding: 0;
     position: relative;
     width: 100%;
-    background-color: $page-background;
     @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
         padding: 0 ($s-main-spacer / 2);
     }

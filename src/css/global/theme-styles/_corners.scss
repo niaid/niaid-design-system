@@ -207,6 +207,17 @@
                 }
             }
         }
+        &.navigation--local {
+            .navigation--local__content {
+                @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+                    border-bottom-left-radius: $corner-radius;
+                    border-bottom-right-radius: $corner-radius;
+                }
+            }
+        }
+        &.navigation--page-contents {
+            border-radius: $corner-radius;
+        }
     }
     &.style--shadows {
         .block-nds {
@@ -396,6 +407,15 @@
                     border-radius: 0 0 $corner-radius $corner-radius;
                 }
             }
+        }
+        &.navigation--local {
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+                border-bottom-left-radius: $corner-radius;
+                border-bottom-right-radius: $corner-radius;
+            }
+        }
+        &.navigation--page-contents {
+            border-radius: $corner-radius;
         }
     }
     &.style--shadows {

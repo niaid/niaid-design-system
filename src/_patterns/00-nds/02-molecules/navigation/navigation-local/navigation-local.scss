@@ -20,11 +20,11 @@
         }
     }
     &__content {
+        background-color: $page-background;
         padding: $s-main-spacer $s-main-spacer ($s-main-spacer - $s-0-50) $s-main-spacer;
         border-bottom: $border-block;
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: block !important;
-            padding: $s-main-spacer $s-1;
             max-height: 100vh;
             overflow-y: auto;
             border-bottom: 0;

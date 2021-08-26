@@ -1,5 +1,6 @@
 .navigation--page-contents {
     display: none;
+    background-color: $page-background;
     margin: $s-main-spacer 0;
     max-height: 100vh;
     overflow-y: auto;
@@ -7,6 +8,7 @@
         display: block;
     }
     &__wrapper {
+        padding: $s-1-50;
         h2 {
             margin-top: 0;
             font-size: $s-1;

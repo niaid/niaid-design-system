@@ -9,7 +9,7 @@ html,
 body {
     line-height: $line-height-default;
     font-size: $base-size-pixels * 1px;
-    background-color: $page-background-alternate;
+    background: $page-background-alternate;
     font-family: $font-stack-public-sans;
     color: $type-body;
     margin: 0;
