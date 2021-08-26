@@ -7,6 +7,7 @@
         display: flex;
         flex-wrap: none;
         border: $s-1px solid $input-border;
+        background: $white;
         &:focus-within {
             border: $s-1px solid $type-link;
             outline: 0;
@@ -17,7 +18,6 @@
             input,
             .input--text {
                 @include shadow($shadow-none, !important);
-                background: $white;
                 border: $s-1px solid transparent !important;
                 &:focus {
                     border: $s-1px solid transparent !important;
