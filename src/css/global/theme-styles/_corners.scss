@@ -368,10 +368,10 @@
     .form-nds {
         &.form--search {
             .form--search__form {
-                border-radius: $corner-radius;
+                border-radius: $corner-radius-full;
                 .form-submit,
                 input[type="submit"] {
-                    border-radius: $corner-radius;
+                    border-radius: $corner-radius-full;
                 }
             }
         }
