@@ -16,9 +16,10 @@
         navigation_mobile_rail_button_text: The text to appear on the mobile rail toggle button.
 
     Includes:
+        Atoms -> Buttons -> button--default
         Molecules -> Components -> component--accordion
 
-    Last Updated: June 18, 2021
+    Last Updated: August 27, 2021
 #}
 
 {% set navigation_mobile_rail_classes = navigation_mobile_rail_classes|default() %}
@@ -35,7 +36,14 @@
     %}
         {% block component_accordion_content %}
             <div id="navigation--mobile-rail__button">
-                <button class="navigation--mobile-rail__button" type="button" data-bs-toggle="collapse" data-bs-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content">{{ navigation_mobile_rail_button_text }}</button>
+                {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                    {
+                        "button_default_classes": "navigation--mobile-rail__button",
+                        "button_default_type": "secondary",
+                        "button_default_label": navigation_mobile_rail_button_text,
+                        "button_default_attributes": 'data-bs-toggle="collapse" data-bs-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content"'
+                    }
+                %}
             </div>
             <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-bs-parent="#navigation--mobile-rail">
                 {{ navigation_mobile_rail_content }}

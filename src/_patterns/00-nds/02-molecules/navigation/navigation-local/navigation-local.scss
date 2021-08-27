@@ -1,15 +1,13 @@
 .navigation--local {
+    background-color: $white;
     @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
         margin-bottom: $s-main-spacer;
     }
     &__button {
-        @extend .button-nds;
-        @extend .button--secondary;
         position: relative;
         z-index: $z-index-mobile-rail;
         width: 100%;
         text-align: center;
-        background: transparent;
         border-radius: 0 !important;
         border-left: 0 !important;
         border-right: 0 !important;

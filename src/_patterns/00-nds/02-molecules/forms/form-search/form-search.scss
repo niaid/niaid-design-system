@@ -18,6 +18,7 @@
             input,
             .input--text {
                 @include shadow($shadow-none, !important);
+                background: transparent;
                 border: $s-1px solid transparent !important;
                 &:focus {
                     border: $s-1px solid transparent !important;

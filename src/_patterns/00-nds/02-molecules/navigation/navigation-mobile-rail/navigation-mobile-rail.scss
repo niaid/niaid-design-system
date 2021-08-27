@@ -1,13 +1,14 @@
 .navigation--mobile-rail {
+    background-color: $white;
     position: relative;
+    @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+        background-color: transparent;
+    }
     &__button {
-        @extend .button-nds;
-        @extend .button--secondary;
         position: relative;
         z-index: $z-index-mobile-rail;
         width: 100%;
         text-align: center;
-        background: transparent;
         border-radius: 0 !important;
         border-left: 0 !important;
         border-right: 0 !important;
@@ -18,10 +19,12 @@
         }
     }
     &__content {
+        background-color: $page-background;
         height: auto;
         padding: 0 $s-main-spacer;
         border-bottom: $border-block;
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+            background-color: transparent;
             padding: 0;
             display: block !important;
             border-bottom: 0;
