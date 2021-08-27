@@ -1,6 +1,6 @@
 .style--hero {
     .layouts--main {
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             margin-top: -$s-2;
         }
     }
