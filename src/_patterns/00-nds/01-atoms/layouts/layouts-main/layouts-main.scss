@@ -17,13 +17,13 @@
     }
     &.layouts--main--no-left {
         padding-left: 0;
-        .layouts--body {
+        .layouts--main__column {
             padding-left: 0;
         }
     }
     &.layouts--main--no-right {
         padding-right: 0;
-        .layouts--body {
+        .layouts--main__column {
             padding-right: 0;
         }
     }

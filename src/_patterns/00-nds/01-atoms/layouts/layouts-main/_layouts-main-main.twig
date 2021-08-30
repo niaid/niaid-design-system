@@ -34,9 +34,9 @@
 {% set layouts_main_breakpoint = layouts_main_breakpoint|default('lg') %}
 
 {% if block('left_column')|trim == "" and block('right_column')|trim != "" %}
-    {% set layouts_main_classes = layouts_main_classes ~ "layouts--main--no-left" %}
+    {% set layouts_main_classes = layouts_main_classes ~ " layouts--main--no-left" %}
 {% elseif block('left_column')|trim != "" and block('right_column')|trim == "" %}
-    {% set layouts_main_classes = layouts_main_classes ~ "layouts--main--no-right" %}
+    {% set layouts_main_classes = layouts_main_classes ~ " layouts--main--no-right" %}
 {% endif %}
 
 <div class="layouts-nds layouts--main {{ layouts_main_classes }}"{% if layouts_main_id is not empty %} id="{{ layouts_main_id }}"{% endif %}>
