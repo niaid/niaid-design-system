@@ -208,6 +208,7 @@
             }
         }
         &.navigation--local {
+            &,
             .navigation--local__content {
                 @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                     border-bottom-left-radius: $corner-radius;
@@ -409,20 +410,16 @@
             }
         }
         &.navigation--local {
-            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                border-bottom-left-radius: $corner-radius;
-                border-bottom-right-radius: $corner-radius;
+            &,
+            .navigation--local__content {
+                @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+                    border-bottom-left-radius: $corner-radius;
+                    border-bottom-right-radius: $corner-radius;
+                }
             }
         }
         &.navigation--page-contents {
             border-radius: $corner-radius;
-        }
-    }
-    &.style--shadows {
-        .block-nds {
-            &.block--wtph {
-                border-radius: $corner-radius;
-            }
         }
     }
 }

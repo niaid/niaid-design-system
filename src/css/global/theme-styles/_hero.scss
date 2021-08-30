@@ -19,6 +19,7 @@
                 border-top-right-radius: $corner-radius;
             }
         }
+        .navigation--local,
         .navigation--local__content,
         .navigation--page-contents {
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
@@ -34,6 +35,7 @@
                 border-top-right-radius: $corner-radius;
             }
         }
+        .navigation--local,
         .navigation--local__content,
         .navigation--page-contents {
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {

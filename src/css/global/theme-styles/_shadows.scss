@@ -101,6 +101,11 @@
             }
         }
     }
+    .layouts-nds {
+        &.layouts--body {
+            @include shadow($shadow-block);
+        }
+    }
     .select2-container {
         .select2-dropdown {
             @include shadow($shadow-md-16dp);
@@ -254,6 +259,10 @@
                     background: $color-theme-1-1-1;
                 }
             }
+        }
+        &.navigation--local,
+        &.navigation--page-contents {
+            @include shadow($shadow-block);
         }
     }
     /* Organisms */
