@@ -33,6 +33,12 @@
 {% set layouts_main_right = layouts_main_right|default(3) %}
 {% set layouts_main_breakpoint = layouts_main_breakpoint|default('lg') %}
 
+{% if block('left_column')|trim == "" && block('right_column')|trim != "" %}
+    {% set layouts_main_classes = layouts_main_classes ~ "layouts--main--no-left" %}
+{% elseif block('left_column')|trim != "" && block('right_column')|trim == "" %}
+    {% set layouts_main_classes = layouts_main_classes ~ "layouts--main--no-right" %}
+{% endif %}
+
 <div class="layouts-nds layouts--main {{ layouts_main_classes }}"{% if layouts_main_id is not empty %} id="{{ layouts_main_id }}"{% endif %}>
     {% if block('left_column')|trim != "" %}
         <div class="layouts--main__column layouts--main__first col{% if layouts_main_breakpoint is not empty %}-{{ layouts_main_breakpoint }}{% endif %}{% if layouts_main_left is not empty %}-{{ layouts_main_left }}{% endif %}">

@@ -15,4 +15,16 @@
             padding: 0 ($s-main-spacer / 2);
         }
     }
+    &.layouts--main--no-left {
+        padding-left: 0;
+        .layouts--body {
+            padding-left: 0;
+        }
+    }
+    &.layouts--main--no-right {
+        padding-right: 0;
+        .layouts--body {
+            padding-right: 0;
+        }
+    }
 }

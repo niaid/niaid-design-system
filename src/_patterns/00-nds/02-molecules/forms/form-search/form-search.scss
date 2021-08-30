@@ -5,7 +5,7 @@
     &__form {
         position: relative;
         display: flex;
-        flex-wrap: none;
+        flex-wrap: nowrap;
         border: $s-1px solid $input-border;
         background: $white;
         &:focus-within {
