@@ -210,8 +210,8 @@
                     }
                 }
                 &:focus-within {
+                    @include shadow((0 0 0 $s-1px $type-link, $shadow-hard-medium));
                     border: $s-1px solid $type-link;
-                    box-shadow: 0 0 0 $s-1px $type-link, $shadow-hard-medium;
                 }
             }
         }
