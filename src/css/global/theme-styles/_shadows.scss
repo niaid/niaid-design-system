@@ -2,7 +2,7 @@
     /* Atoms */
     .button-nds,
     button {
-         @include hoverable($shadow-md-8dp);
+        @include hoverable($shadow-hard-medium);
         &.disabled,
         &:disabled,
         &[disabled] {
@@ -48,15 +48,15 @@
             }
         }
         &.button--floating {
-            @include shadow($shadow-md-16dp);
+            @include shadow($shadow-hard-high);
         }
     }
     .input-nds {
         &.input--select {
             .select2-container {
                 .select2-selection  {
-                    @include shadow($shadow-md-2dp);
-                     @include hoverable($shadow-md-8dp);
+                    @include shadow($shadow-hard-low);
+                    @include hoverable($shadow-hard-medium);
                     border: $border-transparent !important;
                 }
                 .single-clear {
@@ -69,8 +69,8 @@
             }
         }
         &.input--text {
-            @include shadow($shadow-md-2dp);
-             @include hoverable($shadow-md-8dp);
+            @include shadow($shadow-hard-low);
+            @include hoverable($shadow-hard-medium);
             border: $border-transparent;
             &:focus {
                 border: $s-1px solid $type-link;
@@ -85,8 +85,8 @@
         }
         &.input--date-picker {
             .input--date-picker__field {
-                @include shadow($shadow-md-2dp);
-                 @include hoverable($shadow-md-8dp);
+                @include shadow($shadow-hard-low);
+                @include hoverable($shadow-hard-medium);
                 border: $border-transparent;
                 &:focus {
                     border: $s-1px solid $type-link;
@@ -103,18 +103,18 @@
     }
     .layouts-nds {
         &.layouts--body {
-            @include shadow($shadow-block);
+            @include shadow($shadow-soft);
         }
     }
     .select2-container {
         .select2-dropdown {
-            @include shadow($shadow-md-16dp);
+            @include shadow($shadow-hard-high);
             border: 0;
         }
     }
     /* Molecules */
     .block-nds {
-        @include shadow($shadow-block);
+        @include shadow($shadow-soft);
         border: 0;
         background: $white;
         &.block--default {
@@ -150,7 +150,7 @@
         }
         &.block--status-message {
             .block--status-message__icon {
-                @include shadow($shadow-md-2dp);
+                @include shadow($shadow-hard-low);
             }
         }
         &.block--wtph {
@@ -165,8 +165,8 @@
             .component--accordion__card {
                 &__header {
                     &__button {
-                        @include shadow($shadow-md-2dp);
-                         @include hoverable($shadow-md-8dp);
+                        @include shadow($shadow-hard-low);
+                        @include hoverable($shadow-hard-medium);
                         border: $s-1px solid $white;
                         color: $type-link;
                         &:hover,
@@ -194,8 +194,8 @@
     .form-nds {
         .form--search {
             &__form {
-                @include shadow($shadow-md-2dp);
-                @include hoverable($shadow-md-8dp);
+                @include shadow($shadow-hard-low);
+                @include hoverable($shadow-hard-medium);
                 border: $s-1px solid transparent;
                 .input--text--icon {
                     input,
@@ -211,7 +211,7 @@
                 }
                 &:focus-within {
                     border: $s-1px solid $type-link;
-                    box-shadow: 0 0 0 $s-1px $type-link, $shadow-md-8dp;
+                    box-shadow: 0 0 0 $s-1px $type-link, $shadow-hard-medium;
                 }
             }
         }
@@ -241,7 +241,7 @@
         &.navigation--dropdown {
             .navigation--dropdown {
                 &__menu {
-                    @include shadow($shadow-md-16dp);
+                    @include shadow($shadow-hard-high);
                 }
             }
         }
@@ -249,8 +249,8 @@
         &.navigation--mobile-rail {
             .navigation--local__button,
             .navigation--mobile-rail__button {
-                @include shadow($shadow-md-2dp);
-                @include hoverable($shadow-md-8dp);
+                @include shadow($shadow-hard-low);
+                @include hoverable($shadow-hard-medium);
                 background: $white;
                 border-bottom-color: transparent;
                 &:hover,
@@ -262,14 +262,14 @@
         }
         &.navigation--local,
         &.navigation--page-contents {
-            @include shadow($shadow-block);
+            @include shadow($shadow-soft);
         }
     }
     /* Organisms */
     .global-nds {
         &.global--header {
             border-bottom: 0;
-            @include shadow($shadow-md-8dp);
+            @include shadow($shadow-hard-medium);
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 @include shadow($shadow-none);
             }

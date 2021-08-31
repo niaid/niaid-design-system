@@ -1,11 +1,11 @@
 // SHADOWS
 
 $shadow-none: none;
-$shadow-md-2dp: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-$shadow-md-8dp: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-$shadow-md-16dp: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+$shadow-hard-low: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+$shadow-hard-medium: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+$shadow-hard-high: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
 
-$shadow-block: 0 0 24px 0 rgba(150,150,150,0.12), 0 10px 24px 0 rgba(150,150,150,0.24); 
+$shadow-soft: 0 0 24px 0 rgba(150,150,150,0.12), 0 10px 24px 0 rgba(150,150,150,0.24); 
 
 @mixin shadow($shadow, $important:"") {
     @if ($important != "") {
