@@ -38,7 +38,7 @@
 {% endif %}
 
 <div class="navigation-nds navigation--dropdown {{ navigation_dropdown_classes }}">
-    <{{ navigation_dropdown_toggle_href != "" ? 'a' : 'button' }}{% if navigation_dropdown_toggle_href is not empty %} href="{{ navigation_dropdown_toggle_href }}"{% else %} data-nds-toggle="dropdown"{% endif %} id="{{ navigation_dropdown_id }}" type="button" class="navigation--dropdown__toggle {{ navigation_dropdown_active_class }}" aria-haspopup="true" aria-expanded="false" aria-label="{{ navigation_dropdown_toggle_aria_label }}" data-display="static">{{ navigation_dropdown_toggle_text }}</{{ navigation_dropdown_toggle_href != "" ? 'a' : 'button' }}>
+    <{{ navigation_dropdown_toggle_href != "" ? 'a' : 'button' }}{% if navigation_dropdown_toggle_href is not empty %} href="{{ navigation_dropdown_toggle_href }}"{% endif %} id="{{ navigation_dropdown_id }}" type="button" class="navigation--dropdown__toggle {{ navigation_dropdown_active_class }}" aria-haspopup="true" aria-expanded="false" aria-label="{{ navigation_dropdown_toggle_aria_label }}" data-display="static">{{ navigation_dropdown_toggle_text }}</{{ navigation_dropdown_toggle_href != "" ? 'a' : 'button' }}>
     <div class="navigation--dropdown__menu" aria-labelledby="{{ navigation_dropdown_id }}">
         {% block navigation_dropdown_content %}{% endblock %}
     </div>

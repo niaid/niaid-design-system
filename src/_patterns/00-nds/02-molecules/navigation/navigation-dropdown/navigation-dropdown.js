@@ -37,11 +37,6 @@ var moduleNDS_dropdown = (function() {
         $el.find('.navigation--dropdown__toggle').attr('aria-expanded', 'false');
     }
 
-    // isOpen - Helper function to determine if a dropdown is open.
-    function isOpen($el) {
-        $el.hasClass('is-open') ? 1 : 0;
-    }
-
     /* =================== PUBLIC METHODS ================== */
     function init() {
         initNavigationDropdown();
