@@ -269,7 +269,7 @@
     .global-nds {
         &.global--header {
             border-bottom: 0;
-            @include shadow($shadow-hard-medium);
+            @include shadow($shadow-hard-low);
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 @include shadow($shadow-none);
             }
