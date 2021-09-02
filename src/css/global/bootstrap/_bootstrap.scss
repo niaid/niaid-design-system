@@ -9,6 +9,9 @@
 
 // IE-Specifc Patching
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .row {
+        margin: 0 -1rem;
+    }
     .row > * {
         padding: 0 1rem;
     }
