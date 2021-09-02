@@ -2,3 +2,7 @@
     @extend .sr-only;
     @extend .sr-only-focusable;
 }
+
+.page {
+    overflow: hidden;
+}
