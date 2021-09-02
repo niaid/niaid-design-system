@@ -6,3 +6,10 @@
 @import "../../node_modules/bootstrap/scss/mixins/border-radius";
 @import "../../node_modules/bootstrap/scss/mixins/reset-text";
 @import "../../node_modules/bootstrap/scss/tooltip";
+
+// IE-Specifc Patching
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .row > * {
+        padding: 0 1rem;
+    }
+}
