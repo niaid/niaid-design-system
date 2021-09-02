@@ -101,7 +101,7 @@ gulp.task('compileJS', () => {
 // GULP: compilePatternLab - Compile Pattern Lab for your static site.
 gulp.task('compilePatternLab', (cb) => {
     console.log("Compiling Pattern Lab...")
-    return exec('php core/console --generate', function(err, stdout, stderr) {
+    return exec('npm run build', function(err, stdout, stderr) {
         browserSync.reload();
         cb(err);
     });
@@ -138,7 +138,7 @@ gulp.task('moveAssets', () => {
         let relativePath = ""; if (pages[i].depth === 0) { relativePath = "./"; } else { for (let j = 0; j < pages[i].depth; j++) { relativePath += "../"; }}
 
         if (pages[i].targetPath === "/") {
-            var path = "./public/patterns/05-pages-index/05-pages-index.html";
+            var path = "./public/patterns/pages-index/pages-index.html";
             gulp.src(path)
                 .pipe(rename({ basename: 'index', extname: '.html' }))
                 .pipe(replace('../../css', relativePath + 'css'))
@@ -149,7 +149,9 @@ gulp.task('moveAssets', () => {
                 .pipe(gulp.dest('./dist/'));
         }
         else {
-            var path = "./public/patterns/05-pages-" + pages[i].patternLabPath + "-" + pages[i].pageName + "/05-pages-" + pages[i].patternLabPath + "-" + pages[i].pageName + ".html";
+            let depthOne = pages[i].patternLabPath + "-" + pages[i].pageName;
+            let deeperThanOne = pages[i].targetPath.split('/')[0] + "-" + pages[i].pageName;
+            var path = "./public/patterns/pages-" + (pages[i].depth > 1 ? deeperThanOne : depthOne) + "/pages-" + (pages[i].depth > 1 ? deeperThanOne : depthOne) + ".html";
             gulp.src(path)
                 .pipe(rename({ basename: 'index', extname: '.html' }))
                 .pipe(replace('../../css', relativePath + 'css'))
@@ -203,7 +205,6 @@ gulp.task('cleanNDSSource', (cb) => {
         './src/images/global/**/*',
         './src/js/libraries/**/*',
         './src/js/utilities/**/*',
-        './src/_twig-components/**/*',
         './src/webfonts/font-awesome/**/*',
         './src/webfonts/martel/**/*',
         './src/webfonts/merriweather/**/*',
@@ -287,12 +288,6 @@ gulp.task('copyGlobalFonts', () => {
     return gulp.src(srcPath + 'src/webfonts/public-sans/*').pipe(gulp.dest('./src/webfonts/public-sans/'));
 });
 
-// GULP: copyGlobalTwigComponents - Copy Twig Components into Project
-gulp.task('copyGlobalTwigComponents', () => {
-    console.log("Transferring Assets from Global Twig Components ...");
-    return gulp.src(srcPath + 'src/_twig-components/**/*').pipe(gulp.dest('./src/_twig-components/'));
-});
-
 // GULP: serveProject - Serves project locally and watches files for changes.
 gulp.task('serveProject', function() {
     browserSync.init({
@@ -309,7 +304,7 @@ gulp.task('serveProject', function() {
 // GULP AGGREGATES
 
 // GULP: transfer - Transfers official NDS assets to appropriate locations.
-gulp.task('transfer', gulp.series('copyFontAwesome', 'copyGlobalFonts', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns', 'copyGlobalTwigComponents'));
+gulp.task('transfer', gulp.series('copyFontAwesome', 'copyGlobalFonts', 'copyGlobalImages', 'copyGlobalSass', 'copyGlobalJS', 'copyGlobalPatterns'));
 
 // GULP: compile - Compiles the local project assets.
 gulp.task('compile', gulp.series('compileSass', 'computeIncludedJSFiles', 'compileJS', 'compilePatternLab'));

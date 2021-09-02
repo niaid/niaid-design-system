@@ -1,6 +1,6 @@
 .style--hero {
     .layouts--main {
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             margin-top: -$s-2;
         }
     }
@@ -20,13 +20,13 @@
             }
         }
         .navigation--local,
+        .navigation--local__content,
         .navigation--page-contents {
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 border-radius: $corner-radius;
             }
         }
     }
-
     &.style--corners--rounded {
         $corner-radius: $s-1;
         .layouts--body {
@@ -36,17 +36,10 @@
             }
         }
         .navigation--local,
+        .navigation--local__content,
         .navigation--page-contents {
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 border-radius: $corner-radius;
-            }
-        }
-    }
-
-    &.style--shadows {
-        .block--hero {
-            .parallax-container {
-                padding-bottom: $s-4;
             }
         }
     }

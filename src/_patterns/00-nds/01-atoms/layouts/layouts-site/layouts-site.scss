@@ -2,3 +2,9 @@
     @extend .sr-only;
     @extend .sr-only-focusable;
 }
+
+.page {
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        overflow: hidden;
+    }
+}

@@ -1,5 +1,4 @@
 .block--alert {
-    @include shadow-none;
     background: $alert-severity-1;
     color: $white;
     border-radius: 0 !important;

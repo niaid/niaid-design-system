@@ -1,5 +1,5 @@
 .component--toast {
-    @include shadow-high;
+    @include shadow($shadow-hard-high);
     position: fixed;
     z-index: $z-index-toast;
     top: $s-3;

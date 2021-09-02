@@ -17,18 +17,16 @@ $map-mods: (
     @for $i from 0 through $spacers {
         $important: '';
         // Overriding Bootstrap Utilities
-        @if ($i == 1 or $i == 2 or $i == 3 or $i == 4 or $i == 5) { 
+        @if ($i == 0 or $i == 1 or $i == 2 or $i == 3 or $i == 4 or $i == 5) { 
             $important: '!important';
         }
-        @if $i != 0 { 
-            .#{$abbreviation}-#{$i} {
-                #{$rule}: ($i * $base-spacer) #{$important};
-            }
-            @each $mod in $mods {
-                .#{$abbreviation}-#{$mod}-#{$i} {
-                    @each $j in map-get($map-mods, $mod) {
-                        #{$rule}-#{$j}: $i * $base-spacer;
-                    }
+        .#{$abbreviation}-#{$i} {
+            #{$rule}: ($i * $base-spacer) #{$important};
+        }
+        @each $mod in $mods {
+            .#{$abbreviation}-#{$mod}-#{$i} {
+                @each $j in map-get($map-mods, $mod) {
+                    #{$rule}-#{$j}: $i * $base-spacer;
                 }
             }
         }
@@ -48,7 +46,7 @@ $map-mods: (
 }
 
 @mixin sizeUtil($abbreviation, $rule) {
-    @for $i from 1 through $spacers {
+    @for $i from 0 through $spacers {
         .#{$abbreviation}-#{$i} {
             #{$rule}: $i * $base-spacer;
         }

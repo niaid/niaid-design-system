@@ -2,10 +2,17 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
-@import "../../node_modules/bootstrap/scss/mixins/border-radius"; // Tooltip
-@import "../../node_modules/bootstrap/scss/mixins/reset-text"; // Tooltip
+// Tooltip
+@import "../../node_modules/bootstrap/scss/mixins/border-radius";
+@import "../../node_modules/bootstrap/scss/mixins/reset-text";
+@import "../../node_modules/bootstrap/scss/tooltip";
 
-$enable-responsive-font-sizes: true;
-@import "../../node_modules/bootstrap/scss/vendor/rfs"; // Headings, Tooltip
-
-@import "../../node_modules/bootstrap/scss/tooltip"; // Tooltip
+// IE-Specifc Patching
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .row {
+        margin: 0 -1rem;
+    }
+    .row > * {
+        padding: 0 1rem;
+    }
+}

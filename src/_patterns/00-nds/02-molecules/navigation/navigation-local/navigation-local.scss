@@ -1,16 +1,13 @@
 .navigation--local {
-    background: $page-background;
+    background-color: $white;
     @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
         margin-bottom: $s-main-spacer;
     }
     &__button {
-        @extend .button-nds;
-        @extend .button--secondary;
         position: relative;
         z-index: $z-index-mobile-rail;
         width: 100%;
         text-align: center;
-        background: transparent;
         border-radius: 0 !important;
         border-left: 0 !important;
         border-right: 0 !important;
@@ -21,11 +18,11 @@
         }
     }
     &__content {
-        padding: $s-main-spacer $s-main-spacer $s-1 $s-main-spacer;
+        background-color: $page-background;
+        padding: $s-main-spacer $s-main-spacer ($s-main-spacer - $s-0-50) $s-main-spacer;
         border-bottom: $border-block;
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: block !important;
-            padding: $s-1-50 $s-1-50 $s-0-50 $s-1-50;
             max-height: 100vh;
             overflow-y: auto;
             border-bottom: 0;

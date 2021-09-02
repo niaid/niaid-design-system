@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ language|default('en') }}" class="{{ htmlClass }}">
+  <head>
+    <title>{{ title }}</title>
+    {% if metaDescription is not empty %}<meta name="description" content="{{ metaDescription }}">{% endif %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if cssIncludes.bootstrapDatepicker %}<link rel="stylesheet" href="{{ cssPath }}libraries/bootstrap-datepicker/bootstrap-datepicker.min.css" />{% endif %}
+    {% if cssIncludes.select2 %}<link rel="stylesheet" href="{{ cssPath }}libraries/select2/select2.min.css" />{% endif %}
+
+    <link rel="icon" href="{{ imagePath }}global/favicons/favicon.ico" type="image/x-icon"/>
+
+    {# Favicons #}
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ imagePath }}global/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ imagePath }}global/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ imagePath }}global/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ imagePath }}global/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ imagePath }}global/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ imagePath }}global/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ imagePath }}global/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ imagePath }}global/favicons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="{{ imagePath }}global/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="{{ imagePath }}global/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{{ imagePath }}global/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ imagePath }}global/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="{{ imagePath }}global/favicons/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="{{ imagePath }}global/favicons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="{{ imagePath }}global/favicons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="{{ imagePath }}global/favicons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="{{ imagePath }}global/favicons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="{{ imagePath }}global/favicons/mstile-310x310.png" />
+
+    <link rel="stylesheet" href="{{ cssPath }}nds-min.css" media="all" />
+
+    <!-- build:remove -->
+    <link rel="stylesheet" href="{{ cssPath }}libraries/pattern-lab/pattern-scaffolding.css" media="all" />
+    {{ patternLabHead | raw }}
+    <!-- endbuild -->
+    
+  </head>
+  <body class="{{ bodyClass }}">

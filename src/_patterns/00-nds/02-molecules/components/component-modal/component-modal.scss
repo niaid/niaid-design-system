@@ -40,9 +40,12 @@
                     margin: 0;
                 }
                 &__close {
-                    @include shadow-low;
-                    @include hoverable;
+                    @include shadow($shadow-hard-low);
+                    @include hoverable($shadow-hard-medium);
                     position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     height: $s-3;
                     width: $s-3;
                     border-radius: 100% !important;

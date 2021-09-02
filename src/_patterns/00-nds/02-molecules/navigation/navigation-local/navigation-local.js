@@ -16,9 +16,33 @@ var moduleNDS_navigationLocal = (function() {
         jQuery('.navigation--local').each(function() {
             if (jQuery(this).attr('data-sticky') == "true") { 
                 jQuery(this).addClass('hero-present');
-                stickyElement(".navigation--local", jQuery('body').hasClass('style--hero') ? 32 : 0, "all and (min-width: 992px)");
+                stickyElement(".navigation--local", 0, "all and (min-width: 992px)");
             }
         });
+
+        jQuery('.card-header').on('click', function() {
+            let attr = jQuery(this).attr('data-bs-toggle');
+            if (typeof attr !== 'undefined' && attr !== false) {
+                let newlyOpenedId = jQuery(this).attr('id');
+                let headerLevel = jQuery(this).attr('class').split('level-')[1][0];
+                let targetLevel = ".level-" + headerLevel;
+                jQuery(targetLevel).each(function() {
+                    let currentItemID = jQuery(this).attr('id');
+                    if (typeof currentItemID !== 'undefined' && currentItemID !== false) {
+                        if (currentItemID != newlyOpenedId) {
+                            closeMenuItem(jQuery(this));
+                        }
+                    }
+                }); 
+            }
+        });
+    }
+
+    // closeMenuItem - Closes a particular accordion within the local navigation.
+    function closeMenuItem($item) {
+        $item.attr('aria-expanded', 'false').removeClass('collapsed');
+        let dataTargetValue = $item.attr('data-bs-target');
+        jQuery(dataTargetValue).removeClass('show');
     }
 
     /* =================== PUBLIC METHODS ================== */

@@ -1,15 +1,14 @@
 .navigation--page-contents {
     display: none;
+    background-color: $page-background;
     margin: $s-main-spacer 0;
-    padding: $s-1-50;
     max-height: 100vh;
     overflow-y: auto;
-    background: $page-background;
-    border: $border-block;
     @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
         display: block;
     }
     &__wrapper {
+        padding: $s-1-50;
         h2 {
             margin-top: 0;
             font-size: $s-1;

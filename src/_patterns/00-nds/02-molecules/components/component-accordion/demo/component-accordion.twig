@@ -1,30 +1,30 @@
 {% embed "@nds/02-molecules/components/component-accordion/_component-accordion-main.twig" with
     {
-        "component_accordion_id": "accordion1"
+        "component_accordion_id": "accordion-example"
     }
 %}
     {% block component_accordion_content %}
         <div class="component--accordion__card">	
             <div class="component--accordion__card__header" id="headingOne">
-                <button class="component--accordion__card__header__button" aria-controls="collapseOne" aria-expanded="false" data-target="#collapseOne" data-toggle="collapse" type="button">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
+                <button class="component--accordion__card__header__button" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
             </div>	
-            <div aria-labelledby="headingOne" class="component--accordion__card__body collapse" id="collapseOne" data-parent="#accordion1">
+            <div id="collapseOne" class="component--accordion__card__body collapse" data-bs-parent="#accordion-example" aria-labelledby="headingOne">
                 <p>A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
             </div>	
         </div>
         <div class="component--accordion__card">	
             <div class="component--accordion__card__header" id="headingTwo">
-                <button class="component--accordion__card__header__button" aria-controls="collapseTwo" aria-expanded="false" data-target="#collapseTwo" data-toggle="collapse" type="button">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
+                <button class="component--accordion__card__header__button" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
             </div>	
-            <div aria-labelledby="headingTwo" class="component--accordion__card__body collapse" id="collapseTwo" data-parent="#accordion1">
+            <div id="collapseTwo" class="component--accordion__card__body collapse" data-bs-parent="#accordion-example" aria-labelledby="headingTwo">
                 <p>A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
             </div>	
         </div>
         <div class="component--accordion__card">	
             <div class="component--accordion__card__header" id="headingThree">
-                <button class="component--accordion__card__header__button" aria-controls="collapseThree" aria-expanded="false" data-target="#collapseThree" data-toggle="collapse" type="button">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
+                <button class="component--accordion__card__header__button" data-bs-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Q: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?</button>
             </div>	
-            <div aria-labelledby="headingThree" class="component--accordion__card__body collapse" id="collapseThree" data-parent="#accordion1">
+            <div id="collapseThree" class="component--accordion__card__body collapse" data-bs-parent="#accordion-example" aria-labelledby="headingThree">
                 <p>A: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>	
             </div>	
         </div>
