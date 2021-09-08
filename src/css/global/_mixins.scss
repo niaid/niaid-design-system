@@ -1,50 +1,83 @@
+// MIXINS
+
+// UTILITIES
+// Source: https://css-tricks.com/snippets/sass/advanced-type-checking/
+
+@function is-number($value) {
+    @return type-of($value) == 'number';
+}
+
+@function is-relative-length($value) {
+    @return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', unit($value)) != null;
+}
+   
+@function is-absolute-length($value) {
+    @return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+}
+
+// BREAKPOINTS
+// Source: Bootstrap 5
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: $name;
+    @if not is-absolute-length($name) {
+        $min: breakpoint-min($name, $breakpoints);
+    }
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: $name;
+    @if not is-absolute-length($name) {
+        $max: breakpoint-max($name, $breakpoints);
+    }
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
+// TYPOGPRAHY
+
 @mixin hyphenate {
     -ms-word-break: break-all;
-    word-break: break-all;
-    /* Non standard for WebKit */
-    word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-}
-
-/* POSITIONING */
-
-@mixin vertical-center {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.overflow-hidden {
-    overflow: hidden !important;
-}
-
-/* TEXT */
-
-@mixin antialias {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
- }
-
-@mixin word-wrap {
-    -ms-word-break: break-all;
      word-break: break-all;
-
      /* Non standard for webkit */
      word-break: break-word;
-
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
 }
 
+@mixin antialias {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 @mixin no-visit-style($color: $blue) {
     &:visited {
         color: $color;
-
         &:hover, &:focus {
             color: $color;
         }
     }
+}
+
+// POSITIONING
+
+@mixin vertical-center {
+    top: 50%;
+    transform: translateY(-50%);
 }

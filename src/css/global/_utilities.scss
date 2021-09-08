@@ -176,3 +176,7 @@ $s-2px: ($base-spacer * 2) / $base-size-pixels;
 .w-2px {
     width: $s-2px;
 }
+
+.overflow-hidden {
+    overflow: hidden !important;
+}

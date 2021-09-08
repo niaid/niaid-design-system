@@ -47,7 +47,7 @@ p,
 ul,
 ol {
     @include media-breakpoint-down(sm) {
-        @include word-wrap;
+        @include hyphenate;
     }
 }
 
