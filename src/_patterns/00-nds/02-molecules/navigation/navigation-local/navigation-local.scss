@@ -26,6 +26,7 @@
             max-height: 100vh;
             overflow-y: auto;
             border-bottom: 0;
+            max-height: calc(100vh - #{$s-2});
         }
         &__title {
             font-size: $s-1;
@@ -159,15 +160,6 @@
                     margin: $s-0-25 0;
                     padding: 0 0 0 $s-1;
                     border-left: $s-0-25 solid $type-link;
-                }
-            }
-        }
-    }
-    &.hero-present {
-        .navigation--local {
-            &__content {
-                @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                    max-height: calc(100vh - #{$s-2});
                 }
             }
         }

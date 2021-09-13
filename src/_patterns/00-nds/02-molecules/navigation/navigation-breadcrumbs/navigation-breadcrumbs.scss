@@ -4,7 +4,7 @@
     font-weight: $font-weight-semibold;
     font-size: $s-0-75 + $s-2px;
     color: $type-heading;
-    padding-top: $s-2;
+    padding-bottom: $s-1;
     a {
         &:hover,
         &:focus {
@@ -20,8 +20,5 @@
         width: auto;
         color: $type-body;
         margin: 0 $s-0-50;
-    }
-    & + h1 {
-        margin-top: $s-2;
     }
 }

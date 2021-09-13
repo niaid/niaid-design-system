@@ -14,8 +14,7 @@ var moduleNDS_navigationLocal = (function() {
         }
 
         jQuery('.navigation--local').each(function() {
-            if (jQuery(this).attr('data-sticky') == "true") { 
-                jQuery(this).addClass('hero-present');
+            if (jQuery(this).attr('data-sticky') == "true") {
                 stickyElement(".navigation--local", 0, "all and (min-width: 992px)");
             }
         });

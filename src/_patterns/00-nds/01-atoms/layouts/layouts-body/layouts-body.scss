@@ -5,7 +5,7 @@
     position: relative;
     padding: $s-main-spacer;
     @include media-breakpoint-up('sm') {
-        padding: $s-3;
+        padding: $s-2 $s-3 $s-3 $s-3;
     }
     &.layouts--body--no-top-padding {
         padding-top: 0 !important;

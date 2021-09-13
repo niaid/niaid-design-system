@@ -28,7 +28,7 @@
         Atoms -> Images -> image-default
         Atoms -> Text -> text-product-identity
 
-    Last Updated: January 22, 2021
+    Last Updated: September 9, 2021
 #}
 
 {% set component_branding_classes = component_branding_classes|default() %}
@@ -39,6 +39,10 @@
 {% set component_branding_logo_mobile_alt = component_branding_logo_mobile_alt|default('NIAID Logo') %}
 {% set component_branding_identity_top = component_branding_identity_top|default() %}
 {% set component_branding_identity_bottom = component_branding_identity_bottom|default() %}
+
+{% if component_branding_identity_top == "" and component_branding_identity_bottom == "" %}
+    {% set component_branding_classes = component_branding_classes ~ " no-product-id" %}
+{% endif %}
 
 <a href="{{ component_branding_href }}" class="component-nds component--branding {{ component_branding_classes }}">
     {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with

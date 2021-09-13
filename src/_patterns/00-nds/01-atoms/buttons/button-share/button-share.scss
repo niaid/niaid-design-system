@@ -63,6 +63,12 @@
         color: $white !important;
         border: $s-1px solid $brands-google-plus !important;
     }
+    &--govdelivery {
+        background-color: $niaid-blue;
+        img {
+            height: $s-1;
+        }
+    }
     & + .ext-link-icon {
         display: none;
     }
