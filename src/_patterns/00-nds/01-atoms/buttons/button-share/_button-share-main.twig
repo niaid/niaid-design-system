@@ -18,7 +18,7 @@
         button_share_tabindex: Button tabindex.
         button_share_attributes: Additional button attributes.
 
-    Last Updated: February 9, 2021
+    Last Updated: September 13, 2021
 #}
 
 {% set button_share_classes = button_share_classes|default() %}
@@ -29,6 +29,7 @@
 {% set button_share_aria_label = button_share_aria_label|default() %}
 {% set button_share_tabindex = button_share_tabindex|default() %}
 {% set button_share_attributes = button_share_attributes|default() %}
+{% set button_share_govdelivery_img_src = button_share_govdelivery_img_src|default('global/icons/icon-gov-delivery.svg') %}
 
 {% if button_share_type == "facebook" %}
     {% set button_share_icon = "facebook-f" %}
@@ -70,7 +71,7 @@
     {% else %}
         {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
             {
-                "image_default_src": 'global/icons/icon-gov-delivery.svg',
+                "image_default_src": button_share_govdelivery_img_src,
                 "image_default_alt": 'GovDelivery Icon'
             }
         %}
