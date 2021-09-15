@@ -14,15 +14,26 @@ var moduleNDS_dropdown = (function() {
             closeDropdown(jQuery(this));
         });
 
-        jQuery(".navigation--dropdown").on('focusin', function(e) {
-            openDropdown(jQuery(this));
+        jQuery(".navigation--dropdown").on('click', function() {
+            if (!jQuery(this).hasClass('hover') && isDropdownOpen(jQuery(this))) {
+                closeDropdown(jQuery(this));
+            }
+            else if (!jQuery(this).hasClass('hover') && !isDropdownOpen(jQuery(this))) {
+                openDropdown(jQuery(this));
+            }
         });
+
         jQuery(".navigation--dropdown").on('focusout', function(e) {
             if (this.contains(e.relatedTarget)) {
                 return;
             }
             closeDropdown(jQuery(this));
         });
+    }
+
+    // isDropdownOpen = Helper function to determine if the dropdown is open.
+    function isDropdownOpen($el) {
+        return $el.hasClass('is-open');
     }
 
     // openDropdown - Helper function to open the dropdown.
