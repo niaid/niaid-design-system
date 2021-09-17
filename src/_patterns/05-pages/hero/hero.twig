@@ -26,11 +26,7 @@
                 {% include "@nds/02-molecules/navigation/navigation-local/demo/navigation-local.twig" %}
             {% endblock %}
             {% block main_column %}
-                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" with
-                    {
-                        "layouts_body_top_padding": "no"
-                    }
-                %}
+                {% embed "@nds/01-atoms/layouts/layouts-body/_layouts-body-main.twig" %}
                     {% block body_content %}
                         {% include "@nds/02-molecules/navigation/navigation-breadcrumbs/_navigation-breadcrumbs-main.twig" with
                             {

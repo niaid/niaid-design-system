@@ -3,6 +3,16 @@
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             margin-top: -$s-2;
         }
+        &.layouts--main--no-left {
+            .layouts--main__second {
+                padding-left: ($s-main-spacer / 2);
+            }
+        }
+        &.layouts--main--no-right {
+            .layouts--main__second {
+                padding-right: ($s-main-spacer / 2);
+            }
+        }
     }
     .block--hero {
         display: block;
