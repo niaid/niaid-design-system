@@ -16,7 +16,7 @@
         navigation_tabs_data: An array of tab objects. Structure: {"text": "", "href": "", "class": "", "attributes": ""}. The "href" key can be empty. Use the "class" key to pass "active" to the active tab.
         navigation_tabs_attributes: Optional attributes for the tabs <nav> element.
 
-    Last Updated: March 23, 2021
+    Last Updated: September 17, 2021
 #}
 
 {% set navigation_tabs_classes = navigation_tabs_classes|default() %}
@@ -24,9 +24,11 @@
 {% set navigation_tabs_attributes = navigation_tabs_attributes|default() %}
 
 <nav class="navigation-nds navigation--tabs {{ navigation_tabs_classes }}" {{ navigation_tabs_attributes|raw }}>
-    {% block navigation_tabs_content %}
-        {% for tab in navigation_tabs_data %}
-            <a class="navigation--tabs__tab {{ tab.class }}"{% if tab.href is not empty %} href="{{ tab.href }}"{% endif %} {{ tab.attributes|raw }}>{{ tab.text }}</a>
-        {% endfor %}
-    {% endblock %}
+    <div class="navigation--tabs__inner-wrapper">
+        {% block navigation_tabs_content %}
+            {% for tab in navigation_tabs_data %}
+                <a class="navigation--tabs__inner-wrapper__tab {{ tab.class }}"{% if tab.href is not empty %} href="{{ tab.href }}"{% endif %} {{ tab.attributes|raw }}>{{ tab.text }}</a>
+            {% endfor %}
+        {% endblock %}
+    </div>
 </nav>

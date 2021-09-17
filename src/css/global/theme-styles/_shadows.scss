@@ -264,6 +264,13 @@
         &.navigation--page-contents {
             @include shadow($shadow-soft);
         }
+        &.navigation--tabs {
+            .navigation--tabs__inner-wrapper {
+                @include shadow($shadow-soft);
+                background-color: $white;
+                border: $border-transparent;
+            }
+        }
     }
     /* Organisms */
     .global-nds {

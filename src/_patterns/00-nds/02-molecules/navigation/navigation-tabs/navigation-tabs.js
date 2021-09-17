@@ -4,12 +4,12 @@ var moduleNDS_tabs = (function() {
     /* =================== PRIVATE METHODS ================= */
     // initNavigationTabs - Initializes tabs.
     function initNavigationTabs() {
-        let tabs = document.querySelectorAll('.navigation--tabs__tab');
+        let tabs = document.querySelectorAll('.navigation--tabs__inner-wrapper__tab');
         for (let i = 0; i < tabs.length; i++) {
             tabs[i].addEventListener('click', function() {
                 let activeClass = 'active';
                 let tabParent = this.closest('.navigation--tabs');
-                let relatedTabs = tabParent.querySelectorAll('.navigation--tabs__tab');
+                let relatedTabs = tabParent.querySelectorAll('.navigation--tabs__inner-wrapper__tab');
                 if (!hasClass(this, activeClass)) {
                     for (let j = 0; j < relatedTabs.length; j++) {
                         if (hasClass(relatedTabs[j], activeClass)) {
