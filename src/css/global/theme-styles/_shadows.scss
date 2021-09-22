@@ -187,10 +187,6 @@
             }
         }
     }
-    .block-facet--checkbox {
-        @include shadow($shadow-none);
-        background: transparent;
-    }
     .form-nds {
         .form--search {
             &__form {
