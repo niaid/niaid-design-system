@@ -57,22 +57,22 @@
                     {% else %}
                         <div class="{{ classes }}">
                     {% endif %}
-                        <div class="card-header-text d-inline-flex">
-                            <div class="p-card-header">
-                                {% if item.url|render|striptags|trim is not empty %}
-                                    {{ link(item.title, item.url, {'onclick' : ['event.stopPropagation();']}) }}
-                                {% else %}
-                                    <p>{{ item.title }}</p>
-                                {% endif %}
-                            </div>
-                        </div>
-                        {% if item.below %}
-                            <div class="card-header-button">
-                                <div class="arrow">
-                                    <div class="accordion-arrow"></div>
+                            <div class="card-header-text d-inline-flex">
+                                <div class="p-card-header">
+                                    {% if item.url|render|striptags|trim is not empty %}
+                                        {{ link(item.title, item.url, {'onclick' : ['event.stopPropagation();']}) }}
+                                    {% else %}
+                                        <p>{{ item.title }}</p>
+                                    {% endif %}
                                 </div>
                             </div>
-                        {% endif %}
+                            {% if item.below %}
+                                <div class="card-header-button">
+                                    <div class="arrow">
+                                        <div class="accordion-arrow"></div>
+                                    </div>
+                                </div>
+                            {% endif %}
                     {% if item.below %}
                         </div>
                             {% set show = (expanded == "true") ? 'show' %}
