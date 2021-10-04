@@ -42,3 +42,13 @@ button[disabled] {
         outline: none !important;
     }
 }
+
+// Button Utilities
+.button-nds--sm {
+    padding: $s-0-50 $s-1;
+}
+
+.button-nds--lg {
+    display: block;
+    width: 100%;
+}

@@ -137,7 +137,7 @@
         }
         &.block--callout {
             background: $white;
-        } 
+        }
         &.block--error,
         &.block--header,
         &.block--inputs,
@@ -186,6 +186,10 @@
                 @include shadow($shadow-none);
             }
         }
+    }
+    .block-facet--checkbox {
+        @include shadow($shadow-none);
+        background: transparent;
     }
     .form-nds {
         .form--search {
