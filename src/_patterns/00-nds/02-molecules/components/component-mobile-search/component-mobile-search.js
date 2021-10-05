@@ -42,6 +42,7 @@ var moduleNDS_mobileSearch = (function() {
     // closeMobileSearch - Hides the mobile search bar.
     function closeMobileSearch() {
         document.querySelector('.component--mobile-search__wrapper').style.display = "none";
+        jQuery('#component--mobile-search--open').focus();
     }
 
     function init() {

@@ -51,11 +51,11 @@
         }
         &__column {
             padding: 0;
-            @include media-breakpoint-up(md) {
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 padding: $s-1;
             }
             h1, h2, h3, h4, h5, h6 {
-                @include media-breakpoint-up(md) {
+                @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                     margin-top: 0;
                 }
                 a {

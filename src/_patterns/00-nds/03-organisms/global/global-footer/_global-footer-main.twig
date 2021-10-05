@@ -34,9 +34,9 @@
 {% set global_footer_classes = global_footer_classes|default() %}
 {% set global_footer_logo_src = global_footer_logo_src|default('global/niaid/logo-niaid-white.svg') %}
 {% set global_footer_logo_alt = global_footer_logo_alt|default('NIAID Logo') %}
-{% set global_footer_column_left = global_footer_column_left|default('col-md-4') %}
-{% set global_footer_column_middle = global_footer_column_middle|default('col-md-4') %}
-{% set global_footer_column_right = global_footer_column_right|default('col-md-4') %}
+{% set global_footer_column_left = global_footer_column_left|default('col-lg-4') %}
+{% set global_footer_column_middle = global_footer_column_middle|default('col-lg-4') %}
+{% set global_footer_column_right = global_footer_column_right|default('col-lg-4') %}
 
 <footer id="footer" class="global-nds global--footer container-fluid {{ global_footer_classes }}">
     {% if block('global_footer_prefooter_content')|trim != "" %}
