@@ -1,0 +1,31 @@
+.component--mobile-search {
+    &__wrapper {
+        display: none;
+        z-index: 1;
+        position: absolute;
+        padding: $s-1 $s-1-50;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $white;
+        align-items: center;
+        justify-content: center;
+        &__search-form {
+            flex: 1 1 auto;
+            padding-right: $s-1;
+            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+                padding-right: 0;
+            }
+        }
+        #component--mobile-search--close {
+            flex: 0 0 auto;
+        }
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+            display: block;
+            position: relative;
+            width: auto;
+            padding: 0;
+        }
+    }
+}

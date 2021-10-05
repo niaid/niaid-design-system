@@ -41,7 +41,8 @@
         color: $type-heading;
     }
     &.no-product-id {
-        .component--branding__vertical-bar {
+        .component--branding__vertical-bar,
+        .text--product-identity {
             display: none;
         }
     }
