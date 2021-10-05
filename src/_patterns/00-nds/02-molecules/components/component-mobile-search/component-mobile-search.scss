@@ -22,7 +22,7 @@
             flex: 0 0 auto;
         }
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-            display: block;
+            display: block !important;
             position: relative;
             width: auto;
             padding: 0;
