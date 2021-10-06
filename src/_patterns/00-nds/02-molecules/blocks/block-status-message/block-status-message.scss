@@ -1,12 +1,8 @@
 .block--status-message {
     position: relative;
     background: $white;
-    padding: $s-2 $s-1 $s-1 $s-1;
+    padding: $s-2;
     margin: $s-2 0 0 0;
-    @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-        padding: $s-1 $s-2 $s-1 $s-2-50;
-        margin: 0 0 0 $s-1-25;
-    }
     &:before {
         display: flex;
         align-items: center;
@@ -23,42 +19,12 @@
         @extend .fas;
         content: fa-content($fa-var-question-circle);
         color: $white;
-        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-            top: 50%;
-            left: 0;
-            transform: translate(-50%, -50%);
-        }
     }
     & > *:first-child {
         margin-top: 0;
     }
     & > *:last-child {
         margin-bottom: 0;
-    }
-    &.block--status-message--warning {
-        &:before {
-            background: $status-warning;
-            color: $type-heading;
-            content: fa-content($fa-var-exclamation-triangle);
-        }
-    }
-    &.block--status-message--information {
-        &:before {
-            background: $status-information;
-            content: fa-content($fa-var-question-circle);
-        }
-    }
-    &.block--status-message--success {
-        &:before {
-            background: $status-success;
-            content: fa-content($fa-var-check);
-        }
-    }
-    &.block--status-message--error {
-        &:before {
-            background: $status-error;
-            content: fa-content($fa-var-times);
-        }
     }
     a,
     p,
@@ -70,5 +36,31 @@
         &:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+.block--status-message--warning {
+    &:before {
+        background: $status-warning;
+        color: $type-heading;
+        content: fa-content($fa-var-exclamation-triangle);
+    }
+}
+.block--status-message--information {
+    &:before {
+        background: $status-information;
+        content: fa-content($fa-var-question-circle);
+    }
+}
+.block--status-message--success {
+    &:before {
+        background: $status-success;
+        content: fa-content($fa-var-check);
+    }
+}
+.block--status-message--error {
+    &:before {
+        background: $status-error;
+        content: fa-content($fa-var-times);
     }
 }
