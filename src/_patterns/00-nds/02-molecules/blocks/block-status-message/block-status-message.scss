@@ -3,11 +3,11 @@
     background: $white;
     padding: $s-2 $s-1 $s-1 $s-1;
     margin: $s-2 0 0 0;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
         padding: $s-1 $s-2 $s-1 $s-2-50;
         margin: 0 0 0 $s-1-25;
     }
-    &__icon {
+    &:before {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -15,48 +15,49 @@
         height: $s-2-50;
         width: $s-2-50;
         border-radius: 100%;
-        color: $body-color;
         position: absolute;
         top: 0;
         left: $s-1-25;
         transform: translate(0, -50%);
-        @include media-breakpoint-up(md) {
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-question-circle);
+        color: $white;
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             top: 50%;
             left: 0;
             transform: translate(-50%, -50%);
         }
-        
     }
-    &__content {
-        & > *:first-child {
-            margin-top: 0;
-        }
-        & > *:last-child {
-            margin-bottom: 0;
-        }
+    & > *:first-child {
+        margin-top: 0;
     }
-    &.message--warning {
-        .block--status-message__icon {
-            color: $type-heading;
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+    &.block--status-message--warning {
+        &:before {
             background: $status-warning;
+            color: $type-heading;
+            content: fa-content($fa-var-exclamation-triangle);
         }
     }
-    &.message--information {
-        .block--status-message__icon {
-            color: $white;
+    &.block--status-message--information {
+        &:before {
             background: $status-information;
+            content: fa-content($fa-var-question-circle);
         }
     }
-    &.message--success {
-        .block--status-message__icon {
-            color: $white;
+    &.block--status-message--success {
+        &:before {
             background: $status-success;
+            content: fa-content($fa-var-check);
         }
     }
-    &.message--error {
-        .block--status-message__icon {
-            color: $white;
+    &.block--status-message--error {
+        &:before {
             background: $status-error;
+            content: fa-content($fa-var-times);
         }
     }
     a,
