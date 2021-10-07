@@ -9,23 +9,30 @@
     .tabs {
         margin: 0 !important;
         border: 0;
-        .is-active {
-            li {
+        li {
+            border-radius: $border-radius-semi;
+            padding: $s-0-50 $s-1;
+            &:hover,
+            &:focus-within {
                 background: $type-link;
                 a {
                     color: $white !important;
                 }
             }
-        }
-        li {
-            padding: $s-0-50 $s-1;
             a {
                 padding: 0;
-                color: $white;
                 border: $border-transparent;
+                background: transparent;
                 &:hover,
                 &:focus {
+                    background: transparent;
                     border: $border-transparent;
+                }
+            }
+            &.is-active {
+                background: $type-link;
+                a {
+                    color: $white !important;
                 }
             }
         }
