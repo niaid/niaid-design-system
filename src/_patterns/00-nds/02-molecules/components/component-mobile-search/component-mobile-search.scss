@@ -1,4 +1,15 @@
 .component--mobile-search {
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: $s-3;
+        width: $s-3;
+        padding: 0;
+        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+            display: none;
+        }
+    }
     &__wrapper {
         display: none;
         z-index: 1;
@@ -16,14 +27,6 @@
             padding-right: $s-1;
             @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
                 padding-right: 0;
-            }
-        }
-        &__button {
-            height: $s-3;
-            width: $s-3;
-            padding: 0;
-            @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                display: none;
             }
         }
         #component--mobile-search--close {
