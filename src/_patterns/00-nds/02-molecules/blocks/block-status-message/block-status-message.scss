@@ -1,6 +1,5 @@
 .block--status-message {
     position: relative;
-    background: $white;
     padding: $s-2;
     margin: $s-2 0 0 0;
     &:before {
@@ -40,6 +39,7 @@
 }
 
 .block--status-message--warning {
+    background: $status-warning-light;
     &:before {
         background: $status-warning;
         color: $type-heading;
@@ -47,18 +47,21 @@
     }
 }
 .block--status-message--information {
+    background: $status-information-light;
     &:before {
         background: $status-information;
         content: fa-content($fa-var-question-circle);
     }
 }
 .block--status-message--success {
+    background: $status-success-light;
     &:before {
         background: $status-success;
         content: fa-content($fa-var-check);
     }
 }
 .block--status-message--error {
+    background: $status-error-light;
     &:before {
         background: $status-error;
         content: fa-content($fa-var-times);

@@ -1,10 +1,11 @@
 .navigation--breadcrumbs {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     font-weight: $font-weight-semibold;
     font-size: $s-0-75 + $s-2px;
     color: $type-heading;
-    padding-bottom: $s-1;
+    padding-bottom: $s-0-50;
     a {
         &:hover,
         &:focus {
@@ -15,10 +16,14 @@
     span {
         line-height: $line-height-small;
     }
+    a,
+    & > span {
+        margin-bottom: $s-0-50;
+    }
     .icon--default {
         font-size: $s-0-50;
         width: auto;
         color: $type-body;
-        margin: 0 $s-0-50;
+        margin: 0 $s-0-50 $s-0-50 $s-0-50;
     }
 }

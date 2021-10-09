@@ -146,8 +146,20 @@
             background: transparent;
         }
         &.block--status-message {
-            .block--status-message__icon {
+            &:before {
                 @include shadow($shadow-hard-low);
+            }
+            &.block--status-message--warning {
+                background: $status-warning-light;
+            }
+            &.block--status-message--information {
+                background: $status-information-light;
+            }
+            &.block--status-message--success {
+                background: $status-success-light;
+            }
+            &.block--status-message--error {
+                background: $status-error-light;
             }
         }
         &.block--wtph {

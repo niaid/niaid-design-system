@@ -50,10 +50,14 @@ $alert-severity-4: $success;
 
 /**** COLORS > STATUS ****/
 $status-error: $error;
+$status-error-light: #FBEBEC;
 $status-error-hover: #A72532;
 $status-success: $success;
+$status-success-light: #E8F2EF;
 $status-information: #4865E3;
+$status-information-light: #EDF0FC;
 $status-warning: $warning;
+$status-warning-light: #FFF9E7;
 
 /**** COLORS > MISC ****/
 $border-light: $grey-200;
