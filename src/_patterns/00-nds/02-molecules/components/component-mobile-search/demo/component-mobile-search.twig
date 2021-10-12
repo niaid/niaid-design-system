@@ -1,0 +1,13 @@
+{% embed "@nds/02-molecules/components/component-mobile-search/_component-mobile-search-main.twig" %}
+    {% block component_mobile_search_form %}
+        {% include "@nds/02-molecules/forms/form-search/_form-search-main.twig" with
+            {
+                "form_search_id": "mobile-search-example",
+                "form_search_input_id": "mobile-search-example-input-id",
+                "form_search_input_name": "mobile-search-example-input-name",
+                "form_search_input_placeholder": "Searching for something...",
+                "form_search_input_aria_label": "Sample Search Form"
+            }
+        %}
+    {% endblock %}
+{% endembed %}
