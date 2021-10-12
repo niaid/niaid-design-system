@@ -108,13 +108,13 @@
     }
     .select2-container {
         .select2-dropdown {
-            @include shadow($shadow-hard-high);
+            @include shadow($shadow-hard-medium);
             border: 0;
         }
     }
     /* Molecules */
     .block-nds {
-        @include shadow($shadow-soft);
+        @include shadow($shadow-hard-low);
         border: 0;
         background: $white;
         &.block--default {
@@ -250,7 +250,7 @@
         &.navigation--dropdown {
             .navigation--dropdown {
                 &__menu {
-                    @include shadow($shadow-hard-high);
+                    @include shadow($shadow-hard-medium);
                 }
             }
         }
