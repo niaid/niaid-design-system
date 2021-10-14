@@ -5,6 +5,7 @@
 var viewportPreviousWidth;
 var viewportWidthIsDifferent = false;
 var viewportMobileBreakpoint = 992;
+var viewportIsMobile;
 
 document.addEventListener("DOMContentLoaded", function(e) {
     // Polyfill for "Closest" method.
@@ -23,10 +24,22 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     // Set Initial Viewport Width
     viewportPreviousWidth = windowWidth();
+    if (viewportPreviousWidth < viewportMobileBreakpoint) {
+        viewportIsMobile = true;
+    }
+    else {
+        viewportIsMobile = false;
+    }
     window.addEventListener('resize', function() {
         if (viewportPreviousWidth != windowWidth()) {
             viewportWidthIsDifferent = true;
             viewportPreviousWidth = windowWidth();
+            if (viewportPreviousWidth < viewportMobileBreakpoint) {
+                viewportIsMobile = true;
+            }
+            else {
+                viewportIsMobile = false;
+            }
         }
         else {
             viewportWidthIsDifferent = false;

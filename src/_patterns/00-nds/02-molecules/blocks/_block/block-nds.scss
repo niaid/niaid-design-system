@@ -4,4 +4,22 @@
     @include media-breakpoint-down(sm) {
         padding: $s-1-50;
     }
+
+    // Block Utility Classes
+    &.block-nds--border {
+        background-color: transparent !important;
+        @include shadow($shadow-none, !important);
+        border: $border-block !important;
+    }
+    &.block-nds--shadow {
+        background-color: $white !important;
+        @include shadow($shadow-soft, !important);
+        border: 0 !important;
+    }
+    &.block-nds--no-style {
+        padding: 0 !important;
+        border: 0 !important;
+        @include shadow($shadow-soft, !important);
+        background-color: transparent !important;
+    }
 }

@@ -22,24 +22,6 @@
             border-radius: 0 !important;
         }
     }
-    .navigation--tabs {
-        &__tab {
-            position: relative;
-            &.active {
-                border-bottom: $s-0-25 solid transparent;
-                &:before {
-                    content: "";
-                    position: absolute;
-                    bottom: -1 * $s-0-25;
-                    left: 0;
-                    width: 100%;
-                    height: $s-0-25;
-                    background: $type-link;
-                    border-radius: $s-5;
-                }
-            }
-        }
-    }
     .global--footer {
         &__prefooter {
             position: relative;
@@ -218,6 +200,14 @@
         }
         &.navigation--page-contents {
             border-radius: $corner-radius;
+        }
+        &.navigation--tabs {
+            .navigation--tabs__inner-wrapper {
+                border-radius: $corner-radius;
+                &__tab {
+                    border-radius: $corner-radius;
+                }
+            }
         }
     }
     &.style--shadows {
@@ -420,6 +410,14 @@
         }
         &.navigation--page-contents {
             border-radius: $corner-radius;
+        }
+        &.navigation--tabs {
+            .navigation--tabs__inner-wrapper {
+                border-radius: $corner-radius-full;
+                &__tab {
+                    border-radius: $corner-radius-full;
+                }
+            }
         }
     }
 }

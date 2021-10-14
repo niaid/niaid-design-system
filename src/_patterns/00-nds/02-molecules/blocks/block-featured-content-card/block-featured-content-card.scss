@@ -3,12 +3,18 @@
     padding: 0;
     background: $white;
     flex: 1;
+    height: 100%;
     overflow: hidden;
     &__image {
         max-height: 15rem;
         overflow: hidden;
         img {
             width: 100%;
+        }
+        /* Drupal Overrides */
+        .field--name-field-media-caption,
+        .field--name-field-media-credit {
+            display: none;
         }
     }
     &__text {
@@ -25,9 +31,10 @@
             display: block;
             color: $color-theme-1-1-1;
         }
-        &__description {
+        &__description,
+        p {
             line-height: $line-height-medium;
-            margin-bottom: 0;
+            margin: 0;
         }
     }
 }

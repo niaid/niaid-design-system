@@ -50,10 +50,14 @@ $alert-severity-4: $success;
 
 /**** COLORS > STATUS ****/
 $status-error: $error;
+$status-error-light: #FBEBEC;
 $status-error-hover: #A72532;
 $status-success: $success;
+$status-success-light: #E8F2EF;
 $status-information: #4865E3;
+$status-information-light: #EDF0FC;
 $status-warning: $warning;
+$status-warning-light: #FFF9E7;
 
 /**** COLORS > MISC ****/
 $border-light: $grey-200;
@@ -213,6 +217,7 @@ $border-transparent: $s-1px solid transparent;
 $border-block: $s-1px solid $border-light;
 $border-input: $s-1px solid $input-border;
 $border-link: $s-1px solid $type-link-underline;
+$border-white: $s-1px solid $white;
 
 /**** BORDER RADIUS ****/
 $border-radius-sharp: 0;

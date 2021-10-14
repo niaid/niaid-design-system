@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     moduleNDS_input.init();
     moduleNDS_links.init();
     moduleNDS_media.init();
+    moduleNDS_mobileSearch.init();
     moduleNDS_modal.init();
     moduleNDS_navigationLocal.init();
     moduleNDS_pageContents.init();

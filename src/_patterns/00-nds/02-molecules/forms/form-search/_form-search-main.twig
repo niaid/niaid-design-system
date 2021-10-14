@@ -18,25 +18,37 @@
     Parameters:
         form_search_classes: Additional classes on the wrapper around the search form.
         form_search_id: ID of the <form> element.
+        form_search_label: Optional label for the search bar that appears above the input.
+        form_search_action: Optional action (JS function) for the form on submit.
+        form_search_input_id: ID for the input element of the search form.
+        form_search_input_name: Name for the input element of the search form.
+        form_search_input_icon: Icon to appear in the input element of the search form. Default: search.
+        form_search_input_weight: Font Awesome icon weight. Options: 'r', 's' (Default), 'b', 'l' (Pro-Only), 'd' (Pro-Only). 
+        form_search_input_aria_label: Aria Label for the input element of the search form.
+        form_search_input_value: Optional initial value for the input element of the search form.
 
     Includes:
         Atoms -> Input -> input-text
 
-    Last Updated: August 12, 2021
+    Last Updated: September 9, 2021
 #}
 
 {% set form_search_classes = form_search_classes|default() %}
 {% set form_search_id = form_search_id|default() %}
+{% set form_search_label = form_search_label|default() %}
+{% set form_search_action = form_search_action|default() %}
 {% set form_search_input_id = form_search_input_id|default() %}
 {% set form_search_input_name = form_search_input_name|default() %}
 {% set form_search_input_placeholder = form_search_input_placeholder|default() %}
 {% set form_search_input_icon = form_search_input_icon|default('search') %}
 {% set form_search_input_weight = form_search_input_weight|default('s') %}
 {% set form_search_input_aria_label = form_search_input_aria_label|default() %}
+{% set form_search_input_value = form_search_input_value|default() %}
 
 <div class="form-nds form--search {{ form_search_classes }}">
     {% block form_search_content %}
-        <form id="{{ form_search_id }}" class="form--search__form">
+        {% if form_search_label != "" %}<label for="{{ form_search_input_name }}">{{ form_search_label }}</label>{% endif %}
+        <form id="{{ form_search_id }}" class="form--search__form" {% if form_search_action != "" %} action="{{ form_search_action }}"{% endif %}>
             {% include "@nds/01-atoms/input/input-text/_input-text-main.twig" with
                 {
                     "input_text_id": form_search_input_id,
@@ -44,7 +56,8 @@
                     "input_text_placeholder": form_search_input_placeholder,
                     "input_text_icon": form_search_input_icon,
                     "input_text_icon_weight": form_search_input_weight,
-                    "input_text_aria_label": form_search_input_aria_label
+                    "input_text_aria_label": form_search_input_aria_label,
+                    "input_text_value": form_search_input_value
                 }
             %}
             <input class="form-submit" type="submit" value="Search">

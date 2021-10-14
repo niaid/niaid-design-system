@@ -6,38 +6,45 @@
 }
 
 #block-niaid-drupal-theme-local-tasks {
-    position: absolute;
-    right: calc(#{$s-1} - #{$s-1px});
-    right: $s-1;
-    top: 0;
-    nav.tabs {
-        background-color: rgba(0,0,0,.7);
-        border-bottom-left-radius: $s-1;
-    }
     .tabs {
         margin: 0 !important;
         border: 0;
-        .is-active {
-            background: none;
-        }
         li {
+            border-radius: $border-radius-semi;
             padding: $s-0-50 $s-1;
+            &:hover,
+            &:focus-within {
+                background: $type-link;
+                a {
+                    color: $white !important;
+                }
+            }
             a {
                 padding: 0;
-                color: $white;
+                border: $border-transparent;
+                background: transparent;
                 &:hover,
                 &:focus {
-                    text-decoration: underline;
-                    border-bottom: 0 !important;
+                    background: transparent;
+                    border: $border-transparent;
+                }
+            }
+            &.is-active {
+                background: $type-link;
+                a {
+                    color: $white !important;
                 }
             }
         }
     }
 }
 
+.image-align-right,
+.image-align-left,
 .align-right,
 .align-left {
     @extend .component--media;
+    margin: $s-0-50 0;
     clear: both;
     @include media-breakpoint-up(md) {
         max-width: 50% !important;
@@ -46,6 +53,7 @@
         display: block;
     }
 }
+.image-align-left,
 .align-left {
     float: none;
     @include media-breakpoint-up(md) {
@@ -53,11 +61,17 @@
         margin-right: $s-3 !important;
     }
 }
+.image-align-right,
 .align-right {
     float: none;
     @include media-breakpoint-up(md) {
         float: right;
         margin-left: $s-3 !important;
+    }
+}
+picture {
+    br {
+        display: none;
     }
 }
 

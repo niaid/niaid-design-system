@@ -1,0 +1,53 @@
+{#
+    ---
+    title: Mobile Search Component
+    ---
+
+    Type: Molecules -> Components
+
+    Description:
+        This component is used primarily in the Global Header component to handle a site wide search bar. On mobile, the search bar is collapsed into a toggle button. On desktop, the full search bar is shown.
+
+     Dependencies:
+        In order to leverage the full capabilities of this component, you must include the following libraries in addition to the NDS Global JS:
+            - jQuery
+
+    Blocks:
+        {% block component_mobile_search_form %}: A block to insert the search form.
+
+    Parameters:
+        component_mobile_search_classes: Additional classes on the component.
+    
+    Includes:
+        Atoms -> Buttons -> button-icon
+
+    Last Updated: October 5, 2021
+#}
+
+{% set component_mobile_search_classes = component_mobile_search_classes|default() %}
+
+<div class="component-nds component--mobile-search {{ component_mobile_search_classes }}">
+    {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+        {
+            "button_icon_classes": "component--mobile-search__button button--secondary",
+            "button_icon_id": "component--mobile-search--open",
+            "button_icon_icon": "search",
+            "button_icon_aria_label": "Open Global Search"
+        }
+    %}
+    <div class="component--mobile-search__wrapper">
+        <a class="skip-to skip-to--close" href="#">Skip to Close</a>
+        <div class="component--mobile-search__wrapper__search-form">
+            {% block component_mobile_search_form %}{% endblock %}
+        </div>
+        {% include "@nds/01-atoms/buttons/button-icon/_button-icon-main.twig" with
+            {
+                "button_icon_classes": "component--mobile-search__button button--secondary",
+                "button_icon_id": "component--mobile-search--close",
+                "button_icon_icon": "times",
+                "button_icon_aria_label": "Close Global Search"
+            }
+        %}
+        <a class="skip-to skip-to--search" href="#">Skip to Search</a>
+    </div>
+</div>

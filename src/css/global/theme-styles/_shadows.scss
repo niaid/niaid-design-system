@@ -108,13 +108,13 @@
     }
     .select2-container {
         .select2-dropdown {
-            @include shadow($shadow-hard-high);
+            @include shadow($shadow-hard-medium);
             border: 0;
         }
     }
     /* Molecules */
     .block-nds {
-        @include shadow($shadow-soft);
+        @include shadow($shadow-hard-low);
         border: 0;
         background: $white;
         &.block--default {
@@ -135,9 +135,6 @@
                 background: $alert-severity-4;
             }
         }
-        &.block--callout {
-            background: $white;
-        } 
         &.block--error,
         &.block--header,
         &.block--inputs,
@@ -149,8 +146,20 @@
             background: transparent;
         }
         &.block--status-message {
-            .block--status-message__icon {
+            &:before {
                 @include shadow($shadow-hard-low);
+            }
+            &.block--status-message--warning {
+                background: $status-warning-light;
+            }
+            &.block--status-message--information {
+                background: $status-information-light;
+            }
+            &.block--status-message--success {
+                background: $status-success-light;
+            }
+            &.block--status-message--error {
+                background: $status-error-light;
             }
         }
         &.block--wtph {
@@ -241,7 +250,7 @@
         &.navigation--dropdown {
             .navigation--dropdown {
                 &__menu {
-                    @include shadow($shadow-hard-high);
+                    @include shadow($shadow-hard-medium);
                 }
             }
         }
@@ -263,6 +272,13 @@
         &.navigation--local,
         &.navigation--page-contents {
             @include shadow($shadow-soft);
+        }
+        &.navigation--tabs {
+            .navigation--tabs__inner-wrapper {
+                @include shadow($shadow-soft);
+                background-color: $white;
+                border: $border-transparent;
+            }
         }
     }
     /* Organisms */

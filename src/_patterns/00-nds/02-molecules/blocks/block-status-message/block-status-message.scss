@@ -1,13 +1,8 @@
 .block--status-message {
     position: relative;
-    background: $white;
-    padding: $s-2 $s-1 $s-1 $s-1;
+    padding: $s-2;
     margin: $s-2 0 0 0;
-    @include media-breakpoint-up(md) {
-        padding: $s-1 $s-2 $s-1 $s-2-50;
-        margin: 0 0 0 $s-1-25;
-    }
-    &__icon {
+    &:before {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -15,49 +10,20 @@
         height: $s-2-50;
         width: $s-2-50;
         border-radius: 100%;
-        color: $body-color;
         position: absolute;
         top: 0;
         left: $s-1-25;
         transform: translate(0, -50%);
-        @include media-breakpoint-up(md) {
-            top: 50%;
-            left: 0;
-            transform: translate(-50%, -50%);
-        }
-        
+        @extend %fa-icon;
+        @extend .fas;
+        content: fa-content($fa-var-question-circle);
+        color: $white;
     }
-    &__content {
-        & > *:first-child {
-            margin-top: 0;
-        }
-        & > *:last-child {
-            margin-bottom: 0;
-        }
+    & > *:first-child {
+        margin-top: 0;
     }
-    &.message--warning {
-        .block--status-message__icon {
-            color: $type-heading;
-            background: $status-warning;
-        }
-    }
-    &.message--information {
-        .block--status-message__icon {
-            color: $white;
-            background: $status-information;
-        }
-    }
-    &.message--success {
-        .block--status-message__icon {
-            color: $white;
-            background: $status-success;
-        }
-    }
-    &.message--error {
-        .block--status-message__icon {
-            color: $white;
-            background: $status-error;
-        }
+    & > *:last-child {
+        margin-bottom: 0;
     }
     a,
     p,
@@ -69,5 +35,35 @@
         &:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+.block--status-message--warning {
+    background: $status-warning-light;
+    &:before {
+        background: $status-warning;
+        color: $type-heading;
+        content: fa-content($fa-var-exclamation-triangle);
+    }
+}
+.block--status-message--information {
+    background: $status-information-light;
+    &:before {
+        background: $status-information;
+        content: fa-content($fa-var-question-circle);
+    }
+}
+.block--status-message--success {
+    background: $status-success-light;
+    &:before {
+        background: $status-success;
+        content: fa-content($fa-var-check);
+    }
+}
+.block--status-message--error {
+    background: $status-error-light;
+    &:before {
+        background: $status-error;
+        content: fa-content($fa-var-times);
     }
 }

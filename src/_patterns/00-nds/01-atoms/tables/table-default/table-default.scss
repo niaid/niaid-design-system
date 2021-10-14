@@ -20,6 +20,47 @@ table {
         th {
             line-height: normal;
             color: $white;
+            a {
+                color: $white;
+                border-bottom: $border-white;
+                &:visited,
+                &:hover,
+                &:focus {
+                    color: $white;
+                }
+                &:visited {
+                    &:hover,
+                    &:focus {
+                        color: $white;
+                    }
+                }
+                span {
+                    &.tablesort {
+                        background-image: none;
+                        &:after {
+                            @extend %fa-icon;
+                            @extend .fas;
+                            position: absolute;
+                            margin-left: $s-0-25;
+                        }
+                    }
+                    &.tablesort--asc {
+                        &:after {
+                            content: fa-content($fa-var-chevron-down);
+                        }
+                    }
+                    &.tablesort--desc {
+                        &:after {
+                            content: fa-content($fa-var-chevron-up);
+                        }
+                    }
+                }
+            }
+            &.is-active {
+                a {
+                    border-bottom: $border-transparent;
+                }
+            }
         }
         td {
             color: $type-body;

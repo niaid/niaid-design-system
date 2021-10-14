@@ -12,6 +12,13 @@
         &__content-wrapper {
             flex-grow: 1;
             width: 0;
+            .text--image-credit-caption {
+                &__credit {
+                    br {
+                        display: none;
+                    }
+                }
+            }
         }
     }
     &--full {
