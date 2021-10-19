@@ -51,6 +51,24 @@
                     {% else %}
                         {% set expanded = "false" %}
                     {% endif %}
+                    {# To determine which menu item is the current active page, first check if the current item is tagged as in the active trail  #}
+                    {% if item.in_active_trail == "true" %}
+                        {# Then check if the current item has any menu sub items; if not, it must be the current active page #}
+                        {% if item.below is empty %}
+                            {% set classes = classes ~ " is-active" %}
+                        {# Else, loop through the sub items to see if any are tagged as in the active trail; if not, the parent item must be the current active page #}
+                        {% else %}
+                            {% set no_active_sub_item = true %}
+                            {% for sub_item in item.below %}
+                                {% if sub_item.in_active_trail == "true" %}
+                                    {% set no_active_sub_item = false %}
+                                {% endif %}
+                            {% endfor %}
+                            {% if no_active_sub_item %}
+                                {% set classes = classes ~ " is-active" %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
                     {% if item.below %}
                         {% set id = 'LN-sec-' ~ accordion_index %}
                         <div class="{{ classes ~ " cursor-pointer" }}" id="{{ id }}" data-bs-toggle="collapse" data-bs-target="#LN-clps-{{ accordion_index }}" aria-expanded="{{ expanded }}" aria-label="Open {{ item.title }} Menu" aria-controls="LN-clps-{{ accordion_index }}" tabindex="0">
