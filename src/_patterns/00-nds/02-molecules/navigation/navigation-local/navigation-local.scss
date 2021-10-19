@@ -121,6 +121,9 @@
                             }
                         }
                     }
+                    & + .collapse {
+                        margin-top: $s-0-50;
+                    }
                     .card-header-button {
                         .arrow {
                             padding-right: $s-1;
