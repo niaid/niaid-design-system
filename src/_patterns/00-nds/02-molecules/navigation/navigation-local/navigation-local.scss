@@ -149,12 +149,6 @@
                 .card-header {
                     &.is-active {
                         border-radius: 0 $border-radius-semi $border-radius-semi 0;
-                        margin-right: 0;
-                        .card-header-button {
-                            .arrow {
-                                padding-right: 0;
-                            }
-                        }
                     }
                 }
                 .card-body {

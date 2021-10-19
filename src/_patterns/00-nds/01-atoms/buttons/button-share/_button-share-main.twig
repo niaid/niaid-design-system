@@ -19,7 +19,7 @@
         button_share_attributes: Additional button attributes.
         button_share_govdelivery_img_src: The path to the GovDelivery icon. Default: The globally available GovDelivery icon.
 
-    Last Updated: September 13, 2021
+    Last Updated: October 19, 2021
 #}
 
 {% set button_share_classes = button_share_classes|default() %}
@@ -59,6 +59,8 @@
 {% elseif button_share_type == "govdelivery" %}
     {% set button_share_icon = "" %}
     {% set button_share_icon_weight = "" %}
+{% else %}
+    {% set button_share_type = "generic" %}
 {% endif %}
 
 <a href="{{ button_share_href }}" {% if button_share_id is not empty %} id="{{ button_share_id }}"{% endif %} class="button-nds button--share button--share--{{ button_share_type }} {{ button_share_classes }}"{% if button_share_aria_label is not empty %} aria-label="{{ button_share_aria_label }}"{% endif %}{% if button_share_tabindex is not empty %} tabindex="{{ button_share_tabindex }}"{% endif %} {{ button_share_attributes|raw }}>
