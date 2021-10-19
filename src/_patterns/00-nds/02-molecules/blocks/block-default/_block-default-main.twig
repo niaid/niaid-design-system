@@ -15,6 +15,7 @@
         block_default_classes: Additional block classes.
         block_default_id: Block ID.
         block_default_accent: Optional accent on the left of the block. Options: true, false (Default).
+        block_default_attributes: Optional additional attributes for the block.
 
     Last Updated: January 22, 2021
 #}
@@ -23,6 +24,6 @@
 {% set block_default_id = block_default_id|default() %}
 {% set block_default_accent = block_default_accent|default(false) %}
 
-<div class="block-nds block--default {{ block_default_classes }} {{ block_default_accent ? 'block--default--accent' : '' }}"{% if block_default_id is not empty %} id="{{ block_default_id }}"{% endif %}>
+<div class="block-nds block--default {{ block_default_classes }} {{ block_default_accent ? 'block--default--accent' : '' }}"{% if block_default_id is not empty %} id="{{ block_default_id }}"{% endif %} {{ block_default_attributes|raw }}>
     {% block block_content %}{% endblock %}
 </div>

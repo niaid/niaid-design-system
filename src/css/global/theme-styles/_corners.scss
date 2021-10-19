@@ -18,6 +18,13 @@
         }
     }
     .block-nds {
+        &.block--default {
+            .block--default__image {
+                img {
+                    border-radius: $border-radius-semi;
+                }
+            }
+        }
         &.block--wtph {
             border-radius: 0 !important;
         }
