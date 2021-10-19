@@ -6,12 +6,24 @@
     height: 100%;
     overflow: hidden;
     &__image {
-        max-height: 15rem;
+        height: 15rem;
         overflow: hidden;
         img {
+            height: 100%;
             width: 100%;
+            object-fit: cover;
+        }
+        &.compat-object-fit {
+            background-size: cover;
+            background-position: center center;
         }
         /* Drupal Overrides */
+        div,
+        article,
+        picture {
+            height: 100%;
+            width: 100%;
+        }
         .field--name-field-media-caption,
         .field--name-field-media-credit {
             display: none;

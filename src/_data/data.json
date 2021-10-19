@@ -16,6 +16,7 @@
         "bootstrap": true,
         "dataTables": true,
         "dateTimePicker": true,
-        "stickybits": true
+        "stickybits": true,
+        "modernizr": true
     }
 }
