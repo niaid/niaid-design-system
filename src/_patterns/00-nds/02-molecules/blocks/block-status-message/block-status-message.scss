@@ -50,7 +50,7 @@
     background: $status-information-light;
     &:before {
         background: $status-information;
-        content: fa-content($fa-var-question-circle);
+        content: fa-content($fa-var-info-circle);
     }
 }
 .block--status-message--success {
