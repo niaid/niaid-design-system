@@ -23,10 +23,7 @@
         border-bottom: $border-block;
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: block !important;
-            max-height: 100vh;
-            overflow-y: auto;
             border-bottom: 0;
-            max-height: calc(100vh - #{$s-2});
         }
         &__title {
             font-size: $s-1;
@@ -156,6 +153,15 @@
                     padding: 0 0 0 $s-1;
                     border-left: $s-0-25 solid $type-link;
                 }
+            }
+        }
+    }
+    &.navigation--local--sticky {
+        .navigation--local {
+            &__content {
+                overflow-y: auto;
+                max-height: 100vh;
+                max-height: calc(100vh - #{$s-2});
             }
         }
     }
