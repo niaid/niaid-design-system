@@ -16,6 +16,9 @@
         &.compat-object-fit {
             background-size: cover;
             background-position: center center;
+            img {
+                opacity: 0;
+            }
         }
         /* Drupal Overrides */
         div,
