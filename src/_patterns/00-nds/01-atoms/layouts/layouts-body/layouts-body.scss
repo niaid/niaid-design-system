@@ -5,6 +5,10 @@
     position: relative;
     padding: $s-main-spacer;
     height: 100%;
+    // IE Override
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        height: auto !important;
+    }
     @include media-breakpoint-up('sm') {
         padding: $s-2 $s-3 $s-3 $s-3;
     }
