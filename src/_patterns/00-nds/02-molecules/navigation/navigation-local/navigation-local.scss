@@ -159,9 +159,11 @@
     &.navigation--local--sticky {
         .navigation--local {
             &__content {
-                overflow-y: auto;
-                max-height: 100vh;
-                max-height: calc(100vh - #{$s-2});
+                @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+                    overflow-y: auto;
+                    max-height: 100vh;
+                    max-height: calc(100vh - #{$s-2});
+                }
             }
         }
     }
