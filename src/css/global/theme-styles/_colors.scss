@@ -200,6 +200,13 @@
             }
         }
     }
+    table {
+        thead {
+            th {
+                border-bottom: $s-0-25 solid $color-theme-2-1-1;
+            }
+        }
+    }
     .text-nds {
         &.text--blockquote {
             border-left: $s-2px solid $color-theme-2-accent;
@@ -560,6 +567,13 @@
                         background-color: $color-theme-3-1-1 !important;
                     }
                 }
+            }
+        }
+    }
+    table {
+        thead {
+            th {
+                border-bottom: $s-0-25 solid $color-theme-3-1-1;
             }
         }
     }
