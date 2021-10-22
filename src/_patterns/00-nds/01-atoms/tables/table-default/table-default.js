@@ -41,6 +41,9 @@ var moduleNDS_tables = (function() {
 
                 jQuery(this).dataTable(defaultConfigs);
             }
+            else {
+                jQuery(this).wrap('<div class="table-nds--responsive-wrapper">');
+            }
         });
     }
 
