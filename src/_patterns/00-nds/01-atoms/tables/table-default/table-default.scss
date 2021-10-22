@@ -72,6 +72,12 @@ table {
             border-bottom: $s-0-25 solid $color-theme-1-1-1;
         }
     }
+    tbody {
+        th {
+            border-bottom: $border-block;
+            vertical-align: middle;
+        }
+    }
     thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
         border-radius: 0 0 0 0;
     }
