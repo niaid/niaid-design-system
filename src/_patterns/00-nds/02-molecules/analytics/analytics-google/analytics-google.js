@@ -1,5 +1,3 @@
-// Part of NDS Lite
-
 var moduleNDS_analytics = (function() {
     'use strict';
     
@@ -14,11 +12,25 @@ var moduleNDS_analytics = (function() {
             setDataAttributes(navigationLinks, 'data-content', 'accordion-');
         }
 
+        // Breadcrumbs
+        let navigationBreadcrumbs = document.getElementsByClassName("navigation--breadcrumbs");
+        for (var i = 0; i < navigationBreadcrumbs.length; i++) {
+            let breadcrumbs = navigationBreadcrumbs[i].querySelectorAll('a');
+            setDataAttributes(breadcrumbs, 'data-content', 'breadcrumbs-');
+        }
+
+        // Pagination
+        let navigationPagination = document.getElementsByClassName("navigation--pagination");
+        for (var i = 0; i < navigationPagination.length; i++) {
+            let paginations = navigationPagination[i].querySelectorAll('.pager__item > a');
+            setDataAttributes(paginations, 'data-content', 'body-pagination-');
+        }
+
         // Tabs
         let navigationTabs = document.getElementsByClassName("navigation--tabs");
         for (var i = 0; i < navigationTabs.length; i++) {
-            let tabs = navigationTabs[i].querySelectorAll('.navigation--tabs__tab');
-            setDataAttributes(tabs, 'data-content', 'nav-');
+            let tabs = navigationTabs[i].querySelectorAll('.navigation--tabs__inner-wrapper__tab');
+            setDataAttributes(tabs, 'data-content', 'tab-');
         }
 
         // Generic Body
