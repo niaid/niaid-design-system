@@ -1,6 +1,6 @@
 .block--status-message {
     position: relative;
-    padding: $s-2;
+    padding: $s-2-25 $s-2 $s-2 $s-2;
     margin: $s-2 0 0 0;
     &:before {
         display: flex;
