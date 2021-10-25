@@ -7,4 +7,19 @@
             display: flex;
         }
     }
+    &.view--featured-content-cards--single-card {
+        .block--featured-content-card {
+            @include media-breakpoint-up(md) {
+                display: flex;
+                &__image {
+                    flex: 0 0 100%;
+                    max-width: 40%;
+                    height: auto;
+                }
+                &__content {
+                    flex: 0 0 100%;
+                }
+            }
+        }
+    }
 }
