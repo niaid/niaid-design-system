@@ -46,7 +46,8 @@ a,
 p,
 ul,
 ol {
-    @include media-breakpoint-down(sm) {
+    // iPhone 5 and Smaller
+    @media only screen and (max-width: 320px) {
         @include hyphenate;
     }
 }
