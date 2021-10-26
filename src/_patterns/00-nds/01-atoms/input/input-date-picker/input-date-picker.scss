@@ -42,6 +42,9 @@
         border-radius: 0 !important;
     }
     thead {
+        * {
+            color: $white !important;
+        }
         tr {
             th {
                 &.datepicker-switch,

@@ -9,7 +9,7 @@
     
     Dependencies:
         In order to use this component, you must include the following libraries in addition to the NDS Global JS:
-            - Bootstrap 5
+            - Bootstrap 4
     
     Parameters:
         navigation_local_classes: Additional classes for the navigation local component.
@@ -74,7 +74,7 @@
                     {% endif %}
                     {% if item.below %}
                         {% set id = 'LN-sec-' ~ accordion_index %}
-                        <div class="{{ classes ~ " cursor-pointer" }}" id="{{ id }}" data-bs-toggle="collapse" data-bs-target="#LN-clps-{{ accordion_index }}" aria-expanded="{{ expanded }}" aria-label="Open {{ item.title }} Menu" aria-controls="LN-clps-{{ accordion_index }}" tabindex="0">
+                        <div class="{{ classes ~ " cursor-pointer" }}" id="{{ id }}" data-toggle="collapse" data-target="#LN-clps-{{ accordion_index }}" aria-expanded="{{ expanded }}" aria-label="Open {{ item.title }} Menu" aria-controls="LN-clps-{{ accordion_index }}" tabindex="0">
                     {% else %}
                         <div class="{{ classes }}">
                     {% endif %}
@@ -97,7 +97,7 @@
                     {% if item.below %}
                         </div>
                             {% set show = (expanded == "true") ? 'show' %}
-                            <div id="LN-clps-{{ accordion_index }}" class="collapse {{ show }}" aria-labelledby="LN-sec-{{ accordion_index }}" data-bs-parent="#LN-accordion-{{ parent_id }}">
+                            <div id="LN-clps-{{ accordion_index }}" class="collapse {{ show }}" aria-labelledby="LN-sec-{{ accordion_index }}" data-parent="#LN-accordion-{{ parent_id }}">
                                 <div class="card-body">
                                     {{ menus.menu_links(item.below, attributes, accordion_index, (menu_level + 1)) }}
                                 </div>
@@ -122,10 +122,10 @@
             "button_default_id": "navigation--local__button",
             "button_default_type": "secondary",
             "button_default_label": "Open the " ~ navigation_local_heading_text ~ " Menu",
-            "button_default_attributes": 'data-bs-toggle="collapse" data-bs-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
+            "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
         }
     %}
-    <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-bs-parent="#{{ navigation_local_id }}">
+    <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-parent="#{{ navigation_local_id }}">
         {% if navigation_local_heading_text is not empty %}
             <h2 class="navigation--local__content__title">{% if navigation_local_heading_href is not empty %}<a href="{{ navigation_local_heading_href }}">{% endif %}{{ navigation_local_heading_text }}{% if navigation_local_heading_href is not empty %}</a>{% endif %}</h2>
             <hr>
