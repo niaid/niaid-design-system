@@ -20,7 +20,7 @@ var moduleNDS_navigationLocal = (function() {
         });
 
         jQuery('.card-header').on('click', function() {
-            let attr = jQuery(this).attr('data-bs-toggle');
+            let attr = jQuery(this).attr('data-toggle');
             if (typeof attr !== 'undefined' && attr !== false) {
                 let newlyOpenedId = jQuery(this).attr('id');
                 let headerLevel = jQuery(this).attr('class').split('level-')[1][0];
@@ -40,7 +40,7 @@ var moduleNDS_navigationLocal = (function() {
     // closeMenuItem - Closes a particular accordion within the local navigation.
     function closeMenuItem($item) {
         $item.attr('aria-expanded', 'false').removeClass('collapsed');
-        let dataTargetValue = $item.attr('data-bs-target');
+        let dataTargetValue = $item.attr('data-target');
         jQuery(dataTargetValue).removeClass('show');
     }
 
