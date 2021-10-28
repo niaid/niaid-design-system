@@ -8,6 +8,11 @@
     Description:
         Featured Content Cards are useful blocks designed to highlight your most important content. Each feature includes a title, an image, and a short description of the content.
 
+    Dependencies:
+        In order to leverage the full capabilities of this component, you must include the following libraries in addition to the NDS Global JS:
+            - jQuery
+            - Modernizr
+
     Parameters:
         block_featured_content_card_classes: Additional block classes.
         block_featured_content_card_id: Block ID.
@@ -21,7 +26,7 @@
     Includes:
         Atoms -> Images -> image-default
 
-    Last Updated: January 22, 2021
+    Last Updated: October 19, 2021
 #}
 
 {% set block_featured_content_card_classes = block_featured_content_card_classes|default() %}

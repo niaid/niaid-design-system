@@ -5,7 +5,11 @@
   "main": "public/index.html",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
-    "bootstrap": "^5.1.0",
+    "@pattern-lab/cli": "^5.15.0",
+    "@pattern-lab/core": "^5.15.0",
+    "@pattern-lab/engine-twig-php": "^5.15.0",
+    "@pattern-lab/uikit-workshop": "^5.15.0",
+    "bootstrap": "^4.6.0",
     "bootstrap-datepicker": "^1.9.0",
     "datatables.net": "^1.10.24",
     "datatables.net-responsive-dt": "^2.2.7",
@@ -16,11 +20,7 @@
     "npm": "^6.14.12",
     "popper.js": "^1.16.1",
     "select2": "^4.1.0-rc.0",
-    "stickybits": "^3.7.9",
-    "@pattern-lab/cli": "^5.15.0",
-    "@pattern-lab/core": "^5.15.0",
-    "@pattern-lab/engine-twig-php": "^5.15.0",
-    "@pattern-lab/uikit-workshop": "^5.15.0"
+    "stickybits": "^3.7.9"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",

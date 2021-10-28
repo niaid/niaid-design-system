@@ -7,7 +7,7 @@ var moduleNDS_mobileSearch = (function() {
     /* =================== PRIVATE METHODS ================= */
     // initMobileSearch - Initializes the mobile search functionality.
     function initMobileSearch() {
-        if ($('.component--mobile-search').length > 0) {
+        if (jQuery('.component--mobile-search').length > 0) {
             document.querySelector('#component--mobile-search--open').addEventListener("click", function(e) {
                 openMobileSearch();
             });

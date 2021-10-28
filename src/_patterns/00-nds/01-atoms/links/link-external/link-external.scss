@@ -20,8 +20,6 @@
     &:after {
         @extend %fa-icon;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         margin-left: $s-0-25;
         font-size: $s-0-75;
     }
@@ -29,6 +27,7 @@
 
 .link--external--mail {
     &:after {
+        bottom: $s-2px;
         @extend .far;
         content: fa-content($fa-var-envelope) !important;
     }
@@ -36,6 +35,7 @@
 
 .link--external--phone {
     &:after {
+        bottom: $s-0-25;
         @extend .fas;
         content: fa-content($fa-var-phone) !important;
     }

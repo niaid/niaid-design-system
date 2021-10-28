@@ -23,13 +23,10 @@
         border-bottom: $border-block;
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
             display: block !important;
-            max-height: 100vh;
-            overflow-y: auto;
             border-bottom: 0;
-            max-height: calc(100vh - #{$s-2});
         }
         &__title {
-            font-size: $s-1;
+            font-size: $s-1 + $s-2px;
             margin: 0 0 $s-0-50 0;
             letter-spacing: normal;
             a {
@@ -59,7 +56,7 @@
                     .p-card-header {
                         padding: $s-0-50 0;
                         text-align: left;
-                        font-size: $s-0-75;
+                        font-size: $s-1 - $s-2px;
                         .text-link,
                         a {
                             width: 100%;
@@ -122,7 +119,7 @@
                         }
                     }
                     & + .collapse {
-                        margin-top: -1 * $s-1;
+                        margin-top: $s-0-50;
                     }
                     .card-header-button {
                         .arrow {
@@ -149,18 +146,23 @@
                 .card-header {
                     &.is-active {
                         border-radius: 0 $border-radius-semi $border-radius-semi 0;
-                        margin-right: 0;
-                        .card-header-button {
-                            .arrow {
-                                padding-right: 0;
-                            }
-                        }
                     }
                 }
                 .card-body {
                     margin: $s-0-25 0;
                     padding: 0 0 0 $s-1;
                     border-left: $s-0-25 solid $type-link;
+                }
+            }
+        }
+    }
+    &.navigation--local--sticky {
+        .navigation--local {
+            &__content {
+                @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+                    overflow-y: auto;
+                    max-height: 100vh;
+                    max-height: calc(100vh - #{$s-2});
                 }
             }
         }

@@ -2,6 +2,9 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
+// START - Remove when Upgrading to Bootstrap 5
+@import './_rfs.scss';
+
 // Tooltip
 @import "../../node_modules/bootstrap/scss/mixins/border-radius";
 @import "../../node_modules/bootstrap/scss/mixins/reset-text";

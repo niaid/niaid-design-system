@@ -1,6 +1,6 @@
 # NIAID Design System (NDS)
 
-VERSION 1.1.1
+VERSION 1.1.2
 
 The [NIAID Design System](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/) was developed within the Office of Communications and Government Relations (OCGR) at the National Institute of Allergy and Infectious Diseases (NIAID) by Booz Allen Hamilton. The design system is designed to aid users with the process of creating policy-compliant websites that conform to design standards and guidance set by NIAID, NIH, HHS, and USWDS.
 
@@ -38,7 +38,7 @@ There are three main ways to use NDS listed below. To get started please visit o
 ## Built With
 
 * [Pattern Lab](https://patternlab.io/) - Atomic Design System Framework
-* [Bootstrap 5](https://getbootstrap.com/) - Grid System Framework
+* [Bootstrap 4](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - Grid System Framework
 * [Gulp](https://gulpjs.com/) - JS-Based Task Manager
 
 ## Team

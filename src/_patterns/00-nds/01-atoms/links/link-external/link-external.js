@@ -51,7 +51,7 @@ var moduleNDS_links = (function() {
         let href = link.getAttribute('href');
         if (href !== null && href !== "/" && href !== "#") {
             for (let i = 0; i < documentTypes.length; i++) {
-                if (href.includes('.' + documentTypes[i])) {
+                if (href.indexOf('.' + documentTypes[i]) != -1) {
                     addDocumentBadge(link, documentTypes[i]);
                     return true;
                 }

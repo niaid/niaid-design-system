@@ -7,7 +7,7 @@
         padding-top: $s-0-25;
         font-size: $s-1 - $s-2px;
         line-height: $line-height-medium;
-        span,
+        span:not(.text--badge),
         p,
         a {
             margin: 0;
@@ -17,7 +17,7 @@
     &__credit {
         line-height: normal;
         padding: $s-0-25 0;
-        span,
+        span:not(.text--badge),
         p,
         a,
         div {

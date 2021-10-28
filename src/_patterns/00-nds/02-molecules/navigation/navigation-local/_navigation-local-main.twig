@@ -3,11 +3,14 @@
     title: Navigation Local
     ---
     Type: Molecules -> Navigation
+    
     Description:
         Local navigation allows users to move between pages of a website that fall under the same section. The navigation is located on the left side of the page for easy access. The current active page is highlighted.
+    
     Dependencies:
         In order to use this component, you must include the following libraries in addition to the NDS Global JS:
-            - Bootstrap 5
+            - Bootstrap 4
+    
     Parameters:
         navigation_local_classes: Additional classes for the navigation local component.
         navigation_local_id: The local navigation ID.
@@ -15,12 +18,12 @@
         navigation_local_item_attributes: Additional item attributes that are used with Drupal. If not using Drupal, this field can be left empty.
         navigation_local_heading_text: The title of the local navigation section.
         navigation_local_heading_href: An optional URL for the local navigation title.
-        navigation_local_sticky: A boolean to determine if the navigation is sticky. Default: "true".
+        navigation_local_sticky: A boolean to determine if the navigation is sticky. Default: "false".
     
     Includes:
         Atoms -> Buttons -> button--default
 
-    Last Updated: August 17, 2021
+    Last Updated: October 19, 2021
 #}
 
 {% set navigation_local_classes = navigation_local_classes|default() %}
@@ -29,7 +32,7 @@
 {% set navigation_local_item_attributes = navigation_local_item_attributes|default({}) %}
 {% set navigation_local_heading_text = navigation_local_heading_text|default() %}
 {% set navigation_local_heading_href = navigation_local_heading_href|default() %}
-{% set navigation_local_sticky = navigation_local_sticky|default("true") %}
+{% set navigation_local_sticky = navigation_local_sticky|default("false") %}
 
 {% import _self as menus %}
 
@@ -51,9 +54,27 @@
                     {% else %}
                         {% set expanded = "false" %}
                     {% endif %}
+                    {# To determine which menu item is the current active page, first check if the current item is tagged as in the active trail  #}
+                    {% if item.in_active_trail == "true" %}
+                        {# Then check if the current item has any menu sub items; if not, it must be the current active page #}
+                        {% if item.below is empty %}
+                            {% set classes = classes ~ " is-active" %}
+                        {# Else, loop through the sub items to see if any are tagged as in the active trail; if not, the parent item must be the current active page #}
+                        {% else %}
+                            {% set no_active_sub_item = true %}
+                            {% for sub_item in item.below %}
+                                {% if sub_item.in_active_trail == "true" %}
+                                    {% set no_active_sub_item = false %}
+                                {% endif %}
+                            {% endfor %}
+                            {% if no_active_sub_item %}
+                                {% set classes = classes ~ " is-active" %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
                     {% if item.below %}
                         {% set id = 'LN-sec-' ~ accordion_index %}
-                        <div class="{{ classes ~ " cursor-pointer" }}" id="{{ id }}" data-bs-toggle="collapse" data-bs-target="#LN-clps-{{ accordion_index }}" aria-expanded="{{ expanded }}" aria-label="Open {{ item.title }} Menu" aria-controls="LN-clps-{{ accordion_index }}" tabindex="0">
+                        <div class="{{ classes ~ " cursor-pointer" }}" id="{{ id }}" data-toggle="collapse" data-target="#LN-clps-{{ accordion_index }}" aria-expanded="{{ expanded }}" aria-label="Open {{ item.title }} Menu" aria-controls="LN-clps-{{ accordion_index }}" tabindex="0">
                     {% else %}
                         <div class="{{ classes }}">
                     {% endif %}
@@ -76,7 +97,7 @@
                     {% if item.below %}
                         </div>
                             {% set show = (expanded == "true") ? 'show' %}
-                            <div id="LN-clps-{{ accordion_index }}" class="collapse {{ show }}" aria-labelledby="LN-sec-{{ accordion_index }}" data-bs-parent="#LN-accordion-{{ parent_id }}">
+                            <div id="LN-clps-{{ accordion_index }}" class="collapse {{ show }}" aria-labelledby="LN-sec-{{ accordion_index }}" data-parent="#LN-accordion-{{ parent_id }}">
                                 <div class="card-body">
                                     {{ menus.menu_links(item.below, attributes, accordion_index, (menu_level + 1)) }}
                                 </div>
@@ -90,16 +111,21 @@
     {% endif %}
 {% endmacro %}
 
+{% if navigation_local_sticky == "true" %}
+    {% set navigation_local_classes = navigation_local_classes ~ " navigation--local--sticky" %}
+{% endif %}
+
 <div class="navigation-nds navigation--local {{ navigation_local_classes }}" id="{{ navigation_local_id }}" data-sticky={{ navigation_local_sticky }}>
     {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
         {
             "button_default_classes": "navigation--local__button",
+            "button_default_id": "navigation--local__button",
             "button_default_type": "secondary",
             "button_default_label": "Open the " ~ navigation_local_heading_text ~ " Menu",
-            "button_default_attributes": 'data-bs-toggle="collapse" data-bs-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
+            "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
         }
     %}
-    <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-bs-parent="#{{ navigation_local_id }}">
+    <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-parent="#{{ navigation_local_id }}">
         {% if navigation_local_heading_text is not empty %}
             <h2 class="navigation--local__content__title">{% if navigation_local_heading_href is not empty %}<a href="{{ navigation_local_heading_href }}">{% endif %}{{ navigation_local_heading_text }}{% if navigation_local_heading_href is not empty %}</a>{% endif %}</h2>
             <hr>

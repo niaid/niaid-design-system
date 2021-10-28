@@ -62,8 +62,11 @@
         color: $white !important;
         border: $s-1px solid $brands-google-plus !important;
     }
+    &--generic,
     &--govdelivery {
         background-color: $niaid-blue;
+        color: $white !important;
+        border: $s-1px solid $niaid-blue !important;
         img {
             height: $s-1;
         }

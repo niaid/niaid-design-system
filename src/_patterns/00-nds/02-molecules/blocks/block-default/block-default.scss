@@ -31,13 +31,16 @@
     &.block--default--image {
         display: flex;
         flex-wrap: wrap;
+        @include media-breakpoint-up(md) {
+            flex-wrap: nowrap;
+        }
     }
     &__image {
         flex: 0 0 100%;
         margin-bottom: $s-1-50;
         @include media-breakpoint-up(md) {
             margin-bottom: 0;
-            flex: 0 1 40%;
+            flex: 0 0 auto;
             max-width: 40%;
             padding-left: $s-1-50;
         }
@@ -49,7 +52,7 @@
     &__content {
         flex: 0 0 100%;
         @include media-breakpoint-up(md) {
-            flex: 1 1 60%;
+            flex: 1 1 auto;
         }
         & > *:first-child {
             margin-top: 0;

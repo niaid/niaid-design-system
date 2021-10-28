@@ -5,9 +5,15 @@
         padding: $s-0-25;
         &__tab {
             display: inline-flex;
-            padding: $s-0-50 $s-1-50;
+            justify-content: center;
+            padding: $s-0-75 $s-1-50;
             cursor: pointer;
             border-bottom: 0;
+            line-height: $line-height-heading;
+            width: 100%;
+            @include media-breakpoint-up(sm) {
+                width: auto;
+            }
             &:hover,
             &:focus,
             &:visited {

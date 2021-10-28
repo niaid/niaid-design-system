@@ -41,11 +41,11 @@
                         "button_default_classes": "navigation--mobile-rail__button",
                         "button_default_type": "secondary",
                         "button_default_label": navigation_mobile_rail_button_text,
-                        "button_default_attributes": 'data-bs-toggle="collapse" data-bs-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content"'
+                        "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content"'
                     }
                 %}
             </div>
-            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-bs-parent="#navigation--mobile-rail">
+            <div id="navigation--mobile-rail__content" class="navigation--mobile-rail__content collapse" aria-labelledby="navigation--mobile-rail__button" data-parent="#navigation--mobile-rail">
                 {{ navigation_mobile_rail_content }}
             </div>
         {% endblock %}

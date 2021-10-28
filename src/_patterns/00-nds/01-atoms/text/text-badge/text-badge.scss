@@ -6,10 +6,13 @@
 }
 
 .text--badge--document {
+    display: inline-block;
     font-size: $s-0-75;
-    margin: 0 $s-0-25;
+    margin: 0 $s-2px 0 $s-0-25;
     padding: $s-0-25;
     line-height: $line-height-single;
+    margin-top: -$s-0-25;
+    vertical-align: middle;
 }
 
 .button-nds {
