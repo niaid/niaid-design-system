@@ -1,6 +1,6 @@
 var moduleNDS_links = (function() {
     'use strict';
-    
+
     const documentTypes = ['pdf', 'PDF', 'doc', 'docx', 'DOC', 'DOCX', 'ppt', 'PPT', 'pptx', 'PPTX', 'xls', 'XLS', 'xlsx', 'XLSX', 'zip', 'ZIP'];
 
     /* =================== PRIVATE METHODS ================= */
@@ -9,22 +9,21 @@ var moduleNDS_links = (function() {
         let externalLinks = document.querySelectorAll('a');
         for (var i = 0; i < externalLinks.length; i++) {
             if (externalLinks[i].innerHTML != "") {
-                if (!initDocumentLink(externalLinks[i])) {
-                    let url = externalLinks[i].getAttribute('href');
-                    let hostname = externalLinks[i].hostname;
-                    if (url && hostname !== location.hostname) {
-                        url = url.toLowerCase();
-                        if (((url.indexOf('http://') > -1) || (url.indexOf('https://')) > -1) && (url.indexOf('localhost:3002') <= 0)) {
-                            externalLinks[i].setAttribute('target', '_blank');
-                            if (externalLinks[i].closest('.global--footer')) {
-                                externalLinks[i].classList.add('ext-link-footer');
-                            }
-                            var linkIcon = document.createElement('a');
-                            linkIcon.setAttribute('href', url);
-                            linkIcon.setAttribute('class', "ext-link-icon");
-                            linkIcon.setAttribute('aria-label', "External Link");
-                            externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+                initDocumentLink(externalLinks[i]);
+                let url = externalLinks[i].getAttribute('href');
+                let hostname = externalLinks[i].hostname;
+                if (url && hostname !== location.hostname) {
+                    url = url.toLowerCase();
+                    if (((url.indexOf('http://') > -1) || (url.indexOf('https://')) > -1) && (url.indexOf('localhost:3002') <= 0)) {
+                        externalLinks[i].setAttribute('target', '_blank');
+                        if (externalLinks[i].closest('.global--footer')) {
+                            externalLinks[i].classList.add('ext-link-footer');
                         }
+                        var linkIcon = document.createElement('a');
+                        linkIcon.setAttribute('href', url);
+                        linkIcon.setAttribute('class', "ext-link-icon");
+                        linkIcon.setAttribute('aria-label', "External Link");
+                        externalLinks[i].insertAdjacentElement('afterend', linkIcon);
                     }
                 }
             }
@@ -35,14 +34,14 @@ var moduleNDS_links = (function() {
     function initLinkExternalMailto() {
         let mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
         for (var i = 0; i < mailtoLinks.length; i++) {
-            mailtoLinks[i].classList.add('link--external--mail');   
+            mailtoLinks[i].classList.add('link--external--mail');
         }
     }
 
     function initLinkExternalTelephone() {
         let telLinks = document.querySelectorAll('a[href^="tel:"]');
         for (var i = 0; i < telLinks.length; i++) {
-            telLinks[i].classList.add('link--external--phone');   
+            telLinks[i].classList.add('link--external--phone');
         }
     }
 
@@ -77,6 +76,6 @@ var moduleNDS_links = (function() {
 
     /* =============== EXPORT PUBLIC METHODS =============== */
     return {
-      init: init
+        init: init
     };
 }());
