@@ -57,7 +57,7 @@
     {% set component_media_classes = component_media_classes ~ " component--media--full" %}
 {% endif %}
 
-<div class="component-nds component--media {{ component_media_classes }}">
+<figure class="component-nds component--media {{ component_media_classes }}">
     <div class="component--media__media">
         {% block component_media %}
             {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
@@ -70,7 +70,7 @@
         {% endblock %}
     </div>
     {% if component_media_caption is not empty or component_media_credit is not empty %}
-        <div class="component--media__text">
+        <figurecaption class="component--media__text">
             <div class="component--media__text__content-wrapper">
                 {% include "@nds/01-atoms/text/text-image-credit-caption/_text-image-credit-caption-main.twig" with
                     {
@@ -80,6 +80,6 @@
                     }
                 %}
             </div>
-        </div>
+        </figurecaption>
     {% endif %}
-</div>
+</figure>
