@@ -1,8 +1,9 @@
 .component--media {
     $component-media-indent: $s-3;
+    display: table;
     margin: $s-1-50 0;
-    width: auto;
     max-width: 100%;
+    width: auto;
     .image--default,
     img {
         max-width: 100%;

@@ -48,6 +48,7 @@ var moduleNDS_links = (function() {
     // initDocumentLink - Helper function that determines if a document badge should be added to a link.
     function initDocumentLink(link) {
         let href = link.getAttribute('href');
+        href  = href.split('?')[0];
         if (href !== null && href !== "/" && href !== "#") {
             for (let i = 0; i < documentTypes.length; i++) {
                 if (href.indexOf('.' + documentTypes[i]) != -1) {
