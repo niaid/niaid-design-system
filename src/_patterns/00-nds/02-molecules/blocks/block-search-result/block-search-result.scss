@@ -3,9 +3,14 @@
         margin-bottom: 0;
     }
     &__top {
-        display: flex;
-        flex-wrap: wrap;
         margin-bottom: $s-1;
+        @include media-breakpoint-up(sm) {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        @include media-breakpoint-down(xs) {
+            display: block;
+        }
         &__icon {
             margin-right: $s-1-50;
             margin-bottom: $s-1;
@@ -18,8 +23,9 @@
                 margin: 0;
             }
             &__url {
-                color: $success;
+                color: $grey-700;
                 font-size: $s-0-75;
+                word-break: break-all;
             }
             &__metadata {
                 font-size: $s-0-75;
