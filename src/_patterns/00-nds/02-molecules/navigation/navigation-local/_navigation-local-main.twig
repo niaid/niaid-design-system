@@ -115,21 +115,23 @@
     {% set navigation_local_classes = navigation_local_classes ~ " navigation--local--sticky" %}
 {% endif %}
 
-<div class="navigation-nds navigation--local {{ navigation_local_classes }}" id="{{ navigation_local_id }}" data-sticky={{ navigation_local_sticky }}>
-    {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
-        {
-            "button_default_classes": "navigation--local__button",
-            "button_default_id": "navigation--local__button",
-            "button_default_type": "secondary",
-            "button_default_label": "Open the " ~ navigation_local_heading_text ~ " Menu",
-            "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
-        }
-    %}
-    <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-parent="#{{ navigation_local_id }}">
-        {% if navigation_local_heading_text is not empty %}
-            <h2 class="navigation--local__content__title">{% if navigation_local_heading_href is not empty %}<a href="{{ navigation_local_heading_href }}">{% endif %}{{ navigation_local_heading_text }}{% if navigation_local_heading_href is not empty %}</a>{% endif %}</h2>
-            <hr>
-        {% endif %}
-        {{ menus.menu_links(navigation_local_items, navigation_local_item_attributes, 1, 0) }}
+{% if navigation_local_items is iterable %}
+    <div class="navigation-nds navigation--local {{ navigation_local_classes }}" id="{{ navigation_local_id }}" data-sticky={{ navigation_local_sticky }}>
+        {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+            {
+                "button_default_classes": "navigation--local__button",
+                "button_default_id": "navigation--local__button",
+                "button_default_type": "secondary",
+                "button_default_label": "Open the " ~ navigation_local_heading_text ~ " Menu",
+                "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
+            }
+        %}
+        <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-parent="#{{ navigation_local_id }}">
+            {% if navigation_local_heading_text is not empty %}
+                <h2 class="navigation--local__content__title">{% if navigation_local_heading_href is not empty %}<a href="{{ navigation_local_heading_href }}">{% endif %}{{ navigation_local_heading_text }}{% if navigation_local_heading_href is not empty %}</a>{% endif %}</h2>
+                <hr>
+            {% endif %}
+            {{ menus.menu_links(navigation_local_items, navigation_local_item_attributes, 1, 0) }}
+        </div>
     </div>
-</div>
+{% endif %}
