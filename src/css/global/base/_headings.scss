@@ -10,6 +10,7 @@ h6, .h6 {
     margin-bottom: $s-1;
     color: $type-heading;
     line-height: $line-height-heading;
+    letter-spacing: $letter-spacing-heading;
     a {
         border-bottom: 0;
         &:hover,
@@ -26,18 +27,19 @@ h6, .h6 {
 }
 
 // Bootstrap RFS Sizing Overrides
-h1, .h1 { @include font-size($font-size-heading-1); letter-spacing: $letter-spacing-heading-h1; }
-h2, .h2 { @include font-size($font-size-heading-2); letter-spacing: $letter-spacing-heading-h2; }
-h3, .h3 { @include font-size($font-size-heading-3); letter-spacing: $letter-spacing-heading-h3; }
-h4, .h4 { @include font-size($font-size-heading-4); letter-spacing: $letter-spacing-heading-h4; }
-h5, .h5 { @include font-size($font-size-heading-5); letter-spacing: $letter-spacing-heading-h5; }
-h6, .h6 { @include font-size($font-size-heading-6); letter-spacing: $letter-spacing-heading-h6; }
+h1, .h1 { @include font-size($font-size-heading-1); font-style: $font-style-heading-1; }
+h2, .h2 { @include font-size($font-size-heading-2); font-style: $font-style-heading-2; }
+h3, .h3 { @include font-size($font-size-heading-3); font-style: $font-style-heading-3; }
+h4, .h4 { @include font-size($font-size-heading-4); font-style: $font-style-heading-4; }
+h5, .h5 { @include font-size($font-size-heading-5); font-style: $font-style-heading-5; }
+h6, .h6 { @include font-size($font-size-heading-6); font-style: $font-style-heading-6; }
 
 h1, .h1 {
     padding-top: $s-1;
     margin-top: 0;
     margin-bottom: $s-2;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-bold;
+    letter-spacing: -.5px;
     &.display-1 {
         @include font-size($font-size-display-1);
         font-weight: $font-weight-light;
@@ -50,15 +52,19 @@ h1, .h1 {
     }
 }
 
-h2, .h2,
-h3, .h3 {
+h2, .h2 {
     font-weight: $font-weight-semibold;
+    letter-spacing: -.25px;
+}
+
+h3, .h3,
+h5, .h5 {
+    font-weight: $font-weight-medium;
 }
 
 h4, .h4,
-h5, .h5,
 h6, .h6 {
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight-light;
 }
 
 // Bootstrap Display Classes
@@ -66,3 +72,4 @@ h6, .h6 {
 .display-2 {
     color: $type-heading;
 }
+
