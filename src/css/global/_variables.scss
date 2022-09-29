@@ -123,23 +123,26 @@ $font-weight-bold: 700;
 $font-weight-black: 900;
 
 /**** TYPE > FONT SIZES ****/
-$font-size-heading-1: 3rem;
-$font-size-heading-2: 2rem;
-$font-size-heading-3: 1.5rem;
+$font-size-heading-1: 2.85rem;
+$font-size-heading-2: 2.25rem;
+$font-size-heading-3: 1.75rem;
 $font-size-heading-4: 1.5rem;
 $font-size-heading-5: 1.25rem;
-$font-size-heading-6: 1rem;
+$font-size-heading-6: 1.25rem;
 
 $font-size-display-1: 4rem;
 $font-size-display-2: 3rem;
 
+/**** TYPE > FONT STYLES ****/
+$font-style-heading-1: normal;
+$font-style-heading-2: normal;
+$font-style-heading-3: normal;
+$font-style-heading-4: normal;
+$font-style-heading-5: normal;
+$font-style-heading-6: italic;
+
 /**** TYPE > Letter Spacing ****/
-$letter-spacing-heading-h1: -.05rem;
-$letter-spacing-heading-h2: -.05rem;
-$letter-spacing-heading-h3: normal;
-$letter-spacing-heading-h4: normal;
-$letter-spacing-heading-h5: normal;
-$letter-spacing-heading-h6: normal;
+$letter-spacing-heading: normal;
 $letter-spacing-button: normal;
 
 /**** Z-Index ****/

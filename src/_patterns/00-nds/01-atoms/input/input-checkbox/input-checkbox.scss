@@ -40,7 +40,22 @@
     }
 }
 
+@mixin input-checkbox-focus {
+    outline: none;
+    &:focus,
+    &:focus-within {
+        input + label::before {
+            outline-color: Highlight;
+            outline-color: -webkit-focus-ring-color;
+            outline-offset: 1px;
+            outline-style: solid;
+            outline-width: 2px;
+        }
+    }
+}
+
 .input--checkbox {
+    @include input-checkbox-focus;
     position: relative;
     margin: $s-0-50 0;
     &:first-child {
