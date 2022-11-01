@@ -19,11 +19,12 @@ var moduleNDS_links = (function() {
                         if (externalLinks[i].closest('.global--footer')) {
                             externalLinks[i].classList.add('ext-link-footer');
                         }
-                        var linkIcon = document.createElement('a');
-                        linkIcon.setAttribute('href', url);
+                        var linkIcon = document.createElement('span');
+                        linkIcon.setAttribute('focusable', "false");
+                        linkIcon.setAttribute('role', "img");
                         linkIcon.setAttribute('class', "ext-link-icon");
-                        linkIcon.setAttribute('aria-label', "External Link");
-                        externalLinks[i].insertAdjacentElement('afterend', linkIcon);
+                        linkIcon.setAttribute('aria-label', "(Link is external)");
+                        externalLinks[i].appendChild(linkIcon);
                     }
                 }
             }
