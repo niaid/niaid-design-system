@@ -12,9 +12,10 @@ var moduleNDS_links = (function() {
                 initDocumentLink(externalLinks[i]);
                 let url = externalLinks[i].getAttribute('href');
                 let hostname = externalLinks[i].hostname;
-                if (url && hostname !== location.hostname) {
+                let urlclassname = externalLinks[i].classList.contains('icon-nds') === true;
+                if (url && hostname !== location.hostname && urlclassname !== true) {
                     url = url.toLowerCase();
-                    if (((url.indexOf('http://') > -1) || (url.indexOf('https://')) > -1) && (url.indexOf('localhost:3002') <= 0)) {
+                    if (((url.indexOf('http://') > -1) || (url.indexOf('https://')) > -1) && (url.indexOf('localhost:3002') <= 0))  {
                         externalLinks[i].setAttribute('target', '_blank');
                         if (externalLinks[i].closest('.global--footer')) {
                             externalLinks[i].classList.add('ext-link-footer');
