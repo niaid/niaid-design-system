@@ -12,8 +12,9 @@ var moduleNDS_links = (function() {
                 initDocumentLink(externalLinks[i]);
                 let url = externalLinks[i].getAttribute('href');
                 let hostname = externalLinks[i].hostname;
-                let urlclassname = externalLinks[i].classList.contains('icon-nds') === true;
-                if (url && hostname !== location.hostname && urlclassname !== true) {
+                let buttonclassname = externalLinks[i].classList.contains('button-nds') === true;
+                let iconclassname = externalLinks[i].classList.contains('icon-nds') === true;
+                if (url && hostname !== location.hostname && iconclassname !== true && buttonclassname !== true) {
                     url = url.toLowerCase();
                     if (((url.indexOf('http://') > -1) || (url.indexOf('https://')) > -1) && (url.indexOf('localhost:3002') <= 0))  {
                         externalLinks[i].setAttribute('target', '_blank');
