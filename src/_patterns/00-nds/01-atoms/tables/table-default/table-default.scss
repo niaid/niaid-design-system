@@ -28,6 +28,8 @@ table {
         th {
             line-height: normal;
             a {
+                border-bottom-color: $white;
+                color: $white;
                 span {
                     &.tablesort {
                         background-image: none;
@@ -48,6 +50,11 @@ table {
                             content: fa-content($fa-var-chevron-up);
                         }
                     }
+                }
+                &:hover,
+                &:focus {
+                    border-bottom: $border-transparent;
+                    color: $white;
                 }
             }
             &.is-active {
