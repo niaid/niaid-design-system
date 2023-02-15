@@ -66,6 +66,9 @@ table {
         td {
             color: $type-body;
             border: $border-block;
+            &.is-active {
+                background-color: $grey-100;
+            }
         }
         &:last-child {
             td {
