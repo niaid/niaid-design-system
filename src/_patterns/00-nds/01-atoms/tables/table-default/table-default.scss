@@ -60,6 +60,11 @@ table {
                 &:visited {
                     border-bottom-color: $white;
                     color: $white;
+                    &:hover,
+                    &:focus {
+                        border-bottom: $border-transparent;
+                        color: $white;
+                    }
                 }
 
             }
