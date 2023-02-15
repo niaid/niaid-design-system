@@ -52,10 +52,16 @@ table {
                     }
                 }
                 &:hover,
-                &:focus {
+                &:focus,
+                &:active {
                     border-bottom: $border-transparent;
                     color: $white;
                 }
+                &:visited {
+                    border-bottom-color: $white;
+                    color: $white;
+                }
+
             }
             &.is-active {
                 a {
