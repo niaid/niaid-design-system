@@ -81,3 +81,11 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+@mixin flex($justify-content: center, $align-items: center, $flex-direction: row, $flex-wrap: wrap) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+    flex-wrap: $flex-wrap;
+}
