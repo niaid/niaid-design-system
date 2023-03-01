@@ -16,17 +16,19 @@ table {
         margin-bottom: $s-1;
         text-align: left;
     }
-    tr {
-        display: table-row;
-        vertical-align: inherit;
+    thead {
+        background-color: $color-theme-1-1-1;
+        border-collapse: separate;
         border-color: inherit;
+        border-radius: 0 0 0 0;
+        color: $white;
+        display: table-header-group;
+        font-weight: $font-weight-semibold;
+        vertical-align: middle;
         th, td {
-            padding: $s-1;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            line-height: normal;
+            border: 0;
+            color: $white;
+            font-weight: $font-weight-bold;
             a {
                 border-bottom-color: $white;
                 color: $white;
@@ -74,33 +76,31 @@ table {
                 }
             }
         }
-        td {
-            color: $type-body;
-            border: $border-block;
-            &.is-active {
-                background-color: $grey-100;
-            }
+    }
+    th, td {
+        border: $border-block;
+        color: $type-body;
+        line-height: normal;
+        padding: $s-1;
+        text-align: left;
+        vertical-align: top;
+        &.is-active {
+            background-color: $grey-100;
         }
+    }
+    tr {
+        border-color: inherit;
+        display: table-row;
+        vertical-align: inherit;
         &:last-child {
             td {
                 border-bottom: 0;
             }
         }
     }
-    thead {
-        background-color: $color-theme-1-1-1;
-        border-collapse: separate;
-        border-color: inherit;
-        border-radius: 0 0 0 0;
-        color: $white;
-        display: table-header-group;
-        font-weight: $font-weight-semibold;
-        vertical-align: middle;
-    }
     tbody {
         th {
-            border-bottom: $border-block;
-            vertical-align: middle;
+            font-weight: $font-weight-bold;
         }
     }
     thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
