@@ -93,20 +93,20 @@ table {
             }
         }
     }
-    th, td {
-        // border: $border-block;
-        color: $type-body;
-        line-height: normal;
-        padding: $s-1;
-        text-align: left;
-        vertical-align: top;
-        &.is-active {
-            background-color: $grey-100;
-        }
-    }
     tr {
         display: table-row;
         vertical-align: inherit;
+    }
+    th, td {
+        color: $type-body;
+        padding: $s-1;
+        text-align: left;
+        vertical-align: top;
+    }
+    td {
+        &.is-active {
+            background-color: $grey-100;
+        }
     }
     tbody {
         th {
