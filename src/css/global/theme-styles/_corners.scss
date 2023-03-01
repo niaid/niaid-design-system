@@ -108,15 +108,6 @@
     }
     table {
         border-radius: $corner-radius;
-        thead {
-            border-radius: $corner-radius $corner-radius 0 0;
-        }
-        thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
-            border-radius: $corner-radius 0 0 0;
-        }
-        thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
-            border-radius: 0 0 0 $corner-radius;
-        }
     }
     .text-nds {
         &.text--badge,
