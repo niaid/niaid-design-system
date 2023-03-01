@@ -26,7 +26,7 @@
 }
 
 .component--process-list__item {
-    border-left: $s-0-50 solid $border-light-blue;
+    border-left: $s-0-50 solid transparentize($color-theme-1-1-1, 0.8);
     padding-bottom: $s-1-75;
     padding-left: $s-2;
 
@@ -50,7 +50,7 @@
         @include flex;
         background-color: #fff;
         border-radius: 50%;
-        border: $s-0-50 - $s-3px solid $niaid-blue;
+        border: $s-0-50 - $s-3px solid $color-theme-1-1-1;
         box-shadow: 0 0 0 $s-0-75 - $s-4px $grey-light;
         content: '';
         font-size: $s-1;
