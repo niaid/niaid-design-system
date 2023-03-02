@@ -1,0 +1,77 @@
+// PROCESS LIST
+.component--process-list {
+    margin: $s-1-50 0 $s-2;
+}
+
+.component--process-list__wrapper {
+    list-style-type: none;
+    margin: 0;
+    padding-left: $s-1;
+    position: relative;
+
+    > li {
+        margin: 0;
+        max-width: unset;
+    }
+}
+
+.component--process-list__numbered {
+    counter-reset: process-list;
+
+    .component--process-list__item::before {
+        color: $niaid-blue;
+        content: counter(process-list, decimal);
+        counter-increment: process-list;
+    }
+}
+
+.component--process-list__item {
+    border-left: $s-0-50 solid transparentize($color-theme-1-1-1, 0.8);
+    padding-bottom: $s-1-75;
+    padding-left: $s-2;
+
+    > * {
+        margin-bottom: 0;
+    }
+
+    ul {
+        list-style-type: disc;
+
+        li {
+            margin-bottom: units(0.5);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &::before {
+        @include flex;
+        background-color: #fff;
+        border-radius: 50%;
+        border: $s-0-50 - $s-3px solid $color-theme-1-1-1;
+        box-shadow: 0 0 0 $s-0-75 - $s-4px $grey-light;
+        content: '';
+        font-size: $s-1;
+        font-weight: $font-weight-black;
+        height: $s-2-50;
+        left: 0;
+        line-height: normal;
+        margin-top: - $s-0-25;
+        position: absolute;
+        width: $s-2-50;
+    }
+
+    &:last-child {
+        border-left-color: transparent;
+        padding-bottom: 0;
+    }
+}
+
+.component--process-list__heading {
+    @include font-size($font-size-heading-5);
+    font-style: $font-style-heading-5;
+    font-weight: $font-weight-medium;
+    margin-top: 0;
+}

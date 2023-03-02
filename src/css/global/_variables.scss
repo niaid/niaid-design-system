@@ -164,6 +164,9 @@ $base-spacer: 1rem;
 
 $s-1px: $base-spacer / $base-size-pixels;
 $s-2px: ($base-spacer * 2) / $base-size-pixels;
+$s-3px: ($base-spacer * 3) / $base-size-pixels;
+$s-4px: ($base-spacer * 4) / $base-size-pixels;
+$s-5px: ($base-spacer * 5) / $base-size-pixels;
 $s-0: 0;
 $s-0-25: $base-spacer * .25;
 $s-0-50: $base-spacer * .5;

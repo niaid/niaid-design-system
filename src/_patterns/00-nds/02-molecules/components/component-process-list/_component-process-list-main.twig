@@ -1,0 +1,25 @@
+{#
+    ---
+    title: Process List Component
+    ---
+
+    Type: Molecules -> Components
+
+    Description:
+        A process list displays the steps or stages of important instructions or processes.
+
+        Use process lists to create a clear hierarchy and help users easily differentiate between individual steps or stages in a process.
+
+    Parameters:
+        component_process_list_classes: Additional process classes.
+        component_process_list_id: Process ID.
+
+    Last Updated: February 28, 2023
+#}
+
+{% set component_process_list_classes = component_process_list_classes|default() %}
+{% set component_process_list_id = component_process_list_id|default() %}
+
+<div class="component-nds component--process-list {{ component_process_list_classes }}" id="{{ component_process_list_id }}">
+    {% block component_process_list_content %}{% endblock %}
+</div>
