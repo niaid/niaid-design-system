@@ -1,5 +1,4 @@
 .component--media {
-    $component-media-indent: $s-3;
     display: table;
     margin: $s-1-50 0;
     max-width: 100%;
@@ -55,14 +54,14 @@
 .component--media--left {
     @include media-breakpoint-up(md) {
         float: left;
-        margin-right: $component-media-indent;
+        margin-right: $s-3;
     }
 }
 
 .component--media--right {
     @include media-breakpoint-up(md) {
         float: right;
-        margin-left: $component-media-indent;
+        margin-left: $s-3;
     }
 }
 
