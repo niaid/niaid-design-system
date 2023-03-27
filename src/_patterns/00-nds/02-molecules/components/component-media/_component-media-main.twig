@@ -31,10 +31,11 @@
         Atoms -> Images -> image-default
         Atoms -> Text -> text-image-credit-caption
 
-    Last Updated: October 12, 2021
+    Last Updated: March 24, 2023
 #}
 
 {% set component_media_classes = component_media_classes|default() %}
+{% set component_media_responsive = component_media_responsive|default() %}
 {% set component_media_src = component_media_src|default() %}
 {% set component_media_alt = component_media_alt|default() %}
 {% set component_media_caption = component_media_caption|default() %}
@@ -47,19 +48,19 @@
     {% set component_media_image_classes = "materialboxed" %}
 {% endif %}
 
-{% if component_media_float == "left" %}
+{% if component_media_float == "left" or component_media_float == "align-left" %}
     {% set component_media_classes = component_media_classes ~ " component--media--left" %}
 {% endif %}
-{% if component_media_float == "right" %}
+{% if component_media_float == "right" or component_media_float == "align-right" %}
     {% set component_media_classes = component_media_classes ~ " component--media--right" %}
 {% endif %}
-{% if component_media_float == "full" %}
+{% if component_media_float == "full" or component_media_float == "align-center" %}
     {% set component_media_classes = component_media_classes ~ " component--media--full" %}
 {% endif %}
 
 <figure class="component-nds component--media {{ component_media_classes }}">
-    <div class="component--media__media">
-        {% block component_media %}
+    {% block component_media %}
+        {% if component_media_src is not empty %}
             {% include "@nds/01-atoms/images/image-default/_image-default-main.twig" with
                 {
                     "image_default_classes": component_media_image_classes,
@@ -67,19 +68,21 @@
                     "image_default_alt": component_media_alt
                 }
             %}
-        {% endblock %}
-    </div>
-    {% if component_media_caption is not empty or component_media_credit is not empty %}
-        <figurecaption class="component--media__text">
-            <div class="component--media__text__content-wrapper">
-                {% include "@nds/01-atoms/text/text-image-credit-caption/_text-image-credit-caption-main.twig" with
-                    {
-                        "text_image_credit_caption_caption": component_media_caption,
-                        "text_image_credit_caption_credit": component_media_credit,
-                        "text_image_credit_caption_credit_label": component_media_credit_label
-                    }
-                %}
-            </div>
-        </figurecaption>
-    {% endif %}
+        {% elseif component_media_responsive is not empty %}
+            {{ component_media_responsive }}
+        {% endif %}
+        {% if component_media_caption is not empty or component_media_credit is not empty %}
+            <figurecaption class="component--media__text">
+                <div class="component--media__text__content-wrapper">
+                    {% include "@nds/01-atoms/text/text-image-credit-caption/_text-image-credit-caption-main.twig" with
+                        {
+                            "text_image_credit_caption_caption": component_media_caption,
+                            "text_image_credit_caption_credit": component_media_credit,
+                            "text_image_credit_caption_credit_label": component_media_credit_label
+                        }
+                    %}
+                </div>
+            </figurecaption>
+        {% endif %}
+    {% endblock %}
 </figure>
