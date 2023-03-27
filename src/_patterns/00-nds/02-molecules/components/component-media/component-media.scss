@@ -4,53 +4,148 @@
     margin: $s-1-50 0;
     max-width: 100%;
     width: auto;
+
     .image--default,
     img {
         max-width: 100%;
     }
+
     .component--media__text {
         display: flex;
-        &__content-wrapper {
-            flex-grow: 1;
-            width: 0;
-            .text--image-credit-caption {
-                &__credit {
-                    br {
-                        display: none;
-                    }
-                }
-            }
+    }
+
+    .component--media__text__content-wrapper {
+        flex-grow: 1;
+        width: 0;
+    }            
+
+    .text--image-credit-caption__credit {
+        br {
+            display: none;
         }
     }
-    &--full {
-        .image--default,
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-    &--left,
-    &--right {
-        clear: both;
-        @include media-breakpoint-up(md) {
-            max-width: 50%;
-        }
-    }
-    &--left {
-        @include media-breakpoint-up(md) {
-            float: left;
-            margin-right: $component-media-indent;
-        }
-    }
-    &--right {
-        @include media-breakpoint-up(md) {
-            float: right;
-            margin-left: $component-media-indent;
-        }
-    }
+
     /* Drupal Overrides */
     .field--name-field-media-caption,
     .field--name-field-media-credit {
         display: none;
     }
+    /* End Drupal Overrides */
 }
+
+.component--media--full {
+    margin-left: auto;
+    margin-right: auto;
+
+    .image--default,
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.component--media--left,
+.component--media--right {
+    clear: both;
+    @include media-breakpoint-up(md) {
+        max-width: 50%;
+    }
+}
+
+.component--media--left {
+    @include media-breakpoint-up(md) {
+        float: left;
+        margin-right: $component-media-indent;
+    }
+}
+
+.component--media--right {
+    @include media-breakpoint-up(md) {
+        float: right;
+        margin-left: $component-media-indent;
+    }
+}
+
+.component--media__25-width {
+    @include media-breakpoint-up(lg) {
+        max-width: 25%;
+    }
+}
+
+.component--media__33-width {
+    @include media-breakpoint-up(lg) {
+        max-width: 33%;
+    }
+}
+
+.component--media__50-width {
+    @include media-breakpoint-up(lg) {
+        max-width: 50%;
+    }
+}
+
+.component--media__75-width {
+    @include media-breakpoint-up(lg) {
+        max-width: 75%;
+    }
+}
+
+.component--media__100-width {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+        max-width: 100%;
+    }
+}
+
+/* Drupal Overrides */
+[data-entity-embed-display="view_mode:media.25_width"] {
+    @include media-breakpoint-up(lg) {
+        max-width: 25%;
+    }
+
+    .component--media__25-width {
+        max-width: 100%;
+    }
+}
+
+[data-entity-embed-display="view_mode:media.33_width"] {
+    @include media-breakpoint-up(lg) {
+        max-width: 33%;
+    }
+
+    .component--media__33-width {
+        max-width: 100%;
+    }
+}
+
+[data-entity-embed-display="view_mode:media.50_width"] {
+    @include media-breakpoint-up(lg) {
+        max-width: 50%;
+    }
+
+    .component--media__50-width {
+        max-width: 100%;
+    }
+}
+
+[data-entity-embed-display="view_mode:media.75_width"] {
+    @include media-breakpoint-up(lg) {
+        max-width: 75%;
+    }
+
+    .component--media__75-width {
+        max-width: 100%;
+    }
+}
+
+[data-entity-embed-display="view_mode:media.100_width"] {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+        max-width: 100%;
+    }
+
+    .component--media__100-width {
+        max-width: 100%;
+    }
+}
+/* End Drupal Overrides */
