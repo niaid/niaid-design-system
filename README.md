@@ -1,15 +1,15 @@
 # NIAID Design System (NDS)
 
-VERSION 1.1.11
+VERSION 1.1.12
 
-The [NIAID Design System](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/) was developed within the Office of Communications and Government Relations (OCGR) at the National Institute of Allergy and Infectious Diseases (NIAID) by Booz Allen Hamilton. The design system is designed to aid users with the process of creating policy-compliant websites that conform to design standards and guidance set by NIAID, NIH, HHS, and USWDS.
+The [NIAID Design System](https://designsystem.niaid.nih.gov/) was developed within the Office of Communications and Government Relations (OCGR) at the National Institute of Allergy and Infectious Diseases (NIAID) by Booz Allen Hamilton. The design system is designed to aid users with the process of creating policy-compliant websites that conform to design standards and guidance set by NIAID, NIH, HHS, and USWDS.
 
-[Visit the NDS Documentation Site](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/)
+[Visit the NDS Documentation Site](https://designsystem.niaid.nih.gov/)
 
 Current Sites Running on NDS:
 * [Coronavirus Prevention Network (CoVPN)](https://coronaviruspreventionnetwork.org)
 * [ECM @ NIH](https://ecm.nih.gov/)
-* [NDS Documentation Site](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/)
+* [NDS Documentation Site](https://designsystem.niaid.nih.gov/)
 * NIAID Digital Policy Website
 
 ## Getting Started
@@ -31,9 +31,9 @@ You will need the following installed on your local machine:
 
 ### Ways to Use NDS
 There are three main ways to use NDS listed below. To get started please visit our documentation site:
-* [NDS Components](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/components)
-* [Static Site Builder](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/static-site-builder)
-* [NDS Drupal Theme](http://nds.niaid.nih.gov.s3-website-us-east-1.amazonaws.com/nds-drupal-theme)
+* [NDS Components](https://designsystem.niaid.nih.gov/components/)
+* [Static Site Builder](https://designsystem.niaid.nih.gov/getting-started/nds-static-site-builder/)
+* [NDS Drupal Theme](https://designsystem.niaid.nih.gov/getting-started/nds-drupal-theme/)
 
 ## Built With
 
