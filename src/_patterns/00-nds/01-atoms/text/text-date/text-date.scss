@@ -1,0 +1,33 @@
+.text--date {
+    @include shadow($shadow-hard-low);
+    background: $white;
+    border-radius: $border-radius-semi;
+    padding: 0;
+    text-align: center;
+    width: $s-4;
+}
+
+.text--date__day {
+    border-top-left-radius: $border-radius-semi;
+    border-top-right-radius: $border-radius-semi;
+    color: $type-body;
+    display: block;
+    font-size: 1.75rem;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+    padding: $s-0-50 0;
+}
+
+.text--date__month {
+    background: $color-theme-1-1-1;
+    border-bottom-left-radius: $border-radius-semi;
+    border-bottom-right-radius: $border-radius-semi;
+    color: $white;
+    display: block;
+    font-size: $s-0-75;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-medium;
+    padding: $s-0-25 0;
+    text-transform: uppercase;
+    width: 100%;
+}

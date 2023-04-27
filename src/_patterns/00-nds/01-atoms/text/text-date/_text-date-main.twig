@@ -1,0 +1,24 @@
+{#
+    ---
+    title: Date
+    ---
+
+    Type: Atoms -> Text
+    
+    Description:
+        Dates are static, non-functional indicators of a desired date. Typically dates are used to indicate the date of an upcoming event.
+
+    Parameters:
+
+    text_date_classes: Additional date classes.
+    text_date_day: The day to display, formatted DD.
+    text_date_month: The month to display, formatted as the first three letters of the month name (Ex. January = Jan).
+
+    Last Updated: April 24, 2023
+#}
+
+{% set text_date_classes = text_date_classes|default() %}
+{% set text_date_day = text_date_day|default() %}
+{% set text_date_month = text_date_month|default() %}
+
+<div class="text-nds text--date {{ text_date_classes }}"><span class="text--date__day">{{ text_date_day }}</span><span class="text--date__month">{{ text_date_month }}</span></div>
