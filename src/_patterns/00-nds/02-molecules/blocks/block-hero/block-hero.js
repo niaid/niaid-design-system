@@ -12,7 +12,6 @@ var moduleNDS_hero = (function() {
 
     /* =============== EXPORT PUBLIC METHODS =============== */
     return {
-      init: init,
       addHeroClassToBody: addHeroClassToBody
     };
 }());
