@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
     moduleNDS_drawer.init();
     moduleNDS_dropdown.init();
     moduleNDS_featuredContentCards.init();
-    moduleNDS_hero.init();
     moduleNDS_input.init();
     moduleNDS_links.init();
     moduleNDS_media.init();
