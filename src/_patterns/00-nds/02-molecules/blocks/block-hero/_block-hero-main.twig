@@ -22,7 +22,7 @@
         block_hero_id: Hero ID.
         block_hero_overlay_color: An optional class used to apply a color to the hero overlay. This class must contain a background color with an opacity less than 1.
 
-    Last Updated: August 11, 2021
+    Last Updated: May 4, 2023
 #}
 
 {% set block_hero_classes = block_hero_classes|default() %}
@@ -30,11 +30,7 @@
 {% set block_hero_overlay_color = block_hero_overlay_color|default() %}
 
 <div id="block--hero" class="block-nds block--hero {{ block_hero_classes }}"{% if block_hero_id is not empty %} id="{{ block_hero_id }}"{% endif %}>
-    <div class="block--hero__content">
-        <div class="parallax-container {{ block_hero_overlay_color }}">
-            <div class="parallax">
-                {% block block_hero_image %}{% endblock %}
-            </div>
-        </div>
+    <div class="block--hero__content {{ block_hero_overlay_color }}">
+        {% block block_hero_image %}{% endblock %}
     </div>
 </div>
