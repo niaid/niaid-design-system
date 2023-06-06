@@ -3,6 +3,12 @@
     ul, ol, li, p {
         max-width: none;
     }
+
+    .claro-toolbar-menu {
+        a {
+            border-bottom: none;
+        }
+    }
 }
 
 #block-niaid-drupal-theme-local-tasks {
