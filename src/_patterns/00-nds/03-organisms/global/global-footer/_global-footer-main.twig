@@ -38,7 +38,7 @@
 {% set global_footer_column_middle = global_footer_column_middle|default('col-lg-4') %}
 {% set global_footer_column_right = global_footer_column_right|default('col-lg-4') %}
 
-<footer id="footer" class="global-nds global--footer container-fluid {{ global_footer_classes }}">
+<footer id="footer" role="contentinfo" class="global-nds global--footer container-fluid {{ global_footer_classes }}">
     {% if block('global_footer_prefooter_content')|trim != "" %}
         <div class="global--footer__prefooter row">
             {% block global_footer_prefooter_content %}{% endblock %}
