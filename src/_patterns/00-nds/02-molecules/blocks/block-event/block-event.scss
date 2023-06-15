@@ -1,0 +1,34 @@
+.block--event {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    padding: $s-1;
+    width: 100%;
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+    }
+
+    .text--date {
+        height: max-content;
+    }
+}
+
+.block--date__content {
+    margin-top: $s-1;
+    width: 100%;
+    @include media-breakpoint-up(sm) {
+        margin-left: auto;
+        margin-top: 0;
+        width: calc(100% - 5rem);
+    }
+
+    h3 {
+        font-size: $s-1-25;
+        font-weight: $font-weight-semibold;
+        margin: 0;
+    }
+
+    p {
+        margin: $s-0-50 0 0;
+    }
+}
