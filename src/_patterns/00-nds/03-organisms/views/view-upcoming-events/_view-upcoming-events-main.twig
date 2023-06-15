@@ -1,0 +1,63 @@
+{#
+    ---
+    title: Upcoming Events View
+    ---
+
+    Type: Organisms -> Views
+
+    Description:
+        The Upcoming Events View is a component that allows users to present upcoming event in a listing format. The Upcoming Events View optionally supports a heading and a "See More" link following the listing of events.
+
+    Blocks:
+        {% block view_upcoming_events_content %}: The block containing the list view heading.
+
+    Parameters:
+        view_upcoming_events_classes: Additional classes for view wrapper.
+        view_upcoming_events_id: ID for the view.
+        view_upcoming_events_data: An array of event block objects. Structure: { "content": "" }. The "content" should be an HTML string.
+        view_upcoming_events_heading: Heading text to label the view.
+        view_upcoming_events_link_text: Text to appear on an optional "See More" link at the end of the view.
+        view_upcoming_events_link_href: URL destination for an optional "See More" link at the end of the view.
+
+    Includes:
+        Molecules -> Blocks -> block-default
+        Atoms -> Links -> link-icon
+
+    Last Updated: June 15, 2023
+#}
+
+{% set view_upcoming_events_classes = view_upcoming_events_classes|default() %}
+{% set view_upcoming_events_id = view_upcoming_events_id|default() %}
+{% set view_upcoming_events_heading = view_upcoming_events_heading|default() %}
+{% set view_upcoming_events_data = view_upcoming_events_data|default() %}
+{% set view_upcoming_events_link_text = view_upcoming_events_link_text|default() %}
+{% set view_upcoming_events_link_href = view_upcoming_events_link_href|default() %}
+
+<div class="view-nds view--upcoming-events {{ view_upcoming_events_classes }}"{% if view_upcoming_events_id is not empty %} id="{{ view_upcoming_events_id }}"{% endif %}>
+    {% if view_upcoming_events_heading is not empty %}<h2>{{ view_upcoming_events_heading }}</h2>{% endif %}
+    {% block view_upcoming_events_content %}
+        {% for event in view_upcoming_events_data %}
+            {% include "@nds/02-molecules/blocks/block-event/_block-event-main.twig" with
+                {
+                    "block_event_day": event.day,
+                    "block_event_month": event.month,
+                    "block_event_link_text": event.text,
+                    "block_event_link_href": event.href,
+                    "block_event_description": event.description,
+                }
+            %}
+        {% endfor %}
+    {% endblock %}
+    {% if view_upcoming_events_link_href is not empty %}
+        <hr>
+        {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
+            {
+                "link_icon_href": view_upcoming_events_link_href,
+                "link_icon_text": view_upcoming_events_link_text,
+                "link_icon_type": "chevron-right",
+                "link_icon_weight": "s",
+                "link_icon_position": "right"
+            }
+        %}
+    {% endif %}
+</div>
