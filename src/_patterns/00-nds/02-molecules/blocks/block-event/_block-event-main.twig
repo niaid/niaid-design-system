@@ -1,3 +1,28 @@
+{#
+    ---
+    title: Event Block
+    ---
+
+    Type: Molecules -> Blocks
+
+    Description:
+        The Event Block is a component that allows users to present upcoming event in a block format. The Event Block optionally supports a heading, date, link, and description.
+
+    Parameters:
+        block_event_classes: Additional classes for block wrapper.
+        block_event_day: Text to indicate the day of the event.
+        block_event_month: Text to indicate the month of the event.
+        block_event_link_text: Heading text to label the block.
+        block_event_link_href: URL destination for the event block.
+        block_event_description: A description of the event.
+
+    Includes:
+        Atoms -> Text -> text-date
+        Atoms -> Links -> link-default
+
+    Last Updated: June 15, 2023
+#}
+
 {% set block_event_classes = block_event_classes|default() %}
 {% set block_event_day = block_event_day|default() %}
 {% set block_event_month = block_event_month|default() %}
