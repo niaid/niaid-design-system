@@ -1,0 +1,35 @@
+{% set views_upcoming_events_classes = views_upcoming_events_classes|default() %}
+{% set views_upcoming_events_id = views_upcoming_events_id|default() %}
+{% set views_upcoming_events_title = views_upcoming_events_title|default() %}
+{% set views_upcoming_events_data = views_upcoming_events_data|default() %}
+{% set views_upcoming_events_see_more_link_href = views_upcoming_events_see_more_link_href|default() %}
+{% set views_upcoming_events_see_more_link_text = views_upcoming_events_see_more_link_text|default() %}
+
+<div class="view-nds view--upcoming-events {{ views_upcoming_events_classes }}"{% if views_upcoming_events_id is not empty %} id="{{ views_upcoming_events_id }}"{% endif %}>
+    {% if views_upcoming_events_title is not empty %}<h2>{{ views_upcoming_events_title }}</h2>{% endif %}
+    {% block views_upcoming_events_content %}
+        {% for event in views_upcoming_events_data %}
+            {% include "@nds/02-molecules/blocks/block-event/_block-event-main.twig" with
+                {
+                    "block_event_day": event.day,
+                    "block_event_month": event.month,
+                    "block_event_link_text": event.text,
+                    "block_event_link_href": event.href,
+                    "block_event_description": event.description,
+                }
+            %}
+        {% endfor %}
+    {% endblock %}
+    {% if views_upcoming_events_see_more_link_href is not empty %}
+        <hr>
+        {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
+            {
+                "link_icon_href": views_upcoming_events_see_more_link_href,
+                "link_icon_text": views_upcoming_events_see_more_link_text,
+                "link_icon_type": "chevron-right",
+                "link_icon_weight": "s",
+                "link_icon_position": "right"
+            }
+        %}
+    {% endif %}
+</div>
