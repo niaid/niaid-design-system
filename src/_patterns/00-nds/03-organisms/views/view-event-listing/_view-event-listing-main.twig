@@ -10,6 +10,7 @@
 
     Blocks:
         {% block view_event_listing_content %}: The block containing the events and their content.
+        {% block view_event_listing_link %}: The block containing the link meant to view more events.
 
     Parameters:
         view_event_listing_classes: Additional classes for view wrapper.
@@ -48,16 +49,19 @@
             %}
         {% endfor %}
     {% endblock %}
-    {% if view_event_listing_link_href is not empty %}
-        <hr>
-        {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
-            {
-                "link_icon_href": view_event_listing_link_href,
-                "link_icon_text": view_event_listing_link_text,
-                "link_icon_type": "chevron-right",
-                "link_icon_weight": "s",
-                "link_icon_position": "right"
-            }
-        %}
-    {% endif %}
+    {% block view_event_listing_link %}
+        {% if view_event_listing_link_href is not empty %}
+            <div class="view--event-listing__link">
+                {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
+                    {
+                        "link_icon_href": view_event_listing_link_href,
+                        "link_icon_text": view_event_listing_link_text,
+                        "link_icon_type": "chevron-right",
+                        "link_icon_weight": "s",
+                        "link_icon_position": "right"
+                    }
+                %}
+            </div>
+        {% endif %}
+    {% endblock %}
 </div>
