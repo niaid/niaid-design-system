@@ -1,0 +1,17 @@
+.view--event-listing {
+    h2 {
+        margin-top: 0;
+    }
+    
+    > div {
+        margin-bottom: $s-1-25;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    hr {
+        margin: $s-2 0 $s-1-25;
+    }
+}
