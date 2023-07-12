@@ -6,13 +6,13 @@
     position: relative;
     width: 100%;
     @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-        padding: 0 ($s-main-spacer / 2);
+        padding: 0 calc($s-main-spacer / 2);
     }
     &__column {
         padding: 0;
         margin: 0 auto;
         @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-            padding: 0 ($s-main-spacer / 2);
+            padding: 0 calc($s-main-spacer / 2);
         }
     }
     &.layouts--main--no-left {

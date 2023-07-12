@@ -138,7 +138,7 @@ table {
                         &:before {
                             cursor: pointer;
                             position: absolute;
-                            left: ($s-3 - $s-1) / 2;
+                            left: calc(($s-3 - $s-1) / 2);
                             top: 50%;
                             transform: translateY(-50%);
                             height: $before-size;
