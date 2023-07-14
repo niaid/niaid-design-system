@@ -7,7 +7,7 @@
             .layouts--main__second {
                 padding-left: 0;
                 @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                    padding-left: calc($s-main-spacer / 2) * 2;
+                    padding-left: calc(($s-main-spacer / 2) * 2);
                 }
             }
         }
@@ -15,7 +15,7 @@
             .layouts--main__second {
                 padding-right: 0;
                 @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-                    padding-right: calc($s-main-spacer / 2) * 2;
+                    padding-right: calc(($s-main-spacer / 2) * 2);
                 }
             }
         }
