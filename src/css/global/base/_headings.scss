@@ -19,7 +19,7 @@ h6, .h6 {
         }
         &.ext-link-icon {
             &:after {
-                $icon-offset: -1 * $s-2px;
+                $icon-offset: calc(-1 * $s-2px);
                 transform: translateY($icon-offset);
             }
         }
