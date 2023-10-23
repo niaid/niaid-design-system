@@ -1,0 +1,96 @@
+.component--video {
+    margin: $s-1-50 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+.component--video__full {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.component--video__left,
+.component--video__right {
+    clear: both;
+    @include media-breakpoint-up(md) {
+        max-width: 50%;
+    }
+}
+
+.component--video__left {
+    @include media-breakpoint-up(md) {
+        float: left;
+        margin-right: $s-3;
+    }
+}
+
+.component--video__right {
+    @include media-breakpoint-up(md) {
+        float: right;
+        margin-left: $s-3;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .component--video__25-width {
+        max-width: 25%;
+        width: 25%;
+    }
+    
+    .component--video__33-width {
+            max-width: 33%;
+            width: 33%;
+    }
+    
+    .component--video__50-width {
+            max-width: 50%;
+            width: 50%;
+    }
+    
+    .component--video__75-width {
+            max-width: 75%;
+            width: 75%;
+    }
+}
+
+
+.component--video__100-width {
+    width: 100%;
+}
+
+/* Drupal Overrides */
+[data-entity-embed-display="view_mode:media.25_width"] {
+    @include media-breakpoint-up(lg) {
+        max-width: 25%;
+        width: 25%;
+    }
+}
+
+[data-entity-embed-display="view_mode:media.33_width"] {
+    @include media-breakpoint-up(lg) {
+        max-width: 33%;
+        width: 33%;
+    }
+}
+
+[data-entity-embed-display="view_mode:media.50_width"] {
+    @include media-breakpoint-up(lg) {
+        max-width: 50%;
+        width: 50%;
+    }
+}
+
+[data-entity-embed-display="view_mode:media.75_width"] {
+    @include media-breakpoint-up(lg) {
+        max-width: 75%;
+        width: 75%;
+    }
+}
+
+[data-entity-embed-display="view_mode:media.100_width"] {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+        max-width: 100%;
+    }
+}
+/* End Drupal Overrides */
