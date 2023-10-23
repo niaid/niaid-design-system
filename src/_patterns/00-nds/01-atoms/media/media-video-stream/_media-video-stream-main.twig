@@ -1,0 +1,35 @@
+{#
+    ---
+    title: Media Stream Video
+    ---
+
+    Type: Atoms -> Media
+
+    Description:
+        The Media YouTube Video component makes it easy to embed YouTube videos on your website.
+
+        The "media_video_stream_src" parameter requires a specific embed URL from YouTube (not to be confused with the regular URL to the video page). To get this embed link, go to the YouTube video you would like to embed. Select "Share" below the video, then "Embed". The needed URL is found as the value for the "src" attribute in the displayed embed code.
+
+    Parameters:
+        media_video_stream_classes: Additional media element classes.
+        media_video_stream_id: ID for the video wrapper.
+        media_video_stream_title: The title attribute for the video.
+        media_video_stream_src: The embed URL from YouTube.
+        media_video_stream_height: Desired height of the video.
+        media_video_stream_width: Desired width of the video.
+        media_video_stream_attributes: Additional attributes on the <iframe>.
+
+    Last Updated: February 9, 2021
+#}
+
+{% set media_video_stream_classes = media_video_stream_classes|default() %}
+{% set media_video_stream_id = media_video_stream_id|default() %}
+{% set media_video_stream_title = media_video_stream_title|default() %}
+{% set media_video_stream_src = media_video_stream_src|default() %}
+{% set media_video_stream_width = media_video_stream_width|default('800') %}
+{% set media_video_stream_height = media_video_stream_height|default('450') %}
+{% set media_video_stream_attributes = media_video_stream_attributes|default() %}
+
+<div class="media-nds media--video-stream {{ media_video_stream_classes }}"{% if media_video_stream_id is not empty %} id="{{ media_video_stream_id }}"{% endif %}>
+    <iframe class="media--video-stream__iframe" allowfullscreen="" frameborder="0" height="{{ media_video_stream_height }}" width="{{ media_video_stream_width }}" src="{{ media_video_stream_src }}" title="{{ media_video_stream_title }}" {{ media_video_stream_attributes|raw }}></iframe>
+</div>

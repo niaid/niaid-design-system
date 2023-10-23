@@ -1,0 +1,60 @@
+{#
+    ---
+    title: Video Component
+    ---
+
+    Type: Molecules -> Components
+
+    Description:
+        The Video component makes it easy to include videos of either type (YouTube or Microsoft). Additionally, you can control the float (left or right placement) of your images.
+
+    Blocks:
+        {% block component_video %}: The media to be presented.
+
+    Parameters:
+        component_video_classes: Additional media component classes.
+        component_video_float: The direction to float the component (optional). Options: "left", "right", "full" (100% width of body content).
+        component_video_title: Title of the YouTube video.
+        component_video_src: Path to the YouTube video.
+        component_video_attributes: Sets attributes for the video.
+        component_video_width: Sets the pixel width of the video.
+        component_video_height: Sets the pixel height of the video.
+
+    Includes:
+        Atoms -> Media -> media-video-stream
+
+    Last Updated: October 23, 2023
+#}
+{% set component_video_classes = component_video_classes|default() %}
+{% set component_video_float = component_video_float|default() %}
+{% set component_video_id = component_video_id|default() %}
+{% set component_video_title = component_video_title|default() %}
+{% set component_video_src = component_video_src|default() %}
+{% set component_video_attributes = component_video_attributes|default() %}
+{% set component_video_width = component_video_width|default() %}
+{% set component_video_height = component_video_stream_height|default() %}
+
+{% if component_video_float == "left" or component_video_float == "align-left" %}
+    {% set component_video_classes = component_video_classes ~ " component--video__left" %}
+{% endif %}
+{% if component_video_float == "right" or component_video_float == "align-right" %}
+    {% set component_video_classes = component_video_classes ~ " component--video__right" %}
+{% endif %}
+{% if component_video_float == "full" or component_video_float == "align-center" %}
+    {% set component_video_classes = component_video_classes ~ " component--video__full" %}
+{% endif %}
+
+<div class="component-nds component--video {{ component_video_classes }}">
+    {% block component_video %}
+        {% include "@nds/01-atoms/media/media-video-stream/_media-video-stream-main.twig" with
+            {
+                "media_video_stream_id": component_video_id,
+                "media_video_stream_title": component_video_title,
+                "media_video_stream_src": component_video_src,
+                "media_video_stream_width": component_video_width,
+                "media_video_stream_height": component_video_height,
+                "media_video_stream_attributes": component_video_attributes
+            }
+        %}
+    {% endblock %}
+</div>
