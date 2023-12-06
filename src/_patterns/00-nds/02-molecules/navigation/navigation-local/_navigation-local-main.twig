@@ -23,7 +23,7 @@
     Includes:
         Atoms -> Buttons -> button--default
 
-    Last Updated: October 19, 2021
+    Last Updated: December 6, 2023
 #}
 
 {% set navigation_local_classes = navigation_local_classes|default() %}
@@ -32,7 +32,7 @@
 {% set navigation_local_item_attributes = navigation_local_item_attributes|default({}) %}
 {% set navigation_local_heading_text = navigation_local_heading_text|default() %}
 {% set navigation_local_heading_href = navigation_local_heading_href|default() %}
-{% set navigation_local_sticky = navigation_local_sticky|default("false") %}
+{% set navigation_local_sticky = navigation_local_sticky|default('false') %}
 
 {% import _self as menus %}
 
@@ -117,13 +117,16 @@
 
 {% if navigation_local_items is iterable %}
     <div class="navigation-nds navigation--local {{ navigation_local_classes }}" id="{{ navigation_local_id }}" data-sticky={{ navigation_local_sticky }}>
-        {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+        {% set toggle = (expanded == "true") ? 'Close' %}
+        {% include "@nds/01-atoms/buttons/button-dynamic/_button-dynamic-main.twig" with
             {
-                "button_default_classes": "navigation--local__button",
-                "button_default_id": "navigation--local__button",
-                "button_default_type": "secondary",
-                "button_default_label": "Open the " ~ navigation_local_heading_text ~ " Menu",
-                "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
+                "button_dynamic_classes": "navigation--local__button",
+                "button_dynamic_id": "navigation--local__button",
+                "button_dynamic_type": "secondary",
+                "button_dynamic_label": navigation_local_heading_text ~ ' Menu',
+                "button_dynamic_active": 'Close ' ~ navigation_local_heading_text ~ ' Menu',
+                "button_dynamic_inactive": 'Open ' ~ navigation_local_heading_text ~ ' Menu',
+                "button_dynamic_attributes": 'data-toggle="collapse" data-target="#navigation--local__content" aria-expanded="false" aria-controls="navigation--local__content"'
             }
         %}
         <div id="navigation--local__content" class="navigation--local__content collapse" aria-labelledby="navigation--local__button" data-parent="#{{ navigation_local_id }}">
