@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(e) {
     moduleNDS_accordion.init();
     moduleNDS_analytics.init();
+    moduleNDS_buttonDynamic.init();
     moduleNDS_datepicker.init();
     moduleNDS_drawer.init();
     moduleNDS_dropdown.init();
