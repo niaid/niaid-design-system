@@ -13,17 +13,21 @@
 
     Parameters:
         navigation_mobile_rail_classes: Additional classes for the mobile rail component.
-        navigation_mobile_rail_button_text: The text to appear on the mobile rail toggle button.
+        navigation_mobile_rail_button_label: The text to appear on the mobile rail default toggle button.
+        navigation_mobile_rail_button_active: The text to appear on the mobile rail while toggle button is active.
+        navigation_mobile_rail_button_inactive: The text to appear on the mobile rail while toggle button is inactive.
 
     Includes:
         Atoms -> Buttons -> button--default
         Molecules -> Components -> component--accordion
 
-    Last Updated: August 27, 2021
+    Last Updated: December 6, 2023
 #}
 
 {% set navigation_mobile_rail_classes = navigation_mobile_rail_classes|default() %}
-{% set navigation_mobile_rail_button_text = navigation_mobile_rail_button_text|default() %}
+{% set navigation_mobile_rail_button_label = navigation_mobile_rail_button_label|default() %}
+{% set navigation_mobile_rail_button_active = navigation_mobile_rail_button_active|default() %}
+{% set navigation_mobile_rail_button_inactive = navigation_mobile_rail_button_inactive|default() %}
 {% set navigation_mobile_rail_content %}
    {% block navigation_mobile_rail_content %}{% endblock %}
 {% endset %}
@@ -36,12 +40,14 @@
     %}
         {% block component_accordion_content %}
             <div id="navigation--mobile-rail__button">
-                {% include "@nds/01-atoms/buttons/button-default/_button-default-main.twig" with
+                {% include "@nds/01-atoms/buttons/button-dynamic/_button-dynamic-main.twig" with
                     {
-                        "button_default_classes": "navigation--mobile-rail__button",
-                        "button_default_type": "secondary",
-                        "button_default_label": navigation_mobile_rail_button_text,
-                        "button_default_attributes": 'data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content"'
+                        "button_dynamic_classes": "navigation--mobile-rail__button",
+                        "button_dynamic_type": "secondary",
+                        "button_dynamic_label": navigation_mobile_rail_button_label,
+                        "button_dynamic_active": navigation_mobile_rail_button_active,
+                        "button_dynamic_inactive": navigation_mobile_rail_button_inactive,
+                        "button_dynamic_attributes": 'data-toggle="collapse" data-target="#navigation--mobile-rail__content" aria-expanded="false" aria-controls="navigation--mobile-rail__content"'
                     }
                 %}
             </div>

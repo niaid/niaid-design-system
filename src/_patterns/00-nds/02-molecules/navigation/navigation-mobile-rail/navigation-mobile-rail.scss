@@ -4,30 +4,43 @@
     @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
         background-color: transparent;
     }
-    &__button {
-        position: relative;
-        z-index: $z-index-mobile-rail;
-        width: 100%;
-        text-align: center;
-        border-radius: 0 !important;
-        border-left: 0 !important;
-        border-right: 0 !important;
-        border-top: 0 !important;
-        cursor: pointer;
-        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-            display: none !important;
+}
+
+.navigation--mobile-rail__button {
+    position: relative;
+    z-index: $z-index-mobile-rail;
+    width: 100%;
+    text-align: center;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    cursor: pointer;
+    @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+        display: none !important;
+    }
+
+    &[aria-expanded="true"] {
+        .navigation--mobile-rail__toggle {
+            display: inline-block;
         }
     }
-    &__content {
-        background-color: $page-background;
-        height: auto;
-        padding: 0 $s-main-spacer;
-        border-bottom: $border-block;
-        @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
-            background-color: transparent;
-            padding: 0;
-            display: block !important;
-            border-bottom: 0;
-        }
+}
+
+.navigation--mobile-rail__content {
+    background-color: $page-background;
+    height: auto;
+    padding: 0 $s-main-spacer;
+    border-bottom: $border-block;
+    @include media-breakpoint-up($layout-mobile-menu-breakpoint) {
+        background-color: transparent;
+        padding: 0;
+        display: block !important;
+        border-bottom: 0;
     }
+}
+
+
+.navigation--mobile-rail__toggle {
+    display: none;
 }

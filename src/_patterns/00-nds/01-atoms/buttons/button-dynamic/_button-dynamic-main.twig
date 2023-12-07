@@ -1,0 +1,53 @@
+{#
+    ---
+    title: Button Dynamic
+    ---
+
+    Type: Atoms -> Buttons
+
+    Description:
+        There are three button styles for each Color Theme option: Primary, Secondary, and Tertiary. In general, buttons are used for actions that occur on the page. This button should be used when the text and context of the button changes when the jQuery function "onClick" is performed.
+
+        To use one of the styles below, pass the "button_dynamic_type" parameter to the desired style ("primary," "secondary," "tertiary," or "negative").
+
+        The following parameters must be defined for the atom to function as intended: "button_dynamic_active" and "button_dynamic_inactive".
+
+        These button styles can also be applied to other button components by passing the desired classes (i.e. button--primary) to the pattern. See below for examples of using various button styles on other button components.
+
+    Parameters:
+        button_dynamic_classes: Additional button classes.
+        button_dynamic_id: Button ID.
+        button_dynamic_type: Button style. Options: primary, secondary, tertiary, negative.
+        button_dynamic_label: Button text.
+        button_dynamic_active: Button text to appear the while button is active.
+        button_dynamic_inactive: Button text to appear the while button is inactive.
+        button_dynamic_attributes: Additional button attributes.
+
+    Last Updated: December 6, 2023
+#}
+
+{% set button_dynamic_classes = button_dynamic_classes|default() %}
+{% set button_dynamic_id = button_dynamic_id|default() %}
+{% set button_dynamic_type = button_dynamic_type|default('primary') %}
+{% set button_dynamic_label = button_dynamic_label|default('Default Button Text') %}
+{% set button_dynamic_active = button_dynamic_active|default() %}
+{% set button_dynamic_inactive = button_dynamic_inactive|default() %}
+{% set button_dynamic_attributes = button_dynamic_attributes|default() %}
+
+{% if button_dynamic_active is not empty and button_dynamic_inactive is not empty %}
+    <button class="button-nds button--dynamic waves-effect waves-light {% if button_dynamic_type is not empty %}button--{{ button_dynamic_type }} {% endif %}{% if button_dynamic_classes is not empty %}{{ button_dynamic_classes }}{% endif %}" role="button" {% if button_dynamic_id is not empty %}id="{{ button_dynamic_id }}" {% endif %}{% if button_dynamic_attributes is not empty %}{{ button_dynamic_attributes|raw }} {% endif %} data-button-active="{{ button_dynamic_active }}" data-button-inactive="{{ button_dynamic_inactive }}" >{{ button_dynamic_label }}</button>
+{% else %}
+    {% embed "@nds/02-molecules/blocks/block-status-message/_block-status-message-main.twig" with
+        {
+            "block_status_message_type": "error"
+        }
+    %}
+        {% block block_status_message_content %}
+            <p>The following parameters must be defined for the Dynamic Button to function as intended:</p>
+            <ul>
+                <li>button_dynamic_active: Button text to appear the while button is active.</li>
+                <li>button_dynamic_inactive: Button text to appear the while button is inactive.</li>
+            </ul>
+        {% endblock %}
+    {% endembed %}
+{% endif %}
