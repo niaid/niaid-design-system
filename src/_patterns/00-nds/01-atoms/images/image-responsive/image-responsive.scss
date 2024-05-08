@@ -1,0 +1,15 @@
+.image--responsive {
+    display: block;
+}
+
+.image--responsive--lab-section__list {
+    @include media-breakpoint-up(md) {
+        max-width: 200px;
+    }
+}
+
+.image--responsive--lab-section__detail {
+    @include media-breakpoint-up(md) {
+        max-width: 250px;
+    }
+}

@@ -1,0 +1,115 @@
+{#
+    ---
+    title: Image Responsive
+    ---
+
+    Type: Atoms -> Images
+
+    Description:
+        Default pattern to include images.
+
+    Parameters:
+        image_responsive_classes: Additional pattern classes
+        image_responsive_src: The path to the image.
+        image_responsive_alt: Alt text to describe the image.
+        image_responsive_src_{sizes}: The path to the corresponding image styles.
+        image_responsive_src_{sizes}_2x: The path to the corresponding image styles for retina support.
+
+    Last Updated: May 8, 2024
+#}
+
+{% set image_responsive_classes = image_responsive_classes|default() %}
+{% set image_responsive_alt = image_responsive_alt|default() %}
+{% set image_responsive_src = image_responsive_src|default() %}
+{% set image_responsive_src_xxl = image_responsive_src_xxl|default() %}
+{% set image_responsive_src_xl = image_responsive_src_xl|default() %}
+{% set image_responsive_src_lg = image_responsive_src_lg|default() %}
+{% set image_responsive_src_md = image_responsive_src_md|default() %}
+{% set image_responsive_src_sm = image_responsive_src_sm|default() %}
+{% set image_responsive_src_xs = image_responsive_src_xs|default() %}
+{% set image_responsive_src_xxl_2x = image_responsive_src_xxl_2x|default() %}
+{% set image_responsive_src_xl_2x = image_responsive_src_xl_2x|default() %}
+{% set image_responsive_src_lg_2x = image_responsive_src_lg_2x|default() %}
+{% set image_responsive_src_md_2x = image_responsive_src_md_2x|default() %}
+{% set image_responsive_src_sm_2x = image_responsive_src_sm_2x|default() %}
+{% set image_responsive_src_xs_2x = image_responsive_src_xs_2x|default() %}
+
+<picture class="image-nds image--responsive{% if image_responsive_classes is not empty %} {{ image_responsive_classes }}{% endif %}">
+    {% if image_responsive_src_xxl is not empty %}
+        {% if "https:" not in image_respimage_responsive_src_xxlonsive_src and "http:" not in image_responsive_src_xxl %}
+            {% set image_responsive_src_xxl = imagePath ~ image_responsive_src_xxl %}
+            {% set image_responsive_src_xxl_2x = imagePath ~ image_responsive_src_xxl_2x %}
+        {% endif %}
+        <source 
+            srcset="{{ image_responsive_src_xxl }} 1x{% if image_responsive_src_xxl_2x is not empty %}, {{ image_responsive_src_xxl_2x }} 2x{% endif %}"
+            media="(min-width: 1900px)"
+            type="image/jpeg"
+        >
+    {% endif %}
+    {% if image_responsive_src_xl is not empty %}
+        {% if "https:" not in image_responsive_src_xl and "http:" not in image_responsive_src_xl %}
+            {% set image_responsive_src_xl = imagePath ~ image_responsive_src_xl %}
+            {% set image_responsive_src_xl_2x = imagePath ~ image_responsive_src_xl_2x %}
+        {% endif %}
+        <source 
+            srcset="{{ image_responsive_src_xl }} 1x{% if image_responsive_src_xl_2x is not empty %}, {{ image_responsive_src_xl_2x }} 2x{% endif %}"
+            media="(min-width: 1200px)"
+            type="image/jpeg"
+        >
+    {% endif %}
+    {% if image_responsive_src_lg is not empty %}
+        {% if "https:" not in image_responsive_src_lg and "http:" not in image_responsive_src_lg %}
+            {% set image_responsive_src_lg = imagePath ~ image_responsive_src_lg %}
+            {% set image_responsive_src_lg_2x = imagePath ~ image_responsive_src_lg_2x %}
+        {% endif %}
+        <source 
+            srcset="{{ image_responsive_src_lg }} 1x{% if image_responsive_src_lg_2x is not empty %}, {{ image_responsive_src_lg_2x }} 2x{% endif %}"
+            media="(min-width: 992px)"
+            type="image/jpeg"
+        >
+    {% endif %}
+    {% if image_responsive_src_md is not empty %}
+        {% if "https:" not in image_responsive_src_md and "http:" not in image_responsive_src_md %}
+            {% set image_responsive_src_md = imagePath ~ image_responsive_src_md %}
+            {% set image_responsive_src_md_2x = imagePath ~ image_responsive_src_md_2x %}
+        {% endif %}
+        <source 
+            srcset="{{ image_responsive_src_md }} 1x{% if image_responsive_src_md_2x is not empty %}, {{ image_responsive_src_md_2x }} 2x{% endif %}"
+            media="(min-width: 768px)" 
+            type="image/jpeg"
+        >
+    {% endif %}
+    {% if image_responsive_src_sm is not empty %}
+        {% if "https:" not in image_responsive_src_sm and "http:" not in image_responsive_src_sm %}
+            {% set image_responsive_src_sm = imagePath ~ image_responsive_src_sm %}
+            {% set image_responsive_src_sm_2x = imagePath ~ image_responsive_src_sm_2x %}
+        {% endif %}
+        <source 
+            srcset="{{ image_responsive_src_sm }} 1x{% if image_responsive_src_sm_2x is not empty %}, {{ image_responsive_src_sm_2x }} 2x{% endif %}"
+            media="(min-width: 576px)"
+            type="image/jpeg"
+        >
+    {% endif %}
+    {% if image_responsive_src_xs is not empty %}
+        {% if "https:" not in image_responsive_src_xs and "http:" not in image_responsive_src_xs %}
+            {% set image_responsive_src_xs = imagePath ~ image_responsive_src_xs %}
+            {% set image_responsive_src_xs_2x = imagePath ~ image_responsive_src_xs_2x %}
+        {% endif %}
+        <source
+            srcset="{{ image_responsive_src_xs }} 1x{% if image_responsive_src_xs_2x is not empty %}, {{ image_responsive_src_xs_2x }} 2x{% endif %}"
+            media="(min-width: 375px)"
+            type="image/jpeg"
+        >
+    {% endif %}
+    <img 
+        {% if image_responsive_src is not empty %}
+            {% if "https:" not in image_responsive_src and "http:" not in image_responsive_src %}
+                {% set image_responsive_src = imagePath ~ image_responsive_src %}
+            {% endif %}
+            src="{{ image_responsive_src }}"
+        {% endif %}
+        {% if image_responsive_alt is not empty %}
+            alt="{{ image_responsive_alt }}"
+        {% endif %}
+    />
+</picture>
