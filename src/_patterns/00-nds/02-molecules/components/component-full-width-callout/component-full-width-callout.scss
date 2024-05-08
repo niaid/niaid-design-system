@@ -1,0 +1,177 @@
+.component--full-width-callout {
+    overflow: hidden;
+    position: relative;
+    @include flex(flex-start, stretch, column-reverse, wrap);
+    @include media-breakpoint-up(lg) {
+        min-height: $s-20;
+        @include flex(flex-start, stretch, row, nowrap);
+    }
+}
+
+.component--full-width-callout__content {
+    padding: $s-2 $s-2 $s-2-50;
+    z-index: 1;
+    @include media-breakpoint-up(lg) {
+        max-width: 50%;
+        min-width: 40%;
+        padding: $s-2-50 $s-1-75 $s-3 $s-3;
+        width: auto;
+    }
+}
+
+.component--full-width-callout__texture--enabled {
+    .component--full-width-callout__content {
+        background-blend-mode: overlay;
+        background-image: url('src/images/global/textures/texture--hexagons.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+}
+
+.component--full-width-callout__heading {
+    margin: 0;
+}
+
+.component--full-width-callout__body {
+    > * {
+        margin-top: $s-1-50;
+    }
+}
+
+.component--full-width-callout__link {
+    margin-top: $s-1-50;
+
+    .link--icon__text {
+        font-weight: $font-weight-semibold;
+    }
+
+    .icon-nds {
+        font-size: $s-1-25;
+        position: relative;
+        top: $s-1px;
+    }
+}
+
+.component--full-width-callout__image {
+    position: relative;
+    z-index: 0;
+    @include media-breakpoint-up(lg) {
+        height: auto;
+        max-width: 60%;
+        min-width: 50%;
+        width: 100%;
+    }
+    
+    picture, img {
+        @include media-breakpoint-up(lg) {
+            height: 101%;
+            left: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 101%;
+        }
+    }
+}
+
+.component--full-width-callout__object {
+    display: none;
+    height: 101%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: top;
+    transform: skewX(6deg) translateX(-100%);
+    width: 100%;
+    z-index: 1;
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+}
+
+// Component Variants
+
+.component--full-width-callout__position--left {
+    @include flex(flex-start, stretch, column-reverse, wrap);
+    @include media-breakpoint-up(lg) {
+        @include flex(flex-start, stretch, row-reverse, nowrap);
+    }
+
+    .component--full-width-callout__object {
+        transform: skewX(-6deg) translateX(100%);
+    }
+}
+// VARIANT: Mixins
+
+@mixin component-full-width-callout-color($component-full-width-callout-color) {
+    .component--full-width-callout__content,
+    .component--full-width-callout__object {
+        background-color: $component-full-width-callout-color;
+    }
+}
+
+// VARIANT: Corners
+
+.style--corners--semirounded {
+    .component--full-width-callout {
+        border-radius: $border-radius-semi;
+    }
+}
+
+.style--corners--rounded {
+    .component--full-width-callout {
+        border-radius: $border-radius-full;
+    }
+}
+
+// VARIANT: Shadows
+
+.style--shadows {
+    .component--full-width-callout {
+        @include shadow($shadow-hard-low);
+    }
+    $component--full-width-callout-shadow-right: 
+        -6px 5px 5px -3px rgba(0, 0, 0, 0.2), 
+        -6px 8px 10px 1px rgba(0, 0, 0, 0.14), 
+        -6px 3px 14px 2px rgba(0, 0, 0, 0.12)
+    ;
+    $component--full-width-callout-shadow-left: 
+        6px 5px 5px -3px rgba(0, 0, 0, 0.2), 
+        6px 8px 10px 1px rgba(0, 0, 0, 0.14), 
+        6px 3px 14px 2px rgba(0, 0, 0, 0.12)
+    ;
+    .component--full-width-callout__position--right  {
+        .component--full-width-callout__object {
+            @include shadow($component--full-width-callout-shadow-left);
+        }
+    }
+    .component--full-width-callout__position--left {
+        .component--full-width-callout__object {
+            @include shadow($component--full-width-callout-shadow-right);
+        }
+    }
+}
+
+// VARIANT Colors
+
+.component--full-width-callout__background--primary {
+    @include component-full-width-callout-color($niaid-blue);
+    @include text-on-background($white);
+}
+
+.component--full-width-callout__background--secondary {
+    @include component-full-width-callout-color(#75C3AC);
+    @include text-on-background($type-heading);
+}
+
+.component--full-width-callout__background--tertiary {
+    @include component-full-width-callout-color($color-theme-2-accent);
+    @include text-on-background($type-heading);
+}
+
+.component--full-width-callout__background--accent {
+    @include component-full-width-callout-color($color-theme-3-accent);
+    @include text-on-background($type-heading);
+}
