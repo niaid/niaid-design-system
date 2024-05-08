@@ -37,14 +37,22 @@ var moduleNDS_links = (function() {
     function initLinkExternalMailto() {
         let mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
         for (var i = 0; i < mailtoLinks.length; i++) {
-            mailtoLinks[i].classList.add('link--external--mail');
+            let buttonclassname = mailtoLinks[i].classList.contains('button-nds') === true;
+            let iconclassname = mailtoLinks[i].classList.contains('icon-nds') === true;
+            if (iconclassname !== true && buttonclassname !== true) {
+                mailtoLinks[i].classList.add('link--external--mail');
+            }
         }
     }
 
     function initLinkExternalTelephone() {
         let telLinks = document.querySelectorAll('a[href^="tel:"]');
         for (var i = 0; i < telLinks.length; i++) {
-            telLinks[i].classList.add('link--external--phone');
+            let buttonclassname = telLinks[i].classList.contains('button-nds') === true;
+            let iconclassname = telLinks[i].classList.contains('icon-nds') === true;
+            if (iconclassname !== true && buttonclassname !== true) {
+                telLinks[i].classList.add('link--external--phone');
+            }
         }
     }
 
