@@ -64,9 +64,11 @@
     }
     
     picture, img {
+        max-width: 100%;
         @include media-breakpoint-up(lg) {
             height: 101%;
             left: 50%;
+            max-width: unset;
             object-fit: cover;
             position: absolute;
             top: 50%;
