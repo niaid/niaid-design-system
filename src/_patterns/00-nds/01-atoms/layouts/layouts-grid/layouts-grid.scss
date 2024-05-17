@@ -1,0 +1,54 @@
+.layouts--grid {
+    display: grid;
+}
+
+.layouts--grid__spacing--default {
+    gap: $s-2;
+}
+
+.layouts--grid__spacing--tight {
+    gap: $s-1;
+}
+
+.layouts--grid__spacing--none {
+    gap: 0;
+}
+
+.layouts--grid__col-2 {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.layouts--grid__col-3 {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.layouts--grid__col-4 {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.layouts--grid__col-5 {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+// Variants
+
+.layouts--grid__gallery {
+    figure {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
