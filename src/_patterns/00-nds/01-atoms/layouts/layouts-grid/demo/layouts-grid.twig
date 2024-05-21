@@ -2,81 +2,97 @@
     {
         "layouts_grid_classes": 'layouts--grid__gallery mb-4',
         "layouts_grid_columns": '2',
-        "layouts_grid_spacing": 'tight',
         "layouts_grid_item_classes": 'block-nds',
         "layouts_grid_data": [
             {
-                "classes": 'mb-3',
-                "src": 'global/sample/fpo_4x3.png',
+                "header": 'NIAID HIV Language Guide',
+                "description": 'NIAID is making every effort to eliminate the use of stigmatizing terminology and advance the use of person-first.',
+                "src": 'global/sample/fpo_16x9.png',
                 "alt": 'Placeholder image',
-                "caption": 'This is the first image.',
-                "credit": 'NIAID',
-                "nested": true,
                 "nested_data": [
                     {
-                        "src": 'global/sample/fpo_4x3.png',
-                        "alt": 'Placeholder image',
-                        "caption": 'This is the first image.',
-                        "credit": 'NIAID'
+                        "src": 'global/sample/fpo_16x9.png',
+                        "alt": 'Placeholder image'
                     }
                 ]
             },
             {
-                "classes": 'mb-3',
-                "src": 'global/sample/fpo_4x3.png',
+                "header": 'Volunteer for Mpox Clinical Study',
+                "description": 'STOMP is an NIAID-funded clinical trial to evaluate the efficacy of the antiviral tecovirimat, also know as TPOXX.',
+                "src": 'global/sample/fpo_16x9.png',
                 "alt": 'Placeholder image',
-                "caption": 'This is the first image.',
-                "credit": 'NIAID',
-                "nested": true,
                 "nested_data": [
                     {
-                        "src": 'global/sample/fpo_4x3.png',
-                        "alt": 'Placeholder image',
-                        "caption": 'This is the first image.',
-                        "credit": 'NIAID'
+                        "src": 'global/sample/fpo_16x9.png',
+                        "alt": 'Placeholder image'
                     },
                     {
-                        "src": 'global/sample/fpo_4x3.png',
-                        "alt": 'Placeholder image',
-                        "caption": 'This is the second image.',
-                        "credit": 'NIAID'
+                        "src": 'global/sample/fpo_16x9.png',
+                        "alt": 'Placeholder image'
+                    }
+                ]
+            },
+            {
+                "header": 'Find Your Place at NIAID',
+                "description": 'Whether you are passionate about science, administration, or innovation, there is a place for you at NIAID.',
+                "src": 'global/sample/fpo_16x9.png',
+                "alt": 'Placeholder image',
+                "nested_data": [
+                    {
+                        "src": 'global/sample/fpo_16x9.png',
+                        "alt": 'Placeholder image'
+                    }
+                ]
+            },
+            {
+                "header": 'Volunteer for COVID-19 Clinical Trials',
+                "description": 'NIAID conducts and supports clinical trials evaluating therapies and vaccine candidates against SARS.',
+                "src": 'global/sample/fpo_16x9.png',
+                "alt": 'Placeholder image',
+                "nested_data": [
+                    {
+                        "src": 'global/sample/fpo_16x9.png',
+                        "alt": 'Placeholder image'
+                    },
+                    {
+                        "src": 'global/sample/fpo_16x9.png',
+                        "alt": 'Placeholder image'
                     }
                 ]
             }
         ]
     }
 %}
-    {% block layouts_grid_content %}
+    {% block layouts_grid_item %}
         {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
             {
                 "component_media_classes": grid_item.classes,
                 "component_media_src": grid_item.src,
-                "component_media_alt": grid_item.alt,
-                "component_media_caption": grid_item.caption,
-                "component_media_credit": grid_item.credit
+                "component_media_alt": grid_item.alt
             }
         %}
-        {% if grid_item.nested == true %}
-            {% embed "@nds/01-atoms/layouts/layouts-grid/_layouts-grid-main.twig" with
-                {
-                    "layouts_grid_nested": true,
-                    "layouts_grid_nested_classes": 'layouts--grid__gallery',
-                    "layouts_grid_nested_columns": '2',
-                    "layouts_grid_nested_spacing": 'tight',
-                    "layouts_grid_nested_data": grid_item.nested_data
-                }
-            %}
-                {% block layouts_grid_nested_content %}
-                    {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
-                        {
-                            "component_media_src": grid_nested_item.src,
-                            "component_media_alt": grid_nested_item.alt,
-                            "component_media_caption": grid_nested_item.caption,
-                            "component_media_credit": grid_nested_item.credit
-                        }
-                    %}
-                {% endblock %}
-            {% endembed %}
-        {% endif %}
+        <h3 class="mt-3">{{ grid_item.header }}</h3>
+        <p>{{ grid_item.description }}</p>
+        {% embed "@nds/01-atoms/layouts/layouts-grid/_layouts-grid-main.twig" with
+            {
+                "layouts_grid_classes": 'layouts--grid__gallery layouts--grid__nested mt-4',
+                "layouts_grid_item_classes": '',
+                "layouts_grid_columns": '2',
+                "layouts_grid_data": grid_item.nested_data
+            }
+        %}
+            {% block layouts_grid %}
+                {% for grid_nested_item in grid_item.nested_data %}
+                    <div class="layouts--grid__item{% if layouts_grid_item_classes is not empty %} {{ layouts_grid_item_classes }}{% endif %}">
+                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                            {
+                                "component_media_src": grid_nested_item.src,
+                                "component_media_alt": grid_nested_item.alt
+                            }
+                        %}
+                    </div>
+                {% endfor %}
+            {% endblock %}
+        {% endembed %}
     {% endblock %}
 {% endembed %}
