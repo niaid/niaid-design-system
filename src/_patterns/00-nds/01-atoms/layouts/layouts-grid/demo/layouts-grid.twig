@@ -1,62 +1,87 @@
-{% embed "@nds/01-atoms/layouts/layouts-grid/_layouts-grid-main.twig" with
+{% embed '@nds/01-atoms/layouts/layouts-grid/_layouts-grid-main.twig' with
     {
-        "layouts_grid_classes": 'layouts--grid__gallery mb-4',
-        "layouts_grid_columns": '2',
-        "layouts_grid_item_classes": 'block-nds',
-        "layouts_grid_data": [
+        'layouts_grid_classes': 'layouts--grid__gallery layouts--grid__demo mb-4',
+        'layouts_grid_columns': '2',
+        'layouts_grid_spacing': 'tight',
+        'layouts_grid_item_classes': 'block-nds',
+        'layouts_grid_data': [
             {
-                "header": 'NIAID HIV Language Guide',
-                "description": 'NIAID is making every effort to eliminate the use of stigmatizing terminology and advance the use of person-first.',
-                "src": 'global/sample/fpo_16x9.png',
-                "alt": 'Placeholder image',
-                "nested_data": [
+                'header': 'NIAID HIV Language Guide',
+                'description': 'NIAID is making every effort to eliminate the use of stigmatizing terminology and advance the use of person-first.',
+                'nested_data': [
                     {
-                        "src": 'global/sample/fpo_16x9.png',
-                        "alt": 'Placeholder image'
-                    }
-                ]
-            },
-            {
-                "header": 'Volunteer for Mpox Clinical Study',
-                "description": 'STOMP is an NIAID-funded clinical trial to evaluate the efficacy of the antiviral tecovirimat, also know as TPOXX.',
-                "src": 'global/sample/fpo_16x9.png',
-                "alt": 'Placeholder image',
-                "nested_data": [
-                    {
-                        "src": 'global/sample/fpo_16x9.png',
-                        "alt": 'Placeholder image'
+                        'class': 'button--secondary',
+                        'icon': '1',
+                        'weight': 's',
+                        'href': '/',
+                        'text': 'First Button Example'
                     },
                     {
-                        "src": 'global/sample/fpo_16x9.png',
-                        "alt": 'Placeholder image'
+                        'class': 'button--secondary',
+                        'icon': '2',
+                        'weight': 's',
+                        'href': '/',
+                        'text': 'Second Button Example'
                     }
                 ]
             },
             {
-                "header": 'Find Your Place at NIAID',
-                "description": 'Whether you are passionate about science, administration, or innovation, there is a place for you at NIAID.',
-                "src": 'global/sample/fpo_16x9.png',
-                "alt": 'Placeholder image',
-                "nested_data": [
+                'header': 'Volunteer for Mpox Clinical Study',
+                'description': 'STOMP is an NIAID-funded clinical trial to evaluate the efficacy of the antiviral tecovirimat, also know as TPOXX.',
+                'nested_data': [
                     {
-                        "src": 'global/sample/fpo_16x9.png',
-                        "alt": 'Placeholder image'
-                    }
-                ]
-            },
-            {
-                "header": 'Volunteer for COVID-19 Clinical Trials',
-                "description": 'NIAID conducts and supports clinical trials evaluating therapies and vaccine candidates against SARS.',
-                "src": 'global/sample/fpo_16x9.png',
-                "alt": 'Placeholder image',
-                "nested_data": [
-                    {
-                        "src": 'global/sample/fpo_16x9.png',
-                        "alt": 'Placeholder image'
+                        'class': 'button--secondary',
+                        'icon': '3',
+                        'weight': 's',
+                        'href': '/',
+                        'text': 'Third Button Example'
                     },
                     {
-                        "src": 'global/sample/fpo_16x9.png',
-                        "alt": 'Placeholder image'
+                        'class': 'button--secondary',
+                        'icon': '4',
+                        'weight': 's',
+                        'href': '/',
+                        'text': 'Fourth Button Example'
+                    }
+                ]
+            },
+            {
+                'header': 'Find Your Place at NIAID',
+                'description': 'Whether you are passionate about science, administration, or innovation, there is a place for you at NIAID.',
+                'nested_data': [
+                    {
+                        'class': 'button--secondary',
+                        'icon': '5',
+                        'weight': 's',
+                        'href': '/',
+                        'text': 'Fifth Button Example'
+                    },
+                    {
+                        'class': 'button--secondary',
+                        'icon': '6',
+                        'weight': 's',
+                        'href': '/',
+                        'text': 'Sixth Button Example'
+                    }
+                ]
+            },
+            {
+                'header': 'Volunteer for COVID-19 Clinical Trials',
+                'description': 'NIAID conducts and supports clinical trials evaluating therapies and vaccine candidates against SARS.',
+                'nested_data': [
+                    {
+                        'class': 'button--secondary',
+                        'icon': '7',
+                        'weight': 's',
+                        'href': '/',
+                        'text': 'Seventh Button Example'
+                    },
+                    {
+                        'class': 'button--secondary',
+                        'icon': '8',
+                        'weight': 's',
+                        'href': '/',
+                        'text': 'Eighth Button Example'
                     }
                 ]
             }
@@ -64,30 +89,26 @@
     }
 %}
     {% block layouts_grid_item %}
-        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
-            {
-                "component_media_classes": grid_item.classes,
-                "component_media_src": grid_item.src,
-                "component_media_alt": grid_item.alt
-            }
-        %}
-        <h3 class="mt-3">{{ grid_item.header }}</h3>
+        <h3>{{ grid_item.header }}</h3>
         <p>{{ grid_item.description }}</p>
-        {% embed "@nds/01-atoms/layouts/layouts-grid/_layouts-grid-main.twig" with
+        {% embed '@nds/01-atoms/layouts/layouts-grid/_layouts-grid-main.twig' with
             {
-                "layouts_grid_classes": 'layouts--grid__gallery layouts--grid__nested mt-4',
-                "layouts_grid_item_classes": '',
-                "layouts_grid_columns": '2',
-                "layouts_grid_data": grid_item.nested_data
+                'layouts_grid_classes': 'layouts--grid__gallery layouts--grid__nested mt-4',
+                'layouts_grid_item_classes': '',
+                'layouts_grid_columns': '2',
+                'layouts_grid_data': grid_item.nested_data
             }
         %}
             {% block layouts_grid %}
                 {% for grid_nested_item in grid_item.nested_data %}
-                    <div class="layouts--grid__item{% if layouts_grid_item_classes is not empty %} {{ layouts_grid_item_classes }}{% endif %}">
-                        {% include "@nds/02-molecules/components/component-media/_component-media-main.twig" with
+                    <div class='layouts--grid__item{% if layouts_grid_item_classes is not empty %} {{ layouts_grid_item_classes }}{% endif %}'>
+                        {% include '@nds/01-atoms/buttons/button-icon/_button-icon-main.twig' with
                             {
-                                "component_media_src": grid_nested_item.src,
-                                "component_media_alt": grid_nested_item.alt
+                                'button_icon_classes': grid_nested_item.class,
+                                'button_icon_icon': grid_nested_item.icon,
+                                'button_icon_icon_weight': grid_nested_item.weight,
+                                'button_icon_href': grid_nested_item.href,
+                                'button_icon_text': grid_nested_item.text
                             }
                         %}
                     </div>
