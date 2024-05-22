@@ -1,0 +1,43 @@
+{% set full_width_callout_image_data = [] %}
+{% set full_width_callout_image_data = full_width_callout_image_data|merge([{ 
+    "alt": 'Full-Width Callout test image alternative text.',
+    "src": 'global/styles/aspect_ratio_4_3_sm/sample.jpg',
+    "lg": 'global/styles/aspect_ratio_4_3_sm/sample.jpg',
+    "md": 'global/styles/aspect_ratio_16_9_md/sample.jpg',
+    "xs": 'global/styles/aspect_ratio_16_9_sm/sample.jpg',
+    "sm": 'global/styles/aspect_ratio_4_3_sm/sample.jpg',
+    "lg_2x": 'global/styles/aspect_ratio_4_3_sm_2x/sample.jpg',
+    "md_2x": 'global/styles/aspect_ratio_16_9_md_2x/sample.jpg',
+    "sm_2x": 'global/styles/aspect_ratio_4_3_sm_2x/sample.jpg',
+    "xs_2x": 'global/styles/aspect_ratio_16_9_sm_2x/sample.jpg'
+}]) %}
+
+{% include "@nds/02-molecules/components/component-full-width-callout/_component-full-width-callout-main.twig" with
+    {
+        "component_full_width_callout_background": 'secondary',
+        "component_full_width_callout_heading": 'NIAID Mpox Research Role',
+        "component_full_width_callout_body": 'NIAID played a key role in the available preventive mpox (formerly monkeypox) vaccine as well as treatments that may be used. NIAID continues to conduct research to better understand mpox transmission and disease.',
+        "component_full_width_callout_link_href": '/',
+        "component_full_width_callout_link_text": 'NIAID Mpox Research Role',
+        "component_full_width_callout_image_data": full_width_callout_image_data.0
+    }
+%}
+
+{% include "@nds/01-atoms/spacer/_spacer-main.twig" with
+    {
+        "spacer_classes": "h-1"
+    }
+%}
+
+{% include "@nds/02-molecules/components/component-full-width-callout/_component-full-width-callout-main.twig" with
+    {
+        "component_full_width_callout_background": 'accent',
+        "component_full_width_callout_image_position": 'left',
+        "component_full_width_callout_texture": 'enabled',
+        "component_full_width_callout_heading": 'NIAID Mpox Research Role',
+        "component_full_width_callout_body": 'NIAID played a key role in the available preventive mpox (formerly monkeypox) vaccine as well as treatments that may be used. NIAID continues to conduct research to better understand mpox transmission and disease.',
+        "component_full_width_callout_link_href": '/',
+        "component_full_width_callout_link_text": 'NIAID Mpox Research Role',
+        "component_full_width_callout_image_data": full_width_callout_image_data.0
+    }
+%}

@@ -1,0 +1,27 @@
+.layouts--grid__demo {
+    .layouts--grid__item {
+        > * {
+            margin-top: 0;
+        }
+    }
+
+    .button--icon {
+        display: block;
+        text-align: center;
+        width: 100%;
+        white-space: normal;
+    }
+
+    .button--icon__text {
+        padding: 0;
+        margin-top: $s-1;
+    }
+
+    .icon--default {
+        width: 100%;
+        padding: 0 $s-1 $s-1;
+        &:before {
+            font-size: $s-1-50;
+        }
+    }
+}

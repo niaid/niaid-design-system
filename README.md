@@ -1,6 +1,6 @@
 # NIAID Design System (NDS)
 
-VERSION 1.4.0
+VERSION 1.5.0
 
 The [NIAID Design System](https://designsystem.niaid.nih.gov/) was developed within the Office of Communications and Government Relations (OCGR) at the National Institute of Allergy and Infectious Diseases (NIAID) by Booz Allen Hamilton. The design system is designed to aid users with the process of creating policy-compliant websites that conform to design standards and guidance set by NIAID, NIH, HHS, and USWDS.
 
@@ -44,15 +44,15 @@ There are three main ways to use NDS listed below. To get started please visit o
 ## Team
 
 ### Developers
-* [**Nicholas Iafelice**](https://github.com/niafelice-nih) - UI/UX Designer & Front-End Developer
-* [Roshana Devkota](https://github.com/roshana-devkota-nih) - Drupal Developer
+* [**Nicholas Iafelice**](https://github.com/niafelice-nih) - Lead UI/UX Designer & Front-End Developer
+* [Olivia Taylor](https://github.com/otaylor-nih) - Front-End Developer
 
 ### DevOps
 * [Souley Coulibaly](https://github.com/souleyNIAID) - DevOps Lead
 * [Vikram Mareddy](https://github.com/vikram-nih) - DevOps SME
 
 ### Analytics
-* Leah Spix - Analytics Lead
+* Natan Getahun - Digital Analyst Lead
 
 ### Testing
-* Hilary Konzolo - Testing/QA Lead
+* Musbha Chuddry - QA Analyst

@@ -16,7 +16,9 @@
             {% block left_column %}
                 {% embed "@nds/02-molecules/navigation/navigation-mobile-rail/_navigation-mobile-rail-main.twig" with
                     {
-                        "navigation_mobile_rail_button_text": "Open Facets"
+                        "navigation_mobile_rail_button_label": "Open Facets",
+                        "navigation_mobile_rail_button_active": "Close Facets",
+                        "navigation_mobile_rail_button_inactive": "Open Facets"
                     }
                 %}
                     {% block navigation_mobile_rail_content %}

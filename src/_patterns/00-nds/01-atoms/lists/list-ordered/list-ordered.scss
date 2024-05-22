@@ -1,0 +1,18 @@
+ol {
+	list-style-type: decimal;
+	ol {
+		ol {
+			ol {
+				list-style-type: decimal;
+				ol {
+					list-style-type: lower-latin;
+					ol {
+						list-style-type: lower-roman;
+					}
+				}
+			}
+			list-style-type: lower-roman;
+		}
+		list-style-type: lower-latin;
+	}
+}

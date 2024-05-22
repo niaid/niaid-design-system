@@ -75,6 +75,34 @@
     }
 }
 
+@mixin text-on-background($color: $white) {
+    * {
+        color: $color;
+    }
+    a:not(.link-nds) {
+        border-bottom: $s-1px solid $color;
+
+        &:hover, &:focus, &:active, &:visited {
+            color: $color;
+            border-bottom: $border-transparent;
+        }
+    }
+
+    .link-nds {
+        .link--icon__text {
+            color: $color !important;
+            border-bottom: $s-1px solid $color !important;
+        }
+
+        &:hover, &:focus, &:active, &:visited {
+            .link--icon__text {
+                color: $color !important;
+                border-bottom: $border-transparent !important;
+            }
+        }
+    }
+}
+
 // POSITIONING
 
 @mixin vertical-center {
