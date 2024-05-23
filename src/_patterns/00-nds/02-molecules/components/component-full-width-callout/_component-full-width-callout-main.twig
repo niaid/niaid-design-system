@@ -1,0 +1,91 @@
+{#
+    ---
+    title: Full-Width Callout
+    ---
+
+    Type: Molecules -> Components
+
+    Description:
+        Full-width callouts can be used to emphasize a single, important piece of information for users and encourage them to take action.
+
+    Blocks:
+        {% block component_full_width_callout_image %}: Content to appear at in the space dedicated to imagery, used to overrive the use of Atoms -> Images -> Responsive Image.
+
+    Parameters:
+        component_full_width_callout_id: Additional component id.
+        component_full_width_callout_classes: Additional component classes.
+        component_full_width_callout_image_position: Determines whether the image appears on the left or right. Options: "left", "right".
+        component_full_width_callout_background: Determines what background color image shows. Options: "primary", "secondary", "tertiary", "accent".
+        component_full_width_callout_texture: Determines whether a texture appears as an overlay in the background. Options: "enabled", "disabled".
+        component_full_width_callout_heading: An optional title.
+        component_full_width_callout_body: Optional text to in the body.
+        component_full_width_callout_link_href: Optional URL for the link.
+        component_full_width_callout_link_text: Optional text for the link.
+        component_full_width_callout_image_data: Image sizes stored in a single variable, use an array to parse through this variable.
+    
+    Includes:
+        Atoms -> Images -> responsive-image
+
+    Last Updated: May 8, 2024
+#}
+
+{% set component_full_width_callout_id = component_full_width_callout_id|default() %}
+{% set component_full_width_callout_image_position = component_full_width_callout_image_position|default('right') %}
+{% set component_full_width_callout_background = component_full_width_callout_background|default('primary') %}
+{% set component_full_width_callout_texture = component_full_width_callout_texture|default('disabled') %}
+{% set component_full_width_callout_heading = component_full_width_callout_heading|default() %}
+{% set component_full_width_callout_body = component_full_width_callout_body|default() %}
+{% set component_full_width_callout_link_href = component_full_width_callout_link_href|default() %}
+{% set component_full_width_callout_link_text = component_full_width_callout_link_text|default() %}
+{% set component_full_width_callout_image_data = component_full_width_callout_image_data|default() %}
+{% set component_full_width_callout_classes = 
+    'component--full-width-callout__background--' ~ component_full_width_callout_background ~ 
+    ' component--full-width-callout__position--' ~ component_full_width_callout_image_position ~ 
+    ' component--full-width-callout__texture--' ~ component_full_width_callout_texture ~ 
+    component_full_width_callout_classes|default() 
+%}
+
+<div class="component-nds component--full-width-callout {{ component_full_width_callout_classes }}" {% if component_full_width_callout_id is not empty %} id="{{ component_full_width_callout_id }}"{% endif %}>
+    <div class="component--full-width-callout__content">
+        {% block component_full_width_callout_content %}
+            {% if component_full_width_callout_heading %}<h2 class="component--full-width-callout__heading">{{ component_full_width_callout_heading }}</h2>{% endif %}
+            {% if component_full_width_callout_body %}<div class="component--full-width-callout__body">{{ component_full_width_callout_body }}</div>{% endif %}
+            {% if component_full_width_callout_link_text and component_full_width_callout_link_href %}
+                <div class="component--full-width-callout__link">
+                    {% include "@nds/01-atoms/links/link-icon/_link-icon-main.twig" with
+                        {
+                            "link_icon_href": component_full_width_callout_link_href,
+                            "link_icon_text": component_full_width_callout_link_text,
+                            "link_icon_type": "circle-caret-right",
+                            "link_icon_weight": "r",
+                            "link_icon_position": "right"
+                        }
+                    %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+    <div class="component--full-width-callout__image">
+        {% block component_full_width_callout_image %}
+            {% include "@nds/01-atoms/images/image-responsive/_image-responsive-main.twig" with
+                {
+                    "image_responsive_src": component_full_width_callout_image_data.src,
+                    "image_responsive_src_xxl": component_full_width_callout_image_data.xxl,
+                    "image_responsive_src_xxl_2x": component_full_width_callout_image_data.xxl_2x,
+                    "image_responsive_src_xl": component_full_width_callout_image_data.xl,
+                    "image_responsive_src_xl_2x": component_full_width_callout_image_data.xl_2x,
+                    "image_responsive_src_lg": component_full_width_callout_image_data.lg,
+                    "image_responsive_src_lg_2x": component_full_width_callout_image_data.lg_2x,
+                    "image_responsive_src_md": component_full_width_callout_image_data.md,
+                    "image_responsive_src_md_2x": component_full_width_callout_image_data.md_2x,
+                    "image_responsive_src_sm": component_full_width_callout_image_data.sm,
+                    "image_responsive_src_sm_2x": component_full_width_callout_image_data.sm_2x,
+                    "image_responsive_src_xs": component_full_width_callout_image_data.xs,
+                    "image_responsive_src_xs_2x": component_full_width_callout_image_data.xs_2x,
+                    "image_responsive_alt": component_full_width_callout_image_data.alt
+                }
+            %}
+        {% endblock %}
+        <span class="component--full-width-callout__object"></span>
+    </div>
+</div>

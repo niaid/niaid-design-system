@@ -1,0 +1,40 @@
+{#
+    ---
+    title: Grid Layout
+    ---
+
+    Type: Atoms -> Layouts
+
+    Description:
+        The Grid Layout component defines the horizontal and vertical sections of a page. The component provides four equal column options: 2, 3, 4, and 5 columns.
+
+    Blocks:
+        {% block layouts_grid %}: The Grid Layout content.
+        {% block layouts_grid_item %}: The Grid Layout item content.
+
+    Parameters:
+        layouts_grid_id: Additional Grid Layout id.
+        layouts_grid_classes: Additional Grid Layout classes.
+        layouts_grid_count: Determines how many columns will display in a given row. Options: '2' (Default), '3', '4', '5'.
+        layouts_grid_spacing: Determines the amount of spacing between columns and rows in a Grid Layout. Options: 'none', 'tight', 'default' (Default).
+        layouts_grid_data: The variable used to identify a list of objects in a Grid Layout.
+
+    Last Updated: May 21, 2024
+#}
+
+{% set layouts_grid_id = layouts_grid_id|default() %}
+{% set layouts_grid_classes = layouts_grid_classes|default() %}
+{% set layouts_grid_columns = layouts_grid_columns|default('2') %}
+{% set layouts_grid_spacing = layouts_grid_spacing|default('default') %}
+{% set layouts_grid_item_classes = layouts_grid_item_classes|default() %}
+{% set layouts_grid_data = layouts_grid_data|default() %}
+
+<div class="layouts-nds layouts--grid layouts--grid__col-{{ layouts_grid_columns }} layouts--grid__spacing--{{ layouts_grid_spacing }} {{ layouts_grid_classes }}"{% if layouts_grid_id is not empty %} id="{{ layouts_grid_id }}"{% endif %}>
+    {% block layouts_grid %}
+        {% for grid_item in layouts_grid_data %}
+            <div class="layouts--grid__item{% if layouts_grid_item_classes is not empty %} {{ layouts_grid_item_classes }}{% endif %}">
+                {% block layouts_grid_item %}{% endblock %}
+            </div>
+        {% endfor %}
+    {% endblock %}
+</div>
