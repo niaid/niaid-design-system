@@ -26,7 +26,11 @@ var moduleNDS_links = (function() {
                         linkIcon.setAttribute('role', "img");
                         linkIcon.setAttribute('class', "ext-link-icon");
                         linkIcon.setAttribute('aria-label', "(Link is external)");
-                        externalLinks[i].appendChild(linkIcon);
+                        if( externalLinks[i].firstElementChild != null ){                        
+                            externalLinks[i].firstElementChild.insertAdjacentElement( 'afterend', linkIcon );
+                        }else{
+                            externalLinks[i].appendChild(linkIcon);
+                        }
                     }
                 }
             }
@@ -76,7 +80,11 @@ var moduleNDS_links = (function() {
         var badge = document.createElement('span');
         badge.setAttribute('class', "text-nds text--badge text--badge--document");
         badge.textContent = type.toUpperCase();
-        link.insertAdjacentElement('afterend', badge);
+        if (link.firstElementChild != null){
+            link.firstElementChild.insertAdjacentElement( 'afterend', badge )
+        }else{
+            link.appendChild(badge);
+        }
     }
 
     /* =================== PUBLIC METHODS ================== */
