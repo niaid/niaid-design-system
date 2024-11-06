@@ -11,6 +11,13 @@
             color: $type-link;
         }
     }
+    &::placeholder {
+        color: $type-body;
+        opacity: 1;
+    }
+    &::-ms-input-placeholder {
+        color: $type-body;
+    }
 }
 
 .input--text--icon {
